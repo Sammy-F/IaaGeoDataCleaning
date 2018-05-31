@@ -78,3 +78,13 @@ Flagged locations are at indicies: [2, 3, 4, 7, 9, 10, 12, 13, 14, 15]
 0.6249999999960938
 
 ```
+
+### Acknowledgment:
+
+Initial development by  [Jonathan Scott ](https://github.com/lionely/).
+
+### Contributing
+
+Feel free to submit a pull request if you have any features/improvements to add to the package. \
+You can also open an issue if you ecountered a problem while using the current core functionalities \
+of the package.
