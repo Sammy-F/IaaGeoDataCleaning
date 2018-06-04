@@ -131,7 +131,7 @@ class GeocodeValidator:
             except:
                 print("Index: " + str(index) + " had an error.(Index flagged.) \n")
                 self.flagged_locations.append(index)
-                self.log['location'].append(geocodeTarget)
+                self.log['location'].append(geocodeTarget)  # ???
                 self.log['index'].append(index)
                 self.log['type'].append('generic error')
                 continue
@@ -163,7 +163,7 @@ class GeocodeValidator:
             correct_lng = geocoded_result[0]['geometry']['location']['lng']
             self.geocoded_locations[geocodeTarget] = (correct_lat, correct_lng)
 
-        self.validate(self, tobe_validated_lat, tobe_validated_lng, index, geocodeTarget)
+        self.validate(tobe_validated_lat, tobe_validated_lng, index, geocodeTarget)
 
     def validate(self, tobe_validated_lat, tobe_validated_lng, index, geocodeTarget):
         distance = self.gmaps.distance_matrix((tobe_validated_lat, tobe_validated_lng), self.geocoded_locations[geocodeTarget])
@@ -173,7 +173,7 @@ class GeocodeValidator:
         distance_status = top_level_distance_status == 'OK' and element_level_distance_status == 'OK'
         if (distance_status):
             flag_threshold = distance['rows'][0]['elements'][0]['distance']['value'] * 0.000621371  # convert to miles
-            if flag_threshold > self.flag_distance:
+            if flag_threshold > self.flagDistance:
                 print("Index: " + str(index) + " distance between points is too large.(Index flagged.) \n")
                 self.flagged_locations.append(index)  # mark index in original dataframe
                 self.log['location'].append(geocodeTarget)
