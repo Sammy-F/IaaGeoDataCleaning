@@ -4,6 +4,8 @@ import re
 import math
 import geocoder
 
+# TODO: handle exceptions when making API calls
+
 parenNumRegex = re.compile('\(\d\)')
 now = datetime.datetime.now()
 now = now.strftime("%Y-%m-%d ")
@@ -98,7 +100,7 @@ class GeocodeValidator:
         loggedDF.to_csv('validation_log_' + str(now) + '.csv', sep=',', encoding='utf-8')
         return len(self.flaggedLocations) / (1e-10 + self.tobeValidatedLocation.shape[0])
 
-    def reverseGeocode(self, locationTuple):
+    def reverseGeocode(self, index, locationTuple):
         """
         Retrieves the latitude and longitude of the location entered in the data, and
         saves that information in the dictionary: (location, country) : (latitude, longitude)
@@ -108,8 +110,12 @@ class GeocodeValidator:
         geoInfo = geocoder.geonames(location=locationTuple[0],
                                     country=self.countryCodes[locationTuple[1].lower().capitalize()],
                                     key=self.geoID)
-        # TODO: handle errors and exceptions
-        # invalid geoIDs (error), invalid locations (no error)
+        # Handles cases where (location, country) does not return a result
+        if not geoInfo.ok:
+            self.flagged_locations.append(index)
+            self.log['location'].append(locationTuple)
+            self.log['index'].append(index)
+            self.log['type'].append('location not found')
         self.geocodedLocations[locationTuple] = (geoInfo.lat, geoInfo.lng)
 
     def calculateDistance(self, lat1, lng1, lat2, lng2):
