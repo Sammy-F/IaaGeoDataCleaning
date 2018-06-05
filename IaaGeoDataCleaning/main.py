@@ -146,7 +146,7 @@ class GeocodeValidator:
         checkLat = inputLat
         checkLng = inputLng
 
-        checkDist = (checkLng, checkLat, correctLat, correctLng)
+        checkDist = self.calculateDistance(checkLng, checkLat, correctLat, correctLng)
 
         if (checkDist > self.flagDistance):
             checkLat = checkLat * -1
@@ -170,4 +170,5 @@ class GeocodeValidator:
 
 
 validator = GeocodeValidator(geoID, "test.xlsx")
+# validator = GeocodeValidator("lolsdefwe", "test.xlsx")
 validator.run()
