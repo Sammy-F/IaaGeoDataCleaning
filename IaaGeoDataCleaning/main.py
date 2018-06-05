@@ -156,22 +156,29 @@ class GeocodeValidator:
         checkLat = inputLat
         checkLng = inputLng
 
+        # (lng - lat)
         checkDist = self.calculateDistance(checkLng, checkLat, correctLat, correctLng)
 
         if (checkDist > self.flagDistance):
+            # (flipped lat - lng)
             checkLat = checkLat * -1
             checkDist = self.calculateDistance(checkLat, checkLng, correctLat, correctLng)
             if (checkDist > self.flagDistance):
+                # (lng - flipped lat)
                 checkDist = self.calculateDistance(checkLng, checkLat, correctLat, correctLng)
                 if (checkDist > self.flagDistance):
+                    # (flipped lat - flipped lng)
                     checkLng = checkLng * -1
                     checkDist = self.calculateDistance(checkLat, checkLng, correctLat, correctLng)
                     if (checkDist > self.flagDistance):
+                        # (flipped lng - flipped lat)
                         checkDist = self.calculateDistance(checkLng, checkLat, correctLat, correctLng)
                         if (checkDist > self.flagDistance):
+                            # (lat - flipped lng)
                             checkLat = checkLat * -1
                             checkDist = self.calculateDistance(checkLat, checkLng, correctLat, correctLng)
                             if (checkDist > self.flagDistance):
+                                # (flipped lng - lat)
                                 checkDist = self.calculateDistance(checkLng, checkLat, correctLat, correctLng)
                                 if (checkDist > self.flagDistance):
                                     return False
