@@ -77,7 +77,6 @@ class GeocodeValidator:
         distance = self.calculateDistance(inputLat, inputLng, correctLat, correctLng)
 
         # Compares the distance to the standard flagged distance
-        # TODO: check other possible cases of human error
         if distance > self.flagDistance:
             isGood = self.handleBadDistance(inputLat, inputLng, correctLat, correctLng)
 
