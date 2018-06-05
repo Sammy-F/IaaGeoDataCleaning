@@ -5,6 +5,7 @@ import numpy as np
 import datetime
 import googlemaps as gm
 import re #Regex to remove (num)
+import json
 
 parenNumRegex = re.compile('\(\d\)')
 mo = parenNumRegex.search('(4)  (5)')
@@ -192,5 +193,5 @@ class GeocodeValidator:
         return len(self.flagged_locations) / (1e-10 + self.tobe_validated_location.shape[0])
 
 
-
+GeocodeValidator("test.xlsx", )
 
