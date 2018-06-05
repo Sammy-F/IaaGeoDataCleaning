@@ -72,7 +72,7 @@ class GeocodeValidator:
 
         # Saves template information to reduce the number of API calls
         if geocodeTarget not in self.geocodedLocations:
-            self.reverseGeocode(geocodeTarget)
+            self.reverseGeocode(index, geocodeTarget)
 
         # Calculates the distance
         inputLat = float(row.loc['Latitude'])
@@ -159,33 +159,36 @@ class GeocodeValidator:
         # (lng - lat)
         checkDist = self.calculateDistance(checkLng, checkLat, correctLat, correctLng)
 
-        if (checkDist > self.flagDistance):
+        if checkDist > self.flagDistance:
             # (flipped lat - lng)
             checkLat = checkLat * -1
             checkDist = self.calculateDistance(checkLat, checkLng, correctLat, correctLng)
-            if (checkDist > self.flagDistance):
+            if checkDist > self.flagDistance:
                 # (lng - flipped lat)
                 checkDist = self.calculateDistance(checkLng, checkLat, correctLat, correctLng)
-                if (checkDist > self.flagDistance):
+                if checkDist > self.flagDistance:
                     # (flipped lat - flipped lng)
                     checkLng = checkLng * -1
                     checkDist = self.calculateDistance(checkLat, checkLng, correctLat, correctLng)
-                    if (checkDist > self.flagDistance):
+                    if checkDist > self.flagDistance:
                         # (flipped lng - flipped lat)
                         checkDist = self.calculateDistance(checkLng, checkLat, correctLat, correctLng)
-                        if (checkDist > self.flagDistance):
+                        if checkDist > self.flagDistance:
                             # (lat - flipped lng)
                             checkLat = checkLat * -1
                             checkDist = self.calculateDistance(checkLat, checkLng, correctLat, correctLng)
-                            if (checkDist > self.flagDistance):
+                            if checkDist > self.flagDistance:
                                 # (flipped lng - lat)
                                 checkDist = self.calculateDistance(checkLng, checkLat, correctLat, correctLng)
-                                if (checkDist > self.flagDistance):
+                                if checkDist > self.flagDistance:
                                     return False
 
         return True
 
 
-validator = GeocodeValidator(geoID, "test.xlsx")
-validator = GeocodeValidator("lolsdefwe", "test.xlsx")
-validator.run()
+validator1 = GeocodeValidator(geoID, "test.xlsx")
+# validator1 = GeocodeValidator("lolsdefwe", "test.xlsx")
+validator1.run()
+
+validator2 = GeocodeValidator(geoID, "test2.xlsx")
+validator2.run()
