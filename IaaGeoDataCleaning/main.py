@@ -7,7 +7,7 @@ import geocoder
 parenNumRegex = re.compile('\(\d\)')
 now = datetime.datetime.now()
 now = now.strftime("%Y-%m-%d ")
-geoID = "thytng"
+geoID = "thytng" #TODO: Allow user input
 
 
 class GeocodeValidator:
