@@ -33,9 +33,13 @@ class GeocodeValidator:
         Iterates through every row of the data and validates the locational information of each entry
         :return:
         """
-        for (index, row) in self.tobeValidatedLocation.iterrows():
-            self.validateLocation(index, row)
-        self.logResults()
+        g = geocoder.geonames("Minneapolis", key=self.geoID)
+        if g.ok:
+            for (index, row) in self.tobeValidatedLocation.iterrows():
+                self.validateLocation(index, row)
+            self.logResults()
+        else:
+            print("Invalid ID")
 
     def createCountryCodeDict(self):
         """
@@ -170,5 +174,5 @@ class GeocodeValidator:
 
 
 validator = GeocodeValidator(geoID, "test.xlsx")
-# validator = GeocodeValidator("lolsdefwe", "test.xlsx")
+validator = GeocodeValidator("lolsdefwe", "test.xlsx")
 validator.run()
