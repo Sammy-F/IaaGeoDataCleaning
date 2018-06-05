@@ -77,12 +77,15 @@ class GeocodeValidator:
         distance = self.calculateDistance(inputLat, inputLng, correctLat, correctLng)
 
         # Compares the distance to the standard flagged distance
+        # TODO: check other possible cases of human error
         if distance > self.flagDistance:
             print("Index: " + str(index) + " distance between points is too large.(Index flagged.) \n")
             self.flaggedLocations.append(index)  # mark index in original data frame
             self.log['location'].append(geocodeTarget)
             self.log['index'].append(index)
             self.log['type'].append('distance flag')
+
+            self.handleBadDistance(inputLat, inputLng, correctLat, correctLng)
 
     def logResults(self):
         print("Flagged locations are at indicies: " + str(self.flaggedLocations))
@@ -126,6 +129,44 @@ class GeocodeValidator:
         d = r * c
 
         return d
+
+    def handleBadDistance(self, inputLat, inputLng, correctLat, correctLng):
+        """
+        If the calculated distance is greater than the flag distance,
+        perform operations to check for human input errors.
+
+        Errors checked for: Flipped long/lat, +/-
+        :param inputLat:
+        :param inputLng:
+        :param correctLat:
+        :param correctLng:
+        :return:
+        """
+        checkLat = inputLat
+        checkLng = inputLng
+
+        checkDist = (checkLng, checkLat, correctLat, correctLng)
+
+        if (checkDist > self.flagDistance):
+            checkLat = checkLat * -1
+            checkDist = self.calculateDistance(checkLat, checkLng, correctLat, correctLng)
+            if (checkDist > self.flagDistance):
+                checkDist = self.calculateDistance(checkLng, checkLat, correctLat, correctLng)
+                if (checkDist > self.flagDistance):
+                    checkLng = checkLng * -1
+                    checkDist = self.calculateDistance(checkLat, checkLng, correctLat, correctLng)
+                    if (checkDist > self.flagDistance):
+                        checkDist = self.calculateDistance(checkLng, checkLat, correctLat, correctLng)
+                        if (checkDist > self.flagDistance):
+                            checkLat = checkLat * -1
+                            checkDist = self.calculateDistance(checkLat, checkLng, correctLat, correctLng)
+                            if (checkDist > self.flagDistance):
+                                checkDist = self.calculateDistance(checkLng, checkLat, correctLat, correctLng)
+                                if (checkDist > self.flagDistance):
+                                    return False
+
+        return True
+
 
 validator = GeocodeValidator(geoID, "test.xlsx")
 validator.run()
