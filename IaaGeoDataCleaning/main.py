@@ -4,6 +4,17 @@ import re
 import math
 import geocoder
 
+"""
+GeocodeValidator allows the user to perform reverse geocoding
+on a .xlsx or .csv to ensure that input locations correspond to
+the correct latitude and longitude. If not, then basic data cleaning
+is performed to check for human error.
+
+Created by Jonathan Scott
+
+Modified by: Samantha Fritsche, Thy Nguyen 6/5/2018
+"""
+
 # TODO: handle exceptions when making API calls
 
 parenNumRegex = re.compile('\(\d\)')
