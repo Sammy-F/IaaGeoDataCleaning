@@ -15,8 +15,6 @@ Created by Jonathan Scott
 Modified by: Samantha Fritsche, Thy Nguyen 6/5/2018
 """
 
-# TODO: handle exceptions when making API calls
-
 parenNumRegex = re.compile('\(\d\)')
 now = datetime.datetime.now()
 now = now.strftime("%Y-%m-%d ")
