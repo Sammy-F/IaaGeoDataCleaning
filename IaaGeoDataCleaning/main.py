@@ -242,5 +242,5 @@ class GeocodeValidator:
         return True
 
 
-validator1 = GeocodeValidator(geoID, "NaNtblLocations.xlsx")
+validator1 = GeocodeValidator(geoID, "test.xlsx")
 validator1.run()
