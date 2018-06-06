@@ -54,7 +54,6 @@ class GeocodeValidator:
                 row['Location'] = parenNumRegex.sub("", row['Location'])  # removes (num) can now try API call
                 country = string.capwords(str(row["Country"]).lower())
                 location = string.capwords(str(row["Location"]).lower())
-                geocodeTarget = (location, country)
 
                 lat = float(row['Latitude'])
                 long = float(row['Longitude'])
@@ -62,23 +61,23 @@ class GeocodeValidator:
                 print(lat)
                 print(long)
 
-                location = rg.get((lat, long), mode=1)
+                nearestLocation = rg.get((lat, long), mode=1)
 
-                country = location['cc']
+                nearestCountry = location['cc']
                 print(country)
 
                 try:
-                    self.validateLocation(index, row, actualCountry=country, targetLoc=location)
+                    self.validateLocation(index, row, actualCountry=nearestCountry, targetLoc=(location, country))
                 except KeyError:
                     print("Index: " + str(index) + " lat/lon don't correspond \n")
                     self.flaggedLocations.append(index)  # mark index in original data frame
-                    self.log['location'].append(location)
+                    self.log['location'].append((location, country))
                     self.log['index'].append(index)
                     self.log['type'].append('distance flag')
             except TypeError:
                 print("Index: " + str(index) + " missing country \n")
                 self.flaggedLocations.append(index)  # mark index in original data frame
-                self.log['location'].append(location)
+                self.log['location'].append((location, country))
                 self.log['index'].append(index)
                 self.log['type'].append('distance flag')
 

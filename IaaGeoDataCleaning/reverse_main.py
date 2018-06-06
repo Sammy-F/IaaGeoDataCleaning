@@ -1,7 +1,7 @@
 import pandas as pd
 import datetime
 import re
-import reverse_geocode as rg
+import reverse_geocoder as rg
 import string
 
 """
@@ -27,7 +27,10 @@ class GeocodeValidator:
         self.fileName = fileName
 
         self.flaggedLocations = []  # flagged indexes in data frame
-        self.log = {'index': [], 'location': [], 'type': []}
+        self.log = {'index': [], 'location': [], 'type': [], 'comment': []}
+
+        self.countryCodes = {}
+        self.createCountryCodeDict()
 
         if fileName.endswith('xlsx'):
             self.tobeValidatedLocation = pd.read_excel(fileName)
@@ -46,32 +49,59 @@ class GeocodeValidator:
                 location = string.capwords(str(row["Location"]).lower())
 
                 inputCoordinates = (row.loc["Latitude"], row.loc["Longitude"])
-                nearestCountry = rg.get(inputCoordinates)['country']
+                nearestLocation = rg.get(inputCoordinates, mode=1)
 
-                if nearestCountry != country:
-                    print("Index: " + str(index) + " country does not match entered coordinates.(Index flagged.) \n")
+                try:
+                    if nearestLocation['cc'] != self.countryCodes[country]:
+                        print("Index: " + str(index) + " country does not match entered coordinates.(Index flagged.) \n")
+                        self.flaggedLocations.append(index)
+                        self.log['location'].append((location, country))
+                        self.log['index'].append(index)
+                        self.log['type'].append(' mismatched country')
+                        self.log['comment'].append(' ' + nearestLocation['cc'])
+                except KeyError:
+                    print("Index: " + str(index) + " incorrect country format.(Index flagged.) \n")
                     self.flaggedLocations.append(index)
                     self.log['location'].append((location, country))
                     self.log['index'].append(index)
-                    self.log['type'].append('mismatched country')
+                    self.log['type'].append(' wrong format')
+                    self.log['comment'].append(' ' + country)
 
-
-            except TypeError:
-                print("Index: " + str(index) + " country does not match entered coordinates.(Index flagged.) \n")
+            except (TypeError, IndexError) as error:
+                print("Index: " + str(index) + " no entered coordinates.(Index flagged.) \n")
                 self.flaggedLocations.append(index)
                 self.log['location'].append((location, country))
                 self.log['index'].append(index)
-                self.log['type'].append('mismatched country')
+                self.log['type'].append(' coords NA')
+                self.log['comment'].append(' NA')
 
         self.logResults()
 
+    def createCountryCodeDict(self):
+        """
+        Creates a dictionary whose (key, value) pairs are a country and its country code
+        in order to utilize the geocoder API calls.
+        :return:
+        """
+        countriesData = pd.read_csv("countryInfo.txt", delimiter="\t")
+
+        for (index, row) in countriesData.iterrows():
+            countryCode = str(row.loc["ISO"])
+            country = str(row.loc["Country"])
+            self.countryCodes[country] = countryCode
+
     def logResults(self):
+        print(len(self.log['location']))
+        print(len(self.log['index']))
+        print(len(self.log['type']))
+        print(len(self.log['comment']))
+
         print("Flagged locations are at indicies: " + str(self.flaggedLocations))
         loggedDF = pd.DataFrame(data=self.log)
         loggedDF.to_csv('validation_log_' + str(now) + '.csv', sep=',', encoding='utf-8')
         return len(self.flaggedLocations) / (1e-10 + self.tobeValidatedLocation.shape[0])
 
 
-validator1 = GeocodeValidator("NaNtblLocations.xlsx")
+validator1 = GeocodeValidator("/Users/thytnguyen/Desktop/tblLocation.xlsx")
 validator1.run()
 
