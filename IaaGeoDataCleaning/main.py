@@ -60,7 +60,14 @@ class GeocodeValidator:
                     if geocodeTarget not in self.geocodedLocations:
                         coded = self.reverseGeocode(index, geocodeTarget)
                         if coded:
-                            self.validateLocation(index, row, geocodeTarget)
+                            if not row['Latitude'] == 0 and not row['Longitude'] == 0:
+                                self.validateLocation(index, row, geocodeTarget)
+                            else:
+                                print("Index: " + str(index) + " is missing latitude/longitude.(Index flagged.) \n")
+                                self.flaggedLocations.append(index)
+                                self.log['location'].append(geocodeTarget)
+                                self.log['index'].append(index)
+                                self.log['type'].append('missing latitude and longitude')
                         else:
                             continue
 
