@@ -111,7 +111,7 @@ class GeocodeValidator:
 
         coordinates = [(recordedLong, recordedLat), (-recordedLong, recordedLat), (-recordedLong, -recordedLat),
                        (recordedLong, -recordedLat), (-recordedLat, recordedLong), (-recordedLat, -recordedLong),
-                       (-recordedLat, -recordedLong)]
+                       (recordedLat, -recordedLong)]
 
         for coordinate in coordinates:
             code = rg.get(coordinate, mode=1)
