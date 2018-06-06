@@ -3,7 +3,8 @@ import datetime
 import re
 import math
 import geocoder
-
+from pandas import ExcelWriter
+import string
 """
 GeocodeValidator allows the user to perform reverse geocoding
 on a .xlsx or .csv to ensure that input locations correspond to
@@ -49,7 +50,28 @@ class GeocodeValidator:
         g = geocoder.geonames("Minneapolis", key=self.geoID)
         if g.ok:
             for (index, row) in self.tobeValidatedLocation.iterrows():
-                self.validateLocation(index, row)
+                try:
+                    row['Location'] = parenNumRegex.sub("", row['Location'])  # removes (num) can now try API call
+                    country = string.capwords(str(row["Country"]).lower())
+                    location = string.capwords(str(row["Location"]).lower())
+                    geocodeTarget = (location, country)
+
+                    # Saves template information to reduce the number of API calls
+                    if geocodeTarget not in self.geocodedLocations:
+                        coded = self.reverseGeocode(index, geocodeTarget)
+                        if coded:
+                            self.validateLocation(index, row, geocodeTarget)
+                        else:
+                            continue
+
+                except:
+                    print("Index: " + str(index) + " had an error.(Index flagged.) \n")
+                    self.flaggedLocations.append(index)
+                    self.log['location'].append(geocodeTarget)
+                    self.log['index'].append(index)
+                    self.log['type'].append('generic error')
+                    continue
+
             self.logResults()
         else:
             print("Invalid ID")
@@ -67,7 +89,7 @@ class GeocodeValidator:
             country = str(row.loc["Country"])
             self.countryCodes[country] = countryCode
 
-    def validateLocation(self, index, row):
+    def validateLocation(self, index, row, geocodeTarget):
         """
         Checks to see whether the latitude and longitude entered corresponds to that of the entered location
         by comparing their distance to the standard distance.
@@ -76,34 +98,40 @@ class GeocodeValidator:
         :return:
         """
 
-        # Creates a tuple containing the location and corresponding country
-        country = str(row.loc["Country"]).lower().capitalize()
-        location = str(row.loc["Location"]).lower().capitalize()
-        geocodeTarget = (location, country)
-
-        # Saves template information to reduce the number of API calls
-        if geocodeTarget not in self.geocodedLocations:
-            self.reverseGeocode(index, geocodeTarget)
+        # # Creates a tuple containing the location and corresponding country
+        # country = string.capwords(str(row.loc["Country"]).lower())
+        # location = string.capwords(str(row.loc["Location"]).lower())
+        # geocodeTarget = (location, country)
+        #
+        # # Saves template information to reduce the number of API calls
+        # if geocodeTarget not in self.geocodedLocations:
+        #     self.reverseGeocode(index, geocodeTarget)
 
         # Calculates the distance
-        inputLat = float(row.loc['Latitude'])
-        inputLng = float(row.loc['Longitude'])
-        correctLat = float(self.geocodedLocations[geocodeTarget][0])
-        correctLng = float(self.geocodedLocations[geocodeTarget][1])
+        try:
+            inputLat = float(row.loc['Latitude'])
+            inputLng = float(row.loc['Longitude'])
+            correctLat = float(self.geocodedLocations[geocodeTarget][0])
+            correctLng = float(self.geocodedLocations[geocodeTarget][1])
 
-        distance = self.calculateDistance(inputLat, inputLng, correctLat, correctLng)
+            distance = self.calculateDistance(inputLat, inputLng, correctLat, correctLng)
 
-        # Compares the distance to the standard flagged distance
-        if distance > self.flagDistance:
-            isGood = self.handleBadDistance(inputLat, inputLng, correctLat, correctLng)
+            # Compares the distance to the standard flagged distance
+            if distance > self.flagDistance:
+                isGood = self.handleBadDistance(inputLat, inputLng, correctLat, correctLng)
 
-            if not isGood:
-                print("Index: " + str(index) + " distance between points is too large.(Index flagged.) \n")
-                self.flaggedLocations.append(index)  # mark index in original data frame
-                self.log['location'].append(geocodeTarget)
-                self.log['index'].append(index)
-                self.log['type'].append('distance flag')
-
+                if not isGood:
+                    print("Index: " + str(index) + " distance between points is too large.(Index flagged.) \n")
+                    self.flaggedLocations.append(index)  # mark index in original data frame
+                    self.log['location'].append(geocodeTarget)
+                    self.log['index'].append(index)
+                    self.log['type'].append('distance flag')
+        except:
+            print("Index: " + str(index) + " API did not return (lat, lng) for location.(Index flagged.) \n")
+            self.flaggedLocations.append(index)  # mark index in original data frame
+            self.log['location'].append(geocodeTarget)
+            self.log['index'].append(index)
+            self.log['type'].append('location flag')
 
     def logResults(self):
         print("Flagged locations are at indicies: " + str(self.flaggedLocations))
@@ -116,18 +144,28 @@ class GeocodeValidator:
         Retrieves the latitude and longitude of the location entered in the data, and
         saves that information in the dictionary: (location, country) : (latitude, longitude)
         :param locationTuple: (location, country)
-        :return:
+        :return: whether the location entered was valid for geocoding
         """
-        geoInfo = geocoder.geonames(location=locationTuple[0],
-                                    country=self.countryCodes[locationTuple[1].lower().capitalize()],
-                                    key=self.geoID)
-        # Handles cases where (location, country) does not return a result
-        if not geoInfo.ok:
-            self.flagged_locations.append(index)
+        try :
+            geoInfo = geocoder.geonames(location=locationTuple[0],
+                                        key=self.geoID)
+            # Handles cases where (location, country) does not return a result
+            if not geoInfo.ok:
+                print("Index: " + str(index) + " location and country not found.(Index flagged.) \n")
+                self.flaggedLocations.append(index)
+                self.log['location'].append(locationTuple)
+                self.log['index'].append(index)
+                self.log['type'].append('location not found')
+                return False
+            self.geocodedLocations[locationTuple] = (geoInfo.lat, geoInfo.lng)
+            return True
+        except KeyError:
+            print("Index: " + str(index) + " country not found.(Index flagged.) \n")
+            self.flaggedLocations.append(index)
             self.log['location'].append(locationTuple)
             self.log['index'].append(index)
-            self.log['type'].append('location not found')
-        self.geocodedLocations[locationTuple] = (geoInfo.lat, geoInfo.lng)
+            self.log['type'].append('country not found')
+            return False
 
     def calculateDistance(self, lat1, lng1, lat2, lng2):
         """
@@ -197,9 +235,15 @@ class GeocodeValidator:
         return True
 
 
-validator1 = GeocodeValidator(geoID, "test.xlsx")
-# validator1 = GeocodeValidator("lolsdefwe", "test.xlsx")
+validator1 = GeocodeValidator(geoID, "NaNtblLocations.xlsx")
 validator1.run()
+#
+# validator2 = GeocodeValidator(geoID, "test2.xlsx")
+# validator2.run()
 
-validator2 = GeocodeValidator(geoID, "test2.xlsx")
-validator2.run()
+# writer = ExcelWriter("NaNtblLocations.xlsx")
+# edited_locations = pd.read_excel("/Users/thytnguyen/Desktop/tblLocation.xlsx")
+# edited_locations = edited_locations.dropna(subset=["Latitude"])
+# edited_locations.to_excel(writer, 'Sheet1', index=False)
+# writer.save()
+

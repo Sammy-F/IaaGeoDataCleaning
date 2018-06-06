@@ -1,0 +1,865 @@
+,index,location,type
+0,2,"('Qara- Boghe', 'Afghanistan')",location not found
+1,3,"('Angola', 'Angola')",distance flag
+2,4,"('Cabinda, St Vincent', 'Angola')",location not found
+3,6,"('Cela', 'Angola')",distance flag
+4,7,"('Chianga', 'Angola')",distance flag
+5,9,"('Kilombo', 'Angola')",distance flag
+6,10,"('Kilombo Experimental Station', 'Angola')",location not found
+7,12,"('Mazozo Experimental Station', 'Angola')",location not found
+8,13,"('Poligno-floresta', 'Angola')",location not found
+9,14,"('Anguil - Provincia La Pampa', 'Argentina')",distance flag
+10,15,"('Argentina', 'Argentina')",distance flag
+11,16,"('El Manantial', 'Argentina')",distance flag
+12,17,"('Los Pereyras', 'Argentina')",distance flag
+13,19,"('Zakatala, City', 'Azerbaijan')",location not found
+14,20,"('Dinajpur', 'Bangladesh')",distance flag
+15,21,"('Ars, Rajbari, Dinajpur', 'Bangladesh')",location not found
+16,22,"('Ars. Burirhat, Rangpur', 'Bangladesh')",location not found
+17,23,"('Bogra', 'Bangladesh')",distance flag
+18,24,"('Burirhat Farm', 'Bangladesh')",location not found
+19,25,"('Gazipur', 'Bangladesh')",distance flag
+20,32,"('Joydebpur, Gazipur', 'Bangladesh')",distance flag
+21,33,"('Rahmatpur Barisal', 'Bangladesh')",distance flag
+22,34,"('Rajbari', 'Bangladesh')",distance flag
+23,35,"('Rars, Bari, Jamalpur', 'Bangladesh')",location not found
+24,36,"('Belmopan, Cardi Station', 'Belize')",location not found
+25,37,"('Central Farm', 'Belize')",distance flag
+26,38,"('San Pedro', 'Belize')",distance flag
+27,40,"('Algarrobal', 'Bolivia')",distance flag
+28,41,"('Bolivia', 'Bolivia')",distance flag
+29,42,"('Ca╤ada Larga', 'Bolivia')",location not found
+30,44,"('Chuquisaca', 'Bolivia')",distance flag
+31,46,"('El Abra (santa Cruz)', 'Bolivia')",location not found
+32,47,"('El Palmar (santa Cruz)', 'Bolivia')",distance flag
+33,48,"('El Vallecito', 'Bolivia')",location not found
+34,49,"('Entre Rios', 'Bolivia')",distance flag
+35,50,"('Fundacion Proinpa', 'Bolivia')",location not found
+36,51,"('Iboperenda', 'Bolivia')",distance flag
+37,52,"('Lomas De Arena (santa Cruz)', 'Bolivia')",location not found
+38,53,"('Mairana, Santa Cruz', 'Bolivia')",distance flag
+39,54,"('Monteagudo', 'Bolivia')",distance flag
+40,55,"('Okinawa', 'Bolivia')",distance flag
+41,57,"('Pairumani', 'Bolivia')",distance flag
+42,58,"('Pajonal', 'Bolivia')",distance flag
+43,59,"('Saavedra', 'Bolivia')",distance flag
+44,60,"('San Ignacio', 'Bolivia')",distance flag
+45,62,"('Santa Cruz (cuatro Caminos)', 'Bolivia')",location not found
+46,63,"('Santa Cruz De La Sierra', 'Bolivia')",distance flag
+47,64,"('Santa Cruz De La Sierra (el Vallecito)', 'Bolivia')",location not found
+48,65,"('Tarija', 'Bolivia')",distance flag
+49,66,"('Valle Del Medio', 'Bolivia')",distance flag
+50,67,"('Vallecitos (iboperenda)', 'Bolivia')",location not found
+51,69,"('Yacuiba', 'Bolivia')",distance flag
+52,70,"('Zona Norte De Santa Cruz', 'Bolivia')",location not found
+53,71,"('Zuda╤es', 'Bolivia')",location not found
+54,72,"('Goodhope', 'Botswana')",location not found
+55,75,"('Pelotshetlha', 'Botswana')",location not found
+56,77,"('Sebele-lown', 'Botswana')",location not found
+57,78,"('Brazil', 'Brazil')",distance flag
+58,79,"('Campo Largo - Pr', 'Brazil')",distance flag
+59,83,"('Jardinopolis', 'Brazil')",distance flag
+60,85,"('Farako-ba', 'Burkina Faso')",location not found
+61,89,"('Mosso', 'Burundi')",location not found
+62,90,"('Kazakhstan', 'Central Asia')",country not found
+63,91,"('Beijing', 'China')",distance flag
+64,92,"('Bijie', 'China')",distance flag
+65,94,"('Fujian Province', 'China')",distance flag
+66,95,"('Guang-xi', 'China')",distance flag
+67,97,"('Honghe', 'China')",distance flag
+68,98,"('Jialize, Kunming, Yunnan', 'China')",location not found
+69,100,"('Linciang', 'China')",location not found
+70,101,"('Mian Yang', 'China')",distance flag
+71,102,"('Mongzi', 'China')",location not found
+72,103,"('Nanning', 'China')",distance flag
+73,104,"('Oifin', 'China')",location not found
+74,105,"('Qujin', 'China')",location not found
+75,106,"('Simao', 'China')",distance flag
+76,107,"('Wenshan', 'China')",distance flag
+77,108,"('Yunnan', 'China')",distance flag
+78,109,"('Aguas Blancas', 'Colombia')",distance flag
+79,110,"('Aguas Claras', 'Colombia')",distance flag
+80,111,"('Andremoni', 'Colombia')",location not found
+81,112,"('Arborates', 'Colombia')",location not found
+82,113,"('Arguello Bajo, Yacuanquer', 'Colombia')",location not found
+83,114,"('Atuncela, Dagua', 'Colombia')",distance flag
+84,115,"('Bucaramanga', 'Colombia')",distance flag
+85,116,"('Bucaramanga, Pinchote', 'Colombia')",location not found
+86,118,"('Buga, Media Canoa', 'Colombia')",location not found
+87,119,"('Caicedonia', 'Colombia')",distance flag
+88,120,"('Caldono', 'Colombia')",distance flag
+89,122,"('Campo Alegre, Huila', 'Colombia')",distance flag
+90,123,"('Ca╤a Flecha', 'Colombia')",location not found
+91,124,"('Carmen De Bolivar', 'Colombia')",distance flag
+92,125,"('Cerete, Cordoba', 'Colombia')",distance flag
+93,126,"('Cerrito', 'Colombia')",distance flag
+94,127,"('Cienega De Oro', 'Colombia')",location not found
+95,128,"('Ciudad Bolivar', 'Colombia')",distance flag
+96,129,"('Colombia', 'Colombia')",distance flag
+97,130,"('Cordoba', 'Colombia')",distance flag
+98,131,"('Corozal', 'Colombia')",distance flag
+99,132,"('Darien, Valle Del Cauca', 'Colombia')",distance flag
+100,133,"('Duitama', 'Colombia')",distance flag
+101,135,"('El Espinal, Tolima', 'Colombia')",distance flag
+102,136,"('El Libano', 'Colombia')",distance flag
+103,137,"('El Naranjal', 'Colombia')",distance flag
+104,138,"('El Rosario', 'Colombia')",distance flag
+105,139,"('El Tambo, Valle Del Cauca', 'Colombia')",distance flag
+106,140,"('El Tomate', 'Colombia')",distance flag
+107,141,"('Fuente De Oro, Granda', 'Colombia')",location not found
+108,142,"('Garzon, Huila', 'Colombia')",distance flag
+109,143,"('Granada', 'Colombia')",distance flag
+110,144,"('Guadalajara De Buga', 'Colombia')",distance flag
+111,145,"('Independencia, Caldono', 'Colombia')",location not found
+112,146,"('La Catalina, Pereira', 'Colombia')",location not found
+113,147,"('La Cubillera, Granada', 'Colombia')",location not found
+114,148,"('La Palomera', 'Colombia')",distance flag
+115,149,"('La Trocha 12, Granda', 'Colombia')",location not found
+116,150,"('La Ulloa Mpio Rivera', 'Colombia')",location not found
+117,151,"('La Union, Corcega', 'Colombia')",location not found
+118,152,"('Lejania, Granada', 'Colombia')",location not found
+119,153,"('Matazul', 'Colombia')",distance flag
+120,154,"('Menegua', 'Colombia')",distance flag
+121,155,"('Mondomo, Santander', 'Colombia')",distance flag
+122,156,"('Monteria', 'Colombia')",distance flag
+123,157,"('Neiva, Huila', 'Colombia')",distance flag
+124,158,"('Obando, Molina', 'Colombia')",distance flag
+125,159,"('Palmira', 'Colombia')",distance flag
+126,160,"('Paraguaicito, Armenia', 'Colombia')",location not found
+127,161,"('Pelaya-cesar (aguachica)', 'Colombia')",location not found
+128,162,"('Pereira', 'Colombia')",distance flag
+129,163,"('Piendamo', 'Colombia')",distance flag
+130,164,"('Procampo', 'Colombia')",location not found
+131,165,"('Puerto Lopez', 'Colombia')",distance flag
+132,167,"('Quindio, Montenegro', 'Colombia')",distance flag
+133,168,"('Rivera, Huila', 'Colombia')",distance flag
+134,169,"('Roldanillo', 'Colombia')",distance flag
+135,170,"('Sabana De Torres, Santander', 'Colombia')",distance flag
+136,171,"('Sahagu', 'Colombia')",location not found
+137,172,"('San Antonio', 'Colombia')",distance flag
+138,173,"('San Barreto', 'Colombia')",location not found
+139,174,"('San Francisco, Sandona', 'Colombia')",location not found
+140,175,"('San Ignacio, Granada', 'Colombia')",distance flag
+141,176,"('San Pedro De Uraba', 'Colombia')",distance flag
+142,177,"('San Pelayo', 'Colombia')",distance flag
+143,178,"('San Rafael, Consaca', 'Colombia')",location not found
+144,179,"('Sandona, Narino, Fidar', 'Colombia')",location not found
+145,180,"('Santa Helena', 'Colombia')",distance flag
+146,181,"('Santa Lucia', 'Colombia')",distance flag
+147,182,"('Santander De Quilichao', 'Colombia')",distance flag
+148,183,"('Segovia', 'Colombia')",distance flag
+149,184,"('Semivalle', 'Colombia')",location not found
+150,185,"('Sincelejo', 'Colombia')",distance flag
+151,186,"('Taluma', 'Colombia')",location not found
+152,187,"('Tierra Alta', 'Colombia')",distance flag
+153,188,"('Tulenapa', 'Colombia')",location not found
+154,189,"('Tunja', 'Colombia')",distance flag
+155,190,"('Turipana', 'Colombia')",location not found
+156,191,"('Turipana', 'Colombia')",location not found
+157,192,"('Turipana', 'Colombia')",location not found
+158,193,"('Turipana', 'Colombia')",location not found
+159,194,"('Valle De Magdalena', 'Colombia')",distance flag
+160,198,"('Valle Del Cauca', 'Colombia')",distance flag
+161,199,"('Venecia', 'Colombia')",distance flag
+162,200,"('Villavicencio', 'Colombia')",distance flag
+163,201,"('Villavo', 'Colombia')",location not found
+164,202,"('Yotoco-valle Del Cauca', 'Colombia')",distance flag
+165,203,"('Congo', 'Congo')",country not found
+166,204,"('Odziba', 'Congo')",country not found
+167,205,"('Tshibati', 'Congo')",country not found
+168,206,"('Ca╤as, Guanacaste', 'Costa Rica')",location not found
+169,207,"('Costa Rica', 'Costa Rica')",distance flag
+170,208,"('El Aguila, Pejibaye', 'Costa Rica')",location not found
+171,209,"('El Parque, Los Chiles', 'Costa Rica')",location not found
+172,210,"('El Progreso, Pejibaye', 'Costa Rica')",location not found
+173,211,"('Guagaral', 'Costa Rica')",location not found
+174,212,"('Guanacaste', 'Costa Rica')",distance flag
+175,213,"('Las Ca╤as', 'Costa Rica')",location not found
+176,214,"('Pejibaye De Perez Zeledon', 'Costa Rica')",distance flag
+177,216,"('Upala', 'Costa Rica')",distance flag
+178,217,"('Upala Pueblo Nuevo', 'Costa Rica')",location not found
+179,218,"('Veracruz, Pejibaye', 'Costa Rica')",location not found
+180,219,"('Badikaha', ""Cote D'ivoire"")",country not found
+181,220,"('Bouake', ""Cote D'ivoire"")",country not found
+182,221,"('Ferkessedougou', ""Cote D'ivoire"")",country not found
+183,222,"('Sinematiali', ""Cote D'ivoire"")",country not found
+184,223,"('Touba', ""Cote D'ivoire"")",country not found
+185,224,"('Warda/adrao-mbe', ""Cote D'ivoire"")",country not found
+186,225,"('Alquizar', 'Cuba')",distance flag
+187,226,"('Tomeguin', 'Cuba')",distance flag
+188,228,"('Comuna San Rafael, Peninsula Sta Elena', 'Ecuador')",location not found
+189,229,"('Ecuador', 'Ecuador')",distance flag
+190,230,"('Fca. Exp. Josefina Balzar', 'Ecuador')",location not found
+191,231,"('La Virginia Quevedo', 'Ecuador')",location not found
+192,232,"('Lodana', 'Ecuador')",distance flag
+193,233,"('Los Rios', 'Ecuador')",distance flag
+194,234,"('Organos', 'Ecuador')",distance flag
+195,236,"('Pindal', 'Ecuador')",distance flag
+196,239,"('Gemmeiza', 'Egypt')",location not found
+197,240,"('Giza', 'Egypt')",distance flag
+198,241,"('Nubaria', 'Egypt')",distance flag
+199,243,"('Sids', 'Egypt')",distance flag
+200,245,"('Apastepeque', 'El Salvador')",distance flag
+201,246,"('Armenia', 'El Salvador')",distance flag
+202,247,"('Barrio Nuevo, La Paz', 'El Salvador')",location not found
+203,248,"('Chalchahuapa', 'El Salvador')",location not found
+204,249,"('Cuhisnuat', 'El Salvador')",location not found
+205,250,"('El Coyalito', 'El Salvador')",location not found
+206,251,"('El Pepito, Concep., Chalate', 'El Salvador')",location not found
+207,252,"('Jiquilisco', 'El Salvador')",distance flag
+208,253,"('Jocoro, Morazan', 'El Salvador')",distance flag
+209,254,"('Jucuapa, Usulutan', 'El Salvador')",distance flag
+210,255,"('La Libertad', 'El Salvador')",distance flag
+211,256,"('Lomas De Santiago', 'El Salvador')",distance flag
+212,257,"('Los Cipreses, Conchagua, La Union', 'El Salvador')",location not found
+213,258,"('Nacimiento, La Union', 'El Salvador')",distance flag
+214,259,"('Nahuilingo', 'El Salvador')",distance flag
+215,260,"('Nueva Concepcion', 'El Salvador')",distance flag
+216,261,"('Quelepa, San Miguel', 'El Salvador')",distance flag
+217,262,"('San Andres', 'El Salvador')",distance flag
+218,263,"('San Andres (sb)', 'El Salvador')",location not found
+219,264,"('San Mauricio', 'El Salvador')",distance flag
+220,265,"('San Pedro Puxtla, Ahuachapan', 'El Salvador')",distance flag
+221,266,"('San Vicente', 'El Salvador')",distance flag
+222,267,"('Santa Cruz', 'El Salvador')",distance flag
+223,268,"('Santa Cruz Porrillo', 'El Salvador')",location not found
+224,269,"('Santa Cruz, El Salvador', 'El Salvador')",distance flag
+225,270,"('Suchitoto, Cuscatlan', 'El Salvador')",distance flag
+226,271,"('Tenancingo', 'El Salvador')",distance flag
+227,272,"('Uluazapa, La Union', 'El Salvador')",location not found
+228,273,"('Halhale', 'Eritrea')",distance flag
+229,275,"('Pontevedra', 'España')",country not found
+230,278,"('Ambo', 'Ethiopia')",distance flag
+231,281,"('Bako', 'Ethiopia')",distance flag
+232,283,"('Ethiopia', 'Ethiopia')",distance flag
+233,284,"('Haramaya', 'Ethiopia')",distance flag
+234,287,"('Kitale-ws', 'Ethiopia')",location not found
+235,288,"('Kokate', 'Ethiopia')",location not found
+236,289,"('Kulumsa', 'Ethiopia')",location not found
+237,291,"('Mieso', 'Ethiopia')",distance flag
+238,292,"('Nazareth', 'Ethiopia')",distance flag
+239,294,"('Nazret', 'Ethiopia')",generic error
+240,295,"('Pawe', 'Ethiopia')",distance flag
+241,296,"('Ws', 'Ethiopia')",location not found
+242,298,"('Dobuleni Research Station', 'Fiji')",location not found
+243,299,"('Koronnia Research Station', 'Fiji')",location not found
+244,300,"('Legalega Research Station', 'Fiji')",location not found
+245,301,"('Sigatoka Research Station', 'Fiji')",location not found
+246,302,"('Tserovani', 'Georgia')",distance flag
+247,305,"('Fumesua', 'Ghana')",location not found
+248,311,"('Thessaloniki-kentriko', 'Greece')",location not found
+249,312,"('Barcenas, Villa Nuev', 'Guatemala')",location not found
+250,313,"('Caballo Blanco, Retalhuleu', 'Guatemala')",distance flag
+251,315,"('Cuyuta', 'Guatemala')",distance flag
+252,316,"('El Ovejero, Jutiapa', 'Guatemala')",distance flag
+253,317,"('Estanzuela', 'Guatemala')",distance flag
+254,318,"('Finca, Las Vegas Tequisate.', 'Guatemala')",location not found
+255,319,"('Isidro Avarez', 'Guatemala')",location not found
+256,321,"('La Flecha', 'Guatemala')",location not found
+257,322,"('La Maquina', 'Guatemala')",distance flag
+258,323,"('La M┴quina Caballo Blanco', 'Guatemala')",location not found
+259,324,"('La Maquina, Linea A5', 'Guatemala')",location not found
+260,325,"('La Maquina, Tulate', 'Guatemala')",location not found
+261,326,"('Las Monjas', 'Guatemala')",location not found
+262,327,"('Las Vegas', 'Guatemala')",distance flag
+263,328,"('Monjas, Jalapa', 'Guatemala')",distance flag
+264,329,"('Nueva Concepcion', 'Guatemala')",distance flag
+265,330,"('Ovejero, Jutiapa', 'Guatemala')",distance flag
+266,331,"('Quesada, Jutiapa', 'Guatemala')",distance flag
+267,332,"('Salam B. V.', 'Guatemala')",location not found
+268,333,"('San Jos╔ Pinula', 'Guatemala')",location not found
+269,334,"('San Pedro Pinula, Jalapa', 'Guatemala')",distance flag
+270,335,"('Sto Domingo', 'Guatemala')",location not found
+271,336,"('Tequinzate', 'Guatemala')",location not found
+272,337,"('Tequinzate', 'Guatemala')",location not found
+273,338,"('Zacapa', 'Guatemala')",distance flag
+274,340,"('Chantilly', 'Haiti')",distance flag
+275,341,"('Damien Farm.', 'Haiti')",location not found
+276,342,"('Karoman, Lavallee', 'Haiti')",location not found
+277,344,"('Nan- Jn Pierre, Cap-rouge', 'Haiti')",location not found
+278,345,"('Candelaria, Lempira', 'Honduras')",distance flag
+279,346,"('Catacamas, Olancho', 'Honduras')",distance flag
+280,348,"('Comayagua, E.e. Playitas', 'Honduras')",location not found
+281,350,"('El Guaco Yorito, Yoro', 'Honduras')",location not found
+282,351,"('El Pital, Atlantida', 'Honduras')",distance flag
+283,352,"('Higuero Qumado, Yori', 'Honduras')",location not found
+284,353,"('Jutiquile, Olancho', 'Honduras')",distance flag
+285,355,"('Las Acacias', 'Honduras')",location not found
+286,356,"('Litoral Atlantico', 'Honduras')",location not found
+287,357,"('Luquigue Yorito, Yoro', 'Honduras')",location not found
+288,358,"('Mina Handa (yorito Yoco)', 'Honduras')",location not found
+289,359,"('Obraje, Danli', 'Honduras')",location not found
+290,360,"('Omonita', 'Honduras')",distance flag
+291,361,"('Pata Stera (yorito Yoco)', 'Honduras')",location not found
+292,362,"('Playita', 'Honduras')",distance flag
+293,363,"('Potrerillos, Olancho', 'Honduras')",distance flag
+294,364,"('Rio Arriba Yorito, Yoro', 'Honduras')",location not found
+295,365,"('San Lucas, El Paraiso', 'Honduras')",distance flag
+296,366,"('San Pedro De Catacamas, Olancho', 'Honduras')",location not found
+297,367,"('Santa Cruz, Yorito,y', 'Honduras')",location not found
+298,368,"('Yoro, El Pate', 'Honduras')",distance flag
+299,369,"('Yoro, Morazan', 'Honduras')",distance flag
+300,370,"('Adoni Mandal', 'India')",location not found
+301,372,"('Amberpet', 'India')",distance flag
+302,373,"('Anantnagar', 'India')",location not found
+303,374,"('Arabhavi', 'India')",location not found
+304,375,"('Auli', 'India')",distance flag
+305,376,"('Aurangabad', 'India')",distance flag
+306,378,"('Bahraich, Crop Research Station', 'India')",location not found
+307,379,"('Bajaura', 'India')",distance flag
+308,384,"('Belipar, Gorakhpur, U.p.', 'India')",location not found
+309,385,"('Bihar', 'India')",distance flag
+310,386,"('Chhindwara', 'India')",distance flag
+311,388,"('Delhi', 'India')",distance flag
+312,389,"('Dhaulakuan', 'India')",distance flag
+313,390,"('Dholi', 'India')",distance flag
+314,392,"('Dmr I.a.r.i.', 'India')",location not found
+315,393,"('Dohad', 'India')",distance flag
+316,395,"('Godhsa Gaujasat', 'India')",location not found
+317,397,"('India', 'India')",distance flag
+318,398,"('Issarwadi', 'India')",location not found
+319,400,"('Jashipur', 'India')",distance flag
+320,402,"('Kangra (h.p.)', 'India')",location not found
+321,403,"('Kanpur', 'India')",distance flag
+322,405,"('Karnataka', 'India')",distance flag
+323,406,"('Khadbrabhra', 'India')",location not found
+324,407,"('Khedbrahma', 'India')",distance flag
+325,411,"('Messina', 'India')",location not found
+326,412,"('Muzafferpur', 'India')",location not found
+327,413,"('New Delhi', 'India')",distance flag
+328,414,"('P.r Pally', 'India')",location not found
+329,415,"('Pahalgam', 'India')",distance flag
+330,418,"('Parbhani', 'India')",distance flag
+331,419,"('Poonch', 'India')",distance flag
+332,420,"('Prabhakar Reddy', 'India')",location not found
+333,421,"('Probhakor', 'India')",location not found
+334,423,"('Pusa', 'India')",distance flag
+335,424,"('R&d (pachora).', 'India')",location not found
+336,425,"('R&d (wadadhe).', 'India')",location not found
+337,427,"('Ranchi', 'India')",distance flag
+338,428,"('Rau Pusa (bihar)', 'India')",location not found
+339,429,"('Rayalkole', 'India')",location not found
+340,430,"('Samastipur', 'India')",distance flag
+341,433,"('Srinagar, K.d. Research Station', 'India')",location not found
+342,435,"('Umiam Meghalaya', 'India')",location not found
+343,437,"('Wahdan, Pahalgam, Kashmir', 'India')",location not found
+344,438,"('Weerasak Doungjan', 'India')",location not found
+345,439,"('Bontobili', 'Indonesia')",location not found
+346,440,"('Gowa S. Sulawesi', 'Indonesia')",location not found
+347,441,"('Hulu Sungai Selatan', 'Indonesia')",distance flag
+348,442,"('Jambegede', 'Indonesia')",distance flag
+349,445,"('Muneng', 'Indonesia')",distance flag
+350,446,"('Naibonat', 'Indonesia')",distance flag
+351,447,"('Natar, Lampung', 'Indonesia')",distance flag
+352,448,"('Probolinggo', 'Indonesia')",distance flag
+353,449,"('Takalar, South Sulawesi', 'Indonesia')",distance flag
+354,450,"('Yogyakarta', 'Indonesia')",distance flag
+355,451,"('Agricultural Research Station Of Gorgan', 'Iran')",location not found
+356,452,"('Safiabad', 'Iran')",distance flag
+357,453,"('Ai - Latifyia', 'Iraq')",location not found
+358,454,"('Baghdad', 'Iraq')",distance flag
+359,455,"(""Bonghdad, Al_mada'en"", 'Iraq')",location not found
+360,456,"('Tuwaitha Baghdad', 'Iraq')",location not found
+361,457,"('Central Asia', 'Kazakstan')",country not found
+362,459,"('Baobab', 'Kenya')",distance flag
+363,460,"('Bondo- On Farm', 'Kenya')",location not found
+364,462,"('Bungema', 'Kenya')",location not found
+365,464,"('Burura', 'Kenya')",location not found
+366,465,"('Busia', 'Kenya')",distance flag
+367,467,"('Emali', 'Kenya')",distance flag
+368,471,"('Homabay', 'Kenya')",location not found
+369,472,"('Ithookwe', 'Kenya')",distance flag
+370,473,"('K.t.i', 'Kenya')",location not found
+371,475,"('Kampiyamawe', 'Kenya')",location not found
+372,476,"('Kari - Embu', 'Kenya')",location not found
+373,477,"('Karurina', 'Kenya')",location not found
+374,479,"('Kenya', 'Kenya')",distance flag
+375,480,"('Kesref', 'Kenya')",location not found
+376,483,"('Kimilili', 'Kenya')",distance flag
+377,484,"('Kimlili', 'Kenya')",location not found
+378,485,"('Kitalale', 'Kenya')",location not found
+379,487,"('Kitale Syn Ii (ethiopia)', 'Kenya')",location not found
+380,488,"('Kitui', 'Kenya')",distance flag
+381,489,"('Ksc Field', 'Kenya')",location not found
+382,490,"('Machakos', 'Kenya')",distance flag
+383,492,"('Makueni', 'Kenya')",distance flag
+384,493,"('Mitungu', 'Kenya')",location not found
+385,498,"('Narc, Kitale', 'Kenya')",location not found
+386,501,"('Sigor', 'Kenya')",distance flag
+387,502,"('Tanseed', 'Kenya')",location not found
+388,504,"('Wanbugu', 'Kenya')",location not found
+389,505,"('Western Kakamrga', 'Kenya')",location not found
+390,506,"('Western Seeds', 'Kenya')",location not found
+391,508,"('Lesotho', 'Lesotho')",distance flag
+392,518,"('Baka Research Station', 'Malawi')",location not found
+393,519,"('Bembeke', 'Malawi')",distance flag
+394,522,"('Bwanje', 'Malawi')",distance flag
+395,523,"('Chitala', 'Malawi')",distance flag
+396,524,"('Chitedze', 'Malawi')",distance flag
+397,525,"('Lunyangwa', 'Malawi')",distance flag
+398,527,"('Mbawa', 'Malawi')",distance flag
+399,528,"('Mphimbi', 'Malawi')",distance flag
+400,530,"('Not Identified', 'Malawi')",location not found
+401,534,"('Farako', 'Mali')",distance flag
+402,535,"('Katibougou', 'Mali')",distance flag
+403,536,"('Kolombada', 'Mali')",distance flag
+404,537,"('Rue Mohamed', 'Mali')",location not found
+405,538,"('Sotuba', 'Mali')",distance flag
+406,539,"('Acatic, Jalisco', 'Mexico')",distance flag
+407,540,"('Acayucan, Veracruz', 'Mexico')",distance flag
+408,541,"('Aculco', 'Mexico')",distance flag
+409,542,"('Agua Fria', 'Mexico')",distance flag
+410,550,"('Apaseo El Guadalupe, Guanajuato', 'Mexico')",distance flag
+411,551,"('Atlacomulco', 'Mexico')",distance flag
+412,552,"('Axochio, San Andres Tuxtla, Veracruz', 'Mexico')",distance flag
+413,553,"('Buenavista Penjamo, Guanajuato', 'Mexico')",distance flag
+414,555,"('Campeche, Campeche', 'Mexico')",distance flag
+415,556,"('Candelaria Portezuelo, Puebla', 'Mexico')",distance flag
+416,558,"('Cardel', 'Mexico')",distance flag
+417,560,"('Celaya, Guanajuato (inifap)', 'Mexico')",location not found
+418,561,"('Cerib, Tamaulipas', 'Mexico')",location not found
+419,562,"('Champoton, Campeche', 'Mexico')",distance flag
+420,565,"('Chiapas', 'Mexico')",distance flag
+421,566,"('Chorrerones', 'Mexico')",location not found
+422,569,"('Ciudad Obregon', 'Mexico')",distance flag
+423,571,"('Cocotitlan, Texcoco', 'Mexico')",location not found
+424,573,"('Colonia Del Turen', 'Mexico')",location not found
+425,574,"('Coquimatlan', 'Mexico')",distance flag
+426,575,"('Corralejo De Hidalgo, Guanajuato', 'Mexico')",distance flag
+427,576,"('Cotaxla', 'Mexico')",location not found
+428,577,"('Cotaxtla (inifap)', 'Mexico')",distance flag
+429,578,"('Coyoltepec, San Andres Tuxtla, Veracruz', 'Mexico')",distance flag
+430,580,"('Cuendo1', 'Mexico')",location not found
+431,581,"('Cuidad Guzman, Jalisco', 'Mexico')",location not found
+432,582,"('Culican, Sinaloa', 'Mexico')",location not found
+433,583,"('Delicias, Chihuahua', 'Mexico')",distance flag
+434,584,"('Diaz Ordaz, Tamaulipas', 'Mexico')",distance flag
+435,585,"('Dolores Enyeje, Ixtla', 'Mexico')",location not found
+436,587,"('Durango, Durango', 'Mexico')",distance flag
+437,588,"('Edzna, Campeche', 'Mexico')",distance flag
+438,589,"('Ejido 1ro De Mayo', 'Mexico')",location not found
+439,590,"('El Batan', 'Mexico')",distance flag
+440,593,"('El Molino Zinacantep', 'Mexico')",location not found
+441,595,"('El Zapote, Tonatico', 'Mexico')",distance flag
+442,598,"('Guadalajara, Jalisco', 'Mexico')",distance flag
+443,600,"('Guasave, Sinaloa', 'Mexico')",distance flag
+444,602,"('Hidalgo', 'Mexico')",distance flag
+445,604,"('Huejutla De Reyes, Hidalgo', 'Mexico')",distance flag
+446,605,"('Huimanguillo', 'Mexico')",distance flag
+447,606,"('Ignacio De La Llave, Veracruz', 'Mexico')",location not found
+448,609,"('Isla, Veracruz', 'Mexico')",distance flag
+449,611,"('Ixtapan De La Pano', 'Mexico')",location not found
+450,612,"('Jalisco, Jalisco', 'Mexico')",distance flag
+451,614,"('Jerico Chiapas', 'Mexico')",distance flag
+452,615,"('Jesus Maria', 'Mexico')",distance flag
+453,618,"('Jocotitlan 2', 'Mexico')",location not found
+454,619,"('La Barca, Jalisco', 'Mexico')",distance flag
+455,620,"('La Cantera, Comonfort, Guanajuato', 'Mexico')",distance flag
+456,621,"('La Cruz De Elota, Sinaloa', 'Mexico')",distance flag
+457,622,"('La Huerta, Jalisco', 'Mexico')",distance flag
+458,623,"('La Loma Municipio, Tepatitla, Jalisco', 'Mexico')",location not found
+459,625,"('La Torrecilla, Tlalixcoyan, Veracruz', 'Mexico')",distance flag
+460,630,"('Mata De Agua', 'Mexico')",distance flag
+461,631,"('Mavoro, Estado De Mexico', 'Mexico')",distance flag
+462,633,"('Mixquihuala, Hidalgo', 'Mexico')",location not found
+463,634,"('Montecillo', 'Mexico')",distance flag
+464,635,"('Nayarit', 'Mexico')",distance flag
+465,638,"('Ocotitlan, Puebla', 'Mexico')",distance flag
+466,640,"('Ocuituco, Morelos', 'Mexico')",distance flag
+467,641,"('Ojo De Agua, Santiago Tuxtla, Veracruz', 'Mexico')",distance flag
+468,642,"('Ojo De Agua, Tonatico', 'Mexico')",distance flag
+469,646,"('Penjamo, Guanajuato', 'Mexico')",distance flag
+470,648,"('Popotes Municipio De Tepatitlan, Jalisco', 'Mexico')",location not found
+471,653,"('Queretaro', 'Mexico')",distance flag
+472,654,"('Quila, Sinaloa', 'Mexico')",distance flag
+473,655,"('Rancheria Hernandez, Puebla', 'Mexico')",location not found
+474,656,"('Rincon De Parangueo, Guanajuato', 'Mexico')",distance flag
+475,657,"('Rinconada Mazapiltepec', 'Mexico')",distance flag
+476,659,"('Roque, Guanajuato', 'Mexico')",distance flag
+477,660,"('San Andres Tuxtla', 'Mexico')",distance flag
+478,663,"('San Jose Del Valle Nayarit', 'Mexico')",location not found
+479,665,"('San Juan De Abajo', 'Mexico')",distance flag
+480,669,"('San Miguel Allende, Guanajuato', 'Mexico')",distance flag
+481,671,"('San Pedro Lagunillas, Nayarit', 'Mexico')",distance flag
+482,672,"('San Sebastian Teles', 'Mexico')",location not found
+483,673,"('Santa Lucia, Estado De Mexico', 'Mexico')",distance flag
+484,675,"('Santiado Del Monte, Municipio Villa Victoria', 'Mexico')",location not found
+485,678,"('Tamarindos, Veracruz', 'Mexico')",distance flag
+486,679,"('Tamaulipas', 'Mexico')",distance flag
+487,682,"('Tepalcingo, Morelos', 'Mexico')",distance flag
+488,684,"('Tlacomulco', 'Mexico')",distance flag
+489,686,"('Tlajomulco, Jalisco', 'Mexico')",distance flag
+490,688,"('Tlalixcoyan', 'Mexico')",distance flag
+491,689,"('Tlaltizapan', 'Mexico')",distance flag
+492,695,"('Uach, Campo Experimental', 'Mexico')",location not found
+493,696,"('Usmajac Municipio De Sayula, Jalisco', 'Mexico')",location not found
+494,697,"('Uxmal', 'Mexico')",distance flag
+495,698,"('Valle De Bravo, Estado De Mexico', 'Mexico')",distance flag
+496,699,"('Valle De Culiacan', 'Mexico')",distance flag
+497,700,"('Valle De Mexico', 'Mexico')",distance flag
+498,701,"('Valle Del Fuerte, Sinaloa', 'Mexico')",distance flag
+499,702,"('Valle Del Yaqui', 'Mexico')",distance flag
+500,704,"('Veracrucito', 'Mexico')",distance flag
+501,705,"('Veracruz', 'Mexico')",distance flag
+502,706,"('Villa Flores, Chiapas', 'Mexico')",distance flag
+503,707,"('Villa Hidalgo, Nayarit', 'Mexico')",distance flag
+504,708,"('Villa Verde, Guanajuato', 'Mexico')",distance flag
+505,711,"('Xalostoc, Morelos', 'Mexico')",distance flag
+506,712,"('Xocoyucan, Tlaxcala', 'Mexico')",distance flag
+507,715,"('El Menzeh', 'Morocco')",distance flag
+508,716,"('Khemiszemamra', 'Morocco')",location not found
+509,717,"('Angonia Tete', 'Mozambique')",distance flag
+510,718,"('Angora', 'Mozambique')",location not found
+511,720,"('Ex-instituto Nacional De Investigacion Agraria', 'Mozambique')",location not found
+512,724,"('Mocuba', 'Mozambique')",distance flag
+513,726,"('Mozambique', 'Mozambique')",distance flag
+514,727,"('Mutarara', 'Mozambique')",distance flag
+515,730,"('Nhacoongo', 'Mozambique')",distance flag
+516,731,"('Ntengo Nucodgi Augoiris', 'Mozambique')",location not found
+517,732,"('Ntengo Umadzi- Angoria', 'Mozambique')",location not found
+518,733,"('Semol', 'Mozambique')",location not found
+519,734,"('Sussundenga', 'Mozambique')",distance flag
+520,736,"('Ussudenga', 'Mozambique')",location not found
+521,737,"('Naung Mon', 'Myanmar')",location not found
+522,738,"('Sea', 'Myanmar')",location not found
+523,739,"('Taryaw', 'Myanmar')",location not found
+524,740,"('Tatkan', 'Myanmar')",distance flag
+525,741,"('Tatkone', 'Myanmar')",location not found
+526,742,"('Zaloke Research Farm', 'Myanmar')",location not found
+527,743,"('Aungban, Burma', 'Myanmar (burma)')",country not found
+528,744,"('Yezin, Burma', 'Myanmar (burma)')",country not found
+529,745,"('Mashare', 'Namibia')",location not found
+530,746,"('Mitkomst Research Station', 'Namibia')",location not found
+531,747,"('Runda', 'Namibia')",location not found
+532,748,"('Hardinath', 'Nepal')",location not found
+533,749,"('Kabre', 'Nepal')",distance flag
+534,751,"('Lumle', 'Nepal')",distance flag
+535,752,"('Pakhribas', 'Nepal')",distance flag
+536,753,"('Parinanipur (p.a.s.)', 'Nepal')",location not found
+537,754,"('Parwanipur', 'Nepal')",distance flag
+538,755,"('Rampur', 'Nepal')",distance flag
+539,756,"('Surkhet', 'Nepal')",distance flag
+540,757,"('Campos Azules', 'Nicaragua')",location not found
+541,758,"('Campos Azules, Masatepe', 'Nicaragua')",location not found
+542,759,"('Carazo', 'Nicaragua')",distance flag
+543,761,"('Chontales', 'Nicaragua')",distance flag
+544,762,"('Chontales, Tamboral Sur', 'Nicaragua')",location not found
+545,763,"('Condega, Esteli', 'Nicaragua')",distance flag
+546,764,"('El Areno, El Rama', 'Nicaragua')",location not found
+547,765,"('El Jicaro, Nueva Segovia', 'Nicaragua')",distance flag
+548,766,"('El Pellizco, Chinandega', 'Nicaragua')",location not found
+549,767,"('Jalapa', 'Nicaragua')",distance flag
+550,768,"('La Dal═a', 'Nicaragua')",location not found
+551,769,"('La Presa', 'Nicaragua')",distance flag
+552,770,"('La Trinidad, Esteli', 'Nicaragua')",distance flag
+553,771,"('Las Cruces Carazo', 'Nicaragua')",location not found
+554,772,"('Las Piedras,nueva Segovia', 'Nicaragua')",distance flag
+555,773,"('Llano Redondo', 'Nicaragua')",distance flag
+556,774,"('Managua', 'Nicaragua')",distance flag
+557,775,"('Mazatepec', 'Nicaragua')",location not found
+558,776,"('Melchorita, San Carlos', 'Nicaragua')",location not found
+559,777,"('Nindiri, Mazaya', 'Nicaragua')",location not found
+560,778,"('Paz De Carazo', 'Nicaragua')",distance flag
+561,779,"('Pueblo Nuevo', 'Nicaragua')",distance flag
+562,780,"('San Bartolo', 'Nicaragua')",distance flag
+563,781,"('San Benito, Chinandega', 'Nicaragua')",distance flag
+564,782,"('San Cristobal', 'Nicaragua')",distance flag
+565,783,"('Santa Cruz, Esteli', 'Nicaragua')",distance flag
+566,784,"('Santa Juana, Nindiri', 'Nicaragua')",location not found
+567,785,"('Santa Rosa', 'Nicaragua')",distance flag
+568,786,"('Baganda', 'Nigeria')",location not found
+569,788,"('Ikenne', 'Nigeria')",distance flag
+570,789,"('Jos Nig', 'Nigeria')",location not found
+571,790,"('Layin Taki', 'Nigeria')",location not found
+572,791,"('Mokwa', 'Nigeria')",distance flag
+573,794,"('Saminaka Nig', 'Nigeria')",location not found
+574,795,"('Temti Jos', 'Nigeria')",location not found
+575,796,"('Tiga', 'Nigeria')",distance flag
+576,799,"('Ari, D,i. Kham', 'Pakistan')",location not found
+577,801,"('Faisalabad', 'Pakistan')",distance flag
+578,802,"('Islamabad', 'Pakistan')",distance flag
+579,803,"('Pirsabak', 'Pakistan')",location not found
+580,804,"('Yousafwala', 'Pakistan')",distance flag
+581,805,"('Azuer', 'Panama')",location not found
+582,806,"('Ceiachi', 'Panama')",location not found
+583,810,"('Parita', 'Panama')",distance flag
+584,813,"('Capitan Miranda', 'Paraguay')",distance flag
+585,815,"('Chore (d. S. Pedro)', 'Paraguay')",location not found
+586,816,"('San Juan Bautista', 'Paraguay')",distance flag
+587,818,"('Yjhovy', 'Paraguay')",distance flag
+588,819,"('Ascope', 'Peru')",distance flag
+589,820,"('Aucaloma', 'Peru')",location not found
+590,821,"('E.e. El Porvenir, Calzada Moyobamba', 'Peru')",location not found
+591,822,"('E.e. Pucallpa', 'Peru')",location not found
+592,823,"('El Porvenir', 'Peru')",distance flag
+593,824,"('Huaral', 'Peru')",distance flag
+594,825,"('Humay - Pisco', 'Peru')",distance flag
+595,827,"('Juan Guerra', 'Peru')",distance flag
+596,828,"('La Vi╤a-jayanca-lambayeque', 'Peru')",location not found
+597,829,"('Lambayeque', 'Peru')",distance flag
+598,830,"('Lima', 'Peru')",distance flag
+599,831,"('Montupe 99', 'Peru')",location not found
+600,832,"('Muy Finca Mochumi Lambayeque', 'Peru')",location not found
+601,833,"('Pachacamac', 'Peru')",distance flag
+602,834,"('Peru', 'Peru')",distance flag
+603,835,"('Pucallpa', 'Peru')",distance flag
+604,836,"('Pucallpa, San Fernando, Sa', 'Peru')",location not found
+605,837,"('Rioja', 'Peru')",distance flag
+606,838,"('Rioja, San Fernando, Sa', 'Peru')",location not found
+607,839,"('Victoria 99', 'Peru')",location not found
+608,840,"('Viru La Libertad', 'Peru')",distance flag
+609,841,"('Vista Florida', 'Peru')",distance flag
+610,842,"('Vista Florida Chiclayo', 'Peru')",distance flag
+611,845,"('Yurimagua', 'Peru')",location not found
+612,846,"('Baybay', 'Philippines')",distance flag
+613,847,"('Cabuyao, Laguna', 'Philippines')",distance flag
+614,848,"('Cagayan Valley', 'Philippines')",distance flag
+615,849,"('Ipb Experiment Station', 'Philippines')",location not found
+616,850,"('Kabacan', 'Philippines')",distance flag
+617,851,"('Kabacan, Cotabato', 'Philippines')",distance flag
+618,852,"('Katangawan', 'Philippines')",distance flag
+619,853,"('San Felipe, Ilagan, Isabela.', 'Philippines')",distance flag
+620,854,"('Visca', 'Philippines')",location not found
+621,855,"('Rubona', 'Rwanda')",distance flag
+622,858,"('Burgershall', 'South Africa')",location not found
+623,860,"('Friedenheim Valley', 'South Africa')",location not found
+624,861,"('Linkseed', 'South Africa')",location not found
+625,862,"('Mpumalanga', 'South Africa')",distance flag
+626,864,"('North West Province', 'South Africa')",distance flag
+627,865,"('Pannar, Graytown', 'South Africa')",location not found
+628,866,"('Petit', 'South Africa')",distance flag
+629,867,"('Tshiombo', 'South Africa')",distance flag
+630,868,"('Viljoonskroon', 'South Africa')",location not found
+631,869,"('Betlehem', 'South Africa Rep.')",country not found
+632,870,"('Cedara', 'South Africa Rep.')",country not found
+633,871,"('Ezolimo', 'South Africa Rep.')",country not found
+634,872,"('Friedenhei', 'South Africa Rep.')",country not found
+635,873,"('Greytown', 'South Africa Rep.')",country not found
+636,874,"('Greytown', 'South Africa Rep.')",country not found
+637,875,"('Lwamongo', 'South Africa Rep.')",country not found
+638,876,"('Nelspruit', 'South Africa Rep.')",country not found
+639,878,"('Setlagole', 'South Africa Rep.')",country not found
+640,879,"('Viljoenskroon', 'South Africa Rep.')",country not found
+641,881,"('Wad Medani', 'Sudan')",distance flag
+642,882,"('Paramaribo', 'Surinam')",country not found
+643,884,"('Les', 'Swaziland')",location not found
+644,885,"('Lowveld, Brabend', 'Swaziland')",location not found
+645,886,"('Luve', 'Swaziland')",location not found
+646,888,"('Mangcongo', 'Swaziland')",location not found
+647,890,"('Shewula', 'Swaziland')",distance flag
+648,891,"('Swaziland', 'Swaziland')",distance flag
+649,892,"('Deir Al Zoor', 'Syria')",location not found
+650,893,"('Raqqa', 'Syria')",distance flag
+651,895,"('Afsf-arusha', 'Tanzania')",location not found
+652,896,"('Arusha Seed Farm Afsf', 'Tanzania')",location not found
+653,897,"('Arusha Tan', 'Tanzania')",location not found
+654,898,"('Cholima', 'Tanzania')",location not found
+655,899,"('Dabaga Uyole', 'Tanzania')",location not found
+656,901,"('Ilonga', 'Tanzania')",distance flag
+657,903,"('Katrin', 'Tanzania')",location not found
+658,904,"('Katrin1', 'Tanzania')",location not found
+659,905,"('Katrin2', 'Tanzania')",location not found
+660,906,"('Katrin-ifakara', 'Tanzania')",location not found
+661,907,"('Lambo', 'Tanzania')",distance flag
+662,908,"('Maruku', 'Tanzania')",distance flag
+663,910,"('Mlingano', 'Tanzania')",distance flag
+664,913,"('Mwanza - Region', 'Tanzania')",distance flag
+665,914,"('Ngaramtoni', 'Tanzania')",location not found
+666,915,"('Ngaramtoni-arusha', 'Tanzania')",location not found
+667,916,"('Nm', 'Tanzania')",distance flag
+668,917,"('Selian', 'Tanzania')",location not found
+669,919,"('Tanzania', 'Tanzania')",distance flag
+670,924,"('Banmaisomrong', 'Thailand')",location not found
+671,925,"('Nakhon Sawan R.c.', 'Thailand')",location not found
+672,926,"('Nakhon Sawan R.c.', 'Thailand')",location not found
+673,928,"('Phraphutthabat', 'Thailand')",distance flag
+674,929,"('Sawankalok Sukhotha', 'Thailand')",location not found
+675,930,"('Suwan', 'Thailand')",distance flag
+676,931,"('Tak Fa', 'Thailand')",distance flag
+677,933,"('El Carmen', 'Trinidad Y Tobago')",country not found
+678,934,"('Goldsborough', 'Trinidad Y Tobago')",country not found
+679,935,"(""Louis D'or"", 'Trinidad Y Tobago')",country not found
+680,937,"('Aydin', 'Turkey')",distance flag
+681,938,"('Anny Settl', 'Turkmenistan')",location not found
+682,939,"('Bulegeni', 'Uganda')",distance flag
+683,940,"('Bulengeni', 'Uganda')",location not found
+684,941,"('Kamayanmiggo', 'Uganda')",location not found
+685,942,"('Kamenyamiggo', 'Uganda')",location not found
+686,945,"('Likonde,songea', 'Uganda')",location not found
+687,947,"('Msk', 'Uganda')",location not found
+688,948,"('Naari', 'Uganda')",location not found
+689,949,"('Namulonge Uga', 'Uganda')",location not found
+690,952,"('Uganda', 'Uganda')",distance flag
+691,953,"('Barnum Mn', 'United States Of America')",country not found
+692,954,"('College Station, Texas', 'United States Of America')",country not found
+693,955,"('Kenedy, Tx.', 'United States Of America')",country not found
+694,956,"('Sn Antonio', 'United States Of America')",country not found
+695,957,"('Tifton, Georgia', 'United States Of America')",country not found
+696,958,"('Tifton, Georgia', 'United States Of America')",country not found
+697,959,"('Weslaco, Texas', 'United States Of America')",country not found
+698,962,"('Agua Blanca, Portuguesa', 'Venezuela')",distance flag
+699,963,"('Aragua (ceniap)', 'Venezuela')",location not found
+700,964,"('Araure (acarigua)', 'Venezuela')",location not found
+701,965,"('Araure (portuguesa)', 'Venezuela')",distance flag
+702,966,"('Carretera O, Turen, Portuguesa', 'Venezuela')",location not found
+703,967,"('Centro Norte', 'Venezuela')",distance flag
+704,968,"('Colonia Agricola De Turen', 'Venezuela')",distance flag
+705,969,"('El Diamante, Yaritagua', 'Venezuela')",location not found
+706,970,"('El Playon', 'Venezuela')",distance flag
+707,971,"('El Socorro', 'Venezuela')",distance flag
+708,972,"('Guarico', 'Venezuela')",distance flag
+709,973,"('La Lucia', 'Venezuela')",distance flag
+710,974,"('Las Caramas', 'Venezuela')",location not found
+711,975,"('Las Guacamayas', 'Venezuela')",distance flag
+712,977,"('Las Guacamayas, El Sombrero', 'Venezuela')",location not found
+713,978,"('Los Guayos, Carabobo State', 'Venezuela')",location not found
+714,979,"('Manzanita', 'Venezuela')",distance flag
+715,981,"('Pascual Valetta, Laguna De Piedra', 'Venezuela')",location not found
+716,982,"('Punta Gorda', 'Venezuela')",distance flag
+717,984,"('Santa Barbara', 'Venezuela')",distance flag
+718,985,"('Semillas Aragua', 'Venezuela')",location not found
+719,986,"('Tocoron', 'Venezuela')",distance flag
+720,987,"('Tocoron, Estado Aragua', 'Venezuela')",distance flag
+721,988,"('Tucupido', 'Venezuela')",distance flag
+722,989,"('Turen', 'Venezuela')",distance flag
+723,990,"('Unidad Agricola De Turen', 'Venezuela')",location not found
+724,991,"('Venezuela', 'Venezuela')",distance flag
+725,992,"('Villa De Cura, Aragua', 'Venezuela')",distance flag
+726,993,"('Ars, Amberpet, Hyd.', 'Vietnam')",location not found
+727,994,"('Binh Chanh Dictrict - Ho Chi Minh City', 'Vietnam')",location not found
+728,995,"('Binh Duong', 'Vietnam')",distance flag
+729,997,"('Dan Phuong Hatay', 'Vietnam')",location not found
+730,998,"('Danphing Dist.', 'Vietnam')",location not found
+731,999,"('Duc Hoa District, Long An Province', 'Vietnam')",location not found
+732,1000,"('Gorakhpur', 'Vietnam')",location not found
+733,1001,"('Hoc May District, Hochimin', 'Vietnam')",location not found
+734,1002,"('Lam Dong Province', 'Vietnam')",distance flag
+735,1004,"('Tay Ninh Province', 'Vietnam')",location not found
+736,1005,"('Gandajika', 'Zaire')",country not found
+737,1006,"('Mvuazi', 'Zaire')",country not found
+738,1007,"('Chisamba, Golden Valley', 'Zambia')",location not found
+739,1008,"('Kasama, Misanfu', 'Zambia')",location not found
+740,1009,"('Katuba', 'Zambia')",distance flag
+741,1010,"('Kutumani', 'Zambia')",location not found
+742,1011,"('Lyempe', 'Zambia')",location not found
+743,1012,"('Magobo', 'Zambia')",distance flag
+744,1013,"('Magoye', 'Zambia')",distance flag
+745,1014,"('Mansa', 'Zambia')",distance flag
+746,1015,"('Masumba', 'Zambia')",distance flag
+747,1016,"('Mogoye', 'Zambia')",location not found
+748,1017,"('Mount Makulu', 'Zambia')",location not found
+749,1019,"('Msekera', 'Zambia')",distance flag
+750,1021,"('Sesheke', 'Zambia')",distance flag
+751,1022,"('Zambia', 'Zambia')",distance flag
+752,1023,"('Zamseed, Farm', 'Zambia')",location not found
+753,1025,"('Arex Drss, Harare', 'Zimbabwe')",location not found
+754,1026,"('Art Farm, Harare', 'Zimbabwe')",location not found
+755,1028,"('Cimmyt, Harare', 'Zimbabwe')",location not found
+756,1029,"('Dedza', 'Zimbabwe')",distance flag
+757,1030,"('Glendale', 'Zimbabwe')",distance flag
+758,1033,"('Kadoma', 'Zimbabwe')",distance flag
+759,1034,"('Lucydale', 'Zimbabwe')",distance flag
+760,1035,"('Makoholi', 'Zimbabwe')",distance flag
+761,1036,"('Marondera', 'Zimbabwe')",distance flag
+762,1037,"('Matopos', 'Zimbabwe')",distance flag
+763,1038,"('Mazowe', 'Zimbabwe')",distance flag
+764,1040,"('Pannar', 'Zimbabwe')",location not found
+765,1041,"('Pioneer', 'Zimbabwe')",distance flag
+766,1042,"('Radoma', 'Zimbabwe')",location not found
+767,1043,"('Rattray Arnold Farm', 'Zimbabwe')",location not found
+768,1045,"('Save Valley', 'Zimbabwe')",location not found
+769,1046,"('Shamva Zim', 'Zimbabwe')",location not found
+770,1047,"('Zimbabwe', 'Zimbabwe')",distance flag
+771,1050,"('Rwerere', 'Rwanda')",distance flag
+772,1051,"('Tamira', 'Rwanda')",distance flag
+773,1052,"('Gisozi', 'Burundi')",distance flag
+774,1054,"('Pentecostes, Texcoco', 'Mexico')",location not found
+775,1056,"('Zacatepec, Morelos', 'Mexico')",distance flag
+776,1057,"('Miacatlan', 'Mexico')",distance flag
+777,1058,"('Salandhar (punjab)', 'India')",location not found
+778,1060,"('Kodiaga', 'Kenya')",distance flag
+779,1061,"('Luanda', 'Kenya')",distance flag
+780,1063,"('Kaniaka', 'Congo')",country not found
+781,1064,"('Chakol', 'Kenya')",distance flag
+782,1065,"('Kibale', 'Uganda')",distance flag
+783,1068,"('Mungoshi, Hai', 'Tanzania')",location not found
+784,1070,"('Kilifi', 'Kenya')",distance flag
+785,1072,"('Kwale', 'Kenya')",distance flag
+786,1074,"('Gondar', 'Ethiopia')",distance flag
+787,1075,"('Quindio', 'Colombia')",distance flag
+788,1076,"('Puerto Gaitan-carpoica,taluma', 'Colombia')",location not found
+789,1077,"('Kisama', 'Kenya')",distance flag
+790,1078,"('Angecha', 'Ethiopia')",distance flag
+791,1079,"('Ivumwe', 'Tanzania')",location not found
+792,1080,"('Mparambo', 'Burundi')",distance flag
+793,1081,"('Thika', 'Kenya')",distance flag
+794,1082,"('Matisi', 'Kenya')",distance flag
+795,1083,"('Kutus', 'Kenya')",distance flag
+796,1084,"('Kimaeti', 'Kenya')",distance flag
+797,1085,"('Elgon Downs', 'Kenya')",location not found
+798,1086,"('Bumula', 'Kenya')",location not found
+799,1087,"('Bulindi', 'Uganda')",distance flag
+800,1088,"('Bugiri', 'Uganda')",distance flag
+801,1089,"('Nyagatare', 'Rwanda')",distance flag
+802,1090,"('Kagumo', 'Kenya')",distance flag
+803,1091,"('Screen House', 'Kenya')",location not found
+804,1092,"('Chitedzi', 'Malawi')",distance flag
+805,1093,"('Kiteta', 'Kenya')",distance flag
+806,1094,"('Kyuu', 'Kenya')",distance flag
+807,1095,"('Bingu', 'Malawi')",location not found
+808,1096,"('Mpingu', 'Malawi')",distance flag
+809,1097,"('Pomela', 'Malawi')",location not found
+810,1098,"('Pallisa', 'Uganda')",distance flag
+811,1099,"('Rancho Guadalupe, Toluca', 'Mexico')",location not found
+812,1100,"('Mwea', 'Kenya')",distance flag
+813,1102,"('Kabul', 'Afghanistan')",distance flag
+814,1103,"('Cabinda', 'Angola')",distance flag
+815,1104,"('Kilomba', 'Angola')",location not found
+816,1106,"('St. Vincent', 'Angola')",location not found
+817,1107,"('La Catalina', 'Colombia')",distance flag
+818,1108,"('Paraguaicito', 'Colombia')",location not found
+819,1109,"('Baka', 'Malawi')",location not found
+820,1110,"('Freidenheim Valley', 'South Africa')",location not found
+821,1111,"('Potchesftroom', 'South Africa')",location not found
+822,1112,"('Arusha', 'Tanzania')",distance flag
+823,1113,"('Chollima', 'Tanzania')",location not found
+824,1115,"('Kibray', 'Uzbekistan')",distance flag
+825,1116,"('Chisamba', 'Zambia')",distance flag
+826,1117,"('Golden Valley', 'Zambia')",distance flag
+827,1120,"('Zamseed', 'Zambia')",location not found
+828,1121,"('Arex, Harare', 'Zimbabwe')",location not found
+829,1122,"('Drss, Harare', 'Zimbabwe')",location not found
+830,1123,"('Makaholi', 'Zimbabwe')",distance flag
+831,1124,"('Makhoholi', 'Zimbabwe')",location not found
+832,1125,"('Rattray', 'Zimbabwe')",distance flag
+833,1126,"('Rattray Arnold', 'Zimbabwe')",location not found
+834,1127,"('Rattray Farm', 'Zimbabwe')",distance flag
+835,1128,"('Mungushi, Hai', 'Tanzania')",location not found
+836,1129,"('Bondo', 'Kenya')",distance flag
+837,1130,"('Kakamega (monsanto)', 'Kenya')",location not found
+838,1132,"('Zudañes', 'Bolivia')",distance flag
+839,1133,"('Caña Flecha', 'Colombia')",distance flag
+840,1135,"('Las Cañas', 'Costa Rica')",distance flag
+841,1136,"('La Máquina Caballo Blanco', 'Guatemala')",location not found
+842,1137,"('San José Pinula', 'Guatemala')",distance flag
+843,1138,"('La Viña-jayanca-lambayeque', 'Peru')",distance flag
+844,1140,"('Sahagu - - - - Sahagun', 'Colombia')",location not found
+845,1141,"('Tshibati - - - - Kibati', 'Congo')",country not found
+846,1144,"('Chalchahuapa - - - Chalchuapa', 'El Salvador')",location not found
+847,1145,"('El Coyalito - - - El Coyolito', 'El Salvador')",location not found
+848,1146,"('Dobuleni Research Station - - - Dobuilevu Research', 'Fiji')",location not found
+849,1147,"('Koronnia Research Station - - - Koronivia Research', 'Fiji')",location not found
+850,1148,"('La Maquina Caballo Blanco', 'Guatemala')",location not found
+851,1150,"('Catacamas, Olancho - - - Catacama', 'Honduras')",location not found
+852,1153,"('Villa Flores, Chiap.', 'Mexico')",location not found
+853,1155,"('El Aguila, Pejibaye, Perez Zeledon', 'Costa Rica')",location not found
+854,1157,"('Araure, Edo. Portuguesa', 'Venezuela')",location not found
+855,1158,"('Las Velas, Edo. Yaracuy', 'Venezuela')",location not found
+856,1159,"('Tiznados, Edo. Guarico', 'Venezuela')",location not found
+857,1160,"('Concepcion De Pilas, Buenos Aires', 'Costa Rica')",location not found
+858,1161,"('El Amparo, El Gallito, Los Chiles, Alajuela', 'Costa Rica')",location not found
+859,1162,"('Guagaral, Buenos Aires Puntarenas', 'Costa Rica')",location not found
+860,1163,"('Pueblo Nuevo, San Jose, Upala', 'Costa Rica')",location not found
+861,1164,"('Veracruz, Pejibaye, Perez Zeledon', 'Costa Rica')",location not found
+862,1165,"('El Progreso, Pejibaye, Perez Zeledon', 'Costa Rica')",location not found
+863,1166,"('Guagaral, Buenos Aires', 'Costa Rica')",location not found
