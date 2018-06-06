@@ -3,7 +3,7 @@ import datetime
 import re
 import reverse_geocoder as rg
 import string
-
+import math
 """
 GeocodeValidator allows the user to perform reverse geocoding
 on a .xlsx or .csv to ensure that input locations correspond to
@@ -23,11 +23,12 @@ now = now.strftime("%Y-%m-%d ")
 
 
 class GeocodeValidator:
-    def __init__(self, fileName):
+    def __init__(self, fileName, flagDistance=2):
         self.fileName = fileName
+        self.flagDistance = flagDistance
 
         self.flaggedLocations = []  # flagged indexes in data frame
-        self.log = {'index': [], 'location': [], 'type': [], 'comment': []}
+        self.log = {'index': [], 'location': [], 'type': []}
 
         self.countryCodes = {}
         self.createCountryCodeDict()
@@ -67,14 +68,12 @@ class GeocodeValidator:
                         self.log['location'].append((location, country))
                         self.log['index'].append(index)
                         self.log['type'].append(' invalid long/lat')
-                        self.log['comment'].append(' ' + nearestLocation['cc'])
                 except KeyError:
                     print("Index: " + str(index) + " incorrect country format.(Index flagged.) \n")
                     self.flaggedLocations.append(index)
                     self.log['location'].append((location, country))
                     self.log['index'].append(index)
                     self.log['type'].append(' wrong format')
-                    self.log['comment'].append(' ' + country)
 
             except (TypeError, IndexError) as error:
                 print("Index: " + str(index) + " no entered coordinates.(Index flagged.) \n")
@@ -82,7 +81,6 @@ class GeocodeValidator:
                 self.log['location'].append((location, country))
                 self.log['index'].append(index)
                 self.log['type'].append(' coords NA')
-                self.log['comment'].append(' NA')
 
         self.logResults()
 
@@ -114,16 +112,47 @@ class GeocodeValidator:
                        (recordedLat, -recordedLong)]
 
         for coordinate in coordinates:
-            code = rg.get(coordinate, mode=1)
-            if code['cc'] == recordedCode:
+            correctMatch = self.validate(coordinate, recordedCode)
+            if correctMatch:
                 return True
         print("Index: " + str(index) + " country does not match entered coordinates.(Index flagged.) \n")
         self.flaggedLocations.append(index)
         self.log['location'].append((location, countryName))
         self.log['index'].append(index)
         self.log['type'].append(' mismatched country')
-        self.log['comment'].append(' ' + code['cc'])
         return False
+
+    def validate(self, coord, countryCode):
+        returnedLocation = rg.get(coord, mode=1)
+        if returnedLocation['cc'] != countryCode:
+            distance = self.calculateDistance(coord[0], coord[1], returnedLocation['lat'], returnedLocation['lon'])
+            if distance > self.flagDistance:
+                return False
+            # return False
+        return True
+
+    def calculateDistance(self, lat1, lng1, lat2, lng2):
+        """
+        Uses the haversine formula to calculate the distance between two points given their latitudes and longitudes.
+        :param lat1:
+        :param lng1:
+        :param lat2:
+        :param lng2:
+        :return: the distance (miles)
+        """
+        r = 3959
+
+        lat1 = math.radians(lat1)
+        lat2 = math.radians(lat2)
+        dlat = lat2 - lat1
+
+        dlng = math.radians(lng2) - math.radians(lng1)
+
+        a = math.pow(math.sin(dlat / 2), 2) + math.cos(lat1) * math.cos(lat2) * math.pow(math.sin(dlng / 2), 2)
+        c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+        d = r * c
+
+        return d
 
 validator2 = GeocodeValidator("NaNtblLocations.xlsx")
 validator2.run()
