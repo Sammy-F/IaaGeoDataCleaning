@@ -53,12 +53,14 @@ class GeocodeValidator:
 
                 try:
                     if nearestLocation['cc'] != self.countryCodes[country]:
-                        print("Index: " + str(index) + " country does not match entered coordinates.(Index flagged.) \n")
-                        self.flaggedLocations.append(index)
-                        self.log['location'].append((location, country))
-                        self.log['index'].append(index)
-                        self.log['type'].append(' mismatched country')
-                        self.log['comment'].append(' ' + nearestLocation['cc'])
+                        self.handleBadCountryy(index, countryName=country, recordedLat=row.loc["Latitude"],
+                                               recordedLong=row.loc["Longitude"], location=location)
+                        # print("Index: " + str(index) + " country does not match entered coordinates.(Index flagged.) \n")
+                        # self.flaggedLocations.append(index)
+                        # self.log['location'].append((location, country))
+                        # self.log['index'].append(index)
+                        # self.log['type'].append(' mismatched country')
+                        # self.log['comment'].append(' ' + nearestLocation['cc'])
                 except KeyError:
                     print("Index: " + str(index) + " incorrect country format.(Index flagged.) \n")
                     self.flaggedLocations.append(index)
@@ -95,6 +97,27 @@ class GeocodeValidator:
         loggedDF = pd.DataFrame(data=self.log)
         loggedDF.to_csv('validation_log_' + str(now) + '.csv', sep=',', encoding='utf-8')
         return len(self.flaggedLocations) / (1e-10 + self.tobeValidatedLocation.shape[0])
+
+    def handleBadCountryy(self, index, recordedLat, recordedLong, countryName, location):
+
+        recordedCode = self.countryCodes[countryName]
+
+        coordinates = [(recordedLong, recordedLat), (-recordedLong, recordedLat), (-recordedLong, -recordedLat),
+                       (recordedLong, -recordedLat), (-recordedLat, recordedLong), (-recordedLat, -recordedLong),
+                       (-recordedLat, -recordedLong)]
+
+        for coordinate in coordinates:
+            code = rg.get(coordinate, mode=1)
+            if code == recordedCode:
+                return True
+
+        print("Index: " + str(index) + " country does not match entered coordinates.(Index flagged.) \n")
+        self.flaggedLocations.append(index)
+        self.log['location'].append((location, countryName))
+        self.log['index'].append(index)
+        self.log['type'].append(' mismatched country')
+        self.log['comment'].append(' ' + code['cc'])
+        return False
 
 validator2 = GeocodeValidator("NaNtblLocations.xlsx")
 validator2.run()
