@@ -1,1168 +1,598 @@
-,index,location,type
-0,0,"('Darul Aman', 'Afghanistan')",distance flag
-1,1,"('Darul Aman Kabul', 'Afghanistan')",distance flag
-2,2,"('Qara- Boghe', 'Afghanistan')",distance flag
-3,3,"('Angola', 'Angola')",distance flag
-4,4,"('Cabinda, St Vincent', 'Angola')",distance flag
-5,5,"('Cacuso', 'Angola')",distance flag
-6,6,"('Cela', 'Angola')",distance flag
-7,7,"('Chianga', 'Angola')",distance flag
-8,8,"('Humpata', 'Angola')",distance flag
-9,9,"('Kilombo', 'Angola')",distance flag
-10,10,"('Kilombo Experimental Station', 'Angola')",distance flag
-11,11,"('Malange', 'Angola')",distance flag
-12,12,"('Mazozo Experimental Station', 'Angola')",distance flag
-13,13,"('Poligno-floresta', 'Angola')",distance flag
-14,14,"('Anguil - Provincia La Pampa', 'Argentina')",distance flag
-15,15,"('Argentina', 'Argentina')",distance flag
-16,16,"('El Manantial', 'Argentina')",distance flag
-17,17,"('Los Pereyras', 'Argentina')",distance flag
-18,18,"('Tucuman', 'Argentina')",distance flag
-19,19,"('Zakatala, City', 'Azerbaijan')",distance flag
-20,20,"('Dinajpur', 'Bangladesh')",distance flag
-21,21,"('Ars, Rajbari, Dinajpur', 'Bangladesh')",distance flag
-22,22,"('Ars. Burirhat, Rangpur', 'Bangladesh')",distance flag
-23,23,"('Bogra', 'Bangladesh')",distance flag
-24,24,"('Burirhat Farm', 'Bangladesh')",distance flag
-25,25,"('Gazipur', 'Bangladesh')",distance flag
-26,26,"('Hathazari', 'Bangladesh')",distance flag
-27,27,"('Ishurdi', 'Bangladesh')",distance flag
-28,28,"('Ishurdi', 'Bangladesh')",distance flag
-29,29,"('Jamalpur', 'Bangladesh')",distance flag
-30,30,"('Jessore', 'Bangladesh')",distance flag
-31,31,"('Joydebpur', 'Bangladesh')",distance flag
-32,32,"('Joydebpur, Gazipur', 'Bangladesh')",distance flag
-33,33,"('Rahmatpur Barisal', 'Bangladesh')",distance flag
-34,34,"('Rajbari', 'Bangladesh')",distance flag
-35,35,"('Rars, Bari, Jamalpur', 'Bangladesh')",distance flag
-36,36,"('Belmopan, Cardi Station', 'Belize')",distance flag
-37,37,"('Central Farm', 'Belize')",distance flag
-38,38,"('San Pedro', 'Belize')",distance flag
-39,39,"('Cotonou', 'Benin')",distance flag
-40,40,"('Algarrobal', 'Bolivia')",distance flag
-41,41,"('Bolivia', 'Bolivia')",distance flag
-42,42,"('Ca╤ada Larga', 'Bolivia')",distance flag
-43,43,"('Charagua', 'Bolivia')",distance flag
-44,44,"('Chuquisaca', 'Bolivia')",distance flag
-45,45,"('Cotoca', 'Bolivia')",distance flag
-46,46,"('El Abra (santa Cruz)', 'Bolivia')",distance flag
-47,47,"('El Palmar (santa Cruz)', 'Bolivia')",distance flag
-48,48,"('El Vallecito', 'Bolivia')",distance flag
-49,49,"('Entre Rios', 'Bolivia')",distance flag
-50,50,"('Fundacion Proinpa', 'Bolivia')",distance flag
-51,51,"('Iboperenda', 'Bolivia')",distance flag
-52,52,"('Lomas De Arena (santa Cruz)', 'Bolivia')",distance flag
-53,53,"('Mairana, Santa Cruz', 'Bolivia')",distance flag
-54,54,"('Monteagudo', 'Bolivia')",distance flag
-55,55,"('Okinawa', 'Bolivia')",distance flag
-56,56,"('Pailon', 'Bolivia')",distance flag
-57,57,"('Pairumani', 'Bolivia')",distance flag
-58,58,"('Pajonal', 'Bolivia')",distance flag
-59,59,"('Saavedra', 'Bolivia')",distance flag
-60,60,"('San Ignacio', 'Bolivia')",distance flag
-61,61,"('San Julian, Santa Cruz', 'Bolivia')",distance flag
-62,62,"('Santa Cruz (cuatro Caminos)', 'Bolivia')",distance flag
-63,63,"('Santa Cruz De La Sierra', 'Bolivia')",distance flag
-64,64,"('Santa Cruz De La Sierra (el Vallecito)', 'Bolivia')",distance flag
-65,65,"('Tarija', 'Bolivia')",distance flag
-66,66,"('Valle Del Medio', 'Bolivia')",distance flag
-67,67,"('Vallecitos (iboperenda)', 'Bolivia')",distance flag
-68,68,"('Vallegrande', 'Bolivia')",distance flag
-69,69,"('Yacuiba', 'Bolivia')",distance flag
-70,70,"('Zona Norte De Santa Cruz', 'Bolivia')",distance flag
-71,71,"('Zuda╤es', 'Bolivia')",distance flag
-72,72,"('Goodhope', 'Botswana')",distance flag
-73,73,"('Hukuntsi', 'Botswana')",distance flag
-74,74,"('Pandamatenga', 'Botswana')",distance flag
-75,75,"('Pelotshetlha', 'Botswana')",distance flag
-76,76,"('Sebele', 'Botswana')",distance flag
-77,77,"('Sebele-lown', 'Botswana')",distance flag
-78,78,"('Brazil', 'Brazil')",distance flag
-79,79,"('Campo Largo - Pr', 'Brazil')",distance flag
-80,80,"('Cascavel', 'Brazil')",distance flag
-81,81,"('Cravinhos', 'Brazil')",distance flag
-82,82,"('Guaira', 'Brazil')",distance flag
-83,83,"('Jardinopolis', 'Brazil')",distance flag
-84,84,"('Sete Lagoas', 'Brazil')",distance flag
-85,85,"('Farako-ba', 'Burkina Faso')",distance flag
-86,86,"('Kamboinse', 'Burkina Faso')",distance flag
-87,87,"('Kouare', 'Burkina Faso')",distance flag
-88,88,"('Burundi', 'Burundi')",distance flag
-89,89,"('Mosso', 'Burundi')",distance flag
-90,90,"('Kazakhstan', 'Central Asia')",distance flag
-91,91,"('Beijing', 'China')",distance flag
-92,92,"('Bijie', 'China')",distance flag
-93,93,"('Chengdu', 'China')",distance flag
-94,94,"('Fujian Province', 'China')",distance flag
-95,95,"('Guang-xi', 'China')",distance flag
-96,96,"('Gui-yang', 'China')",distance flag
-97,97,"('Honghe', 'China')",distance flag
-98,98,"('Jialize, Kunming, Yunnan', 'China')",distance flag
-99,99,"('Kunming', 'China')",distance flag
-100,100,"('Linciang', 'China')",distance flag
-101,101,"('Mian Yang', 'China')",distance flag
-102,102,"('Mongzi', 'China')",distance flag
-103,103,"('Nanning', 'China')",distance flag
-104,104,"('Oifin', 'China')",distance flag
-105,105,"('Qujin', 'China')",distance flag
-106,106,"('Simao', 'China')",distance flag
-107,107,"('Wenshan', 'China')",distance flag
-108,108,"('Yunnan', 'China')",distance flag
-109,109,"('Aguas Blancas', 'Colombia')",distance flag
-110,110,"('Aguas Claras', 'Colombia')",distance flag
-111,111,"('Andremoni', 'Colombia')",distance flag
-112,112,"('Arborates', 'Colombia')",distance flag
-113,113,"('Arguello Bajo, Yacuanquer', 'Colombia')",distance flag
-114,114,"('Atuncela, Dagua', 'Colombia')",distance flag
-115,115,"('Bucaramanga', 'Colombia')",distance flag
-116,116,"('Bucaramanga, Pinchote', 'Colombia')",distance flag
-117,117,"('Buga', 'Colombia')",distance flag
-118,118,"('Buga, Media Canoa', 'Colombia')",distance flag
-119,119,"('Caicedonia', 'Colombia')",distance flag
-120,120,"('Caldono', 'Colombia')",distance flag
-121,121,"('Cali', 'Colombia')",distance flag
-122,122,"('Campo Alegre, Huila', 'Colombia')",distance flag
-123,123,"('Ca╤a Flecha', 'Colombia')",distance flag
-124,124,"('Carmen De Bolivar', 'Colombia')",distance flag
-125,125,"('Cerete, Cordoba', 'Colombia')",distance flag
-126,126,"('Cerrito', 'Colombia')",distance flag
-127,127,"('Cienega De Oro', 'Colombia')",distance flag
-128,128,"('Ciudad Bolivar', 'Colombia')",distance flag
-129,129,"('Colombia', 'Colombia')",distance flag
-130,130,"('Cordoba', 'Colombia')",distance flag
-131,131,"('Corozal', 'Colombia')",distance flag
-132,132,"('Darien, Valle Del Cauca', 'Colombia')",distance flag
-133,133,"('Duitama', 'Colombia')",distance flag
-134,134,"('El Cerrito, Valle Del Cauca', 'Colombia')",distance flag
-135,135,"('El Espinal, Tolima', 'Colombia')",distance flag
-136,136,"('El Libano', 'Colombia')",distance flag
-137,137,"('El Naranjal', 'Colombia')",distance flag
-138,138,"('El Rosario', 'Colombia')",distance flag
-139,139,"('El Tambo, Valle Del Cauca', 'Colombia')",distance flag
-140,140,"('El Tomate', 'Colombia')",distance flag
-141,141,"('Fuente De Oro, Granda', 'Colombia')",distance flag
-142,142,"('Garzon, Huila', 'Colombia')",distance flag
-143,143,"('Granada', 'Colombia')",distance flag
-144,144,"('Guadalajara De Buga', 'Colombia')",distance flag
-145,145,"('Independencia, Caldono', 'Colombia')",distance flag
-146,146,"('La Catalina, Pereira', 'Colombia')",distance flag
-147,147,"('La Cubillera, Granada', 'Colombia')",distance flag
-148,148,"('La Palomera', 'Colombia')",distance flag
-149,149,"('La Trocha 12, Granda', 'Colombia')",distance flag
-150,150,"('La Ulloa Mpio Rivera', 'Colombia')",distance flag
-151,151,"('La Union, Corcega', 'Colombia')",distance flag
-152,152,"('Lejania, Granada', 'Colombia')",distance flag
-153,153,"('Matazul', 'Colombia')",distance flag
-154,154,"('Menegua', 'Colombia')",distance flag
-155,155,"('Mondomo, Santander', 'Colombia')",distance flag
-156,156,"('Monteria', 'Colombia')",distance flag
-157,157,"('Neiva, Huila', 'Colombia')",distance flag
-158,158,"('Obando, Molina', 'Colombia')",distance flag
-159,159,"('Palmira', 'Colombia')",distance flag
-160,160,"('Paraguaicito, Armenia', 'Colombia')",distance flag
-161,161,"('Pelaya-cesar (aguachica)', 'Colombia')",distance flag
-162,162,"('Pereira', 'Colombia')",distance flag
-163,163,"('Piendamo', 'Colombia')",distance flag
-164,164,"('Procampo', 'Colombia')",distance flag
-165,165,"('Puerto Lopez', 'Colombia')",distance flag
-166,166,"('Puerto Lopez', 'Colombia')",distance flag
-167,167,"('Quindio, Montenegro', 'Colombia')",distance flag
-168,168,"('Rivera, Huila', 'Colombia')",distance flag
-169,169,"('Roldanillo', 'Colombia')",distance flag
-170,170,"('Sabana De Torres, Santander', 'Colombia')",distance flag
-171,171,"('Sahagu', 'Colombia')",distance flag
-172,172,"('San Antonio', 'Colombia')",distance flag
-173,173,"('San Barreto', 'Colombia')",distance flag
-174,174,"('San Francisco, Sandona', 'Colombia')",distance flag
-175,175,"('San Ignacio, Granada', 'Colombia')",distance flag
-176,176,"('San Pedro De Uraba', 'Colombia')",distance flag
-177,177,"('San Pelayo', 'Colombia')",distance flag
-178,178,"('San Rafael, Consaca', 'Colombia')",distance flag
-179,179,"('Sandona, Narino, Fidar', 'Colombia')",distance flag
-180,180,"('Santa Helena', 'Colombia')",distance flag
-181,181,"('Santa Lucia', 'Colombia')",distance flag
-182,182,"('Santander De Quilichao', 'Colombia')",distance flag
-183,183,"('Segovia', 'Colombia')",distance flag
-184,184,"('Semivalle', 'Colombia')",distance flag
-185,185,"('Sincelejo', 'Colombia')",distance flag
-186,186,"('Taluma', 'Colombia')",distance flag
-187,187,"('Tierra Alta', 'Colombia')",distance flag
-188,188,"('Tulenapa', 'Colombia')",distance flag
-189,189,"('Tunja', 'Colombia')",distance flag
-190,190,"('Turipana', 'Colombia')",distance flag
-191,191,"('Turipana', 'Colombia')",distance flag
-192,192,"('Turipana', 'Colombia')",distance flag
-193,193,"('Turipana', 'Colombia')",distance flag
-194,194,"('Valle De Magdalena', 'Colombia')",distance flag
-195,195,"('Valle De Magdalena', 'Colombia')",distance flag
-196,196,"('Valle De Magdalena', 'Colombia')",distance flag
-197,197,"('Valle De Magdalena', 'Colombia')",distance flag
-198,198,"('Valle Del Cauca', 'Colombia')",distance flag
-199,199,"('Venecia', 'Colombia')",distance flag
-200,200,"('Villavicencio', 'Colombia')",distance flag
-201,201,"('Villavo', 'Colombia')",distance flag
-202,202,"('Yotoco-valle Del Cauca', 'Colombia')",distance flag
-203,203,"('Congo', 'Congo')",distance flag
-204,204,"('Odziba', 'Congo')",distance flag
-205,205,"('Tshibati', 'Congo')",distance flag
-206,206,"('Ca╤as, Guanacaste', 'Costa Rica')",distance flag
-207,207,"('Costa Rica', 'Costa Rica')",distance flag
-208,208,"('El Aguila, Pejibaye', 'Costa Rica')",distance flag
-209,209,"('El Parque, Los Chiles', 'Costa Rica')",distance flag
-210,210,"('El Progreso, Pejibaye', 'Costa Rica')",distance flag
-211,211,"('Guagaral', 'Costa Rica')",distance flag
-212,212,"('Guanacaste', 'Costa Rica')",distance flag
-213,213,"('Las Ca╤as', 'Costa Rica')",distance flag
-214,214,"('Pejibaye De Perez Zeledon', 'Costa Rica')",distance flag
-215,215,"('San Jose, Costa Rica', 'Costa Rica')",distance flag
-216,216,"('Upala', 'Costa Rica')",distance flag
-217,217,"('Upala Pueblo Nuevo', 'Costa Rica')",distance flag
-218,218,"('Veracruz, Pejibaye', 'Costa Rica')",distance flag
-219,219,"('Badikaha', ""Cote D'ivoire"")",distance flag
-220,220,"('Bouake', ""Cote D'ivoire"")",distance flag
-221,221,"('Ferkessedougou', ""Cote D'ivoire"")",distance flag
-222,222,"('Sinematiali', ""Cote D'ivoire"")",distance flag
-223,223,"('Touba', ""Cote D'ivoire"")",distance flag
-224,224,"('Warda/adrao-mbe', ""Cote D'ivoire"")",distance flag
-225,225,"('Alquizar', 'Cuba')",distance flag
-226,226,"('Tomeguin', 'Cuba')",distance flag
-227,227,"('Bani', 'Dominican Republic')",distance flag
-228,228,"('Comuna San Rafael, Peninsula Sta Elena', 'Ecuador')",distance flag
-229,229,"('Ecuador', 'Ecuador')",distance flag
-230,230,"('Fca. Exp. Josefina Balzar', 'Ecuador')",distance flag
-231,231,"('La Virginia Quevedo', 'Ecuador')",distance flag
-232,232,"('Lodana', 'Ecuador')",distance flag
-233,233,"('Los Rios', 'Ecuador')",distance flag
-234,234,"('Organos', 'Ecuador')",distance flag
-235,235,"('Pichilingue', 'Ecuador')",distance flag
-236,236,"('Pindal', 'Ecuador')",distance flag
-237,237,"('Porto Viejo', 'Ecuador')",distance flag
-238,238,"('Porto Viejo', 'Ecuador')",distance flag
-239,239,"('Gemmeiza', 'Egypt')",distance flag
-240,240,"('Giza', 'Egypt')",distance flag
-241,241,"('Nubaria', 'Egypt')",distance flag
-242,242,"('Sakha', 'Egypt')",distance flag
-243,243,"('Sids', 'Egypt')",distance flag
-244,244,"('Ahuachapan', 'El Salvador')",distance flag
-245,245,"('Apastepeque', 'El Salvador')",distance flag
-246,246,"('Armenia', 'El Salvador')",distance flag
-247,247,"('Barrio Nuevo, La Paz', 'El Salvador')",distance flag
-248,248,"('Chalchahuapa', 'El Salvador')",distance flag
-249,249,"('Cuhisnuat', 'El Salvador')",distance flag
-250,250,"('El Coyalito', 'El Salvador')",distance flag
-251,251,"('El Pepito, Concep., Chalate', 'El Salvador')",distance flag
-252,252,"('Jiquilisco', 'El Salvador')",distance flag
-253,253,"('Jocoro, Morazan', 'El Salvador')",distance flag
-254,254,"('Jucuapa, Usulutan', 'El Salvador')",distance flag
-255,255,"('La Libertad', 'El Salvador')",distance flag
-256,256,"('Lomas De Santiago', 'El Salvador')",distance flag
-257,257,"('Los Cipreses, Conchagua, La Union', 'El Salvador')",distance flag
-258,258,"('Nacimiento, La Union', 'El Salvador')",distance flag
-259,259,"('Nahuilingo', 'El Salvador')",distance flag
-260,260,"('Nueva Concepcion', 'El Salvador')",distance flag
-261,261,"('Quelepa, San Miguel', 'El Salvador')",distance flag
-262,262,"('San Andres', 'El Salvador')",distance flag
-263,263,"('San Andres (sb)', 'El Salvador')",distance flag
-264,264,"('San Mauricio', 'El Salvador')",distance flag
-265,265,"('San Pedro Puxtla, Ahuachapan', 'El Salvador')",distance flag
-266,266,"('San Vicente', 'El Salvador')",distance flag
-267,267,"('Santa Cruz', 'El Salvador')",distance flag
-268,268,"('Santa Cruz Porrillo', 'El Salvador')",distance flag
-269,269,"('Santa Cruz, El Salvador', 'El Salvador')",distance flag
-270,270,"('Suchitoto, Cuscatlan', 'El Salvador')",distance flag
-271,271,"('Tenancingo', 'El Salvador')",distance flag
-272,272,"('Uluazapa, La Union', 'El Salvador')",distance flag
-273,273,"('Halhale', 'Eritrea')",distance flag
-274,274,"('Shambiko', 'Eritrea')",distance flag
-275,275,"('Pontevedra', 'España')",distance flag
-276,276,"('Adet', 'Ethiopia')",distance flag
-277,277,"('Alemaya', 'Ethiopia')",distance flag
-278,278,"('Ambo', 'Ethiopia')",distance flag
-279,279,"('Awassa', 'Ethiopia')",distance flag
-280,280,"('Awassa', 'Ethiopia')",distance flag
-281,281,"('Bako', 'Ethiopia')",distance flag
-282,282,"('Bako', 'Ethiopia')",distance flag
-283,283,"('Ethiopia', 'Ethiopia')",distance flag
-284,284,"('Haramaya', 'Ethiopia')",distance flag
-285,285,"('Holetta', 'Ethiopia')",distance flag
-286,286,"('Jimma', 'Ethiopia')",distance flag
-287,287,"('Kitale-ws', 'Ethiopia')",distance flag
-288,288,"('Kokate', 'Ethiopia')",distance flag
-289,289,"('Kulumsa', 'Ethiopia')",distance flag
-290,290,"('Melkasa', 'Ethiopia')",distance flag
-291,291,"('Mieso', 'Ethiopia')",distance flag
-292,292,"('Nazareth', 'Ethiopia')",distance flag
-293,293,"('Nazret', 'Ethiopia')",distance flag
-294,294,"('Nazret', 'Ethiopia')",distance flag
-295,295,"('Pawe', 'Ethiopia')",distance flag
-296,296,"('Ws', 'Ethiopia')",distance flag
-297,297,"('Ziway', 'Ethiopia')",distance flag
-298,298,"('Dobuleni Research Station', 'Fiji')",distance flag
-299,299,"('Koronnia Research Station', 'Fiji')",distance flag
-300,300,"('Legalega Research Station', 'Fiji')",distance flag
-301,301,"('Sigatoka Research Station', 'Fiji')",distance flag
-302,302,"('Tserovani', 'Georgia')",distance flag
-303,303,"('Damongo', 'Ghana')",distance flag
-304,304,"('Ejura', 'Ghana')",distance flag
-305,305,"('Fumesua', 'Ghana')",distance flag
-306,306,"('Kwadaso', 'Ghana')",distance flag
-307,307,"('Nyankpala', 'Ghana')",distance flag
-308,308,"('Pokuase', 'Ghana')",distance flag
-309,309,"('Tamale', 'Ghana')",distance flag
-310,310,"('Thessaloniki', 'Greece')",distance flag
-311,311,"('Thessaloniki-kentriko', 'Greece')",distance flag
-312,312,"('Barcenas, Villa Nuev', 'Guatemala')",distance flag
-313,313,"('Caballo Blanco, Retalhuleu', 'Guatemala')",distance flag
-314,314,"('Chimaltenango', 'Guatemala')",distance flag
-315,315,"('Cuyuta', 'Guatemala')",distance flag
-316,316,"('El Ovejero, Jutiapa', 'Guatemala')",distance flag
-317,317,"('Estanzuela', 'Guatemala')",distance flag
-318,318,"('Finca, Las Vegas Tequisate.', 'Guatemala')",distance flag
-319,319,"('Isidro Avarez', 'Guatemala')",distance flag
-320,320,"('Jutiapa', 'Guatemala')",distance flag
-321,321,"('La Flecha', 'Guatemala')",distance flag
-322,322,"('La Maquina', 'Guatemala')",distance flag
-323,323,"('La M┴quina Caballo Blanco', 'Guatemala')",distance flag
-324,324,"('La Maquina, Linea A5', 'Guatemala')",distance flag
-325,325,"('La Maquina, Tulate', 'Guatemala')",distance flag
-326,326,"('Las Monjas', 'Guatemala')",distance flag
-327,327,"('Las Vegas', 'Guatemala')",distance flag
-328,328,"('Monjas, Jalapa', 'Guatemala')",distance flag
-329,329,"('Nueva Concepcion', 'Guatemala')",distance flag
-330,330,"('Ovejero, Jutiapa', 'Guatemala')",distance flag
-331,331,"('Quesada, Jutiapa', 'Guatemala')",distance flag
-332,332,"('Salam B. V.', 'Guatemala')",distance flag
-333,333,"('San Jos╔ Pinula', 'Guatemala')",distance flag
-334,334,"('San Pedro Pinula, Jalapa', 'Guatemala')",distance flag
-335,335,"('Sto Domingo', 'Guatemala')",distance flag
-336,336,"('Tequinzate', 'Guatemala')",distance flag
-337,337,"('Tequinzate', 'Guatemala')",distance flag
-338,338,"('Zacapa', 'Guatemala')",distance flag
-339,339,"('Cayes', 'Haiti')",distance flag
-340,340,"('Chantilly', 'Haiti')",distance flag
-341,341,"('Damien Farm.', 'Haiti')",distance flag
-342,342,"('Karoman, Lavallee', 'Haiti')",distance flag
-343,343,"('Levy-cayes', 'Haiti')",distance flag
-344,344,"('Nan- Jn Pierre, Cap-rouge', 'Haiti')",distance flag
-345,345,"('Candelaria, Lempira', 'Honduras')",distance flag
-346,346,"('Catacamas, Olancho', 'Honduras')",distance flag
-347,347,"('Comayagua', 'Honduras')",distance flag
-348,348,"('Comayagua, E.e. Playitas', 'Honduras')",distance flag
-349,349,"('Danli', 'Honduras')",distance flag
-350,350,"('El Guaco Yorito, Yoro', 'Honduras')",distance flag
-351,351,"('El Pital, Atlantida', 'Honduras')",distance flag
-352,352,"('Higuero Qumado, Yori', 'Honduras')",distance flag
-353,353,"('Jutiquile, Olancho', 'Honduras')",distance flag
-354,354,"('La Esperanza', 'Honduras')",distance flag
-355,355,"('Las Acacias', 'Honduras')",distance flag
-356,356,"('Litoral Atlantico', 'Honduras')",distance flag
-357,357,"('Luquigue Yorito, Yoro', 'Honduras')",distance flag
-358,358,"('Mina Handa (yorito Yoco)', 'Honduras')",distance flag
-359,359,"('Obraje, Danli', 'Honduras')",distance flag
-360,360,"('Omonita', 'Honduras')",distance flag
-361,361,"('Pata Stera (yorito Yoco)', 'Honduras')",distance flag
-362,362,"('Playita', 'Honduras')",distance flag
-363,363,"('Potrerillos, Olancho', 'Honduras')",distance flag
-364,364,"('Rio Arriba Yorito, Yoro', 'Honduras')",distance flag
-365,365,"('San Lucas, El Paraiso', 'Honduras')",distance flag
-366,366,"('San Pedro De Catacamas, Olancho', 'Honduras')",distance flag
-367,367,"('Santa Cruz, Yorito,y', 'Honduras')",distance flag
-368,368,"('Yoro, El Pate', 'Honduras')",distance flag
-369,369,"('Yoro, Morazan', 'Honduras')",distance flag
-370,370,"('Adoni Mandal', 'India')",distance flag
-371,371,"('Almora', 'India')",distance flag
-372,372,"('Amberpet', 'India')",distance flag
-373,373,"('Anantnagar', 'India')",distance flag
-374,374,"('Arabhavi', 'India')",distance flag
-375,375,"('Auli', 'India')",distance flag
-376,376,"('Aurangabad', 'India')",distance flag
-377,377,"('Bahraich', 'India')",distance flag
-378,378,"('Bahraich, Crop Research Station', 'India')",distance flag
-379,379,"('Bajaura', 'India')",distance flag
-380,380,"('Bangalore', 'India')",distance flag
-381,381,"('Bangalore', 'India')",distance flag
-382,382,"('Banswara', 'India')",distance flag
-383,383,"('Begusarai, Bihar', 'India')",distance flag
-384,384,"('Belipar, Gorakhpur, U.p.', 'India')",distance flag
-385,385,"('Bihar', 'India')",distance flag
-386,386,"('Chhindwara', 'India')",distance flag
-387,387,"('Coimbatore', 'India')",distance flag
-388,388,"('Delhi', 'India')",distance flag
-389,389,"('Dhaulakuan', 'India')",distance flag
-390,390,"('Dholi', 'India')",distance flag
-391,391,"('Dholi', 'India')",distance flag
-392,392,"('Dmr I.a.r.i.', 'India')",distance flag
-393,393,"('Dohad', 'India')",distance flag
-394,394,"('Godhra', 'India')",distance flag
-395,395,"('Godhsa Gaujasat', 'India')",distance flag
-396,396,"('Hyderabad', 'India')",distance flag
-397,397,"('India', 'India')",distance flag
-398,398,"('Issarwadi', 'India')",distance flag
-399,399,"('Jalna', 'India')",distance flag
-400,400,"('Jashipur', 'India')",distance flag
-401,401,"('Jorhat', 'India')",distance flag
-402,402,"('Kangra (h.p.)', 'India')",distance flag
-403,403,"('Kanpur', 'India')",distance flag
-404,404,"('Karnal', 'India')",distance flag
-405,405,"('Karnataka', 'India')",distance flag
-406,406,"('Khadbrabhra', 'India')",distance flag
-407,407,"('Khedbrahma', 'India')",distance flag
-408,408,"('Kolhapur', 'India')",distance flag
-409,409,"('Ludhiana', 'India')",distance flag
-410,410,"('Medchal', 'India')",distance flag
-411,411,"('Messina', 'India')",distance flag
-412,412,"('Muzafferpur', 'India')",distance flag
-413,413,"('New Delhi', 'India')",distance flag
-414,414,"('P.r Pally', 'India')",distance flag
-415,415,"('Pahalgam', 'India')",distance flag
-416,416,"('Pantnagar', 'India')",distance flag
-417,417,"('Pantnagar', 'India')",distance flag
-418,418,"('Parbhani', 'India')",distance flag
-419,419,"('Poonch', 'India')",distance flag
-420,420,"('Prabhakar Reddy', 'India')",distance flag
-421,421,"('Probhakor', 'India')",distance flag
-422,422,"('Pune', 'India')",distance flag
-423,423,"('Pusa', 'India')",distance flag
-424,424,"('R&d (pachora).', 'India')",distance flag
-425,425,"('R&d (wadadhe).', 'India')",distance flag
-426,426,"('Raipur', 'India')",distance flag
-427,427,"('Ranchi', 'India')",distance flag
-428,428,"('Rau Pusa (bihar)', 'India')",distance flag
-429,429,"('Rayalkole', 'India')",distance flag
-430,430,"('Samastipur', 'India')",distance flag
-431,431,"('Sonipat', 'India')",distance flag
-432,432,"('Srinagar', 'India')",distance flag
-433,433,"('Srinagar, K.d. Research Station', 'India')",distance flag
-434,434,"('Udaipur', 'India')",distance flag
-435,435,"('Umiam Meghalaya', 'India')",distance flag
-436,436,"('Varanasi', 'India')",distance flag
-437,437,"('Wahdan, Pahalgam, Kashmir', 'India')",distance flag
-438,438,"('Weerasak Doungjan', 'India')",distance flag
-439,439,"('Bontobili', 'Indonesia')",distance flag
-440,440,"('Gowa S. Sulawesi', 'Indonesia')",distance flag
-441,441,"('Hulu Sungai Selatan', 'Indonesia')",distance flag
-442,442,"('Jambegede', 'Indonesia')",distance flag
-443,443,"('Malang', 'Indonesia')",distance flag
-444,444,"('Maros', 'Indonesia')",distance flag
-445,445,"('Muneng', 'Indonesia')",distance flag
-446,446,"('Naibonat', 'Indonesia')",distance flag
-447,447,"('Natar, Lampung', 'Indonesia')",distance flag
-448,448,"('Probolinggo', 'Indonesia')",distance flag
-449,449,"('Takalar, South Sulawesi', 'Indonesia')",distance flag
-450,450,"('Yogyakarta', 'Indonesia')",distance flag
-451,451,"('Agricultural Research Station Of Gorgan', 'Iran')",distance flag
-452,452,"('Safiabad', 'Iran')",distance flag
-453,453,"('Ai - Latifyia', 'Iraq')",distance flag
-454,454,"('Baghdad', 'Iraq')",distance flag
-455,455,"(""Bonghdad, Al_mada'en"", 'Iraq')",distance flag
-456,456,"('Tuwaitha Baghdad', 'Iraq')",distance flag
-457,457,"('Central Asia', 'Kazakstan')",distance flag
-458,458,"('Alupe', 'Kenya')",distance flag
-459,459,"('Baobab', 'Kenya')",distance flag
-460,460,"('Bondo- On Farm', 'Kenya')",distance flag
-461,461,"('Bukura', 'Kenya')",distance flag
-462,462,"('Bungema', 'Kenya')",distance flag
-463,463,"('Bungoma', 'Kenya')",distance flag
-464,464,"('Burura', 'Kenya')",distance flag
-465,465,"('Busia', 'Kenya')",distance flag
-466,466,"('Emabwi', 'Kenya')",distance flag
-467,467,"('Emali', 'Kenya')",distance flag
-468,468,"('Embu', 'Kenya')",distance flag
-469,469,"('Emuhaya', 'Kenya')",distance flag
-470,470,"('Endebess', 'Kenya')",distance flag
-471,471,"('Homabay', 'Kenya')",distance flag
-472,472,"('Ithookwe', 'Kenya')",distance flag
-473,473,"('K.t.i', 'Kenya')",distance flag
-474,474,"('Kakamega', 'Kenya')",distance flag
-475,475,"('Kampiyamawe', 'Kenya')",distance flag
-476,476,"('Kari - Embu', 'Kenya')",distance flag
-477,477,"('Karurina', 'Kenya')",distance flag
-478,478,"('Katumani', 'Kenya')",distance flag
-479,479,"('Kenya', 'Kenya')",distance flag
-480,480,"('Kesref', 'Kenya')",distance flag
-481,481,"('Kiboko', 'Kenya')",distance flag
-482,482,"('Kibos', 'Kenya')",distance flag
-483,483,"('Kimilili', 'Kenya')",distance flag
-484,484,"('Kimlili', 'Kenya')",distance flag
-485,485,"('Kitalale', 'Kenya')",distance flag
-486,486,"('Kitale', 'Kenya')",distance flag
-487,487,"('Kitale Syn Ii (ethiopia)', 'Kenya')",distance flag
-488,488,"('Kitui', 'Kenya')",distance flag
-489,489,"('Ksc Field', 'Kenya')",distance flag
-490,490,"('Machakos', 'Kenya')",distance flag
-491,491,"('Makindu', 'Kenya')",distance flag
-492,492,"('Makueni', 'Kenya')",distance flag
-493,493,"('Mitungu', 'Kenya')",distance flag
-494,494,"('Mombasa', 'Kenya')",distance flag
-495,495,"('Mtwapa', 'Kenya')",distance flag
-496,496,"('Muguga', 'Kenya')",distance flag
-497,497,"('Nairobi', 'Kenya')",distance flag
-498,498,"('Narc, Kitale', 'Kenya')",distance flag
-499,499,"('Nyahera', 'Kenya')",distance flag
-500,500,"('Rachuonyo', 'Kenya')",distance flag
-501,501,"('Sigor', 'Kenya')",distance flag
-502,502,"('Tanseed', 'Kenya')",distance flag
-503,503,"('Vihiga', 'Kenya')",distance flag
-504,504,"('Wanbugu', 'Kenya')",distance flag
-505,505,"('Western Kakamrga', 'Kenya')",distance flag
-506,506,"('Western Seeds', 'Kenya')",distance flag
-507,507,"('Leribe', 'Lesotho')",distance flag
-508,508,"('Lesotho', 'Lesotho')",distance flag
-509,509,"('Machache', 'Lesotho')",distance flag
-510,510,"('Mahobong', 'Lesotho')",distance flag
-511,511,"('Maseru', 'Lesotho')",distance flag
-512,512,"('Mokhotlong', 'Lesotho')",distance flag
-513,513,"('Mokhotlong', 'Lesotho')",distance flag
-514,514,"('Nyakosoba', 'Lesotho')",distance flag
-515,515,"('Teyateyaneng', 'Lesotho')",distance flag
-516,516,"('Tseka', 'Lesotho')",distance flag
-517,517,"('Tulear', 'Madagascar')",distance flag
-518,518,"('Baka Research Station', 'Malawi')",distance flag
-519,519,"('Bembeke', 'Malawi')",distance flag
-520,520,"('Bolero', 'Malawi')",distance flag
-521,521,"('Bvumbwe', 'Malawi')",distance flag
-522,522,"('Bwanje', 'Malawi')",distance flag
-523,523,"('Chitala', 'Malawi')",distance flag
-524,524,"('Chitedze', 'Malawi')",distance flag
-525,525,"('Lunyangwa', 'Malawi')",distance flag
-526,526,"('Makoka', 'Malawi')",distance flag
-527,527,"('Mbawa', 'Malawi')",distance flag
-528,528,"('Mphimbi', 'Malawi')",distance flag
-529,529,"('Ngabu', 'Malawi')",distance flag
-530,530,"('Not Identified', 'Malawi')",distance flag
-531,531,"('Salima', 'Malawi')",distance flag
-532,532,"('Tsangano', 'Malawi')",distance flag
-533,533,"('Zomba', 'Malawi')",distance flag
-534,534,"('Farako', 'Mali')",distance flag
-535,535,"('Katibougou', 'Mali')",distance flag
-536,536,"('Kolombada', 'Mali')",distance flag
-537,537,"('Rue Mohamed', 'Mali')",distance flag
-538,538,"('Sotuba', 'Mali')",distance flag
-539,539,"('Acatic, Jalisco', 'Mexico')",distance flag
-540,540,"('Acayucan, Veracruz', 'Mexico')",distance flag
-541,541,"('Aculco', 'Mexico')",distance flag
-542,542,"('Agua Fria', 'Mexico')",distance flag
-543,543,"('Aguascalientes', 'Mexico')",distance flag
-544,544,"('Ahuacatlan, Nayarit', 'Mexico')",distance flag
-545,545,"('Almoloya De Juarez', 'Mexico')",distance flag
-546,546,"('Ameca, Jal.', 'Mexico')",distance flag
-547,547,"('Ameca, Jal.', 'Mexico')",distance flag
-548,548,"('Ameca, Jal.', 'Mexico')",distance flag
-549,549,"('Amecameca, Mexico', 'Mexico')",distance flag
-550,550,"('Apaseo El Guadalupe, Guanajuato', 'Mexico')",distance flag
-551,551,"('Atlacomulco', 'Mexico')",distance flag
-552,552,"('Axochio, San Andres Tuxtla, Veracruz', 'Mexico')",distance flag
-553,553,"('Buenavista Penjamo, Guanajuato', 'Mexico')",distance flag
-554,554,"('Calera, Zacatecas', 'Mexico')",distance flag
-555,555,"('Campeche, Campeche', 'Mexico')",distance flag
-556,556,"('Candelaria Portezuelo, Puebla', 'Mexico')",distance flag
-557,557,"('Candelaria Portezuelo, Puebla', 'Mexico')",distance flag
-558,558,"('Cardel', 'Mexico')",distance flag
-559,559,"('Celaya, Guanajuato', 'Mexico')",distance flag
-560,560,"('Celaya, Guanajuato (inifap)', 'Mexico')",distance flag
-561,561,"('Cerib, Tamaulipas', 'Mexico')",distance flag
-562,562,"('Champoton, Campeche', 'Mexico')",distance flag
-563,563,"('Chapingo, Estado De Mexico', 'Mexico')",distance flag
-564,564,"('Chavinda', 'Mexico')",distance flag
-565,565,"('Chiapas', 'Mexico')",distance flag
-566,566,"('Chorrerones', 'Mexico')",distance flag
-567,567,"('Ciudad Anahuac, Nuevo Leon', 'Mexico')",distance flag
-568,568,"('Ciudad Guzman, Jalisco', 'Mexico')",distance flag
-569,569,"('Ciudad Obregon', 'Mexico')",distance flag
-570,570,"('Coatlinchan, Estado De Mexico', 'Mexico')",distance flag
-571,571,"('Cocotitlan, Texcoco', 'Mexico')",distance flag
-572,572,"('Colon, Queretaro', 'Mexico')",distance flag
-573,573,"('Colonia Del Turen', 'Mexico')",distance flag
-574,574,"('Coquimatlan', 'Mexico')",distance flag
-575,575,"('Corralejo De Hidalgo, Guanajuato', 'Mexico')",distance flag
-576,576,"('Cotaxla', 'Mexico')",distance flag
-577,577,"('Cotaxtla (inifap)', 'Mexico')",distance flag
-578,578,"('Coyoltepec, San Andres Tuxtla, Veracruz', 'Mexico')",distance flag
-579,579,"('Cuautitlan, Estado De Mexico', 'Mexico')",distance flag
-580,580,"('Cuendo1', 'Mexico')",distance flag
-581,581,"('Cuidad Guzman, Jalisco', 'Mexico')",distance flag
-582,582,"('Culican, Sinaloa', 'Mexico')",distance flag
-583,583,"('Delicias, Chihuahua', 'Mexico')",distance flag
-584,584,"('Diaz Ordaz, Tamaulipas', 'Mexico')",distance flag
-585,585,"('Dolores Enyeje, Ixtla', 'Mexico')",distance flag
-586,586,"('Dolores Hidalgo, Guanajuato', 'Mexico')",distance flag
-587,587,"('Durango, Durango', 'Mexico')",distance flag
-588,588,"('Edzna, Campeche', 'Mexico')",distance flag
-589,589,"('Ejido 1ro De Mayo', 'Mexico')",distance flag
-590,590,"('El Batan', 'Mexico')",distance flag
-591,591,"('El Batan', 'Mexico')",distance flag
-592,592,"('El Batan', 'Mexico')",distance flag
-593,593,"('El Molino Zinacantep', 'Mexico')",distance flag
-594,594,"('El Refugio, San Luis De La Paz, Guanajuato', 'Mexico')",distance flag
-595,595,"('El Zapote, Tonatico', 'Mexico')",distance flag
-596,596,"('Gomez Farias, Jalisco', 'Mexico')",distance flag
-597,597,"('Guadalajara', 'Mexico')",distance flag
-598,598,"('Guadalajara, Jalisco', 'Mexico')",distance flag
-599,599,"('Guanajuato', 'Mexico')",distance flag
-600,600,"('Guasave, Sinaloa', 'Mexico')",distance flag
-601,601,"('Gunyo, Aculco Estado De Mexico', 'Mexico')",distance flag
-602,602,"('Hidalgo', 'Mexico')",distance flag
-603,603,"('Huamantla Tlaxcala', 'Mexico')",distance flag
-604,604,"('Huejutla De Reyes, Hidalgo', 'Mexico')",distance flag
-605,605,"('Huimanguillo', 'Mexico')",distance flag
-606,606,"('Ignacio De La Llave, Veracruz', 'Mexico')",distance flag
-607,607,"('Iguala, Guerrero', 'Mexico')",distance flag
-608,608,"('Irapuato, Guanajuato', 'Mexico')",distance flag
-609,609,"('Isla, Veracruz', 'Mexico')",distance flag
-610,610,"('Iturbide, Guanajuato', 'Mexico')",distance flag
-611,611,"('Ixtapan De La Pano', 'Mexico')",distance flag
-612,612,"('Jalisco, Jalisco', 'Mexico')",distance flag
-613,613,"('Jamay', 'Mexico')",distance flag
-614,614,"('Jerico Chiapas', 'Mexico')",distance flag
-615,615,"('Jesus Maria', 'Mexico')",distance flag
-616,616,"('Jiquipilco', 'Mexico')",distance flag
-617,617,"('Jocotitlan', 'Mexico')",distance flag
-618,618,"('Jocotitlan 2', 'Mexico')",distance flag
-619,619,"('La Barca, Jalisco', 'Mexico')",distance flag
-620,620,"('La Cantera, Comonfort, Guanajuato', 'Mexico')",distance flag
-621,621,"('La Cruz De Elota, Sinaloa', 'Mexico')",distance flag
-622,622,"('La Huerta, Jalisco', 'Mexico')",distance flag
-623,623,"('La Loma Municipio, Tepatitla, Jalisco', 'Mexico')",distance flag
-624,624,"('La Piedad, Michoacan', 'Mexico')",distance flag
-625,625,"('La Torrecilla, Tlalixcoyan, Veracruz', 'Mexico')",distance flag
-626,626,"('Leon, Guanajuato', 'Mexico')",distance flag
-627,627,"('Los Mochis, Sinaloa', 'Mexico')",distance flag
-628,628,"('Los Mochis, Sinaloa', 'Mexico')",distance flag
-629,629,"('Malinalco, Mexico', 'Mexico')",distance flag
-630,630,"('Mata De Agua', 'Mexico')",distance flag
-631,631,"('Mavoro, Estado De Mexico', 'Mexico')",distance flag
-632,632,"('Metepec', 'Mexico')",distance flag
-633,633,"('Mixquihuala, Hidalgo', 'Mexico')",distance flag
-634,634,"('Montecillo', 'Mexico')",distance flag
-635,635,"('Nayarit', 'Mexico')",distance flag
-636,636,"('Nextipac, Jalisco', 'Mexico')",distance flag
-637,637,"('Nextipac, Jalisco', 'Mexico')",distance flag
-638,638,"('Ocotitlan, Puebla', 'Mexico')",distance flag
-639,639,"('Ocozocoautla', 'Mexico')",distance flag
-640,640,"('Ocuituco, Morelos', 'Mexico')",distance flag
-641,641,"('Ojo De Agua, Santiago Tuxtla, Veracruz', 'Mexico')",distance flag
-642,642,"('Ojo De Agua, Tonatico', 'Mexico')",distance flag
-643,643,"('Ojocaliente, Zacatecas', 'Mexico')",distance flag
-644,644,"('Pabellon, Aguascalientes', 'Mexico')",distance flag
-645,645,"('Pedro Escobedo, Queretaro', 'Mexico')",distance flag
-646,646,"('Penjamo, Guanajuato', 'Mexico')",distance flag
-647,647,"('Poncitlan, Jalisco', 'Mexico')",distance flag
-648,648,"('Popotes Municipio De Tepatitlan, Jalisco', 'Mexico')",distance flag
-649,649,"('Poza Rica', 'Mexico')",distance flag
-650,650,"('Poza Rica', 'Mexico')",distance flag
-651,651,"('Puebla', 'Mexico')",distance flag
-652,652,"('Puerto Vallarta', 'Mexico')",distance flag
-653,653,"('Queretaro', 'Mexico')",distance flag
-654,654,"('Quila, Sinaloa', 'Mexico')",distance flag
-655,655,"('Rancheria Hernandez, Puebla', 'Mexico')",distance flag
-656,656,"('Rincon De Parangueo, Guanajuato', 'Mexico')",distance flag
-657,657,"('Rinconada Mazapiltepec', 'Mexico')",distance flag
-658,658,"('Rio Bravo, Tamaulipas', 'Mexico')",distance flag
-659,659,"('Roque, Guanajuato', 'Mexico')",distance flag
-660,660,"('San Andres Tuxtla', 'Mexico')",distance flag
-661,661,"('San Antonio La Isla Mexico', 'Mexico')",distance flag
-662,662,"('San Jose De Gracia Michoacan', 'Mexico')",distance flag
-663,663,"('San Jose Del Valle Nayarit', 'Mexico')",distance flag
-664,664,"('San Jose Iturbide, Guanajuato', 'Mexico')",distance flag
-665,665,"('San Juan De Abajo', 'Mexico')",distance flag
-666,666,"('San Juan Del Rio', 'Mexico')",distance flag
-667,667,"('San Juan Zitlaltepec', 'Mexico')",distance flag
-668,668,"('San Luis De La Paz, Guanajuato', 'Mexico')",distance flag
-669,669,"('San Miguel Allende, Guanajuato', 'Mexico')",distance flag
-670,670,"('San Miguel Cuyutlan, Jalisco', 'Mexico')",distance flag
-671,671,"('San Pedro Lagunillas, Nayarit', 'Mexico')",distance flag
-672,672,"('San Sebastian Teles', 'Mexico')",distance flag
-673,673,"('Santa Lucia, Estado De Mexico', 'Mexico')",distance flag
-674,674,"('Santa Maria Rayon', 'Mexico')",distance flag
-675,675,"('Santiado Del Monte, Municipio Villa Victoria', 'Mexico')",distance flag
-676,676,"('Santiago Ixcuintla, Nayarit', 'Mexico')",distance flag
-677,677,"('Silao, Guanajuato', 'Mexico')",distance flag
-678,678,"('Tamarindos, Veracruz', 'Mexico')",distance flag
-679,679,"('Tamaulipas', 'Mexico')",distance flag
-680,680,"('Tapachula', 'Mexico')",distance flag
-681,681,"('Tejupilco', 'Mexico')",distance flag
-682,682,"('Tepalcingo, Morelos', 'Mexico')",distance flag
-683,683,"('Tepatitlan, Jalisco', 'Mexico')",distance flag
-684,684,"('Tlacomulco', 'Mexico')",distance flag
-685,685,"('Tlajomulco, De Zuniga', 'Mexico')",distance flag
-686,686,"('Tlajomulco, Jalisco', 'Mexico')",distance flag
-687,687,"('Tlajomulco, Jalisco', 'Mexico')",distance flag
-688,688,"('Tlalixcoyan', 'Mexico')",distance flag
-689,689,"('Tlaltizapan', 'Mexico')",distance flag
-690,690,"('Tlaltizapan', 'Mexico')",distance flag
-691,691,"('Tlaltizapan', 'Mexico')",distance flag
-692,692,"('Tlaxcoapan', 'Mexico')",distance flag
-693,693,"('Toluca', 'Mexico')",distance flag
-694,694,"('Tototlan, Jalisco', 'Mexico')",distance flag
-695,695,"('Uach, Campo Experimental', 'Mexico')",distance flag
-696,696,"('Usmajac Municipio De Sayula, Jalisco', 'Mexico')",distance flag
-697,697,"('Uxmal', 'Mexico')",distance flag
-698,698,"('Valle De Bravo, Estado De Mexico', 'Mexico')",distance flag
-699,699,"('Valle De Culiacan', 'Mexico')",distance flag
-700,700,"('Valle De Mexico', 'Mexico')",distance flag
-701,701,"('Valle Del Fuerte, Sinaloa', 'Mexico')",distance flag
-702,702,"('Valle Del Yaqui', 'Mexico')",distance flag
-703,703,"('Valparaiso, Zacatecas', 'Mexico')",distance flag
-704,704,"('Veracrucito', 'Mexico')",distance flag
-705,705,"('Veracruz', 'Mexico')",distance flag
-706,706,"('Villa Flores, Chiapas', 'Mexico')",distance flag
-707,707,"('Villa Hidalgo, Nayarit', 'Mexico')",distance flag
-708,708,"('Villa Verde, Guanajuato', 'Mexico')",distance flag
-709,709,"('Villanueva, Zacatecas', 'Mexico')",distance flag
-710,710,"('Xalisco, Nayarit', 'Mexico')",distance flag
-711,711,"('Xalostoc, Morelos', 'Mexico')",distance flag
-712,712,"('Xocoyucan, Tlaxcala', 'Mexico')",distance flag
-713,713,"('Zotoluca, Hidalgo', 'Mexico')",distance flag
-714,714,"('Zumpango', 'Mexico')",distance flag
-715,715,"('El Menzeh', 'Morocco')",distance flag
-716,716,"('Khemiszemamra', 'Morocco')",distance flag
-717,717,"('Angonia Tete', 'Mozambique')",distance flag
-718,718,"('Angora', 'Mozambique')",distance flag
-719,719,"('Chokwe', 'Mozambique')",distance flag
-720,720,"('Ex-instituto Nacional De Investigacion Agraria', 'Mozambique')",distance flag
-721,721,"('Lichinga', 'Mozambique')",distance flag
-722,722,"('Mapupulo', 'Mozambique')",distance flag
-723,723,"('Maputo', 'Mozambique')",distance flag
-724,724,"('Mocuba', 'Mozambique')",distance flag
-725,725,"('Morrumbala-zambezia', 'Mozambique')",distance flag
-726,726,"('Mozambique', 'Mozambique')",distance flag
-727,727,"('Mutarara', 'Mozambique')",distance flag
-728,728,"('Namialo', 'Mozambique')",distance flag
-729,729,"('Nampula', 'Mozambique')",distance flag
-730,730,"('Nhacoongo', 'Mozambique')",distance flag
-731,731,"('Ntengo Nucodgi Augoiris', 'Mozambique')",distance flag
-732,732,"('Ntengo Umadzi- Angoria', 'Mozambique')",distance flag
-733,733,"('Semol', 'Mozambique')",distance flag
-734,734,"('Sussundenga', 'Mozambique')",distance flag
-735,735,"('Umbeluzi', 'Mozambique')",distance flag
-736,736,"('Ussudenga', 'Mozambique')",distance flag
-737,737,"('Naung Mon', 'Myanmar')",distance flag
-738,738,"('Sea', 'Myanmar')",distance flag
-739,739,"('Taryaw', 'Myanmar')",distance flag
-740,740,"('Tatkan', 'Myanmar')",distance flag
-741,741,"('Tatkone', 'Myanmar')",distance flag
-742,742,"('Zaloke Research Farm', 'Myanmar')",distance flag
-743,743,"('Aungban, Burma', 'Myanmar (burma)')",distance flag
-744,744,"('Yezin, Burma', 'Myanmar (burma)')",distance flag
-745,745,"('Mashare', 'Namibia')",distance flag
-746,746,"('Mitkomst Research Station', 'Namibia')",distance flag
-747,747,"('Runda', 'Namibia')",distance flag
-748,748,"('Hardinath', 'Nepal')",distance flag
-749,749,"('Kabre', 'Nepal')",distance flag
-750,750,"('Khumaltar', 'Nepal')",distance flag
-751,751,"('Lumle', 'Nepal')",distance flag
-752,752,"('Pakhribas', 'Nepal')",distance flag
-753,753,"('Parinanipur (p.a.s.)', 'Nepal')",distance flag
-754,754,"('Parwanipur', 'Nepal')",distance flag
-755,755,"('Rampur', 'Nepal')",distance flag
-756,756,"('Surkhet', 'Nepal')",distance flag
-757,757,"('Campos Azules', 'Nicaragua')",distance flag
-758,758,"('Campos Azules, Masatepe', 'Nicaragua')",distance flag
-759,759,"('Carazo', 'Nicaragua')",distance flag
-760,760,"('Chinandega', 'Nicaragua')",distance flag
-761,761,"('Chontales', 'Nicaragua')",distance flag
-762,762,"('Chontales, Tamboral Sur', 'Nicaragua')",distance flag
-763,763,"('Condega, Esteli', 'Nicaragua')",distance flag
-764,764,"('El Areno, El Rama', 'Nicaragua')",distance flag
-765,765,"('El Jicaro, Nueva Segovia', 'Nicaragua')",distance flag
-766,766,"('El Pellizco, Chinandega', 'Nicaragua')",distance flag
-767,767,"('Jalapa', 'Nicaragua')",distance flag
-768,768,"('La Dal═a', 'Nicaragua')",distance flag
-769,769,"('La Presa', 'Nicaragua')",distance flag
-770,770,"('La Trinidad, Esteli', 'Nicaragua')",distance flag
-771,771,"('Las Cruces Carazo', 'Nicaragua')",distance flag
-772,772,"('Las Piedras,nueva Segovia', 'Nicaragua')",distance flag
-773,773,"('Llano Redondo', 'Nicaragua')",distance flag
-774,774,"('Managua', 'Nicaragua')",distance flag
-775,775,"('Mazatepec', 'Nicaragua')",distance flag
-776,776,"('Melchorita, San Carlos', 'Nicaragua')",distance flag
-777,777,"('Nindiri, Mazaya', 'Nicaragua')",distance flag
-778,778,"('Paz De Carazo', 'Nicaragua')",distance flag
-779,779,"('Pueblo Nuevo', 'Nicaragua')",distance flag
-780,780,"('San Bartolo', 'Nicaragua')",distance flag
-781,781,"('San Benito, Chinandega', 'Nicaragua')",distance flag
-782,782,"('San Cristobal', 'Nicaragua')",distance flag
-783,783,"('Santa Cruz, Esteli', 'Nicaragua')",distance flag
-784,784,"('Santa Juana, Nindiri', 'Nicaragua')",distance flag
-785,785,"('Santa Rosa', 'Nicaragua')",distance flag
-786,786,"('Baganda', 'Nigeria')",distance flag
-787,787,"('Ibadan', 'Nigeria')",distance flag
-788,788,"('Ikenne', 'Nigeria')",distance flag
-789,789,"('Jos Nig', 'Nigeria')",distance flag
-790,790,"('Layin Taki', 'Nigeria')",distance flag
-791,791,"('Mokwa', 'Nigeria')",distance flag
-792,792,"('Mokwa', 'Nigeria')",distance flag
-793,793,"('Samaru', 'Nigeria')",distance flag
-794,794,"('Saminaka Nig', 'Nigeria')",distance flag
-795,795,"('Temti Jos', 'Nigeria')",distance flag
-796,796,"('Tiga', 'Nigeria')",distance flag
-797,797,"('Turunku', 'Nigeria')",distance flag
-798,798,"('Zaria', 'Nigeria')",distance flag
-799,799,"('Ari, D,i. Kham', 'Pakistan')",distance flag
-800,800,"('Dadu', 'Pakistan')",distance flag
-801,801,"('Faisalabad', 'Pakistan')",distance flag
-802,802,"('Islamabad', 'Pakistan')",distance flag
-803,803,"('Pirsabak', 'Pakistan')",distance flag
-804,804,"('Yousafwala', 'Pakistan')",distance flag
-805,805,"('Azuer', 'Panama')",distance flag
-806,806,"('Ceiachi', 'Panama')",distance flag
-807,807,"('Chiriqui', 'Panama')",distance flag
-808,808,"('El Ejido', 'Panama')",distance flag
-809,809,"('Guarare', 'Panama')",distance flag
-810,810,"('Parita', 'Panama')",distance flag
-811,811,"('Rio Hato', 'Panama')",distance flag
-812,812,"('Caacupe', 'Paraguay')",distance flag
-813,813,"('Capitan Miranda', 'Paraguay')",distance flag
-814,814,"('Capitan Miranda', 'Paraguay')",distance flag
-815,815,"('Chore (d. S. Pedro)', 'Paraguay')",distance flag
-816,816,"('San Juan Bautista', 'Paraguay')",distance flag
-817,817,"('Tomas Romero Pereira', 'Paraguay')",distance flag
-818,818,"('Yjhovy', 'Paraguay')",distance flag
-819,819,"('Ascope', 'Peru')",distance flag
-820,820,"('Aucaloma', 'Peru')",distance flag
-821,821,"('E.e. El Porvenir, Calzada Moyobamba', 'Peru')",distance flag
-822,822,"('E.e. Pucallpa', 'Peru')",distance flag
-823,823,"('El Porvenir', 'Peru')",distance flag
-824,824,"('Huaral', 'Peru')",distance flag
-825,825,"('Humay - Pisco', 'Peru')",distance flag
-826,826,"('Iquitos', 'Peru')",distance flag
-827,827,"('Juan Guerra', 'Peru')",distance flag
-828,828,"('La Vi╤a-jayanca-lambayeque', 'Peru')",distance flag
-829,829,"('Lambayeque', 'Peru')",distance flag
-830,830,"('Lima', 'Peru')",distance flag
-831,831,"('Montupe 99', 'Peru')",distance flag
-832,832,"('Muy Finca Mochumi Lambayeque', 'Peru')",distance flag
-833,833,"('Pachacamac', 'Peru')",distance flag
-834,834,"('Peru', 'Peru')",distance flag
-835,835,"('Pucallpa', 'Peru')",distance flag
-836,836,"('Pucallpa, San Fernando, Sa', 'Peru')",distance flag
-837,837,"('Rioja', 'Peru')",distance flag
-838,838,"('Rioja, San Fernando, Sa', 'Peru')",distance flag
-839,839,"('Victoria 99', 'Peru')",distance flag
-840,840,"('Viru La Libertad', 'Peru')",distance flag
-841,841,"('Vista Florida', 'Peru')",distance flag
-842,842,"('Vista Florida Chiclayo', 'Peru')",distance flag
-843,843,"('Vista Florida Chiclayo', 'Peru')",distance flag
-844,844,"('Vista Florida Chiclayo', 'Peru')",distance flag
-845,845,"('Yurimagua', 'Peru')",distance flag
-846,846,"('Baybay', 'Philippines')",distance flag
-847,847,"('Cabuyao, Laguna', 'Philippines')",distance flag
-848,848,"('Cagayan Valley', 'Philippines')",distance flag
-849,849,"('Ipb Experiment Station', 'Philippines')",distance flag
-850,850,"('Kabacan', 'Philippines')",distance flag
-851,851,"('Kabacan, Cotabato', 'Philippines')",distance flag
-852,852,"('Katangawan', 'Philippines')",distance flag
-853,853,"('San Felipe, Ilagan, Isabela.', 'Philippines')",distance flag
-854,854,"('Visca', 'Philippines')",distance flag
-855,855,"('Rubona', 'Rwanda')",distance flag
-856,856,"('Nioro', 'Senegal')",distance flag
-857,857,"('Barberton', 'South Africa')",distance flag
-858,858,"('Burgershall', 'South Africa')",distance flag
-859,859,"('Delmas', 'South Africa')",distance flag
-860,860,"('Friedenheim Valley', 'South Africa')",distance flag
-861,861,"('Linkseed', 'South Africa')",distance flag
-862,862,"('Mpumalanga', 'South Africa')",distance flag
-863,863,"('Nelspruit Mpumalanga', 'South Africa')",distance flag
-864,864,"('North West Province', 'South Africa')",distance flag
-865,865,"('Pannar, Graytown', 'South Africa')",distance flag
-866,866,"('Petit', 'South Africa')",distance flag
-867,867,"('Tshiombo', 'South Africa')",distance flag
-868,868,"('Viljoonskroon', 'South Africa')",distance flag
-869,869,"('Betlehem', 'South Africa Rep.')",distance flag
-870,870,"('Cedara', 'South Africa Rep.')",distance flag
-871,871,"('Ezolimo', 'South Africa Rep.')",distance flag
-872,872,"('Friedenhei', 'South Africa Rep.')",distance flag
-873,873,"('Greytown', 'South Africa Rep.')",distance flag
-874,874,"('Greytown', 'South Africa Rep.')",distance flag
-875,875,"('Lwamongo', 'South Africa Rep.')",distance flag
-876,876,"('Nelspruit', 'South Africa Rep.')",distance flag
-877,877,"('Potchefstroom', 'South Africa')",distance flag
-878,878,"('Setlagole', 'South Africa Rep.')",distance flag
-879,879,"('Viljoenskroon', 'South Africa Rep.')",distance flag
-880,880,"('Gezira', 'Sudan')",distance flag
-881,881,"('Wad Medani', 'Sudan')",distance flag
-882,882,"('Paramaribo', 'Surinam')",distance flag
-883,883,"('Big-bend', 'Swaziland')",distance flag
-884,884,"('Les', 'Swaziland')",distance flag
-885,885,"('Lowveld, Brabend', 'Swaziland')",distance flag
-886,886,"('Luve', 'Swaziland')",distance flag
-887,887,"('Malkerns', 'Swaziland')",distance flag
-888,888,"('Mangcongo', 'Swaziland')",distance flag
-889,889,"('Nhlangano', 'Swaziland')",distance flag
-890,890,"('Shewula', 'Swaziland')",distance flag
-891,891,"('Swaziland', 'Swaziland')",distance flag
-892,892,"('Deir Al Zoor', 'Syria')",distance flag
-893,893,"('Raqqa', 'Syria')",distance flag
-894,894,"('Po-tzu-chia-i', 'Taiwan')",distance flag
-895,895,"('Afsf-arusha', 'Tanzania')",distance flag
-896,896,"('Arusha Seed Farm Afsf', 'Tanzania')",distance flag
-897,897,"('Arusha Tan', 'Tanzania')",distance flag
-898,898,"('Cholima', 'Tanzania')",distance flag
-899,899,"('Dabaga Uyole', 'Tanzania')",distance flag
-900,900,"('Dakawa', 'Tanzania')",distance flag
-901,901,"('Ilonga', 'Tanzania')",distance flag
-902,902,"('Inyala', 'Tanzania')",distance flag
-903,903,"('Katrin', 'Tanzania')",distance flag
-904,904,"('Katrin1', 'Tanzania')",distance flag
-905,905,"('Katrin2', 'Tanzania')",distance flag
-906,906,"('Katrin-ifakara', 'Tanzania')",distance flag
-907,907,"('Lambo', 'Tanzania')",distance flag
-908,908,"('Maruku', 'Tanzania')",distance flag
-909,909,"('Mbulumbulu', 'Tanzania')",distance flag
-910,910,"('Mlingano', 'Tanzania')",distance flag
-911,911,"('Monduli', 'Tanzania')",distance flag
-912,912,"('Morogoro', 'Tanzania')",distance flag
-913,913,"('Mwanza - Region', 'Tanzania')",distance flag
-914,914,"('Ngaramtoni', 'Tanzania')",distance flag
-915,915,"('Ngaramtoni-arusha', 'Tanzania')",distance flag
-916,916,"('Nm', 'Tanzania')",distance flag
-917,917,"('Selian', 'Tanzania')",distance flag
-918,918,"('Tabora', 'Tanzania')",distance flag
-919,919,"('Tanzania', 'Tanzania')",distance flag
-920,920,"('Tumbi-tabora', 'Tanzania')",distance flag
-921,921,"('Ukiriguru', 'Tanzania')",distance flag
-922,922,"('Uyole', 'Tanzania')",distance flag
-923,923,"('Weruweru', 'Tanzania')",distance flag
-924,924,"('Banmaisomrong', 'Thailand')",distance flag
-925,925,"('Nakhon Sawan R.c.', 'Thailand')",distance flag
-926,926,"('Nakhon Sawan R.c.', 'Thailand')",distance flag
-927,927,"('Phetchabun', 'Thailand')",distance flag
-928,928,"('Phraphutthabat', 'Thailand')",distance flag
-929,929,"('Sawankalok Sukhotha', 'Thailand')",distance flag
-930,930,"('Suwan', 'Thailand')",distance flag
-931,931,"('Tak Fa', 'Thailand')",distance flag
-932,932,"('Tak Fa', 'Thailand')",distance flag
-933,933,"('El Carmen', 'Trinidad Y Tobago')",distance flag
-934,934,"('Goldsborough', 'Trinidad Y Tobago')",distance flag
-935,935,"(""Louis D'or"", 'Trinidad Y Tobago')",distance flag
-936,936,"('Adapazari', 'Turkey')",distance flag
-937,937,"('Aydin', 'Turkey')",distance flag
-938,938,"('Anny Settl', 'Turkmenistan')",distance flag
-939,939,"('Bulegeni', 'Uganda')",distance flag
-940,940,"('Bulengeni', 'Uganda')",distance flag
-941,941,"('Kamayanmiggo', 'Uganda')",distance flag
-942,942,"('Kamenyamiggo', 'Uganda')",distance flag
-943,943,"('Kampala', 'Uganda')",distance flag
-944,944,"('Kapchorwa', 'Uganda')",distance flag
-945,945,"('Likonde,songea', 'Uganda')",distance flag
-946,946,"('Masaka', 'Uganda')",distance flag
-947,947,"('Msk', 'Uganda')",distance flag
-948,948,"('Naari', 'Uganda')",distance flag
-949,949,"('Namulonge Uga', 'Uganda')",distance flag
-950,950,"('Serere', 'Uganda')",distance flag
-951,951,"('Tororo', 'Uganda')",distance flag
-952,952,"('Uganda', 'Uganda')",distance flag
-953,953,"('Barnum Mn', 'United States Of America')",distance flag
-954,954,"('College Station, Texas', 'United States Of America')",distance flag
-955,955,"('Kenedy, Tx.', 'United States Of America')",distance flag
-956,956,"('Sn Antonio', 'United States Of America')",distance flag
-957,957,"('Tifton, Georgia', 'United States Of America')",distance flag
-958,958,"('Tifton, Georgia', 'United States Of America')",distance flag
-959,959,"('Weslaco, Texas', 'United States Of America')",distance flag
-960,960,"('La Estanzuela', 'Uruguay')",distance flag
-961,961,"('Agua Blanca', 'Venezuela')",distance flag
-962,962,"('Agua Blanca, Portuguesa', 'Venezuela')",distance flag
-963,963,"('Aragua (ceniap)', 'Venezuela')",distance flag
-964,964,"('Araure (acarigua)', 'Venezuela')",distance flag
-965,965,"('Araure (portuguesa)', 'Venezuela')",distance flag
-966,966,"('Carretera O, Turen, Portuguesa', 'Venezuela')",distance flag
-967,967,"('Centro Norte', 'Venezuela')",distance flag
-968,968,"('Colonia Agricola De Turen', 'Venezuela')",distance flag
-969,969,"('El Diamante, Yaritagua', 'Venezuela')",distance flag
-970,970,"('El Playon', 'Venezuela')",distance flag
-971,971,"('El Socorro', 'Venezuela')",distance flag
-972,972,"('Guarico', 'Venezuela')",distance flag
-973,973,"('La Lucia', 'Venezuela')",distance flag
-974,974,"('Las Caramas', 'Venezuela')",distance flag
-975,975,"('Las Guacamayas', 'Venezuela')",distance flag
-976,976,"('Las Guacamayas', 'Venezuela')",distance flag
-977,977,"('Las Guacamayas, El Sombrero', 'Venezuela')",distance flag
-978,978,"('Los Guayos, Carabobo State', 'Venezuela')",distance flag
-979,979,"('Manzanita', 'Venezuela')",distance flag
-980,980,"('Maracay', 'Venezuela')",distance flag
-981,981,"('Pascual Valetta, Laguna De Piedra', 'Venezuela')",distance flag
-982,982,"('Punta Gorda', 'Venezuela')",distance flag
-983,983,"('Sabana Del Medio', 'Venezuela')",distance flag
-984,984,"('Santa Barbara', 'Venezuela')",distance flag
-985,985,"('Semillas Aragua', 'Venezuela')",distance flag
-986,986,"('Tocoron', 'Venezuela')",distance flag
-987,987,"('Tocoron, Estado Aragua', 'Venezuela')",distance flag
-988,988,"('Tucupido', 'Venezuela')",distance flag
-989,989,"('Turen', 'Venezuela')",distance flag
-990,990,"('Unidad Agricola De Turen', 'Venezuela')",distance flag
-991,991,"('Venezuela', 'Venezuela')",distance flag
-992,992,"('Villa De Cura, Aragua', 'Venezuela')",distance flag
-993,993,"('Ars, Amberpet, Hyd.', 'Vietnam')",distance flag
-994,994,"('Binh Chanh Dictrict - Ho Chi Minh City', 'Vietnam')",distance flag
-995,995,"('Binh Duong', 'Vietnam')",distance flag
-996,996,"('Dan Phuong', 'Vietnam')",distance flag
-997,997,"('Dan Phuong Hatay', 'Vietnam')",distance flag
-998,998,"('Danphing Dist.', 'Vietnam')",distance flag
-999,999,"('Duc Hoa District, Long An Province', 'Vietnam')",distance flag
-1000,1000,"('Gorakhpur', 'Vietnam')",distance flag
-1001,1001,"('Hoc May District, Hochimin', 'Vietnam')",distance flag
-1002,1002,"('Lam Dong Province', 'Vietnam')",distance flag
-1003,1003,"('Song-boi', 'Vietnam')",distance flag
-1004,1004,"('Tay Ninh Province', 'Vietnam')",distance flag
-1005,1005,"('Gandajika', 'Zaire')",distance flag
-1006,1006,"('Mvuazi', 'Zaire')",distance flag
-1007,1007,"('Chisamba, Golden Valley', 'Zambia')",distance flag
-1008,1008,"('Kasama, Misanfu', 'Zambia')",distance flag
-1009,1009,"('Katuba', 'Zambia')",distance flag
-1010,1010,"('Kutumani', 'Zambia')",distance flag
-1011,1011,"('Lyempe', 'Zambia')",distance flag
-1012,1012,"('Magobo', 'Zambia')",distance flag
-1013,1013,"('Magoye', 'Zambia')",distance flag
-1014,1014,"('Mansa', 'Zambia')",distance flag
-1015,1015,"('Masumba', 'Zambia')",distance flag
-1016,1016,"('Mogoye', 'Zambia')",distance flag
-1017,1017,"('Mount Makulu', 'Zambia')",distance flag
-1018,1018,"('Mpongwe', 'Zambia')",distance flag
-1019,1019,"('Msekera', 'Zambia')",distance flag
-1020,1020,"('Nanga', 'Zambia')",distance flag
-1021,1021,"('Sesheke', 'Zambia')",distance flag
-1022,1022,"('Zambia', 'Zambia')",distance flag
-1023,1023,"('Zamseed, Farm', 'Zambia')",distance flag
-1024,1024,"('Arcturus', 'Zimbabwe')",distance flag
-1025,1025,"('Arex Drss, Harare', 'Zimbabwe')",distance flag
-1026,1026,"('Art Farm, Harare', 'Zimbabwe')",distance flag
-1027,1027,"('Chiredzi', 'Zimbabwe')",distance flag
-1028,1028,"('Cimmyt, Harare', 'Zimbabwe')",distance flag
-1029,1029,"('Dedza', 'Zimbabwe')",distance flag
-1030,1030,"('Glendale', 'Zimbabwe')",distance flag
-1031,1031,"('Gwebi', 'Zimbabwe')",distance flag
-1032,1032,"('Harare', 'Zimbabwe')",distance flag
-1033,1033,"('Kadoma', 'Zimbabwe')",distance flag
-1034,1034,"('Lucydale', 'Zimbabwe')",distance flag
-1035,1035,"('Makoholi', 'Zimbabwe')",distance flag
-1036,1036,"('Marondera', 'Zimbabwe')",distance flag
-1037,1037,"('Matopos', 'Zimbabwe')",distance flag
-1038,1038,"('Mazowe', 'Zimbabwe')",distance flag
-1039,1039,"('Muzarabani', 'Zimbabwe')",distance flag
-1040,1040,"('Pannar', 'Zimbabwe')",distance flag
-1041,1041,"('Pioneer', 'Zimbabwe')",distance flag
-1042,1042,"('Radoma', 'Zimbabwe')",distance flag
-1043,1043,"('Rattray Arnold Farm', 'Zimbabwe')",distance flag
-1044,1044,"('Ruwa', 'Zimbabwe')",distance flag
-1045,1045,"('Save Valley', 'Zimbabwe')",distance flag
-1046,1046,"('Shamva Zim', 'Zimbabwe')",distance flag
-1047,1047,"('Zimbabwe', 'Zimbabwe')",distance flag
-1048,1048,"('Kachwekano', 'Uganda')",distance flag
-1049,1049,"('Gakuta', 'Rwanda')",distance flag
-1050,1050,"('Rwerere', 'Rwanda')",distance flag
-1051,1051,"('Tamira', 'Rwanda')",distance flag
-1052,1052,"('Gisozi', 'Burundi')",distance flag
-1053,1053,"('Eldoret', 'Kenya')",distance flag
-1054,1054,"('Pentecostes, Texcoco', 'Mexico')",distance flag
-1055,1055,"('Texcoco', 'Mexico')",distance flag
-1056,1056,"('Zacatepec, Morelos', 'Mexico')",distance flag
-1057,1057,"('Miacatlan', 'Mexico')",distance flag
-1058,1058,"('Salandhar (punjab)', 'India')",distance flag
-1059,1059,"('Dago', 'Kenya')",distance flag
-1060,1060,"('Kodiaga', 'Kenya')",distance flag
-1061,1061,"('Luanda', 'Kenya')",distance flag
-1062,1062,"('Siaya', 'Kenya')",distance flag
-1063,1063,"('Kaniaka', 'Congo')",distance flag
-1064,1064,"('Chakol', 'Kenya')",distance flag
-1065,1065,"('Kibale', 'Uganda')",distance flag
-1066,1066,"('Yala', 'Kenya')",distance flag
-1067,1067,"('Tanga', 'Tanzania')",distance flag
-1068,1068,"('Mungoshi, Hai', 'Tanzania')",distance flag
-1069,1069,"('Kiharu', 'Kenya')",distance flag
-1070,1070,"('Kilifi', 'Kenya')",distance flag
-1071,1071,"('Kisumu', 'Kenya')",distance flag
-1072,1072,"('Kwale', 'Kenya')",distance flag
-1073,1073,"('Malindi', 'Kenya')",distance flag
-1074,1074,"('Gondar', 'Ethiopia')",distance flag
-1075,1075,"('Quindio', 'Colombia')",distance flag
-1076,1076,"('Puerto Gaitan-carpoica,taluma', 'Colombia')",distance flag
-1077,1077,"('Kisama', 'Kenya')",distance flag
-1078,1078,"('Angecha', 'Ethiopia')",distance flag
-1079,1079,"('Ivumwe', 'Tanzania')",distance flag
-1080,1080,"('Mparambo', 'Burundi')",distance flag
-1081,1081,"('Thika', 'Kenya')",distance flag
-1082,1082,"('Matisi', 'Kenya')",distance flag
-1083,1083,"('Kutus', 'Kenya')",distance flag
-1084,1084,"('Kimaeti', 'Kenya')",distance flag
-1085,1085,"('Elgon Downs', 'Kenya')",distance flag
-1086,1086,"('Bumula', 'Kenya')",distance flag
-1087,1087,"('Bulindi', 'Uganda')",distance flag
-1088,1088,"('Bugiri', 'Uganda')",distance flag
-1089,1089,"('Nyagatare', 'Rwanda')",distance flag
-1090,1090,"('Kagumo', 'Kenya')",distance flag
-1091,1091,"('Screen House', 'Kenya')",distance flag
-1092,1092,"('Chitedzi', 'Malawi')",distance flag
-1093,1093,"('Kiteta', 'Kenya')",distance flag
-1094,1094,"('Kyuu', 'Kenya')",distance flag
-1095,1095,"('Bingu', 'Malawi')",distance flag
-1096,1096,"('Mpingu', 'Malawi')",distance flag
-1097,1097,"('Pomela', 'Malawi')",distance flag
-1098,1098,"('Pallisa', 'Uganda')",distance flag
-1099,1099,"('Rancho Guadalupe, Toluca', 'Mexico')",distance flag
-1100,1100,"('Mwea', 'Kenya')",distance flag
-1101,1101,"('Namulonge', 'Uganda')",distance flag
-1102,1102,"('Kabul', 'Afghanistan')",distance flag
-1103,1103,"('Cabinda', 'Angola')",distance flag
-1104,1104,"('Kilomba', 'Angola')",distance flag
-1105,1105,"('Mazozo', 'Angola')",distance flag
-1106,1106,"('St. Vincent', 'Angola')",distance flag
-1107,1107,"('La Catalina', 'Colombia')",distance flag
-1108,1108,"('Paraguaicito', 'Colombia')",distance flag
-1109,1109,"('Baka', 'Malawi')",distance flag
-1110,1110,"('Freidenheim Valley', 'South Africa')",distance flag
-1111,1111,"('Potchesftroom', 'South Africa')",distance flag
-1112,1112,"('Arusha', 'Tanzania')",distance flag
-1113,1113,"('Chollima', 'Tanzania')",distance flag
-1114,1114,"('Tumbi', 'Tanzania')",distance flag
-1115,1115,"('Kibray', 'Uzbekistan')",distance flag
-1116,1116,"('Chisamba', 'Zambia')",distance flag
-1117,1117,"('Golden Valley', 'Zambia')",distance flag
-1118,1118,"('Kasama', 'Zambia')",distance flag
-1119,1119,"('Misamfu', 'Zambia')",distance flag
-1120,1120,"('Zamseed', 'Zambia')",distance flag
-1121,1121,"('Arex, Harare', 'Zimbabwe')",distance flag
-1122,1122,"('Drss, Harare', 'Zimbabwe')",distance flag
-1123,1123,"('Makaholi', 'Zimbabwe')",distance flag
-1124,1124,"('Makhoholi', 'Zimbabwe')",distance flag
-1125,1125,"('Rattray', 'Zimbabwe')",distance flag
-1126,1126,"('Rattray Arnold', 'Zimbabwe')",distance flag
-1127,1127,"('Rattray Farm', 'Zimbabwe')",distance flag
-1128,1128,"('Mungushi, Hai', 'Tanzania')",distance flag
-1129,1129,"('Bondo', 'Kenya')",distance flag
-1130,1130,"('Kakamega (monsanto)', 'Kenya')",distance flag
-1131,1131,"('Cañada Larga', 'Bolivia')",distance flag
-1132,1132,"('Zudañes', 'Bolivia')",distance flag
-1133,1133,"('Caña Flecha', 'Colombia')",distance flag
-1134,1134,"('Cañas, Guanacaste', 'Costa Rica')",distance flag
-1135,1135,"('Las Cañas', 'Costa Rica')",distance flag
-1136,1136,"('La Máquina Caballo Blanco', 'Guatemala')",distance flag
-1137,1137,"('San José Pinula', 'Guatemala')",distance flag
-1138,1138,"('La Viña-jayanca-lambayeque', 'Peru')",distance flag
-1139,1139,"('Dinajpur', 'Bangladesh')",distance flag
-1140,1140,"('Sahagu - - - - Sahagun', 'Colombia')",distance flag
-1141,1141,"('Tshibati - - - - Kibati', 'Congo')",distance flag
-1142,1142,"('Lodana - - - - - Lodano', 'Ecuador')",distance flag
-1143,1143,"('Organos - - - - Horganos', 'Ecuador')",distance flag
-1144,1144,"('Chalchahuapa - - - Chalchuapa', 'El Salvador')",distance flag
-1145,1145,"('El Coyalito - - - El Coyolito', 'El Salvador')",distance flag
-1146,1146,"('Dobuleni Research Station - - - Dobuilevu Research', 'Fiji')",distance flag
-1147,1147,"('Koronnia Research Station - - - Koronivia Research', 'Fiji')",distance flag
-1148,1148,"('La Maquina Caballo Blanco', 'Guatemala')",distance flag
-1149,1149,"('San Jose Pinula', 'Guatemala')",distance flag
-1150,1150,"('Catacamas, Olancho - - - Catacama', 'Honduras')",distance flag
-1151,1151,"('La Dalia', 'Nicaragua')",distance flag
-1152,1152,"('Finkolo', 'Mali')",distance flag
-1153,1153,"('Villa Flores, Chiap.', 'Mexico')",distance flag
-1154,1154,"('Finkolo', 'Mali')",distance flag
-1155,1155,"('El Aguila, Pejibaye, Perez Zeledon', 'Costa Rica')",distance flag
-1156,1156,"('Los Chiles', 'Costa Rica')",distance flag
-1157,1157,"('Araure, Edo. Portuguesa', 'Venezuela')",distance flag
-1158,1158,"('Las Velas, Edo. Yaracuy', 'Venezuela')",distance flag
-1159,1159,"('Tiznados, Edo. Guarico', 'Venezuela')",distance flag
-1160,1160,"('Concepcion De Pilas, Buenos Aires', 'Costa Rica')",distance flag
-1161,1161,"('El Amparo, El Gallito, Los Chiles, Alajuela', 'Costa Rica')",distance flag
-1162,1162,"('Guagaral, Buenos Aires Puntarenas', 'Costa Rica')",distance flag
-1163,1163,"('Pueblo Nuevo, San Jose, Upala', 'Costa Rica')",distance flag
-1164,1164,"('Veracruz, Pejibaye, Perez Zeledon', 'Costa Rica')",distance flag
-1165,1165,"('El Progreso, Pejibaye, Perez Zeledon', 'Costa Rica')",distance flag
-1166,1166,"('Guagaral, Buenos Aires', 'Costa Rica')",distance flag
+,index,location,type,comment
+0,3,"('Angola', 'Angola')", mismatched country, GH
+1,14,"('Anguil - Provincia La Pampa', 'Argentina')", mismatched country, GH
+2,15,"('Argentina', 'Argentina')", mismatched country, GH
+3,16,"('El Manantial', 'Argentina')", mismatched country, GH
+4,17,"('Los Pereyras', 'Argentina')", mismatched country, GH
+5,19,"('Zakatala, City', 'Azerbaijan')", mismatched country, GH
+6,20,"('Dinajpur', 'Bangladesh')", mismatched country, GH
+7,21,"('Ars, Rajbari, Dinajpur', 'Bangladesh')", mismatched country, GH
+8,22,"('Ars. Burirhat, Rangpur', 'Bangladesh')", mismatched country, GH
+9,23,"('Bogra', 'Bangladesh')", mismatched country, GH
+10,25,"('Gazipur', 'Bangladesh')", mismatched country, GH
+11,32,"('Joydebpur, Gazipur', 'Bangladesh')", mismatched country, GH
+12,34,"('Rajbari', 'Bangladesh')", mismatched country, GH
+13,35,"('Rars, Bari, Jamalpur', 'Bangladesh')", mismatched country, GH
+14,36,"('Belmopan, Cardi Station', 'Belize')", mismatched country, GH
+15,41,"('Bolivia', 'Bolivia')", mismatched country, GH
+16,46,"('El Abra (santa Cruz)', 'Bolivia')", mismatched country, GH
+17,47,"('El Palmar (santa Cruz)', 'Bolivia')", mismatched country, GH
+18,49,"('Entre Rios', 'Bolivia')", mismatched country, GH
+19,50,"('Fundacion Proinpa', 'Bolivia')", mismatched country, GH
+20,52,"('Lomas De Arena (santa Cruz)', 'Bolivia')", mismatched country, GH
+21,53,"('Mairana, Santa Cruz', 'Bolivia')", mismatched country, GH
+22,54,"('Monteagudo', 'Bolivia')", mismatched country, GH
+23,58,"('Pajonal', 'Bolivia')", mismatched country, GH
+24,59,"('Saavedra', 'Bolivia')", mismatched country, GH
+25,60,"('San Ignacio', 'Bolivia')", mismatched country, GH
+26,62,"('Santa Cruz (cuatro Caminos)', 'Bolivia')", mismatched country, GH
+27,63,"('Santa Cruz De La Sierra', 'Bolivia')", mismatched country, GH
+28,64,"('Santa Cruz De La Sierra (el Vallecito)', 'Bolivia')", mismatched country, GH
+29,65,"('Tarija', 'Bolivia')", mismatched country, GH
+30,66,"('Valle Del Medio', 'Bolivia')", mismatched country, GH
+31,67,"('Vallecitos (iboperenda)', 'Bolivia')", mismatched country, GH
+32,69,"('Yacuiba', 'Bolivia')", mismatched country, GH
+33,70,"('Zona Norte De Santa Cruz', 'Bolivia')", mismatched country, GH
+34,78,"('Brazil', 'Brazil')", mismatched country, GH
+35,79,"('Campo Largo - Pr', 'Brazil')", mismatched country, GH
+36,82,"('Guaira', 'Brazil')", mismatched country, PY
+37,90,"('Kazakhstan', 'Central Asia')", wrong format, Central Asia
+38,97,"('Honghe', 'China')", mismatched country, GH
+39,101,"('Mian Yang', 'China')", mismatched country, GH
+40,107,"('Wenshan', 'China')", mismatched country, VN
+41,109,"('Aguas Blancas', 'Colombia')", mismatched country, GH
+42,110,"('Aguas Claras', 'Colombia')", mismatched country, GH
+43,111,"('Andremoni', 'Colombia')", mismatched country, GH
+44,112,"('Arborates', 'Colombia')", mismatched country, GH
+45,113,"('Arguello Bajo, Yacuanquer', 'Colombia')", mismatched country, GH
+46,114,"('Atuncela, Dagua', 'Colombia')", mismatched country, GH
+47,115,"('Bucaramanga', 'Colombia')", mismatched country, GH
+48,116,"('Bucaramanga, Pinchote', 'Colombia')", mismatched country, GH
+49,118,"('Buga, Media Canoa', 'Colombia')", mismatched country, GH
+50,119,"('Caicedonia', 'Colombia')", mismatched country, GH
+51,120,"('Caldono', 'Colombia')", mismatched country, GH
+52,122,"('Campo Alegre, Huila', 'Colombia')", mismatched country, GH
+53,123,"('Ca╤a Flecha', 'Colombia')", mismatched country, GH
+54,124,"('Carmen De Bolivar', 'Colombia')", mismatched country, GH
+55,125,"('Cerete, Cordoba', 'Colombia')", mismatched country, GH
+56,126,"('Cerrito', 'Colombia')", mismatched country, GH
+57,127,"('Cienega De Oro', 'Colombia')", mismatched country, GH
+58,128,"('Ciudad Bolivar', 'Colombia')", mismatched country, GH
+59,129,"('Colombia', 'Colombia')", mismatched country, GH
+60,130,"('Cordoba', 'Colombia')", mismatched country, GH
+61,131,"('Corozal', 'Colombia')", mismatched country, GH
+62,132,"('Darien, Valle Del Cauca', 'Colombia')", mismatched country, GH
+63,133,"('Duitama', 'Colombia')", mismatched country, GH
+64,135,"('El Espinal, Tolima', 'Colombia')", mismatched country, GH
+65,136,"('El Libano', 'Colombia')", mismatched country, GH
+66,137,"('El Naranjal', 'Colombia')", mismatched country, GH
+67,138,"('El Rosario', 'Colombia')", mismatched country, GH
+68,139,"('El Tambo, Valle Del Cauca', 'Colombia')", mismatched country, GH
+69,140,"('El Tomate', 'Colombia')", mismatched country, GH
+70,141,"('Fuente De Oro, Granda', 'Colombia')", mismatched country, GH
+71,142,"('Garzon, Huila', 'Colombia')", mismatched country, GH
+72,143,"('Granada', 'Colombia')", mismatched country, GH
+73,144,"('Guadalajara De Buga', 'Colombia')", mismatched country, GH
+74,145,"('Independencia, Caldono', 'Colombia')", mismatched country, GH
+75,146,"('La Catalina, Pereira', 'Colombia')", mismatched country, GH
+76,147,"('La Cubillera, Granada', 'Colombia')", mismatched country, GH
+77,148,"('La Palomera', 'Colombia')", mismatched country, GH
+78,149,"('La Trocha 12, Granda', 'Colombia')", mismatched country, GH
+79,151,"('La Union, Corcega', 'Colombia')", mismatched country, GH
+80,152,"('Lejania, Granada', 'Colombia')", mismatched country, GH
+81,153,"('Matazul', 'Colombia')", mismatched country, GH
+82,154,"('Menegua', 'Colombia')", mismatched country, GH
+83,155,"('Mondomo, Santander', 'Colombia')", mismatched country, GH
+84,156,"('Monteria', 'Colombia')", mismatched country, GY
+85,157,"('Neiva, Huila', 'Colombia')", mismatched country, GH
+86,158,"('Obando, Molina', 'Colombia')", mismatched country, GH
+87,160,"('Paraguaicito, Armenia', 'Colombia')", mismatched country, GH
+88,161,"('Pelaya-cesar (aguachica)', 'Colombia')", mismatched country, GH
+89,162,"('Pereira', 'Colombia')", mismatched country, GH
+90,163,"('Piendamo', 'Colombia')", mismatched country, GH
+91,164,"('Procampo', 'Colombia')", mismatched country, GH
+92,165,"('Puerto Lopez', 'Colombia')", mismatched country, GH
+93,166,"('Puerto Lopez', 'Colombia')", mismatched country, GH
+94,167,"('Quindio, Montenegro', 'Colombia')", mismatched country, GH
+95,168,"('Rivera, Huila', 'Colombia')", mismatched country, GH
+96,169,"('Roldanillo', 'Colombia')", mismatched country, GH
+97,170,"('Sabana De Torres, Santander', 'Colombia')", mismatched country, GH
+98,171,"('Sahagu', 'Colombia')", mismatched country, GH
+99,172,"('San Antonio', 'Colombia')", mismatched country, GH
+100,173,"('San Barreto', 'Colombia')", mismatched country, GH
+101,174,"('San Francisco, Sandona', 'Colombia')", mismatched country, GH
+102,175,"('San Ignacio, Granada', 'Colombia')", mismatched country, GH
+103,176,"('San Pedro De Uraba', 'Colombia')", mismatched country, GH
+104,177,"('San Pelayo', 'Colombia')", mismatched country, GH
+105,178,"('San Rafael, Consaca', 'Colombia')", mismatched country, GH
+106,179,"('Sandona, Narino, Fidar', 'Colombia')", mismatched country, GH
+107,180,"('Santa Helena', 'Colombia')", mismatched country, GH
+108,181,"('Santa Lucia', 'Colombia')", mismatched country, GH
+109,182,"('Santander De Quilichao', 'Colombia')", mismatched country, GH
+110,183,"('Segovia', 'Colombia')", mismatched country, GH
+111,184,"('Semivalle', 'Colombia')", mismatched country, GH
+112,185,"('Sincelejo', 'Colombia')", mismatched country, GH
+113,186,"('Taluma', 'Colombia')", mismatched country, GH
+114,187,"('Tierra Alta', 'Colombia')", mismatched country, GH
+115,188,"('Tulenapa', 'Colombia')", mismatched country, GH
+116,189,"('Tunja', 'Colombia')", mismatched country, GH
+117,192,"('Turipana', 'Colombia')", mismatched country, GH
+118,193,"('Turipana', 'Colombia')", mismatched country, GH
+119,194,"('Valle De Magdalena', 'Colombia')", mismatched country, GH
+120,195,"('Valle De Magdalena', 'Colombia')", mismatched country, GH
+121,196,"('Valle De Magdalena', 'Colombia')", mismatched country, GH
+122,197,"('Valle De Magdalena', 'Colombia')", mismatched country, GH
+123,198,"('Valle Del Cauca', 'Colombia')", mismatched country, GH
+124,199,"('Venecia', 'Colombia')", mismatched country, GH
+125,200,"('Villavicencio', 'Colombia')", mismatched country, GH
+126,201,"('Villavo', 'Colombia')", mismatched country, GH
+127,202,"('Yotoco-valle Del Cauca', 'Colombia')", mismatched country, GH
+128,203,"('Congo', 'Congo')", wrong format, Congo
+129,204,"('Odziba', 'Congo')", wrong format, Congo
+130,205,"('Tshibati', 'Congo')", wrong format, Congo
+131,207,"('Costa Rica', 'Costa Rica')", mismatched country, GH
+132,208,"('El Aguila, Pejibaye', 'Costa Rica')", mismatched country, GH
+133,209,"('El Parque, Los Chiles', 'Costa Rica')", mismatched country, GH
+134,210,"('El Progreso, Pejibaye', 'Costa Rica')", mismatched country, GH
+135,211,"('Guagaral', 'Costa Rica')", mismatched country, NI
+136,213,"('Las Ca╤as', 'Costa Rica')", mismatched country, GH
+137,214,"('Pejibaye De Perez Zeledon', 'Costa Rica')", mismatched country, GH
+138,216,"('Upala', 'Costa Rica')", mismatched country, GH
+139,217,"('Upala Pueblo Nuevo', 'Costa Rica')", mismatched country, GH
+140,218,"('Veracruz, Pejibaye', 'Costa Rica')", mismatched country, GH
+141,219,"('Badikaha', ""Cote D'ivoire"")", wrong format, Cote D'ivoire
+142,220,"('Bouake', ""Cote D'ivoire"")", wrong format, Cote D'ivoire
+143,221,"('Ferkessedougou', ""Cote D'ivoire"")", wrong format, Cote D'ivoire
+144,222,"('Sinematiali', ""Cote D'ivoire"")", wrong format, Cote D'ivoire
+145,223,"('Touba', ""Cote D'ivoire"")", wrong format, Cote D'ivoire
+146,224,"('Warda/adrao-mbe', ""Cote D'ivoire"")", wrong format, Cote D'ivoire
+147,228,"('Comuna San Rafael, Peninsula Sta Elena', 'Ecuador')", mismatched country, GH
+148,229,"('Ecuador', 'Ecuador')", mismatched country, GH
+149,230,"('Fca. Exp. Josefina Balzar', 'Ecuador')", mismatched country, GH
+150,231,"('La Virginia Quevedo', 'Ecuador')", mismatched country, GH
+151,232,"('Lodana', 'Ecuador')", mismatched country, GH
+152,234,"('Organos', 'Ecuador')", mismatched country, GH
+153,236,"('Pindal', 'Ecuador')", mismatched country, GH
+154,240,"('Giza', 'Egypt')", mismatched country, GH
+155,245,"('Apastepeque', 'El Salvador')", mismatched country, GH
+156,246,"('Armenia', 'El Salvador')", mismatched country, GH
+157,247,"('Barrio Nuevo, La Paz', 'El Salvador')", mismatched country, GH
+158,248,"('Chalchahuapa', 'El Salvador')", mismatched country, GH
+159,249,"('Cuhisnuat', 'El Salvador')", mismatched country, GH
+160,250,"('El Coyalito', 'El Salvador')", mismatched country, GH
+161,251,"('El Pepito, Concep., Chalate', 'El Salvador')", mismatched country, GH
+162,252,"('Jiquilisco', 'El Salvador')", mismatched country, GH
+163,253,"('Jocoro, Morazan', 'El Salvador')", mismatched country, GH
+164,254,"('Jucuapa, Usulutan', 'El Salvador')", mismatched country, GH
+165,255,"('La Libertad', 'El Salvador')", mismatched country, GH
+166,256,"('Lomas De Santiago', 'El Salvador')", mismatched country, GH
+167,257,"('Los Cipreses, Conchagua, La Union', 'El Salvador')", mismatched country, GH
+168,258,"('Nacimiento, La Union', 'El Salvador')", mismatched country, GH
+169,259,"('Nahuilingo', 'El Salvador')", mismatched country, GH
+170,260,"('Nueva Concepcion', 'El Salvador')", mismatched country, GH
+171,261,"('Quelepa, San Miguel', 'El Salvador')", mismatched country, GH
+172,262,"('San Andres', 'El Salvador')", mismatched country, GH
+173,263,"('San Andres (sb)', 'El Salvador')", mismatched country, GH
+174,264,"('San Mauricio', 'El Salvador')", mismatched country, GH
+175,265,"('San Pedro Puxtla, Ahuachapan', 'El Salvador')", mismatched country, GH
+176,266,"('San Vicente', 'El Salvador')", mismatched country, GH
+177,268,"('Santa Cruz Porrillo', 'El Salvador')", mismatched country, GH
+178,270,"('Suchitoto, Cuscatlan', 'El Salvador')", mismatched country, GH
+179,271,"('Tenancingo', 'El Salvador')", mismatched country, GH
+180,272,"('Uluazapa, La Union', 'El Salvador')", mismatched country, GH
+181,275,"('Pontevedra', 'España')", wrong format, España
+182,284,"('Haramaya', 'Ethiopia')", mismatched country, GH
+183,287,"('Kitale-ws', 'Ethiopia')", mismatched country, KE
+184,294,"('Nazret', 'Ethiopia')", coords NA, NA
+185,296,"('Ws', 'Ethiopia')", mismatched country, GH
+186,298,"('Dobuleni Research Station', 'Fiji')", mismatched country, GH
+187,299,"('Koronnia Research Station', 'Fiji')", mismatched country, GH
+188,300,"('Legalega Research Station', 'Fiji')", mismatched country, GH
+189,301,"('Sigatoka Research Station', 'Fiji')", mismatched country, GH
+190,302,"('Tserovani', 'Georgia')", mismatched country, GH
+191,309,"('Tamale', 'Ghana')", mismatched country, TG
+192,313,"('Caballo Blanco, Retalhuleu', 'Guatemala')", mismatched country, GH
+193,316,"('El Ovejero, Jutiapa', 'Guatemala')", mismatched country, GH
+194,317,"('Estanzuela', 'Guatemala')", mismatched country, GH
+195,318,"('Finca, Las Vegas Tequisate.', 'Guatemala')", mismatched country, GH
+196,319,"('Isidro Avarez', 'Guatemala')", mismatched country, MX
+197,321,"('La Flecha', 'Guatemala')", mismatched country, GH
+198,322,"('La Maquina', 'Guatemala')", mismatched country, GH
+199,323,"('La M┴quina Caballo Blanco', 'Guatemala')", mismatched country, GH
+200,324,"('La Maquina, Linea A5', 'Guatemala')", mismatched country, GH
+201,325,"('La Maquina, Tulate', 'Guatemala')", mismatched country, GH
+202,326,"('Las Monjas', 'Guatemala')", mismatched country, GH
+203,328,"('Monjas, Jalapa', 'Guatemala')", mismatched country, GH
+204,329,"('Nueva Concepcion', 'Guatemala')", mismatched country, GH
+205,330,"('Ovejero, Jutiapa', 'Guatemala')", mismatched country, GH
+206,331,"('Quesada, Jutiapa', 'Guatemala')", mismatched country, GH
+207,332,"('Salam B. V.', 'Guatemala')", mismatched country, GH
+208,333,"('San Jos╔ Pinula', 'Guatemala')", mismatched country, GH
+209,334,"('San Pedro Pinula, Jalapa', 'Guatemala')", mismatched country, GH
+210,335,"('Sto Domingo', 'Guatemala')", mismatched country, GH
+211,338,"('Zacapa', 'Guatemala')", mismatched country, GH
+212,340,"('Chantilly', 'Haiti')", mismatched country, GH
+213,342,"('Karoman, Lavallee', 'Haiti')", mismatched country, GH
+214,344,"('Nan- Jn Pierre, Cap-rouge', 'Haiti')", mismatched country, GH
+215,345,"('Candelaria, Lempira', 'Honduras')", mismatched country, GH
+216,346,"('Catacamas, Olancho', 'Honduras')", mismatched country, GH
+217,348,"('Comayagua, E.e. Playitas', 'Honduras')", mismatched country, GH
+218,350,"('El Guaco Yorito, Yoro', 'Honduras')", mismatched country, GH
+219,351,"('El Pital, Atlantida', 'Honduras')", mismatched country, GH
+220,353,"('Jutiquile, Olancho', 'Honduras')", mismatched country, GH
+221,356,"('Litoral Atlantico', 'Honduras')", mismatched country, GH
+222,357,"('Luquigue Yorito, Yoro', 'Honduras')", mismatched country, GH
+223,358,"('Mina Handa (yorito Yoco)', 'Honduras')", mismatched country, GH
+224,359,"('Obraje, Danli', 'Honduras')", mismatched country, GH
+225,361,"('Pata Stera (yorito Yoco)', 'Honduras')", mismatched country, GH
+226,362,"('Playita', 'Honduras')", mismatched country, GH
+227,363,"('Potrerillos, Olancho', 'Honduras')", mismatched country, GH
+228,364,"('Rio Arriba Yorito, Yoro', 'Honduras')", mismatched country, GH
+229,365,"('San Lucas, El Paraiso', 'Honduras')", mismatched country, GH
+230,366,"('San Pedro De Catacamas, Olancho', 'Honduras')", mismatched country, GH
+231,368,"('Yoro, El Pate', 'Honduras')", mismatched country, GH
+232,369,"('Yoro, Morazan', 'Honduras')", mismatched country, GH
+233,372,"('Amberpet', 'India')", mismatched country, GH
+234,378,"('Bahraich, Crop Research Station', 'India')", mismatched country, GH
+235,379,"('Bajaura', 'India')", mismatched country, CN
+236,384,"('Belipar, Gorakhpur, U.p.', 'India')", mismatched country, GH
+237,385,"('Bihar', 'India')", mismatched country, GH
+238,391,"('Dholi', 'India')", mismatched country, GH
+239,392,"('Dmr I.a.r.i.', 'India')", mismatched country, PR
+240,393,"('Dohad', 'India')", mismatched country, GH
+241,395,"('Godhsa Gaujasat', 'India')", mismatched country, GH
+242,397,"('India', 'India')", mismatched country, GH
+243,406,"('Khadbrabhra', 'India')", mismatched country, GH
+244,407,"('Khedbrahma', 'India')", mismatched country, GH
+245,411,"('Messina', 'India')", mismatched country, GH
+246,412,"('Muzafferpur', 'India')", mismatched country, GH
+247,413,"('New Delhi', 'India')", mismatched country, GH
+248,417,"('Pantnagar', 'India')", mismatched country, GH
+249,418,"('Parbhani', 'India')", mismatched country, GH
+250,419,"('Poonch', 'India')", mismatched country, GH
+251,420,"('Prabhakar Reddy', 'India')", mismatched country, GH
+252,421,"('Probhakor', 'India')", mismatched country, GH
+253,423,"('Pusa', 'India')", mismatched country, GH
+254,424,"('R&d (pachora).', 'India')", mismatched country, GH
+255,425,"('R&d (wadadhe).', 'India')", mismatched country, GH
+256,427,"('Ranchi', 'India')", mismatched country, GH
+257,428,"('Rau Pusa (bihar)', 'India')", mismatched country, GH
+258,429,"('Rayalkole', 'India')", mismatched country, GH
+259,430,"('Samastipur', 'India')", mismatched country, GH
+260,433,"('Srinagar, K.d. Research Station', 'India')", mismatched country, GH
+261,438,"('Weerasak Doungjan', 'India')", mismatched country, GH
+262,440,"('Gowa S. Sulawesi', 'Indonesia')", mismatched country, GH
+263,441,"('Hulu Sungai Selatan', 'Indonesia')", mismatched country, GH
+264,442,"('Jambegede', 'Indonesia')", mismatched country, GH
+265,446,"('Naibonat', 'Indonesia')", mismatched country, GH
+266,447,"('Natar, Lampung', 'Indonesia')", mismatched country, GH
+267,448,"('Probolinggo', 'Indonesia')", mismatched country, GH
+268,449,"('Takalar, South Sulawesi', 'Indonesia')", mismatched country, GH
+269,450,"('Yogyakarta', 'Indonesia')", mismatched country, GH
+270,451,"('Agricultural Research Station Of Gorgan', 'Iran')", mismatched country, GH
+271,453,"('Ai - Latifyia', 'Iraq')", mismatched country, GH
+272,455,"(""Bonghdad, Al_mada'en"", 'Iraq')", mismatched country, GH
+273,456,"('Tuwaitha Baghdad', 'Iraq')", mismatched country, GH
+274,457,"('Central Asia', 'Kazakstan')", wrong format, Kazakstan
+275,458,"('Alupe', 'Kenya')", mismatched country, UG
+276,459,"('Baobab', 'Kenya')", mismatched country, GH
+277,473,"('K.t.i', 'Kenya')", mismatched country, GH
+278,476,"('Kari - Embu', 'Kenya')", mismatched country, GH
+279,477,"('Karurina', 'Kenya')", mismatched country, GH
+280,487,"('Kitale Syn Ii (ethiopia)', 'Kenya')", mismatched country, GH
+281,502,"('Tanseed', 'Kenya')", mismatched country, GH
+282,504,"('Wanbugu', 'Kenya')", mismatched country, GH
+283,506,"('Western Seeds', 'Kenya')", mismatched country, GH
+284,508,"('Lesotho', 'Lesotho')", mismatched country, GH
+285,518,"('Baka Research Station', 'Malawi')", mismatched country, GH
+286,528,"('Mphimbi', 'Malawi')", mismatched country, GH
+287,530,"('Not Identified', 'Malawi')", mismatched country, GH
+288,535,"('Katibougou', 'Mali')", mismatched country, GH
+289,536,"('Kolombada', 'Mali')", mismatched country, GH
+290,537,"('Rue Mohamed', 'Mali')", mismatched country, NG
+291,539,"('Acatic, Jalisco', 'Mexico')", mismatched country, GH
+292,540,"('Acayucan, Veracruz', 'Mexico')", mismatched country, GH
+293,542,"('Agua Fria', 'Mexico')", mismatched country, GH
+294,550,"('Apaseo El Guadalupe, Guanajuato', 'Mexico')", mismatched country, GH
+295,551,"('Atlacomulco', 'Mexico')", mismatched country, GH
+296,552,"('Axochio, San Andres Tuxtla, Veracruz', 'Mexico')", mismatched country, GH
+297,553,"('Buenavista Penjamo, Guanajuato', 'Mexico')", mismatched country, GH
+298,558,"('Cardel', 'Mexico')", mismatched country, GH
+299,562,"('Champoton, Campeche', 'Mexico')", mismatched country, GH
+300,565,"('Chiapas', 'Mexico')", mismatched country, GH
+301,566,"('Chorrerones', 'Mexico')", mismatched country, GH
+302,573,"('Colonia Del Turen', 'Mexico')", mismatched country, GH
+303,574,"('Coquimatlan', 'Mexico')", mismatched country, GH
+304,575,"('Corralejo De Hidalgo, Guanajuato', 'Mexico')", mismatched country, GH
+305,576,"('Cotaxla', 'Mexico')", mismatched country, GH
+306,578,"('Coyoltepec, San Andres Tuxtla, Veracruz', 'Mexico')", mismatched country, GH
+307,588,"('Edzna, Campeche', 'Mexico')", mismatched country, GH
+308,589,"('Ejido 1ro De Mayo', 'Mexico')", mismatched country, GH
+309,595,"('El Zapote, Tonatico', 'Mexico')", mismatched country, GH
+310,598,"('Guadalajara, Jalisco', 'Mexico')", mismatched country, GH
+311,604,"('Huejutla De Reyes, Hidalgo', 'Mexico')", mismatched country, GH
+312,605,"('Huimanguillo', 'Mexico')", mismatched country, GH
+313,606,"('Ignacio De La Llave, Veracruz', 'Mexico')", mismatched country, GH
+314,609,"('Isla, Veracruz', 'Mexico')", mismatched country, GH
+315,612,"('Jalisco, Jalisco', 'Mexico')", mismatched country, GH
+316,614,"('Jerico Chiapas', 'Mexico')", mismatched country, GH
+317,615,"('Jesus Maria', 'Mexico')", mismatched country, GH
+318,619,"('La Barca, Jalisco', 'Mexico')", mismatched country, GH
+319,620,"('La Cantera, Comonfort, Guanajuato', 'Mexico')", mismatched country, GH
+320,621,"('La Cruz De Elota, Sinaloa', 'Mexico')", mismatched country, GH
+321,622,"('La Huerta, Jalisco', 'Mexico')", mismatched country, EC
+322,625,"('La Torrecilla, Tlalixcoyan, Veracruz', 'Mexico')", mismatched country, GH
+323,630,"('Mata De Agua', 'Mexico')", mismatched country, GH
+324,635,"('Nayarit', 'Mexico')", mismatched country, GH
+325,640,"('Ocuituco, Morelos', 'Mexico')", mismatched country, GH
+326,641,"('Ojo De Agua, Santiago Tuxtla, Veracruz', 'Mexico')", mismatched country, GH
+327,642,"('Ojo De Agua, Tonatico', 'Mexico')", mismatched country, GH
+328,646,"('Penjamo, Guanajuato', 'Mexico')", mismatched country, GH
+329,654,"('Quila, Sinaloa', 'Mexico')", mismatched country, GH
+330,656,"('Rincon De Parangueo, Guanajuato', 'Mexico')", mismatched country, GH
+331,660,"('San Andres Tuxtla', 'Mexico')", mismatched country, GH
+332,665,"('San Juan De Abajo', 'Mexico')", mismatched country, GH
+333,669,"('San Miguel Allende, Guanajuato', 'Mexico')", mismatched country, GH
+334,671,"('San Pedro Lagunillas, Nayarit', 'Mexico')", mismatched country, GH
+335,678,"('Tamarindos, Veracruz', 'Mexico')", mismatched country, GH
+336,679,"('Tamaulipas', 'Mexico')", mismatched country, GH
+337,682,"('Tepalcingo, Morelos', 'Mexico')", mismatched country, GH
+338,684,"('Tlacomulco', 'Mexico')", mismatched country, GH
+339,688,"('Tlalixcoyan', 'Mexico')", mismatched country, GH
+340,689,"('Tlaltizapan', 'Mexico')", mismatched country, GH
+341,697,"('Uxmal', 'Mexico')", mismatched country, GH
+342,698,"('Valle De Bravo, Estado De Mexico', 'Mexico')", mismatched country, GH
+343,699,"('Valle De Culiacan', 'Mexico')", mismatched country, GH
+344,701,"('Valle Del Fuerte, Sinaloa', 'Mexico')", mismatched country, GH
+345,704,"('Veracrucito', 'Mexico')", mismatched country, GH
+346,707,"('Villa Hidalgo, Nayarit', 'Mexico')", mismatched country, GH
+347,708,"('Villa Verde, Guanajuato', 'Mexico')", mismatched country, GH
+348,711,"('Xalostoc, Morelos', 'Mexico')", mismatched country, GH
+349,712,"('Xocoyucan, Tlaxcala', 'Mexico')", mismatched country, GH
+350,716,"('Khemiszemamra', 'Morocco')", mismatched country, GH
+351,718,"('Angora', 'Mozambique')", mismatched country, GH
+352,720,"('Ex-instituto Nacional De Investigacion Agraria', 'Mozambique')", mismatched country, GH
+353,725,"('Morrumbala-zambezia', 'Mozambique')", mismatched country, MW
+354,726,"('Mozambique', 'Mozambique')", mismatched country, GH
+355,727,"('Mutarara', 'Mozambique')", mismatched country, MW
+356,731,"('Ntengo Nucodgi Augoiris', 'Mozambique')", mismatched country, GH
+357,732,"('Ntengo Umadzi- Angoria', 'Mozambique')", mismatched country, GH
+358,733,"('Semol', 'Mozambique')", mismatched country, GH
+359,736,"('Ussudenga', 'Mozambique')", mismatched country, GH
+360,737,"('Naung Mon', 'Myanmar')", mismatched country, GH
+361,738,"('Sea', 'Myanmar')", mismatched country, GH
+362,739,"('Taryaw', 'Myanmar')", mismatched country, GH
+363,740,"('Tatkan', 'Myanmar')", mismatched country, GH
+364,741,"('Tatkone', 'Myanmar')", mismatched country, GH
+365,742,"('Zaloke Research Farm', 'Myanmar')", mismatched country, GH
+366,743,"('Aungban, Burma', 'Myanmar (burma)')", wrong format, Myanmar (burma)
+367,744,"('Yezin, Burma', 'Myanmar (burma)')", wrong format, Myanmar (burma)
+368,745,"('Mashare', 'Namibia')", mismatched country, NA
+369,746,"('Mitkomst Research Station', 'Namibia')", mismatched country, GH
+370,747,"('Runda', 'Namibia')", mismatched country, NA
+371,748,"('Hardinath', 'Nepal')", mismatched country, GH
+372,749,"('Kabre', 'Nepal')", mismatched country, GH
+373,751,"('Lumle', 'Nepal')", mismatched country, GH
+374,752,"('Pakhribas', 'Nepal')", mismatched country, GH
+375,754,"('Parwanipur', 'Nepal')", mismatched country, GH
+376,757,"('Campos Azules', 'Nicaragua')", mismatched country, GH
+377,758,"('Campos Azules, Masatepe', 'Nicaragua')", mismatched country, GH
+378,759,"('Carazo', 'Nicaragua')", mismatched country, GH
+379,761,"('Chontales', 'Nicaragua')", mismatched country, GH
+380,762,"('Chontales, Tamboral Sur', 'Nicaragua')", mismatched country, GH
+381,763,"('Condega, Esteli', 'Nicaragua')", mismatched country, GH
+382,764,"('El Areno, El Rama', 'Nicaragua')", mismatched country, GH
+383,765,"('El Jicaro, Nueva Segovia', 'Nicaragua')", mismatched country, GH
+384,766,"('El Pellizco, Chinandega', 'Nicaragua')", mismatched country, GH
+385,767,"('Jalapa', 'Nicaragua')", mismatched country, GH
+386,768,"('La Dal═a', 'Nicaragua')", mismatched country, GH
+387,769,"('La Presa', 'Nicaragua')", mismatched country, GH
+388,770,"('La Trinidad, Esteli', 'Nicaragua')", mismatched country, GH
+389,771,"('Las Cruces Carazo', 'Nicaragua')", mismatched country, GH
+390,772,"('Las Piedras,nueva Segovia', 'Nicaragua')", mismatched country, GH
+391,773,"('Llano Redondo', 'Nicaragua')", mismatched country, GH
+392,775,"('Mazatepec', 'Nicaragua')", mismatched country, GH
+393,776,"('Melchorita, San Carlos', 'Nicaragua')", mismatched country, GH
+394,777,"('Nindiri, Mazaya', 'Nicaragua')", mismatched country, GH
+395,778,"('Paz De Carazo', 'Nicaragua')", mismatched country, GH
+396,779,"('Pueblo Nuevo', 'Nicaragua')", mismatched country, GH
+397,780,"('San Bartolo', 'Nicaragua')", mismatched country, GH
+398,781,"('San Benito, Chinandega', 'Nicaragua')", mismatched country, GH
+399,783,"('Santa Cruz, Esteli', 'Nicaragua')", mismatched country, GH
+400,784,"('Santa Juana, Nindiri', 'Nicaragua')", mismatched country, GH
+401,786,"('Baganda', 'Nigeria')", mismatched country, GH
+402,794,"('Saminaka Nig', 'Nigeria')", mismatched country, GH
+403,795,"('Temti Jos', 'Nigeria')", mismatched country, GH
+404,799,"('Ari, D,i. Kham', 'Pakistan')", mismatched country, GH
+405,805,"('Azuer', 'Panama')", mismatched country, GH
+406,813,"('Capitan Miranda', 'Paraguay')", mismatched country, GH
+407,816,"('San Juan Bautista', 'Paraguay')", mismatched country, GH
+408,818,"('Yjhovy', 'Paraguay')", mismatched country, GH
+409,819,"('Ascope', 'Peru')", mismatched country, GH
+410,820,"('Aucaloma', 'Peru')", mismatched country, GH
+411,821,"('E.e. El Porvenir, Calzada Moyobamba', 'Peru')", mismatched country, GH
+412,822,"('E.e. Pucallpa', 'Peru')", mismatched country, GH
+413,824,"('Huaral', 'Peru')", mismatched country, GH
+414,825,"('Humay - Pisco', 'Peru')", mismatched country, GH
+415,827,"('Juan Guerra', 'Peru')", mismatched country, GH
+416,828,"('La Vi╤a-jayanca-lambayeque', 'Peru')", mismatched country, GH
+417,829,"('Lambayeque', 'Peru')", mismatched country, GH
+418,830,"('Lima', 'Peru')", mismatched country, GH
+419,831,"('Montupe 99', 'Peru')", mismatched country, GH
+420,832,"('Muy Finca Mochumi Lambayeque', 'Peru')", mismatched country, GH
+421,833,"('Pachacamac', 'Peru')", mismatched country, GH
+422,834,"('Peru', 'Peru')", mismatched country, GH
+423,835,"('Pucallpa', 'Peru')", mismatched country, GH
+424,836,"('Pucallpa, San Fernando, Sa', 'Peru')", mismatched country, GH
+425,837,"('Rioja', 'Peru')", mismatched country, GH
+426,838,"('Rioja, San Fernando, Sa', 'Peru')", mismatched country, GH
+427,839,"('Victoria 99', 'Peru')", mismatched country, GH
+428,840,"('Viru La Libertad', 'Peru')", mismatched country, GH
+429,841,"('Vista Florida', 'Peru')", mismatched country, GH
+430,842,"('Vista Florida Chiclayo', 'Peru')", mismatched country, GH
+431,843,"('Vista Florida Chiclayo', 'Peru')", mismatched country, GH
+432,844,"('Vista Florida Chiclayo', 'Peru')", mismatched country, GH
+433,845,"('Yurimagua', 'Peru')", mismatched country, GH
+434,846,"('Baybay', 'Philippines')", mismatched country, GH
+435,849,"('Ipb Experiment Station', 'Philippines')", mismatched country, GH
+436,850,"('Kabacan', 'Philippines')", mismatched country, GH
+437,851,"('Kabacan, Cotabato', 'Philippines')", mismatched country, GH
+438,853,"('San Felipe, Ilagan, Isabela.', 'Philippines')", mismatched country, GH
+439,858,"('Burgershall', 'South Africa')", mismatched country, GH
+440,860,"('Friedenheim Valley', 'South Africa')", mismatched country, GH
+441,861,"('Linkseed', 'South Africa')", mismatched country, GH
+442,862,"('Mpumalanga', 'South Africa')", mismatched country, GH
+443,864,"('North West Province', 'South Africa')", mismatched country, GH
+444,866,"('Petit', 'South Africa')", mismatched country, GH
+445,867,"('Tshiombo', 'South Africa')", mismatched country, GH
+446,869,"('Betlehem', 'South Africa Rep.')", wrong format, South Africa Rep.
+447,870,"('Cedara', 'South Africa Rep.')", wrong format, South Africa Rep.
+448,871,"('Ezolimo', 'South Africa Rep.')", wrong format, South Africa Rep.
+449,872,"('Friedenhei', 'South Africa Rep.')", wrong format, South Africa Rep.
+450,873,"('Greytown', 'South Africa Rep.')", wrong format, South Africa Rep.
+451,874,"('Greytown', 'South Africa Rep.')", wrong format, South Africa Rep.
+452,875,"('Lwamongo', 'South Africa Rep.')", wrong format, South Africa Rep.
+453,876,"('Nelspruit', 'South Africa Rep.')", wrong format, South Africa Rep.
+454,878,"('Setlagole', 'South Africa Rep.')", wrong format, South Africa Rep.
+455,879,"('Viljoenskroon', 'South Africa Rep.')", wrong format, South Africa Rep.
+456,882,"('Paramaribo', 'Surinam')", wrong format, Surinam
+457,884,"('Les', 'Swaziland')", mismatched country, GH
+458,885,"('Lowveld, Brabend', 'Swaziland')", mismatched country, GH
+459,890,"('Shewula', 'Swaziland')", mismatched country, GH
+460,891,"('Swaziland', 'Swaziland')", mismatched country, GH
+461,892,"('Deir Al Zoor', 'Syria')", mismatched country, GH
+462,893,"('Raqqa', 'Syria')", mismatched country, GH
+463,896,"('Arusha Seed Farm Afsf', 'Tanzania')", mismatched country, GH
+464,907,"('Lambo', 'Tanzania')", mismatched country, KE
+465,913,"('Mwanza - Region', 'Tanzania')", mismatched country, GH
+466,916,"('Nm', 'Tanzania')", mismatched country, GH
+467,919,"('Tanzania', 'Tanzania')", mismatched country, GH
+468,929,"('Sawankalok Sukhotha', 'Thailand')", mismatched country, GH
+469,931,"('Tak Fa', 'Thailand')", mismatched country, GH
+470,933,"('El Carmen', 'Trinidad Y Tobago')", wrong format, Trinidad Y Tobago
+471,934,"('Goldsborough', 'Trinidad Y Tobago')", wrong format, Trinidad Y Tobago
+472,935,"(""Louis D'or"", 'Trinidad Y Tobago')", wrong format, Trinidad Y Tobago
+473,937,"('Aydin', 'Turkey')", mismatched country, GH
+474,938,"('Anny Settl', 'Turkmenistan')", mismatched country, GH
+475,939,"('Bulegeni', 'Uganda')", mismatched country, GH
+476,940,"('Bulengeni', 'Uganda')", mismatched country, GH
+477,945,"('Likonde,songea', 'Uganda')", mismatched country, TZ
+478,947,"('Msk', 'Uganda')", mismatched country, GH
+479,952,"('Uganda', 'Uganda')", mismatched country, GH
+480,953,"('Barnum Mn', 'United States Of America')", wrong format, United States Of America
+481,954,"('College Station, Texas', 'United States Of America')", wrong format, United States Of America
+482,955,"('Kenedy, Tx.', 'United States Of America')", wrong format, United States Of America
+483,956,"('Sn Antonio', 'United States Of America')", wrong format, United States Of America
+484,957,"('Tifton, Georgia', 'United States Of America')", wrong format, United States Of America
+485,958,"('Tifton, Georgia', 'United States Of America')", wrong format, United States Of America
+486,959,"('Weslaco, Texas', 'United States Of America')", wrong format, United States Of America
+487,962,"('Agua Blanca, Portuguesa', 'Venezuela')", mismatched country, GH
+488,963,"('Aragua (ceniap)', 'Venezuela')", mismatched country, GH
+489,964,"('Araure (acarigua)', 'Venezuela')", mismatched country, GH
+490,965,"('Araure (portuguesa)', 'Venezuela')", mismatched country, GH
+491,966,"('Carretera O, Turen, Portuguesa', 'Venezuela')", mismatched country, GH
+492,967,"('Centro Norte', 'Venezuela')", mismatched country, GH
+493,968,"('Colonia Agricola De Turen', 'Venezuela')", mismatched country, GH
+494,969,"('El Diamante, Yaritagua', 'Venezuela')", mismatched country, GH
+495,970,"('El Playon', 'Venezuela')", mismatched country, GH
+496,971,"('El Socorro', 'Venezuela')", mismatched country, GH
+497,972,"('Guarico', 'Venezuela')", mismatched country, GH
+498,973,"('La Lucia', 'Venezuela')", mismatched country, GH
+499,974,"('Las Caramas', 'Venezuela')", mismatched country, GH
+500,977,"('Las Guacamayas, El Sombrero', 'Venezuela')", mismatched country, GH
+501,978,"('Los Guayos, Carabobo State', 'Venezuela')", mismatched country, GH
+502,979,"('Manzanita', 'Venezuela')", mismatched country, GH
+503,981,"('Pascual Valetta, Laguna De Piedra', 'Venezuela')", mismatched country, GH
+504,982,"('Punta Gorda', 'Venezuela')", mismatched country, GH
+505,984,"('Santa Barbara', 'Venezuela')", mismatched country, GH
+506,985,"('Semillas Aragua', 'Venezuela')", mismatched country, GH
+507,986,"('Tocoron', 'Venezuela')", mismatched country, GH
+508,987,"('Tocoron, Estado Aragua', 'Venezuela')", mismatched country, GH
+509,988,"('Tucupido', 'Venezuela')", mismatched country, GH
+510,989,"('Turen', 'Venezuela')", mismatched country, GH
+511,990,"('Unidad Agricola De Turen', 'Venezuela')", mismatched country, GH
+512,991,"('Venezuela', 'Venezuela')", mismatched country, GH
+513,992,"('Villa De Cura, Aragua', 'Venezuela')", mismatched country, GH
+514,993,"('Ars, Amberpet, Hyd.', 'Vietnam')", mismatched country, GH
+515,994,"('Binh Chanh Dictrict - Ho Chi Minh City', 'Vietnam')", mismatched country, GH
+516,995,"('Binh Duong', 'Vietnam')", mismatched country, GH
+517,997,"('Dan Phuong Hatay', 'Vietnam')", mismatched country, GH
+518,998,"('Danphing Dist.', 'Vietnam')", mismatched country, GH
+519,999,"('Duc Hoa District, Long An Province', 'Vietnam')", mismatched country, GH
+520,1000,"('Gorakhpur', 'Vietnam')", mismatched country, GH
+521,1004,"('Tay Ninh Province', 'Vietnam')", mismatched country, GH
+522,1005,"('Gandajika', 'Zaire')", wrong format, Zaire
+523,1006,"('Mvuazi', 'Zaire')", wrong format, Zaire
+524,1007,"('Chisamba, Golden Valley', 'Zambia')", mismatched country, GH
+525,1010,"('Kutumani', 'Zambia')", mismatched country, GH
+526,1011,"('Lyempe', 'Zambia')", mismatched country, GH
+527,1012,"('Magobo', 'Zambia')", mismatched country, GH
+528,1022,"('Zambia', 'Zambia')", mismatched country, GH
+529,1028,"('Cimmyt, Harare', 'Zimbabwe')", mismatched country, GH
+530,1029,"('Dedza', 'Zimbabwe')", mismatched country, GH
+531,1040,"('Pannar', 'Zimbabwe')", mismatched country, GH
+532,1041,"('Pioneer', 'Zimbabwe')", mismatched country, GH
+533,1042,"('Radoma', 'Zimbabwe')", mismatched country, GH
+534,1047,"('Zimbabwe', 'Zimbabwe')", mismatched country, GH
+535,1052,"('Gisozi', 'Burundi')", mismatched country, GH
+536,1056,"('Zacatepec, Morelos', 'Mexico')", mismatched country, GH
+537,1057,"('Miacatlan', 'Mexico')", mismatched country, GH
+538,1058,"('Salandhar (punjab)', 'India')", mismatched country, GH
+539,1063,"('Kaniaka', 'Congo')", wrong format, Congo
+540,1074,"('Gondar', 'Ethiopia')", mismatched country, GH
+541,1075,"('Quindio', 'Colombia')", mismatched country, GH
+542,1076,"('Puerto Gaitan-carpoica,taluma', 'Colombia')", mismatched country, GH
+543,1077,"('Kisama', 'Kenya')", mismatched country, GH
+544,1078,"('Angecha', 'Ethiopia')", mismatched country, GH
+545,1079,"('Ivumwe', 'Tanzania')", mismatched country, GH
+546,1080,"('Mparambo', 'Burundi')", mismatched country, GH
+547,1081,"('Thika', 'Kenya')", mismatched country, GH
+548,1082,"('Matisi', 'Kenya')", mismatched country, GH
+549,1083,"('Kutus', 'Kenya')", mismatched country, GH
+550,1084,"('Kimaeti', 'Kenya')", mismatched country, GH
+551,1085,"('Elgon Downs', 'Kenya')", mismatched country, GH
+552,1086,"('Bumula', 'Kenya')", mismatched country, GH
+553,1087,"('Bulindi', 'Uganda')", mismatched country, GH
+554,1088,"('Bugiri', 'Uganda')", mismatched country, GH
+555,1089,"('Nyagatare', 'Rwanda')", mismatched country, GH
+556,1090,"('Kagumo', 'Kenya')", mismatched country, GH
+557,1091,"('Screen House', 'Kenya')", mismatched country, GH
+558,1092,"('Chitedzi', 'Malawi')", mismatched country, GH
+559,1093,"('Kiteta', 'Kenya')", mismatched country, GH
+560,1094,"('Kyuu', 'Kenya')", mismatched country, GH
+561,1095,"('Bingu', 'Malawi')", mismatched country, GH
+562,1096,"('Mpingu', 'Malawi')", mismatched country, GH
+563,1097,"('Pomela', 'Malawi')", mismatched country, GH
+564,1098,"('Pallisa', 'Uganda')", mismatched country, GH
+565,1099,"('Rancho Guadalupe, Toluca', 'Mexico')", mismatched country, GH
+566,1100,"('Mwea', 'Kenya')", mismatched country, GH
+567,1102,"('Kabul', 'Afghanistan')", mismatched country, GH
+568,1107,"('La Catalina', 'Colombia')", mismatched country, GH
+569,1108,"('Paraguaicito', 'Colombia')", mismatched country, GH
+570,1110,"('Freidenheim Valley', 'South Africa')", mismatched country, GH
+571,1115,"('Kibray', 'Uzbekistan')", mismatched country, GH
+572,1116,"('Chisamba', 'Zambia')", mismatched country, GH
+573,1128,"('Mungushi, Hai', 'Tanzania')", mismatched country, GH
+574,1129,"('Bondo', 'Kenya')", mismatched country, GH
+575,1130,"('Kakamega (monsanto)', 'Kenya')", mismatched country, GH
+576,1133,"('Caña Flecha', 'Colombia')", mismatched country, GH
+577,1135,"('Las Cañas', 'Costa Rica')", mismatched country, GH
+578,1136,"('La Máquina Caballo Blanco', 'Guatemala')", mismatched country, GH
+579,1137,"('San José Pinula', 'Guatemala')", mismatched country, GH
+580,1138,"('La Viña-jayanca-lambayeque', 'Peru')", mismatched country, GH
+581,1139,"('Dinajpur', 'Bangladesh')", mismatched country, GH
+582,1141,"('Tshibati - - - - Kibati', 'Congo')", wrong format, Congo
+583,1152,"('Finkolo', 'Mali')", mismatched country, NG
+584,1154,"('Finkolo', 'Mali')", mismatched country, NG
+585,1155,"('El Aguila, Pejibaye, Perez Zeledon', 'Costa Rica')", mismatched country, LK
+586,1156,"('Los Chiles', 'Costa Rica')", mismatched country, LK
+587,1157,"('Araure, Edo. Portuguesa', 'Venezuela')", mismatched country, IN
+588,1158,"('Las Velas, Edo. Yaracuy', 'Venezuela')", mismatched country, IN
+589,1159,"('Tiznados, Edo. Guarico', 'Venezuela')", mismatched country, IN
+590,1160,"('Concepcion De Pilas, Buenos Aires', 'Costa Rica')", mismatched country, LK
+591,1161,"('El Amparo, El Gallito, Los Chiles, Alajuela', 'Costa Rica')", mismatched country, LK
+592,1162,"('Guagaral, Buenos Aires Puntarenas', 'Costa Rica')", mismatched country, LK
+593,1163,"('Pueblo Nuevo, San Jose, Upala', 'Costa Rica')", mismatched country, LK
+594,1164,"('Veracruz, Pejibaye, Perez Zeledon', 'Costa Rica')", mismatched country, LK
+595,1165,"('El Progreso, Pejibaye, Perez Zeledon', 'Costa Rica')", mismatched country, LK
+596,1166,"('Guagaral, Buenos Aires', 'Costa Rica')", mismatched country, LK

@@ -91,17 +91,11 @@ class GeocodeValidator:
             self.countryCodes[country] = countryCode
 
     def logResults(self):
-        print(len(self.log['location']))
-        print(len(self.log['index']))
-        print(len(self.log['type']))
-        print(len(self.log['comment']))
-
         print("Flagged locations are at indicies: " + str(self.flaggedLocations))
         loggedDF = pd.DataFrame(data=self.log)
         loggedDF.to_csv('validation_log_' + str(now) + '.csv', sep=',', encoding='utf-8')
         return len(self.flaggedLocations) / (1e-10 + self.tobeValidatedLocation.shape[0])
 
-
-validator1 = GeocodeValidator("/Users/thytnguyen/Desktop/tblLocation.xlsx")
-validator1.run()
+validator2 = GeocodeValidator("NaNtblLocations.xlsx")
+validator2.run()
 
