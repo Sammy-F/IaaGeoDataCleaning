@@ -1,598 +1,73 @@
 ,comment,index,location,type
-0, GH,3,"('Angola', 'Angola')", mismatched country
-1, GH,14,"('Anguil - Provincia La Pampa', 'Argentina')", mismatched country
-2, GH,15,"('Argentina', 'Argentina')", mismatched country
-3, GH,16,"('El Manantial', 'Argentina')", mismatched country
-4, GH,17,"('Los Pereyras', 'Argentina')", mismatched country
-5, GH,19,"('Zakatala, City', 'Azerbaijan')", mismatched country
-6, GH,20,"('Dinajpur', 'Bangladesh')", mismatched country
-7, GH,21,"('Ars, Rajbari, Dinajpur', 'Bangladesh')", mismatched country
-8, GH,22,"('Ars. Burirhat, Rangpur', 'Bangladesh')", mismatched country
-9, GH,23,"('Bogra', 'Bangladesh')", mismatched country
-10, GH,25,"('Gazipur', 'Bangladesh')", mismatched country
-11, GH,32,"('Joydebpur, Gazipur', 'Bangladesh')", mismatched country
-12, GH,34,"('Rajbari', 'Bangladesh')", mismatched country
-13, GH,35,"('Rars, Bari, Jamalpur', 'Bangladesh')", mismatched country
-14, GH,36,"('Belmopan, Cardi Station', 'Belize')", mismatched country
-15, GH,41,"('Bolivia', 'Bolivia')", mismatched country
-16, GH,46,"('El Abra (santa Cruz)', 'Bolivia')", mismatched country
-17, GH,47,"('El Palmar (santa Cruz)', 'Bolivia')", mismatched country
-18, GH,49,"('Entre Rios', 'Bolivia')", mismatched country
-19, GH,50,"('Fundacion Proinpa', 'Bolivia')", mismatched country
-20, GH,52,"('Lomas De Arena (santa Cruz)', 'Bolivia')", mismatched country
-21, GH,53,"('Mairana, Santa Cruz', 'Bolivia')", mismatched country
-22, GH,54,"('Monteagudo', 'Bolivia')", mismatched country
-23, GH,58,"('Pajonal', 'Bolivia')", mismatched country
-24, GH,59,"('Saavedra', 'Bolivia')", mismatched country
-25, GH,60,"('San Ignacio', 'Bolivia')", mismatched country
-26, GH,62,"('Santa Cruz (cuatro Caminos)', 'Bolivia')", mismatched country
-27, GH,63,"('Santa Cruz De La Sierra', 'Bolivia')", mismatched country
-28, GH,64,"('Santa Cruz De La Sierra (el Vallecito)', 'Bolivia')", mismatched country
-29, GH,65,"('Tarija', 'Bolivia')", mismatched country
-30, GH,66,"('Valle Del Medio', 'Bolivia')", mismatched country
-31, GH,67,"('Vallecitos (iboperenda)', 'Bolivia')", mismatched country
-32, GH,69,"('Yacuiba', 'Bolivia')", mismatched country
-33, GH,70,"('Zona Norte De Santa Cruz', 'Bolivia')", mismatched country
-34, GH,78,"('Brazil', 'Brazil')", mismatched country
-35, GH,79,"('Campo Largo - Pr', 'Brazil')", mismatched country
-36, PY,82,"('Guaira', 'Brazil')", mismatched country
-37, Central Asia,90,"('Kazakhstan', 'Central Asia')", wrong format
-38, GH,97,"('Honghe', 'China')", mismatched country
-39, GH,101,"('Mian Yang', 'China')", mismatched country
-40, VN,107,"('Wenshan', 'China')", mismatched country
-41, GH,109,"('Aguas Blancas', 'Colombia')", mismatched country
-42, GH,110,"('Aguas Claras', 'Colombia')", mismatched country
-43, GH,111,"('Andremoni', 'Colombia')", mismatched country
-44, GH,112,"('Arborates', 'Colombia')", mismatched country
-45, GH,113,"('Arguello Bajo, Yacuanquer', 'Colombia')", mismatched country
-46, GH,114,"('Atuncela, Dagua', 'Colombia')", mismatched country
-47, GH,115,"('Bucaramanga', 'Colombia')", mismatched country
-48, GH,116,"('Bucaramanga, Pinchote', 'Colombia')", mismatched country
-49, GH,118,"('Buga, Media Canoa', 'Colombia')", mismatched country
-50, GH,119,"('Caicedonia', 'Colombia')", mismatched country
-51, GH,120,"('Caldono', 'Colombia')", mismatched country
-52, GH,122,"('Campo Alegre, Huila', 'Colombia')", mismatched country
-53, GH,123,"('Ca╤a Flecha', 'Colombia')", mismatched country
-54, GH,124,"('Carmen De Bolivar', 'Colombia')", mismatched country
-55, GH,125,"('Cerete, Cordoba', 'Colombia')", mismatched country
-56, GH,126,"('Cerrito', 'Colombia')", mismatched country
-57, GH,127,"('Cienega De Oro', 'Colombia')", mismatched country
-58, GH,128,"('Ciudad Bolivar', 'Colombia')", mismatched country
-59, GH,129,"('Colombia', 'Colombia')", mismatched country
-60, GH,130,"('Cordoba', 'Colombia')", mismatched country
-61, GH,131,"('Corozal', 'Colombia')", mismatched country
-62, GH,132,"('Darien, Valle Del Cauca', 'Colombia')", mismatched country
-63, GH,133,"('Duitama', 'Colombia')", mismatched country
-64, GH,135,"('El Espinal, Tolima', 'Colombia')", mismatched country
-65, GH,136,"('El Libano', 'Colombia')", mismatched country
-66, GH,137,"('El Naranjal', 'Colombia')", mismatched country
-67, GH,138,"('El Rosario', 'Colombia')", mismatched country
-68, GH,139,"('El Tambo, Valle Del Cauca', 'Colombia')", mismatched country
-69, GH,140,"('El Tomate', 'Colombia')", mismatched country
-70, GH,141,"('Fuente De Oro, Granda', 'Colombia')", mismatched country
-71, GH,142,"('Garzon, Huila', 'Colombia')", mismatched country
-72, GH,143,"('Granada', 'Colombia')", mismatched country
-73, GH,144,"('Guadalajara De Buga', 'Colombia')", mismatched country
-74, GH,145,"('Independencia, Caldono', 'Colombia')", mismatched country
-75, GH,146,"('La Catalina, Pereira', 'Colombia')", mismatched country
-76, GH,147,"('La Cubillera, Granada', 'Colombia')", mismatched country
-77, GH,148,"('La Palomera', 'Colombia')", mismatched country
-78, GH,149,"('La Trocha 12, Granda', 'Colombia')", mismatched country
-79, GH,151,"('La Union, Corcega', 'Colombia')", mismatched country
-80, GH,152,"('Lejania, Granada', 'Colombia')", mismatched country
-81, GH,153,"('Matazul', 'Colombia')", mismatched country
-82, GH,154,"('Menegua', 'Colombia')", mismatched country
-83, GH,155,"('Mondomo, Santander', 'Colombia')", mismatched country
-84, GY,156,"('Monteria', 'Colombia')", mismatched country
-85, GH,157,"('Neiva, Huila', 'Colombia')", mismatched country
-86, GH,158,"('Obando, Molina', 'Colombia')", mismatched country
-87, GH,160,"('Paraguaicito, Armenia', 'Colombia')", mismatched country
-88, GH,161,"('Pelaya-cesar (aguachica)', 'Colombia')", mismatched country
-89, GH,162,"('Pereira', 'Colombia')", mismatched country
-90, GH,163,"('Piendamo', 'Colombia')", mismatched country
-91, GH,164,"('Procampo', 'Colombia')", mismatched country
-92, GH,165,"('Puerto Lopez', 'Colombia')", mismatched country
-93, GH,166,"('Puerto Lopez', 'Colombia')", mismatched country
-94, GH,167,"('Quindio, Montenegro', 'Colombia')", mismatched country
-95, GH,168,"('Rivera, Huila', 'Colombia')", mismatched country
-96, GH,169,"('Roldanillo', 'Colombia')", mismatched country
-97, GH,170,"('Sabana De Torres, Santander', 'Colombia')", mismatched country
-98, GH,171,"('Sahagu', 'Colombia')", mismatched country
-99, GH,172,"('San Antonio', 'Colombia')", mismatched country
-100, GH,173,"('San Barreto', 'Colombia')", mismatched country
-101, GH,174,"('San Francisco, Sandona', 'Colombia')", mismatched country
-102, GH,175,"('San Ignacio, Granada', 'Colombia')", mismatched country
-103, GH,176,"('San Pedro De Uraba', 'Colombia')", mismatched country
-104, GH,177,"('San Pelayo', 'Colombia')", mismatched country
-105, GH,178,"('San Rafael, Consaca', 'Colombia')", mismatched country
-106, GH,179,"('Sandona, Narino, Fidar', 'Colombia')", mismatched country
-107, GH,180,"('Santa Helena', 'Colombia')", mismatched country
-108, GH,181,"('Santa Lucia', 'Colombia')", mismatched country
-109, GH,182,"('Santander De Quilichao', 'Colombia')", mismatched country
-110, GH,183,"('Segovia', 'Colombia')", mismatched country
-111, GH,184,"('Semivalle', 'Colombia')", mismatched country
-112, GH,185,"('Sincelejo', 'Colombia')", mismatched country
-113, GH,186,"('Taluma', 'Colombia')", mismatched country
-114, GH,187,"('Tierra Alta', 'Colombia')", mismatched country
-115, GH,188,"('Tulenapa', 'Colombia')", mismatched country
-116, GH,189,"('Tunja', 'Colombia')", mismatched country
-117, GH,192,"('Turipana', 'Colombia')", mismatched country
-118, GH,193,"('Turipana', 'Colombia')", mismatched country
-119, GH,194,"('Valle De Magdalena', 'Colombia')", mismatched country
-120, GH,195,"('Valle De Magdalena', 'Colombia')", mismatched country
-121, GH,196,"('Valle De Magdalena', 'Colombia')", mismatched country
-122, GH,197,"('Valle De Magdalena', 'Colombia')", mismatched country
-123, GH,198,"('Valle Del Cauca', 'Colombia')", mismatched country
-124, GH,199,"('Venecia', 'Colombia')", mismatched country
-125, GH,200,"('Villavicencio', 'Colombia')", mismatched country
-126, GH,201,"('Villavo', 'Colombia')", mismatched country
-127, GH,202,"('Yotoco-valle Del Cauca', 'Colombia')", mismatched country
-128, Congo,203,"('Congo', 'Congo')", wrong format
-129, Congo,204,"('Odziba', 'Congo')", wrong format
-130, Congo,205,"('Tshibati', 'Congo')", wrong format
-131, GH,207,"('Costa Rica', 'Costa Rica')", mismatched country
-132, GH,208,"('El Aguila, Pejibaye', 'Costa Rica')", mismatched country
-133, GH,209,"('El Parque, Los Chiles', 'Costa Rica')", mismatched country
-134, GH,210,"('El Progreso, Pejibaye', 'Costa Rica')", mismatched country
-135, NI,211,"('Guagaral', 'Costa Rica')", mismatched country
-136, GH,213,"('Las Ca╤as', 'Costa Rica')", mismatched country
-137, GH,214,"('Pejibaye De Perez Zeledon', 'Costa Rica')", mismatched country
-138, GH,216,"('Upala', 'Costa Rica')", mismatched country
-139, GH,217,"('Upala Pueblo Nuevo', 'Costa Rica')", mismatched country
-140, GH,218,"('Veracruz, Pejibaye', 'Costa Rica')", mismatched country
-141, Cote D'ivoire,219,"('Badikaha', ""Cote D'ivoire"")", wrong format
-142, Cote D'ivoire,220,"('Bouake', ""Cote D'ivoire"")", wrong format
-143, Cote D'ivoire,221,"('Ferkessedougou', ""Cote D'ivoire"")", wrong format
-144, Cote D'ivoire,222,"('Sinematiali', ""Cote D'ivoire"")", wrong format
-145, Cote D'ivoire,223,"('Touba', ""Cote D'ivoire"")", wrong format
-146, Cote D'ivoire,224,"('Warda/adrao-mbe', ""Cote D'ivoire"")", wrong format
-147, GH,228,"('Comuna San Rafael, Peninsula Sta Elena', 'Ecuador')", mismatched country
-148, GH,229,"('Ecuador', 'Ecuador')", mismatched country
-149, GH,230,"('Fca. Exp. Josefina Balzar', 'Ecuador')", mismatched country
-150, GH,231,"('La Virginia Quevedo', 'Ecuador')", mismatched country
-151, GH,232,"('Lodana', 'Ecuador')", mismatched country
-152, GH,234,"('Organos', 'Ecuador')", mismatched country
-153, GH,236,"('Pindal', 'Ecuador')", mismatched country
-154, GH,240,"('Giza', 'Egypt')", mismatched country
-155, GH,245,"('Apastepeque', 'El Salvador')", mismatched country
-156, GH,246,"('Armenia', 'El Salvador')", mismatched country
-157, GH,247,"('Barrio Nuevo, La Paz', 'El Salvador')", mismatched country
-158, GH,248,"('Chalchahuapa', 'El Salvador')", mismatched country
-159, GH,249,"('Cuhisnuat', 'El Salvador')", mismatched country
-160, GH,250,"('El Coyalito', 'El Salvador')", mismatched country
-161, GH,251,"('El Pepito, Concep., Chalate', 'El Salvador')", mismatched country
-162, GH,252,"('Jiquilisco', 'El Salvador')", mismatched country
-163, GH,253,"('Jocoro, Morazan', 'El Salvador')", mismatched country
-164, GH,254,"('Jucuapa, Usulutan', 'El Salvador')", mismatched country
-165, GH,255,"('La Libertad', 'El Salvador')", mismatched country
-166, GH,256,"('Lomas De Santiago', 'El Salvador')", mismatched country
-167, GH,257,"('Los Cipreses, Conchagua, La Union', 'El Salvador')", mismatched country
-168, GH,258,"('Nacimiento, La Union', 'El Salvador')", mismatched country
-169, GH,259,"('Nahuilingo', 'El Salvador')", mismatched country
-170, GH,260,"('Nueva Concepcion', 'El Salvador')", mismatched country
-171, GH,261,"('Quelepa, San Miguel', 'El Salvador')", mismatched country
-172, GH,262,"('San Andres', 'El Salvador')", mismatched country
-173, GH,263,"('San Andres (sb)', 'El Salvador')", mismatched country
-174, GH,264,"('San Mauricio', 'El Salvador')", mismatched country
-175, GH,265,"('San Pedro Puxtla, Ahuachapan', 'El Salvador')", mismatched country
-176, GH,266,"('San Vicente', 'El Salvador')", mismatched country
-177, GH,268,"('Santa Cruz Porrillo', 'El Salvador')", mismatched country
-178, GH,270,"('Suchitoto, Cuscatlan', 'El Salvador')", mismatched country
-179, GH,271,"('Tenancingo', 'El Salvador')", mismatched country
-180, GH,272,"('Uluazapa, La Union', 'El Salvador')", mismatched country
-181, España,275,"('Pontevedra', 'España')", wrong format
-182, GH,284,"('Haramaya', 'Ethiopia')", mismatched country
-183, KE,287,"('Kitale-ws', 'Ethiopia')", mismatched country
-184, NA,294,"('Nazret', 'Ethiopia')", coords NA
-185, GH,296,"('Ws', 'Ethiopia')", mismatched country
-186, GH,298,"('Dobuleni Research Station', 'Fiji')", mismatched country
-187, GH,299,"('Koronnia Research Station', 'Fiji')", mismatched country
-188, GH,300,"('Legalega Research Station', 'Fiji')", mismatched country
-189, GH,301,"('Sigatoka Research Station', 'Fiji')", mismatched country
-190, GH,302,"('Tserovani', 'Georgia')", mismatched country
-191, TG,309,"('Tamale', 'Ghana')", mismatched country
-192, GH,313,"('Caballo Blanco, Retalhuleu', 'Guatemala')", mismatched country
-193, GH,316,"('El Ovejero, Jutiapa', 'Guatemala')", mismatched country
-194, GH,317,"('Estanzuela', 'Guatemala')", mismatched country
-195, GH,318,"('Finca, Las Vegas Tequisate.', 'Guatemala')", mismatched country
-196, MX,319,"('Isidro Avarez', 'Guatemala')", mismatched country
-197, GH,321,"('La Flecha', 'Guatemala')", mismatched country
-198, GH,322,"('La Maquina', 'Guatemala')", mismatched country
-199, GH,323,"('La M┴quina Caballo Blanco', 'Guatemala')", mismatched country
-200, GH,324,"('La Maquina, Linea A5', 'Guatemala')", mismatched country
-201, GH,325,"('La Maquina, Tulate', 'Guatemala')", mismatched country
-202, GH,326,"('Las Monjas', 'Guatemala')", mismatched country
-203, GH,328,"('Monjas, Jalapa', 'Guatemala')", mismatched country
-204, GH,329,"('Nueva Concepcion', 'Guatemala')", mismatched country
-205, GH,330,"('Ovejero, Jutiapa', 'Guatemala')", mismatched country
-206, GH,331,"('Quesada, Jutiapa', 'Guatemala')", mismatched country
-207, GH,332,"('Salam B. V.', 'Guatemala')", mismatched country
-208, GH,333,"('San Jos╔ Pinula', 'Guatemala')", mismatched country
-209, GH,334,"('San Pedro Pinula, Jalapa', 'Guatemala')", mismatched country
-210, GH,335,"('Sto Domingo', 'Guatemala')", mismatched country
-211, GH,338,"('Zacapa', 'Guatemala')", mismatched country
-212, GH,340,"('Chantilly', 'Haiti')", mismatched country
-213, GH,342,"('Karoman, Lavallee', 'Haiti')", mismatched country
-214, GH,344,"('Nan- Jn Pierre, Cap-rouge', 'Haiti')", mismatched country
-215, GH,345,"('Candelaria, Lempira', 'Honduras')", mismatched country
-216, GH,346,"('Catacamas, Olancho', 'Honduras')", mismatched country
-217, GH,348,"('Comayagua, E.e. Playitas', 'Honduras')", mismatched country
-218, GH,350,"('El Guaco Yorito, Yoro', 'Honduras')", mismatched country
-219, GH,351,"('El Pital, Atlantida', 'Honduras')", mismatched country
-220, GH,353,"('Jutiquile, Olancho', 'Honduras')", mismatched country
-221, GH,356,"('Litoral Atlantico', 'Honduras')", mismatched country
-222, GH,357,"('Luquigue Yorito, Yoro', 'Honduras')", mismatched country
-223, GH,358,"('Mina Handa (yorito Yoco)', 'Honduras')", mismatched country
-224, GH,359,"('Obraje, Danli', 'Honduras')", mismatched country
-225, GH,361,"('Pata Stera (yorito Yoco)', 'Honduras')", mismatched country
-226, GH,362,"('Playita', 'Honduras')", mismatched country
-227, GH,363,"('Potrerillos, Olancho', 'Honduras')", mismatched country
-228, GH,364,"('Rio Arriba Yorito, Yoro', 'Honduras')", mismatched country
-229, GH,365,"('San Lucas, El Paraiso', 'Honduras')", mismatched country
-230, GH,366,"('San Pedro De Catacamas, Olancho', 'Honduras')", mismatched country
-231, GH,368,"('Yoro, El Pate', 'Honduras')", mismatched country
-232, GH,369,"('Yoro, Morazan', 'Honduras')", mismatched country
-233, GH,372,"('Amberpet', 'India')", mismatched country
-234, GH,378,"('Bahraich, Crop Research Station', 'India')", mismatched country
-235, CN,379,"('Bajaura', 'India')", mismatched country
-236, GH,384,"('Belipar, Gorakhpur, U.p.', 'India')", mismatched country
-237, GH,385,"('Bihar', 'India')", mismatched country
-238, GH,391,"('Dholi', 'India')", mismatched country
-239, PR,392,"('Dmr I.a.r.i.', 'India')", mismatched country
-240, GH,393,"('Dohad', 'India')", mismatched country
-241, GH,395,"('Godhsa Gaujasat', 'India')", mismatched country
-242, GH,397,"('India', 'India')", mismatched country
-243, GH,406,"('Khadbrabhra', 'India')", mismatched country
-244, GH,407,"('Khedbrahma', 'India')", mismatched country
-245, GH,411,"('Messina', 'India')", mismatched country
-246, GH,412,"('Muzafferpur', 'India')", mismatched country
-247, GH,413,"('New Delhi', 'India')", mismatched country
-248, GH,417,"('Pantnagar', 'India')", mismatched country
-249, GH,418,"('Parbhani', 'India')", mismatched country
-250, GH,419,"('Poonch', 'India')", mismatched country
-251, GH,420,"('Prabhakar Reddy', 'India')", mismatched country
-252, GH,421,"('Probhakor', 'India')", mismatched country
-253, GH,423,"('Pusa', 'India')", mismatched country
-254, GH,424,"('R&d (pachora).', 'India')", mismatched country
-255, GH,425,"('R&d (wadadhe).', 'India')", mismatched country
-256, GH,427,"('Ranchi', 'India')", mismatched country
-257, GH,428,"('Rau Pusa (bihar)', 'India')", mismatched country
-258, GH,429,"('Rayalkole', 'India')", mismatched country
-259, GH,430,"('Samastipur', 'India')", mismatched country
-260, GH,433,"('Srinagar, K.d. Research Station', 'India')", mismatched country
-261, GH,438,"('Weerasak Doungjan', 'India')", mismatched country
-262, GH,440,"('Gowa S. Sulawesi', 'Indonesia')", mismatched country
-263, GH,441,"('Hulu Sungai Selatan', 'Indonesia')", mismatched country
-264, GH,442,"('Jambegede', 'Indonesia')", mismatched country
-265, GH,446,"('Naibonat', 'Indonesia')", mismatched country
-266, GH,447,"('Natar, Lampung', 'Indonesia')", mismatched country
-267, GH,448,"('Probolinggo', 'Indonesia')", mismatched country
-268, GH,449,"('Takalar, South Sulawesi', 'Indonesia')", mismatched country
-269, GH,450,"('Yogyakarta', 'Indonesia')", mismatched country
-270, GH,451,"('Agricultural Research Station Of Gorgan', 'Iran')", mismatched country
-271, GH,453,"('Ai - Latifyia', 'Iraq')", mismatched country
-272, GH,455,"(""Bonghdad, Al_mada'en"", 'Iraq')", mismatched country
-273, GH,456,"('Tuwaitha Baghdad', 'Iraq')", mismatched country
-274, Kazakstan,457,"('Central Asia', 'Kazakstan')", wrong format
-275, UG,458,"('Alupe', 'Kenya')", mismatched country
-276, GH,459,"('Baobab', 'Kenya')", mismatched country
-277, GH,473,"('K.t.i', 'Kenya')", mismatched country
-278, GH,476,"('Kari - Embu', 'Kenya')", mismatched country
-279, GH,477,"('Karurina', 'Kenya')", mismatched country
-280, GH,487,"('Kitale Syn Ii (ethiopia)', 'Kenya')", mismatched country
-281, GH,502,"('Tanseed', 'Kenya')", mismatched country
-282, GH,504,"('Wanbugu', 'Kenya')", mismatched country
-283, GH,506,"('Western Seeds', 'Kenya')", mismatched country
-284, GH,508,"('Lesotho', 'Lesotho')", mismatched country
-285, GH,518,"('Baka Research Station', 'Malawi')", mismatched country
-286, GH,528,"('Mphimbi', 'Malawi')", mismatched country
-287, GH,530,"('Not Identified', 'Malawi')", mismatched country
-288, GH,535,"('Katibougou', 'Mali')", mismatched country
-289, GH,536,"('Kolombada', 'Mali')", mismatched country
-290, NG,537,"('Rue Mohamed', 'Mali')", mismatched country
-291, GH,539,"('Acatic, Jalisco', 'Mexico')", mismatched country
-292, GH,540,"('Acayucan, Veracruz', 'Mexico')", mismatched country
-293, GH,542,"('Agua Fria', 'Mexico')", mismatched country
-294, GH,550,"('Apaseo El Guadalupe, Guanajuato', 'Mexico')", mismatched country
-295, GH,551,"('Atlacomulco', 'Mexico')", mismatched country
-296, GH,552,"('Axochio, San Andres Tuxtla, Veracruz', 'Mexico')", mismatched country
-297, GH,553,"('Buenavista Penjamo, Guanajuato', 'Mexico')", mismatched country
-298, GH,558,"('Cardel', 'Mexico')", mismatched country
-299, GH,562,"('Champoton, Campeche', 'Mexico')", mismatched country
-300, GH,565,"('Chiapas', 'Mexico')", mismatched country
-301, GH,566,"('Chorrerones', 'Mexico')", mismatched country
-302, GH,573,"('Colonia Del Turen', 'Mexico')", mismatched country
-303, GH,574,"('Coquimatlan', 'Mexico')", mismatched country
-304, GH,575,"('Corralejo De Hidalgo, Guanajuato', 'Mexico')", mismatched country
-305, GH,576,"('Cotaxla', 'Mexico')", mismatched country
-306, GH,578,"('Coyoltepec, San Andres Tuxtla, Veracruz', 'Mexico')", mismatched country
-307, GH,588,"('Edzna, Campeche', 'Mexico')", mismatched country
-308, GH,589,"('Ejido 1ro De Mayo', 'Mexico')", mismatched country
-309, GH,595,"('El Zapote, Tonatico', 'Mexico')", mismatched country
-310, GH,598,"('Guadalajara, Jalisco', 'Mexico')", mismatched country
-311, GH,604,"('Huejutla De Reyes, Hidalgo', 'Mexico')", mismatched country
-312, GH,605,"('Huimanguillo', 'Mexico')", mismatched country
-313, GH,606,"('Ignacio De La Llave, Veracruz', 'Mexico')", mismatched country
-314, GH,609,"('Isla, Veracruz', 'Mexico')", mismatched country
-315, GH,612,"('Jalisco, Jalisco', 'Mexico')", mismatched country
-316, GH,614,"('Jerico Chiapas', 'Mexico')", mismatched country
-317, GH,615,"('Jesus Maria', 'Mexico')", mismatched country
-318, GH,619,"('La Barca, Jalisco', 'Mexico')", mismatched country
-319, GH,620,"('La Cantera, Comonfort, Guanajuato', 'Mexico')", mismatched country
-320, GH,621,"('La Cruz De Elota, Sinaloa', 'Mexico')", mismatched country
-321, EC,622,"('La Huerta, Jalisco', 'Mexico')", mismatched country
-322, GH,625,"('La Torrecilla, Tlalixcoyan, Veracruz', 'Mexico')", mismatched country
-323, GH,630,"('Mata De Agua', 'Mexico')", mismatched country
-324, GH,635,"('Nayarit', 'Mexico')", mismatched country
-325, GH,640,"('Ocuituco, Morelos', 'Mexico')", mismatched country
-326, GH,641,"('Ojo De Agua, Santiago Tuxtla, Veracruz', 'Mexico')", mismatched country
-327, GH,642,"('Ojo De Agua, Tonatico', 'Mexico')", mismatched country
-328, GH,646,"('Penjamo, Guanajuato', 'Mexico')", mismatched country
-329, GH,654,"('Quila, Sinaloa', 'Mexico')", mismatched country
-330, GH,656,"('Rincon De Parangueo, Guanajuato', 'Mexico')", mismatched country
-331, GH,660,"('San Andres Tuxtla', 'Mexico')", mismatched country
-332, GH,665,"('San Juan De Abajo', 'Mexico')", mismatched country
-333, GH,669,"('San Miguel Allende, Guanajuato', 'Mexico')", mismatched country
-334, GH,671,"('San Pedro Lagunillas, Nayarit', 'Mexico')", mismatched country
-335, GH,678,"('Tamarindos, Veracruz', 'Mexico')", mismatched country
-336, GH,679,"('Tamaulipas', 'Mexico')", mismatched country
-337, GH,682,"('Tepalcingo, Morelos', 'Mexico')", mismatched country
-338, GH,684,"('Tlacomulco', 'Mexico')", mismatched country
-339, GH,688,"('Tlalixcoyan', 'Mexico')", mismatched country
-340, GH,689,"('Tlaltizapan', 'Mexico')", mismatched country
-341, GH,697,"('Uxmal', 'Mexico')", mismatched country
-342, GH,698,"('Valle De Bravo, Estado De Mexico', 'Mexico')", mismatched country
-343, GH,699,"('Valle De Culiacan', 'Mexico')", mismatched country
-344, GH,701,"('Valle Del Fuerte, Sinaloa', 'Mexico')", mismatched country
-345, GH,704,"('Veracrucito', 'Mexico')", mismatched country
-346, GH,707,"('Villa Hidalgo, Nayarit', 'Mexico')", mismatched country
-347, GH,708,"('Villa Verde, Guanajuato', 'Mexico')", mismatched country
-348, GH,711,"('Xalostoc, Morelos', 'Mexico')", mismatched country
-349, GH,712,"('Xocoyucan, Tlaxcala', 'Mexico')", mismatched country
-350, GH,716,"('Khemiszemamra', 'Morocco')", mismatched country
-351, GH,718,"('Angora', 'Mozambique')", mismatched country
-352, GH,720,"('Ex-instituto Nacional De Investigacion Agraria', 'Mozambique')", mismatched country
-353, MW,725,"('Morrumbala-zambezia', 'Mozambique')", mismatched country
-354, GH,726,"('Mozambique', 'Mozambique')", mismatched country
-355, MW,727,"('Mutarara', 'Mozambique')", mismatched country
-356, GH,731,"('Ntengo Nucodgi Augoiris', 'Mozambique')", mismatched country
-357, GH,732,"('Ntengo Umadzi- Angoria', 'Mozambique')", mismatched country
-358, GH,733,"('Semol', 'Mozambique')", mismatched country
-359, GH,736,"('Ussudenga', 'Mozambique')", mismatched country
-360, GH,737,"('Naung Mon', 'Myanmar')", mismatched country
-361, GH,738,"('Sea', 'Myanmar')", mismatched country
-362, GH,739,"('Taryaw', 'Myanmar')", mismatched country
-363, GH,740,"('Tatkan', 'Myanmar')", mismatched country
-364, GH,741,"('Tatkone', 'Myanmar')", mismatched country
-365, GH,742,"('Zaloke Research Farm', 'Myanmar')", mismatched country
-366, Myanmar (burma),743,"('Aungban, Burma', 'Myanmar (burma)')", wrong format
-367, Myanmar (burma),744,"('Yezin, Burma', 'Myanmar (burma)')", wrong format
-368, NA,745,"('Mashare', 'Namibia')", mismatched country
-369, GH,746,"('Mitkomst Research Station', 'Namibia')", mismatched country
-370, NA,747,"('Runda', 'Namibia')", mismatched country
-371, GH,748,"('Hardinath', 'Nepal')", mismatched country
-372, GH,749,"('Kabre', 'Nepal')", mismatched country
-373, GH,751,"('Lumle', 'Nepal')", mismatched country
-374, GH,752,"('Pakhribas', 'Nepal')", mismatched country
-375, GH,754,"('Parwanipur', 'Nepal')", mismatched country
-376, GH,757,"('Campos Azules', 'Nicaragua')", mismatched country
-377, GH,758,"('Campos Azules, Masatepe', 'Nicaragua')", mismatched country
-378, GH,759,"('Carazo', 'Nicaragua')", mismatched country
-379, GH,761,"('Chontales', 'Nicaragua')", mismatched country
-380, GH,762,"('Chontales, Tamboral Sur', 'Nicaragua')", mismatched country
-381, GH,763,"('Condega, Esteli', 'Nicaragua')", mismatched country
-382, GH,764,"('El Areno, El Rama', 'Nicaragua')", mismatched country
-383, GH,765,"('El Jicaro, Nueva Segovia', 'Nicaragua')", mismatched country
-384, GH,766,"('El Pellizco, Chinandega', 'Nicaragua')", mismatched country
-385, GH,767,"('Jalapa', 'Nicaragua')", mismatched country
-386, GH,768,"('La Dal═a', 'Nicaragua')", mismatched country
-387, GH,769,"('La Presa', 'Nicaragua')", mismatched country
-388, GH,770,"('La Trinidad, Esteli', 'Nicaragua')", mismatched country
-389, GH,771,"('Las Cruces Carazo', 'Nicaragua')", mismatched country
-390, GH,772,"('Las Piedras,nueva Segovia', 'Nicaragua')", mismatched country
-391, GH,773,"('Llano Redondo', 'Nicaragua')", mismatched country
-392, GH,775,"('Mazatepec', 'Nicaragua')", mismatched country
-393, GH,776,"('Melchorita, San Carlos', 'Nicaragua')", mismatched country
-394, GH,777,"('Nindiri, Mazaya', 'Nicaragua')", mismatched country
-395, GH,778,"('Paz De Carazo', 'Nicaragua')", mismatched country
-396, GH,779,"('Pueblo Nuevo', 'Nicaragua')", mismatched country
-397, GH,780,"('San Bartolo', 'Nicaragua')", mismatched country
-398, GH,781,"('San Benito, Chinandega', 'Nicaragua')", mismatched country
-399, GH,783,"('Santa Cruz, Esteli', 'Nicaragua')", mismatched country
-400, GH,784,"('Santa Juana, Nindiri', 'Nicaragua')", mismatched country
-401, GH,786,"('Baganda', 'Nigeria')", mismatched country
-402, GH,794,"('Saminaka Nig', 'Nigeria')", mismatched country
-403, GH,795,"('Temti Jos', 'Nigeria')", mismatched country
-404, GH,799,"('Ari, D,i. Kham', 'Pakistan')", mismatched country
-405, GH,805,"('Azuer', 'Panama')", mismatched country
-406, GH,813,"('Capitan Miranda', 'Paraguay')", mismatched country
-407, GH,816,"('San Juan Bautista', 'Paraguay')", mismatched country
-408, GH,818,"('Yjhovy', 'Paraguay')", mismatched country
-409, GH,819,"('Ascope', 'Peru')", mismatched country
-410, GH,820,"('Aucaloma', 'Peru')", mismatched country
-411, GH,821,"('E.e. El Porvenir, Calzada Moyobamba', 'Peru')", mismatched country
-412, GH,822,"('E.e. Pucallpa', 'Peru')", mismatched country
-413, GH,824,"('Huaral', 'Peru')", mismatched country
-414, GH,825,"('Humay - Pisco', 'Peru')", mismatched country
-415, GH,827,"('Juan Guerra', 'Peru')", mismatched country
-416, GH,828,"('La Vi╤a-jayanca-lambayeque', 'Peru')", mismatched country
-417, GH,829,"('Lambayeque', 'Peru')", mismatched country
-418, GH,830,"('Lima', 'Peru')", mismatched country
-419, GH,831,"('Montupe 99', 'Peru')", mismatched country
-420, GH,832,"('Muy Finca Mochumi Lambayeque', 'Peru')", mismatched country
-421, GH,833,"('Pachacamac', 'Peru')", mismatched country
-422, GH,834,"('Peru', 'Peru')", mismatched country
-423, GH,835,"('Pucallpa', 'Peru')", mismatched country
-424, GH,836,"('Pucallpa, San Fernando, Sa', 'Peru')", mismatched country
-425, GH,837,"('Rioja', 'Peru')", mismatched country
-426, GH,838,"('Rioja, San Fernando, Sa', 'Peru')", mismatched country
-427, GH,839,"('Victoria 99', 'Peru')", mismatched country
-428, GH,840,"('Viru La Libertad', 'Peru')", mismatched country
-429, GH,841,"('Vista Florida', 'Peru')", mismatched country
-430, GH,842,"('Vista Florida Chiclayo', 'Peru')", mismatched country
-431, GH,843,"('Vista Florida Chiclayo', 'Peru')", mismatched country
-432, GH,844,"('Vista Florida Chiclayo', 'Peru')", mismatched country
-433, GH,845,"('Yurimagua', 'Peru')", mismatched country
-434, GH,846,"('Baybay', 'Philippines')", mismatched country
-435, GH,849,"('Ipb Experiment Station', 'Philippines')", mismatched country
-436, GH,850,"('Kabacan', 'Philippines')", mismatched country
-437, GH,851,"('Kabacan, Cotabato', 'Philippines')", mismatched country
-438, GH,853,"('San Felipe, Ilagan, Isabela.', 'Philippines')", mismatched country
-439, GH,858,"('Burgershall', 'South Africa')", mismatched country
-440, GH,860,"('Friedenheim Valley', 'South Africa')", mismatched country
-441, GH,861,"('Linkseed', 'South Africa')", mismatched country
-442, GH,862,"('Mpumalanga', 'South Africa')", mismatched country
-443, GH,864,"('North West Province', 'South Africa')", mismatched country
-444, GH,866,"('Petit', 'South Africa')", mismatched country
-445, GH,867,"('Tshiombo', 'South Africa')", mismatched country
-446, South Africa Rep.,869,"('Betlehem', 'South Africa Rep.')", wrong format
-447, South Africa Rep.,870,"('Cedara', 'South Africa Rep.')", wrong format
-448, South Africa Rep.,871,"('Ezolimo', 'South Africa Rep.')", wrong format
-449, South Africa Rep.,872,"('Friedenhei', 'South Africa Rep.')", wrong format
-450, South Africa Rep.,873,"('Greytown', 'South Africa Rep.')", wrong format
-451, South Africa Rep.,874,"('Greytown', 'South Africa Rep.')", wrong format
-452, South Africa Rep.,875,"('Lwamongo', 'South Africa Rep.')", wrong format
-453, South Africa Rep.,876,"('Nelspruit', 'South Africa Rep.')", wrong format
-454, South Africa Rep.,878,"('Setlagole', 'South Africa Rep.')", wrong format
-455, South Africa Rep.,879,"('Viljoenskroon', 'South Africa Rep.')", wrong format
-456, Surinam,882,"('Paramaribo', 'Surinam')", wrong format
-457, GH,884,"('Les', 'Swaziland')", mismatched country
-458, GH,885,"('Lowveld, Brabend', 'Swaziland')", mismatched country
-459, GH,890,"('Shewula', 'Swaziland')", mismatched country
-460, GH,891,"('Swaziland', 'Swaziland')", mismatched country
-461, GH,892,"('Deir Al Zoor', 'Syria')", mismatched country
-462, GH,893,"('Raqqa', 'Syria')", mismatched country
-463, GH,896,"('Arusha Seed Farm Afsf', 'Tanzania')", mismatched country
-464, KE,907,"('Lambo', 'Tanzania')", mismatched country
-465, GH,913,"('Mwanza - Region', 'Tanzania')", mismatched country
-466, GH,916,"('Nm', 'Tanzania')", mismatched country
-467, GH,919,"('Tanzania', 'Tanzania')", mismatched country
-468, GH,929,"('Sawankalok Sukhotha', 'Thailand')", mismatched country
-469, GH,931,"('Tak Fa', 'Thailand')", mismatched country
-470, Trinidad Y Tobago,933,"('El Carmen', 'Trinidad Y Tobago')", wrong format
-471, Trinidad Y Tobago,934,"('Goldsborough', 'Trinidad Y Tobago')", wrong format
-472, Trinidad Y Tobago,935,"(""Louis D'or"", 'Trinidad Y Tobago')", wrong format
-473, GH,937,"('Aydin', 'Turkey')", mismatched country
-474, GH,938,"('Anny Settl', 'Turkmenistan')", mismatched country
-475, GH,939,"('Bulegeni', 'Uganda')", mismatched country
-476, GH,940,"('Bulengeni', 'Uganda')", mismatched country
-477, TZ,945,"('Likonde,songea', 'Uganda')", mismatched country
-478, GH,947,"('Msk', 'Uganda')", mismatched country
-479, GH,952,"('Uganda', 'Uganda')", mismatched country
-480, United States Of America,953,"('Barnum Mn', 'United States Of America')", wrong format
-481, United States Of America,954,"('College Station, Texas', 'United States Of America')", wrong format
-482, United States Of America,955,"('Kenedy, Tx.', 'United States Of America')", wrong format
-483, United States Of America,956,"('Sn Antonio', 'United States Of America')", wrong format
-484, United States Of America,957,"('Tifton, Georgia', 'United States Of America')", wrong format
-485, United States Of America,958,"('Tifton, Georgia', 'United States Of America')", wrong format
-486, United States Of America,959,"('Weslaco, Texas', 'United States Of America')", wrong format
-487, GH,962,"('Agua Blanca, Portuguesa', 'Venezuela')", mismatched country
-488, GH,963,"('Aragua (ceniap)', 'Venezuela')", mismatched country
-489, GH,964,"('Araure (acarigua)', 'Venezuela')", mismatched country
-490, GH,965,"('Araure (portuguesa)', 'Venezuela')", mismatched country
-491, GH,966,"('Carretera O, Turen, Portuguesa', 'Venezuela')", mismatched country
-492, GH,967,"('Centro Norte', 'Venezuela')", mismatched country
-493, GH,968,"('Colonia Agricola De Turen', 'Venezuela')", mismatched country
-494, GH,969,"('El Diamante, Yaritagua', 'Venezuela')", mismatched country
-495, GH,970,"('El Playon', 'Venezuela')", mismatched country
-496, GH,971,"('El Socorro', 'Venezuela')", mismatched country
-497, GH,972,"('Guarico', 'Venezuela')", mismatched country
-498, GH,973,"('La Lucia', 'Venezuela')", mismatched country
-499, GH,974,"('Las Caramas', 'Venezuela')", mismatched country
-500, GH,977,"('Las Guacamayas, El Sombrero', 'Venezuela')", mismatched country
-501, GH,978,"('Los Guayos, Carabobo State', 'Venezuela')", mismatched country
-502, GH,979,"('Manzanita', 'Venezuela')", mismatched country
-503, GH,981,"('Pascual Valetta, Laguna De Piedra', 'Venezuela')", mismatched country
-504, GH,982,"('Punta Gorda', 'Venezuela')", mismatched country
-505, GH,984,"('Santa Barbara', 'Venezuela')", mismatched country
-506, GH,985,"('Semillas Aragua', 'Venezuela')", mismatched country
-507, GH,986,"('Tocoron', 'Venezuela')", mismatched country
-508, GH,987,"('Tocoron, Estado Aragua', 'Venezuela')", mismatched country
-509, GH,988,"('Tucupido', 'Venezuela')", mismatched country
-510, GH,989,"('Turen', 'Venezuela')", mismatched country
-511, GH,990,"('Unidad Agricola De Turen', 'Venezuela')", mismatched country
-512, GH,991,"('Venezuela', 'Venezuela')", mismatched country
-513, GH,992,"('Villa De Cura, Aragua', 'Venezuela')", mismatched country
-514, GH,993,"('Ars, Amberpet, Hyd.', 'Vietnam')", mismatched country
-515, GH,994,"('Binh Chanh Dictrict - Ho Chi Minh City', 'Vietnam')", mismatched country
-516, GH,995,"('Binh Duong', 'Vietnam')", mismatched country
-517, GH,997,"('Dan Phuong Hatay', 'Vietnam')", mismatched country
-518, GH,998,"('Danphing Dist.', 'Vietnam')", mismatched country
-519, GH,999,"('Duc Hoa District, Long An Province', 'Vietnam')", mismatched country
-520, GH,1000,"('Gorakhpur', 'Vietnam')", mismatched country
-521, GH,1004,"('Tay Ninh Province', 'Vietnam')", mismatched country
-522, Zaire,1005,"('Gandajika', 'Zaire')", wrong format
-523, Zaire,1006,"('Mvuazi', 'Zaire')", wrong format
-524, GH,1007,"('Chisamba, Golden Valley', 'Zambia')", mismatched country
-525, GH,1010,"('Kutumani', 'Zambia')", mismatched country
-526, GH,1011,"('Lyempe', 'Zambia')", mismatched country
-527, GH,1012,"('Magobo', 'Zambia')", mismatched country
-528, GH,1022,"('Zambia', 'Zambia')", mismatched country
-529, GH,1028,"('Cimmyt, Harare', 'Zimbabwe')", mismatched country
-530, GH,1029,"('Dedza', 'Zimbabwe')", mismatched country
-531, GH,1040,"('Pannar', 'Zimbabwe')", mismatched country
-532, GH,1041,"('Pioneer', 'Zimbabwe')", mismatched country
-533, GH,1042,"('Radoma', 'Zimbabwe')", mismatched country
-534, GH,1047,"('Zimbabwe', 'Zimbabwe')", mismatched country
-535, GH,1052,"('Gisozi', 'Burundi')", mismatched country
-536, GH,1056,"('Zacatepec, Morelos', 'Mexico')", mismatched country
-537, GH,1057,"('Miacatlan', 'Mexico')", mismatched country
-538, GH,1058,"('Salandhar (punjab)', 'India')", mismatched country
-539, Congo,1063,"('Kaniaka', 'Congo')", wrong format
-540, GH,1074,"('Gondar', 'Ethiopia')", mismatched country
-541, GH,1075,"('Quindio', 'Colombia')", mismatched country
-542, GH,1076,"('Puerto Gaitan-carpoica,taluma', 'Colombia')", mismatched country
-543, GH,1077,"('Kisama', 'Kenya')", mismatched country
-544, GH,1078,"('Angecha', 'Ethiopia')", mismatched country
-545, GH,1079,"('Ivumwe', 'Tanzania')", mismatched country
-546, GH,1080,"('Mparambo', 'Burundi')", mismatched country
-547, GH,1081,"('Thika', 'Kenya')", mismatched country
-548, GH,1082,"('Matisi', 'Kenya')", mismatched country
-549, GH,1083,"('Kutus', 'Kenya')", mismatched country
-550, GH,1084,"('Kimaeti', 'Kenya')", mismatched country
-551, GH,1085,"('Elgon Downs', 'Kenya')", mismatched country
-552, GH,1086,"('Bumula', 'Kenya')", mismatched country
-553, GH,1087,"('Bulindi', 'Uganda')", mismatched country
-554, GH,1088,"('Bugiri', 'Uganda')", mismatched country
-555, GH,1089,"('Nyagatare', 'Rwanda')", mismatched country
-556, GH,1090,"('Kagumo', 'Kenya')", mismatched country
-557, GH,1091,"('Screen House', 'Kenya')", mismatched country
-558, GH,1092,"('Chitedzi', 'Malawi')", mismatched country
-559, GH,1093,"('Kiteta', 'Kenya')", mismatched country
-560, GH,1094,"('Kyuu', 'Kenya')", mismatched country
-561, GH,1095,"('Bingu', 'Malawi')", mismatched country
-562, GH,1096,"('Mpingu', 'Malawi')", mismatched country
-563, GH,1097,"('Pomela', 'Malawi')", mismatched country
-564, GH,1098,"('Pallisa', 'Uganda')", mismatched country
-565, GH,1099,"('Rancho Guadalupe, Toluca', 'Mexico')", mismatched country
-566, GH,1100,"('Mwea', 'Kenya')", mismatched country
-567, GH,1102,"('Kabul', 'Afghanistan')", mismatched country
-568, GH,1107,"('La Catalina', 'Colombia')", mismatched country
-569, GH,1108,"('Paraguaicito', 'Colombia')", mismatched country
-570, GH,1110,"('Freidenheim Valley', 'South Africa')", mismatched country
-571, GH,1115,"('Kibray', 'Uzbekistan')", mismatched country
-572, GH,1116,"('Chisamba', 'Zambia')", mismatched country
-573, GH,1128,"('Mungushi, Hai', 'Tanzania')", mismatched country
-574, GH,1129,"('Bondo', 'Kenya')", mismatched country
-575, GH,1130,"('Kakamega (monsanto)', 'Kenya')", mismatched country
-576, GH,1133,"('Caña Flecha', 'Colombia')", mismatched country
-577, GH,1135,"('Las Cañas', 'Costa Rica')", mismatched country
-578, GH,1136,"('La Máquina Caballo Blanco', 'Guatemala')", mismatched country
-579, GH,1137,"('San José Pinula', 'Guatemala')", mismatched country
-580, GH,1138,"('La Viña-jayanca-lambayeque', 'Peru')", mismatched country
-581, GH,1139,"('Dinajpur', 'Bangladesh')", mismatched country
-582, Congo,1141,"('Tshibati - - - - Kibati', 'Congo')", wrong format
-583, NG,1152,"('Finkolo', 'Mali')", mismatched country
-584, NG,1154,"('Finkolo', 'Mali')", mismatched country
-585, LK,1155,"('El Aguila, Pejibaye, Perez Zeledon', 'Costa Rica')", mismatched country
-586, LK,1156,"('Los Chiles', 'Costa Rica')", mismatched country
-587, IN,1157,"('Araure, Edo. Portuguesa', 'Venezuela')", mismatched country
-588, IN,1158,"('Las Velas, Edo. Yaracuy', 'Venezuela')", mismatched country
-589, IN,1159,"('Tiznados, Edo. Guarico', 'Venezuela')", mismatched country
-590, LK,1160,"('Concepcion De Pilas, Buenos Aires', 'Costa Rica')", mismatched country
-591, LK,1161,"('El Amparo, El Gallito, Los Chiles, Alajuela', 'Costa Rica')", mismatched country
-592, LK,1162,"('Guagaral, Buenos Aires Puntarenas', 'Costa Rica')", mismatched country
-593, LK,1163,"('Pueblo Nuevo, San Jose, Upala', 'Costa Rica')", mismatched country
-594, LK,1164,"('Veracruz, Pejibaye, Perez Zeledon', 'Costa Rica')", mismatched country
-595, LK,1165,"('El Progreso, Pejibaye, Perez Zeledon', 'Costa Rica')", mismatched country
-596, LK,1166,"('Guagaral, Buenos Aires', 'Costa Rica')", mismatched country
+0, AE,82,"('Guaira', 'Brazil')", mismatched country
+1, Central Asia,90,"('Kazakhstan', 'Central Asia')", wrong format
+2, CL,107,"('Wenshan', 'China')", mismatched country
+3, SC,156,"('Monteria', 'Colombia')", mismatched country
+4, Congo,203,"('Congo', 'Congo')", wrong format
+5, Congo,204,"('Odziba', 'Congo')", wrong format
+6, Congo,205,"('Tshibati', 'Congo')", wrong format
+7, CC,211,"('Guagaral', 'Costa Rica')", mismatched country
+8, Cote D'ivoire,219,"('Badikaha', ""Cote D'ivoire"")", wrong format
+9, Cote D'ivoire,220,"('Bouake', ""Cote D'ivoire"")", wrong format
+10, Cote D'ivoire,221,"('Ferkessedougou', ""Cote D'ivoire"")", wrong format
+11, Cote D'ivoire,222,"('Sinematiali', ""Cote D'ivoire"")", wrong format
+12, Cote D'ivoire,223,"('Touba', ""Cote D'ivoire"")", wrong format
+13, Cote D'ivoire,224,"('Warda/adrao-mbe', ""Cote D'ivoire"")", wrong format
+14, España,275,"('Pontevedra', 'España')", wrong format
+15, BR,287,"('Kitale-ws', 'Ethiopia')", mismatched country
+16, NA,294,"('Nazret', 'Ethiopia')", coords NA
+17, SH,309,"('Tamale', 'Ghana')", mismatched country
+18, CC,319,"('Isidro Avarez', 'Guatemala')", mismatched country
+19, CL,379,"('Bajaura', 'India')", mismatched country
+20, MU,392,"('Dmr I.a.r.i.', 'India')", mismatched country
+21, Kazakstan,457,"('Central Asia', 'Kazakstan')", wrong format
+22, BR,458,"('Alupe', 'Kenya')", mismatched country
+23, SH,537,"('Rue Mohamed', 'Mali')", mismatched country
+24, ID,622,"('La Huerta, Jalisco', 'Mexico')", mismatched country
+25, CV,725,"('Morrumbala-zambezia', 'Mozambique')", mismatched country
+26, CV,727,"('Mutarara', 'Mozambique')", mismatched country
+27, Myanmar (burma),743,"('Aungban, Burma', 'Myanmar (burma)')", wrong format
+28, Myanmar (burma),744,"('Yezin, Burma', 'Myanmar (burma)')", wrong format
+29, CV,745,"('Mashare', 'Namibia')", mismatched country
+30, CV,747,"('Runda', 'Namibia')", mismatched country
+31, South Africa Rep.,869,"('Betlehem', 'South Africa Rep.')", wrong format
+32, South Africa Rep.,870,"('Cedara', 'South Africa Rep.')", wrong format
+33, South Africa Rep.,871,"('Ezolimo', 'South Africa Rep.')", wrong format
+34, South Africa Rep.,872,"('Friedenhei', 'South Africa Rep.')", wrong format
+35, South Africa Rep.,873,"('Greytown', 'South Africa Rep.')", wrong format
+36, South Africa Rep.,874,"('Greytown', 'South Africa Rep.')", wrong format
+37, South Africa Rep.,875,"('Lwamongo', 'South Africa Rep.')", wrong format
+38, South Africa Rep.,876,"('Nelspruit', 'South Africa Rep.')", wrong format
+39, South Africa Rep.,878,"('Setlagole', 'South Africa Rep.')", wrong format
+40, South Africa Rep.,879,"('Viljoenskroon', 'South Africa Rep.')", wrong format
+41, Surinam,882,"('Paramaribo', 'Surinam')", wrong format
+42, BR,907,"('Lambo', 'Tanzania')", mismatched country
+43, Trinidad Y Tobago,933,"('El Carmen', 'Trinidad Y Tobago')", wrong format
+44, Trinidad Y Tobago,934,"('Goldsborough', 'Trinidad Y Tobago')", wrong format
+45, Trinidad Y Tobago,935,"(""Louis D'or"", 'Trinidad Y Tobago')", wrong format
+46, CV,945,"('Likonde,songea', 'Uganda')", mismatched country
+47, United States Of America,953,"('Barnum Mn', 'United States Of America')", wrong format
+48, United States Of America,954,"('College Station, Texas', 'United States Of America')", wrong format
+49, United States Of America,955,"('Kenedy, Tx.', 'United States Of America')", wrong format
+50, United States Of America,956,"('Sn Antonio', 'United States Of America')", wrong format
+51, United States Of America,957,"('Tifton, Georgia', 'United States Of America')", wrong format
+52, United States Of America,958,"('Tifton, Georgia', 'United States Of America')", wrong format
+53, United States Of America,959,"('Weslaco, Texas', 'United States Of America')", wrong format
+54, Zaire,1005,"('Gandajika', 'Zaire')", wrong format
+55, Zaire,1006,"('Mvuazi', 'Zaire')", wrong format
+56, Congo,1063,"('Kaniaka', 'Congo')", wrong format
+57, Congo,1141,"('Tshibati - - - - Kibati', 'Congo')", wrong format
+58, SH,1152,"('Finkolo', 'Mali')", mismatched country
+59, SH,1154,"('Finkolo', 'Mali')", mismatched country
+60, PE,1155,"('El Aguila, Pejibaye, Perez Zeledon', 'Costa Rica')", mismatched country
+61, PE,1156,"('Los Chiles', 'Costa Rica')", mismatched country
+62, BR,1157,"('Araure, Edo. Portuguesa', 'Venezuela')", mismatched country
+63, BR,1158,"('Las Velas, Edo. Yaracuy', 'Venezuela')", mismatched country
+64, BR,1159,"('Tiznados, Edo. Guarico', 'Venezuela')", mismatched country
+65, PE,1160,"('Concepcion De Pilas, Buenos Aires', 'Costa Rica')", mismatched country
+66, PE,1161,"('El Amparo, El Gallito, Los Chiles, Alajuela', 'Costa Rica')", mismatched country
+67, PE,1162,"('Guagaral, Buenos Aires Puntarenas', 'Costa Rica')", mismatched country
+68, PE,1163,"('Pueblo Nuevo, San Jose, Upala', 'Costa Rica')", mismatched country
+69, PE,1164,"('Veracruz, Pejibaye, Perez Zeledon', 'Costa Rica')", mismatched country
+70, PE,1165,"('El Progreso, Pejibaye, Perez Zeledon', 'Costa Rica')", mismatched country
+71, PE,1166,"('Guagaral, Buenos Aires', 'Costa Rica')", mismatched country

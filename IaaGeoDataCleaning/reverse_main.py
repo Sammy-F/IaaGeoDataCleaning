@@ -52,7 +52,7 @@ class GeocodeValidator:
                 nearestLocation = rg.get(inputCoordinates, mode=1)
 
                 try:
-                    if nearestLocation['cc'] != self.countryCodes[country]:
+                    if nearestLocation['cc'] != self.countryCodes[country] and inputCoordinates != (0, 0):
                         self.handleBadCountryy(index, countryName=country, recordedLat=row.loc["Latitude"],
                                                recordedLong=row.loc["Longitude"], location=location)
                         # print("Index: " + str(index) + " country does not match entered coordinates.(Index flagged.) \n")
@@ -61,6 +61,13 @@ class GeocodeValidator:
                         # self.log['index'].append(index)
                         # self.log['type'].append(' mismatched country')
                         # self.log['comment'].append(' ' + nearestLocation['cc'])
+                    elif inputCoordinates == (0, 0):
+                        print("Index: " + str(index) + " Longitude and latitude missing \n")
+                        self.flaggedLocations.append(index)
+                        self.log['location'].append((location, country))
+                        self.log['index'].append(index)
+                        self.log['type'].append(' invalid long/lat')
+                        self.log['comment'].append(' ' + nearestLocation['cc'])
                 except KeyError:
                     print("Index: " + str(index) + " incorrect country format.(Index flagged.) \n")
                     self.flaggedLocations.append(index)
