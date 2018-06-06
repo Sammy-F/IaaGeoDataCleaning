@@ -54,7 +54,7 @@ class GeocodeValidator:
 
                 try:
                     if nearestLocation['cc'] != self.countryCodes[country] and inputCoordinates != (0, 0):
-                        self.handleBadCountryy(index, countryName=country, recordedLat=row.loc["Latitude"],
+                        self.handleBadCountry(index, countryName=country, recordedLat=row.loc["Latitude"],
                                                recordedLong=row.loc["Longitude"], location=location)
                         # print("Index: " + str(index) + " country does not match entered coordinates.(Index flagged.) \n")
                         # self.flaggedLocations.append(index)
@@ -63,7 +63,7 @@ class GeocodeValidator:
                         # self.log['type'].append(' mismatched country')
                         # self.log['comment'].append(' ' + nearestLocation['cc'])
                     elif inputCoordinates == (0, 0):
-                        print("Index: " + str(index) + " Longitude and latitude missing \n")
+                        print("Index: " + str(index) + " longitude and latitude entered as 0 \n")
                         self.flaggedLocations.append(index)
                         self.log['location'].append((location, country))
                         self.log['index'].append(index)
@@ -76,11 +76,11 @@ class GeocodeValidator:
                     self.log['type'].append(' wrong format')
 
             except (TypeError, IndexError) as error:
-                print("Index: " + str(index) + " no entered coordinates.(Index flagged.) \n")
+                print("Index: " + str(index) + " missing data.(Index flagged.) \n")
                 self.flaggedLocations.append(index)
                 self.log['location'].append((location, country))
                 self.log['index'].append(index)
-                self.log['type'].append(' coords NA')
+                self.log['type'].append(' data NA')
 
         self.logResults()
 
@@ -103,14 +103,13 @@ class GeocodeValidator:
         loggedDF.to_csv('validation_log_' + str(now) + '.csv', sep=',', encoding='utf-8')
         return len(self.flaggedLocations) / (1e-10 + self.tobeValidatedLocation.shape[0])
 
-    def handleBadCountryy(self, index, recordedLat, recordedLong, countryName, location):
+    def handleBadCountry(self, index, recordedLat, recordedLong, countryName, location):
 
         recordedCode = self.countryCodes[countryName]
 
         coordinates = [(recordedLong, recordedLat), (-recordedLong, recordedLat), (-recordedLong, -recordedLat),
                        (recordedLong, -recordedLat), (-recordedLat, recordedLong), (-recordedLat, -recordedLong),
                        (recordedLat, -recordedLong)]
-
         for coordinate in coordinates:
             correctMatch = self.validate(coordinate, recordedCode)
             if correctMatch:
@@ -125,10 +124,11 @@ class GeocodeValidator:
     def validate(self, coord, countryCode):
         returnedLocation = rg.get(coord, mode=1)
         if returnedLocation['cc'] != countryCode:
-            distance = self.calculateDistance(coord[0], coord[1], returnedLocation['lat'], returnedLocation['lon'])
-            if distance > self.flagDistance:
-                return False
-            # return False
+            # distance = self.calculateDistance(coord[0], coord[1], returnedLocation['lat'], returnedLocation['lon'])
+            # print(distance)
+            # if distance > self.flagDistance:
+            #     return False
+            return False
         return True
 
     def calculateDistance(self, lat1, lng1, lat2, lng2):

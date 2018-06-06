@@ -35,11 +35,11 @@
 33,70,"('Zona Norte De Santa Cruz', 'Bolivia')", invalid long/lat
 34,78,"('Brazil', 'Brazil')", invalid long/lat
 35,79,"('Campo Largo - Pr', 'Brazil')", invalid long/lat
-36,82,"('Guaira', 'Brazil')", coords NA
+36,82,"('Guaira', 'Brazil')", mismatched country
 37,90,"('Kazakhstan', 'Central Asia')", wrong format
 38,97,"('Honghe', 'China')", invalid long/lat
 39,101,"('Mian Yang', 'China')", invalid long/lat
-40,107,"('Wenshan', 'China')", coords NA
+40,107,"('Wenshan', 'China')", mismatched country
 41,109,"('Aguas Blancas', 'Colombia')", invalid long/lat
 42,110,"('Aguas Claras', 'Colombia')", invalid long/lat
 43,111,"('Andremoni', 'Colombia')", invalid long/lat
@@ -83,7 +83,7 @@
 81,153,"('Matazul', 'Colombia')", invalid long/lat
 82,154,"('Menegua', 'Colombia')", invalid long/lat
 83,155,"('Mondomo, Santander', 'Colombia')", invalid long/lat
-84,156,"('Monteria', 'Colombia')", coords NA
+84,156,"('Monteria', 'Colombia')", mismatched country
 85,157,"('Neiva, Huila', 'Colombia')", invalid long/lat
 86,158,"('Obando, Molina', 'Colombia')", invalid long/lat
 87,160,"('Paraguaicito, Armenia', 'Colombia')", invalid long/lat
@@ -134,7 +134,7 @@
 132,208,"('El Aguila, Pejibaye', 'Costa Rica')", invalid long/lat
 133,209,"('El Parque, Los Chiles', 'Costa Rica')", invalid long/lat
 134,210,"('El Progreso, Pejibaye', 'Costa Rica')", invalid long/lat
-135,211,"('Guagaral', 'Costa Rica')", coords NA
+135,211,"('Guagaral', 'Costa Rica')", mismatched country
 136,213,"('Las Ca╤as', 'Costa Rica')", invalid long/lat
 137,214,"('Pejibaye De Perez Zeledon', 'Costa Rica')", invalid long/lat
 138,216,"('Upala', 'Costa Rica')", invalid long/lat
@@ -182,7 +182,7 @@
 180,272,"('Uluazapa, La Union', 'El Salvador')", invalid long/lat
 181,275,"('Pontevedra', 'España')", wrong format
 182,284,"('Haramaya', 'Ethiopia')", invalid long/lat
-183,287,"('Kitale-ws', 'Ethiopia')", coords NA
+183,287,"('Kitale-ws', 'Ethiopia')", mismatched country
 184,294,"('Nazret', 'Ethiopia')", coords NA
 185,296,"('Ws', 'Ethiopia')", invalid long/lat
 186,298,"('Dobuleni Research Station', 'Fiji')", invalid long/lat
@@ -190,409 +190,391 @@
 188,300,"('Legalega Research Station', 'Fiji')", invalid long/lat
 189,301,"('Sigatoka Research Station', 'Fiji')", invalid long/lat
 190,302,"('Tserovani', 'Georgia')", invalid long/lat
-191,309,"('Tamale', 'Ghana')", coords NA
-192,313,"('Caballo Blanco, Retalhuleu', 'Guatemala')", invalid long/lat
-193,316,"('El Ovejero, Jutiapa', 'Guatemala')", invalid long/lat
-194,317,"('Estanzuela', 'Guatemala')", invalid long/lat
-195,318,"('Finca, Las Vegas Tequisate.', 'Guatemala')", invalid long/lat
-196,319,"('Isidro Avarez', 'Guatemala')", coords NA
-197,321,"('La Flecha', 'Guatemala')", invalid long/lat
-198,322,"('La Maquina', 'Guatemala')", invalid long/lat
-199,323,"('La M┴quina Caballo Blanco', 'Guatemala')", invalid long/lat
-200,324,"('La Maquina, Linea A5', 'Guatemala')", invalid long/lat
-201,325,"('La Maquina, Tulate', 'Guatemala')", invalid long/lat
-202,326,"('Las Monjas', 'Guatemala')", invalid long/lat
-203,328,"('Monjas, Jalapa', 'Guatemala')", invalid long/lat
-204,329,"('Nueva Concepcion', 'Guatemala')", invalid long/lat
-205,330,"('Ovejero, Jutiapa', 'Guatemala')", invalid long/lat
-206,331,"('Quesada, Jutiapa', 'Guatemala')", invalid long/lat
-207,332,"('Salam B. V.', 'Guatemala')", invalid long/lat
-208,333,"('San Jos╔ Pinula', 'Guatemala')", invalid long/lat
-209,334,"('San Pedro Pinula, Jalapa', 'Guatemala')", invalid long/lat
-210,335,"('Sto Domingo', 'Guatemala')", invalid long/lat
-211,338,"('Zacapa', 'Guatemala')", invalid long/lat
-212,340,"('Chantilly', 'Haiti')", invalid long/lat
-213,342,"('Karoman, Lavallee', 'Haiti')", invalid long/lat
-214,344,"('Nan- Jn Pierre, Cap-rouge', 'Haiti')", invalid long/lat
-215,345,"('Candelaria, Lempira', 'Honduras')", invalid long/lat
-216,346,"('Catacamas, Olancho', 'Honduras')", invalid long/lat
-217,348,"('Comayagua, E.e. Playitas', 'Honduras')", invalid long/lat
-218,350,"('El Guaco Yorito, Yoro', 'Honduras')", invalid long/lat
-219,351,"('El Pital, Atlantida', 'Honduras')", invalid long/lat
-220,353,"('Jutiquile, Olancho', 'Honduras')", invalid long/lat
-221,356,"('Litoral Atlantico', 'Honduras')", invalid long/lat
-222,357,"('Luquigue Yorito, Yoro', 'Honduras')", invalid long/lat
-223,358,"('Mina Handa (yorito Yoco)', 'Honduras')", invalid long/lat
-224,359,"('Obraje, Danli', 'Honduras')", invalid long/lat
-225,361,"('Pata Stera (yorito Yoco)', 'Honduras')", invalid long/lat
-226,362,"('Playita', 'Honduras')", invalid long/lat
-227,363,"('Potrerillos, Olancho', 'Honduras')", invalid long/lat
-228,364,"('Rio Arriba Yorito, Yoro', 'Honduras')", invalid long/lat
-229,365,"('San Lucas, El Paraiso', 'Honduras')", invalid long/lat
-230,366,"('San Pedro De Catacamas, Olancho', 'Honduras')", invalid long/lat
-231,368,"('Yoro, El Pate', 'Honduras')", invalid long/lat
-232,369,"('Yoro, Morazan', 'Honduras')", invalid long/lat
-233,372,"('Amberpet', 'India')", invalid long/lat
-234,378,"('Bahraich, Crop Research Station', 'India')", invalid long/lat
-235,379,"('Bajaura', 'India')", coords NA
-236,384,"('Belipar, Gorakhpur, U.p.', 'India')", invalid long/lat
-237,385,"('Bihar', 'India')", invalid long/lat
-238,391,"('Dholi', 'India')", invalid long/lat
-239,392,"('Dmr I.a.r.i.', 'India')", coords NA
-240,393,"('Dohad', 'India')", invalid long/lat
-241,395,"('Godhsa Gaujasat', 'India')", invalid long/lat
-242,397,"('India', 'India')", invalid long/lat
-243,406,"('Khadbrabhra', 'India')", invalid long/lat
-244,407,"('Khedbrahma', 'India')", invalid long/lat
-245,411,"('Messina', 'India')", invalid long/lat
-246,412,"('Muzafferpur', 'India')", invalid long/lat
-247,413,"('New Delhi', 'India')", invalid long/lat
-248,417,"('Pantnagar', 'India')", invalid long/lat
-249,418,"('Parbhani', 'India')", invalid long/lat
-250,419,"('Poonch', 'India')", invalid long/lat
-251,420,"('Prabhakar Reddy', 'India')", invalid long/lat
-252,421,"('Probhakor', 'India')", invalid long/lat
-253,423,"('Pusa', 'India')", invalid long/lat
-254,424,"('R&d (pachora).', 'India')", invalid long/lat
-255,425,"('R&d (wadadhe).', 'India')", invalid long/lat
-256,427,"('Ranchi', 'India')", invalid long/lat
-257,428,"('Rau Pusa (bihar)', 'India')", invalid long/lat
-258,429,"('Rayalkole', 'India')", invalid long/lat
-259,430,"('Samastipur', 'India')", invalid long/lat
-260,433,"('Srinagar, K.d. Research Station', 'India')", invalid long/lat
-261,438,"('Weerasak Doungjan', 'India')", invalid long/lat
-262,440,"('Gowa S. Sulawesi', 'Indonesia')", invalid long/lat
-263,441,"('Hulu Sungai Selatan', 'Indonesia')", invalid long/lat
-264,442,"('Jambegede', 'Indonesia')", invalid long/lat
-265,446,"('Naibonat', 'Indonesia')", invalid long/lat
-266,447,"('Natar, Lampung', 'Indonesia')", invalid long/lat
-267,448,"('Probolinggo', 'Indonesia')", invalid long/lat
-268,449,"('Takalar, South Sulawesi', 'Indonesia')", invalid long/lat
-269,450,"('Yogyakarta', 'Indonesia')", invalid long/lat
-270,451,"('Agricultural Research Station Of Gorgan', 'Iran')", invalid long/lat
-271,453,"('Ai - Latifyia', 'Iraq')", invalid long/lat
-272,455,"(""Bonghdad, Al_mada'en"", 'Iraq')", invalid long/lat
-273,456,"('Tuwaitha Baghdad', 'Iraq')", invalid long/lat
-274,457,"('Central Asia', 'Kazakstan')", wrong format
-275,458,"('Alupe', 'Kenya')", coords NA
-276,459,"('Baobab', 'Kenya')", invalid long/lat
-277,473,"('K.t.i', 'Kenya')", invalid long/lat
-278,476,"('Kari - Embu', 'Kenya')", invalid long/lat
-279,477,"('Karurina', 'Kenya')", invalid long/lat
-280,487,"('Kitale Syn Ii (ethiopia)', 'Kenya')", invalid long/lat
-281,502,"('Tanseed', 'Kenya')", invalid long/lat
-282,504,"('Wanbugu', 'Kenya')", invalid long/lat
-283,506,"('Western Seeds', 'Kenya')", invalid long/lat
-284,508,"('Lesotho', 'Lesotho')", invalid long/lat
-285,518,"('Baka Research Station', 'Malawi')", invalid long/lat
-286,528,"('Mphimbi', 'Malawi')", invalid long/lat
-287,530,"('Not Identified', 'Malawi')", invalid long/lat
-288,535,"('Katibougou', 'Mali')", invalid long/lat
-289,536,"('Kolombada', 'Mali')", invalid long/lat
-290,537,"('Rue Mohamed', 'Mali')", coords NA
-291,539,"('Acatic, Jalisco', 'Mexico')", invalid long/lat
-292,540,"('Acayucan, Veracruz', 'Mexico')", invalid long/lat
-293,542,"('Agua Fria', 'Mexico')", invalid long/lat
-294,550,"('Apaseo El Guadalupe, Guanajuato', 'Mexico')", invalid long/lat
-295,551,"('Atlacomulco', 'Mexico')", invalid long/lat
-296,552,"('Axochio, San Andres Tuxtla, Veracruz', 'Mexico')", invalid long/lat
-297,553,"('Buenavista Penjamo, Guanajuato', 'Mexico')", invalid long/lat
-298,558,"('Cardel', 'Mexico')", invalid long/lat
-299,562,"('Champoton, Campeche', 'Mexico')", invalid long/lat
-300,565,"('Chiapas', 'Mexico')", invalid long/lat
-301,566,"('Chorrerones', 'Mexico')", invalid long/lat
-302,573,"('Colonia Del Turen', 'Mexico')", invalid long/lat
-303,574,"('Coquimatlan', 'Mexico')", invalid long/lat
-304,575,"('Corralejo De Hidalgo, Guanajuato', 'Mexico')", invalid long/lat
-305,576,"('Cotaxla', 'Mexico')", invalid long/lat
-306,578,"('Coyoltepec, San Andres Tuxtla, Veracruz', 'Mexico')", invalid long/lat
-307,588,"('Edzna, Campeche', 'Mexico')", invalid long/lat
-308,589,"('Ejido 1ro De Mayo', 'Mexico')", invalid long/lat
-309,595,"('El Zapote, Tonatico', 'Mexico')", invalid long/lat
-310,598,"('Guadalajara, Jalisco', 'Mexico')", invalid long/lat
-311,604,"('Huejutla De Reyes, Hidalgo', 'Mexico')", invalid long/lat
-312,605,"('Huimanguillo', 'Mexico')", invalid long/lat
-313,606,"('Ignacio De La Llave, Veracruz', 'Mexico')", invalid long/lat
-314,609,"('Isla, Veracruz', 'Mexico')", invalid long/lat
-315,612,"('Jalisco, Jalisco', 'Mexico')", invalid long/lat
-316,614,"('Jerico Chiapas', 'Mexico')", invalid long/lat
-317,615,"('Jesus Maria', 'Mexico')", invalid long/lat
-318,619,"('La Barca, Jalisco', 'Mexico')", invalid long/lat
-319,620,"('La Cantera, Comonfort, Guanajuato', 'Mexico')", invalid long/lat
-320,621,"('La Cruz De Elota, Sinaloa', 'Mexico')", invalid long/lat
-321,622,"('La Huerta, Jalisco', 'Mexico')", coords NA
-322,625,"('La Torrecilla, Tlalixcoyan, Veracruz', 'Mexico')", invalid long/lat
-323,630,"('Mata De Agua', 'Mexico')", invalid long/lat
-324,635,"('Nayarit', 'Mexico')", invalid long/lat
-325,640,"('Ocuituco, Morelos', 'Mexico')", invalid long/lat
-326,641,"('Ojo De Agua, Santiago Tuxtla, Veracruz', 'Mexico')", invalid long/lat
-327,642,"('Ojo De Agua, Tonatico', 'Mexico')", invalid long/lat
-328,646,"('Penjamo, Guanajuato', 'Mexico')", invalid long/lat
-329,654,"('Quila, Sinaloa', 'Mexico')", invalid long/lat
-330,656,"('Rincon De Parangueo, Guanajuato', 'Mexico')", invalid long/lat
-331,660,"('San Andres Tuxtla', 'Mexico')", invalid long/lat
-332,665,"('San Juan De Abajo', 'Mexico')", invalid long/lat
-333,669,"('San Miguel Allende, Guanajuato', 'Mexico')", invalid long/lat
-334,671,"('San Pedro Lagunillas, Nayarit', 'Mexico')", invalid long/lat
-335,678,"('Tamarindos, Veracruz', 'Mexico')", invalid long/lat
-336,679,"('Tamaulipas', 'Mexico')", invalid long/lat
-337,682,"('Tepalcingo, Morelos', 'Mexico')", invalid long/lat
-338,684,"('Tlacomulco', 'Mexico')", invalid long/lat
-339,688,"('Tlalixcoyan', 'Mexico')", invalid long/lat
-340,689,"('Tlaltizapan', 'Mexico')", invalid long/lat
-341,697,"('Uxmal', 'Mexico')", invalid long/lat
-342,698,"('Valle De Bravo, Estado De Mexico', 'Mexico')", invalid long/lat
-343,699,"('Valle De Culiacan', 'Mexico')", invalid long/lat
-344,701,"('Valle Del Fuerte, Sinaloa', 'Mexico')", invalid long/lat
-345,704,"('Veracrucito', 'Mexico')", invalid long/lat
-346,707,"('Villa Hidalgo, Nayarit', 'Mexico')", invalid long/lat
-347,708,"('Villa Verde, Guanajuato', 'Mexico')", invalid long/lat
-348,711,"('Xalostoc, Morelos', 'Mexico')", invalid long/lat
-349,712,"('Xocoyucan, Tlaxcala', 'Mexico')", invalid long/lat
-350,716,"('Khemiszemamra', 'Morocco')", invalid long/lat
-351,718,"('Angora', 'Mozambique')", invalid long/lat
-352,720,"('Ex-instituto Nacional De Investigacion Agraria', 'Mozambique')", invalid long/lat
-353,725,"('Morrumbala-zambezia', 'Mozambique')", coords NA
-354,726,"('Mozambique', 'Mozambique')", invalid long/lat
-355,727,"('Mutarara', 'Mozambique')", coords NA
-356,731,"('Ntengo Nucodgi Augoiris', 'Mozambique')", invalid long/lat
-357,732,"('Ntengo Umadzi- Angoria', 'Mozambique')", invalid long/lat
-358,733,"('Semol', 'Mozambique')", invalid long/lat
-359,736,"('Ussudenga', 'Mozambique')", invalid long/lat
-360,737,"('Naung Mon', 'Myanmar')", invalid long/lat
-361,738,"('Sea', 'Myanmar')", invalid long/lat
-362,739,"('Taryaw', 'Myanmar')", invalid long/lat
-363,740,"('Tatkan', 'Myanmar')", invalid long/lat
-364,741,"('Tatkone', 'Myanmar')", invalid long/lat
-365,742,"('Zaloke Research Farm', 'Myanmar')", invalid long/lat
-366,743,"('Aungban, Burma', 'Myanmar (burma)')", wrong format
-367,744,"('Yezin, Burma', 'Myanmar (burma)')", wrong format
-368,745,"('Mashare', 'Namibia')", coords NA
-369,746,"('Mitkomst Research Station', 'Namibia')", invalid long/lat
-370,747,"('Runda', 'Namibia')", coords NA
-371,748,"('Hardinath', 'Nepal')", invalid long/lat
-372,749,"('Kabre', 'Nepal')", invalid long/lat
-373,751,"('Lumle', 'Nepal')", invalid long/lat
-374,752,"('Pakhribas', 'Nepal')", invalid long/lat
-375,754,"('Parwanipur', 'Nepal')", invalid long/lat
-376,757,"('Campos Azules', 'Nicaragua')", invalid long/lat
-377,758,"('Campos Azules, Masatepe', 'Nicaragua')", invalid long/lat
-378,759,"('Carazo', 'Nicaragua')", invalid long/lat
-379,761,"('Chontales', 'Nicaragua')", invalid long/lat
-380,762,"('Chontales, Tamboral Sur', 'Nicaragua')", invalid long/lat
-381,763,"('Condega, Esteli', 'Nicaragua')", invalid long/lat
-382,764,"('El Areno, El Rama', 'Nicaragua')", invalid long/lat
-383,765,"('El Jicaro, Nueva Segovia', 'Nicaragua')", invalid long/lat
-384,766,"('El Pellizco, Chinandega', 'Nicaragua')", invalid long/lat
-385,767,"('Jalapa', 'Nicaragua')", invalid long/lat
-386,768,"('La Dal═a', 'Nicaragua')", invalid long/lat
-387,769,"('La Presa', 'Nicaragua')", invalid long/lat
-388,770,"('La Trinidad, Esteli', 'Nicaragua')", invalid long/lat
-389,771,"('Las Cruces Carazo', 'Nicaragua')", invalid long/lat
-390,772,"('Las Piedras,nueva Segovia', 'Nicaragua')", invalid long/lat
-391,773,"('Llano Redondo', 'Nicaragua')", invalid long/lat
-392,775,"('Mazatepec', 'Nicaragua')", invalid long/lat
-393,776,"('Melchorita, San Carlos', 'Nicaragua')", invalid long/lat
-394,777,"('Nindiri, Mazaya', 'Nicaragua')", invalid long/lat
-395,778,"('Paz De Carazo', 'Nicaragua')", invalid long/lat
-396,779,"('Pueblo Nuevo', 'Nicaragua')", invalid long/lat
-397,780,"('San Bartolo', 'Nicaragua')", invalid long/lat
-398,781,"('San Benito, Chinandega', 'Nicaragua')", invalid long/lat
-399,783,"('Santa Cruz, Esteli', 'Nicaragua')", invalid long/lat
-400,784,"('Santa Juana, Nindiri', 'Nicaragua')", invalid long/lat
-401,786,"('Baganda', 'Nigeria')", invalid long/lat
-402,794,"('Saminaka Nig', 'Nigeria')", invalid long/lat
-403,795,"('Temti Jos', 'Nigeria')", invalid long/lat
-404,799,"('Ari, D,i. Kham', 'Pakistan')", invalid long/lat
-405,805,"('Azuer', 'Panama')", invalid long/lat
-406,813,"('Capitan Miranda', 'Paraguay')", invalid long/lat
-407,816,"('San Juan Bautista', 'Paraguay')", invalid long/lat
-408,818,"('Yjhovy', 'Paraguay')", invalid long/lat
-409,819,"('Ascope', 'Peru')", invalid long/lat
-410,820,"('Aucaloma', 'Peru')", invalid long/lat
-411,821,"('E.e. El Porvenir, Calzada Moyobamba', 'Peru')", invalid long/lat
-412,822,"('E.e. Pucallpa', 'Peru')", invalid long/lat
-413,824,"('Huaral', 'Peru')", invalid long/lat
-414,825,"('Humay - Pisco', 'Peru')", invalid long/lat
-415,827,"('Juan Guerra', 'Peru')", invalid long/lat
-416,828,"('La Vi╤a-jayanca-lambayeque', 'Peru')", invalid long/lat
-417,829,"('Lambayeque', 'Peru')", invalid long/lat
-418,830,"('Lima', 'Peru')", invalid long/lat
-419,831,"('Montupe 99', 'Peru')", invalid long/lat
-420,832,"('Muy Finca Mochumi Lambayeque', 'Peru')", invalid long/lat
-421,833,"('Pachacamac', 'Peru')", invalid long/lat
-422,834,"('Peru', 'Peru')", invalid long/lat
-423,835,"('Pucallpa', 'Peru')", invalid long/lat
-424,836,"('Pucallpa, San Fernando, Sa', 'Peru')", invalid long/lat
-425,837,"('Rioja', 'Peru')", invalid long/lat
-426,838,"('Rioja, San Fernando, Sa', 'Peru')", invalid long/lat
-427,839,"('Victoria 99', 'Peru')", invalid long/lat
-428,840,"('Viru La Libertad', 'Peru')", invalid long/lat
-429,841,"('Vista Florida', 'Peru')", invalid long/lat
-430,842,"('Vista Florida Chiclayo', 'Peru')", invalid long/lat
-431,843,"('Vista Florida Chiclayo', 'Peru')", invalid long/lat
-432,844,"('Vista Florida Chiclayo', 'Peru')", invalid long/lat
-433,845,"('Yurimagua', 'Peru')", invalid long/lat
-434,846,"('Baybay', 'Philippines')", invalid long/lat
-435,849,"('Ipb Experiment Station', 'Philippines')", invalid long/lat
-436,850,"('Kabacan', 'Philippines')", invalid long/lat
-437,851,"('Kabacan, Cotabato', 'Philippines')", invalid long/lat
-438,853,"('San Felipe, Ilagan, Isabela.', 'Philippines')", invalid long/lat
-439,858,"('Burgershall', 'South Africa')", invalid long/lat
-440,860,"('Friedenheim Valley', 'South Africa')", invalid long/lat
-441,861,"('Linkseed', 'South Africa')", invalid long/lat
-442,862,"('Mpumalanga', 'South Africa')", invalid long/lat
-443,864,"('North West Province', 'South Africa')", invalid long/lat
-444,866,"('Petit', 'South Africa')", invalid long/lat
-445,867,"('Tshiombo', 'South Africa')", invalid long/lat
-446,869,"('Betlehem', 'South Africa Rep.')", wrong format
-447,870,"('Cedara', 'South Africa Rep.')", wrong format
-448,871,"('Ezolimo', 'South Africa Rep.')", wrong format
-449,872,"('Friedenhei', 'South Africa Rep.')", wrong format
-450,873,"('Greytown', 'South Africa Rep.')", wrong format
-451,874,"('Greytown', 'South Africa Rep.')", wrong format
-452,875,"('Lwamongo', 'South Africa Rep.')", wrong format
-453,876,"('Nelspruit', 'South Africa Rep.')", wrong format
-454,878,"('Setlagole', 'South Africa Rep.')", wrong format
-455,879,"('Viljoenskroon', 'South Africa Rep.')", wrong format
-456,882,"('Paramaribo', 'Surinam')", wrong format
-457,884,"('Les', 'Swaziland')", invalid long/lat
-458,885,"('Lowveld, Brabend', 'Swaziland')", invalid long/lat
-459,890,"('Shewula', 'Swaziland')", invalid long/lat
-460,891,"('Swaziland', 'Swaziland')", invalid long/lat
-461,892,"('Deir Al Zoor', 'Syria')", invalid long/lat
-462,893,"('Raqqa', 'Syria')", invalid long/lat
-463,896,"('Arusha Seed Farm Afsf', 'Tanzania')", invalid long/lat
-464,907,"('Lambo', 'Tanzania')", coords NA
-465,913,"('Mwanza - Region', 'Tanzania')", invalid long/lat
-466,916,"('Nm', 'Tanzania')", invalid long/lat
-467,919,"('Tanzania', 'Tanzania')", invalid long/lat
-468,929,"('Sawankalok Sukhotha', 'Thailand')", invalid long/lat
-469,931,"('Tak Fa', 'Thailand')", invalid long/lat
-470,933,"('El Carmen', 'Trinidad Y Tobago')", wrong format
-471,934,"('Goldsborough', 'Trinidad Y Tobago')", wrong format
-472,935,"(""Louis D'or"", 'Trinidad Y Tobago')", wrong format
-473,937,"('Aydin', 'Turkey')", invalid long/lat
-474,938,"('Anny Settl', 'Turkmenistan')", invalid long/lat
-475,939,"('Bulegeni', 'Uganda')", invalid long/lat
-476,940,"('Bulengeni', 'Uganda')", invalid long/lat
-477,945,"('Likonde,songea', 'Uganda')", coords NA
-478,947,"('Msk', 'Uganda')", invalid long/lat
-479,952,"('Uganda', 'Uganda')", invalid long/lat
-480,953,"('Barnum Mn', 'United States Of America')", wrong format
-481,954,"('College Station, Texas', 'United States Of America')", wrong format
-482,955,"('Kenedy, Tx.', 'United States Of America')", wrong format
-483,956,"('Sn Antonio', 'United States Of America')", wrong format
-484,957,"('Tifton, Georgia', 'United States Of America')", wrong format
-485,958,"('Tifton, Georgia', 'United States Of America')", wrong format
-486,959,"('Weslaco, Texas', 'United States Of America')", wrong format
-487,962,"('Agua Blanca, Portuguesa', 'Venezuela')", invalid long/lat
-488,963,"('Aragua (ceniap)', 'Venezuela')", invalid long/lat
-489,964,"('Araure (acarigua)', 'Venezuela')", invalid long/lat
-490,965,"('Araure (portuguesa)', 'Venezuela')", invalid long/lat
-491,966,"('Carretera O, Turen, Portuguesa', 'Venezuela')", invalid long/lat
-492,967,"('Centro Norte', 'Venezuela')", invalid long/lat
-493,968,"('Colonia Agricola De Turen', 'Venezuela')", invalid long/lat
-494,969,"('El Diamante, Yaritagua', 'Venezuela')", invalid long/lat
-495,970,"('El Playon', 'Venezuela')", invalid long/lat
-496,971,"('El Socorro', 'Venezuela')", invalid long/lat
-497,972,"('Guarico', 'Venezuela')", invalid long/lat
-498,973,"('La Lucia', 'Venezuela')", invalid long/lat
-499,974,"('Las Caramas', 'Venezuela')", invalid long/lat
-500,977,"('Las Guacamayas, El Sombrero', 'Venezuela')", invalid long/lat
-501,978,"('Los Guayos, Carabobo State', 'Venezuela')", invalid long/lat
-502,979,"('Manzanita', 'Venezuela')", invalid long/lat
-503,981,"('Pascual Valetta, Laguna De Piedra', 'Venezuela')", invalid long/lat
-504,982,"('Punta Gorda', 'Venezuela')", invalid long/lat
-505,984,"('Santa Barbara', 'Venezuela')", invalid long/lat
-506,985,"('Semillas Aragua', 'Venezuela')", invalid long/lat
-507,986,"('Tocoron', 'Venezuela')", invalid long/lat
-508,987,"('Tocoron, Estado Aragua', 'Venezuela')", invalid long/lat
-509,988,"('Tucupido', 'Venezuela')", invalid long/lat
-510,989,"('Turen', 'Venezuela')", invalid long/lat
-511,990,"('Unidad Agricola De Turen', 'Venezuela')", invalid long/lat
-512,991,"('Venezuela', 'Venezuela')", invalid long/lat
-513,992,"('Villa De Cura, Aragua', 'Venezuela')", invalid long/lat
-514,993,"('Ars, Amberpet, Hyd.', 'Vietnam')", invalid long/lat
-515,994,"('Binh Chanh Dictrict - Ho Chi Minh City', 'Vietnam')", invalid long/lat
-516,995,"('Binh Duong', 'Vietnam')", invalid long/lat
-517,997,"('Dan Phuong Hatay', 'Vietnam')", invalid long/lat
-518,998,"('Danphing Dist.', 'Vietnam')", invalid long/lat
-519,999,"('Duc Hoa District, Long An Province', 'Vietnam')", invalid long/lat
-520,1000,"('Gorakhpur', 'Vietnam')", invalid long/lat
-521,1004,"('Tay Ninh Province', 'Vietnam')", invalid long/lat
-522,1005,"('Gandajika', 'Zaire')", wrong format
-523,1006,"('Mvuazi', 'Zaire')", wrong format
-524,1007,"('Chisamba, Golden Valley', 'Zambia')", invalid long/lat
-525,1010,"('Kutumani', 'Zambia')", invalid long/lat
-526,1011,"('Lyempe', 'Zambia')", invalid long/lat
-527,1012,"('Magobo', 'Zambia')", invalid long/lat
-528,1022,"('Zambia', 'Zambia')", invalid long/lat
-529,1028,"('Cimmyt, Harare', 'Zimbabwe')", invalid long/lat
-530,1029,"('Dedza', 'Zimbabwe')", invalid long/lat
-531,1040,"('Pannar', 'Zimbabwe')", invalid long/lat
-532,1041,"('Pioneer', 'Zimbabwe')", invalid long/lat
-533,1042,"('Radoma', 'Zimbabwe')", invalid long/lat
-534,1047,"('Zimbabwe', 'Zimbabwe')", invalid long/lat
-535,1052,"('Gisozi', 'Burundi')", invalid long/lat
-536,1056,"('Zacatepec, Morelos', 'Mexico')", invalid long/lat
-537,1057,"('Miacatlan', 'Mexico')", invalid long/lat
-538,1058,"('Salandhar (punjab)', 'India')", invalid long/lat
-539,1063,"('Kaniaka', 'Congo')", wrong format
-540,1074,"('Gondar', 'Ethiopia')", invalid long/lat
-541,1075,"('Quindio', 'Colombia')", invalid long/lat
-542,1076,"('Puerto Gaitan-carpoica,taluma', 'Colombia')", invalid long/lat
-543,1077,"('Kisama', 'Kenya')", invalid long/lat
-544,1078,"('Angecha', 'Ethiopia')", invalid long/lat
-545,1079,"('Ivumwe', 'Tanzania')", invalid long/lat
-546,1080,"('Mparambo', 'Burundi')", invalid long/lat
-547,1081,"('Thika', 'Kenya')", invalid long/lat
-548,1082,"('Matisi', 'Kenya')", invalid long/lat
-549,1083,"('Kutus', 'Kenya')", invalid long/lat
-550,1084,"('Kimaeti', 'Kenya')", invalid long/lat
-551,1085,"('Elgon Downs', 'Kenya')", invalid long/lat
-552,1086,"('Bumula', 'Kenya')", invalid long/lat
-553,1087,"('Bulindi', 'Uganda')", invalid long/lat
-554,1088,"('Bugiri', 'Uganda')", invalid long/lat
-555,1089,"('Nyagatare', 'Rwanda')", invalid long/lat
-556,1090,"('Kagumo', 'Kenya')", invalid long/lat
-557,1091,"('Screen House', 'Kenya')", invalid long/lat
-558,1092,"('Chitedzi', 'Malawi')", invalid long/lat
-559,1093,"('Kiteta', 'Kenya')", invalid long/lat
-560,1094,"('Kyuu', 'Kenya')", invalid long/lat
-561,1095,"('Bingu', 'Malawi')", invalid long/lat
-562,1096,"('Mpingu', 'Malawi')", invalid long/lat
-563,1097,"('Pomela', 'Malawi')", invalid long/lat
-564,1098,"('Pallisa', 'Uganda')", invalid long/lat
-565,1099,"('Rancho Guadalupe, Toluca', 'Mexico')", invalid long/lat
-566,1100,"('Mwea', 'Kenya')", invalid long/lat
-567,1102,"('Kabul', 'Afghanistan')", invalid long/lat
-568,1107,"('La Catalina', 'Colombia')", invalid long/lat
-569,1108,"('Paraguaicito', 'Colombia')", invalid long/lat
-570,1110,"('Freidenheim Valley', 'South Africa')", invalid long/lat
-571,1115,"('Kibray', 'Uzbekistan')", invalid long/lat
-572,1116,"('Chisamba', 'Zambia')", invalid long/lat
-573,1128,"('Mungushi, Hai', 'Tanzania')", invalid long/lat
-574,1129,"('Bondo', 'Kenya')", invalid long/lat
-575,1130,"('Kakamega (monsanto)', 'Kenya')", invalid long/lat
-576,1133,"('Caña Flecha', 'Colombia')", invalid long/lat
-577,1135,"('Las Cañas', 'Costa Rica')", invalid long/lat
-578,1136,"('La Máquina Caballo Blanco', 'Guatemala')", invalid long/lat
-579,1137,"('San José Pinula', 'Guatemala')", invalid long/lat
-580,1138,"('La Viña-jayanca-lambayeque', 'Peru')", invalid long/lat
-581,1139,"('Dinajpur', 'Bangladesh')", invalid long/lat
-582,1141,"('Tshibati - - - - Kibati', 'Congo')", wrong format
-583,1152,"('Finkolo', 'Mali')", coords NA
-584,1154,"('Finkolo', 'Mali')", coords NA
-585,1155,"('El Aguila, Pejibaye, Perez Zeledon', 'Costa Rica')", coords NA
-586,1156,"('Los Chiles', 'Costa Rica')", coords NA
-587,1157,"('Araure, Edo. Portuguesa', 'Venezuela')", coords NA
-588,1158,"('Las Velas, Edo. Yaracuy', 'Venezuela')", coords NA
-589,1159,"('Tiznados, Edo. Guarico', 'Venezuela')", coords NA
-590,1160,"('Concepcion De Pilas, Buenos Aires', 'Costa Rica')", coords NA
-591,1161,"('El Amparo, El Gallito, Los Chiles, Alajuela', 'Costa Rica')", coords NA
-592,1162,"('Guagaral, Buenos Aires Puntarenas', 'Costa Rica')", coords NA
-593,1163,"('Pueblo Nuevo, San Jose, Upala', 'Costa Rica')", coords NA
-594,1164,"('Veracruz, Pejibaye, Perez Zeledon', 'Costa Rica')", coords NA
-595,1165,"('El Progreso, Pejibaye, Perez Zeledon', 'Costa Rica')", coords NA
-596,1166,"('Guagaral, Buenos Aires', 'Costa Rica')", coords NA
+191,313,"('Caballo Blanco, Retalhuleu', 'Guatemala')", invalid long/lat
+192,316,"('El Ovejero, Jutiapa', 'Guatemala')", invalid long/lat
+193,317,"('Estanzuela', 'Guatemala')", invalid long/lat
+194,318,"('Finca, Las Vegas Tequisate.', 'Guatemala')", invalid long/lat
+195,319,"('Isidro Avarez', 'Guatemala')", mismatched country
+196,321,"('La Flecha', 'Guatemala')", invalid long/lat
+197,322,"('La Maquina', 'Guatemala')", invalid long/lat
+198,323,"('La M┴quina Caballo Blanco', 'Guatemala')", invalid long/lat
+199,324,"('La Maquina, Linea A5', 'Guatemala')", invalid long/lat
+200,325,"('La Maquina, Tulate', 'Guatemala')", invalid long/lat
+201,326,"('Las Monjas', 'Guatemala')", invalid long/lat
+202,328,"('Monjas, Jalapa', 'Guatemala')", invalid long/lat
+203,329,"('Nueva Concepcion', 'Guatemala')", invalid long/lat
+204,330,"('Ovejero, Jutiapa', 'Guatemala')", invalid long/lat
+205,331,"('Quesada, Jutiapa', 'Guatemala')", invalid long/lat
+206,332,"('Salam B. V.', 'Guatemala')", invalid long/lat
+207,333,"('San Jos╔ Pinula', 'Guatemala')", invalid long/lat
+208,334,"('San Pedro Pinula, Jalapa', 'Guatemala')", invalid long/lat
+209,335,"('Sto Domingo', 'Guatemala')", invalid long/lat
+210,338,"('Zacapa', 'Guatemala')", invalid long/lat
+211,340,"('Chantilly', 'Haiti')", invalid long/lat
+212,342,"('Karoman, Lavallee', 'Haiti')", invalid long/lat
+213,344,"('Nan- Jn Pierre, Cap-rouge', 'Haiti')", invalid long/lat
+214,345,"('Candelaria, Lempira', 'Honduras')", invalid long/lat
+215,346,"('Catacamas, Olancho', 'Honduras')", invalid long/lat
+216,348,"('Comayagua, E.e. Playitas', 'Honduras')", invalid long/lat
+217,350,"('El Guaco Yorito, Yoro', 'Honduras')", invalid long/lat
+218,351,"('El Pital, Atlantida', 'Honduras')", invalid long/lat
+219,353,"('Jutiquile, Olancho', 'Honduras')", invalid long/lat
+220,356,"('Litoral Atlantico', 'Honduras')", invalid long/lat
+221,357,"('Luquigue Yorito, Yoro', 'Honduras')", invalid long/lat
+222,358,"('Mina Handa (yorito Yoco)', 'Honduras')", invalid long/lat
+223,359,"('Obraje, Danli', 'Honduras')", invalid long/lat
+224,361,"('Pata Stera (yorito Yoco)', 'Honduras')", invalid long/lat
+225,362,"('Playita', 'Honduras')", invalid long/lat
+226,363,"('Potrerillos, Olancho', 'Honduras')", invalid long/lat
+227,364,"('Rio Arriba Yorito, Yoro', 'Honduras')", invalid long/lat
+228,365,"('San Lucas, El Paraiso', 'Honduras')", invalid long/lat
+229,366,"('San Pedro De Catacamas, Olancho', 'Honduras')", invalid long/lat
+230,368,"('Yoro, El Pate', 'Honduras')", invalid long/lat
+231,369,"('Yoro, Morazan', 'Honduras')", invalid long/lat
+232,372,"('Amberpet', 'India')", invalid long/lat
+233,378,"('Bahraich, Crop Research Station', 'India')", invalid long/lat
+234,379,"('Bajaura', 'India')", mismatched country
+235,384,"('Belipar, Gorakhpur, U.p.', 'India')", invalid long/lat
+236,385,"('Bihar', 'India')", invalid long/lat
+237,391,"('Dholi', 'India')", invalid long/lat
+238,393,"('Dohad', 'India')", invalid long/lat
+239,395,"('Godhsa Gaujasat', 'India')", invalid long/lat
+240,397,"('India', 'India')", invalid long/lat
+241,406,"('Khadbrabhra', 'India')", invalid long/lat
+242,407,"('Khedbrahma', 'India')", invalid long/lat
+243,411,"('Messina', 'India')", invalid long/lat
+244,412,"('Muzafferpur', 'India')", invalid long/lat
+245,413,"('New Delhi', 'India')", invalid long/lat
+246,417,"('Pantnagar', 'India')", invalid long/lat
+247,418,"('Parbhani', 'India')", invalid long/lat
+248,419,"('Poonch', 'India')", invalid long/lat
+249,420,"('Prabhakar Reddy', 'India')", invalid long/lat
+250,421,"('Probhakor', 'India')", invalid long/lat
+251,423,"('Pusa', 'India')", invalid long/lat
+252,424,"('R&d (pachora).', 'India')", invalid long/lat
+253,425,"('R&d (wadadhe).', 'India')", invalid long/lat
+254,427,"('Ranchi', 'India')", invalid long/lat
+255,428,"('Rau Pusa (bihar)', 'India')", invalid long/lat
+256,429,"('Rayalkole', 'India')", invalid long/lat
+257,430,"('Samastipur', 'India')", invalid long/lat
+258,433,"('Srinagar, K.d. Research Station', 'India')", invalid long/lat
+259,438,"('Weerasak Doungjan', 'India')", invalid long/lat
+260,440,"('Gowa S. Sulawesi', 'Indonesia')", invalid long/lat
+261,441,"('Hulu Sungai Selatan', 'Indonesia')", invalid long/lat
+262,442,"('Jambegede', 'Indonesia')", invalid long/lat
+263,446,"('Naibonat', 'Indonesia')", invalid long/lat
+264,447,"('Natar, Lampung', 'Indonesia')", invalid long/lat
+265,448,"('Probolinggo', 'Indonesia')", invalid long/lat
+266,449,"('Takalar, South Sulawesi', 'Indonesia')", invalid long/lat
+267,450,"('Yogyakarta', 'Indonesia')", invalid long/lat
+268,451,"('Agricultural Research Station Of Gorgan', 'Iran')", invalid long/lat
+269,453,"('Ai - Latifyia', 'Iraq')", invalid long/lat
+270,455,"(""Bonghdad, Al_mada'en"", 'Iraq')", invalid long/lat
+271,456,"('Tuwaitha Baghdad', 'Iraq')", invalid long/lat
+272,457,"('Central Asia', 'Kazakstan')", wrong format
+273,459,"('Baobab', 'Kenya')", invalid long/lat
+274,473,"('K.t.i', 'Kenya')", invalid long/lat
+275,476,"('Kari - Embu', 'Kenya')", invalid long/lat
+276,477,"('Karurina', 'Kenya')", invalid long/lat
+277,487,"('Kitale Syn Ii (ethiopia)', 'Kenya')", invalid long/lat
+278,502,"('Tanseed', 'Kenya')", invalid long/lat
+279,504,"('Wanbugu', 'Kenya')", invalid long/lat
+280,506,"('Western Seeds', 'Kenya')", invalid long/lat
+281,508,"('Lesotho', 'Lesotho')", invalid long/lat
+282,518,"('Baka Research Station', 'Malawi')", invalid long/lat
+283,528,"('Mphimbi', 'Malawi')", invalid long/lat
+284,530,"('Not Identified', 'Malawi')", invalid long/lat
+285,535,"('Katibougou', 'Mali')", invalid long/lat
+286,536,"('Kolombada', 'Mali')", invalid long/lat
+287,539,"('Acatic, Jalisco', 'Mexico')", invalid long/lat
+288,540,"('Acayucan, Veracruz', 'Mexico')", invalid long/lat
+289,542,"('Agua Fria', 'Mexico')", invalid long/lat
+290,550,"('Apaseo El Guadalupe, Guanajuato', 'Mexico')", invalid long/lat
+291,551,"('Atlacomulco', 'Mexico')", invalid long/lat
+292,552,"('Axochio, San Andres Tuxtla, Veracruz', 'Mexico')", invalid long/lat
+293,553,"('Buenavista Penjamo, Guanajuato', 'Mexico')", invalid long/lat
+294,558,"('Cardel', 'Mexico')", invalid long/lat
+295,562,"('Champoton, Campeche', 'Mexico')", invalid long/lat
+296,565,"('Chiapas', 'Mexico')", invalid long/lat
+297,566,"('Chorrerones', 'Mexico')", invalid long/lat
+298,573,"('Colonia Del Turen', 'Mexico')", invalid long/lat
+299,574,"('Coquimatlan', 'Mexico')", invalid long/lat
+300,575,"('Corralejo De Hidalgo, Guanajuato', 'Mexico')", invalid long/lat
+301,576,"('Cotaxla', 'Mexico')", invalid long/lat
+302,578,"('Coyoltepec, San Andres Tuxtla, Veracruz', 'Mexico')", invalid long/lat
+303,588,"('Edzna, Campeche', 'Mexico')", invalid long/lat
+304,589,"('Ejido 1ro De Mayo', 'Mexico')", invalid long/lat
+305,595,"('El Zapote, Tonatico', 'Mexico')", invalid long/lat
+306,598,"('Guadalajara, Jalisco', 'Mexico')", invalid long/lat
+307,604,"('Huejutla De Reyes, Hidalgo', 'Mexico')", invalid long/lat
+308,605,"('Huimanguillo', 'Mexico')", invalid long/lat
+309,606,"('Ignacio De La Llave, Veracruz', 'Mexico')", invalid long/lat
+310,609,"('Isla, Veracruz', 'Mexico')", invalid long/lat
+311,612,"('Jalisco, Jalisco', 'Mexico')", invalid long/lat
+312,614,"('Jerico Chiapas', 'Mexico')", invalid long/lat
+313,615,"('Jesus Maria', 'Mexico')", invalid long/lat
+314,619,"('La Barca, Jalisco', 'Mexico')", invalid long/lat
+315,620,"('La Cantera, Comonfort, Guanajuato', 'Mexico')", invalid long/lat
+316,621,"('La Cruz De Elota, Sinaloa', 'Mexico')", invalid long/lat
+317,622,"('La Huerta, Jalisco', 'Mexico')", mismatched country
+318,625,"('La Torrecilla, Tlalixcoyan, Veracruz', 'Mexico')", invalid long/lat
+319,630,"('Mata De Agua', 'Mexico')", invalid long/lat
+320,635,"('Nayarit', 'Mexico')", invalid long/lat
+321,640,"('Ocuituco, Morelos', 'Mexico')", invalid long/lat
+322,641,"('Ojo De Agua, Santiago Tuxtla, Veracruz', 'Mexico')", invalid long/lat
+323,642,"('Ojo De Agua, Tonatico', 'Mexico')", invalid long/lat
+324,646,"('Penjamo, Guanajuato', 'Mexico')", invalid long/lat
+325,654,"('Quila, Sinaloa', 'Mexico')", invalid long/lat
+326,656,"('Rincon De Parangueo, Guanajuato', 'Mexico')", invalid long/lat
+327,660,"('San Andres Tuxtla', 'Mexico')", invalid long/lat
+328,665,"('San Juan De Abajo', 'Mexico')", invalid long/lat
+329,669,"('San Miguel Allende, Guanajuato', 'Mexico')", invalid long/lat
+330,671,"('San Pedro Lagunillas, Nayarit', 'Mexico')", invalid long/lat
+331,678,"('Tamarindos, Veracruz', 'Mexico')", invalid long/lat
+332,679,"('Tamaulipas', 'Mexico')", invalid long/lat
+333,682,"('Tepalcingo, Morelos', 'Mexico')", invalid long/lat
+334,684,"('Tlacomulco', 'Mexico')", invalid long/lat
+335,688,"('Tlalixcoyan', 'Mexico')", invalid long/lat
+336,689,"('Tlaltizapan', 'Mexico')", invalid long/lat
+337,697,"('Uxmal', 'Mexico')", invalid long/lat
+338,698,"('Valle De Bravo, Estado De Mexico', 'Mexico')", invalid long/lat
+339,699,"('Valle De Culiacan', 'Mexico')", invalid long/lat
+340,701,"('Valle Del Fuerte, Sinaloa', 'Mexico')", invalid long/lat
+341,704,"('Veracrucito', 'Mexico')", invalid long/lat
+342,707,"('Villa Hidalgo, Nayarit', 'Mexico')", invalid long/lat
+343,708,"('Villa Verde, Guanajuato', 'Mexico')", invalid long/lat
+344,711,"('Xalostoc, Morelos', 'Mexico')", invalid long/lat
+345,712,"('Xocoyucan, Tlaxcala', 'Mexico')", invalid long/lat
+346,716,"('Khemiszemamra', 'Morocco')", invalid long/lat
+347,718,"('Angora', 'Mozambique')", invalid long/lat
+348,720,"('Ex-instituto Nacional De Investigacion Agraria', 'Mozambique')", invalid long/lat
+349,725,"('Morrumbala-zambezia', 'Mozambique')", mismatched country
+350,726,"('Mozambique', 'Mozambique')", invalid long/lat
+351,727,"('Mutarara', 'Mozambique')", mismatched country
+352,731,"('Ntengo Nucodgi Augoiris', 'Mozambique')", invalid long/lat
+353,732,"('Ntengo Umadzi- Angoria', 'Mozambique')", invalid long/lat
+354,733,"('Semol', 'Mozambique')", invalid long/lat
+355,736,"('Ussudenga', 'Mozambique')", invalid long/lat
+356,737,"('Naung Mon', 'Myanmar')", invalid long/lat
+357,738,"('Sea', 'Myanmar')", invalid long/lat
+358,739,"('Taryaw', 'Myanmar')", invalid long/lat
+359,740,"('Tatkan', 'Myanmar')", invalid long/lat
+360,741,"('Tatkone', 'Myanmar')", invalid long/lat
+361,742,"('Zaloke Research Farm', 'Myanmar')", invalid long/lat
+362,743,"('Aungban, Burma', 'Myanmar (burma)')", wrong format
+363,744,"('Yezin, Burma', 'Myanmar (burma)')", wrong format
+364,745,"('Mashare', 'Namibia')", mismatched country
+365,746,"('Mitkomst Research Station', 'Namibia')", invalid long/lat
+366,747,"('Runda', 'Namibia')", mismatched country
+367,748,"('Hardinath', 'Nepal')", invalid long/lat
+368,749,"('Kabre', 'Nepal')", invalid long/lat
+369,751,"('Lumle', 'Nepal')", invalid long/lat
+370,752,"('Pakhribas', 'Nepal')", invalid long/lat
+371,754,"('Parwanipur', 'Nepal')", invalid long/lat
+372,757,"('Campos Azules', 'Nicaragua')", invalid long/lat
+373,758,"('Campos Azules, Masatepe', 'Nicaragua')", invalid long/lat
+374,759,"('Carazo', 'Nicaragua')", invalid long/lat
+375,761,"('Chontales', 'Nicaragua')", invalid long/lat
+376,762,"('Chontales, Tamboral Sur', 'Nicaragua')", invalid long/lat
+377,763,"('Condega, Esteli', 'Nicaragua')", invalid long/lat
+378,764,"('El Areno, El Rama', 'Nicaragua')", invalid long/lat
+379,765,"('El Jicaro, Nueva Segovia', 'Nicaragua')", invalid long/lat
+380,766,"('El Pellizco, Chinandega', 'Nicaragua')", invalid long/lat
+381,767,"('Jalapa', 'Nicaragua')", invalid long/lat
+382,768,"('La Dal═a', 'Nicaragua')", invalid long/lat
+383,769,"('La Presa', 'Nicaragua')", invalid long/lat
+384,770,"('La Trinidad, Esteli', 'Nicaragua')", invalid long/lat
+385,771,"('Las Cruces Carazo', 'Nicaragua')", invalid long/lat
+386,772,"('Las Piedras,nueva Segovia', 'Nicaragua')", invalid long/lat
+387,773,"('Llano Redondo', 'Nicaragua')", invalid long/lat
+388,775,"('Mazatepec', 'Nicaragua')", invalid long/lat
+389,776,"('Melchorita, San Carlos', 'Nicaragua')", invalid long/lat
+390,777,"('Nindiri, Mazaya', 'Nicaragua')", invalid long/lat
+391,778,"('Paz De Carazo', 'Nicaragua')", invalid long/lat
+392,779,"('Pueblo Nuevo', 'Nicaragua')", invalid long/lat
+393,780,"('San Bartolo', 'Nicaragua')", invalid long/lat
+394,781,"('San Benito, Chinandega', 'Nicaragua')", invalid long/lat
+395,783,"('Santa Cruz, Esteli', 'Nicaragua')", invalid long/lat
+396,784,"('Santa Juana, Nindiri', 'Nicaragua')", invalid long/lat
+397,786,"('Baganda', 'Nigeria')", invalid long/lat
+398,794,"('Saminaka Nig', 'Nigeria')", invalid long/lat
+399,795,"('Temti Jos', 'Nigeria')", invalid long/lat
+400,799,"('Ari, D,i. Kham', 'Pakistan')", invalid long/lat
+401,805,"('Azuer', 'Panama')", invalid long/lat
+402,813,"('Capitan Miranda', 'Paraguay')", invalid long/lat
+403,816,"('San Juan Bautista', 'Paraguay')", invalid long/lat
+404,818,"('Yjhovy', 'Paraguay')", invalid long/lat
+405,819,"('Ascope', 'Peru')", invalid long/lat
+406,820,"('Aucaloma', 'Peru')", invalid long/lat
+407,821,"('E.e. El Porvenir, Calzada Moyobamba', 'Peru')", invalid long/lat
+408,822,"('E.e. Pucallpa', 'Peru')", invalid long/lat
+409,824,"('Huaral', 'Peru')", invalid long/lat
+410,825,"('Humay - Pisco', 'Peru')", invalid long/lat
+411,827,"('Juan Guerra', 'Peru')", invalid long/lat
+412,828,"('La Vi╤a-jayanca-lambayeque', 'Peru')", invalid long/lat
+413,829,"('Lambayeque', 'Peru')", invalid long/lat
+414,830,"('Lima', 'Peru')", invalid long/lat
+415,831,"('Montupe 99', 'Peru')", invalid long/lat
+416,832,"('Muy Finca Mochumi Lambayeque', 'Peru')", invalid long/lat
+417,833,"('Pachacamac', 'Peru')", invalid long/lat
+418,834,"('Peru', 'Peru')", invalid long/lat
+419,835,"('Pucallpa', 'Peru')", invalid long/lat
+420,836,"('Pucallpa, San Fernando, Sa', 'Peru')", invalid long/lat
+421,837,"('Rioja', 'Peru')", invalid long/lat
+422,838,"('Rioja, San Fernando, Sa', 'Peru')", invalid long/lat
+423,839,"('Victoria 99', 'Peru')", invalid long/lat
+424,840,"('Viru La Libertad', 'Peru')", invalid long/lat
+425,841,"('Vista Florida', 'Peru')", invalid long/lat
+426,842,"('Vista Florida Chiclayo', 'Peru')", invalid long/lat
+427,843,"('Vista Florida Chiclayo', 'Peru')", invalid long/lat
+428,844,"('Vista Florida Chiclayo', 'Peru')", invalid long/lat
+429,845,"('Yurimagua', 'Peru')", invalid long/lat
+430,846,"('Baybay', 'Philippines')", invalid long/lat
+431,849,"('Ipb Experiment Station', 'Philippines')", invalid long/lat
+432,850,"('Kabacan', 'Philippines')", invalid long/lat
+433,851,"('Kabacan, Cotabato', 'Philippines')", invalid long/lat
+434,853,"('San Felipe, Ilagan, Isabela.', 'Philippines')", invalid long/lat
+435,858,"('Burgershall', 'South Africa')", invalid long/lat
+436,860,"('Friedenheim Valley', 'South Africa')", invalid long/lat
+437,861,"('Linkseed', 'South Africa')", invalid long/lat
+438,862,"('Mpumalanga', 'South Africa')", invalid long/lat
+439,864,"('North West Province', 'South Africa')", invalid long/lat
+440,866,"('Petit', 'South Africa')", invalid long/lat
+441,867,"('Tshiombo', 'South Africa')", invalid long/lat
+442,869,"('Betlehem', 'South Africa Rep.')", wrong format
+443,870,"('Cedara', 'South Africa Rep.')", wrong format
+444,871,"('Ezolimo', 'South Africa Rep.')", wrong format
+445,872,"('Friedenhei', 'South Africa Rep.')", wrong format
+446,873,"('Greytown', 'South Africa Rep.')", wrong format
+447,874,"('Greytown', 'South Africa Rep.')", wrong format
+448,875,"('Lwamongo', 'South Africa Rep.')", wrong format
+449,876,"('Nelspruit', 'South Africa Rep.')", wrong format
+450,878,"('Setlagole', 'South Africa Rep.')", wrong format
+451,879,"('Viljoenskroon', 'South Africa Rep.')", wrong format
+452,882,"('Paramaribo', 'Surinam')", wrong format
+453,884,"('Les', 'Swaziland')", invalid long/lat
+454,885,"('Lowveld, Brabend', 'Swaziland')", invalid long/lat
+455,890,"('Shewula', 'Swaziland')", invalid long/lat
+456,891,"('Swaziland', 'Swaziland')", invalid long/lat
+457,892,"('Deir Al Zoor', 'Syria')", invalid long/lat
+458,893,"('Raqqa', 'Syria')", invalid long/lat
+459,896,"('Arusha Seed Farm Afsf', 'Tanzania')", invalid long/lat
+460,907,"('Lambo', 'Tanzania')", mismatched country
+461,913,"('Mwanza - Region', 'Tanzania')", invalid long/lat
+462,916,"('Nm', 'Tanzania')", invalid long/lat
+463,919,"('Tanzania', 'Tanzania')", invalid long/lat
+464,929,"('Sawankalok Sukhotha', 'Thailand')", invalid long/lat
+465,931,"('Tak Fa', 'Thailand')", invalid long/lat
+466,933,"('El Carmen', 'Trinidad Y Tobago')", wrong format
+467,934,"('Goldsborough', 'Trinidad Y Tobago')", wrong format
+468,935,"(""Louis D'or"", 'Trinidad Y Tobago')", wrong format
+469,937,"('Aydin', 'Turkey')", invalid long/lat
+470,938,"('Anny Settl', 'Turkmenistan')", invalid long/lat
+471,939,"('Bulegeni', 'Uganda')", invalid long/lat
+472,940,"('Bulengeni', 'Uganda')", invalid long/lat
+473,945,"('Likonde,songea', 'Uganda')", mismatched country
+474,947,"('Msk', 'Uganda')", invalid long/lat
+475,952,"('Uganda', 'Uganda')", invalid long/lat
+476,953,"('Barnum Mn', 'United States Of America')", wrong format
+477,954,"('College Station, Texas', 'United States Of America')", wrong format
+478,955,"('Kenedy, Tx.', 'United States Of America')", wrong format
+479,956,"('Sn Antonio', 'United States Of America')", wrong format
+480,957,"('Tifton, Georgia', 'United States Of America')", wrong format
+481,958,"('Tifton, Georgia', 'United States Of America')", wrong format
+482,959,"('Weslaco, Texas', 'United States Of America')", wrong format
+483,962,"('Agua Blanca, Portuguesa', 'Venezuela')", invalid long/lat
+484,963,"('Aragua (ceniap)', 'Venezuela')", invalid long/lat
+485,964,"('Araure (acarigua)', 'Venezuela')", invalid long/lat
+486,965,"('Araure (portuguesa)', 'Venezuela')", invalid long/lat
+487,966,"('Carretera O, Turen, Portuguesa', 'Venezuela')", invalid long/lat
+488,967,"('Centro Norte', 'Venezuela')", invalid long/lat
+489,968,"('Colonia Agricola De Turen', 'Venezuela')", invalid long/lat
+490,969,"('El Diamante, Yaritagua', 'Venezuela')", invalid long/lat
+491,970,"('El Playon', 'Venezuela')", invalid long/lat
+492,971,"('El Socorro', 'Venezuela')", invalid long/lat
+493,972,"('Guarico', 'Venezuela')", invalid long/lat
+494,973,"('La Lucia', 'Venezuela')", invalid long/lat
+495,974,"('Las Caramas', 'Venezuela')", invalid long/lat
+496,977,"('Las Guacamayas, El Sombrero', 'Venezuela')", invalid long/lat
+497,978,"('Los Guayos, Carabobo State', 'Venezuela')", invalid long/lat
+498,979,"('Manzanita', 'Venezuela')", invalid long/lat
+499,981,"('Pascual Valetta, Laguna De Piedra', 'Venezuela')", invalid long/lat
+500,982,"('Punta Gorda', 'Venezuela')", invalid long/lat
+501,984,"('Santa Barbara', 'Venezuela')", invalid long/lat
+502,985,"('Semillas Aragua', 'Venezuela')", invalid long/lat
+503,986,"('Tocoron', 'Venezuela')", invalid long/lat
+504,987,"('Tocoron, Estado Aragua', 'Venezuela')", invalid long/lat
+505,988,"('Tucupido', 'Venezuela')", invalid long/lat
+506,989,"('Turen', 'Venezuela')", invalid long/lat
+507,990,"('Unidad Agricola De Turen', 'Venezuela')", invalid long/lat
+508,991,"('Venezuela', 'Venezuela')", invalid long/lat
+509,992,"('Villa De Cura, Aragua', 'Venezuela')", invalid long/lat
+510,993,"('Ars, Amberpet, Hyd.', 'Vietnam')", invalid long/lat
+511,994,"('Binh Chanh Dictrict - Ho Chi Minh City', 'Vietnam')", invalid long/lat
+512,995,"('Binh Duong', 'Vietnam')", invalid long/lat
+513,997,"('Dan Phuong Hatay', 'Vietnam')", invalid long/lat
+514,998,"('Danphing Dist.', 'Vietnam')", invalid long/lat
+515,999,"('Duc Hoa District, Long An Province', 'Vietnam')", invalid long/lat
+516,1000,"('Gorakhpur', 'Vietnam')", invalid long/lat
+517,1004,"('Tay Ninh Province', 'Vietnam')", invalid long/lat
+518,1005,"('Gandajika', 'Zaire')", wrong format
+519,1006,"('Mvuazi', 'Zaire')", wrong format
+520,1007,"('Chisamba, Golden Valley', 'Zambia')", invalid long/lat
+521,1010,"('Kutumani', 'Zambia')", invalid long/lat
+522,1011,"('Lyempe', 'Zambia')", invalid long/lat
+523,1012,"('Magobo', 'Zambia')", invalid long/lat
+524,1022,"('Zambia', 'Zambia')", invalid long/lat
+525,1028,"('Cimmyt, Harare', 'Zimbabwe')", invalid long/lat
+526,1029,"('Dedza', 'Zimbabwe')", invalid long/lat
+527,1040,"('Pannar', 'Zimbabwe')", invalid long/lat
+528,1041,"('Pioneer', 'Zimbabwe')", invalid long/lat
+529,1042,"('Radoma', 'Zimbabwe')", invalid long/lat
+530,1047,"('Zimbabwe', 'Zimbabwe')", invalid long/lat
+531,1052,"('Gisozi', 'Burundi')", invalid long/lat
+532,1056,"('Zacatepec, Morelos', 'Mexico')", invalid long/lat
+533,1057,"('Miacatlan', 'Mexico')", invalid long/lat
+534,1058,"('Salandhar (punjab)', 'India')", invalid long/lat
+535,1063,"('Kaniaka', 'Congo')", wrong format
+536,1074,"('Gondar', 'Ethiopia')", invalid long/lat
+537,1075,"('Quindio', 'Colombia')", invalid long/lat
+538,1076,"('Puerto Gaitan-carpoica,taluma', 'Colombia')", invalid long/lat
+539,1077,"('Kisama', 'Kenya')", invalid long/lat
+540,1078,"('Angecha', 'Ethiopia')", invalid long/lat
+541,1079,"('Ivumwe', 'Tanzania')", invalid long/lat
+542,1080,"('Mparambo', 'Burundi')", invalid long/lat
+543,1081,"('Thika', 'Kenya')", invalid long/lat
+544,1082,"('Matisi', 'Kenya')", invalid long/lat
+545,1083,"('Kutus', 'Kenya')", invalid long/lat
+546,1084,"('Kimaeti', 'Kenya')", invalid long/lat
+547,1085,"('Elgon Downs', 'Kenya')", invalid long/lat
+548,1086,"('Bumula', 'Kenya')", invalid long/lat
+549,1087,"('Bulindi', 'Uganda')", invalid long/lat
+550,1088,"('Bugiri', 'Uganda')", invalid long/lat
+551,1089,"('Nyagatare', 'Rwanda')", invalid long/lat
+552,1090,"('Kagumo', 'Kenya')", invalid long/lat
+553,1091,"('Screen House', 'Kenya')", invalid long/lat
+554,1092,"('Chitedzi', 'Malawi')", invalid long/lat
+555,1093,"('Kiteta', 'Kenya')", invalid long/lat
+556,1094,"('Kyuu', 'Kenya')", invalid long/lat
+557,1095,"('Bingu', 'Malawi')", invalid long/lat
+558,1096,"('Mpingu', 'Malawi')", invalid long/lat
+559,1097,"('Pomela', 'Malawi')", invalid long/lat
+560,1098,"('Pallisa', 'Uganda')", invalid long/lat
+561,1099,"('Rancho Guadalupe, Toluca', 'Mexico')", invalid long/lat
+562,1100,"('Mwea', 'Kenya')", invalid long/lat
+563,1102,"('Kabul', 'Afghanistan')", invalid long/lat
+564,1107,"('La Catalina', 'Colombia')", invalid long/lat
+565,1108,"('Paraguaicito', 'Colombia')", invalid long/lat
+566,1110,"('Freidenheim Valley', 'South Africa')", invalid long/lat
+567,1115,"('Kibray', 'Uzbekistan')", invalid long/lat
+568,1116,"('Chisamba', 'Zambia')", invalid long/lat
+569,1128,"('Mungushi, Hai', 'Tanzania')", invalid long/lat
+570,1129,"('Bondo', 'Kenya')", invalid long/lat
+571,1130,"('Kakamega (monsanto)', 'Kenya')", invalid long/lat
+572,1133,"('Caña Flecha', 'Colombia')", invalid long/lat
+573,1135,"('Las Cañas', 'Costa Rica')", invalid long/lat
+574,1136,"('La Máquina Caballo Blanco', 'Guatemala')", invalid long/lat
+575,1137,"('San José Pinula', 'Guatemala')", invalid long/lat
+576,1138,"('La Viña-jayanca-lambayeque', 'Peru')", invalid long/lat
+577,1139,"('Dinajpur', 'Bangladesh')", invalid long/lat
+578,1141,"('Tshibati - - - - Kibati', 'Congo')", wrong format
