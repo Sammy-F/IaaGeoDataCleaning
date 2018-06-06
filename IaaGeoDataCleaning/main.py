@@ -244,13 +244,3 @@ class GeocodeValidator:
 
 validator1 = GeocodeValidator(geoID, "NaNtblLocations.xlsx")
 validator1.run()
-#
-# validator2 = GeocodeValidator(geoID, "test2.xlsx")
-# validator2.run()
-
-# writer = ExcelWriter("NaNtblLocations.xlsx")
-# edited_locations = pd.read_excel("/Users/thytnguyen/Desktop/tblLocation.xlsx")
-# edited_locations = edited_locations.dropna(subset=["Latitude"])
-# edited_locations.to_excel(writer, 'Sheet1', index=False)
-# writer.save()
-
