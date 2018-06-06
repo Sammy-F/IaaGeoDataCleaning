@@ -50,23 +50,37 @@ class GeocodeValidator:
         """
 
         for (index, row) in self.tobeValidatedLocation.iterrows():
-            row['Location'] = parenNumRegex.sub("", row['Location'])  # removes (num) can now try API call
-            country = string.capwords(str(row["Country"]).lower())
-            location = string.capwords(str(row["Location"]).lower())
-            geocodeTarget = (location, country)
+            try:
+                row['Location'] = parenNumRegex.sub("", row['Location'])  # removes (num) can now try API call
+                country = string.capwords(str(row["Country"]).lower())
+                location = string.capwords(str(row["Location"]).lower())
+                geocodeTarget = (location, country)
 
-            lat = float(row['Latitude'])
-            long = float(row['Longitude'])
+                lat = float(row['Latitude'])
+                long = float(row['Longitude'])
 
-            print(lat)
-            print(long)
+                print(lat)
+                print(long)
 
-            location = rg.search((lat, long), mode=1)[0]
+                location = rg.get((lat, long), mode=1)
 
-            country = location['cc']
-            print(country)
+                country = location['cc']
+                print(country)
 
-            self.validateLocation(index, row, actualCountry=country, targetLoc=location)
+                try:
+                    self.validateLocation(index, row, actualCountry=country, targetLoc=location)
+                except KeyError:
+                    print("Index: " + str(index) + " lat/lon don't correspond \n")
+                    self.flaggedLocations.append(index)  # mark index in original data frame
+                    self.log['location'].append(location)
+                    self.log['index'].append(index)
+                    self.log['type'].append('distance flag')
+            except TypeError:
+                print("Index: " + str(index) + " missing country \n")
+                self.flaggedLocations.append(index)  # mark index in original data frame
+                self.log['location'].append(location)
+                self.log['index'].append(index)
+                self.log['type'].append('distance flag')
 
         self.logResults()
 
@@ -115,6 +129,7 @@ class GeocodeValidator:
         :return:
         """
         if not self.countryCodes[row['Country']] == actualCountry:
+
             print("Index: " + str(index) + " lat/lon don't correspond \n")
             self.flaggedLocations.append(index)  # mark index in original data frame
             self.log['location'].append(targetLoc)

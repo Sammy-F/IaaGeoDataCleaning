@@ -1,623 +1,598 @@
 ,index,location,type
-0,3,"('Angola', 'Angola')",mismatched country
-1,14,"('Anguil - Provincia La Pampa', 'Argentina')",mismatched country
-2,15,"('Argentina', 'Argentina')",mismatched country
-3,16,"('El Manantial', 'Argentina')",mismatched country
-4,17,"('Los Pereyras', 'Argentina')",mismatched country
-5,19,"('Zakatala, City', 'Azerbaijan')",mismatched country
-6,20,"('Dinajpur', 'Bangladesh')",mismatched country
-7,21,"('Ars, Rajbari, Dinajpur', 'Bangladesh')",mismatched country
-8,22,"('Ars. Burirhat, Rangpur', 'Bangladesh')",mismatched country
-9,23,"('Bogra', 'Bangladesh')",mismatched country
-10,25,"('Gazipur', 'Bangladesh')",mismatched country
-11,32,"('Joydebpur, Gazipur', 'Bangladesh')",mismatched country
-12,34,"('Rajbari', 'Bangladesh')",mismatched country
-13,35,"('Rars, Bari, Jamalpur', 'Bangladesh')",mismatched country
-14,36,"('Belmopan, Cardi Station', 'Belize')",mismatched country
-15,41,"('Bolivia', 'Bolivia')",mismatched country
-16,46,"('El Abra (santa Cruz)', 'Bolivia')",mismatched country
-17,47,"('El Palmar (santa Cruz)', 'Bolivia')",mismatched country
-18,49,"('Entre Rios', 'Bolivia')",mismatched country
-19,50,"('Fundacion Proinpa', 'Bolivia')",mismatched country
-20,52,"('Lomas De Arena (santa Cruz)', 'Bolivia')",mismatched country
-21,53,"('Mairana, Santa Cruz', 'Bolivia')",mismatched country
-22,54,"('Monteagudo', 'Bolivia')",mismatched country
-23,58,"('Pajonal', 'Bolivia')",mismatched country
-24,59,"('Saavedra', 'Bolivia')",mismatched country
-25,60,"('San Ignacio', 'Bolivia')",mismatched country
-26,62,"('Santa Cruz (cuatro Caminos)', 'Bolivia')",mismatched country
-27,63,"('Santa Cruz De La Sierra', 'Bolivia')",mismatched country
-28,64,"('Santa Cruz De La Sierra (el Vallecito)', 'Bolivia')",mismatched country
-29,65,"('Tarija', 'Bolivia')",mismatched country
-30,66,"('Valle Del Medio', 'Bolivia')",mismatched country
-31,67,"('Vallecitos (iboperenda)', 'Bolivia')",mismatched country
-32,69,"('Yacuiba', 'Bolivia')",mismatched country
-33,70,"('Zona Norte De Santa Cruz', 'Bolivia')",mismatched country
-34,78,"('Brazil', 'Brazil')",mismatched country
-35,79,"('Campo Largo - Pr', 'Brazil')",mismatched country
-36,82,"('Guaira', 'Brazil')",mismatched country
-37,90,"('Kazakhstan', 'Central Asia')",mismatched country
-38,97,"('Honghe', 'China')",mismatched country
-39,101,"('Mian Yang', 'China')",mismatched country
-40,107,"('Wenshan', 'China')",mismatched country
-41,109,"('Aguas Blancas', 'Colombia')",mismatched country
-42,110,"('Aguas Claras', 'Colombia')",mismatched country
-43,111,"('Andremoni', 'Colombia')",mismatched country
-44,112,"('Arborates', 'Colombia')",mismatched country
-45,113,"('Arguello Bajo, Yacuanquer', 'Colombia')",mismatched country
-46,114,"('Atuncela, Dagua', 'Colombia')",mismatched country
-47,115,"('Bucaramanga', 'Colombia')",mismatched country
-48,116,"('Bucaramanga, Pinchote', 'Colombia')",mismatched country
-49,118,"('Buga, Media Canoa', 'Colombia')",mismatched country
-50,119,"('Caicedonia', 'Colombia')",mismatched country
-51,120,"('Caldono', 'Colombia')",mismatched country
-52,122,"('Campo Alegre, Huila', 'Colombia')",mismatched country
-53,123,"('Ca╤a Flecha', 'Colombia')",mismatched country
-54,124,"('Carmen De Bolivar', 'Colombia')",mismatched country
-55,125,"('Cerete, Cordoba', 'Colombia')",mismatched country
-56,126,"('Cerrito', 'Colombia')",mismatched country
-57,127,"('Cienega De Oro', 'Colombia')",mismatched country
-58,128,"('Ciudad Bolivar', 'Colombia')",mismatched country
-59,129,"('Colombia', 'Colombia')",mismatched country
-60,130,"('Cordoba', 'Colombia')",mismatched country
-61,131,"('Corozal', 'Colombia')",mismatched country
-62,132,"('Darien, Valle Del Cauca', 'Colombia')",mismatched country
-63,133,"('Duitama', 'Colombia')",mismatched country
-64,135,"('El Espinal, Tolima', 'Colombia')",mismatched country
-65,136,"('El Libano', 'Colombia')",mismatched country
-66,137,"('El Naranjal', 'Colombia')",mismatched country
-67,138,"('El Rosario', 'Colombia')",mismatched country
-68,139,"('El Tambo, Valle Del Cauca', 'Colombia')",mismatched country
-69,140,"('El Tomate', 'Colombia')",mismatched country
-70,141,"('Fuente De Oro, Granda', 'Colombia')",mismatched country
-71,142,"('Garzon, Huila', 'Colombia')",mismatched country
-72,143,"('Granada', 'Colombia')",mismatched country
-73,144,"('Guadalajara De Buga', 'Colombia')",mismatched country
-74,145,"('Independencia, Caldono', 'Colombia')",mismatched country
-75,146,"('La Catalina, Pereira', 'Colombia')",mismatched country
-76,147,"('La Cubillera, Granada', 'Colombia')",mismatched country
-77,148,"('La Palomera', 'Colombia')",mismatched country
-78,149,"('La Trocha 12, Granda', 'Colombia')",mismatched country
-79,151,"('La Union, Corcega', 'Colombia')",mismatched country
-80,152,"('Lejania, Granada', 'Colombia')",mismatched country
-81,153,"('Matazul', 'Colombia')",mismatched country
-82,154,"('Menegua', 'Colombia')",mismatched country
-83,155,"('Mondomo, Santander', 'Colombia')",mismatched country
-84,156,"('Monteria', 'Colombia')",mismatched country
-85,157,"('Neiva, Huila', 'Colombia')",mismatched country
-86,158,"('Obando, Molina', 'Colombia')",mismatched country
-87,160,"('Paraguaicito, Armenia', 'Colombia')",mismatched country
-88,161,"('Pelaya-cesar (aguachica)', 'Colombia')",mismatched country
-89,162,"('Pereira', 'Colombia')",mismatched country
-90,163,"('Piendamo', 'Colombia')",mismatched country
-91,164,"('Procampo', 'Colombia')",mismatched country
-92,165,"('Puerto Lopez', 'Colombia')",mismatched country
-93,166,"('Puerto Lopez', 'Colombia')",mismatched country
-94,167,"('Quindio, Montenegro', 'Colombia')",mismatched country
-95,168,"('Rivera, Huila', 'Colombia')",mismatched country
-96,169,"('Roldanillo', 'Colombia')",mismatched country
-97,170,"('Sabana De Torres, Santander', 'Colombia')",mismatched country
-98,171,"('Sahagu', 'Colombia')",mismatched country
-99,172,"('San Antonio', 'Colombia')",mismatched country
-100,173,"('San Barreto', 'Colombia')",mismatched country
-101,174,"('San Francisco, Sandona', 'Colombia')",mismatched country
-102,175,"('San Ignacio, Granada', 'Colombia')",mismatched country
-103,176,"('San Pedro De Uraba', 'Colombia')",mismatched country
-104,177,"('San Pelayo', 'Colombia')",mismatched country
-105,178,"('San Rafael, Consaca', 'Colombia')",mismatched country
-106,179,"('Sandona, Narino, Fidar', 'Colombia')",mismatched country
-107,180,"('Santa Helena', 'Colombia')",mismatched country
-108,181,"('Santa Lucia', 'Colombia')",mismatched country
-109,182,"('Santander De Quilichao', 'Colombia')",mismatched country
-110,183,"('Segovia', 'Colombia')",mismatched country
-111,184,"('Semivalle', 'Colombia')",mismatched country
-112,185,"('Sincelejo', 'Colombia')",mismatched country
-113,186,"('Taluma', 'Colombia')",mismatched country
-114,187,"('Tierra Alta', 'Colombia')",mismatched country
-115,188,"('Tulenapa', 'Colombia')",mismatched country
-116,189,"('Tunja', 'Colombia')",mismatched country
-117,192,"('Turipana', 'Colombia')",mismatched country
-118,193,"('Turipana', 'Colombia')",mismatched country
-119,194,"('Valle De Magdalena', 'Colombia')",mismatched country
-120,195,"('Valle De Magdalena', 'Colombia')",mismatched country
-121,196,"('Valle De Magdalena', 'Colombia')",mismatched country
-122,197,"('Valle De Magdalena', 'Colombia')",mismatched country
-123,198,"('Valle Del Cauca', 'Colombia')",mismatched country
-124,199,"('Venecia', 'Colombia')",mismatched country
-125,200,"('Villavicencio', 'Colombia')",mismatched country
-126,201,"('Villavo', 'Colombia')",mismatched country
-127,202,"('Yotoco-valle Del Cauca', 'Colombia')",mismatched country
-128,203,"('Congo', 'Congo')",mismatched country
-129,205,"('Tshibati', 'Congo')",mismatched country
-130,207,"('Costa Rica', 'Costa Rica')",mismatched country
-131,208,"('El Aguila, Pejibaye', 'Costa Rica')",mismatched country
-132,209,"('El Parque, Los Chiles', 'Costa Rica')",mismatched country
-133,210,"('El Progreso, Pejibaye', 'Costa Rica')",mismatched country
-134,211,"('Guagaral', 'Costa Rica')",mismatched country
-135,213,"('Las Ca╤as', 'Costa Rica')",mismatched country
-136,214,"('Pejibaye De Perez Zeledon', 'Costa Rica')",mismatched country
-137,216,"('Upala', 'Costa Rica')",mismatched country
-138,217,"('Upala Pueblo Nuevo', 'Costa Rica')",mismatched country
-139,218,"('Veracruz, Pejibaye', 'Costa Rica')",mismatched country
-140,219,"('Badikaha', ""Cote D'ivoire"")",mismatched country
-141,220,"('Bouake', ""Cote D'ivoire"")",mismatched country
-142,221,"('Ferkessedougou', ""Cote D'ivoire"")",mismatched country
-143,222,"('Sinematiali', ""Cote D'ivoire"")",mismatched country
-144,223,"('Touba', ""Cote D'ivoire"")",mismatched country
-145,224,"('Warda/adrao-mbe', ""Cote D'ivoire"")",mismatched country
-146,228,"('Comuna San Rafael, Peninsula Sta Elena', 'Ecuador')",mismatched country
-147,229,"('Ecuador', 'Ecuador')",mismatched country
-148,230,"('Fca. Exp. Josefina Balzar', 'Ecuador')",mismatched country
-149,231,"('La Virginia Quevedo', 'Ecuador')",mismatched country
-150,232,"('Lodana', 'Ecuador')",mismatched country
-151,234,"('Organos', 'Ecuador')",mismatched country
-152,236,"('Pindal', 'Ecuador')",mismatched country
-153,240,"('Giza', 'Egypt')",mismatched country
-154,245,"('Apastepeque', 'El Salvador')",mismatched country
-155,246,"('Armenia', 'El Salvador')",mismatched country
-156,247,"('Barrio Nuevo, La Paz', 'El Salvador')",mismatched country
-157,248,"('Chalchahuapa', 'El Salvador')",mismatched country
-158,249,"('Cuhisnuat', 'El Salvador')",mismatched country
-159,250,"('El Coyalito', 'El Salvador')",mismatched country
-160,251,"('El Pepito, Concep., Chalate', 'El Salvador')",mismatched country
-161,252,"('Jiquilisco', 'El Salvador')",mismatched country
-162,253,"('Jocoro, Morazan', 'El Salvador')",mismatched country
-163,254,"('Jucuapa, Usulutan', 'El Salvador')",mismatched country
-164,255,"('La Libertad', 'El Salvador')",mismatched country
-165,256,"('Lomas De Santiago', 'El Salvador')",mismatched country
-166,257,"('Los Cipreses, Conchagua, La Union', 'El Salvador')",mismatched country
-167,258,"('Nacimiento, La Union', 'El Salvador')",mismatched country
-168,259,"('Nahuilingo', 'El Salvador')",mismatched country
-169,260,"('Nueva Concepcion', 'El Salvador')",mismatched country
-170,261,"('Quelepa, San Miguel', 'El Salvador')",mismatched country
-171,262,"('San Andres', 'El Salvador')",mismatched country
-172,263,"('San Andres (sb)', 'El Salvador')",mismatched country
-173,264,"('San Mauricio', 'El Salvador')",mismatched country
-174,265,"('San Pedro Puxtla, Ahuachapan', 'El Salvador')",mismatched country
-175,266,"('San Vicente', 'El Salvador')",mismatched country
-176,268,"('Santa Cruz Porrillo', 'El Salvador')",mismatched country
-177,270,"('Suchitoto, Cuscatlan', 'El Salvador')",mismatched country
-178,271,"('Tenancingo', 'El Salvador')",mismatched country
-179,272,"('Uluazapa, La Union', 'El Salvador')",mismatched country
-180,275,"('Pontevedra', 'España')",mismatched country
-181,284,"('Haramaya', 'Ethiopia')",mismatched country
-182,287,"('Kitale-ws', 'Ethiopia')",mismatched country
-183,294,"('Nazret', 'Ethiopia')",mismatched country
-184,296,"('Ws', 'Ethiopia')",mismatched country
-185,298,"('Dobuleni Research Station', 'Fiji')",mismatched country
-186,299,"('Koronnia Research Station', 'Fiji')",mismatched country
-187,300,"('Legalega Research Station', 'Fiji')",mismatched country
-188,301,"('Sigatoka Research Station', 'Fiji')",mismatched country
-189,302,"('Tserovani', 'Georgia')",mismatched country
-190,309,"('Tamale', 'Ghana')",mismatched country
-191,313,"('Caballo Blanco, Retalhuleu', 'Guatemala')",mismatched country
-192,316,"('El Ovejero, Jutiapa', 'Guatemala')",mismatched country
-193,317,"('Estanzuela', 'Guatemala')",mismatched country
-194,318,"('Finca, Las Vegas Tequisate.', 'Guatemala')",mismatched country
-195,319,"('Isidro Avarez', 'Guatemala')",mismatched country
-196,321,"('La Flecha', 'Guatemala')",mismatched country
-197,322,"('La Maquina', 'Guatemala')",mismatched country
-198,323,"('La M┴quina Caballo Blanco', 'Guatemala')",mismatched country
-199,324,"('La Maquina, Linea A5', 'Guatemala')",mismatched country
-200,325,"('La Maquina, Tulate', 'Guatemala')",mismatched country
-201,326,"('Las Monjas', 'Guatemala')",mismatched country
-202,328,"('Monjas, Jalapa', 'Guatemala')",mismatched country
-203,329,"('Nueva Concepcion', 'Guatemala')",mismatched country
-204,330,"('Ovejero, Jutiapa', 'Guatemala')",mismatched country
-205,331,"('Quesada, Jutiapa', 'Guatemala')",mismatched country
-206,332,"('Salam B. V.', 'Guatemala')",mismatched country
-207,333,"('San Jos╔ Pinula', 'Guatemala')",mismatched country
-208,334,"('San Pedro Pinula, Jalapa', 'Guatemala')",mismatched country
-209,335,"('Sto Domingo', 'Guatemala')",mismatched country
-210,338,"('Zacapa', 'Guatemala')",mismatched country
-211,340,"('Chantilly', 'Haiti')",mismatched country
-212,342,"('Karoman, Lavallee', 'Haiti')",mismatched country
-213,344,"('Nan- Jn Pierre, Cap-rouge', 'Haiti')",mismatched country
-214,345,"('Candelaria, Lempira', 'Honduras')",mismatched country
-215,346,"('Catacamas, Olancho', 'Honduras')",mismatched country
-216,348,"('Comayagua, E.e. Playitas', 'Honduras')",mismatched country
-217,350,"('El Guaco Yorito, Yoro', 'Honduras')",mismatched country
-218,351,"('El Pital, Atlantida', 'Honduras')",mismatched country
-219,353,"('Jutiquile, Olancho', 'Honduras')",mismatched country
-220,356,"('Litoral Atlantico', 'Honduras')",mismatched country
-221,357,"('Luquigue Yorito, Yoro', 'Honduras')",mismatched country
-222,358,"('Mina Handa (yorito Yoco)', 'Honduras')",mismatched country
-223,359,"('Obraje, Danli', 'Honduras')",mismatched country
-224,361,"('Pata Stera (yorito Yoco)', 'Honduras')",mismatched country
-225,362,"('Playita', 'Honduras')",mismatched country
-226,363,"('Potrerillos, Olancho', 'Honduras')",mismatched country
-227,364,"('Rio Arriba Yorito, Yoro', 'Honduras')",mismatched country
-228,365,"('San Lucas, El Paraiso', 'Honduras')",mismatched country
-229,366,"('San Pedro De Catacamas, Olancho', 'Honduras')",mismatched country
-230,368,"('Yoro, El Pate', 'Honduras')",mismatched country
-231,369,"('Yoro, Morazan', 'Honduras')",mismatched country
-232,372,"('Amberpet', 'India')",mismatched country
-233,378,"('Bahraich, Crop Research Station', 'India')",mismatched country
-234,384,"('Belipar, Gorakhpur, U.p.', 'India')",mismatched country
-235,385,"('Bihar', 'India')",mismatched country
-236,391,"('Dholi', 'India')",mismatched country
-237,392,"('Dmr I.a.r.i.', 'India')",mismatched country
-238,393,"('Dohad', 'India')",mismatched country
-239,395,"('Godhsa Gaujasat', 'India')",mismatched country
-240,397,"('India', 'India')",mismatched country
-241,406,"('Khadbrabhra', 'India')",mismatched country
-242,407,"('Khedbrahma', 'India')",mismatched country
-243,411,"('Messina', 'India')",mismatched country
-244,412,"('Muzafferpur', 'India')",mismatched country
-245,413,"('New Delhi', 'India')",mismatched country
-246,417,"('Pantnagar', 'India')",mismatched country
-247,418,"('Parbhani', 'India')",mismatched country
-248,419,"('Poonch', 'India')",mismatched country
-249,420,"('Prabhakar Reddy', 'India')",mismatched country
-250,421,"('Probhakor', 'India')",mismatched country
-251,423,"('Pusa', 'India')",mismatched country
-252,424,"('R&d (pachora).', 'India')",mismatched country
-253,425,"('R&d (wadadhe).', 'India')",mismatched country
-254,427,"('Ranchi', 'India')",mismatched country
-255,428,"('Rau Pusa (bihar)', 'India')",mismatched country
-256,429,"('Rayalkole', 'India')",mismatched country
-257,430,"('Samastipur', 'India')",mismatched country
-258,433,"('Srinagar, K.d. Research Station', 'India')",mismatched country
-259,438,"('Weerasak Doungjan', 'India')",mismatched country
-260,440,"('Gowa S. Sulawesi', 'Indonesia')",mismatched country
-261,441,"('Hulu Sungai Selatan', 'Indonesia')",mismatched country
-262,442,"('Jambegede', 'Indonesia')",mismatched country
-263,446,"('Naibonat', 'Indonesia')",mismatched country
-264,447,"('Natar, Lampung', 'Indonesia')",mismatched country
-265,448,"('Probolinggo', 'Indonesia')",mismatched country
-266,449,"('Takalar, South Sulawesi', 'Indonesia')",mismatched country
-267,450,"('Yogyakarta', 'Indonesia')",mismatched country
-268,451,"('Agricultural Research Station Of Gorgan', 'Iran')",mismatched country
-269,452,"('Safiabad', 'Iran')",mismatched country
-270,453,"('Ai - Latifyia', 'Iraq')",mismatched country
-271,455,"(""Bonghdad, Al_mada'en"", 'Iraq')",mismatched country
-272,456,"('Tuwaitha Baghdad', 'Iraq')",mismatched country
-273,457,"('Central Asia', 'Kazakstan')",mismatched country
-274,458,"('Alupe', 'Kenya')",mismatched country
-275,459,"('Baobab', 'Kenya')",mismatched country
-276,473,"('K.t.i', 'Kenya')",mismatched country
-277,476,"('Kari - Embu', 'Kenya')",mismatched country
-278,477,"('Karurina', 'Kenya')",mismatched country
-279,487,"('Kitale Syn Ii (ethiopia)', 'Kenya')",mismatched country
-280,502,"('Tanseed', 'Kenya')",mismatched country
-281,504,"('Wanbugu', 'Kenya')",mismatched country
-282,506,"('Western Seeds', 'Kenya')",mismatched country
-283,508,"('Lesotho', 'Lesotho')",mismatched country
-284,518,"('Baka Research Station', 'Malawi')",mismatched country
-285,528,"('Mphimbi', 'Malawi')",mismatched country
-286,530,"('Not Identified', 'Malawi')",mismatched country
-287,535,"('Katibougou', 'Mali')",mismatched country
-288,536,"('Kolombada', 'Mali')",mismatched country
-289,537,"('Rue Mohamed', 'Mali')",mismatched country
-290,539,"('Acatic, Jalisco', 'Mexico')",mismatched country
-291,540,"('Acayucan, Veracruz', 'Mexico')",mismatched country
-292,542,"('Agua Fria', 'Mexico')",mismatched country
-293,550,"('Apaseo El Guadalupe, Guanajuato', 'Mexico')",mismatched country
-294,551,"('Atlacomulco', 'Mexico')",mismatched country
-295,552,"('Axochio, San Andres Tuxtla, Veracruz', 'Mexico')",mismatched country
-296,553,"('Buenavista Penjamo, Guanajuato', 'Mexico')",mismatched country
-297,558,"('Cardel', 'Mexico')",mismatched country
-298,562,"('Champoton, Campeche', 'Mexico')",mismatched country
-299,565,"('Chiapas', 'Mexico')",mismatched country
-300,566,"('Chorrerones', 'Mexico')",mismatched country
-301,573,"('Colonia Del Turen', 'Mexico')",mismatched country
-302,574,"('Coquimatlan', 'Mexico')",mismatched country
-303,575,"('Corralejo De Hidalgo, Guanajuato', 'Mexico')",mismatched country
-304,576,"('Cotaxla', 'Mexico')",mismatched country
-305,578,"('Coyoltepec, San Andres Tuxtla, Veracruz', 'Mexico')",mismatched country
-306,588,"('Edzna, Campeche', 'Mexico')",mismatched country
-307,589,"('Ejido 1ro De Mayo', 'Mexico')",mismatched country
-308,595,"('El Zapote, Tonatico', 'Mexico')",mismatched country
-309,598,"('Guadalajara, Jalisco', 'Mexico')",mismatched country
-310,604,"('Huejutla De Reyes, Hidalgo', 'Mexico')",mismatched country
-311,605,"('Huimanguillo', 'Mexico')",mismatched country
-312,606,"('Ignacio De La Llave, Veracruz', 'Mexico')",mismatched country
-313,609,"('Isla, Veracruz', 'Mexico')",mismatched country
-314,612,"('Jalisco, Jalisco', 'Mexico')",mismatched country
-315,614,"('Jerico Chiapas', 'Mexico')",mismatched country
-316,615,"('Jesus Maria', 'Mexico')",mismatched country
-317,619,"('La Barca, Jalisco', 'Mexico')",mismatched country
-318,620,"('La Cantera, Comonfort, Guanajuato', 'Mexico')",mismatched country
-319,621,"('La Cruz De Elota, Sinaloa', 'Mexico')",mismatched country
-320,622,"('La Huerta, Jalisco', 'Mexico')",mismatched country
-321,625,"('La Torrecilla, Tlalixcoyan, Veracruz', 'Mexico')",mismatched country
-322,630,"('Mata De Agua', 'Mexico')",mismatched country
-323,635,"('Nayarit', 'Mexico')",mismatched country
-324,640,"('Ocuituco, Morelos', 'Mexico')",mismatched country
-325,641,"('Ojo De Agua, Santiago Tuxtla, Veracruz', 'Mexico')",mismatched country
-326,642,"('Ojo De Agua, Tonatico', 'Mexico')",mismatched country
-327,646,"('Penjamo, Guanajuato', 'Mexico')",mismatched country
-328,654,"('Quila, Sinaloa', 'Mexico')",mismatched country
-329,656,"('Rincon De Parangueo, Guanajuato', 'Mexico')",mismatched country
-330,660,"('San Andres Tuxtla', 'Mexico')",mismatched country
-331,665,"('San Juan De Abajo', 'Mexico')",mismatched country
-332,669,"('San Miguel Allende, Guanajuato', 'Mexico')",mismatched country
-333,671,"('San Pedro Lagunillas, Nayarit', 'Mexico')",mismatched country
-334,678,"('Tamarindos, Veracruz', 'Mexico')",mismatched country
-335,679,"('Tamaulipas', 'Mexico')",mismatched country
-336,682,"('Tepalcingo, Morelos', 'Mexico')",mismatched country
-337,684,"('Tlacomulco', 'Mexico')",mismatched country
-338,688,"('Tlalixcoyan', 'Mexico')",mismatched country
-339,689,"('Tlaltizapan', 'Mexico')",mismatched country
-340,697,"('Uxmal', 'Mexico')",mismatched country
-341,698,"('Valle De Bravo, Estado De Mexico', 'Mexico')",mismatched country
-342,699,"('Valle De Culiacan', 'Mexico')",mismatched country
-343,701,"('Valle Del Fuerte, Sinaloa', 'Mexico')",mismatched country
-344,704,"('Veracrucito', 'Mexico')",mismatched country
-345,707,"('Villa Hidalgo, Nayarit', 'Mexico')",mismatched country
-346,708,"('Villa Verde, Guanajuato', 'Mexico')",mismatched country
-347,711,"('Xalostoc, Morelos', 'Mexico')",mismatched country
-348,712,"('Xocoyucan, Tlaxcala', 'Mexico')",mismatched country
-349,716,"('Khemiszemamra', 'Morocco')",mismatched country
-350,718,"('Angora', 'Mozambique')",mismatched country
-351,720,"('Ex-instituto Nacional De Investigacion Agraria', 'Mozambique')",mismatched country
-352,725,"('Morrumbala-zambezia', 'Mozambique')",mismatched country
-353,726,"('Mozambique', 'Mozambique')",mismatched country
-354,727,"('Mutarara', 'Mozambique')",mismatched country
-355,731,"('Ntengo Nucodgi Augoiris', 'Mozambique')",mismatched country
-356,732,"('Ntengo Umadzi- Angoria', 'Mozambique')",mismatched country
-357,733,"('Semol', 'Mozambique')",mismatched country
-358,736,"('Ussudenga', 'Mozambique')",mismatched country
-359,737,"('Naung Mon', 'Myanmar')",mismatched country
-360,738,"('Sea', 'Myanmar')",mismatched country
-361,739,"('Taryaw', 'Myanmar')",mismatched country
-362,740,"('Tatkan', 'Myanmar')",mismatched country
-363,741,"('Tatkone', 'Myanmar')",mismatched country
-364,742,"('Zaloke Research Farm', 'Myanmar')",mismatched country
-365,743,"('Aungban, Burma', 'Myanmar (burma)')",mismatched country
-366,744,"('Yezin, Burma', 'Myanmar (burma)')",mismatched country
-367,746,"('Mitkomst Research Station', 'Namibia')",mismatched country
-368,748,"('Hardinath', 'Nepal')",mismatched country
-369,749,"('Kabre', 'Nepal')",mismatched country
-370,751,"('Lumle', 'Nepal')",mismatched country
-371,752,"('Pakhribas', 'Nepal')",mismatched country
-372,754,"('Parwanipur', 'Nepal')",mismatched country
-373,757,"('Campos Azules', 'Nicaragua')",mismatched country
-374,758,"('Campos Azules, Masatepe', 'Nicaragua')",mismatched country
-375,759,"('Carazo', 'Nicaragua')",mismatched country
-376,761,"('Chontales', 'Nicaragua')",mismatched country
-377,762,"('Chontales, Tamboral Sur', 'Nicaragua')",mismatched country
-378,763,"('Condega, Esteli', 'Nicaragua')",mismatched country
-379,764,"('El Areno, El Rama', 'Nicaragua')",mismatched country
-380,765,"('El Jicaro, Nueva Segovia', 'Nicaragua')",mismatched country
-381,766,"('El Pellizco, Chinandega', 'Nicaragua')",mismatched country
-382,767,"('Jalapa', 'Nicaragua')",mismatched country
-383,768,"('La Dal═a', 'Nicaragua')",mismatched country
-384,769,"('La Presa', 'Nicaragua')",mismatched country
-385,770,"('La Trinidad, Esteli', 'Nicaragua')",mismatched country
-386,771,"('Las Cruces Carazo', 'Nicaragua')",mismatched country
-387,772,"('Las Piedras,nueva Segovia', 'Nicaragua')",mismatched country
-388,773,"('Llano Redondo', 'Nicaragua')",mismatched country
-389,775,"('Mazatepec', 'Nicaragua')",mismatched country
-390,776,"('Melchorita, San Carlos', 'Nicaragua')",mismatched country
-391,777,"('Nindiri, Mazaya', 'Nicaragua')",mismatched country
-392,778,"('Paz De Carazo', 'Nicaragua')",mismatched country
-393,779,"('Pueblo Nuevo', 'Nicaragua')",mismatched country
-394,780,"('San Bartolo', 'Nicaragua')",mismatched country
-395,781,"('San Benito, Chinandega', 'Nicaragua')",mismatched country
-396,783,"('Santa Cruz, Esteli', 'Nicaragua')",mismatched country
-397,784,"('Santa Juana, Nindiri', 'Nicaragua')",mismatched country
-398,786,"('Baganda', 'Nigeria')",mismatched country
-399,794,"('Saminaka Nig', 'Nigeria')",mismatched country
-400,795,"('Temti Jos', 'Nigeria')",mismatched country
-401,799,"('Ari, D,i. Kham', 'Pakistan')",mismatched country
-402,805,"('Azuer', 'Panama')",mismatched country
-403,813,"('Capitan Miranda', 'Paraguay')",mismatched country
-404,816,"('San Juan Bautista', 'Paraguay')",mismatched country
-405,818,"('Yjhovy', 'Paraguay')",mismatched country
-406,819,"('Ascope', 'Peru')",mismatched country
-407,820,"('Aucaloma', 'Peru')",mismatched country
-408,821,"('E.e. El Porvenir, Calzada Moyobamba', 'Peru')",mismatched country
-409,822,"('E.e. Pucallpa', 'Peru')",mismatched country
-410,824,"('Huaral', 'Peru')",mismatched country
-411,825,"('Humay - Pisco', 'Peru')",mismatched country
-412,827,"('Juan Guerra', 'Peru')",mismatched country
-413,828,"('La Vi╤a-jayanca-lambayeque', 'Peru')",mismatched country
-414,829,"('Lambayeque', 'Peru')",mismatched country
-415,830,"('Lima', 'Peru')",mismatched country
-416,831,"('Montupe 99', 'Peru')",mismatched country
-417,832,"('Muy Finca Mochumi Lambayeque', 'Peru')",mismatched country
-418,833,"('Pachacamac', 'Peru')",mismatched country
-419,834,"('Peru', 'Peru')",mismatched country
-420,835,"('Pucallpa', 'Peru')",mismatched country
-421,836,"('Pucallpa, San Fernando, Sa', 'Peru')",mismatched country
-422,837,"('Rioja', 'Peru')",mismatched country
-423,838,"('Rioja, San Fernando, Sa', 'Peru')",mismatched country
-424,839,"('Victoria 99', 'Peru')",mismatched country
-425,840,"('Viru La Libertad', 'Peru')",mismatched country
-426,841,"('Vista Florida', 'Peru')",mismatched country
-427,842,"('Vista Florida Chiclayo', 'Peru')",mismatched country
-428,843,"('Vista Florida Chiclayo', 'Peru')",mismatched country
-429,844,"('Vista Florida Chiclayo', 'Peru')",mismatched country
-430,845,"('Yurimagua', 'Peru')",mismatched country
-431,846,"('Baybay', 'Philippines')",mismatched country
-432,849,"('Ipb Experiment Station', 'Philippines')",mismatched country
-433,850,"('Kabacan', 'Philippines')",mismatched country
-434,851,"('Kabacan, Cotabato', 'Philippines')",mismatched country
-435,853,"('San Felipe, Ilagan, Isabela.', 'Philippines')",mismatched country
-436,858,"('Burgershall', 'South Africa')",mismatched country
-437,860,"('Friedenheim Valley', 'South Africa')",mismatched country
-438,861,"('Linkseed', 'South Africa')",mismatched country
-439,862,"('Mpumalanga', 'South Africa')",mismatched country
-440,864,"('North West Province', 'South Africa')",mismatched country
-441,866,"('Petit', 'South Africa')",mismatched country
-442,867,"('Tshiombo', 'South Africa')",mismatched country
-443,869,"('Betlehem', 'South Africa Rep.')",mismatched country
-444,870,"('Cedara', 'South Africa Rep.')",mismatched country
-445,871,"('Ezolimo', 'South Africa Rep.')",mismatched country
-446,872,"('Friedenhei', 'South Africa Rep.')",mismatched country
-447,873,"('Greytown', 'South Africa Rep.')",mismatched country
-448,874,"('Greytown', 'South Africa Rep.')",mismatched country
-449,875,"('Lwamongo', 'South Africa Rep.')",mismatched country
-450,876,"('Nelspruit', 'South Africa Rep.')",mismatched country
-451,878,"('Setlagole', 'South Africa Rep.')",mismatched country
-452,879,"('Viljoenskroon', 'South Africa Rep.')",mismatched country
-453,882,"('Paramaribo', 'Surinam')",mismatched country
-454,884,"('Les', 'Swaziland')",mismatched country
-455,885,"('Lowveld, Brabend', 'Swaziland')",mismatched country
-456,890,"('Shewula', 'Swaziland')",mismatched country
-457,891,"('Swaziland', 'Swaziland')",mismatched country
-458,892,"('Deir Al Zoor', 'Syria')",mismatched country
-459,893,"('Raqqa', 'Syria')",mismatched country
-460,895,"('Afsf-arusha', 'Tanzania')",mismatched country
-461,896,"('Arusha Seed Farm Afsf', 'Tanzania')",mismatched country
-462,897,"('Arusha Tan', 'Tanzania')",mismatched country
-463,898,"('Cholima', 'Tanzania')",mismatched country
-464,899,"('Dabaga Uyole', 'Tanzania')",mismatched country
-465,900,"('Dakawa', 'Tanzania')",mismatched country
-466,901,"('Ilonga', 'Tanzania')",mismatched country
-467,902,"('Inyala', 'Tanzania')",mismatched country
-468,903,"('Katrin', 'Tanzania')",mismatched country
-469,904,"('Katrin1', 'Tanzania')",mismatched country
-470,905,"('Katrin2', 'Tanzania')",mismatched country
-471,906,"('Katrin-ifakara', 'Tanzania')",mismatched country
-472,907,"('Lambo', 'Tanzania')",mismatched country
-473,908,"('Maruku', 'Tanzania')",mismatched country
-474,909,"('Mbulumbulu', 'Tanzania')",mismatched country
-475,910,"('Mlingano', 'Tanzania')",mismatched country
-476,911,"('Monduli', 'Tanzania')",mismatched country
-477,912,"('Morogoro', 'Tanzania')",mismatched country
-478,913,"('Mwanza - Region', 'Tanzania')",mismatched country
-479,914,"('Ngaramtoni', 'Tanzania')",mismatched country
-480,915,"('Ngaramtoni-arusha', 'Tanzania')",mismatched country
-481,916,"('Nm', 'Tanzania')",mismatched country
-482,917,"('Selian', 'Tanzania')",mismatched country
-483,918,"('Tabora', 'Tanzania')",mismatched country
-484,919,"('Tanzania', 'Tanzania')",mismatched country
-485,920,"('Tumbi-tabora', 'Tanzania')",mismatched country
-486,921,"('Ukiriguru', 'Tanzania')",mismatched country
-487,922,"('Uyole', 'Tanzania')",mismatched country
-488,923,"('Weruweru', 'Tanzania')",mismatched country
-489,929,"('Sawankalok Sukhotha', 'Thailand')",mismatched country
-490,931,"('Tak Fa', 'Thailand')",mismatched country
-491,933,"('El Carmen', 'Trinidad Y Tobago')",mismatched country
-492,934,"('Goldsborough', 'Trinidad Y Tobago')",mismatched country
-493,935,"(""Louis D'or"", 'Trinidad Y Tobago')",mismatched country
-494,937,"('Aydin', 'Turkey')",mismatched country
-495,938,"('Anny Settl', 'Turkmenistan')",mismatched country
-496,939,"('Bulegeni', 'Uganda')",mismatched country
-497,940,"('Bulengeni', 'Uganda')",mismatched country
-498,945,"('Likonde,songea', 'Uganda')",mismatched country
-499,947,"('Msk', 'Uganda')",mismatched country
-500,952,"('Uganda', 'Uganda')",mismatched country
-501,953,"('Barnum Mn', 'United States Of America')",mismatched country
-502,954,"('College Station, Texas', 'United States Of America')",mismatched country
-503,955,"('Kenedy, Tx.', 'United States Of America')",mismatched country
-504,956,"('Sn Antonio', 'United States Of America')",mismatched country
-505,957,"('Tifton, Georgia', 'United States Of America')",mismatched country
-506,958,"('Tifton, Georgia', 'United States Of America')",mismatched country
-507,959,"('Weslaco, Texas', 'United States Of America')",mismatched country
-508,962,"('Agua Blanca, Portuguesa', 'Venezuela')",mismatched country
-509,963,"('Aragua (ceniap)', 'Venezuela')",mismatched country
-510,964,"('Araure (acarigua)', 'Venezuela')",mismatched country
-511,965,"('Araure (portuguesa)', 'Venezuela')",mismatched country
-512,966,"('Carretera O, Turen, Portuguesa', 'Venezuela')",mismatched country
-513,967,"('Centro Norte', 'Venezuela')",mismatched country
-514,968,"('Colonia Agricola De Turen', 'Venezuela')",mismatched country
-515,969,"('El Diamante, Yaritagua', 'Venezuela')",mismatched country
-516,970,"('El Playon', 'Venezuela')",mismatched country
-517,971,"('El Socorro', 'Venezuela')",mismatched country
-518,972,"('Guarico', 'Venezuela')",mismatched country
-519,973,"('La Lucia', 'Venezuela')",mismatched country
-520,974,"('Las Caramas', 'Venezuela')",mismatched country
-521,977,"('Las Guacamayas, El Sombrero', 'Venezuela')",mismatched country
-522,978,"('Los Guayos, Carabobo State', 'Venezuela')",mismatched country
-523,979,"('Manzanita', 'Venezuela')",mismatched country
-524,981,"('Pascual Valetta, Laguna De Piedra', 'Venezuela')",mismatched country
-525,982,"('Punta Gorda', 'Venezuela')",mismatched country
-526,984,"('Santa Barbara', 'Venezuela')",mismatched country
-527,985,"('Semillas Aragua', 'Venezuela')",mismatched country
-528,986,"('Tocoron', 'Venezuela')",mismatched country
-529,987,"('Tocoron, Estado Aragua', 'Venezuela')",mismatched country
-530,988,"('Tucupido', 'Venezuela')",mismatched country
-531,989,"('Turen', 'Venezuela')",mismatched country
-532,990,"('Unidad Agricola De Turen', 'Venezuela')",mismatched country
-533,991,"('Venezuela', 'Venezuela')",mismatched country
-534,992,"('Villa De Cura, Aragua', 'Venezuela')",mismatched country
-535,993,"('Ars, Amberpet, Hyd.', 'Vietnam')",mismatched country
-536,994,"('Binh Chanh Dictrict - Ho Chi Minh City', 'Vietnam')",mismatched country
-537,995,"('Binh Duong', 'Vietnam')",mismatched country
-538,997,"('Dan Phuong Hatay', 'Vietnam')",mismatched country
-539,998,"('Danphing Dist.', 'Vietnam')",mismatched country
-540,999,"('Duc Hoa District, Long An Province', 'Vietnam')",mismatched country
-541,1000,"('Gorakhpur', 'Vietnam')",mismatched country
-542,1004,"('Tay Ninh Province', 'Vietnam')",mismatched country
-543,1005,"('Gandajika', 'Zaire')",mismatched country
-544,1006,"('Mvuazi', 'Zaire')",mismatched country
-545,1007,"('Chisamba, Golden Valley', 'Zambia')",mismatched country
-546,1010,"('Kutumani', 'Zambia')",mismatched country
-547,1011,"('Lyempe', 'Zambia')",mismatched country
-548,1012,"('Magobo', 'Zambia')",mismatched country
-549,1022,"('Zambia', 'Zambia')",mismatched country
-550,1028,"('Cimmyt, Harare', 'Zimbabwe')",mismatched country
-551,1029,"('Dedza', 'Zimbabwe')",mismatched country
-552,1040,"('Pannar', 'Zimbabwe')",mismatched country
-553,1041,"('Pioneer', 'Zimbabwe')",mismatched country
-554,1042,"('Radoma', 'Zimbabwe')",mismatched country
-555,1047,"('Zimbabwe', 'Zimbabwe')",mismatched country
-556,1052,"('Gisozi', 'Burundi')",mismatched country
-557,1056,"('Zacatepec, Morelos', 'Mexico')",mismatched country
-558,1057,"('Miacatlan', 'Mexico')",mismatched country
-559,1058,"('Salandhar (punjab)', 'India')",mismatched country
-560,1063,"('Kaniaka', 'Congo')",mismatched country
-561,1067,"('Tanga', 'Tanzania')",mismatched country
-562,1068,"('Mungoshi, Hai', 'Tanzania')",mismatched country
-563,1074,"('Gondar', 'Ethiopia')",mismatched country
-564,1075,"('Quindio', 'Colombia')",mismatched country
-565,1076,"('Puerto Gaitan-carpoica,taluma', 'Colombia')",mismatched country
-566,1077,"('Kisama', 'Kenya')",mismatched country
-567,1078,"('Angecha', 'Ethiopia')",mismatched country
-568,1079,"('Ivumwe', 'Tanzania')",mismatched country
-569,1080,"('Mparambo', 'Burundi')",mismatched country
-570,1081,"('Thika', 'Kenya')",mismatched country
-571,1082,"('Matisi', 'Kenya')",mismatched country
-572,1083,"('Kutus', 'Kenya')",mismatched country
-573,1084,"('Kimaeti', 'Kenya')",mismatched country
-574,1085,"('Elgon Downs', 'Kenya')",mismatched country
-575,1086,"('Bumula', 'Kenya')",mismatched country
-576,1087,"('Bulindi', 'Uganda')",mismatched country
-577,1088,"('Bugiri', 'Uganda')",mismatched country
-578,1089,"('Nyagatare', 'Rwanda')",mismatched country
-579,1090,"('Kagumo', 'Kenya')",mismatched country
-580,1091,"('Screen House', 'Kenya')",mismatched country
-581,1092,"('Chitedzi', 'Malawi')",mismatched country
-582,1093,"('Kiteta', 'Kenya')",mismatched country
-583,1094,"('Kyuu', 'Kenya')",mismatched country
-584,1095,"('Bingu', 'Malawi')",mismatched country
-585,1096,"('Mpingu', 'Malawi')",mismatched country
-586,1097,"('Pomela', 'Malawi')",mismatched country
-587,1098,"('Pallisa', 'Uganda')",mismatched country
-588,1099,"('Rancho Guadalupe, Toluca', 'Mexico')",mismatched country
-589,1100,"('Mwea', 'Kenya')",mismatched country
-590,1102,"('Kabul', 'Afghanistan')",mismatched country
-591,1107,"('La Catalina', 'Colombia')",mismatched country
-592,1108,"('Paraguaicito', 'Colombia')",mismatched country
-593,1110,"('Freidenheim Valley', 'South Africa')",mismatched country
-594,1112,"('Arusha', 'Tanzania')",mismatched country
-595,1113,"('Chollima', 'Tanzania')",mismatched country
-596,1114,"('Tumbi', 'Tanzania')",mismatched country
-597,1115,"('Kibray', 'Uzbekistan')",mismatched country
-598,1116,"('Chisamba', 'Zambia')",mismatched country
-599,1128,"('Mungushi, Hai', 'Tanzania')",mismatched country
-600,1129,"('Bondo', 'Kenya')",mismatched country
-601,1130,"('Kakamega (monsanto)', 'Kenya')",mismatched country
-602,1133,"('Caña Flecha', 'Colombia')",mismatched country
-603,1135,"('Las Cañas', 'Costa Rica')",mismatched country
-604,1136,"('La Máquina Caballo Blanco', 'Guatemala')",mismatched country
-605,1137,"('San José Pinula', 'Guatemala')",mismatched country
-606,1138,"('La Viña-jayanca-lambayeque', 'Peru')",mismatched country
-607,1139,"('Dinajpur', 'Bangladesh')",mismatched country
-608,1152,"('Finkolo', 'Mali')",mismatched country
-609,1154,"('Finkolo', 'Mali')",mismatched country
-610,1155,"('El Aguila, Pejibaye, Perez Zeledon', 'Costa Rica')",mismatched country
-611,1156,"('Los Chiles', 'Costa Rica')",mismatched country
-612,1157,"('Araure, Edo. Portuguesa', 'Venezuela')",mismatched country
-613,1158,"('Las Velas, Edo. Yaracuy', 'Venezuela')",mismatched country
-614,1159,"('Tiznados, Edo. Guarico', 'Venezuela')",mismatched country
-615,1160,"('Concepcion De Pilas, Buenos Aires', 'Costa Rica')",mismatched country
-616,1161,"('El Amparo, El Gallito, Los Chiles, Alajuela', 'Costa Rica')",mismatched country
-617,1162,"('Guagaral, Buenos Aires Puntarenas', 'Costa Rica')",mismatched country
-618,1163,"('Pueblo Nuevo, San Jose, Upala', 'Costa Rica')",mismatched country
-619,1164,"('Veracruz, Pejibaye, Perez Zeledon', 'Costa Rica')",mismatched country
-620,1165,"('El Progreso, Pejibaye, Perez Zeledon', 'Costa Rica')",mismatched country
-621,1166,"('Guagaral, Buenos Aires', 'Costa Rica')",mismatched country
+0,3,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+1,14,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+2,15,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+3,16,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+4,17,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+5,19,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+6,20,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+7,21,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+8,22,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+9,23,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+10,25,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+11,32,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+12,34,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+13,35,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+14,36,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+15,41,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+16,46,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+17,47,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+18,49,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+19,50,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+20,52,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+21,53,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+22,54,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+23,58,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+24,59,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+25,60,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+26,62,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+27,63,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+28,64,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+29,65,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+30,66,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+31,67,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+32,69,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+33,70,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+34,78,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+35,79,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+36,82,"{'admin2': '', 'name': 'Salto del Guaira', 'admin1': 'Canindeyu', 'lat': '-24.0625', 'cc': 'PY', 'lon': '-54.30694'}",distance flag
+37,90,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+38,97,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+39,101,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+40,107,"{'admin2': '', 'name': 'Van Tung', 'admin1': 'Bac Kan', 'lat': '22.43082', 'cc': 'VN', 'lon': '105.99687'}",distance flag
+41,109,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+42,110,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+43,111,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+44,112,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+45,113,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+46,114,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+47,115,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+48,116,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+49,118,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+50,119,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+51,120,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+52,122,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+53,123,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+54,124,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+55,125,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+56,126,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+57,127,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+58,128,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+59,129,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+60,130,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+61,131,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+62,132,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+63,133,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+64,135,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+65,136,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+66,137,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+67,138,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+68,139,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+69,140,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+70,141,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+71,142,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+72,143,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+73,144,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+74,145,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+75,146,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+76,147,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+77,148,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+78,149,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+79,151,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+80,152,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+81,153,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+82,154,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+83,155,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+84,156,"{'admin2': '', 'name': 'Anna Regina', 'admin1': 'Pomeroon-Supenaam', 'lat': '7.26439', 'cc': 'GY', 'lon': '-58.50769'}",distance flag
+85,157,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+86,158,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+87,160,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+88,161,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+89,162,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+90,163,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+91,164,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+92,165,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+93,166,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+94,167,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+95,168,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+96,169,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+97,170,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+98,171,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+99,172,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+100,173,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+101,174,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+102,175,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+103,176,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+104,177,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+105,178,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+106,179,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+107,180,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+108,181,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+109,182,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+110,183,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+111,184,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+112,185,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+113,186,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+114,187,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+115,188,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+116,189,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+117,192,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+118,193,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+119,194,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+120,195,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+121,196,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+122,197,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+123,198,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+124,199,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+125,200,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+126,201,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+127,202,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+128,203,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+129,204,"{'admin2': '', 'name': 'Brazzaville', 'admin1': 'Brazzaville', 'lat': '-4.26613', 'cc': 'CG', 'lon': '15.28318'}",distance flag
+130,205,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+131,207,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+132,208,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+133,209,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+134,210,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+135,211,"{'admin2': '', 'name': 'Moyogalpa', 'admin1': 'Rivas', 'lat': '11.54006', 'cc': 'NI', 'lon': '-85.69795'}",distance flag
+136,213,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+137,214,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+138,216,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+139,217,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+140,218,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+141,219,"{'admin2': '', 'name': 'Katiola', 'admin1': 'Vallee du Bandama', 'lat': '8.13728', 'cc': 'CI', 'lon': '-5.10095'}",distance flag
+142,220,"{'admin2': '', 'name': 'Bouake', 'admin1': 'Vallee du Bandama', 'lat': '7.69385', 'cc': 'CI', 'lon': '-5.03031'}",distance flag
+143,221,"{'admin2': '', 'name': 'Ferkessedougou', 'admin1': 'Savanes', 'lat': '9.5928', 'cc': 'CI', 'lon': '-5.19449'}",distance flag
+144,222,"{'admin2': 'Province du Noumbiel', 'name': 'Batie', 'admin1': 'Southwest', 'lat': '9.88333', 'cc': 'BF', 'lon': '-2.91667'}",distance flag
+145,223,"{'admin2': '', 'name': 'Touba', 'admin1': 'Bafing', 'lat': '8.28333', 'cc': 'CI', 'lon': '-7.68333'}",distance flag
+146,224,"{'admin2': '', 'name': 'Bouake', 'admin1': 'Vallee du Bandama', 'lat': '7.69385', 'cc': 'CI', 'lon': '-5.03031'}",distance flag
+147,228,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+148,229,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+149,230,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+150,231,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+151,232,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+152,234,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+153,236,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+154,240,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+155,245,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+156,246,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+157,247,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+158,248,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+159,249,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+160,250,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+161,251,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+162,252,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+163,253,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+164,254,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+165,255,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+166,256,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+167,257,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+168,258,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+169,259,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+170,260,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+171,261,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+172,262,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+173,263,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+174,264,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+175,265,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+176,266,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+177,268,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+178,270,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+179,271,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+180,272,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+181,275,"{'admin2': 'Provincia de Guadalajara', 'name': 'Anquela del Ducado', 'admin1': 'Castille-La Mancha', 'lat': '40.97084', 'cc': 'ES', 'lon': '-2.13066'}",distance flag
+182,284,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+183,287,"{'admin2': '', 'name': 'Kitale', 'admin1': 'Trans Nzoia', 'lat': '1.01572', 'cc': 'KE', 'lon': '35.00622'}",distance flag
+184,294,"{'admin2': '', 'name': 'Nazret', 'admin1': 'Oromiya', 'lat': '8.55', 'cc': 'ET', 'lon': '39.26667'}",distance flag
+185,296,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+186,298,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+187,299,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+188,300,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+189,301,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+190,302,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+191,309,"{'admin2': 'Prefecture de Bassar', 'name': 'Bassar', 'admin1': 'Kara', 'lat': '9.25025', 'cc': 'TG', 'lon': '0.78213'}",distance flag
+192,313,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+193,316,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+194,317,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+195,318,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+196,319,"{'admin2': '', 'name': 'Zimatlan de Alvarez', 'admin1': 'Oaxaca', 'lat': '16.86939', 'cc': 'MX', 'lon': '-96.78435'}",distance flag
+197,321,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+198,322,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+199,323,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+200,324,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+201,325,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+202,326,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+203,328,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+204,329,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+205,330,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+206,331,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+207,332,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+208,333,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+209,334,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+210,335,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+211,338,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+212,340,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+213,342,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+214,344,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+215,345,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+216,346,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+217,348,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+218,350,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+219,351,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+220,353,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+221,356,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+222,357,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+223,358,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+224,359,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+225,361,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+226,362,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+227,363,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+228,364,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+229,365,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+230,366,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+231,368,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+232,369,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+233,372,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+234,378,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+235,379,"{'admin2': '', 'name': 'Qumudi', 'admin1': 'Tibet Autonomous Region', 'lat': '32.20076', 'cc': 'CN', 'lon': '79.18447'}",distance flag
+236,384,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+237,385,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+238,391,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+239,392,"{'admin2': '', 'name': 'Rafael Capo', 'admin1': 'Hatillo', 'lat': '18.40717', 'cc': 'PR', 'lon': '-66.78212'}",distance flag
+240,393,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+241,395,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+242,397,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+243,406,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+244,407,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+245,411,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+246,412,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+247,413,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+248,417,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+249,418,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+250,419,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+251,420,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+252,421,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+253,423,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+254,424,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+255,425,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+256,427,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+257,428,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+258,429,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+259,430,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+260,433,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+261,438,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+262,440,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+263,441,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+264,442,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+265,446,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+266,447,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+267,448,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+268,449,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+269,450,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+270,451,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+271,453,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+272,455,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+273,456,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+274,457,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+275,458,"{'admin2': 'Busia District', 'name': 'Busia', 'admin1': 'Eastern Region', 'lat': '0.46588', 'cc': 'UG', 'lon': '34.09221'}",distance flag
+276,459,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+277,473,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+278,476,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+279,477,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+280,487,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+281,502,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+282,504,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+283,506,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+284,508,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+285,518,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+286,528,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+287,530,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+288,535,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+289,536,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+290,537,"{'admin2': '', 'name': 'Tsafe', 'admin1': 'Zamfara', 'lat': '11.95775', 'cc': 'NG', 'lon': '6.92083'}",distance flag
+291,539,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+292,540,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+293,542,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+294,550,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+295,551,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+296,552,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+297,553,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+298,558,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+299,562,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+300,565,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+301,566,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+302,573,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+303,574,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+304,575,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+305,576,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+306,578,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+307,588,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+308,589,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+309,595,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+310,598,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+311,604,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+312,605,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+313,606,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+314,609,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+315,612,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+316,614,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+317,615,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+318,619,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+319,620,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+320,621,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+321,622,"{'admin2': 'Canton Isabela', 'name': 'Puerto Villamil', 'admin1': 'Galapagos', 'lat': '-0.95542', 'cc': 'EC', 'lon': '-90.96654'}",distance flag
+322,625,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+323,630,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+324,635,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+325,640,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+326,641,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+327,642,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+328,646,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+329,654,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+330,656,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+331,660,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+332,665,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+333,669,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+334,671,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+335,678,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+336,679,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+337,682,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+338,684,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+339,688,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+340,689,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+341,697,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+342,698,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+343,699,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+344,701,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+345,704,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+346,707,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+347,708,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+348,711,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+349,712,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+350,716,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+351,718,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+352,720,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+353,725,"{'admin2': 'Nsanje District', 'name': 'Nsanje', 'admin1': 'Southern Region', 'lat': '-16.91995', 'cc': 'MW', 'lon': '35.26199'}",distance flag
+354,726,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+355,727,"{'admin2': 'Nsanje District', 'name': 'Nsanje', 'admin1': 'Southern Region', 'lat': '-16.91995', 'cc': 'MW', 'lon': '35.26199'}",distance flag
+356,731,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+357,732,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+358,733,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+359,736,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+360,737,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+361,738,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+362,739,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+363,740,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+364,741,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+365,742,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+366,743,"{'admin2': '', 'name': 'Yamethin', 'admin1': 'Mandalay', 'lat': '20.43189', 'cc': 'MM', 'lon': '96.13875'}",distance flag
+367,744,"{'admin2': '', 'name': 'Shwebo', 'admin1': 'Sagain', 'lat': '22.56925', 'cc': 'MM', 'lon': '95.69818'}",distance flag
+368,745,"{'admin2': '', 'name': 'Rundu', 'admin1': 'Kavango East', 'lat': '-17.93333', 'cc': 'NA', 'lon': '19.76667'}",distance flag
+369,746,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+370,747,"{'admin2': '', 'name': 'Rundu', 'admin1': 'Kavango East', 'lat': '-17.93333', 'cc': 'NA', 'lon': '19.76667'}",distance flag
+371,748,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+372,749,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+373,751,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+374,752,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+375,754,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+376,757,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+377,758,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+378,759,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+379,761,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+380,762,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+381,763,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+382,764,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+383,765,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+384,766,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+385,767,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+386,768,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+387,769,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+388,770,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+389,771,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+390,772,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+391,773,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+392,775,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+393,776,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+394,777,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+395,778,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+396,779,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+397,780,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+398,781,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+399,783,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+400,784,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+401,786,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+402,794,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+403,795,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+404,799,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+405,805,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+406,813,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+407,816,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+408,818,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+409,819,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+410,820,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+411,821,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+412,822,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+413,824,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+414,825,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+415,827,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+416,828,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+417,829,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+418,830,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+419,831,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+420,832,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+421,833,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+422,834,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+423,835,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+424,836,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+425,837,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+426,838,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+427,839,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+428,840,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+429,841,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+430,842,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+431,843,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+432,844,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+433,845,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+434,846,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+435,849,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+436,850,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+437,851,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+438,853,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+439,858,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+440,860,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+441,861,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+442,862,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+443,864,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+444,866,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+445,867,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+446,869,"{'admin2': 'Thabo Mofutsanyana District Municipality', 'name': 'Bethlehem', 'admin1': 'Orange Free State', 'lat': '-28.23078', 'cc': 'ZA', 'lon': '28.30707'}",distance flag
+447,870,"{'admin2': 'uMgungundlovu District Municipality', 'name': 'Howick', 'admin1': 'KwaZulu-Natal', 'lat': '-29.47795', 'cc': 'ZA', 'lon': '30.23057'}",distance flag
+448,871,"{'admin2': 'Ehlanzeni District', 'name': 'White River', 'admin1': 'Mpumalanga', 'lat': '-25.33177', 'cc': 'ZA', 'lon': '31.01166'}",distance flag
+449,872,"{'admin2': 'Ehlanzeni District', 'name': 'Nelspruit', 'admin1': 'Mpumalanga', 'lat': '-25.47448', 'cc': 'ZA', 'lon': '30.97033'}",distance flag
+450,873,"{'admin2': 'uMzinyathi District Municipality', 'name': 'Greytown', 'admin1': 'KwaZulu-Natal', 'lat': '-29.06415', 'cc': 'ZA', 'lon': '30.59279'}",distance flag
+451,874,"{'admin2': 'uMzinyathi District Municipality', 'name': 'Greytown', 'admin1': 'KwaZulu-Natal', 'lat': '-29.06415', 'cc': 'ZA', 'lon': '30.59279'}",distance flag
+452,875,"{'admin2': 'Vhembe District Municipality', 'name': 'Thohoyandou', 'admin1': 'Limpopo', 'lat': '-22.94564', 'cc': 'ZA', 'lon': '30.48497'}",distance flag
+453,876,"{'admin2': 'Ehlanzeni District', 'name': 'Nelspruit', 'admin1': 'Mpumalanga', 'lat': '-25.47448', 'cc': 'ZA', 'lon': '30.97033'}",distance flag
+454,878,"{'admin2': 'Ngaka Modiri Molema District Municipality', 'name': 'Delareyville', 'admin1': 'North-West', 'lat': '-26.68638', 'cc': 'ZA', 'lon': '25.45907'}",distance flag
+455,879,"{'admin2': 'Fezile Dabi District Municipality', 'name': 'Viljoenskroon', 'admin1': 'Orange Free State', 'lat': '-27.20841', 'cc': 'ZA', 'lon': '26.94855'}",distance flag
+456,882,"{'admin2': '', 'name': 'Paramaribo', 'admin1': 'Paramaribo', 'lat': '5.86638', 'cc': 'SR', 'lon': '-55.16682'}",distance flag
+457,884,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+458,885,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+459,890,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+460,891,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+461,892,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+462,893,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+463,896,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+464,907,"{'admin2': '', 'name': 'Taveta', 'admin1': '', 'lat': '-3.39879', 'cc': 'KE', 'lon': '37.68336'}",distance flag
+465,913,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+466,916,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+467,919,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+468,929,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+469,931,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+470,933,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+471,934,"{'admin2': '', 'name': 'Scarborough', 'admin1': 'Tobago', 'lat': '11.18333', 'cc': 'TT', 'lon': '-60.73333'}",distance flag
+472,935,"{'admin2': '', 'name': 'Roxborough', 'admin1': 'Eastern Tobago', 'lat': '11.25', 'cc': 'TT', 'lon': '-60.58333'}",distance flag
+473,937,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+474,938,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+475,939,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+476,940,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+477,945,"{'admin2': '', 'name': 'Songea', 'admin1': 'Ruvuma', 'lat': '-10.68333', 'cc': 'TZ', 'lon': '35.65'}",distance flag
+478,947,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+479,952,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+480,953,"{'admin2': 'Carlton County', 'name': 'Moose Lake', 'admin1': 'Minnesota', 'lat': '46.45411', 'cc': 'US', 'lon': '-92.76187'}",distance flag
+481,954,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+482,955,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+483,956,"{'admin2': 'Medina County', 'name': 'Castroville', 'admin1': 'Texas', 'lat': '29.35579', 'cc': 'US', 'lon': '-98.87864'}",distance flag
+484,957,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+485,958,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+486,959,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+487,962,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+488,963,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+489,964,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+490,965,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+491,966,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+492,967,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+493,968,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+494,969,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+495,970,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+496,971,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+497,972,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+498,973,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+499,974,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+500,977,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+501,978,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+502,979,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+503,981,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+504,982,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+505,984,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+506,985,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+507,986,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+508,987,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+509,988,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+510,989,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+511,990,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+512,991,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+513,992,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+514,993,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+515,994,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+516,995,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+517,997,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+518,998,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+519,999,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+520,1000,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+521,1004,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+522,1005,"{'admin2': '', 'name': 'Gandajika', 'admin1': 'Kasai-Oriental', 'lat': '-6.74504', 'cc': 'CD', 'lon': '23.95328'}",distance flag
+523,1006,"{'admin2': '', 'name': 'Mbanza-Ngungu', 'admin1': 'Bas-Congo', 'lat': '-5.25837', 'cc': 'CD', 'lon': '14.85838'}",distance flag
+524,1007,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+525,1010,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+526,1011,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+527,1012,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+528,1022,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+529,1028,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+530,1029,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+531,1040,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+532,1041,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+533,1042,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+534,1047,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+535,1052,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+536,1056,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+537,1057,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+538,1058,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+539,1063,"{'admin2': '', 'name': 'Gandajika', 'admin1': 'Kasai-Oriental', 'lat': '-6.74504', 'cc': 'CD', 'lon': '23.95328'}",distance flag
+540,1074,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+541,1075,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+542,1076,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+543,1077,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+544,1078,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+545,1079,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+546,1080,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+547,1081,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+548,1082,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+549,1083,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+550,1084,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+551,1085,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+552,1086,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+553,1087,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+554,1088,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+555,1089,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+556,1090,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+557,1091,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+558,1092,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+559,1093,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+560,1094,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+561,1095,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+562,1096,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+563,1097,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+564,1098,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+565,1099,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+566,1100,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+567,1102,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+568,1107,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+569,1108,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+570,1110,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+571,1115,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+572,1116,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+573,1128,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+574,1129,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+575,1130,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+576,1133,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+577,1135,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+578,1136,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+579,1137,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+580,1138,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+581,1139,"{'admin2': '', 'name': 'Takoradi', 'admin1': 'Western', 'lat': '4.88447', 'cc': 'GH', 'lon': '-1.75536'}",distance flag
+582,1141,"{'admin2': '', 'name': 'Dolisie', 'admin1': 'Niari', 'lat': '-4.19834', 'cc': 'CG', 'lon': '12.66664'}",distance flag
+583,1152,"{'admin2': '', 'name': 'Bena', 'admin1': 'Kebbi', 'lat': '11.28444', 'cc': 'NG', 'lon': '5.93472'}",distance flag
+584,1154,"{'admin2': '', 'name': 'Bena', 'admin1': 'Kebbi', 'lat': '11.28444', 'cc': 'NG', 'lon': '5.93472'}",distance flag
+585,1155,"{'admin2': '', 'name': 'Batticaloa', 'admin1': 'Eastern Province', 'lat': '7.7102', 'cc': 'LK', 'lon': '81.6924'}",distance flag
+586,1156,"{'admin2': '', 'name': 'Trincomalee', 'admin1': 'Eastern Province', 'lat': '8.5711', 'cc': 'LK', 'lon': '81.2335'}",distance flag
+587,1157,"{'admin2': 'Lakshadweep', 'name': 'Kavaratti', 'admin1': 'Laccadives', 'lat': '10.56688', 'cc': 'IN', 'lon': '72.64203'}",distance flag
+588,1158,"{'admin2': 'Lakshadweep', 'name': 'Kavaratti', 'admin1': 'Laccadives', 'lat': '10.56688', 'cc': 'IN', 'lon': '72.64203'}",distance flag
+589,1159,"{'admin2': 'Lakshadweep', 'name': 'Kavaratti', 'admin1': 'Laccadives', 'lat': '10.56688', 'cc': 'IN', 'lon': '72.64203'}",distance flag
+590,1160,"{'admin2': '', 'name': 'Batticaloa', 'admin1': 'Eastern Province', 'lat': '7.7102', 'cc': 'LK', 'lon': '81.6924'}",distance flag
+591,1161,"{'admin2': '', 'name': 'Trincomalee', 'admin1': 'Eastern Province', 'lat': '8.5711', 'cc': 'LK', 'lon': '81.2335'}",distance flag
+592,1162,"{'admin2': '', 'name': 'Batticaloa', 'admin1': 'Eastern Province', 'lat': '7.7102', 'cc': 'LK', 'lon': '81.6924'}",distance flag
+593,1163,"{'admin2': '', 'name': 'Trincomalee', 'admin1': 'Eastern Province', 'lat': '8.5711', 'cc': 'LK', 'lon': '81.2335'}",distance flag
+594,1164,"{'admin2': '', 'name': 'Batticaloa', 'admin1': 'Eastern Province', 'lat': '7.7102', 'cc': 'LK', 'lon': '81.6924'}",distance flag
+595,1165,"{'admin2': '', 'name': 'Batticaloa', 'admin1': 'Eastern Province', 'lat': '7.7102', 'cc': 'LK', 'lon': '81.6924'}",distance flag
+596,1166,"{'admin2': '', 'name': 'Batticaloa', 'admin1': 'Eastern Province', 'lat': '7.7102', 'cc': 'LK', 'lon': '81.6924'}",distance flag
