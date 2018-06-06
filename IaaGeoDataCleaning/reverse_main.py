@@ -115,16 +115,16 @@ class GeocodeValidator:
 
         for coordinate in coordinates:
             code = rg.get(coordinate, mode=1)
-            if code == recordedCode:
+            if code['cc'] == recordedCode:
                 return True
-
-        print("Index: " + str(index) + " country does not match entered coordinates.(Index flagged.) \n")
-        self.flaggedLocations.append(index)
-        self.log['location'].append((location, countryName))
-        self.log['index'].append(index)
-        self.log['type'].append(' mismatched country')
-        self.log['comment'].append(' ' + code['cc'])
-        return False
+            else:
+                print("Index: " + str(index) + " country does not match entered coordinates.(Index flagged.) \n")
+                self.flaggedLocations.append(index)
+                self.log['location'].append((location, countryName))
+                self.log['index'].append(index)
+                self.log['type'].append(' mismatched country')
+                self.log['comment'].append(' ' + code['cc'])
+                return False
 
 validator2 = GeocodeValidator("NaNtblLocations.xlsx")
 validator2.run()
