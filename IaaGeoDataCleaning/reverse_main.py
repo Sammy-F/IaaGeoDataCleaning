@@ -23,7 +23,7 @@ now = now.strftime("%Y-%m-%d ")
 
 
 class GeocodeValidator:
-    def __init__(self, fileName, flagDistance=2):
+    def __init__(self, fileName, flagDistance=12.):
         self.fileName = fileName
         self.flagDistance = flagDistance
 
@@ -76,6 +76,7 @@ class GeocodeValidator:
                     self.log['type'].append(' wrong format')
 
             except (TypeError, IndexError) as error:
+
                 print("Index: " + str(index) + " no entered coordinates.(Index flagged.) \n")
                 self.flaggedLocations.append(index)
                 self.log['location'].append((location, country))
@@ -142,10 +143,14 @@ class GeocodeValidator:
         """
         r = 3959
 
-        lat1 = math.radians(lat1)
-        lat2 = math.radians(lat2)
-        dlat = lat2 - lat1
+        lat1 = float(lat1)
+        lat2 = float(lat2)
+        lng1 = float(lng1)
+        lng2 = float(lng2)
+        lat1 = math.radians(float(lat1))
+        lat2 = math.radians(float(lat2))
 
+        dlat = lat2 - lat1
         dlng = math.radians(lng2) - math.radians(lng1)
 
         a = math.pow(math.sin(dlat / 2), 2) + math.cos(lat1) * math.cos(lat2) * math.pow(math.sin(dlng / 2), 2)
