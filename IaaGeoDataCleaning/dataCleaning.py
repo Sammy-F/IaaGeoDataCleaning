@@ -74,7 +74,7 @@ class GeocodeValidator:
                 self.flaggedLocations.append(index)
                 self.incorrectLog['location'].append((location, country))
                 self.incorrectLog['index'].append(index)
-                self.incorrectLog['type'].append(' coords NA')
+                self.incorrectLog['type'].append(' generic error')
 
         self.logResults()
 
