@@ -4,6 +4,9 @@ import re
 import reverse_geocoder as rg
 import string
 import math
+
+import country_bounding_boxes as cbb
+
 """
 GeocodeValidator allows the user to perform reverse geocoding
 on a .xlsx or .csv to ensure that input locations correspond to
@@ -51,21 +54,17 @@ class GeocodeValidator:
                 nearestLocation = rg.get(inputCoordinates, mode=1)
 
                 try:
-                    if nearestLocation['cc'] != self.countryCodes[country] and inputCoordinates != (0, 0):
-                        self.handleBadCountryy(index, countryName=country, recordedLat=row.loc["Latitude"],
-                                               recordedLong=row.loc["Longitude"], location=location)
-                        # print("Index: " + str(index) + " country does not match entered coordinates.(Index flagged.) \n")
-                        # self.flaggedLocations.append(index)
-                        # self.log['location'].append((location, country))
-                        # self.log['index'].append(index)
-                        # self.log['type'].append(' mismatched country')
-                        # self.log['comment'].append(' ' + nearestLocation['cc'])
-                    elif inputCoordinates == (0, 0):
+                    if inputCoordinates == (0, 0):
                         print("Index: " + str(index) + " Longitude and latitude missing \n")
                         self.flaggedLocations.append(index)
                         self.log['location'].append((location, country))
                         self.log['index'].append(index)
                         self.log['type'].append(' invalid long/lat')
+
+                    else:
+                        self.handleBadCountryy(index, countryName=country, recordedLat=row.loc["Latitude"],
+                                               recordedLong=row.loc["Longitude"], location=location)
+
                 except KeyError:
                     print("Index: " + str(index) + " incorrect country format.(Index flagged.) \n")
                     self.flaggedLocations.append(index)
@@ -106,7 +105,7 @@ class GeocodeValidator:
 
         recordedCode = self.countryCodes[countryName]
 
-        coordinates = [(recordedLong, recordedLat), (-recordedLong, recordedLat), (-recordedLong, -recordedLat),
+        coordinates = [(recordedLat, recordedLong), (recordedLong, recordedLat), (-recordedLong, recordedLat), (-recordedLong, -recordedLat),
                        (recordedLong, -recordedLat), (-recordedLat, recordedLong), (-recordedLat, -recordedLong),
                        (recordedLat, -recordedLong)]
 
@@ -122,12 +121,19 @@ class GeocodeValidator:
         return False
 
     def validate(self, coord, countryCode):
+        """
+        Validate whether a location is valid based off of its distance from its nearest location.
+        :param coord:
+        :param countryCode:
+        :return:
+        """
         returnedLocation = rg.get(coord, mode=1)
         if returnedLocation['cc'] != countryCode:
-            distance = self.calculateDistance(coord[0], coord[1], returnedLocation['lat'], returnedLocation['lon'])
-            if distance > self.flagDistance:
+            box = [c.bbox for c in cbb.country_subunits_by_iso_code(countryCode)]
+            # formatted lon1, lat1, lon2, lat2 for box
+            # coord formatted (lat, lon)
+            if not (box[0][0] < coord[1] and box[0][1] < coord[0] and box[0][2] > coord[1] and box[0][3] > coord[0]):
                 return False
-            # return False
         return True
 
     def calculateDistance(self, lat1, lng1, lat2, lng2):
@@ -157,6 +163,6 @@ class GeocodeValidator:
 
         return d
 
-validator2 = GeocodeValidator("/Users/thytnguyen/Desktop/tblLocation.xlsx")
+validator2 = GeocodeValidator("NaNtblLocations.xlsx")
 validator2.run()
 

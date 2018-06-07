@@ -5,6 +5,8 @@ import reverse_geocoder as rg
 import string
 import pycountry as pc
 
+import country_bounding_boxes as cbb
+
 """
 GeocodeValidator allows the user to perform reverse geocoding
 on a .xlsx or .csv to ensure that input locations correspond to
@@ -112,6 +114,11 @@ class GeocodeValidator:
             matchedCountryCode = rg.get(possibleCoords[i], mode=1)['cc']
             if countryCode == matchedCountryCode:
                 return i
+            else:
+                box = [c.bbox for c in cbb.country_subunits_by_iso_code(countryCode)]
+                # formatted lon1, lat1, lon2, lat2 for box
+                if not (box[0][0] < lng and box[0][1] < lat and box[0][2] > lng and box[0][3] > lat):
+                    return i
         return -1
 
     def logEntry(self, type, index, location, country):
@@ -150,7 +157,7 @@ class GeocodeValidator:
             self.countryCodes[country] = countryCode
 
 
-validator = GeocodeValidator("/Users/thytnguyen/Desktop/tblLocation.xlsx")
+validator = GeocodeValidator("NaNtblLocations.xlsx")
 # sr = validator.checkInputLocation(1137)
 # print(sr)
 validator.run()
