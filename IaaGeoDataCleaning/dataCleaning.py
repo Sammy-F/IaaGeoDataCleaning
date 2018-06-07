@@ -87,7 +87,7 @@ class GeocodeValidator:
                 self.flaggedLocations.append(index)
                 self.incorrectLog['location'].append((location, country))
                 self.incorrectLog['index'].append(index)
-                self.incorrectLog['type'].append(' generic error')
+                self.incorrectLog['type'].append(' coords NA')
 
         self.logResults()
 
@@ -96,21 +96,23 @@ class GeocodeValidator:
         lng = self.tobeValidatedLocation.loc[index, 'Longitude']
         try:
             pc.countries.lookup(country)
+            print("Passed pycountry")
             if pd.isnull(lat) or pd.isnull(lng):
                 return -2
             elif lat == 0 and lng == 0:
                 return -2
             return 0
         except LookupError:
+            print("lookup")
             try:
                 self.countryCodes[country]
+                print("passed dictionary")
                 if pd.isnull(lat) or pd.isnull(lng):
                     return -2
                 elif lat == 0 and lng == 0:
                     return -2
                 return 0
             except KeyError:
-                return -3
                 formatted = self.findFormattedName(country)
                 print(formatted)
                 if formatted == False:
@@ -139,7 +141,7 @@ class GeocodeValidator:
             else:
                 box = [c.bbox for c in cbb.country_subunits_by_iso_code(countryCode)]
                 # formatted lon1, lat1, lon2, lat2 for box
-                if box[0][3] > lat > box[0][1] and box[0][2] > lng > box[0][0]:
+                if not (box[0][0] < lng and box[0][1] < lat and box[0][2] > lng and box[0][3] > lat):
                     return i
         return -1
 
@@ -180,4 +182,6 @@ class GeocodeValidator:
 
 
 validator = GeocodeValidator("NaNtblLocations.xlsx")
+# sr = validator.checkInputLocation(1137)
+# print(sr)
 validator.run()
