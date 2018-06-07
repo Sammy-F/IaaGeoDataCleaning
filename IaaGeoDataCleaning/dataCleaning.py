@@ -113,7 +113,7 @@ class GeocodeValidator:
             else:
                 box = [c.bbox for c in cbb.country_subunits_by_iso_code(countryCode)]
                 # formatted lon1, lat1, lon2, lat2 for box
-                if box[0][3] > lat > box[0][1] and box[0][2] > lng > box[0][0] and lng < box[0][2]:
+                if box[0][3] > lat > box[0][1] and box[0][2] > lng > box[0][0]:
                     return i
         return -1
 
