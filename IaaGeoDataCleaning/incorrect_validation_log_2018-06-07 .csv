@@ -38,534 +38,533 @@
 36,90,"('Kazakhstan', 'Central Asia')", country not found/wrong country format
 37,97,"('Honghe', 'China')", no latitude and longitude entered
 38,101,"('Mian Yang', 'China')", no latitude and longitude entered
-39,107,"('Wenshan', 'China')", incorrect location data
-40,109,"('Aguas Blancas', 'Colombia')", no latitude and longitude entered
-41,110,"('Aguas Claras', 'Colombia')", no latitude and longitude entered
-42,111,"('Andremoni', 'Colombia')", no latitude and longitude entered
-43,112,"('Arborates', 'Colombia')", no latitude and longitude entered
-44,113,"('Arguello Bajo, Yacuanquer', 'Colombia')", no latitude and longitude entered
-45,114,"('Atuncela, Dagua', 'Colombia')", no latitude and longitude entered
-46,115,"('Bucaramanga', 'Colombia')", no latitude and longitude entered
-47,116,"('Bucaramanga, Pinchote', 'Colombia')", no latitude and longitude entered
-48,118,"('Buga, Media Canoa', 'Colombia')", no latitude and longitude entered
-49,119,"('Caicedonia', 'Colombia')", no latitude and longitude entered
-50,120,"('Caldono', 'Colombia')", no latitude and longitude entered
-51,122,"('Campo Alegre, Huila', 'Colombia')", no latitude and longitude entered
-52,123,"('Ca╤a Flecha', 'Colombia')", no latitude and longitude entered
-53,124,"('Carmen De Bolivar', 'Colombia')", no latitude and longitude entered
-54,125,"('Cerete, Cordoba', 'Colombia')", no latitude and longitude entered
-55,126,"('Cerrito', 'Colombia')", no latitude and longitude entered
-56,127,"('Cienega De Oro', 'Colombia')", no latitude and longitude entered
-57,128,"('Ciudad Bolivar', 'Colombia')", no latitude and longitude entered
-58,129,"('Colombia', 'Colombia')", no latitude and longitude entered
-59,130,"('Cordoba', 'Colombia')", no latitude and longitude entered
-60,131,"('Corozal', 'Colombia')", no latitude and longitude entered
-61,132,"('Darien, Valle Del Cauca', 'Colombia')", no latitude and longitude entered
-62,133,"('Duitama', 'Colombia')", no latitude and longitude entered
-63,135,"('El Espinal, Tolima', 'Colombia')", no latitude and longitude entered
-64,136,"('El Libano', 'Colombia')", no latitude and longitude entered
-65,137,"('El Naranjal', 'Colombia')", no latitude and longitude entered
-66,138,"('El Rosario', 'Colombia')", no latitude and longitude entered
-67,139,"('El Tambo, Valle Del Cauca', 'Colombia')", no latitude and longitude entered
-68,140,"('El Tomate', 'Colombia')", no latitude and longitude entered
-69,141,"('Fuente De Oro, Granda', 'Colombia')", no latitude and longitude entered
-70,142,"('Garzon, Huila', 'Colombia')", no latitude and longitude entered
-71,143,"('Granada', 'Colombia')", no latitude and longitude entered
-72,144,"('Guadalajara De Buga', 'Colombia')", no latitude and longitude entered
-73,145,"('Independencia, Caldono', 'Colombia')", no latitude and longitude entered
-74,146,"('La Catalina, Pereira', 'Colombia')", no latitude and longitude entered
-75,147,"('La Cubillera, Granada', 'Colombia')", no latitude and longitude entered
-76,148,"('La Palomera', 'Colombia')", no latitude and longitude entered
-77,149,"('La Trocha 12, Granda', 'Colombia')", no latitude and longitude entered
-78,151,"('La Union, Corcega', 'Colombia')", no latitude and longitude entered
-79,152,"('Lejania, Granada', 'Colombia')", no latitude and longitude entered
-80,153,"('Matazul', 'Colombia')", no latitude and longitude entered
-81,154,"('Menegua', 'Colombia')", no latitude and longitude entered
-82,155,"('Mondomo, Santander', 'Colombia')", no latitude and longitude entered
-83,156,"('Monteria', 'Colombia')", incorrect location data
-84,157,"('Neiva, Huila', 'Colombia')", no latitude and longitude entered
-85,158,"('Obando, Molina', 'Colombia')", no latitude and longitude entered
-86,160,"('Paraguaicito, Armenia', 'Colombia')", no latitude and longitude entered
-87,161,"('Pelaya-cesar (aguachica)', 'Colombia')", no latitude and longitude entered
-88,162,"('Pereira', 'Colombia')", no latitude and longitude entered
-89,163,"('Piendamo', 'Colombia')", no latitude and longitude entered
-90,164,"('Procampo', 'Colombia')", no latitude and longitude entered
-91,165,"('Puerto Lopez', 'Colombia')", no latitude and longitude entered
-92,166,"('Puerto Lopez', 'Colombia')", no latitude and longitude entered
-93,167,"('Quindio, Montenegro', 'Colombia')", no latitude and longitude entered
-94,168,"('Rivera, Huila', 'Colombia')", no latitude and longitude entered
-95,169,"('Roldanillo', 'Colombia')", no latitude and longitude entered
-96,170,"('Sabana De Torres, Santander', 'Colombia')", no latitude and longitude entered
-97,171,"('Sahagu', 'Colombia')", no latitude and longitude entered
-98,172,"('San Antonio', 'Colombia')", no latitude and longitude entered
-99,173,"('San Barreto', 'Colombia')", no latitude and longitude entered
-100,174,"('San Francisco, Sandona', 'Colombia')", no latitude and longitude entered
-101,175,"('San Ignacio, Granada', 'Colombia')", no latitude and longitude entered
-102,176,"('San Pedro De Uraba', 'Colombia')", no latitude and longitude entered
-103,177,"('San Pelayo', 'Colombia')", no latitude and longitude entered
-104,178,"('San Rafael, Consaca', 'Colombia')", no latitude and longitude entered
-105,179,"('Sandona, Narino, Fidar', 'Colombia')", no latitude and longitude entered
-106,180,"('Santa Helena', 'Colombia')", no latitude and longitude entered
-107,181,"('Santa Lucia', 'Colombia')", no latitude and longitude entered
-108,182,"('Santander De Quilichao', 'Colombia')", no latitude and longitude entered
-109,183,"('Segovia', 'Colombia')", no latitude and longitude entered
-110,184,"('Semivalle', 'Colombia')", no latitude and longitude entered
-111,185,"('Sincelejo', 'Colombia')", no latitude and longitude entered
-112,186,"('Taluma', 'Colombia')", no latitude and longitude entered
-113,187,"('Tierra Alta', 'Colombia')", no latitude and longitude entered
-114,188,"('Tulenapa', 'Colombia')", no latitude and longitude entered
-115,189,"('Tunja', 'Colombia')", no latitude and longitude entered
-116,192,"('Turipana', 'Colombia')", no latitude and longitude entered
-117,193,"('Turipana', 'Colombia')", no latitude and longitude entered
-118,194,"('Valle De Magdalena', 'Colombia')", no latitude and longitude entered
-119,195,"('Valle De Magdalena', 'Colombia')", no latitude and longitude entered
-120,196,"('Valle De Magdalena', 'Colombia')", no latitude and longitude entered
-121,197,"('Valle De Magdalena', 'Colombia')", no latitude and longitude entered
-122,198,"('Valle Del Cauca', 'Colombia')", no latitude and longitude entered
-123,199,"('Venecia', 'Colombia')", no latitude and longitude entered
-124,200,"('Villavicencio', 'Colombia')", no latitude and longitude entered
-125,201,"('Villavo', 'Colombia')", no latitude and longitude entered
-126,202,"('Yotoco-valle Del Cauca', 'Colombia')", no latitude and longitude entered
-127,203,"('Congo', 'Congo')", no latitude and longitude entered
-128,205,"('Tshibati', 'Congo')", no latitude and longitude entered
-129,207,"('Costa Rica', 'Costa Rica')", no latitude and longitude entered
-130,208,"('El Aguila, Pejibaye', 'Costa Rica')", no latitude and longitude entered
-131,209,"('El Parque, Los Chiles', 'Costa Rica')", no latitude and longitude entered
-132,210,"('El Progreso, Pejibaye', 'Costa Rica')", no latitude and longitude entered
-133,211,"('Guagaral', 'Costa Rica')", incorrect location data
-134,213,"('Las Ca╤as', 'Costa Rica')", no latitude and longitude entered
-135,214,"('Pejibaye De Perez Zeledon', 'Costa Rica')", no latitude and longitude entered
-136,216,"('Upala', 'Costa Rica')", no latitude and longitude entered
-137,217,"('Upala Pueblo Nuevo', 'Costa Rica')", no latitude and longitude entered
-138,218,"('Veracruz, Pejibaye', 'Costa Rica')", no latitude and longitude entered
-139,219,"('Badikaha', ""Cote D'ivoire"")", country not found/wrong country format
-140,220,"('Bouake', ""Cote D'ivoire"")", country not found/wrong country format
-141,221,"('Ferkessedougou', ""Cote D'ivoire"")", country not found/wrong country format
-142,222,"('Sinematiali', ""Cote D'ivoire"")", country not found/wrong country format
-143,223,"('Touba', ""Cote D'ivoire"")", country not found/wrong country format
-144,224,"('Warda/adrao-mbe', ""Cote D'ivoire"")", country not found/wrong country format
-145,228,"('Comuna San Rafael, Peninsula Sta Elena', 'Ecuador')", no latitude and longitude entered
-146,229,"('Ecuador', 'Ecuador')", no latitude and longitude entered
-147,230,"('Fca. Exp. Josefina Balzar', 'Ecuador')", no latitude and longitude entered
-148,231,"('La Virginia Quevedo', 'Ecuador')", no latitude and longitude entered
-149,232,"('Lodana', 'Ecuador')", no latitude and longitude entered
-150,234,"('Organos', 'Ecuador')", no latitude and longitude entered
-151,236,"('Pindal', 'Ecuador')", no latitude and longitude entered
-152,240,"('Giza', 'Egypt')", no latitude and longitude entered
-153,245,"('Apastepeque', 'El Salvador')", no latitude and longitude entered
-154,246,"('Armenia', 'El Salvador')", no latitude and longitude entered
-155,247,"('Barrio Nuevo, La Paz', 'El Salvador')", no latitude and longitude entered
-156,248,"('Chalchahuapa', 'El Salvador')", no latitude and longitude entered
-157,249,"('Cuhisnuat', 'El Salvador')", no latitude and longitude entered
-158,250,"('El Coyalito', 'El Salvador')", no latitude and longitude entered
-159,251,"('El Pepito, Concep., Chalate', 'El Salvador')", no latitude and longitude entered
-160,252,"('Jiquilisco', 'El Salvador')", no latitude and longitude entered
-161,253,"('Jocoro, Morazan', 'El Salvador')", no latitude and longitude entered
-162,254,"('Jucuapa, Usulutan', 'El Salvador')", no latitude and longitude entered
-163,255,"('La Libertad', 'El Salvador')", no latitude and longitude entered
-164,256,"('Lomas De Santiago', 'El Salvador')", no latitude and longitude entered
-165,257,"('Los Cipreses, Conchagua, La Union', 'El Salvador')", no latitude and longitude entered
-166,258,"('Nacimiento, La Union', 'El Salvador')", no latitude and longitude entered
-167,259,"('Nahuilingo', 'El Salvador')", no latitude and longitude entered
-168,260,"('Nueva Concepcion', 'El Salvador')", no latitude and longitude entered
-169,261,"('Quelepa, San Miguel', 'El Salvador')", no latitude and longitude entered
-170,262,"('San Andres', 'El Salvador')", no latitude and longitude entered
-171,263,"('San Andres (sb)', 'El Salvador')", no latitude and longitude entered
-172,264,"('San Mauricio', 'El Salvador')", no latitude and longitude entered
-173,265,"('San Pedro Puxtla, Ahuachapan', 'El Salvador')", no latitude and longitude entered
-174,266,"('San Vicente', 'El Salvador')", no latitude and longitude entered
-175,268,"('Santa Cruz Porrillo', 'El Salvador')", no latitude and longitude entered
-176,270,"('Suchitoto, Cuscatlan', 'El Salvador')", no latitude and longitude entered
-177,271,"('Tenancingo', 'El Salvador')", no latitude and longitude entered
-178,272,"('Uluazapa, La Union', 'El Salvador')", no latitude and longitude entered
-179,275,"('Pontevedra', 'España')", country not found/wrong country format
-180,284,"('Haramaya', 'Ethiopia')", no latitude and longitude entered
-181,287,"('Kitale-ws', 'Ethiopia')", incorrect location data
-182,294,"('Nazret', 'Ethiopia')", coords NA
-183,296,"('Ws', 'Ethiopia')", no latitude and longitude entered
-184,298,"('Dobuleni Research Station', 'Fiji')", no latitude and longitude entered
-185,299,"('Koronnia Research Station', 'Fiji')", no latitude and longitude entered
-186,300,"('Legalega Research Station', 'Fiji')", no latitude and longitude entered
-187,301,"('Sigatoka Research Station', 'Fiji')", no latitude and longitude entered
-188,302,"('Tserovani', 'Georgia')", no latitude and longitude entered
-189,313,"('Caballo Blanco, Retalhuleu', 'Guatemala')", no latitude and longitude entered
-190,316,"('El Ovejero, Jutiapa', 'Guatemala')", no latitude and longitude entered
-191,317,"('Estanzuela', 'Guatemala')", no latitude and longitude entered
-192,318,"('Finca, Las Vegas Tequisate.', 'Guatemala')", no latitude and longitude entered
-193,319,"('Isidro Avarez', 'Guatemala')", incorrect location data
-194,321,"('La Flecha', 'Guatemala')", no latitude and longitude entered
-195,322,"('La Maquina', 'Guatemala')", no latitude and longitude entered
-196,323,"('La M┴quina Caballo Blanco', 'Guatemala')", no latitude and longitude entered
-197,324,"('La Maquina, Linea A5', 'Guatemala')", no latitude and longitude entered
-198,325,"('La Maquina, Tulate', 'Guatemala')", no latitude and longitude entered
-199,326,"('Las Monjas', 'Guatemala')", no latitude and longitude entered
-200,328,"('Monjas, Jalapa', 'Guatemala')", no latitude and longitude entered
-201,329,"('Nueva Concepcion', 'Guatemala')", no latitude and longitude entered
-202,330,"('Ovejero, Jutiapa', 'Guatemala')", no latitude and longitude entered
-203,331,"('Quesada, Jutiapa', 'Guatemala')", no latitude and longitude entered
-204,332,"('Salam B. V.', 'Guatemala')", no latitude and longitude entered
-205,333,"('San Jos╔ Pinula', 'Guatemala')", no latitude and longitude entered
-206,334,"('San Pedro Pinula, Jalapa', 'Guatemala')", no latitude and longitude entered
-207,335,"('Sto Domingo', 'Guatemala')", no latitude and longitude entered
-208,338,"('Zacapa', 'Guatemala')", no latitude and longitude entered
-209,340,"('Chantilly', 'Haiti')", no latitude and longitude entered
-210,342,"('Karoman, Lavallee', 'Haiti')", no latitude and longitude entered
-211,344,"('Nan- Jn Pierre, Cap-rouge', 'Haiti')", no latitude and longitude entered
-212,345,"('Candelaria, Lempira', 'Honduras')", no latitude and longitude entered
-213,346,"('Catacamas, Olancho', 'Honduras')", no latitude and longitude entered
-214,348,"('Comayagua, E.e. Playitas', 'Honduras')", no latitude and longitude entered
-215,350,"('El Guaco Yorito, Yoro', 'Honduras')", no latitude and longitude entered
-216,351,"('El Pital, Atlantida', 'Honduras')", no latitude and longitude entered
-217,353,"('Jutiquile, Olancho', 'Honduras')", no latitude and longitude entered
-218,356,"('Litoral Atlantico', 'Honduras')", no latitude and longitude entered
-219,357,"('Luquigue Yorito, Yoro', 'Honduras')", no latitude and longitude entered
-220,358,"('Mina Handa (yorito Yoco)', 'Honduras')", no latitude and longitude entered
-221,359,"('Obraje, Danli', 'Honduras')", no latitude and longitude entered
-222,361,"('Pata Stera (yorito Yoco)', 'Honduras')", no latitude and longitude entered
-223,362,"('Playita', 'Honduras')", no latitude and longitude entered
-224,363,"('Potrerillos, Olancho', 'Honduras')", no latitude and longitude entered
-225,364,"('Rio Arriba Yorito, Yoro', 'Honduras')", no latitude and longitude entered
-226,365,"('San Lucas, El Paraiso', 'Honduras')", no latitude and longitude entered
-227,366,"('San Pedro De Catacamas, Olancho', 'Honduras')", no latitude and longitude entered
-228,368,"('Yoro, El Pate', 'Honduras')", no latitude and longitude entered
-229,369,"('Yoro, Morazan', 'Honduras')", no latitude and longitude entered
-230,372,"('Amberpet', 'India')", no latitude and longitude entered
-231,378,"('Bahraich, Crop Research Station', 'India')", no latitude and longitude entered
-232,379,"('Bajaura', 'India')", incorrect location data
-233,384,"('Belipar, Gorakhpur, U.p.', 'India')", no latitude and longitude entered
-234,385,"('Bihar', 'India')", no latitude and longitude entered
-235,391,"('Dholi', 'India')", no latitude and longitude entered
-236,393,"('Dohad', 'India')", no latitude and longitude entered
-237,395,"('Godhsa Gaujasat', 'India')", no latitude and longitude entered
-238,397,"('India', 'India')", no latitude and longitude entered
-239,406,"('Khadbrabhra', 'India')", no latitude and longitude entered
-240,407,"('Khedbrahma', 'India')", no latitude and longitude entered
-241,411,"('Messina', 'India')", no latitude and longitude entered
-242,412,"('Muzafferpur', 'India')", no latitude and longitude entered
-243,413,"('New Delhi', 'India')", no latitude and longitude entered
-244,417,"('Pantnagar', 'India')", no latitude and longitude entered
-245,418,"('Parbhani', 'India')", no latitude and longitude entered
-246,419,"('Poonch', 'India')", no latitude and longitude entered
-247,420,"('Prabhakar Reddy', 'India')", no latitude and longitude entered
-248,421,"('Probhakor', 'India')", no latitude and longitude entered
-249,423,"('Pusa', 'India')", no latitude and longitude entered
-250,424,"('R&d (pachora).', 'India')", no latitude and longitude entered
-251,425,"('R&d (wadadhe).', 'India')", no latitude and longitude entered
-252,427,"('Ranchi', 'India')", no latitude and longitude entered
-253,428,"('Rau Pusa (bihar)', 'India')", no latitude and longitude entered
-254,429,"('Rayalkole', 'India')", no latitude and longitude entered
-255,430,"('Samastipur', 'India')", no latitude and longitude entered
-256,433,"('Srinagar, K.d. Research Station', 'India')", no latitude and longitude entered
-257,438,"('Weerasak Doungjan', 'India')", no latitude and longitude entered
-258,440,"('Gowa S. Sulawesi', 'Indonesia')", no latitude and longitude entered
-259,441,"('Hulu Sungai Selatan', 'Indonesia')", no latitude and longitude entered
-260,442,"('Jambegede', 'Indonesia')", no latitude and longitude entered
-261,446,"('Naibonat', 'Indonesia')", no latitude and longitude entered
-262,447,"('Natar, Lampung', 'Indonesia')", no latitude and longitude entered
-263,448,"('Probolinggo', 'Indonesia')", no latitude and longitude entered
-264,449,"('Takalar, South Sulawesi', 'Indonesia')", no latitude and longitude entered
-265,450,"('Yogyakarta', 'Indonesia')", no latitude and longitude entered
-266,451,"('Agricultural Research Station Of Gorgan', 'Iran')", no latitude and longitude entered
-267,452,"('Safiabad', 'Iran')", coords NA
-268,453,"('Ai - Latifyia', 'Iraq')", no latitude and longitude entered
-269,455,"(""Bonghdad, Al_mada'en"", 'Iraq')", no latitude and longitude entered
-270,456,"('Tuwaitha Baghdad', 'Iraq')", no latitude and longitude entered
-271,457,"('Central Asia', 'Kazakstan')", country not found/wrong country format
-272,459,"('Baobab', 'Kenya')", no latitude and longitude entered
-273,473,"('K.t.i', 'Kenya')", no latitude and longitude entered
-274,476,"('Kari - Embu', 'Kenya')", no latitude and longitude entered
-275,477,"('Karurina', 'Kenya')", no latitude and longitude entered
-276,487,"('Kitale Syn Ii (ethiopia)', 'Kenya')", no latitude and longitude entered
-277,502,"('Tanseed', 'Kenya')", no latitude and longitude entered
-278,504,"('Wanbugu', 'Kenya')", no latitude and longitude entered
-279,506,"('Western Seeds', 'Kenya')", no latitude and longitude entered
-280,508,"('Lesotho', 'Lesotho')", no latitude and longitude entered
-281,518,"('Baka Research Station', 'Malawi')", no latitude and longitude entered
-282,528,"('Mphimbi', 'Malawi')", no latitude and longitude entered
-283,530,"('Not Identified', 'Malawi')", no latitude and longitude entered
-284,535,"('Katibougou', 'Mali')", no latitude and longitude entered
-285,536,"('Kolombada', 'Mali')", no latitude and longitude entered
-286,539,"('Acatic, Jalisco', 'Mexico')", no latitude and longitude entered
-287,540,"('Acayucan, Veracruz', 'Mexico')", no latitude and longitude entered
-288,542,"('Agua Fria', 'Mexico')", no latitude and longitude entered
-289,550,"('Apaseo El Guadalupe, Guanajuato', 'Mexico')", no latitude and longitude entered
-290,551,"('Atlacomulco', 'Mexico')", no latitude and longitude entered
-291,552,"('Axochio, San Andres Tuxtla, Veracruz', 'Mexico')", no latitude and longitude entered
-292,553,"('Buenavista Penjamo, Guanajuato', 'Mexico')", no latitude and longitude entered
-293,558,"('Cardel', 'Mexico')", no latitude and longitude entered
-294,562,"('Champoton, Campeche', 'Mexico')", no latitude and longitude entered
-295,565,"('Chiapas', 'Mexico')", no latitude and longitude entered
-296,566,"('Chorrerones', 'Mexico')", no latitude and longitude entered
-297,573,"('Colonia Del Turen', 'Mexico')", no latitude and longitude entered
-298,574,"('Coquimatlan', 'Mexico')", no latitude and longitude entered
-299,575,"('Corralejo De Hidalgo, Guanajuato', 'Mexico')", no latitude and longitude entered
-300,576,"('Cotaxla', 'Mexico')", no latitude and longitude entered
-301,578,"('Coyoltepec, San Andres Tuxtla, Veracruz', 'Mexico')", no latitude and longitude entered
-302,588,"('Edzna, Campeche', 'Mexico')", no latitude and longitude entered
-303,589,"('Ejido 1ro De Mayo', 'Mexico')", no latitude and longitude entered
-304,595,"('El Zapote, Tonatico', 'Mexico')", no latitude and longitude entered
-305,598,"('Guadalajara, Jalisco', 'Mexico')", no latitude and longitude entered
-306,604,"('Huejutla De Reyes, Hidalgo', 'Mexico')", no latitude and longitude entered
-307,605,"('Huimanguillo', 'Mexico')", no latitude and longitude entered
-308,606,"('Ignacio De La Llave, Veracruz', 'Mexico')", no latitude and longitude entered
-309,609,"('Isla, Veracruz', 'Mexico')", no latitude and longitude entered
-310,612,"('Jalisco, Jalisco', 'Mexico')", no latitude and longitude entered
-311,614,"('Jerico Chiapas', 'Mexico')", no latitude and longitude entered
-312,615,"('Jesus Maria', 'Mexico')", no latitude and longitude entered
-313,619,"('La Barca, Jalisco', 'Mexico')", no latitude and longitude entered
-314,620,"('La Cantera, Comonfort, Guanajuato', 'Mexico')", no latitude and longitude entered
-315,621,"('La Cruz De Elota, Sinaloa', 'Mexico')", no latitude and longitude entered
-316,622,"('La Huerta, Jalisco', 'Mexico')", incorrect location data
-317,625,"('La Torrecilla, Tlalixcoyan, Veracruz', 'Mexico')", no latitude and longitude entered
-318,630,"('Mata De Agua', 'Mexico')", no latitude and longitude entered
-319,635,"('Nayarit', 'Mexico')", no latitude and longitude entered
-320,640,"('Ocuituco, Morelos', 'Mexico')", no latitude and longitude entered
-321,641,"('Ojo De Agua, Santiago Tuxtla, Veracruz', 'Mexico')", no latitude and longitude entered
-322,642,"('Ojo De Agua, Tonatico', 'Mexico')", no latitude and longitude entered
-323,646,"('Penjamo, Guanajuato', 'Mexico')", no latitude and longitude entered
-324,654,"('Quila, Sinaloa', 'Mexico')", no latitude and longitude entered
-325,656,"('Rincon De Parangueo, Guanajuato', 'Mexico')", no latitude and longitude entered
-326,660,"('San Andres Tuxtla', 'Mexico')", no latitude and longitude entered
-327,665,"('San Juan De Abajo', 'Mexico')", no latitude and longitude entered
-328,669,"('San Miguel Allende, Guanajuato', 'Mexico')", no latitude and longitude entered
-329,671,"('San Pedro Lagunillas, Nayarit', 'Mexico')", no latitude and longitude entered
-330,678,"('Tamarindos, Veracruz', 'Mexico')", no latitude and longitude entered
-331,679,"('Tamaulipas', 'Mexico')", no latitude and longitude entered
-332,682,"('Tepalcingo, Morelos', 'Mexico')", no latitude and longitude entered
-333,684,"('Tlacomulco', 'Mexico')", no latitude and longitude entered
-334,688,"('Tlalixcoyan', 'Mexico')", no latitude and longitude entered
-335,689,"('Tlaltizapan', 'Mexico')", no latitude and longitude entered
-336,697,"('Uxmal', 'Mexico')", no latitude and longitude entered
-337,698,"('Valle De Bravo, Estado De Mexico', 'Mexico')", no latitude and longitude entered
-338,699,"('Valle De Culiacan', 'Mexico')", no latitude and longitude entered
-339,701,"('Valle Del Fuerte, Sinaloa', 'Mexico')", no latitude and longitude entered
-340,704,"('Veracrucito', 'Mexico')", no latitude and longitude entered
-341,707,"('Villa Hidalgo, Nayarit', 'Mexico')", no latitude and longitude entered
-342,708,"('Villa Verde, Guanajuato', 'Mexico')", no latitude and longitude entered
-343,711,"('Xalostoc, Morelos', 'Mexico')", no latitude and longitude entered
-344,712,"('Xocoyucan, Tlaxcala', 'Mexico')", no latitude and longitude entered
-345,716,"('Khemiszemamra', 'Morocco')", no latitude and longitude entered
-346,718,"('Angora', 'Mozambique')", no latitude and longitude entered
-347,720,"('Ex-instituto Nacional De Investigacion Agraria', 'Mozambique')", no latitude and longitude entered
-348,726,"('Mozambique', 'Mozambique')", no latitude and longitude entered
-349,731,"('Ntengo Nucodgi Augoiris', 'Mozambique')", no latitude and longitude entered
-350,732,"('Ntengo Umadzi- Angoria', 'Mozambique')", no latitude and longitude entered
-351,733,"('Semol', 'Mozambique')", no latitude and longitude entered
-352,736,"('Ussudenga', 'Mozambique')", no latitude and longitude entered
-353,737,"('Naung Mon', 'Myanmar')", no latitude and longitude entered
-354,738,"('Sea', 'Myanmar')", no latitude and longitude entered
-355,739,"('Taryaw', 'Myanmar')", no latitude and longitude entered
-356,740,"('Tatkan', 'Myanmar')", no latitude and longitude entered
-357,741,"('Tatkone', 'Myanmar')", no latitude and longitude entered
-358,742,"('Zaloke Research Farm', 'Myanmar')", no latitude and longitude entered
-359,743,"('Aungban, Burma', 'Myanmar (burma)')", country not found/wrong country format
-360,744,"('Yezin, Burma', 'Myanmar (burma)')", country not found/wrong country format
-361,746,"('Mitkomst Research Station', 'Namibia')", no latitude and longitude entered
-362,748,"('Hardinath', 'Nepal')", no latitude and longitude entered
-363,749,"('Kabre', 'Nepal')", no latitude and longitude entered
-364,751,"('Lumle', 'Nepal')", no latitude and longitude entered
-365,752,"('Pakhribas', 'Nepal')", no latitude and longitude entered
-366,754,"('Parwanipur', 'Nepal')", no latitude and longitude entered
-367,757,"('Campos Azules', 'Nicaragua')", no latitude and longitude entered
-368,758,"('Campos Azules, Masatepe', 'Nicaragua')", no latitude and longitude entered
-369,759,"('Carazo', 'Nicaragua')", no latitude and longitude entered
-370,761,"('Chontales', 'Nicaragua')", no latitude and longitude entered
-371,762,"('Chontales, Tamboral Sur', 'Nicaragua')", no latitude and longitude entered
-372,763,"('Condega, Esteli', 'Nicaragua')", no latitude and longitude entered
-373,764,"('El Areno, El Rama', 'Nicaragua')", no latitude and longitude entered
-374,765,"('El Jicaro, Nueva Segovia', 'Nicaragua')", no latitude and longitude entered
-375,766,"('El Pellizco, Chinandega', 'Nicaragua')", no latitude and longitude entered
-376,767,"('Jalapa', 'Nicaragua')", no latitude and longitude entered
-377,768,"('La Dal═a', 'Nicaragua')", no latitude and longitude entered
-378,769,"('La Presa', 'Nicaragua')", no latitude and longitude entered
-379,770,"('La Trinidad, Esteli', 'Nicaragua')", no latitude and longitude entered
-380,771,"('Las Cruces Carazo', 'Nicaragua')", no latitude and longitude entered
-381,772,"('Las Piedras,nueva Segovia', 'Nicaragua')", no latitude and longitude entered
-382,773,"('Llano Redondo', 'Nicaragua')", no latitude and longitude entered
-383,775,"('Mazatepec', 'Nicaragua')", no latitude and longitude entered
-384,776,"('Melchorita, San Carlos', 'Nicaragua')", no latitude and longitude entered
-385,777,"('Nindiri, Mazaya', 'Nicaragua')", no latitude and longitude entered
-386,778,"('Paz De Carazo', 'Nicaragua')", no latitude and longitude entered
-387,779,"('Pueblo Nuevo', 'Nicaragua')", no latitude and longitude entered
-388,780,"('San Bartolo', 'Nicaragua')", no latitude and longitude entered
-389,781,"('San Benito, Chinandega', 'Nicaragua')", no latitude and longitude entered
-390,783,"('Santa Cruz, Esteli', 'Nicaragua')", no latitude and longitude entered
-391,784,"('Santa Juana, Nindiri', 'Nicaragua')", no latitude and longitude entered
-392,786,"('Baganda', 'Nigeria')", no latitude and longitude entered
-393,794,"('Saminaka Nig', 'Nigeria')", no latitude and longitude entered
-394,795,"('Temti Jos', 'Nigeria')", no latitude and longitude entered
-395,799,"('Ari, D,i. Kham', 'Pakistan')", no latitude and longitude entered
-396,805,"('Azuer', 'Panama')", no latitude and longitude entered
-397,813,"('Capitan Miranda', 'Paraguay')", no latitude and longitude entered
-398,816,"('San Juan Bautista', 'Paraguay')", no latitude and longitude entered
-399,818,"('Yjhovy', 'Paraguay')", no latitude and longitude entered
-400,819,"('Ascope', 'Peru')", no latitude and longitude entered
-401,820,"('Aucaloma', 'Peru')", no latitude and longitude entered
-402,821,"('E.e. El Porvenir, Calzada Moyobamba', 'Peru')", no latitude and longitude entered
-403,822,"('E.e. Pucallpa', 'Peru')", no latitude and longitude entered
-404,824,"('Huaral', 'Peru')", no latitude and longitude entered
-405,825,"('Humay - Pisco', 'Peru')", no latitude and longitude entered
-406,827,"('Juan Guerra', 'Peru')", no latitude and longitude entered
-407,828,"('La Vi╤a-jayanca-lambayeque', 'Peru')", no latitude and longitude entered
-408,829,"('Lambayeque', 'Peru')", no latitude and longitude entered
-409,830,"('Lima', 'Peru')", no latitude and longitude entered
-410,831,"('Montupe 99', 'Peru')", no latitude and longitude entered
-411,832,"('Muy Finca Mochumi Lambayeque', 'Peru')", no latitude and longitude entered
-412,833,"('Pachacamac', 'Peru')", no latitude and longitude entered
-413,834,"('Peru', 'Peru')", no latitude and longitude entered
-414,835,"('Pucallpa', 'Peru')", no latitude and longitude entered
-415,836,"('Pucallpa, San Fernando, Sa', 'Peru')", no latitude and longitude entered
-416,837,"('Rioja', 'Peru')", no latitude and longitude entered
-417,838,"('Rioja, San Fernando, Sa', 'Peru')", no latitude and longitude entered
-418,839,"('Victoria 99', 'Peru')", no latitude and longitude entered
-419,840,"('Viru La Libertad', 'Peru')", no latitude and longitude entered
-420,841,"('Vista Florida', 'Peru')", no latitude and longitude entered
-421,842,"('Vista Florida Chiclayo', 'Peru')", no latitude and longitude entered
-422,843,"('Vista Florida Chiclayo', 'Peru')", no latitude and longitude entered
-423,844,"('Vista Florida Chiclayo', 'Peru')", no latitude and longitude entered
-424,845,"('Yurimagua', 'Peru')", no latitude and longitude entered
-425,846,"('Baybay', 'Philippines')", no latitude and longitude entered
-426,849,"('Ipb Experiment Station', 'Philippines')", no latitude and longitude entered
-427,850,"('Kabacan', 'Philippines')", no latitude and longitude entered
-428,851,"('Kabacan, Cotabato', 'Philippines')", no latitude and longitude entered
-429,853,"('San Felipe, Ilagan, Isabela.', 'Philippines')", no latitude and longitude entered
-430,858,"('Burgershall', 'South Africa')", no latitude and longitude entered
-431,860,"('Friedenheim Valley', 'South Africa')", no latitude and longitude entered
-432,861,"('Linkseed', 'South Africa')", no latitude and longitude entered
-433,862,"('Mpumalanga', 'South Africa')", no latitude and longitude entered
-434,864,"('North West Province', 'South Africa')", no latitude and longitude entered
-435,866,"('Petit', 'South Africa')", no latitude and longitude entered
-436,867,"('Tshiombo', 'South Africa')", no latitude and longitude entered
-437,869,"('Betlehem', 'South Africa Rep.')", country not found/wrong country format
-438,870,"('Cedara', 'South Africa Rep.')", country not found/wrong country format
-439,871,"('Ezolimo', 'South Africa Rep.')", country not found/wrong country format
-440,872,"('Friedenhei', 'South Africa Rep.')", country not found/wrong country format
-441,873,"('Greytown', 'South Africa Rep.')", country not found/wrong country format
-442,874,"('Greytown', 'South Africa Rep.')", country not found/wrong country format
-443,875,"('Lwamongo', 'South Africa Rep.')", country not found/wrong country format
-444,876,"('Nelspruit', 'South Africa Rep.')", country not found/wrong country format
-445,878,"('Setlagole', 'South Africa Rep.')", country not found/wrong country format
-446,879,"('Viljoenskroon', 'South Africa Rep.')", country not found/wrong country format
-447,882,"('Paramaribo', 'Surinam')", country not found/wrong country format
-448,884,"('Les', 'Swaziland')", no latitude and longitude entered
-449,885,"('Lowveld, Brabend', 'Swaziland')", no latitude and longitude entered
-450,890,"('Shewula', 'Swaziland')", no latitude and longitude entered
-451,891,"('Swaziland', 'Swaziland')", no latitude and longitude entered
-452,892,"('Deir Al Zoor', 'Syria')", no latitude and longitude entered
-453,893,"('Raqqa', 'Syria')", no latitude and longitude entered
-454,896,"('Arusha Seed Farm Afsf', 'Tanzania')", no latitude and longitude entered
-455,913,"('Mwanza - Region', 'Tanzania')", no latitude and longitude entered
-456,916,"('Nm', 'Tanzania')", no latitude and longitude entered
-457,919,"('Tanzania', 'Tanzania')", no latitude and longitude entered
-458,929,"('Sawankalok Sukhotha', 'Thailand')", no latitude and longitude entered
-459,931,"('Tak Fa', 'Thailand')", no latitude and longitude entered
-460,933,"('El Carmen', 'Trinidad Y Tobago')", country not found/wrong country format
-461,934,"('Goldsborough', 'Trinidad Y Tobago')", country not found/wrong country format
-462,935,"(""Louis D'or"", 'Trinidad Y Tobago')", country not found/wrong country format
-463,937,"('Aydin', 'Turkey')", no latitude and longitude entered
-464,938,"('Anny Settl', 'Turkmenistan')", no latitude and longitude entered
-465,939,"('Bulegeni', 'Uganda')", no latitude and longitude entered
-466,940,"('Bulengeni', 'Uganda')", no latitude and longitude entered
-467,945,"('Likonde,songea', 'Uganda')", incorrect location data
-468,947,"('Msk', 'Uganda')", no latitude and longitude entered
-469,952,"('Uganda', 'Uganda')", no latitude and longitude entered
-470,954,"('College Station, Texas', 'United States Of America')", no latitude and longitude entered
-471,955,"('Kenedy, Tx.', 'United States Of America')", no latitude and longitude entered
-472,957,"('Tifton, Georgia', 'United States Of America')", no latitude and longitude entered
-473,958,"('Tifton, Georgia', 'United States Of America')", no latitude and longitude entered
-474,959,"('Weslaco, Texas', 'United States Of America')", no latitude and longitude entered
-475,962,"('Agua Blanca, Portuguesa', 'Venezuela')", no latitude and longitude entered
-476,963,"('Aragua (ceniap)', 'Venezuela')", no latitude and longitude entered
-477,964,"('Araure (acarigua)', 'Venezuela')", no latitude and longitude entered
-478,965,"('Araure (portuguesa)', 'Venezuela')", no latitude and longitude entered
-479,966,"('Carretera O, Turen, Portuguesa', 'Venezuela')", no latitude and longitude entered
-480,967,"('Centro Norte', 'Venezuela')", no latitude and longitude entered
-481,968,"('Colonia Agricola De Turen', 'Venezuela')", no latitude and longitude entered
-482,969,"('El Diamante, Yaritagua', 'Venezuela')", no latitude and longitude entered
-483,970,"('El Playon', 'Venezuela')", no latitude and longitude entered
-484,971,"('El Socorro', 'Venezuela')", no latitude and longitude entered
-485,972,"('Guarico', 'Venezuela')", no latitude and longitude entered
-486,973,"('La Lucia', 'Venezuela')", no latitude and longitude entered
-487,974,"('Las Caramas', 'Venezuela')", no latitude and longitude entered
-488,977,"('Las Guacamayas, El Sombrero', 'Venezuela')", no latitude and longitude entered
-489,978,"('Los Guayos, Carabobo State', 'Venezuela')", no latitude and longitude entered
-490,979,"('Manzanita', 'Venezuela')", no latitude and longitude entered
-491,981,"('Pascual Valetta, Laguna De Piedra', 'Venezuela')", no latitude and longitude entered
-492,982,"('Punta Gorda', 'Venezuela')", no latitude and longitude entered
-493,984,"('Santa Barbara', 'Venezuela')", no latitude and longitude entered
-494,985,"('Semillas Aragua', 'Venezuela')", no latitude and longitude entered
-495,986,"('Tocoron', 'Venezuela')", no latitude and longitude entered
-496,987,"('Tocoron, Estado Aragua', 'Venezuela')", no latitude and longitude entered
-497,988,"('Tucupido', 'Venezuela')", no latitude and longitude entered
-498,989,"('Turen', 'Venezuela')", no latitude and longitude entered
-499,990,"('Unidad Agricola De Turen', 'Venezuela')", no latitude and longitude entered
-500,991,"('Venezuela', 'Venezuela')", no latitude and longitude entered
-501,992,"('Villa De Cura, Aragua', 'Venezuela')", no latitude and longitude entered
-502,993,"('Ars, Amberpet, Hyd.', 'Vietnam')", no latitude and longitude entered
-503,994,"('Binh Chanh Dictrict - Ho Chi Minh City', 'Vietnam')", no latitude and longitude entered
-504,995,"('Binh Duong', 'Vietnam')", no latitude and longitude entered
-505,997,"('Dan Phuong Hatay', 'Vietnam')", no latitude and longitude entered
-506,998,"('Danphing Dist.', 'Vietnam')", no latitude and longitude entered
-507,999,"('Duc Hoa District, Long An Province', 'Vietnam')", no latitude and longitude entered
-508,1000,"('Gorakhpur', 'Vietnam')", no latitude and longitude entered
-509,1004,"('Tay Ninh Province', 'Vietnam')", no latitude and longitude entered
-510,1005,"('Gandajika', 'Zaire')", incorrect location data
-511,1006,"('Mvuazi', 'Zaire')", incorrect location data
-512,1007,"('Chisamba, Golden Valley', 'Zambia')", no latitude and longitude entered
-513,1010,"('Kutumani', 'Zambia')", no latitude and longitude entered
-514,1011,"('Lyempe', 'Zambia')", no latitude and longitude entered
-515,1012,"('Magobo', 'Zambia')", no latitude and longitude entered
-516,1022,"('Zambia', 'Zambia')", no latitude and longitude entered
-517,1028,"('Cimmyt, Harare', 'Zimbabwe')", no latitude and longitude entered
-518,1029,"('Dedza', 'Zimbabwe')", no latitude and longitude entered
-519,1040,"('Pannar', 'Zimbabwe')", no latitude and longitude entered
-520,1041,"('Pioneer', 'Zimbabwe')", no latitude and longitude entered
-521,1042,"('Radoma', 'Zimbabwe')", no latitude and longitude entered
-522,1047,"('Zimbabwe', 'Zimbabwe')", no latitude and longitude entered
-523,1052,"('Gisozi', 'Burundi')", no latitude and longitude entered
-524,1056,"('Zacatepec, Morelos', 'Mexico')", no latitude and longitude entered
-525,1057,"('Miacatlan', 'Mexico')", no latitude and longitude entered
-526,1058,"('Salandhar (punjab)', 'India')", no latitude and longitude entered
-527,1063,"('Kaniaka', 'Congo')", incorrect location data
-528,1074,"('Gondar', 'Ethiopia')", no latitude and longitude entered
-529,1075,"('Quindio', 'Colombia')", no latitude and longitude entered
-530,1076,"('Puerto Gaitan-carpoica,taluma', 'Colombia')", no latitude and longitude entered
-531,1077,"('Kisama', 'Kenya')", no latitude and longitude entered
-532,1078,"('Angecha', 'Ethiopia')", no latitude and longitude entered
-533,1079,"('Ivumwe', 'Tanzania')", no latitude and longitude entered
-534,1080,"('Mparambo', 'Burundi')", no latitude and longitude entered
-535,1081,"('Thika', 'Kenya')", no latitude and longitude entered
-536,1082,"('Matisi', 'Kenya')", no latitude and longitude entered
-537,1083,"('Kutus', 'Kenya')", no latitude and longitude entered
-538,1084,"('Kimaeti', 'Kenya')", no latitude and longitude entered
-539,1085,"('Elgon Downs', 'Kenya')", no latitude and longitude entered
-540,1086,"('Bumula', 'Kenya')", no latitude and longitude entered
-541,1087,"('Bulindi', 'Uganda')", no latitude and longitude entered
-542,1088,"('Bugiri', 'Uganda')", no latitude and longitude entered
-543,1089,"('Nyagatare', 'Rwanda')", no latitude and longitude entered
-544,1090,"('Kagumo', 'Kenya')", no latitude and longitude entered
-545,1091,"('Screen House', 'Kenya')", no latitude and longitude entered
-546,1092,"('Chitedzi', 'Malawi')", no latitude and longitude entered
-547,1093,"('Kiteta', 'Kenya')", no latitude and longitude entered
-548,1094,"('Kyuu', 'Kenya')", no latitude and longitude entered
-549,1095,"('Bingu', 'Malawi')", no latitude and longitude entered
-550,1096,"('Mpingu', 'Malawi')", no latitude and longitude entered
-551,1097,"('Pomela', 'Malawi')", no latitude and longitude entered
-552,1098,"('Pallisa', 'Uganda')", no latitude and longitude entered
-553,1099,"('Rancho Guadalupe, Toluca', 'Mexico')", no latitude and longitude entered
-554,1100,"('Mwea', 'Kenya')", no latitude and longitude entered
-555,1102,"('Kabul', 'Afghanistan')", no latitude and longitude entered
-556,1107,"('La Catalina', 'Colombia')", no latitude and longitude entered
-557,1108,"('Paraguaicito', 'Colombia')", no latitude and longitude entered
-558,1110,"('Freidenheim Valley', 'South Africa')", no latitude and longitude entered
-559,1115,"('Kibray', 'Uzbekistan')", no latitude and longitude entered
-560,1116,"('Chisamba', 'Zambia')", no latitude and longitude entered
-561,1128,"('Mungushi, Hai', 'Tanzania')", no latitude and longitude entered
-562,1129,"('Bondo', 'Kenya')", no latitude and longitude entered
-563,1130,"('Kakamega (monsanto)', 'Kenya')", no latitude and longitude entered
-564,1133,"('Caña Flecha', 'Colombia')", no latitude and longitude entered
-565,1135,"('Las Cañas', 'Costa Rica')", no latitude and longitude entered
-566,1136,"('La Máquina Caballo Blanco', 'Guatemala')", no latitude and longitude entered
-567,1137,"('San José Pinula', 'Guatemala')", no latitude and longitude entered
-568,1138,"('La Viña-jayanca-lambayeque', 'Peru')", no latitude and longitude entered
-569,1139,"('Dinajpur', 'Bangladesh')", no latitude and longitude entered
+39,109,"('Aguas Blancas', 'Colombia')", no latitude and longitude entered
+40,110,"('Aguas Claras', 'Colombia')", no latitude and longitude entered
+41,111,"('Andremoni', 'Colombia')", no latitude and longitude entered
+42,112,"('Arborates', 'Colombia')", no latitude and longitude entered
+43,113,"('Arguello Bajo, Yacuanquer', 'Colombia')", no latitude and longitude entered
+44,114,"('Atuncela, Dagua', 'Colombia')", no latitude and longitude entered
+45,115,"('Bucaramanga', 'Colombia')", no latitude and longitude entered
+46,116,"('Bucaramanga, Pinchote', 'Colombia')", no latitude and longitude entered
+47,118,"('Buga, Media Canoa', 'Colombia')", no latitude and longitude entered
+48,119,"('Caicedonia', 'Colombia')", no latitude and longitude entered
+49,120,"('Caldono', 'Colombia')", no latitude and longitude entered
+50,122,"('Campo Alegre, Huila', 'Colombia')", no latitude and longitude entered
+51,123,"('Ca╤a Flecha', 'Colombia')", no latitude and longitude entered
+52,124,"('Carmen De Bolivar', 'Colombia')", no latitude and longitude entered
+53,125,"('Cerete, Cordoba', 'Colombia')", no latitude and longitude entered
+54,126,"('Cerrito', 'Colombia')", no latitude and longitude entered
+55,127,"('Cienega De Oro', 'Colombia')", no latitude and longitude entered
+56,128,"('Ciudad Bolivar', 'Colombia')", no latitude and longitude entered
+57,129,"('Colombia', 'Colombia')", no latitude and longitude entered
+58,130,"('Cordoba', 'Colombia')", no latitude and longitude entered
+59,131,"('Corozal', 'Colombia')", no latitude and longitude entered
+60,132,"('Darien, Valle Del Cauca', 'Colombia')", no latitude and longitude entered
+61,133,"('Duitama', 'Colombia')", no latitude and longitude entered
+62,135,"('El Espinal, Tolima', 'Colombia')", no latitude and longitude entered
+63,136,"('El Libano', 'Colombia')", no latitude and longitude entered
+64,137,"('El Naranjal', 'Colombia')", no latitude and longitude entered
+65,138,"('El Rosario', 'Colombia')", no latitude and longitude entered
+66,139,"('El Tambo, Valle Del Cauca', 'Colombia')", no latitude and longitude entered
+67,140,"('El Tomate', 'Colombia')", no latitude and longitude entered
+68,141,"('Fuente De Oro, Granda', 'Colombia')", no latitude and longitude entered
+69,142,"('Garzon, Huila', 'Colombia')", no latitude and longitude entered
+70,143,"('Granada', 'Colombia')", no latitude and longitude entered
+71,144,"('Guadalajara De Buga', 'Colombia')", no latitude and longitude entered
+72,145,"('Independencia, Caldono', 'Colombia')", no latitude and longitude entered
+73,146,"('La Catalina, Pereira', 'Colombia')", no latitude and longitude entered
+74,147,"('La Cubillera, Granada', 'Colombia')", no latitude and longitude entered
+75,148,"('La Palomera', 'Colombia')", no latitude and longitude entered
+76,149,"('La Trocha 12, Granda', 'Colombia')", no latitude and longitude entered
+77,151,"('La Union, Corcega', 'Colombia')", no latitude and longitude entered
+78,152,"('Lejania, Granada', 'Colombia')", no latitude and longitude entered
+79,153,"('Matazul', 'Colombia')", no latitude and longitude entered
+80,154,"('Menegua', 'Colombia')", no latitude and longitude entered
+81,155,"('Mondomo, Santander', 'Colombia')", no latitude and longitude entered
+82,156,"('Monteria', 'Colombia')", incorrect location data
+83,157,"('Neiva, Huila', 'Colombia')", no latitude and longitude entered
+84,158,"('Obando, Molina', 'Colombia')", no latitude and longitude entered
+85,160,"('Paraguaicito, Armenia', 'Colombia')", no latitude and longitude entered
+86,161,"('Pelaya-cesar (aguachica)', 'Colombia')", no latitude and longitude entered
+87,162,"('Pereira', 'Colombia')", no latitude and longitude entered
+88,163,"('Piendamo', 'Colombia')", no latitude and longitude entered
+89,164,"('Procampo', 'Colombia')", no latitude and longitude entered
+90,165,"('Puerto Lopez', 'Colombia')", no latitude and longitude entered
+91,166,"('Puerto Lopez', 'Colombia')", no latitude and longitude entered
+92,167,"('Quindio, Montenegro', 'Colombia')", no latitude and longitude entered
+93,168,"('Rivera, Huila', 'Colombia')", no latitude and longitude entered
+94,169,"('Roldanillo', 'Colombia')", no latitude and longitude entered
+95,170,"('Sabana De Torres, Santander', 'Colombia')", no latitude and longitude entered
+96,171,"('Sahagu', 'Colombia')", no latitude and longitude entered
+97,172,"('San Antonio', 'Colombia')", no latitude and longitude entered
+98,173,"('San Barreto', 'Colombia')", no latitude and longitude entered
+99,174,"('San Francisco, Sandona', 'Colombia')", no latitude and longitude entered
+100,175,"('San Ignacio, Granada', 'Colombia')", no latitude and longitude entered
+101,176,"('San Pedro De Uraba', 'Colombia')", no latitude and longitude entered
+102,177,"('San Pelayo', 'Colombia')", no latitude and longitude entered
+103,178,"('San Rafael, Consaca', 'Colombia')", no latitude and longitude entered
+104,179,"('Sandona, Narino, Fidar', 'Colombia')", no latitude and longitude entered
+105,180,"('Santa Helena', 'Colombia')", no latitude and longitude entered
+106,181,"('Santa Lucia', 'Colombia')", no latitude and longitude entered
+107,182,"('Santander De Quilichao', 'Colombia')", no latitude and longitude entered
+108,183,"('Segovia', 'Colombia')", no latitude and longitude entered
+109,184,"('Semivalle', 'Colombia')", no latitude and longitude entered
+110,185,"('Sincelejo', 'Colombia')", no latitude and longitude entered
+111,186,"('Taluma', 'Colombia')", no latitude and longitude entered
+112,187,"('Tierra Alta', 'Colombia')", no latitude and longitude entered
+113,188,"('Tulenapa', 'Colombia')", no latitude and longitude entered
+114,189,"('Tunja', 'Colombia')", no latitude and longitude entered
+115,192,"('Turipana', 'Colombia')", no latitude and longitude entered
+116,193,"('Turipana', 'Colombia')", no latitude and longitude entered
+117,194,"('Valle De Magdalena', 'Colombia')", no latitude and longitude entered
+118,195,"('Valle De Magdalena', 'Colombia')", no latitude and longitude entered
+119,196,"('Valle De Magdalena', 'Colombia')", no latitude and longitude entered
+120,197,"('Valle De Magdalena', 'Colombia')", no latitude and longitude entered
+121,198,"('Valle Del Cauca', 'Colombia')", no latitude and longitude entered
+122,199,"('Venecia', 'Colombia')", no latitude and longitude entered
+123,200,"('Villavicencio', 'Colombia')", no latitude and longitude entered
+124,201,"('Villavo', 'Colombia')", no latitude and longitude entered
+125,202,"('Yotoco-valle Del Cauca', 'Colombia')", no latitude and longitude entered
+126,203,"('Congo', 'Congo')", no latitude and longitude entered
+127,205,"('Tshibati', 'Congo')", no latitude and longitude entered
+128,207,"('Costa Rica', 'Costa Rica')", no latitude and longitude entered
+129,208,"('El Aguila, Pejibaye', 'Costa Rica')", no latitude and longitude entered
+130,209,"('El Parque, Los Chiles', 'Costa Rica')", no latitude and longitude entered
+131,210,"('El Progreso, Pejibaye', 'Costa Rica')", no latitude and longitude entered
+132,211,"('Guagaral', 'Costa Rica')", incorrect location data
+133,213,"('Las Ca╤as', 'Costa Rica')", no latitude and longitude entered
+134,214,"('Pejibaye De Perez Zeledon', 'Costa Rica')", no latitude and longitude entered
+135,216,"('Upala', 'Costa Rica')", no latitude and longitude entered
+136,217,"('Upala Pueblo Nuevo', 'Costa Rica')", no latitude and longitude entered
+137,218,"('Veracruz, Pejibaye', 'Costa Rica')", no latitude and longitude entered
+138,219,"('Badikaha', ""Cote D'ivoire"")", country not found/wrong country format
+139,220,"('Bouake', ""Cote D'ivoire"")", country not found/wrong country format
+140,221,"('Ferkessedougou', ""Cote D'ivoire"")", country not found/wrong country format
+141,222,"('Sinematiali', ""Cote D'ivoire"")", country not found/wrong country format
+142,223,"('Touba', ""Cote D'ivoire"")", country not found/wrong country format
+143,224,"('Warda/adrao-mbe', ""Cote D'ivoire"")", country not found/wrong country format
+144,228,"('Comuna San Rafael, Peninsula Sta Elena', 'Ecuador')", no latitude and longitude entered
+145,229,"('Ecuador', 'Ecuador')", no latitude and longitude entered
+146,230,"('Fca. Exp. Josefina Balzar', 'Ecuador')", no latitude and longitude entered
+147,231,"('La Virginia Quevedo', 'Ecuador')", no latitude and longitude entered
+148,232,"('Lodana', 'Ecuador')", no latitude and longitude entered
+149,234,"('Organos', 'Ecuador')", no latitude and longitude entered
+150,236,"('Pindal', 'Ecuador')", no latitude and longitude entered
+151,240,"('Giza', 'Egypt')", no latitude and longitude entered
+152,245,"('Apastepeque', 'El Salvador')", no latitude and longitude entered
+153,246,"('Armenia', 'El Salvador')", no latitude and longitude entered
+154,247,"('Barrio Nuevo, La Paz', 'El Salvador')", no latitude and longitude entered
+155,248,"('Chalchahuapa', 'El Salvador')", no latitude and longitude entered
+156,249,"('Cuhisnuat', 'El Salvador')", no latitude and longitude entered
+157,250,"('El Coyalito', 'El Salvador')", no latitude and longitude entered
+158,251,"('El Pepito, Concep., Chalate', 'El Salvador')", no latitude and longitude entered
+159,252,"('Jiquilisco', 'El Salvador')", no latitude and longitude entered
+160,253,"('Jocoro, Morazan', 'El Salvador')", no latitude and longitude entered
+161,254,"('Jucuapa, Usulutan', 'El Salvador')", no latitude and longitude entered
+162,255,"('La Libertad', 'El Salvador')", no latitude and longitude entered
+163,256,"('Lomas De Santiago', 'El Salvador')", no latitude and longitude entered
+164,257,"('Los Cipreses, Conchagua, La Union', 'El Salvador')", no latitude and longitude entered
+165,258,"('Nacimiento, La Union', 'El Salvador')", no latitude and longitude entered
+166,259,"('Nahuilingo', 'El Salvador')", no latitude and longitude entered
+167,260,"('Nueva Concepcion', 'El Salvador')", no latitude and longitude entered
+168,261,"('Quelepa, San Miguel', 'El Salvador')", no latitude and longitude entered
+169,262,"('San Andres', 'El Salvador')", no latitude and longitude entered
+170,263,"('San Andres (sb)', 'El Salvador')", no latitude and longitude entered
+171,264,"('San Mauricio', 'El Salvador')", no latitude and longitude entered
+172,265,"('San Pedro Puxtla, Ahuachapan', 'El Salvador')", no latitude and longitude entered
+173,266,"('San Vicente', 'El Salvador')", no latitude and longitude entered
+174,268,"('Santa Cruz Porrillo', 'El Salvador')", no latitude and longitude entered
+175,270,"('Suchitoto, Cuscatlan', 'El Salvador')", no latitude and longitude entered
+176,271,"('Tenancingo', 'El Salvador')", no latitude and longitude entered
+177,272,"('Uluazapa, La Union', 'El Salvador')", no latitude and longitude entered
+178,275,"('Pontevedra', 'España')", country not found/wrong country format
+179,284,"('Haramaya', 'Ethiopia')", no latitude and longitude entered
+180,287,"('Kitale-ws', 'Ethiopia')", incorrect location data
+181,294,"('Nazret', 'Ethiopia')", coords NA
+182,296,"('Ws', 'Ethiopia')", no latitude and longitude entered
+183,298,"('Dobuleni Research Station', 'Fiji')", no latitude and longitude entered
+184,299,"('Koronnia Research Station', 'Fiji')", no latitude and longitude entered
+185,300,"('Legalega Research Station', 'Fiji')", no latitude and longitude entered
+186,301,"('Sigatoka Research Station', 'Fiji')", no latitude and longitude entered
+187,302,"('Tserovani', 'Georgia')", no latitude and longitude entered
+188,313,"('Caballo Blanco, Retalhuleu', 'Guatemala')", no latitude and longitude entered
+189,316,"('El Ovejero, Jutiapa', 'Guatemala')", no latitude and longitude entered
+190,317,"('Estanzuela', 'Guatemala')", no latitude and longitude entered
+191,318,"('Finca, Las Vegas Tequisate.', 'Guatemala')", no latitude and longitude entered
+192,319,"('Isidro Avarez', 'Guatemala')", incorrect location data
+193,321,"('La Flecha', 'Guatemala')", no latitude and longitude entered
+194,322,"('La Maquina', 'Guatemala')", no latitude and longitude entered
+195,323,"('La M┴quina Caballo Blanco', 'Guatemala')", no latitude and longitude entered
+196,324,"('La Maquina, Linea A5', 'Guatemala')", no latitude and longitude entered
+197,325,"('La Maquina, Tulate', 'Guatemala')", no latitude and longitude entered
+198,326,"('Las Monjas', 'Guatemala')", no latitude and longitude entered
+199,328,"('Monjas, Jalapa', 'Guatemala')", no latitude and longitude entered
+200,329,"('Nueva Concepcion', 'Guatemala')", no latitude and longitude entered
+201,330,"('Ovejero, Jutiapa', 'Guatemala')", no latitude and longitude entered
+202,331,"('Quesada, Jutiapa', 'Guatemala')", no latitude and longitude entered
+203,332,"('Salam B. V.', 'Guatemala')", no latitude and longitude entered
+204,333,"('San Jos╔ Pinula', 'Guatemala')", no latitude and longitude entered
+205,334,"('San Pedro Pinula, Jalapa', 'Guatemala')", no latitude and longitude entered
+206,335,"('Sto Domingo', 'Guatemala')", no latitude and longitude entered
+207,338,"('Zacapa', 'Guatemala')", no latitude and longitude entered
+208,340,"('Chantilly', 'Haiti')", no latitude and longitude entered
+209,342,"('Karoman, Lavallee', 'Haiti')", no latitude and longitude entered
+210,344,"('Nan- Jn Pierre, Cap-rouge', 'Haiti')", no latitude and longitude entered
+211,345,"('Candelaria, Lempira', 'Honduras')", no latitude and longitude entered
+212,346,"('Catacamas, Olancho', 'Honduras')", no latitude and longitude entered
+213,348,"('Comayagua, E.e. Playitas', 'Honduras')", no latitude and longitude entered
+214,350,"('El Guaco Yorito, Yoro', 'Honduras')", no latitude and longitude entered
+215,351,"('El Pital, Atlantida', 'Honduras')", no latitude and longitude entered
+216,353,"('Jutiquile, Olancho', 'Honduras')", no latitude and longitude entered
+217,356,"('Litoral Atlantico', 'Honduras')", no latitude and longitude entered
+218,357,"('Luquigue Yorito, Yoro', 'Honduras')", no latitude and longitude entered
+219,358,"('Mina Handa (yorito Yoco)', 'Honduras')", no latitude and longitude entered
+220,359,"('Obraje, Danli', 'Honduras')", no latitude and longitude entered
+221,361,"('Pata Stera (yorito Yoco)', 'Honduras')", no latitude and longitude entered
+222,362,"('Playita', 'Honduras')", no latitude and longitude entered
+223,363,"('Potrerillos, Olancho', 'Honduras')", no latitude and longitude entered
+224,364,"('Rio Arriba Yorito, Yoro', 'Honduras')", no latitude and longitude entered
+225,365,"('San Lucas, El Paraiso', 'Honduras')", no latitude and longitude entered
+226,366,"('San Pedro De Catacamas, Olancho', 'Honduras')", no latitude and longitude entered
+227,368,"('Yoro, El Pate', 'Honduras')", no latitude and longitude entered
+228,369,"('Yoro, Morazan', 'Honduras')", no latitude and longitude entered
+229,372,"('Amberpet', 'India')", no latitude and longitude entered
+230,378,"('Bahraich, Crop Research Station', 'India')", no latitude and longitude entered
+231,384,"('Belipar, Gorakhpur, U.p.', 'India')", no latitude and longitude entered
+232,385,"('Bihar', 'India')", no latitude and longitude entered
+233,391,"('Dholi', 'India')", no latitude and longitude entered
+234,393,"('Dohad', 'India')", no latitude and longitude entered
+235,395,"('Godhsa Gaujasat', 'India')", no latitude and longitude entered
+236,397,"('India', 'India')", no latitude and longitude entered
+237,406,"('Khadbrabhra', 'India')", no latitude and longitude entered
+238,407,"('Khedbrahma', 'India')", no latitude and longitude entered
+239,411,"('Messina', 'India')", no latitude and longitude entered
+240,412,"('Muzafferpur', 'India')", no latitude and longitude entered
+241,413,"('New Delhi', 'India')", no latitude and longitude entered
+242,417,"('Pantnagar', 'India')", no latitude and longitude entered
+243,418,"('Parbhani', 'India')", no latitude and longitude entered
+244,419,"('Poonch', 'India')", no latitude and longitude entered
+245,420,"('Prabhakar Reddy', 'India')", no latitude and longitude entered
+246,421,"('Probhakor', 'India')", no latitude and longitude entered
+247,423,"('Pusa', 'India')", no latitude and longitude entered
+248,424,"('R&d (pachora).', 'India')", no latitude and longitude entered
+249,425,"('R&d (wadadhe).', 'India')", no latitude and longitude entered
+250,427,"('Ranchi', 'India')", no latitude and longitude entered
+251,428,"('Rau Pusa (bihar)', 'India')", no latitude and longitude entered
+252,429,"('Rayalkole', 'India')", no latitude and longitude entered
+253,430,"('Samastipur', 'India')", no latitude and longitude entered
+254,433,"('Srinagar, K.d. Research Station', 'India')", no latitude and longitude entered
+255,438,"('Weerasak Doungjan', 'India')", no latitude and longitude entered
+256,440,"('Gowa S. Sulawesi', 'Indonesia')", no latitude and longitude entered
+257,441,"('Hulu Sungai Selatan', 'Indonesia')", no latitude and longitude entered
+258,442,"('Jambegede', 'Indonesia')", no latitude and longitude entered
+259,446,"('Naibonat', 'Indonesia')", no latitude and longitude entered
+260,447,"('Natar, Lampung', 'Indonesia')", no latitude and longitude entered
+261,448,"('Probolinggo', 'Indonesia')", no latitude and longitude entered
+262,449,"('Takalar, South Sulawesi', 'Indonesia')", no latitude and longitude entered
+263,450,"('Yogyakarta', 'Indonesia')", no latitude and longitude entered
+264,451,"('Agricultural Research Station Of Gorgan', 'Iran')", no latitude and longitude entered
+265,452,"('Safiabad', 'Iran')", coords NA
+266,453,"('Ai - Latifyia', 'Iraq')", no latitude and longitude entered
+267,455,"(""Bonghdad, Al_mada'en"", 'Iraq')", no latitude and longitude entered
+268,456,"('Tuwaitha Baghdad', 'Iraq')", no latitude and longitude entered
+269,457,"('Central Asia', 'Kazakstan')", country not found/wrong country format
+270,459,"('Baobab', 'Kenya')", no latitude and longitude entered
+271,473,"('K.t.i', 'Kenya')", no latitude and longitude entered
+272,476,"('Kari - Embu', 'Kenya')", no latitude and longitude entered
+273,477,"('Karurina', 'Kenya')", no latitude and longitude entered
+274,487,"('Kitale Syn Ii (ethiopia)', 'Kenya')", no latitude and longitude entered
+275,502,"('Tanseed', 'Kenya')", no latitude and longitude entered
+276,504,"('Wanbugu', 'Kenya')", no latitude and longitude entered
+277,506,"('Western Seeds', 'Kenya')", no latitude and longitude entered
+278,508,"('Lesotho', 'Lesotho')", no latitude and longitude entered
+279,518,"('Baka Research Station', 'Malawi')", no latitude and longitude entered
+280,528,"('Mphimbi', 'Malawi')", no latitude and longitude entered
+281,530,"('Not Identified', 'Malawi')", no latitude and longitude entered
+282,535,"('Katibougou', 'Mali')", no latitude and longitude entered
+283,536,"('Kolombada', 'Mali')", no latitude and longitude entered
+284,539,"('Acatic, Jalisco', 'Mexico')", no latitude and longitude entered
+285,540,"('Acayucan, Veracruz', 'Mexico')", no latitude and longitude entered
+286,542,"('Agua Fria', 'Mexico')", no latitude and longitude entered
+287,550,"('Apaseo El Guadalupe, Guanajuato', 'Mexico')", no latitude and longitude entered
+288,551,"('Atlacomulco', 'Mexico')", no latitude and longitude entered
+289,552,"('Axochio, San Andres Tuxtla, Veracruz', 'Mexico')", no latitude and longitude entered
+290,553,"('Buenavista Penjamo, Guanajuato', 'Mexico')", no latitude and longitude entered
+291,558,"('Cardel', 'Mexico')", no latitude and longitude entered
+292,562,"('Champoton, Campeche', 'Mexico')", no latitude and longitude entered
+293,565,"('Chiapas', 'Mexico')", no latitude and longitude entered
+294,566,"('Chorrerones', 'Mexico')", no latitude and longitude entered
+295,573,"('Colonia Del Turen', 'Mexico')", no latitude and longitude entered
+296,574,"('Coquimatlan', 'Mexico')", no latitude and longitude entered
+297,575,"('Corralejo De Hidalgo, Guanajuato', 'Mexico')", no latitude and longitude entered
+298,576,"('Cotaxla', 'Mexico')", no latitude and longitude entered
+299,578,"('Coyoltepec, San Andres Tuxtla, Veracruz', 'Mexico')", no latitude and longitude entered
+300,588,"('Edzna, Campeche', 'Mexico')", no latitude and longitude entered
+301,589,"('Ejido 1ro De Mayo', 'Mexico')", no latitude and longitude entered
+302,595,"('El Zapote, Tonatico', 'Mexico')", no latitude and longitude entered
+303,598,"('Guadalajara, Jalisco', 'Mexico')", no latitude and longitude entered
+304,604,"('Huejutla De Reyes, Hidalgo', 'Mexico')", no latitude and longitude entered
+305,605,"('Huimanguillo', 'Mexico')", no latitude and longitude entered
+306,606,"('Ignacio De La Llave, Veracruz', 'Mexico')", no latitude and longitude entered
+307,609,"('Isla, Veracruz', 'Mexico')", no latitude and longitude entered
+308,612,"('Jalisco, Jalisco', 'Mexico')", no latitude and longitude entered
+309,614,"('Jerico Chiapas', 'Mexico')", no latitude and longitude entered
+310,615,"('Jesus Maria', 'Mexico')", no latitude and longitude entered
+311,619,"('La Barca, Jalisco', 'Mexico')", no latitude and longitude entered
+312,620,"('La Cantera, Comonfort, Guanajuato', 'Mexico')", no latitude and longitude entered
+313,621,"('La Cruz De Elota, Sinaloa', 'Mexico')", no latitude and longitude entered
+314,622,"('La Huerta, Jalisco', 'Mexico')", incorrect location data
+315,625,"('La Torrecilla, Tlalixcoyan, Veracruz', 'Mexico')", no latitude and longitude entered
+316,630,"('Mata De Agua', 'Mexico')", no latitude and longitude entered
+317,635,"('Nayarit', 'Mexico')", no latitude and longitude entered
+318,640,"('Ocuituco, Morelos', 'Mexico')", no latitude and longitude entered
+319,641,"('Ojo De Agua, Santiago Tuxtla, Veracruz', 'Mexico')", no latitude and longitude entered
+320,642,"('Ojo De Agua, Tonatico', 'Mexico')", no latitude and longitude entered
+321,646,"('Penjamo, Guanajuato', 'Mexico')", no latitude and longitude entered
+322,654,"('Quila, Sinaloa', 'Mexico')", no latitude and longitude entered
+323,656,"('Rincon De Parangueo, Guanajuato', 'Mexico')", no latitude and longitude entered
+324,660,"('San Andres Tuxtla', 'Mexico')", no latitude and longitude entered
+325,665,"('San Juan De Abajo', 'Mexico')", no latitude and longitude entered
+326,669,"('San Miguel Allende, Guanajuato', 'Mexico')", no latitude and longitude entered
+327,671,"('San Pedro Lagunillas, Nayarit', 'Mexico')", no latitude and longitude entered
+328,678,"('Tamarindos, Veracruz', 'Mexico')", no latitude and longitude entered
+329,679,"('Tamaulipas', 'Mexico')", no latitude and longitude entered
+330,682,"('Tepalcingo, Morelos', 'Mexico')", no latitude and longitude entered
+331,684,"('Tlacomulco', 'Mexico')", no latitude and longitude entered
+332,688,"('Tlalixcoyan', 'Mexico')", no latitude and longitude entered
+333,689,"('Tlaltizapan', 'Mexico')", no latitude and longitude entered
+334,697,"('Uxmal', 'Mexico')", no latitude and longitude entered
+335,698,"('Valle De Bravo, Estado De Mexico', 'Mexico')", no latitude and longitude entered
+336,699,"('Valle De Culiacan', 'Mexico')", no latitude and longitude entered
+337,701,"('Valle Del Fuerte, Sinaloa', 'Mexico')", no latitude and longitude entered
+338,704,"('Veracrucito', 'Mexico')", no latitude and longitude entered
+339,707,"('Villa Hidalgo, Nayarit', 'Mexico')", no latitude and longitude entered
+340,708,"('Villa Verde, Guanajuato', 'Mexico')", no latitude and longitude entered
+341,711,"('Xalostoc, Morelos', 'Mexico')", no latitude and longitude entered
+342,712,"('Xocoyucan, Tlaxcala', 'Mexico')", no latitude and longitude entered
+343,716,"('Khemiszemamra', 'Morocco')", no latitude and longitude entered
+344,718,"('Angora', 'Mozambique')", no latitude and longitude entered
+345,720,"('Ex-instituto Nacional De Investigacion Agraria', 'Mozambique')", no latitude and longitude entered
+346,726,"('Mozambique', 'Mozambique')", no latitude and longitude entered
+347,731,"('Ntengo Nucodgi Augoiris', 'Mozambique')", no latitude and longitude entered
+348,732,"('Ntengo Umadzi- Angoria', 'Mozambique')", no latitude and longitude entered
+349,733,"('Semol', 'Mozambique')", no latitude and longitude entered
+350,736,"('Ussudenga', 'Mozambique')", no latitude and longitude entered
+351,737,"('Naung Mon', 'Myanmar')", no latitude and longitude entered
+352,738,"('Sea', 'Myanmar')", no latitude and longitude entered
+353,739,"('Taryaw', 'Myanmar')", no latitude and longitude entered
+354,740,"('Tatkan', 'Myanmar')", no latitude and longitude entered
+355,741,"('Tatkone', 'Myanmar')", no latitude and longitude entered
+356,742,"('Zaloke Research Farm', 'Myanmar')", no latitude and longitude entered
+357,743,"('Aungban, Burma', 'Myanmar (burma)')", country not found/wrong country format
+358,744,"('Yezin, Burma', 'Myanmar (burma)')", country not found/wrong country format
+359,746,"('Mitkomst Research Station', 'Namibia')", no latitude and longitude entered
+360,748,"('Hardinath', 'Nepal')", no latitude and longitude entered
+361,749,"('Kabre', 'Nepal')", no latitude and longitude entered
+362,751,"('Lumle', 'Nepal')", no latitude and longitude entered
+363,752,"('Pakhribas', 'Nepal')", no latitude and longitude entered
+364,754,"('Parwanipur', 'Nepal')", no latitude and longitude entered
+365,757,"('Campos Azules', 'Nicaragua')", no latitude and longitude entered
+366,758,"('Campos Azules, Masatepe', 'Nicaragua')", no latitude and longitude entered
+367,759,"('Carazo', 'Nicaragua')", no latitude and longitude entered
+368,761,"('Chontales', 'Nicaragua')", no latitude and longitude entered
+369,762,"('Chontales, Tamboral Sur', 'Nicaragua')", no latitude and longitude entered
+370,763,"('Condega, Esteli', 'Nicaragua')", no latitude and longitude entered
+371,764,"('El Areno, El Rama', 'Nicaragua')", no latitude and longitude entered
+372,765,"('El Jicaro, Nueva Segovia', 'Nicaragua')", no latitude and longitude entered
+373,766,"('El Pellizco, Chinandega', 'Nicaragua')", no latitude and longitude entered
+374,767,"('Jalapa', 'Nicaragua')", no latitude and longitude entered
+375,768,"('La Dal═a', 'Nicaragua')", no latitude and longitude entered
+376,769,"('La Presa', 'Nicaragua')", no latitude and longitude entered
+377,770,"('La Trinidad, Esteli', 'Nicaragua')", no latitude and longitude entered
+378,771,"('Las Cruces Carazo', 'Nicaragua')", no latitude and longitude entered
+379,772,"('Las Piedras,nueva Segovia', 'Nicaragua')", no latitude and longitude entered
+380,773,"('Llano Redondo', 'Nicaragua')", no latitude and longitude entered
+381,775,"('Mazatepec', 'Nicaragua')", no latitude and longitude entered
+382,776,"('Melchorita, San Carlos', 'Nicaragua')", no latitude and longitude entered
+383,777,"('Nindiri, Mazaya', 'Nicaragua')", no latitude and longitude entered
+384,778,"('Paz De Carazo', 'Nicaragua')", no latitude and longitude entered
+385,779,"('Pueblo Nuevo', 'Nicaragua')", no latitude and longitude entered
+386,780,"('San Bartolo', 'Nicaragua')", no latitude and longitude entered
+387,781,"('San Benito, Chinandega', 'Nicaragua')", no latitude and longitude entered
+388,783,"('Santa Cruz, Esteli', 'Nicaragua')", no latitude and longitude entered
+389,784,"('Santa Juana, Nindiri', 'Nicaragua')", no latitude and longitude entered
+390,786,"('Baganda', 'Nigeria')", no latitude and longitude entered
+391,794,"('Saminaka Nig', 'Nigeria')", no latitude and longitude entered
+392,795,"('Temti Jos', 'Nigeria')", no latitude and longitude entered
+393,799,"('Ari, D,i. Kham', 'Pakistan')", no latitude and longitude entered
+394,805,"('Azuer', 'Panama')", no latitude and longitude entered
+395,813,"('Capitan Miranda', 'Paraguay')", no latitude and longitude entered
+396,816,"('San Juan Bautista', 'Paraguay')", no latitude and longitude entered
+397,818,"('Yjhovy', 'Paraguay')", no latitude and longitude entered
+398,819,"('Ascope', 'Peru')", no latitude and longitude entered
+399,820,"('Aucaloma', 'Peru')", no latitude and longitude entered
+400,821,"('E.e. El Porvenir, Calzada Moyobamba', 'Peru')", no latitude and longitude entered
+401,822,"('E.e. Pucallpa', 'Peru')", no latitude and longitude entered
+402,824,"('Huaral', 'Peru')", no latitude and longitude entered
+403,825,"('Humay - Pisco', 'Peru')", no latitude and longitude entered
+404,827,"('Juan Guerra', 'Peru')", no latitude and longitude entered
+405,828,"('La Vi╤a-jayanca-lambayeque', 'Peru')", no latitude and longitude entered
+406,829,"('Lambayeque', 'Peru')", no latitude and longitude entered
+407,830,"('Lima', 'Peru')", no latitude and longitude entered
+408,831,"('Montupe 99', 'Peru')", no latitude and longitude entered
+409,832,"('Muy Finca Mochumi Lambayeque', 'Peru')", no latitude and longitude entered
+410,833,"('Pachacamac', 'Peru')", no latitude and longitude entered
+411,834,"('Peru', 'Peru')", no latitude and longitude entered
+412,835,"('Pucallpa', 'Peru')", no latitude and longitude entered
+413,836,"('Pucallpa, San Fernando, Sa', 'Peru')", no latitude and longitude entered
+414,837,"('Rioja', 'Peru')", no latitude and longitude entered
+415,838,"('Rioja, San Fernando, Sa', 'Peru')", no latitude and longitude entered
+416,839,"('Victoria 99', 'Peru')", no latitude and longitude entered
+417,840,"('Viru La Libertad', 'Peru')", no latitude and longitude entered
+418,841,"('Vista Florida', 'Peru')", no latitude and longitude entered
+419,842,"('Vista Florida Chiclayo', 'Peru')", no latitude and longitude entered
+420,843,"('Vista Florida Chiclayo', 'Peru')", no latitude and longitude entered
+421,844,"('Vista Florida Chiclayo', 'Peru')", no latitude and longitude entered
+422,845,"('Yurimagua', 'Peru')", no latitude and longitude entered
+423,846,"('Baybay', 'Philippines')", no latitude and longitude entered
+424,849,"('Ipb Experiment Station', 'Philippines')", no latitude and longitude entered
+425,850,"('Kabacan', 'Philippines')", no latitude and longitude entered
+426,851,"('Kabacan, Cotabato', 'Philippines')", no latitude and longitude entered
+427,853,"('San Felipe, Ilagan, Isabela.', 'Philippines')", no latitude and longitude entered
+428,858,"('Burgershall', 'South Africa')", no latitude and longitude entered
+429,860,"('Friedenheim Valley', 'South Africa')", no latitude and longitude entered
+430,861,"('Linkseed', 'South Africa')", no latitude and longitude entered
+431,862,"('Mpumalanga', 'South Africa')", no latitude and longitude entered
+432,864,"('North West Province', 'South Africa')", no latitude and longitude entered
+433,866,"('Petit', 'South Africa')", no latitude and longitude entered
+434,867,"('Tshiombo', 'South Africa')", no latitude and longitude entered
+435,869,"('Betlehem', 'South Africa Rep.')", country not found/wrong country format
+436,870,"('Cedara', 'South Africa Rep.')", country not found/wrong country format
+437,871,"('Ezolimo', 'South Africa Rep.')", country not found/wrong country format
+438,872,"('Friedenhei', 'South Africa Rep.')", country not found/wrong country format
+439,873,"('Greytown', 'South Africa Rep.')", country not found/wrong country format
+440,874,"('Greytown', 'South Africa Rep.')", country not found/wrong country format
+441,875,"('Lwamongo', 'South Africa Rep.')", country not found/wrong country format
+442,876,"('Nelspruit', 'South Africa Rep.')", country not found/wrong country format
+443,878,"('Setlagole', 'South Africa Rep.')", country not found/wrong country format
+444,879,"('Viljoenskroon', 'South Africa Rep.')", country not found/wrong country format
+445,882,"('Paramaribo', 'Surinam')", country not found/wrong country format
+446,884,"('Les', 'Swaziland')", no latitude and longitude entered
+447,885,"('Lowveld, Brabend', 'Swaziland')", no latitude and longitude entered
+448,890,"('Shewula', 'Swaziland')", no latitude and longitude entered
+449,891,"('Swaziland', 'Swaziland')", no latitude and longitude entered
+450,892,"('Deir Al Zoor', 'Syria')", no latitude and longitude entered
+451,893,"('Raqqa', 'Syria')", no latitude and longitude entered
+452,896,"('Arusha Seed Farm Afsf', 'Tanzania')", no latitude and longitude entered
+453,907,"('Lambo', 'Tanzania')", incorrect location data
+454,913,"('Mwanza - Region', 'Tanzania')", no latitude and longitude entered
+455,916,"('Nm', 'Tanzania')", no latitude and longitude entered
+456,919,"('Tanzania', 'Tanzania')", no latitude and longitude entered
+457,929,"('Sawankalok Sukhotha', 'Thailand')", no latitude and longitude entered
+458,931,"('Tak Fa', 'Thailand')", no latitude and longitude entered
+459,933,"('El Carmen', 'Trinidad Y Tobago')", country not found/wrong country format
+460,934,"('Goldsborough', 'Trinidad Y Tobago')", country not found/wrong country format
+461,935,"(""Louis D'or"", 'Trinidad Y Tobago')", country not found/wrong country format
+462,937,"('Aydin', 'Turkey')", no latitude and longitude entered
+463,938,"('Anny Settl', 'Turkmenistan')", no latitude and longitude entered
+464,939,"('Bulegeni', 'Uganda')", no latitude and longitude entered
+465,940,"('Bulengeni', 'Uganda')", no latitude and longitude entered
+466,945,"('Likonde,songea', 'Uganda')", incorrect location data
+467,947,"('Msk', 'Uganda')", no latitude and longitude entered
+468,952,"('Uganda', 'Uganda')", no latitude and longitude entered
+469,954,"('College Station, Texas', 'United States Of America')", no latitude and longitude entered
+470,955,"('Kenedy, Tx.', 'United States Of America')", no latitude and longitude entered
+471,957,"('Tifton, Georgia', 'United States Of America')", no latitude and longitude entered
+472,958,"('Tifton, Georgia', 'United States Of America')", no latitude and longitude entered
+473,959,"('Weslaco, Texas', 'United States Of America')", no latitude and longitude entered
+474,962,"('Agua Blanca, Portuguesa', 'Venezuela')", no latitude and longitude entered
+475,963,"('Aragua (ceniap)', 'Venezuela')", no latitude and longitude entered
+476,964,"('Araure (acarigua)', 'Venezuela')", no latitude and longitude entered
+477,965,"('Araure (portuguesa)', 'Venezuela')", no latitude and longitude entered
+478,966,"('Carretera O, Turen, Portuguesa', 'Venezuela')", no latitude and longitude entered
+479,967,"('Centro Norte', 'Venezuela')", no latitude and longitude entered
+480,968,"('Colonia Agricola De Turen', 'Venezuela')", no latitude and longitude entered
+481,969,"('El Diamante, Yaritagua', 'Venezuela')", no latitude and longitude entered
+482,970,"('El Playon', 'Venezuela')", no latitude and longitude entered
+483,971,"('El Socorro', 'Venezuela')", no latitude and longitude entered
+484,972,"('Guarico', 'Venezuela')", no latitude and longitude entered
+485,973,"('La Lucia', 'Venezuela')", no latitude and longitude entered
+486,974,"('Las Caramas', 'Venezuela')", no latitude and longitude entered
+487,977,"('Las Guacamayas, El Sombrero', 'Venezuela')", no latitude and longitude entered
+488,978,"('Los Guayos, Carabobo State', 'Venezuela')", no latitude and longitude entered
+489,979,"('Manzanita', 'Venezuela')", no latitude and longitude entered
+490,981,"('Pascual Valetta, Laguna De Piedra', 'Venezuela')", no latitude and longitude entered
+491,982,"('Punta Gorda', 'Venezuela')", no latitude and longitude entered
+492,984,"('Santa Barbara', 'Venezuela')", no latitude and longitude entered
+493,985,"('Semillas Aragua', 'Venezuela')", no latitude and longitude entered
+494,986,"('Tocoron', 'Venezuela')", no latitude and longitude entered
+495,987,"('Tocoron, Estado Aragua', 'Venezuela')", no latitude and longitude entered
+496,988,"('Tucupido', 'Venezuela')", no latitude and longitude entered
+497,989,"('Turen', 'Venezuela')", no latitude and longitude entered
+498,990,"('Unidad Agricola De Turen', 'Venezuela')", no latitude and longitude entered
+499,991,"('Venezuela', 'Venezuela')", no latitude and longitude entered
+500,992,"('Villa De Cura, Aragua', 'Venezuela')", no latitude and longitude entered
+501,993,"('Ars, Amberpet, Hyd.', 'Vietnam')", no latitude and longitude entered
+502,994,"('Binh Chanh Dictrict - Ho Chi Minh City', 'Vietnam')", no latitude and longitude entered
+503,995,"('Binh Duong', 'Vietnam')", no latitude and longitude entered
+504,997,"('Dan Phuong Hatay', 'Vietnam')", no latitude and longitude entered
+505,998,"('Danphing Dist.', 'Vietnam')", no latitude and longitude entered
+506,999,"('Duc Hoa District, Long An Province', 'Vietnam')", no latitude and longitude entered
+507,1000,"('Gorakhpur', 'Vietnam')", no latitude and longitude entered
+508,1004,"('Tay Ninh Province', 'Vietnam')", no latitude and longitude entered
+509,1005,"('Gandajika', 'Zaire')", coords NA
+510,1006,"('Mvuazi', 'Zaire')", coords NA
+511,1007,"('Chisamba, Golden Valley', 'Zambia')", no latitude and longitude entered
+512,1010,"('Kutumani', 'Zambia')", no latitude and longitude entered
+513,1011,"('Lyempe', 'Zambia')", no latitude and longitude entered
+514,1012,"('Magobo', 'Zambia')", no latitude and longitude entered
+515,1022,"('Zambia', 'Zambia')", no latitude and longitude entered
+516,1028,"('Cimmyt, Harare', 'Zimbabwe')", no latitude and longitude entered
+517,1029,"('Dedza', 'Zimbabwe')", no latitude and longitude entered
+518,1040,"('Pannar', 'Zimbabwe')", no latitude and longitude entered
+519,1041,"('Pioneer', 'Zimbabwe')", no latitude and longitude entered
+520,1042,"('Radoma', 'Zimbabwe')", no latitude and longitude entered
+521,1047,"('Zimbabwe', 'Zimbabwe')", no latitude and longitude entered
+522,1052,"('Gisozi', 'Burundi')", no latitude and longitude entered
+523,1056,"('Zacatepec, Morelos', 'Mexico')", no latitude and longitude entered
+524,1057,"('Miacatlan', 'Mexico')", no latitude and longitude entered
+525,1058,"('Salandhar (punjab)', 'India')", no latitude and longitude entered
+526,1063,"('Kaniaka', 'Congo')", incorrect location data
+527,1074,"('Gondar', 'Ethiopia')", no latitude and longitude entered
+528,1075,"('Quindio', 'Colombia')", no latitude and longitude entered
+529,1076,"('Puerto Gaitan-carpoica,taluma', 'Colombia')", no latitude and longitude entered
+530,1077,"('Kisama', 'Kenya')", no latitude and longitude entered
+531,1078,"('Angecha', 'Ethiopia')", no latitude and longitude entered
+532,1079,"('Ivumwe', 'Tanzania')", no latitude and longitude entered
+533,1080,"('Mparambo', 'Burundi')", no latitude and longitude entered
+534,1081,"('Thika', 'Kenya')", no latitude and longitude entered
+535,1082,"('Matisi', 'Kenya')", no latitude and longitude entered
+536,1083,"('Kutus', 'Kenya')", no latitude and longitude entered
+537,1084,"('Kimaeti', 'Kenya')", no latitude and longitude entered
+538,1085,"('Elgon Downs', 'Kenya')", no latitude and longitude entered
+539,1086,"('Bumula', 'Kenya')", no latitude and longitude entered
+540,1087,"('Bulindi', 'Uganda')", no latitude and longitude entered
+541,1088,"('Bugiri', 'Uganda')", no latitude and longitude entered
+542,1089,"('Nyagatare', 'Rwanda')", no latitude and longitude entered
+543,1090,"('Kagumo', 'Kenya')", no latitude and longitude entered
+544,1091,"('Screen House', 'Kenya')", no latitude and longitude entered
+545,1092,"('Chitedzi', 'Malawi')", no latitude and longitude entered
+546,1093,"('Kiteta', 'Kenya')", no latitude and longitude entered
+547,1094,"('Kyuu', 'Kenya')", no latitude and longitude entered
+548,1095,"('Bingu', 'Malawi')", no latitude and longitude entered
+549,1096,"('Mpingu', 'Malawi')", no latitude and longitude entered
+550,1097,"('Pomela', 'Malawi')", no latitude and longitude entered
+551,1098,"('Pallisa', 'Uganda')", no latitude and longitude entered
+552,1099,"('Rancho Guadalupe, Toluca', 'Mexico')", no latitude and longitude entered
+553,1100,"('Mwea', 'Kenya')", no latitude and longitude entered
+554,1102,"('Kabul', 'Afghanistan')", no latitude and longitude entered
+555,1107,"('La Catalina', 'Colombia')", no latitude and longitude entered
+556,1108,"('Paraguaicito', 'Colombia')", no latitude and longitude entered
+557,1110,"('Freidenheim Valley', 'South Africa')", no latitude and longitude entered
+558,1115,"('Kibray', 'Uzbekistan')", no latitude and longitude entered
+559,1116,"('Chisamba', 'Zambia')", no latitude and longitude entered
+560,1128,"('Mungushi, Hai', 'Tanzania')", no latitude and longitude entered
+561,1129,"('Bondo', 'Kenya')", no latitude and longitude entered
+562,1130,"('Kakamega (monsanto)', 'Kenya')", no latitude and longitude entered
+563,1133,"('Caña Flecha', 'Colombia')", no latitude and longitude entered
+564,1135,"('Las Cañas', 'Costa Rica')", no latitude and longitude entered
+565,1136,"('La Máquina Caballo Blanco', 'Guatemala')", no latitude and longitude entered
+566,1137,"('San José Pinula', 'Guatemala')", no latitude and longitude entered
+567,1138,"('La Viña-jayanca-lambayeque', 'Peru')", no latitude and longitude entered
+568,1139,"('Dinajpur', 'Bangladesh')", no latitude and longitude entered
