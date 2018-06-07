@@ -157,6 +157,6 @@ class GeocodeValidator:
 
         return d
 
-validator2 = GeocodeValidator("NaNtblLocations.xlsx")
+validator2 = GeocodeValidator("/Users/thytnguyen/Desktop/tblLocation.xlsx")
 validator2.run()
 
