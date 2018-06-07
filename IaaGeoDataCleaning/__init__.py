@@ -193,5 +193,5 @@ class GeocodeValidator:
         return len(self.flagged_locations) / (1e-10 + self.tobe_validated_location.shape[0])
 
 
-GeocodeValidator("test.xlsx", )
-
+# GeocodeValidator("test.xlsx", "sfritsche")
+#

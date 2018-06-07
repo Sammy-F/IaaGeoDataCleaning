@@ -5,6 +5,8 @@ import reverse_geocoder as rg
 import string
 import pycountry as pc
 
+from IaaGeoDataCleaning import nameHandler as nh
+
 import country_bounding_boxes as cbb
 
 """
@@ -15,7 +17,7 @@ is performed to check for human error.
 
 Created by Jonathan Scott
 
-Modified by: Samantha Fritsche, Thy Nguyen 6/5/2018
+Modified by: Samantha Fritsche, Thy Nguyen 6/7/2018
 """
 
 parenNumRegex = re.compile('\(\d\)')
@@ -59,15 +61,26 @@ class GeocodeValidator:
 
                 dataEntered = self.checkInputLocation(index, country)
 
-                if dataEntered >= 0:
-                    enteredLat = float(row['Latitude'])
-                    enteredLng = float(row['Longitude'])
+                try:
+                    if dataEntered[0] >= 0:
+                        enteredLat = float(row['Latitude'])
+                        enteredLng = float(row['Longitude'])
 
-                    result = self.validateCoordinates(enteredLat, enteredLng, country)
+                        result = self.validateCoordinates(enteredLat, enteredLng, dataEntered[1])
 
-                    self.logEntry(result, index, location, country)
-                else:
-                    self.logEntry(dataEntered, index, location, country)
+                        self.logEntry(result, index, location, country)
+                    else:
+                        self.logEntry(dataEntered, index, location, country)
+                except TypeError:
+                    if dataEntered >= 0:
+                        enteredLat = float(row['Latitude'])
+                        enteredLng = float(row['Longitude'])
+
+                        result = self.validateCoordinates(enteredLat, enteredLng, country)
+
+                        self.logEntry(result, index, location, country)
+                    else:
+                        self.logEntry(dataEntered, index, location, country)
 
             except:
                 print("Index: " + str(index) + " no entered coordinates.(Index flagged.) \n")
@@ -100,8 +113,19 @@ class GeocodeValidator:
                     return -2
                 return 0
             except KeyError:
-                print("no country")
-                return -3
+                formatted = self.findFormattedName(country)
+                print(formatted)
+                if formatted == False:
+                    print("no country")
+                    return -3
+                else:
+                    print("foundalternative")
+                    return [0, formatted]
+
+    def findFormattedName(self, alternativeName):
+
+        finder = nh.NameHandler()
+        return finder.findName(alternativeName)
 
     def validateCoordinates(self, lat, lng, countryName):
 
