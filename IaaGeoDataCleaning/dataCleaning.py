@@ -55,7 +55,7 @@ class GeocodeValidator:
                 country = string.capwords(str(row['Country']).lower())
                 location = string.capwords(str(row['Location']).lower())
 
-                dataEntered = self.checkInputLocation(index)
+                dataEntered = self.checkInputLocation(index, country)
 
                 if dataEntered >= 0:
                     enteredLat = float(row['Latitude'])
@@ -76,26 +76,29 @@ class GeocodeValidator:
 
         self.logResults()
 
-    def checkInputLocation(self, index):
-        country = self.tobeValidatedLocation.loc[index, 'Country']
+    def checkInputLocation(self, index, country):
         lat = self.tobeValidatedLocation.loc[index, 'Latitude']
         lng = self.tobeValidatedLocation.loc[index, 'Longitude']
         try:
             pc.countries.lookup(country)
+            print("Passed pycountry")
             if pd.isnull(lat) or pd.isnull(lng):
                 return -2
             elif lat == 0 and lng == 0:
                 return -2
             return 0
         except LookupError:
+            print("lookup")
             try:
                 self.countryCodes[country]
+                print("passed dictionary")
                 if pd.isnull(lat) or pd.isnull(lng):
                     return -2
                 elif lat == 0 and lng == 0:
                     return -2
                 return 0
             except KeyError:
+                print("no country")
                 return -3
 
     def validateCoordinates(self, lat, lng, countryName):
@@ -148,4 +151,6 @@ class GeocodeValidator:
 
 
 validator = GeocodeValidator("/Users/thytnguyen/Desktop/tblLocation.xlsx")
+# sr = validator.checkInputLocation(1137)
+# print(sr)
 validator.run()
