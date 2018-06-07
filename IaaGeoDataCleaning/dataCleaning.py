@@ -72,7 +72,6 @@ class GeocodeValidator:
                     else:
                         self.logEntry(dataEntered, index, location, country)
                 except TypeError:
-                    print(dataEntered)
                     if dataEntered >= 0:
                         enteredLat = float(row['Latitude'])
                         enteredLng = float(row['Longitude'])
@@ -137,8 +136,7 @@ class GeocodeValidator:
 
         for i in range(len(possibleCoords)):
             matchedCountryCode = rg.get(possibleCoords[i], mode=1)['cc']
-            print(matchedCountryCode)
-            print(countryName)
+
             if countryCode == matchedCountryCode:
                 return i
             else:

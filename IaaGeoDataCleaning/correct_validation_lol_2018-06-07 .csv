@@ -96,506 +96,518 @@
 94,269,"('Santa Cruz, El Salvador', 'El Salvador')", correct location data
 95,273,"('Halhale', 'Eritrea')", correct location data
 96,274,"('Shambiko', 'Eritrea')", correct location data
-97,276,"('Adet', 'Ethiopia')", correct location data
-98,277,"('Alemaya', 'Ethiopia')", correct location data
-99,278,"('Ambo', 'Ethiopia')", correct location data
-100,279,"('Awassa', 'Ethiopia')", correct location data
-101,280,"('Awassa', 'Ethiopia')", correct location data
-102,281,"('Bako', 'Ethiopia')", correct location data
-103,282,"('Bako', 'Ethiopia')", correct location data
-104,283,"('Ethiopia', 'Ethiopia')", correct location data
-105,285,"('Holetta', 'Ethiopia')", correct location data
-106,286,"('Jimma', 'Ethiopia')", correct location data
-107,288,"('Kokate', 'Ethiopia')", correct location data
-108,289,"('Kulumsa', 'Ethiopia')", correct location data
-109,290,"('Melkasa', 'Ethiopia')", correct location data
-110,291,"('Mieso', 'Ethiopia')", correct location data
-111,292,"('Nazareth', 'Ethiopia')", correct location data
-112,293,"('Nazret', 'Ethiopia')", correct location data
-113,295,"('Pawe', 'Ethiopia')", correct location data
-114,297,"('Ziway', 'Ethiopia')", correct location data
-115,303,"('Damongo', 'Ghana')", correct location data
-116,304,"('Ejura', 'Ghana')", correct location data
-117,305,"('Fumesua', 'Ghana')", correct location data
-118,306,"('Kwadaso', 'Ghana')", correct location data
-119,307,"('Nyankpala', 'Ghana')", correct location data
-120,308,"('Pokuase', 'Ghana')", correct location data
-121,309,"('Tamale', 'Ghana')", correct location data
-122,310,"('Thessaloniki', 'Greece')", correct location data
-123,311,"('Thessaloniki-kentriko', 'Greece')", correct location data
-124,312,"('Barcenas, Villa Nuev', 'Guatemala')", correct location data
-125,314,"('Chimaltenango', 'Guatemala')", correct location data
-126,315,"('Cuyuta', 'Guatemala')", correct location data
-127,320,"('Jutiapa', 'Guatemala')", correct location data
-128,327,"('Las Vegas', 'Guatemala')", correct location data
-129,336,"('Tequinzate', 'Guatemala')", correct location data
-130,337,"('Tequinzate', 'Guatemala')", correct location data
-131,339,"('Cayes', 'Haiti')", correct location data
-132,341,"('Damien Farm.', 'Haiti')", correct location data
-133,343,"('Levy-cayes', 'Haiti')", correct location data
-134,347,"('Comayagua', 'Honduras')", correct location data
-135,349,"('Danli', 'Honduras')", correct location data
-136,352,"('Higuero Qumado, Yori', 'Honduras')", correct location data
-137,354,"('La Esperanza', 'Honduras')", correct location data
-138,355,"('Las Acacias', 'Honduras')", correct location data
-139,360,"('Omonita', 'Honduras')", correct location data
-140,367,"('Santa Cruz, Yorito,y', 'Honduras')", correct location data
-141,370,"('Adoni Mandal', 'India')", correct location data
-142,371,"('Almora', 'India')", correct location data
-143,373,"('Anantnagar', 'India')", correct location data
-144,374,"('Arabhavi', 'India')", correct location data
-145,375,"('Auli', 'India')", correct location data
-146,376,"('Aurangabad', 'India')", correct location data
-147,377,"('Bahraich', 'India')", correct location data
-148,380,"('Bangalore', 'India')", correct location data
-149,381,"('Bangalore', 'India')", correct location data
-150,382,"('Banswara', 'India')", correct location data
-151,383,"('Begusarai, Bihar', 'India')", correct location data
-152,386,"('Chhindwara', 'India')", correct location data
-153,387,"('Coimbatore', 'India')", correct location data
-154,388,"('Delhi', 'India')", correct location data
-155,389,"('Dhaulakuan', 'India')", correct location data
-156,390,"('Dholi', 'India')", correct location data
-157,392,"('Dmr I.a.r.i.', 'India')"," entered (lat, -lng)"
-158,394,"('Godhra', 'India')", correct location data
-159,396,"('Hyderabad', 'India')", correct location data
-160,398,"('Issarwadi', 'India')", correct location data
-161,399,"('Jalna', 'India')", correct location data
-162,400,"('Jashipur', 'India')", correct location data
-163,401,"('Jorhat', 'India')", correct location data
-164,402,"('Kangra (h.p.)', 'India')", correct location data
-165,403,"('Kanpur', 'India')", correct location data
-166,404,"('Karnal', 'India')", correct location data
-167,405,"('Karnataka', 'India')", correct location data
-168,408,"('Kolhapur', 'India')", correct location data
-169,409,"('Ludhiana', 'India')", correct location data
-170,410,"('Medchal', 'India')", correct location data
-171,414,"('P.r Pally', 'India')", correct location data
-172,415,"('Pahalgam', 'India')", correct location data
-173,416,"('Pantnagar', 'India')", correct location data
-174,422,"('Pune', 'India')", correct location data
-175,426,"('Raipur', 'India')", correct location data
-176,431,"('Sonipat', 'India')", correct location data
-177,432,"('Srinagar', 'India')", correct location data
-178,434,"('Udaipur', 'India')", correct location data
-179,435,"('Umiam Meghalaya', 'India')", correct location data
-180,436,"('Varanasi', 'India')", correct location data
-181,437,"('Wahdan, Pahalgam, Kashmir', 'India')", correct location data
-182,439,"('Bontobili', 'Indonesia')", correct location data
-183,443,"('Malang', 'Indonesia')", correct location data
-184,444,"('Maros', 'Indonesia')", correct location data
-185,445,"('Muneng', 'Indonesia')", correct location data
-186,454,"('Baghdad', 'Iraq')", correct location data
-187,458,"('Alupe', 'Kenya')", correct location data
-188,460,"('Bondo- On Farm', 'Kenya')", correct location data
-189,461,"('Bukura', 'Kenya')", correct location data
-190,462,"('Bungema', 'Kenya')", correct location data
-191,463,"('Bungoma', 'Kenya')", correct location data
-192,464,"('Burura', 'Kenya')", correct location data
-193,465,"('Busia', 'Kenya')", correct location data
-194,466,"('Emabwi', 'Kenya')", correct location data
-195,467,"('Emali', 'Kenya')", correct location data
-196,468,"('Embu', 'Kenya')", correct location data
-197,469,"('Emuhaya', 'Kenya')", correct location data
-198,470,"('Endebess', 'Kenya')", correct location data
-199,471,"('Homabay', 'Kenya')", correct location data
-200,472,"('Ithookwe', 'Kenya')", correct location data
-201,474,"('Kakamega', 'Kenya')", correct location data
-202,475,"('Kampiyamawe', 'Kenya')", correct location data
-203,478,"('Katumani', 'Kenya')", correct location data
-204,479,"('Kenya', 'Kenya')", correct location data
-205,480,"('Kesref', 'Kenya')", correct location data
-206,481,"('Kiboko', 'Kenya')", correct location data
-207,482,"('Kibos', 'Kenya')", correct location data
-208,483,"('Kimilili', 'Kenya')", correct location data
-209,484,"('Kimlili', 'Kenya')", correct location data
-210,485,"('Kitalale', 'Kenya')", correct location data
-211,486,"('Kitale', 'Kenya')", correct location data
-212,488,"('Kitui', 'Kenya')", correct location data
-213,489,"('Ksc Field', 'Kenya')", correct location data
-214,490,"('Machakos', 'Kenya')", correct location data
-215,491,"('Makindu', 'Kenya')", correct location data
-216,492,"('Makueni', 'Kenya')", correct location data
-217,493,"('Mitungu', 'Kenya')", correct location data
-218,494,"('Mombasa', 'Kenya')", correct location data
-219,495,"('Mtwapa', 'Kenya')", correct location data
-220,496,"('Muguga', 'Kenya')", correct location data
-221,497,"('Nairobi', 'Kenya')", correct location data
-222,498,"('Narc, Kitale', 'Kenya')", correct location data
-223,499,"('Nyahera', 'Kenya')", correct location data
-224,500,"('Rachuonyo', 'Kenya')", correct location data
-225,501,"('Sigor', 'Kenya')", correct location data
-226,503,"('Vihiga', 'Kenya')", correct location data
-227,505,"('Western Kakamrga', 'Kenya')", correct location data
-228,507,"('Leribe', 'Lesotho')", correct location data
-229,509,"('Machache', 'Lesotho')", correct location data
-230,510,"('Mahobong', 'Lesotho')", correct location data
-231,511,"('Maseru', 'Lesotho')", correct location data
-232,512,"('Mokhotlong', 'Lesotho')", correct location data
-233,513,"('Mokhotlong', 'Lesotho')", correct location data
-234,514,"('Nyakosoba', 'Lesotho')", correct location data
-235,515,"('Teyateyaneng', 'Lesotho')", correct location data
-236,516,"('Tseka', 'Lesotho')", correct location data
-237,517,"('Tulear', 'Madagascar')", correct location data
-238,519,"('Bembeke', 'Malawi')", correct location data
-239,520,"('Bolero', 'Malawi')", correct location data
-240,521,"('Bvumbwe', 'Malawi')", correct location data
-241,522,"('Bwanje', 'Malawi')", correct location data
-242,523,"('Chitala', 'Malawi')", correct location data
-243,524,"('Chitedze', 'Malawi')", correct location data
-244,525,"('Lunyangwa', 'Malawi')", correct location data
-245,526,"('Makoka', 'Malawi')", correct location data
-246,527,"('Mbawa', 'Malawi')", correct location data
-247,529,"('Ngabu', 'Malawi')", correct location data
-248,531,"('Salima', 'Malawi')", correct location data
-249,532,"('Tsangano', 'Malawi')", correct location data
-250,533,"('Zomba', 'Malawi')", correct location data
-251,534,"('Farako', 'Mali')", correct location data
-252,537,"('Rue Mohamed', 'Mali')"," entered (lat, -lng)"
-253,538,"('Sotuba', 'Mali')", correct location data
-254,541,"('Aculco', 'Mexico')", correct location data
-255,543,"('Aguascalientes', 'Mexico')", correct location data
-256,544,"('Ahuacatlan, Nayarit', 'Mexico')", correct location data
-257,545,"('Almoloya De Juarez', 'Mexico')", correct location data
-258,546,"('Ameca, Jal.', 'Mexico')", correct location data
-259,547,"('Ameca, Jal.', 'Mexico')", correct location data
-260,548,"('Ameca, Jal.', 'Mexico')", correct location data
-261,549,"('Amecameca, Mexico', 'Mexico')", correct location data
-262,554,"('Calera, Zacatecas', 'Mexico')", correct location data
-263,555,"('Campeche, Campeche', 'Mexico')", correct location data
-264,556,"('Candelaria Portezuelo, Puebla', 'Mexico')", correct location data
-265,557,"('Candelaria Portezuelo, Puebla', 'Mexico')", correct location data
-266,559,"('Celaya, Guanajuato', 'Mexico')", correct location data
-267,560,"('Celaya, Guanajuato (inifap)', 'Mexico')", correct location data
-268,561,"('Cerib, Tamaulipas', 'Mexico')", correct location data
-269,563,"('Chapingo, Estado De Mexico', 'Mexico')", correct location data
-270,564,"('Chavinda', 'Mexico')", correct location data
-271,567,"('Ciudad Anahuac, Nuevo Leon', 'Mexico')", correct location data
-272,568,"('Ciudad Guzman, Jalisco', 'Mexico')", correct location data
-273,569,"('Ciudad Obregon', 'Mexico')", correct location data
-274,570,"('Coatlinchan, Estado De Mexico', 'Mexico')", correct location data
-275,571,"('Cocotitlan, Texcoco', 'Mexico')", correct location data
-276,572,"('Colon, Queretaro', 'Mexico')", correct location data
-277,577,"('Cotaxtla (inifap)', 'Mexico')", correct location data
-278,579,"('Cuautitlan, Estado De Mexico', 'Mexico')", correct location data
-279,580,"('Cuendo1', 'Mexico')", correct location data
-280,581,"('Cuidad Guzman, Jalisco', 'Mexico')", correct location data
-281,582,"('Culican, Sinaloa', 'Mexico')", correct location data
-282,583,"('Delicias, Chihuahua', 'Mexico')", correct location data
-283,584,"('Diaz Ordaz, Tamaulipas', 'Mexico')", correct location data
-284,585,"('Dolores Enyeje, Ixtla', 'Mexico')", correct location data
-285,586,"('Dolores Hidalgo, Guanajuato', 'Mexico')", correct location data
-286,587,"('Durango, Durango', 'Mexico')", correct location data
-287,590,"('El Batan', 'Mexico')", correct location data
-288,591,"('El Batan', 'Mexico')", correct location data
-289,592,"('El Batan', 'Mexico')", correct location data
-290,593,"('El Molino Zinacantep', 'Mexico')", correct location data
-291,594,"('El Refugio, San Luis De La Paz, Guanajuato', 'Mexico')", correct location data
-292,596,"('Gomez Farias, Jalisco', 'Mexico')", correct location data
-293,597,"('Guadalajara', 'Mexico')", correct location data
-294,599,"('Guanajuato', 'Mexico')", correct location data
-295,600,"('Guasave, Sinaloa', 'Mexico')", correct location data
-296,601,"('Gunyo, Aculco Estado De Mexico', 'Mexico')", correct location data
-297,602,"('Hidalgo', 'Mexico')", correct location data
-298,603,"('Huamantla Tlaxcala', 'Mexico')", correct location data
-299,607,"('Iguala, Guerrero', 'Mexico')", correct location data
-300,608,"('Irapuato, Guanajuato', 'Mexico')", correct location data
-301,610,"('Iturbide, Guanajuato', 'Mexico')", correct location data
-302,611,"('Ixtapan De La Pano', 'Mexico')", correct location data
-303,613,"('Jamay', 'Mexico')", correct location data
-304,616,"('Jiquipilco', 'Mexico')", correct location data
-305,617,"('Jocotitlan', 'Mexico')", correct location data
-306,618,"('Jocotitlan 2', 'Mexico')", correct location data
-307,623,"('La Loma Municipio, Tepatitla, Jalisco', 'Mexico')", correct location data
-308,624,"('La Piedad, Michoacan', 'Mexico')", correct location data
-309,626,"('Leon, Guanajuato', 'Mexico')", correct location data
-310,627,"('Los Mochis, Sinaloa', 'Mexico')", correct location data
-311,628,"('Los Mochis, Sinaloa', 'Mexico')", correct location data
-312,629,"('Malinalco, Mexico', 'Mexico')", correct location data
-313,631,"('Mavoro, Estado De Mexico', 'Mexico')", correct location data
-314,632,"('Metepec', 'Mexico')", correct location data
-315,633,"('Mixquihuala, Hidalgo', 'Mexico')", correct location data
-316,634,"('Montecillo', 'Mexico')", correct location data
-317,636,"('Nextipac, Jalisco', 'Mexico')", correct location data
-318,637,"('Nextipac, Jalisco', 'Mexico')", correct location data
-319,638,"('Ocotitlan, Puebla', 'Mexico')", correct location data
-320,639,"('Ocozocoautla', 'Mexico')", correct location data
-321,643,"('Ojocaliente, Zacatecas', 'Mexico')", correct location data
-322,644,"('Pabellon, Aguascalientes', 'Mexico')", correct location data
-323,645,"('Pedro Escobedo, Queretaro', 'Mexico')", correct location data
-324,647,"('Poncitlan, Jalisco', 'Mexico')", correct location data
-325,648,"('Popotes Municipio De Tepatitlan, Jalisco', 'Mexico')", correct location data
-326,649,"('Poza Rica', 'Mexico')", correct location data
-327,650,"('Poza Rica', 'Mexico')", correct location data
-328,651,"('Puebla', 'Mexico')", correct location data
-329,652,"('Puerto Vallarta', 'Mexico')", correct location data
-330,653,"('Queretaro', 'Mexico')", correct location data
-331,655,"('Rancheria Hernandez, Puebla', 'Mexico')", correct location data
-332,657,"('Rinconada Mazapiltepec', 'Mexico')", correct location data
-333,658,"('Rio Bravo, Tamaulipas', 'Mexico')", correct location data
-334,659,"('Roque, Guanajuato', 'Mexico')", correct location data
-335,661,"('San Antonio La Isla Mexico', 'Mexico')", correct location data
-336,662,"('San Jose De Gracia Michoacan', 'Mexico')", correct location data
-337,663,"('San Jose Del Valle Nayarit', 'Mexico')", correct location data
-338,664,"('San Jose Iturbide, Guanajuato', 'Mexico')", correct location data
-339,666,"('San Juan Del Rio', 'Mexico')", correct location data
-340,667,"('San Juan Zitlaltepec', 'Mexico')", correct location data
-341,668,"('San Luis De La Paz, Guanajuato', 'Mexico')", correct location data
-342,670,"('San Miguel Cuyutlan, Jalisco', 'Mexico')", correct location data
-343,672,"('San Sebastian Teles', 'Mexico')", correct location data
-344,673,"('Santa Lucia, Estado De Mexico', 'Mexico')", correct location data
-345,674,"('Santa Maria Rayon', 'Mexico')", correct location data
-346,675,"('Santiado Del Monte, Municipio Villa Victoria', 'Mexico')", correct location data
-347,676,"('Santiago Ixcuintla, Nayarit', 'Mexico')", correct location data
-348,677,"('Silao, Guanajuato', 'Mexico')", correct location data
-349,680,"('Tapachula', 'Mexico')", correct location data
-350,681,"('Tejupilco', 'Mexico')", correct location data
-351,683,"('Tepatitlan, Jalisco', 'Mexico')", correct location data
-352,685,"('Tlajomulco, De Zuniga', 'Mexico')", correct location data
-353,686,"('Tlajomulco, Jalisco', 'Mexico')", correct location data
-354,687,"('Tlajomulco, Jalisco', 'Mexico')", correct location data
-355,690,"('Tlaltizapan', 'Mexico')", correct location data
-356,691,"('Tlaltizapan', 'Mexico')", correct location data
-357,692,"('Tlaxcoapan', 'Mexico')", correct location data
-358,693,"('Toluca', 'Mexico')", correct location data
-359,694,"('Tototlan, Jalisco', 'Mexico')", correct location data
-360,695,"('Uach, Campo Experimental', 'Mexico')", correct location data
-361,696,"('Usmajac Municipio De Sayula, Jalisco', 'Mexico')", correct location data
-362,700,"('Valle De Mexico', 'Mexico')", correct location data
-363,702,"('Valle Del Yaqui', 'Mexico')", correct location data
-364,703,"('Valparaiso, Zacatecas', 'Mexico')", correct location data
-365,705,"('Veracruz', 'Mexico')", correct location data
-366,706,"('Villa Flores, Chiapas', 'Mexico')", correct location data
-367,709,"('Villanueva, Zacatecas', 'Mexico')", correct location data
-368,710,"('Xalisco, Nayarit', 'Mexico')", correct location data
-369,713,"('Zotoluca, Hidalgo', 'Mexico')", correct location data
-370,714,"('Zumpango', 'Mexico')", correct location data
-371,715,"('El Menzeh', 'Morocco')", correct location data
-372,717,"('Angonia Tete', 'Mozambique')", correct location data
-373,719,"('Chokwe', 'Mozambique')", correct location data
-374,721,"('Lichinga', 'Mozambique')", correct location data
-375,722,"('Mapupulo', 'Mozambique')", correct location data
-376,723,"('Maputo', 'Mozambique')", correct location data
-377,724,"('Mocuba', 'Mozambique')", correct location data
-378,725,"('Morrumbala-zambezia', 'Mozambique')", correct location data
-379,727,"('Mutarara', 'Mozambique')", correct location data
-380,728,"('Namialo', 'Mozambique')", correct location data
-381,729,"('Nampula', 'Mozambique')", correct location data
-382,730,"('Nhacoongo', 'Mozambique')", correct location data
-383,734,"('Sussundenga', 'Mozambique')", correct location data
-384,735,"('Umbeluzi', 'Mozambique')", correct location data
-385,745,"('Mashare', 'Namibia')", correct location data
-386,747,"('Runda', 'Namibia')", correct location data
-387,750,"('Khumaltar', 'Nepal')", correct location data
-388,753,"('Parinanipur (p.a.s.)', 'Nepal')", correct location data
-389,755,"('Rampur', 'Nepal')", correct location data
-390,756,"('Surkhet', 'Nepal')", correct location data
-391,760,"('Chinandega', 'Nicaragua')", correct location data
-392,774,"('Managua', 'Nicaragua')", correct location data
-393,782,"('San Cristobal', 'Nicaragua')", correct location data
-394,785,"('Santa Rosa', 'Nicaragua')", correct location data
-395,787,"('Ibadan', 'Nigeria')", correct location data
-396,788,"('Ikenne', 'Nigeria')", correct location data
-397,789,"('Jos Nig', 'Nigeria')", correct location data
-398,790,"('Layin Taki', 'Nigeria')", correct location data
-399,791,"('Mokwa', 'Nigeria')", correct location data
-400,792,"('Mokwa', 'Nigeria')", correct location data
-401,793,"('Samaru', 'Nigeria')", correct location data
-402,796,"('Tiga', 'Nigeria')", correct location data
-403,797,"('Turunku', 'Nigeria')", correct location data
-404,798,"('Zaria', 'Nigeria')", correct location data
-405,800,"('Dadu', 'Pakistan')", correct location data
-406,801,"('Faisalabad', 'Pakistan')", correct location data
-407,802,"('Islamabad', 'Pakistan')", correct location data
-408,803,"('Pirsabak', 'Pakistan')", correct location data
-409,804,"('Yousafwala', 'Pakistan')", correct location data
-410,806,"('Ceiachi', 'Panama')", correct location data
-411,807,"('Chiriqui', 'Panama')", correct location data
-412,808,"('El Ejido', 'Panama')", correct location data
-413,809,"('Guarare', 'Panama')", correct location data
-414,810,"('Parita', 'Panama')", correct location data
-415,811,"('Rio Hato', 'Panama')", correct location data
-416,812,"('Caacupe', 'Paraguay')", correct location data
-417,814,"('Capitan Miranda', 'Paraguay')", correct location data
-418,815,"('Chore (d. S. Pedro)', 'Paraguay')", correct location data
-419,817,"('Tomas Romero Pereira', 'Paraguay')", correct location data
-420,823,"('El Porvenir', 'Peru')", correct location data
-421,826,"('Iquitos', 'Peru')", correct location data
-422,847,"('Cabuyao, Laguna', 'Philippines')", correct location data
-423,848,"('Cagayan Valley', 'Philippines')", correct location data
-424,852,"('Katangawan', 'Philippines')", correct location data
-425,854,"('Visca', 'Philippines')", correct location data
-426,855,"('Rubona', 'Rwanda')", correct location data
-427,856,"('Nioro', 'Senegal')", correct location data
-428,857,"('Barberton', 'South Africa')", correct location data
-429,859,"('Delmas', 'South Africa')", correct location data
-430,863,"('Nelspruit Mpumalanga', 'South Africa')", correct location data
-431,865,"('Pannar, Graytown', 'South Africa')", correct location data
-432,868,"('Viljoonskroon', 'South Africa')", correct location data
-433,877,"('Potchefstroom', 'South Africa')", correct location data
-434,880,"('Gezira', 'Sudan')", correct location data
-435,881,"('Wad Medani', 'Sudan')", correct location data
-436,883,"('Big-bend', 'Swaziland')", correct location data
-437,886,"('Luve', 'Swaziland')", correct location data
-438,887,"('Malkerns', 'Swaziland')", correct location data
-439,888,"('Mangcongo', 'Swaziland')", correct location data
-440,889,"('Nhlangano', 'Swaziland')", correct location data
-441,894,"('Po-tzu-chia-i', 'Taiwan')", correct location data
-442,895,"('Afsf-arusha', 'Tanzania')", correct location data
-443,897,"('Arusha Tan', 'Tanzania')", correct location data
-444,898,"('Cholima', 'Tanzania')", correct location data
-445,899,"('Dabaga Uyole', 'Tanzania')", correct location data
-446,900,"('Dakawa', 'Tanzania')", correct location data
-447,901,"('Ilonga', 'Tanzania')", correct location data
-448,902,"('Inyala', 'Tanzania')", correct location data
-449,903,"('Katrin', 'Tanzania')", correct location data
-450,904,"('Katrin1', 'Tanzania')", correct location data
-451,905,"('Katrin2', 'Tanzania')", correct location data
-452,906,"('Katrin-ifakara', 'Tanzania')", correct location data
-453,907,"('Lambo', 'Tanzania')", correct location data
-454,908,"('Maruku', 'Tanzania')", correct location data
-455,909,"('Mbulumbulu', 'Tanzania')", correct location data
-456,910,"('Mlingano', 'Tanzania')", correct location data
-457,911,"('Monduli', 'Tanzania')", correct location data
-458,912,"('Morogoro', 'Tanzania')", correct location data
-459,914,"('Ngaramtoni', 'Tanzania')", correct location data
-460,915,"('Ngaramtoni-arusha', 'Tanzania')", correct location data
-461,917,"('Selian', 'Tanzania')", correct location data
-462,918,"('Tabora', 'Tanzania')", correct location data
-463,920,"('Tumbi-tabora', 'Tanzania')", correct location data
-464,921,"('Ukiriguru', 'Tanzania')", correct location data
-465,922,"('Uyole', 'Tanzania')", correct location data
-466,923,"('Weruweru', 'Tanzania')", correct location data
-467,924,"('Banmaisomrong', 'Thailand')", correct location data
-468,925,"('Nakhon Sawan R.c.', 'Thailand')", correct location data
-469,926,"('Nakhon Sawan R.c.', 'Thailand')", correct location data
-470,927,"('Phetchabun', 'Thailand')", correct location data
-471,928,"('Phraphutthabat', 'Thailand')", correct location data
-472,930,"('Suwan', 'Thailand')", correct location data
-473,932,"('Tak Fa', 'Thailand')", correct location data
-474,936,"('Adapazari', 'Turkey')", correct location data
-475,941,"('Kamayanmiggo', 'Uganda')", correct location data
-476,942,"('Kamenyamiggo', 'Uganda')", correct location data
-477,943,"('Kampala', 'Uganda')", correct location data
-478,944,"('Kapchorwa', 'Uganda')", correct location data
-479,946,"('Masaka', 'Uganda')", correct location data
-480,948,"('Naari', 'Uganda')", correct location data
-481,949,"('Namulonge Uga', 'Uganda')", correct location data
-482,950,"('Serere', 'Uganda')", correct location data
-483,951,"('Tororo', 'Uganda')", correct location data
-484,953,"('Barnum Mn', 'United States Of America')", correct location data
-485,956,"('Sn Antonio', 'United States Of America')", correct location data
-486,960,"('La Estanzuela', 'Uruguay')", correct location data
-487,961,"('Agua Blanca', 'Venezuela')", correct location data
-488,975,"('Las Guacamayas', 'Venezuela')", correct location data
-489,976,"('Las Guacamayas', 'Venezuela')", correct location data
-490,980,"('Maracay', 'Venezuela')", correct location data
-491,983,"('Sabana Del Medio', 'Venezuela')", correct location data
-492,996,"('Dan Phuong', 'Vietnam')", correct location data
-493,1001,"('Hoc May District, Hochimin', 'Vietnam')", correct location data
-494,1002,"('Lam Dong Province', 'Vietnam')", correct location data
-495,1003,"('Song-boi', 'Vietnam')", correct location data
-496,1005,"('Gandajika', 'Zaire')", correct location data
-497,1006,"('Mvuazi', 'Zaire')", correct location data
-498,1008,"('Kasama, Misanfu', 'Zambia')", correct location data
-499,1009,"('Katuba', 'Zambia')", correct location data
-500,1013,"('Magoye', 'Zambia')", correct location data
-501,1014,"('Mansa', 'Zambia')", correct location data
-502,1015,"('Masumba', 'Zambia')", correct location data
-503,1016,"('Mogoye', 'Zambia')", correct location data
-504,1017,"('Mount Makulu', 'Zambia')", correct location data
-505,1018,"('Mpongwe', 'Zambia')", correct location data
-506,1019,"('Msekera', 'Zambia')", correct location data
-507,1020,"('Nanga', 'Zambia')", correct location data
-508,1021,"('Sesheke', 'Zambia')", correct location data
-509,1023,"('Zamseed, Farm', 'Zambia')", correct location data
-510,1024,"('Arcturus', 'Zimbabwe')", correct location data
-511,1025,"('Arex Drss, Harare', 'Zimbabwe')", correct location data
-512,1026,"('Art Farm, Harare', 'Zimbabwe')", correct location data
-513,1027,"('Chiredzi', 'Zimbabwe')", correct location data
-514,1030,"('Glendale', 'Zimbabwe')", correct location data
-515,1031,"('Gwebi', 'Zimbabwe')", correct location data
-516,1032,"('Harare', 'Zimbabwe')", correct location data
-517,1033,"('Kadoma', 'Zimbabwe')", correct location data
-518,1034,"('Lucydale', 'Zimbabwe')", correct location data
-519,1035,"('Makoholi', 'Zimbabwe')", correct location data
-520,1036,"('Marondera', 'Zimbabwe')", correct location data
-521,1037,"('Matopos', 'Zimbabwe')", correct location data
-522,1038,"('Mazowe', 'Zimbabwe')", correct location data
-523,1039,"('Muzarabani', 'Zimbabwe')", correct location data
-524,1043,"('Rattray Arnold Farm', 'Zimbabwe')", correct location data
-525,1044,"('Ruwa', 'Zimbabwe')", correct location data
-526,1045,"('Save Valley', 'Zimbabwe')", correct location data
-527,1046,"('Shamva Zim', 'Zimbabwe')", correct location data
-528,1048,"('Kachwekano', 'Uganda')", correct location data
-529,1049,"('Gakuta', 'Rwanda')", correct location data
-530,1050,"('Rwerere', 'Rwanda')", correct location data
-531,1051,"('Tamira', 'Rwanda')", correct location data
-532,1053,"('Eldoret', 'Kenya')", correct location data
-533,1054,"('Pentecostes, Texcoco', 'Mexico')", correct location data
-534,1055,"('Texcoco', 'Mexico')", correct location data
-535,1059,"('Dago', 'Kenya')", correct location data
-536,1060,"('Kodiaga', 'Kenya')", correct location data
-537,1061,"('Luanda', 'Kenya')", correct location data
-538,1062,"('Siaya', 'Kenya')", correct location data
-539,1064,"('Chakol', 'Kenya')", correct location data
-540,1065,"('Kibale', 'Uganda')", correct location data
-541,1066,"('Yala', 'Kenya')", correct location data
-542,1067,"('Tanga', 'Tanzania')", correct location data
-543,1068,"('Mungoshi, Hai', 'Tanzania')", correct location data
-544,1069,"('Kiharu', 'Kenya')", correct location data
-545,1070,"('Kilifi', 'Kenya')", correct location data
-546,1071,"('Kisumu', 'Kenya')", correct location data
-547,1072,"('Kwale', 'Kenya')", correct location data
-548,1073,"('Malindi', 'Kenya')", correct location data
-549,1101,"('Namulonge', 'Uganda')", correct location data
-550,1103,"('Cabinda', 'Angola')", correct location data
-551,1104,"('Kilomba', 'Angola')", correct location data
-552,1105,"('Mazozo', 'Angola')", correct location data
-553,1106,"('St. Vincent', 'Angola')", correct location data
-554,1109,"('Baka', 'Malawi')", correct location data
-555,1111,"('Potchesftroom', 'South Africa')", correct location data
-556,1112,"('Arusha', 'Tanzania')", correct location data
-557,1113,"('Chollima', 'Tanzania')", correct location data
-558,1114,"('Tumbi', 'Tanzania')", correct location data
-559,1117,"('Golden Valley', 'Zambia')", correct location data
-560,1118,"('Kasama', 'Zambia')", correct location data
-561,1119,"('Misamfu', 'Zambia')", correct location data
-562,1120,"('Zamseed', 'Zambia')", correct location data
-563,1121,"('Arex, Harare', 'Zimbabwe')", correct location data
-564,1122,"('Drss, Harare', 'Zimbabwe')", correct location data
-565,1123,"('Makaholi', 'Zimbabwe')", correct location data
-566,1124,"('Makhoholi', 'Zimbabwe')", correct location data
-567,1125,"('Rattray', 'Zimbabwe')", correct location data
-568,1126,"('Rattray Arnold', 'Zimbabwe')", correct location data
-569,1127,"('Rattray Farm', 'Zimbabwe')", correct location data
-570,1131,"('Cañada Larga', 'Bolivia')", correct location data
-571,1132,"('Zudañes', 'Bolivia')", correct location data
-572,1134,"('Cañas, Guanacaste', 'Costa Rica')", correct location data
-573,1140,"('Sahagu - - - - Sahagun', 'Colombia')", correct location data
-574,1141,"('Tshibati - - - - Kibati', 'Congo')", correct location data
-575,1142,"('Lodana - - - - - Lodano', 'Ecuador')", correct location data
-576,1143,"('Organos - - - - Horganos', 'Ecuador')", correct location data
-577,1144,"('Chalchahuapa - - - Chalchuapa', 'El Salvador')", correct location data
-578,1145,"('El Coyalito - - - El Coyolito', 'El Salvador')", correct location data
-579,1146,"('Dobuleni Research Station - - - Dobuilevu Research', 'Fiji')", correct location data
-580,1147,"('Koronnia Research Station - - - Koronivia Research', 'Fiji')", correct location data
-581,1148,"('La Maquina Caballo Blanco', 'Guatemala')", correct location data
-582,1149,"('San Jose Pinula', 'Guatemala')", correct location data
-583,1150,"('Catacamas, Olancho - - - Catacama', 'Honduras')", correct location data
-584,1151,"('La Dalia', 'Nicaragua')", correct location data
-585,1152,"('Finkolo', 'Mali')"," entered (lat, -lng)"
-586,1153,"('Villa Flores, Chiap.', 'Mexico')", correct location data
-587,1154,"('Finkolo', 'Mali')"," entered (lat, -lng)"
-588,1155,"('El Aguila, Pejibaye, Perez Zeledon', 'Costa Rica')"," entered (lat, -lng)"
-589,1156,"('Los Chiles', 'Costa Rica')"," entered (lat, -lng)"
-590,1157,"('Araure, Edo. Portuguesa', 'Venezuela')"," entered (lat, -lng)"
-591,1158,"('Las Velas, Edo. Yaracuy', 'Venezuela')"," entered (lat, -lng)"
-592,1159,"('Tiznados, Edo. Guarico', 'Venezuela')"," entered (lat, -lng)"
-593,1160,"('Concepcion De Pilas, Buenos Aires', 'Costa Rica')"," entered (lat, -lng)"
-594,1161,"('El Amparo, El Gallito, Los Chiles, Alajuela', 'Costa Rica')"," entered (lat, -lng)"
-595,1162,"('Guagaral, Buenos Aires Puntarenas', 'Costa Rica')"," entered (lat, -lng)"
-596,1163,"('Pueblo Nuevo, San Jose, Upala', 'Costa Rica')"," entered (lat, -lng)"
-597,1164,"('Veracruz, Pejibaye, Perez Zeledon', 'Costa Rica')"," entered (lat, -lng)"
-598,1165,"('El Progreso, Pejibaye, Perez Zeledon', 'Costa Rica')"," entered (lat, -lng)"
-599,1166,"('Guagaral, Buenos Aires', 'Costa Rica')"," entered (lat, -lng)"
+97,275,"('Pontevedra', 'España')", correct location data
+98,276,"('Adet', 'Ethiopia')", correct location data
+99,277,"('Alemaya', 'Ethiopia')", correct location data
+100,278,"('Ambo', 'Ethiopia')", correct location data
+101,279,"('Awassa', 'Ethiopia')", correct location data
+102,280,"('Awassa', 'Ethiopia')", correct location data
+103,281,"('Bako', 'Ethiopia')", correct location data
+104,282,"('Bako', 'Ethiopia')", correct location data
+105,283,"('Ethiopia', 'Ethiopia')", correct location data
+106,285,"('Holetta', 'Ethiopia')", correct location data
+107,286,"('Jimma', 'Ethiopia')", correct location data
+108,288,"('Kokate', 'Ethiopia')", correct location data
+109,289,"('Kulumsa', 'Ethiopia')", correct location data
+110,290,"('Melkasa', 'Ethiopia')", correct location data
+111,291,"('Mieso', 'Ethiopia')", correct location data
+112,292,"('Nazareth', 'Ethiopia')", correct location data
+113,293,"('Nazret', 'Ethiopia')", correct location data
+114,295,"('Pawe', 'Ethiopia')", correct location data
+115,297,"('Ziway', 'Ethiopia')", correct location data
+116,303,"('Damongo', 'Ghana')", correct location data
+117,304,"('Ejura', 'Ghana')", correct location data
+118,305,"('Fumesua', 'Ghana')", correct location data
+119,306,"('Kwadaso', 'Ghana')", correct location data
+120,307,"('Nyankpala', 'Ghana')", correct location data
+121,308,"('Pokuase', 'Ghana')", correct location data
+122,309,"('Tamale', 'Ghana')", correct location data
+123,310,"('Thessaloniki', 'Greece')", correct location data
+124,311,"('Thessaloniki-kentriko', 'Greece')", correct location data
+125,312,"('Barcenas, Villa Nuev', 'Guatemala')", correct location data
+126,314,"('Chimaltenango', 'Guatemala')", correct location data
+127,315,"('Cuyuta', 'Guatemala')", correct location data
+128,320,"('Jutiapa', 'Guatemala')", correct location data
+129,327,"('Las Vegas', 'Guatemala')", correct location data
+130,336,"('Tequinzate', 'Guatemala')", correct location data
+131,337,"('Tequinzate', 'Guatemala')", correct location data
+132,339,"('Cayes', 'Haiti')", correct location data
+133,341,"('Damien Farm.', 'Haiti')", correct location data
+134,343,"('Levy-cayes', 'Haiti')", correct location data
+135,347,"('Comayagua', 'Honduras')", correct location data
+136,349,"('Danli', 'Honduras')", correct location data
+137,352,"('Higuero Qumado, Yori', 'Honduras')", correct location data
+138,354,"('La Esperanza', 'Honduras')", correct location data
+139,355,"('Las Acacias', 'Honduras')", correct location data
+140,360,"('Omonita', 'Honduras')", correct location data
+141,367,"('Santa Cruz, Yorito,y', 'Honduras')", correct location data
+142,370,"('Adoni Mandal', 'India')", correct location data
+143,371,"('Almora', 'India')", correct location data
+144,373,"('Anantnagar', 'India')", correct location data
+145,374,"('Arabhavi', 'India')", correct location data
+146,375,"('Auli', 'India')", correct location data
+147,376,"('Aurangabad', 'India')", correct location data
+148,377,"('Bahraich', 'India')", correct location data
+149,380,"('Bangalore', 'India')", correct location data
+150,381,"('Bangalore', 'India')", correct location data
+151,382,"('Banswara', 'India')", correct location data
+152,383,"('Begusarai, Bihar', 'India')", correct location data
+153,386,"('Chhindwara', 'India')", correct location data
+154,387,"('Coimbatore', 'India')", correct location data
+155,388,"('Delhi', 'India')", correct location data
+156,389,"('Dhaulakuan', 'India')", correct location data
+157,390,"('Dholi', 'India')", correct location data
+158,392,"('Dmr I.a.r.i.', 'India')"," entered (lat, -lng)"
+159,394,"('Godhra', 'India')", correct location data
+160,396,"('Hyderabad', 'India')", correct location data
+161,398,"('Issarwadi', 'India')", correct location data
+162,399,"('Jalna', 'India')", correct location data
+163,400,"('Jashipur', 'India')", correct location data
+164,401,"('Jorhat', 'India')", correct location data
+165,402,"('Kangra (h.p.)', 'India')", correct location data
+166,403,"('Kanpur', 'India')", correct location data
+167,404,"('Karnal', 'India')", correct location data
+168,405,"('Karnataka', 'India')", correct location data
+169,408,"('Kolhapur', 'India')", correct location data
+170,409,"('Ludhiana', 'India')", correct location data
+171,410,"('Medchal', 'India')", correct location data
+172,414,"('P.r Pally', 'India')", correct location data
+173,415,"('Pahalgam', 'India')", correct location data
+174,416,"('Pantnagar', 'India')", correct location data
+175,422,"('Pune', 'India')", correct location data
+176,426,"('Raipur', 'India')", correct location data
+177,431,"('Sonipat', 'India')", correct location data
+178,432,"('Srinagar', 'India')", correct location data
+179,434,"('Udaipur', 'India')", correct location data
+180,435,"('Umiam Meghalaya', 'India')", correct location data
+181,436,"('Varanasi', 'India')", correct location data
+182,437,"('Wahdan, Pahalgam, Kashmir', 'India')", correct location data
+183,439,"('Bontobili', 'Indonesia')", correct location data
+184,443,"('Malang', 'Indonesia')", correct location data
+185,444,"('Maros', 'Indonesia')", correct location data
+186,445,"('Muneng', 'Indonesia')", correct location data
+187,454,"('Baghdad', 'Iraq')", correct location data
+188,458,"('Alupe', 'Kenya')", correct location data
+189,460,"('Bondo- On Farm', 'Kenya')", correct location data
+190,461,"('Bukura', 'Kenya')", correct location data
+191,462,"('Bungema', 'Kenya')", correct location data
+192,463,"('Bungoma', 'Kenya')", correct location data
+193,464,"('Burura', 'Kenya')", correct location data
+194,465,"('Busia', 'Kenya')", correct location data
+195,466,"('Emabwi', 'Kenya')", correct location data
+196,467,"('Emali', 'Kenya')", correct location data
+197,468,"('Embu', 'Kenya')", correct location data
+198,469,"('Emuhaya', 'Kenya')", correct location data
+199,470,"('Endebess', 'Kenya')", correct location data
+200,471,"('Homabay', 'Kenya')", correct location data
+201,472,"('Ithookwe', 'Kenya')", correct location data
+202,474,"('Kakamega', 'Kenya')", correct location data
+203,475,"('Kampiyamawe', 'Kenya')", correct location data
+204,478,"('Katumani', 'Kenya')", correct location data
+205,479,"('Kenya', 'Kenya')", correct location data
+206,480,"('Kesref', 'Kenya')", correct location data
+207,481,"('Kiboko', 'Kenya')", correct location data
+208,482,"('Kibos', 'Kenya')", correct location data
+209,483,"('Kimilili', 'Kenya')", correct location data
+210,484,"('Kimlili', 'Kenya')", correct location data
+211,485,"('Kitalale', 'Kenya')", correct location data
+212,486,"('Kitale', 'Kenya')", correct location data
+213,488,"('Kitui', 'Kenya')", correct location data
+214,489,"('Ksc Field', 'Kenya')", correct location data
+215,490,"('Machakos', 'Kenya')", correct location data
+216,491,"('Makindu', 'Kenya')", correct location data
+217,492,"('Makueni', 'Kenya')", correct location data
+218,493,"('Mitungu', 'Kenya')", correct location data
+219,494,"('Mombasa', 'Kenya')", correct location data
+220,495,"('Mtwapa', 'Kenya')", correct location data
+221,496,"('Muguga', 'Kenya')", correct location data
+222,497,"('Nairobi', 'Kenya')", correct location data
+223,498,"('Narc, Kitale', 'Kenya')", correct location data
+224,499,"('Nyahera', 'Kenya')", correct location data
+225,500,"('Rachuonyo', 'Kenya')", correct location data
+226,501,"('Sigor', 'Kenya')", correct location data
+227,503,"('Vihiga', 'Kenya')", correct location data
+228,505,"('Western Kakamrga', 'Kenya')", correct location data
+229,507,"('Leribe', 'Lesotho')", correct location data
+230,509,"('Machache', 'Lesotho')", correct location data
+231,510,"('Mahobong', 'Lesotho')", correct location data
+232,511,"('Maseru', 'Lesotho')", correct location data
+233,512,"('Mokhotlong', 'Lesotho')", correct location data
+234,513,"('Mokhotlong', 'Lesotho')", correct location data
+235,514,"('Nyakosoba', 'Lesotho')", correct location data
+236,515,"('Teyateyaneng', 'Lesotho')", correct location data
+237,516,"('Tseka', 'Lesotho')", correct location data
+238,517,"('Tulear', 'Madagascar')", correct location data
+239,519,"('Bembeke', 'Malawi')", correct location data
+240,520,"('Bolero', 'Malawi')", correct location data
+241,521,"('Bvumbwe', 'Malawi')", correct location data
+242,522,"('Bwanje', 'Malawi')", correct location data
+243,523,"('Chitala', 'Malawi')", correct location data
+244,524,"('Chitedze', 'Malawi')", correct location data
+245,525,"('Lunyangwa', 'Malawi')", correct location data
+246,526,"('Makoka', 'Malawi')", correct location data
+247,527,"('Mbawa', 'Malawi')", correct location data
+248,529,"('Ngabu', 'Malawi')", correct location data
+249,531,"('Salima', 'Malawi')", correct location data
+250,532,"('Tsangano', 'Malawi')", correct location data
+251,533,"('Zomba', 'Malawi')", correct location data
+252,534,"('Farako', 'Mali')", correct location data
+253,537,"('Rue Mohamed', 'Mali')"," entered (lat, -lng)"
+254,538,"('Sotuba', 'Mali')", correct location data
+255,541,"('Aculco', 'Mexico')", correct location data
+256,543,"('Aguascalientes', 'Mexico')", correct location data
+257,544,"('Ahuacatlan, Nayarit', 'Mexico')", correct location data
+258,545,"('Almoloya De Juarez', 'Mexico')", correct location data
+259,546,"('Ameca, Jal.', 'Mexico')", correct location data
+260,547,"('Ameca, Jal.', 'Mexico')", correct location data
+261,548,"('Ameca, Jal.', 'Mexico')", correct location data
+262,549,"('Amecameca, Mexico', 'Mexico')", correct location data
+263,554,"('Calera, Zacatecas', 'Mexico')", correct location data
+264,555,"('Campeche, Campeche', 'Mexico')", correct location data
+265,556,"('Candelaria Portezuelo, Puebla', 'Mexico')", correct location data
+266,557,"('Candelaria Portezuelo, Puebla', 'Mexico')", correct location data
+267,559,"('Celaya, Guanajuato', 'Mexico')", correct location data
+268,560,"('Celaya, Guanajuato (inifap)', 'Mexico')", correct location data
+269,561,"('Cerib, Tamaulipas', 'Mexico')", correct location data
+270,563,"('Chapingo, Estado De Mexico', 'Mexico')", correct location data
+271,564,"('Chavinda', 'Mexico')", correct location data
+272,567,"('Ciudad Anahuac, Nuevo Leon', 'Mexico')", correct location data
+273,568,"('Ciudad Guzman, Jalisco', 'Mexico')", correct location data
+274,569,"('Ciudad Obregon', 'Mexico')", correct location data
+275,570,"('Coatlinchan, Estado De Mexico', 'Mexico')", correct location data
+276,571,"('Cocotitlan, Texcoco', 'Mexico')", correct location data
+277,572,"('Colon, Queretaro', 'Mexico')", correct location data
+278,577,"('Cotaxtla (inifap)', 'Mexico')", correct location data
+279,579,"('Cuautitlan, Estado De Mexico', 'Mexico')", correct location data
+280,580,"('Cuendo1', 'Mexico')", correct location data
+281,581,"('Cuidad Guzman, Jalisco', 'Mexico')", correct location data
+282,582,"('Culican, Sinaloa', 'Mexico')", correct location data
+283,583,"('Delicias, Chihuahua', 'Mexico')", correct location data
+284,584,"('Diaz Ordaz, Tamaulipas', 'Mexico')", correct location data
+285,585,"('Dolores Enyeje, Ixtla', 'Mexico')", correct location data
+286,586,"('Dolores Hidalgo, Guanajuato', 'Mexico')", correct location data
+287,587,"('Durango, Durango', 'Mexico')", correct location data
+288,590,"('El Batan', 'Mexico')", correct location data
+289,591,"('El Batan', 'Mexico')", correct location data
+290,592,"('El Batan', 'Mexico')", correct location data
+291,593,"('El Molino Zinacantep', 'Mexico')", correct location data
+292,594,"('El Refugio, San Luis De La Paz, Guanajuato', 'Mexico')", correct location data
+293,596,"('Gomez Farias, Jalisco', 'Mexico')", correct location data
+294,597,"('Guadalajara', 'Mexico')", correct location data
+295,599,"('Guanajuato', 'Mexico')", correct location data
+296,600,"('Guasave, Sinaloa', 'Mexico')", correct location data
+297,601,"('Gunyo, Aculco Estado De Mexico', 'Mexico')", correct location data
+298,602,"('Hidalgo', 'Mexico')", correct location data
+299,603,"('Huamantla Tlaxcala', 'Mexico')", correct location data
+300,607,"('Iguala, Guerrero', 'Mexico')", correct location data
+301,608,"('Irapuato, Guanajuato', 'Mexico')", correct location data
+302,610,"('Iturbide, Guanajuato', 'Mexico')", correct location data
+303,611,"('Ixtapan De La Pano', 'Mexico')", correct location data
+304,613,"('Jamay', 'Mexico')", correct location data
+305,616,"('Jiquipilco', 'Mexico')", correct location data
+306,617,"('Jocotitlan', 'Mexico')", correct location data
+307,618,"('Jocotitlan 2', 'Mexico')", correct location data
+308,623,"('La Loma Municipio, Tepatitla, Jalisco', 'Mexico')", correct location data
+309,624,"('La Piedad, Michoacan', 'Mexico')", correct location data
+310,626,"('Leon, Guanajuato', 'Mexico')", correct location data
+311,627,"('Los Mochis, Sinaloa', 'Mexico')", correct location data
+312,628,"('Los Mochis, Sinaloa', 'Mexico')", correct location data
+313,629,"('Malinalco, Mexico', 'Mexico')", correct location data
+314,631,"('Mavoro, Estado De Mexico', 'Mexico')", correct location data
+315,632,"('Metepec', 'Mexico')", correct location data
+316,633,"('Mixquihuala, Hidalgo', 'Mexico')", correct location data
+317,634,"('Montecillo', 'Mexico')", correct location data
+318,636,"('Nextipac, Jalisco', 'Mexico')", correct location data
+319,637,"('Nextipac, Jalisco', 'Mexico')", correct location data
+320,638,"('Ocotitlan, Puebla', 'Mexico')", correct location data
+321,639,"('Ocozocoautla', 'Mexico')", correct location data
+322,643,"('Ojocaliente, Zacatecas', 'Mexico')", correct location data
+323,644,"('Pabellon, Aguascalientes', 'Mexico')", correct location data
+324,645,"('Pedro Escobedo, Queretaro', 'Mexico')", correct location data
+325,647,"('Poncitlan, Jalisco', 'Mexico')", correct location data
+326,648,"('Popotes Municipio De Tepatitlan, Jalisco', 'Mexico')", correct location data
+327,649,"('Poza Rica', 'Mexico')", correct location data
+328,650,"('Poza Rica', 'Mexico')", correct location data
+329,651,"('Puebla', 'Mexico')", correct location data
+330,652,"('Puerto Vallarta', 'Mexico')", correct location data
+331,653,"('Queretaro', 'Mexico')", correct location data
+332,655,"('Rancheria Hernandez, Puebla', 'Mexico')", correct location data
+333,657,"('Rinconada Mazapiltepec', 'Mexico')", correct location data
+334,658,"('Rio Bravo, Tamaulipas', 'Mexico')", correct location data
+335,659,"('Roque, Guanajuato', 'Mexico')", correct location data
+336,661,"('San Antonio La Isla Mexico', 'Mexico')", correct location data
+337,662,"('San Jose De Gracia Michoacan', 'Mexico')", correct location data
+338,663,"('San Jose Del Valle Nayarit', 'Mexico')", correct location data
+339,664,"('San Jose Iturbide, Guanajuato', 'Mexico')", correct location data
+340,666,"('San Juan Del Rio', 'Mexico')", correct location data
+341,667,"('San Juan Zitlaltepec', 'Mexico')", correct location data
+342,668,"('San Luis De La Paz, Guanajuato', 'Mexico')", correct location data
+343,670,"('San Miguel Cuyutlan, Jalisco', 'Mexico')", correct location data
+344,672,"('San Sebastian Teles', 'Mexico')", correct location data
+345,673,"('Santa Lucia, Estado De Mexico', 'Mexico')", correct location data
+346,674,"('Santa Maria Rayon', 'Mexico')", correct location data
+347,675,"('Santiado Del Monte, Municipio Villa Victoria', 'Mexico')", correct location data
+348,676,"('Santiago Ixcuintla, Nayarit', 'Mexico')", correct location data
+349,677,"('Silao, Guanajuato', 'Mexico')", correct location data
+350,680,"('Tapachula', 'Mexico')", correct location data
+351,681,"('Tejupilco', 'Mexico')", correct location data
+352,683,"('Tepatitlan, Jalisco', 'Mexico')", correct location data
+353,685,"('Tlajomulco, De Zuniga', 'Mexico')", correct location data
+354,686,"('Tlajomulco, Jalisco', 'Mexico')", correct location data
+355,687,"('Tlajomulco, Jalisco', 'Mexico')", correct location data
+356,690,"('Tlaltizapan', 'Mexico')", correct location data
+357,691,"('Tlaltizapan', 'Mexico')", correct location data
+358,692,"('Tlaxcoapan', 'Mexico')", correct location data
+359,693,"('Toluca', 'Mexico')", correct location data
+360,694,"('Tototlan, Jalisco', 'Mexico')", correct location data
+361,695,"('Uach, Campo Experimental', 'Mexico')", correct location data
+362,696,"('Usmajac Municipio De Sayula, Jalisco', 'Mexico')", correct location data
+363,700,"('Valle De Mexico', 'Mexico')", correct location data
+364,702,"('Valle Del Yaqui', 'Mexico')", correct location data
+365,703,"('Valparaiso, Zacatecas', 'Mexico')", correct location data
+366,705,"('Veracruz', 'Mexico')", correct location data
+367,706,"('Villa Flores, Chiapas', 'Mexico')", correct location data
+368,709,"('Villanueva, Zacatecas', 'Mexico')", correct location data
+369,710,"('Xalisco, Nayarit', 'Mexico')", correct location data
+370,713,"('Zotoluca, Hidalgo', 'Mexico')", correct location data
+371,714,"('Zumpango', 'Mexico')", correct location data
+372,715,"('El Menzeh', 'Morocco')", correct location data
+373,717,"('Angonia Tete', 'Mozambique')", correct location data
+374,719,"('Chokwe', 'Mozambique')", correct location data
+375,721,"('Lichinga', 'Mozambique')", correct location data
+376,722,"('Mapupulo', 'Mozambique')", correct location data
+377,723,"('Maputo', 'Mozambique')", correct location data
+378,724,"('Mocuba', 'Mozambique')", correct location data
+379,725,"('Morrumbala-zambezia', 'Mozambique')", correct location data
+380,727,"('Mutarara', 'Mozambique')", correct location data
+381,728,"('Namialo', 'Mozambique')", correct location data
+382,729,"('Nampula', 'Mozambique')", correct location data
+383,730,"('Nhacoongo', 'Mozambique')", correct location data
+384,734,"('Sussundenga', 'Mozambique')", correct location data
+385,735,"('Umbeluzi', 'Mozambique')", correct location data
+386,745,"('Mashare', 'Namibia')", correct location data
+387,747,"('Runda', 'Namibia')", correct location data
+388,750,"('Khumaltar', 'Nepal')", correct location data
+389,753,"('Parinanipur (p.a.s.)', 'Nepal')", correct location data
+390,755,"('Rampur', 'Nepal')", correct location data
+391,756,"('Surkhet', 'Nepal')", correct location data
+392,760,"('Chinandega', 'Nicaragua')", correct location data
+393,774,"('Managua', 'Nicaragua')", correct location data
+394,782,"('San Cristobal', 'Nicaragua')", correct location data
+395,785,"('Santa Rosa', 'Nicaragua')", correct location data
+396,787,"('Ibadan', 'Nigeria')", correct location data
+397,788,"('Ikenne', 'Nigeria')", correct location data
+398,789,"('Jos Nig', 'Nigeria')", correct location data
+399,790,"('Layin Taki', 'Nigeria')", correct location data
+400,791,"('Mokwa', 'Nigeria')", correct location data
+401,792,"('Mokwa', 'Nigeria')", correct location data
+402,793,"('Samaru', 'Nigeria')", correct location data
+403,796,"('Tiga', 'Nigeria')", correct location data
+404,797,"('Turunku', 'Nigeria')", correct location data
+405,798,"('Zaria', 'Nigeria')", correct location data
+406,800,"('Dadu', 'Pakistan')", correct location data
+407,801,"('Faisalabad', 'Pakistan')", correct location data
+408,802,"('Islamabad', 'Pakistan')", correct location data
+409,803,"('Pirsabak', 'Pakistan')", correct location data
+410,804,"('Yousafwala', 'Pakistan')", correct location data
+411,806,"('Ceiachi', 'Panama')", correct location data
+412,807,"('Chiriqui', 'Panama')", correct location data
+413,808,"('El Ejido', 'Panama')", correct location data
+414,809,"('Guarare', 'Panama')", correct location data
+415,810,"('Parita', 'Panama')", correct location data
+416,811,"('Rio Hato', 'Panama')", correct location data
+417,812,"('Caacupe', 'Paraguay')", correct location data
+418,814,"('Capitan Miranda', 'Paraguay')", correct location data
+419,815,"('Chore (d. S. Pedro)', 'Paraguay')", correct location data
+420,817,"('Tomas Romero Pereira', 'Paraguay')", correct location data
+421,823,"('El Porvenir', 'Peru')", correct location data
+422,826,"('Iquitos', 'Peru')", correct location data
+423,847,"('Cabuyao, Laguna', 'Philippines')", correct location data
+424,848,"('Cagayan Valley', 'Philippines')", correct location data
+425,852,"('Katangawan', 'Philippines')", correct location data
+426,854,"('Visca', 'Philippines')", correct location data
+427,855,"('Rubona', 'Rwanda')", correct location data
+428,856,"('Nioro', 'Senegal')", correct location data
+429,857,"('Barberton', 'South Africa')", correct location data
+430,859,"('Delmas', 'South Africa')", correct location data
+431,863,"('Nelspruit Mpumalanga', 'South Africa')", correct location data
+432,865,"('Pannar, Graytown', 'South Africa')", correct location data
+433,868,"('Viljoonskroon', 'South Africa')", correct location data
+434,869,"('Betlehem', 'South Africa Rep.')", correct location data
+435,870,"('Cedara', 'South Africa Rep.')", correct location data
+436,871,"('Ezolimo', 'South Africa Rep.')", correct location data
+437,872,"('Friedenhei', 'South Africa Rep.')", correct location data
+438,873,"('Greytown', 'South Africa Rep.')", correct location data
+439,874,"('Greytown', 'South Africa Rep.')", correct location data
+440,875,"('Lwamongo', 'South Africa Rep.')", correct location data
+441,876,"('Nelspruit', 'South Africa Rep.')", correct location data
+442,877,"('Potchefstroom', 'South Africa')", correct location data
+443,878,"('Setlagole', 'South Africa Rep.')", correct location data
+444,879,"('Viljoenskroon', 'South Africa Rep.')", correct location data
+445,880,"('Gezira', 'Sudan')", correct location data
+446,881,"('Wad Medani', 'Sudan')", correct location data
+447,883,"('Big-bend', 'Swaziland')", correct location data
+448,886,"('Luve', 'Swaziland')", correct location data
+449,887,"('Malkerns', 'Swaziland')", correct location data
+450,888,"('Mangcongo', 'Swaziland')", correct location data
+451,889,"('Nhlangano', 'Swaziland')", correct location data
+452,894,"('Po-tzu-chia-i', 'Taiwan')", correct location data
+453,895,"('Afsf-arusha', 'Tanzania')", correct location data
+454,897,"('Arusha Tan', 'Tanzania')", correct location data
+455,898,"('Cholima', 'Tanzania')", correct location data
+456,899,"('Dabaga Uyole', 'Tanzania')", correct location data
+457,900,"('Dakawa', 'Tanzania')", correct location data
+458,901,"('Ilonga', 'Tanzania')", correct location data
+459,902,"('Inyala', 'Tanzania')", correct location data
+460,903,"('Katrin', 'Tanzania')", correct location data
+461,904,"('Katrin1', 'Tanzania')", correct location data
+462,905,"('Katrin2', 'Tanzania')", correct location data
+463,906,"('Katrin-ifakara', 'Tanzania')", correct location data
+464,908,"('Maruku', 'Tanzania')", correct location data
+465,909,"('Mbulumbulu', 'Tanzania')", correct location data
+466,910,"('Mlingano', 'Tanzania')", correct location data
+467,911,"('Monduli', 'Tanzania')", correct location data
+468,912,"('Morogoro', 'Tanzania')", correct location data
+469,914,"('Ngaramtoni', 'Tanzania')", correct location data
+470,915,"('Ngaramtoni-arusha', 'Tanzania')", correct location data
+471,917,"('Selian', 'Tanzania')", correct location data
+472,918,"('Tabora', 'Tanzania')", correct location data
+473,920,"('Tumbi-tabora', 'Tanzania')", correct location data
+474,921,"('Ukiriguru', 'Tanzania')", correct location data
+475,922,"('Uyole', 'Tanzania')", correct location data
+476,923,"('Weruweru', 'Tanzania')", correct location data
+477,924,"('Banmaisomrong', 'Thailand')", correct location data
+478,925,"('Nakhon Sawan R.c.', 'Thailand')", correct location data
+479,926,"('Nakhon Sawan R.c.', 'Thailand')", correct location data
+480,927,"('Phetchabun', 'Thailand')", correct location data
+481,928,"('Phraphutthabat', 'Thailand')", correct location data
+482,930,"('Suwan', 'Thailand')", correct location data
+483,932,"('Tak Fa', 'Thailand')", correct location data
+484,934,"('Goldsborough', 'Trinidad Y Tobago')", correct location data
+485,935,"(""Louis D'or"", 'Trinidad Y Tobago')", correct location data
+486,936,"('Adapazari', 'Turkey')", correct location data
+487,941,"('Kamayanmiggo', 'Uganda')", correct location data
+488,942,"('Kamenyamiggo', 'Uganda')", correct location data
+489,943,"('Kampala', 'Uganda')", correct location data
+490,944,"('Kapchorwa', 'Uganda')", correct location data
+491,946,"('Masaka', 'Uganda')", correct location data
+492,948,"('Naari', 'Uganda')", correct location data
+493,949,"('Namulonge Uga', 'Uganda')", correct location data
+494,950,"('Serere', 'Uganda')", correct location data
+495,951,"('Tororo', 'Uganda')", correct location data
+496,953,"('Barnum Mn', 'United States Of America')", correct location data
+497,956,"('Sn Antonio', 'United States Of America')", correct location data
+498,960,"('La Estanzuela', 'Uruguay')", correct location data
+499,961,"('Agua Blanca', 'Venezuela')", correct location data
+500,975,"('Las Guacamayas', 'Venezuela')", correct location data
+501,976,"('Las Guacamayas', 'Venezuela')", correct location data
+502,980,"('Maracay', 'Venezuela')", correct location data
+503,983,"('Sabana Del Medio', 'Venezuela')", correct location data
+504,996,"('Dan Phuong', 'Vietnam')", correct location data
+505,1001,"('Hoc May District, Hochimin', 'Vietnam')", correct location data
+506,1002,"('Lam Dong Province', 'Vietnam')", correct location data
+507,1003,"('Song-boi', 'Vietnam')", correct location data
+508,1005,"('Gandajika', 'Zaire')", correct location data
+509,1006,"('Mvuazi', 'Zaire')", correct location data
+510,1008,"('Kasama, Misanfu', 'Zambia')", correct location data
+511,1009,"('Katuba', 'Zambia')", correct location data
+512,1013,"('Magoye', 'Zambia')", correct location data
+513,1014,"('Mansa', 'Zambia')", correct location data
+514,1015,"('Masumba', 'Zambia')", correct location data
+515,1016,"('Mogoye', 'Zambia')", correct location data
+516,1017,"('Mount Makulu', 'Zambia')", correct location data
+517,1018,"('Mpongwe', 'Zambia')", correct location data
+518,1019,"('Msekera', 'Zambia')", correct location data
+519,1020,"('Nanga', 'Zambia')", correct location data
+520,1021,"('Sesheke', 'Zambia')", correct location data
+521,1023,"('Zamseed, Farm', 'Zambia')", correct location data
+522,1024,"('Arcturus', 'Zimbabwe')", correct location data
+523,1025,"('Arex Drss, Harare', 'Zimbabwe')", correct location data
+524,1026,"('Art Farm, Harare', 'Zimbabwe')", correct location data
+525,1027,"('Chiredzi', 'Zimbabwe')", correct location data
+526,1030,"('Glendale', 'Zimbabwe')", correct location data
+527,1031,"('Gwebi', 'Zimbabwe')", correct location data
+528,1032,"('Harare', 'Zimbabwe')", correct location data
+529,1033,"('Kadoma', 'Zimbabwe')", correct location data
+530,1034,"('Lucydale', 'Zimbabwe')", correct location data
+531,1035,"('Makoholi', 'Zimbabwe')", correct location data
+532,1036,"('Marondera', 'Zimbabwe')", correct location data
+533,1037,"('Matopos', 'Zimbabwe')", correct location data
+534,1038,"('Mazowe', 'Zimbabwe')", correct location data
+535,1039,"('Muzarabani', 'Zimbabwe')", correct location data
+536,1043,"('Rattray Arnold Farm', 'Zimbabwe')", correct location data
+537,1044,"('Ruwa', 'Zimbabwe')", correct location data
+538,1045,"('Save Valley', 'Zimbabwe')", correct location data
+539,1046,"('Shamva Zim', 'Zimbabwe')", correct location data
+540,1048,"('Kachwekano', 'Uganda')", correct location data
+541,1049,"('Gakuta', 'Rwanda')", correct location data
+542,1050,"('Rwerere', 'Rwanda')", correct location data
+543,1051,"('Tamira', 'Rwanda')", correct location data
+544,1053,"('Eldoret', 'Kenya')", correct location data
+545,1054,"('Pentecostes, Texcoco', 'Mexico')", correct location data
+546,1055,"('Texcoco', 'Mexico')", correct location data
+547,1059,"('Dago', 'Kenya')", correct location data
+548,1060,"('Kodiaga', 'Kenya')", correct location data
+549,1061,"('Luanda', 'Kenya')", correct location data
+550,1062,"('Siaya', 'Kenya')", correct location data
+551,1064,"('Chakol', 'Kenya')", correct location data
+552,1065,"('Kibale', 'Uganda')", correct location data
+553,1066,"('Yala', 'Kenya')", correct location data
+554,1067,"('Tanga', 'Tanzania')", correct location data
+555,1068,"('Mungoshi, Hai', 'Tanzania')", correct location data
+556,1069,"('Kiharu', 'Kenya')", correct location data
+557,1070,"('Kilifi', 'Kenya')", correct location data
+558,1071,"('Kisumu', 'Kenya')", correct location data
+559,1072,"('Kwale', 'Kenya')", correct location data
+560,1073,"('Malindi', 'Kenya')", correct location data
+561,1101,"('Namulonge', 'Uganda')", correct location data
+562,1103,"('Cabinda', 'Angola')", correct location data
+563,1104,"('Kilomba', 'Angola')", correct location data
+564,1105,"('Mazozo', 'Angola')", correct location data
+565,1106,"('St. Vincent', 'Angola')", correct location data
+566,1109,"('Baka', 'Malawi')", correct location data
+567,1111,"('Potchesftroom', 'South Africa')", correct location data
+568,1112,"('Arusha', 'Tanzania')", correct location data
+569,1113,"('Chollima', 'Tanzania')", correct location data
+570,1114,"('Tumbi', 'Tanzania')", correct location data
+571,1117,"('Golden Valley', 'Zambia')", correct location data
+572,1118,"('Kasama', 'Zambia')", correct location data
+573,1119,"('Misamfu', 'Zambia')", correct location data
+574,1120,"('Zamseed', 'Zambia')", correct location data
+575,1121,"('Arex, Harare', 'Zimbabwe')", correct location data
+576,1122,"('Drss, Harare', 'Zimbabwe')", correct location data
+577,1123,"('Makaholi', 'Zimbabwe')", correct location data
+578,1124,"('Makhoholi', 'Zimbabwe')", correct location data
+579,1125,"('Rattray', 'Zimbabwe')", correct location data
+580,1126,"('Rattray Arnold', 'Zimbabwe')", correct location data
+581,1127,"('Rattray Farm', 'Zimbabwe')", correct location data
+582,1131,"('Cañada Larga', 'Bolivia')", correct location data
+583,1132,"('Zudañes', 'Bolivia')", correct location data
+584,1134,"('Cañas, Guanacaste', 'Costa Rica')", correct location data
+585,1140,"('Sahagu - - - - Sahagun', 'Colombia')", correct location data
+586,1141,"('Tshibati - - - - Kibati', 'Congo')", correct location data
+587,1142,"('Lodana - - - - - Lodano', 'Ecuador')", correct location data
+588,1143,"('Organos - - - - Horganos', 'Ecuador')", correct location data
+589,1144,"('Chalchahuapa - - - Chalchuapa', 'El Salvador')", correct location data
+590,1145,"('El Coyalito - - - El Coyolito', 'El Salvador')", correct location data
+591,1146,"('Dobuleni Research Station - - - Dobuilevu Research', 'Fiji')", correct location data
+592,1147,"('Koronnia Research Station - - - Koronivia Research', 'Fiji')", correct location data
+593,1148,"('La Maquina Caballo Blanco', 'Guatemala')", correct location data
+594,1149,"('San Jose Pinula', 'Guatemala')", correct location data
+595,1150,"('Catacamas, Olancho - - - Catacama', 'Honduras')", correct location data
+596,1151,"('La Dalia', 'Nicaragua')", correct location data
+597,1152,"('Finkolo', 'Mali')"," entered (lat, -lng)"
+598,1153,"('Villa Flores, Chiap.', 'Mexico')", correct location data
+599,1154,"('Finkolo', 'Mali')"," entered (lat, -lng)"
+600,1155,"('El Aguila, Pejibaye, Perez Zeledon', 'Costa Rica')"," entered (lat, -lng)"
+601,1156,"('Los Chiles', 'Costa Rica')"," entered (lat, -lng)"
+602,1157,"('Araure, Edo. Portuguesa', 'Venezuela')"," entered (lat, -lng)"
+603,1158,"('Las Velas, Edo. Yaracuy', 'Venezuela')"," entered (lat, -lng)"
+604,1159,"('Tiznados, Edo. Guarico', 'Venezuela')"," entered (lat, -lng)"
+605,1160,"('Concepcion De Pilas, Buenos Aires', 'Costa Rica')"," entered (lat, -lng)"
+606,1161,"('El Amparo, El Gallito, Los Chiles, Alajuela', 'Costa Rica')"," entered (lat, -lng)"
+607,1162,"('Guagaral, Buenos Aires Puntarenas', 'Costa Rica')"," entered (lat, -lng)"
+608,1163,"('Pueblo Nuevo, San Jose, Upala', 'Costa Rica')"," entered (lat, -lng)"
+609,1164,"('Veracruz, Pejibaye, Perez Zeledon', 'Costa Rica')"," entered (lat, -lng)"
+610,1165,"('El Progreso, Pejibaye, Perez Zeledon', 'Costa Rica')"," entered (lat, -lng)"
+611,1166,"('Guagaral, Buenos Aires', 'Costa Rica')"," entered (lat, -lng)"
