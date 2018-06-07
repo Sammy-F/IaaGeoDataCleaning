@@ -13,7 +13,7 @@ class NameHandler:
         self.namesDict = {}
         self.namesDict['United States of America'] = ['United States', 'US', 'USA', 'America']
         self.namesDict['Congo'] = ['Republic of Congo']
-        self.namesDict['Democratic Republic of the Congo'] = ['Zaire', 'DR Congo', 'DRC', 'East Congo', 'Congo-Kinshasa']
+        self.namesDict['Congo, The Democratic Republic of the'] = ['Zaire', 'DR Congo', 'DRC', 'East Congo', 'Congo-Kinshasa']
 
         print("handler created")
 
