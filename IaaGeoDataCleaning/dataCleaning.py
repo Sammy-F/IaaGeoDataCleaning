@@ -4,7 +4,7 @@ import re
 import reverse_geocoder as rg
 import string
 import pycountry as pc
-
+import shapely
 import country_bounding_boxes as cbb
 
 """
@@ -83,24 +83,20 @@ class GeocodeValidator:
         lng = self.tobeValidatedLocation.loc[index, 'Longitude']
         try:
             pc.countries.lookup(country)
-            print("Passed pycountry")
             if pd.isnull(lat) or pd.isnull(lng):
                 return -2
             elif lat == 0 and lng == 0:
                 return -2
             return 0
         except LookupError:
-            print("lookup")
             try:
                 self.countryCodes[country]
-                print("passed dictionary")
                 if pd.isnull(lat) or pd.isnull(lng):
                     return -2
                 elif lat == 0 and lng == 0:
                     return -2
                 return 0
             except KeyError:
-                print("no country")
                 return -3
 
     def validateCoordinates(self, lat, lng, countryName):
@@ -117,7 +113,7 @@ class GeocodeValidator:
             else:
                 box = [c.bbox for c in cbb.country_subunits_by_iso_code(countryCode)]
                 # formatted lon1, lat1, lon2, lat2 for box
-                if not (box[0][0] < lng and box[0][1] < lat and box[0][2] > lng and box[0][3] > lat):
+                if box[0][3] > lat > box[0][1] and box[0][2] > lng > box[0][0] and lng < box[0][2]:
                     return i
         return -1
 
@@ -158,6 +154,4 @@ class GeocodeValidator:
 
 
 validator = GeocodeValidator("NaNtblLocations.xlsx")
-# sr = validator.checkInputLocation(1137)
-# print(sr)
 validator.run()
