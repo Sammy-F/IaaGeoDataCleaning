@@ -161,25 +161,6 @@ class GeocodeValidator:
                 print(countryName + " caused an error")
 
         return -1
-        #     matchedCountryCode = rg.get(possibleCoords[i], mode=1)['cc']
-        #
-        #
-        #
-        #     if countryCode == matchedCountryCode:
-        #         return i
-        #     else:  # BETTER, MORE PRECISE
-        #         print(countryName)
-        #         print(possibleCoords[i])
-        #         shapePoint = np.array([lng, lat])
-        #         point = Point(shapePoint)
-        #         filter = self.map['geometry'].contains(point)
-        #         mLoc = self.map.loc[filter, 'ISO2']
-        #         print(mLoc)
-        #         foundCountry = mLoc.iloc[0]
-        #         print(foundCountry)
-        #         if (matchedCountryCode == foundCountry):
-        #             return i
-        # return -1
 
     def logEntry(self, type, index, location, country):
         if type >= 0:
