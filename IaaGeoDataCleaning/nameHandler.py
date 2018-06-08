@@ -22,11 +22,8 @@ class NameHandler:
         print("handler created")
 
     def findName(self, checkCountry):
-        print(checkCountry)
         for formattedName, alternativeNames in self.namesDict.items():
             for alternativeName in alternativeNames:
-                print(formattedName)
-                print(alternativeName)
                 if (checkCountry == alternativeName):
                     return formattedName
         return False

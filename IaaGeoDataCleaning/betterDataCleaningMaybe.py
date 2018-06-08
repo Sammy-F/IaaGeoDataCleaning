@@ -1,14 +1,12 @@
 import pandas as pd
 import datetime
-import re
-import reverse_geocoder as rg
 import string
 import pycountry as pc
 
 import geopandas as gpd
 import numpy as np
 
-from IaaGeoDataCleaning import nameHandler as nh
+import nameHandler as nh
 
 # import country_bounding_boxes as cbb
 from shapely.geometry import Point
@@ -29,14 +27,13 @@ See his original at: https://gis.stackexchange.com/questions/212796/get-lat-lon-
 Note that some borders used are disputed
 """
 
-parenNumRegex = re.compile('\(\d\)')
 now = datetime.datetime.now()
 now = now.strftime("%Y-%m-%d ")
 
 
 class GeocodeValidator:
     def __init__(self, fileName):
-        self.map = gpd.read_file("D:\IaaGeoDataCleaning\IaaGeoDataCleaning\mapinfo\TM_WORLD_BORDERS-0.3.shp")
+        self.map = gpd.read_file("mapinfo/TM_WORLD_BORDERS-0.3.shp")
         self.fileName = fileName
 
         self.flaggedLocations = []  # flagged indexes in data frame
@@ -48,7 +45,7 @@ class GeocodeValidator:
                           4: 'entered (lng, -lat)', 5: 'entered (-lat, lng)',
                           6: 'entered (-lat, -lng', 7: 'entered (lat, -lng)',
                           -1: 'incorrect location data', -2: 'no latitude and longitude entered',
-                          -3: 'country not found/wrong country format'}
+                          -3: 'country not found/wrong country format', -4: 'no location entered'}
 
         self.countryCodes = {}
         self.createCountryCodeDict()
@@ -64,64 +61,62 @@ class GeocodeValidator:
         :return:
         """
         for (index, row) in self.tobeValidatedLocation.iterrows():
+            dataEntered = self.checkInputLocation(index)
+
+            country = string.capwords(str(row['Country']).lower())
+            location = string.capwords(str(row['Location']).lower())
+
             try:
-                row['Location'] = parenNumRegex.sub("", row['Location'])
-                country = string.capwords(str(row['Country']).lower())
-                location = string.capwords(str(row['Location']).lower())
+                if dataEntered[0] >= 0:
+                    enteredLat = float(row['Latitude'])
+                    enteredLng = float(row['Longitude'])
 
-                dataEntered = self.checkInputLocation(index, country)
+                    result = self.validateCoordinates(enteredLat, enteredLng, dataEntered[1])
 
-                try:
-                    if dataEntered[0] >= 0:
-                        enteredLat = float(row['Latitude'])
-                        enteredLng = float(row['Longitude'])
+                    self.logEntry(result, index, location, country)
+                else:
+                    self.logEntry(dataEntered, index, location, country)
 
-                        result = self.validateCoordinates(enteredLat, enteredLng, dataEntered[1])
+            except TypeError:
+                if dataEntered >= 0:
+                    enteredLat = float(row['Latitude'])
+                    enteredLng = float(row['Longitude'])
 
-                        self.logEntry(result, index, location, country)
-                    else:
-                        self.logEntry(dataEntered, index, location, country)
-                except TypeError:
-                    if dataEntered >= 0:
-                        enteredLat = float(row['Latitude'])
-                        enteredLng = float(row['Longitude'])
+                    result = self.validateCoordinates(enteredLat, enteredLng, country)
 
-                        result = self.validateCoordinates(enteredLat, enteredLng, country)
-
-                        self.logEntry(result, index, location, country)
-                    else:
-                        self.logEntry(dataEntered, index, location, country)
-
-            except:
-                print("Index: " + str(index) + " no entered coordinates.(Index flagged.) \n")
-                self.flaggedLocations.append(index)
-                self.incorrectLog['location'].append((location, country))
-                self.incorrectLog['index'].append(index)
-                self.incorrectLog['type'].append(' coords NA')
+                    self.logEntry(result, index, location, country)
+                else:
+                    self.logEntry(dataEntered, index, location, country)
 
         self.logResults()
 
-    def checkInputLocation(self, index, country):
+    def checkInputLocation(self, index):
+        if pd.isnull(self.tobeValidatedLocation.loc[index, 'Location']) or pd.isnull(self.tobeValidatedLocation.loc[index, 'Country']):
+            return -4
+
+        country = string.capwords(str(self.tobeValidatedLocation.loc[index, 'Country']))
         lat = self.tobeValidatedLocation.loc[index, 'Latitude']
         lng = self.tobeValidatedLocation.loc[index, 'Longitude']
+
         try:
-            pc.countries.lookup(country)
+            countryCode = pc.countries.lookup(country).alpha_2
             print("Passed pycountry")
             if pd.isnull(lat) or pd.isnull(lng):
                 return -2
             elif lat == 0 and lng == 0:
                 return -2
-            return 0
+            return (0, countryCode)
+
         except LookupError:
-            print("lookup")
             try:
-                self.countryCodes[country]
+                countryCode = self.countryCodes[country]
                 print("passed dictionary")
                 if pd.isnull(lat) or pd.isnull(lng):
                     return -2
                 elif lat == 0 and lng == 0:
                     return -2
-                return 0
+                return (0, countryCode)
+
             except KeyError:
                 formatted = self.findFormattedName(country)
                 print(formatted)
@@ -129,20 +124,19 @@ class GeocodeValidator:
                     print("no country")
                     return -3
                 else:
+                    countryCode = pc.countries.lookup(formatted).alpha_2
                     print("foundalternative")
-                    return [0, formatted]
+                    return (0, countryCode)
 
     def findFormattedName(self, alternativeName):
 
         finder = nh.NameHandler()
         return finder.findName(alternativeName)
 
-    def validateCoordinates(self, lat, lng, countryName):
+    def validateCoordinates(self, lat, lng, countryCode):
 
         lat = float(lat)
         lng = float(lng)
-
-        countryCode = pc.countries.lookup(countryName).alpha_2
 
         possibleCoords = [(lat, lng), (lng, lat), (-lng, lat), (-lng, -lat),
                           (lng, -lat), (-lat, lng), (-lat, -lng), (lat, -lng)]
@@ -157,29 +151,11 @@ class GeocodeValidator:
 
                 if (countryCode == foundCountry):
                     return i
+
             except IndexError:
-                print(countryName + " caused an error")
+                continue
 
         return -1
-        #     matchedCountryCode = rg.get(possibleCoords[i], mode=1)['cc']
-        #
-        #
-        #
-        #     if countryCode == matchedCountryCode:
-        #         return i
-        #     else:  # BETTER, MORE PRECISE
-        #         print(countryName)
-        #         print(possibleCoords[i])
-        #         shapePoint = np.array([lng, lat])
-        #         point = Point(shapePoint)
-        #         filter = self.map['geometry'].contains(point)
-        #         mLoc = self.map.loc[filter, 'ISO2']
-        #         print(mLoc)
-        #         foundCountry = mLoc.iloc[0]
-        #         print(foundCountry)
-        #         if (matchedCountryCode == foundCountry):
-        #             return i
-        # return -1
 
     def logEntry(self, type, index, location, country):
         if type >= 0:
@@ -187,7 +163,6 @@ class GeocodeValidator:
             self.correctLog['index'].append(index)
             self.correctLog['type'].append(' ' + self.entryType[type])
         else:
-            print("Index: " + str(index) + " country does not match entered coordinates.(Index flagged.) \n")
             self.flaggedLocations.append(index)
             self.incorrectLog['location'].append((location, country))
             self.incorrectLog['index'].append(index)
@@ -216,15 +191,17 @@ class GeocodeValidator:
             country = str(row.loc["Country"])
             self.countryCodes[country] = countryCode
 
+
 validator = GeocodeValidator("NaNtblLocations.xlsx")
-# sr = validator.checkInputLocation(1137)
-# print(sr)
 validator.run()
 
-# ## Formatted long, lat
+# Formatted long, lat
 # mPoint = np.array((6.1833333970000695, 11.21666718))
 # mPoint = Point(mPoint)
 # map = gpd.read_file("D:\IaaGeoDataCleaning\IaaGeoDataCleaning\mapinfo\TM_WORLD_BORDERS_SIMPL-0.3.shp")
 # filter = map['geometry'].contains(mPoint)
 # mLoc = map.loc[filter, 'NAME']
 # print(mLoc.iloc[0])
+#
+# zaire = validator.checkInputLocation(1005)
+# print(zaire)
