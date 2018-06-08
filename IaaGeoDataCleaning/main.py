@@ -140,6 +140,8 @@ class GeocodeValidator:
             self.log['index'].append(index)
             self.log['type'].append('location flag')
 
+            self.handleBadDistance(inputLat, inputLng, correctLat, correctLng)
+
     def logResults(self):
         print("Flagged locations are at indicies: " + str(self.flaggedLocations))
         loggedDF = pd.DataFrame(data=self.log)
@@ -211,7 +213,7 @@ class GeocodeValidator:
         """
         checkLat = inputLat
         checkLng = inputLng
-
+        
         # (lng - lat)
         checkDist = self.calculateDistance(checkLng, checkLat, correctLat, correctLng)
 
@@ -240,7 +242,6 @@ class GeocodeValidator:
                                     return False
 
         return True
-
 
 validator1 = GeocodeValidator(geoID, "test.xlsx")
 validator1.run()
