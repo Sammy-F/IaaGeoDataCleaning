@@ -14,6 +14,8 @@ is performed to check for human error.
 Created by Jonathan Scott
 
 Modified by: Samantha Fritsche, Thy Nguyen 6/5/2018
+
+DEPRECATED
 """
 
 # TODO: handle exceptions when making API calls

@@ -1,197 +1,207 @@
-# coding: utf-8
-
 import pandas as pd
-import numpy as np
 import datetime
-# import googlemaps as gm
-import re #Regex to remove (num)
-import json
+import string
+import pycountry as pc
 
-parenNumRegex = re.compile('\(\d\)')
-mo = parenNumRegex.search('(4)  (5)')
+import geopandas as gpd
+import numpy as np
+
+import nameHandler as nh
+
+# import country_bounding_boxes as cbb
+from shapely.geometry import Point
+
+"""
+GeocodeValidator allows the user to perform reverse geocoding
+on a .xlsx or .csv to ensure that input locations correspond to
+the correct latitude and longitude. If not, then basic data cleaning
+is performed to check for human error.
+
+Created by Jonathan Scott
+
+Modified by: Samantha Fritsche, Thy Nguyen 6/7/2018
+
+Some code by Martin Valgur @ StackOverflow was adapted to create this program.
+See his original at: https://gis.stackexchange.com/questions/212796/get-lat-lon-extent-of-country-from-name-using-python
+
+Note that some borders used are disputed
+"""
+
 now = datetime.datetime.now()
 now = now.strftime("%Y-%m-%d ")
-# """
-# This function has limited data cleaning abilities.
-# """
-# #TODO search working directory for file
-# #TODO use pickle to save API dictionary
-# def geocodeValidation(fileName,api_key,flag_distance=12.):
-#     """
-#     Args:
-#         fileName: An excel file or csv file with columns with the name of
-#                   'Location','Country','Latitude' and 'Longitude'.
-#
-#         api_key: Google Maps api key.
-#         flag_distance: Default 12. , this is the distance used to flag a row.
-#         returns Percentage of corrupt rows.
-#
-#         This function works by geocoding each row's 'Latitude' and 'Longitude'
-#         These two values are inputed into the Google Maps api, to get latitude and longitude points.
-#         These points are then compared against the 'Latitude' and 'Longitude'
-#         entries in the table and if the distance of the points returned from Google Maps'
-#         api is greater than the distance_threshold then this data entry is flagged with a 'distance flag'.
-#         Previously geocode locations are recorded in a dictionary to be used again to save API calls.
-#         Other cases for flagging include:
-#           i)  When the Google Maps api does not recognize the inputs given.
-#               If this is the case, it is recorded in a dictionary with the error 'Could not geocode'.
-#           ii) When the reason for error is not completely clear it is flagged as a 'generic error'.
-#           iii) If the status of the api is not 'OK' this is also flagged because sometimes it is not fully clear.
-#     """
-#     if fileName.endswith('xlsx'):
-#         tobe_validated_location = pd.read_excel(fileName)
-#     else:
-#         tobe_validated_location = pd.read_csv(fileName)
-#     #Look for google plot with Latitude and Longitude data
-#     gmaps = gm.Client(api_key)
-#     flagged_locations = [] # flagged indexes in dataframe
-#     geocoded_locations = {}# key :loc,val:(lat,long) reduce API calls
-#     log = {'index': [], 'location': [], 'type': []}
-#
-#     #Getting an address by iterating through each row in the pandas dataframe
-#     for index, row in tobe_validated_location.iterrows():
-#         try:
-#             row['Location'] = parenNumRegex.sub("", row['Location']) #removes (num) can now try API call
-#             geocode_target = str(row['Country'] + " , " + row['Location'])
-#         except:
-#             print("Index: " + str(index) + " had an error.(Index flagged.) \n")
-#             flagged_locations.append(index)
-#             log['location'].append(geocode_target)
-#             log['index'].append(index)
-#             log['type'].append('generic error')
-#             continue
-#
-#         tobe_validated_lat = row['Latitude']
-#         tobe_validated_lng = row['Longitude']
-#         if geocode_target not in geocoded_locations.keys():
-#             geocoded_result = gmaps.geocode(geocode_target)
-#             if geocoded_result == []:
-#                 print("Index: " + str(index) + " could not be geocoded.(Index flagged.) \n")
-#                 flagged_locations.append(index)
-#                 log['location'].append(geocode_target)
-#                 log['index'].append(index)
-#                 log['type'].append('Could not geocode')
-#                 continue
-#
-#             #TODO
-#             #No way to get the status right now
-#             # elif(geocoded_result[0]['status'] != "OVER_QUERY_LIMIT"):
-#             #     print('MAXED OUT CALLS, saving flagged so far.')
-#             #     break
-#             correct_lat = geocoded_result[0]['geometry']['location']['lat']
-#             correct_lng = geocoded_result[0]['geometry']['location']['lng']
-#             geocoded_locations[geocode_target] = (correct_lat, correct_lng)
-#
-#         distance = gmaps.distance_matrix((tobe_validated_lat, tobe_validated_lng), geocoded_locations[geocode_target])
-#         top_level_distance_status = str(distance['status'])#needs to be OK to check threshold
-#         print("distance matrix API Status: " + top_level_distance_status + '\n')
-#         element_level_distance_status = str(distance['rows'][0]['elements'][0]['status'])
-#         distance_status = top_level_distance_status == 'OK' and element_level_distance_status == 'OK'
-#         if(distance_status):
-#             flag_threshold = distance['rows'][0]['elements'][0]['distance']['value'] * 0.000621371 #convert to miles
-#             if flag_threshold > flag_distance:
-#                 print("Index: " + str(index) + " distance between points is too large.(Index flagged.) \n")
-#                 flagged_locations.append(index) #mark index in original dataframe
-#                 log['location'].append(geocode_target)
-#                 log['index'].append(index)
-#                 log['type'].append('distance flag')
-#         else: #status is anything but 'OK'
-#             flagged_locations.append(index)
-#             log['location'].append(geocode_target)
-#             log['index'].append(index)
-#             log['type'].append('google api status not ok')
-#
-#
-#     print("Flagged locations are at indicies: " + str(flagged_locations))
-#     log_df = pd.DataFrame(data=log)
-#     log_df.to_csv('validation_log_'+str(now)+'.csv', sep=',', encoding='utf-8')
-#     return len(flagged_locations)/(1e-10+tobe_validated_location.shape[0])
+
 
 class GeocodeValidator:
-
-    def __init__(self, fileName, apiKey, flagDistance = 12.):
+    def __init__(self, fileName):
+        self.map = gpd.read_file("mapinfo/TM_WORLD_BORDERS-0.3.shp")
         self.fileName = fileName
-        self.apiKey = apiKey
-        self.flagDistance = flagDistance
+
+        self.flaggedLocations = []  # flagged indexes in data frame
+        self.incorrectLog = {'index': [], 'location': [], 'type': []}
+        self.correctLog = {'index': [], 'location': [], 'type': []}
+
+        self.entryType = {0: 'correct location data', 1: 'entered (lng, lat)',
+                          2: 'entered (-lng, lat)', 3: 'entered (-lng, -lat)',
+                          4: 'entered (lng, -lat)', 5: 'entered (-lat, lng)',
+                          6: 'entered (-lat, -lng', 7: 'entered (lat, -lng)',
+                          -1: 'incorrect location data', -2: 'no latitude and longitude entered',
+                          -3: 'country not found/wrong country format', -4: 'no location entered'}
+
+        self.countryCodes = {}
+        self.createCountryCodeDict()
 
         if fileName.endswith('xlsx'):
-            self.tobe_validated_location = pd.read_excel(fileName)
+            self.tobeValidatedLocation = pd.read_excel(fileName)
         else:
-            self.tobe_validated_location = pd.read_csv(fileName)
-        # Look for google plot with Latitude and Longitude data
-        self.gmaps = gm.Client(apiKey)
-        self.flagged_locations = []  # flagged indexes in dataframe
-        self.geocoded_locations = {}  # key :loc,val:(lat,long) reduce API calls
-        self.log = {'index': [], 'location': [], 'type': []}
+            self.tobeValidatedLocation = pd.read_csv(fileName)
 
-    def flagAnomalies(self):
-        for index, row in self.tobe_validated_location.iterrows():
+    def run(self):
+        """
+        Iterates through every row of the data and validates the locational information of each entry
+        :return:
+        """
+        for (index, row) in self.tobeValidatedLocation.iterrows():
+            dataEntered = self.checkInputLocation(index)
+
+            country = string.capwords(str(row['Country']).lower())
+            location = string.capwords(str(row['Location']).lower())
+
             try:
-                row['Location'] = parenNumRegex.sub("", row['Location'])  # removes (num) can now try API call
-                geocodeTarget = str(row['Country'] + " , " + row['Location'])
-            except:
-                print("Index: " + str(index) + " had an error.(Index flagged.) \n")
-                self.flagged_locations.append(index)
-                self.log['location'].append(geocodeTarget)  # ???
-                self.log['index'].append(index)
-                self.log['type'].append('generic error')
+                if dataEntered[0] >= 0:
+                    enteredLat = float(row['Latitude'])
+                    enteredLng = float(row['Longitude'])
+
+                    result = self.validateCoordinates(enteredLat, enteredLng, dataEntered[1])
+
+                    self.logEntry(result, index, location, country)
+                else:
+                    self.logEntry(dataEntered, index, location, country)
+
+            except TypeError:
+                if dataEntered >= 0:
+                    enteredLat = float(row['Latitude'])
+                    enteredLng = float(row['Longitude'])
+
+                    result = self.validateCoordinates(enteredLat, enteredLng, country)
+
+                    self.logEntry(result, index, location, country)
+                else:
+                    self.logEntry(dataEntered, index, location, country)
+
+        self.logResults()
+
+    def checkInputLocation(self, index):
+        if pd.isnull(self.tobeValidatedLocation.loc[index, 'Location']) or pd.isnull(self.tobeValidatedLocation.loc[index, 'Country']):
+            return -4
+
+        country = string.capwords(str(self.tobeValidatedLocation.loc[index, 'Country']))
+        lat = self.tobeValidatedLocation.loc[index, 'Latitude']
+        lng = self.tobeValidatedLocation.loc[index, 'Longitude']
+
+        try:
+            countryCode = pc.countries.lookup(country).alpha_2
+            print("Passed pycountry")
+            if pd.isnull(lat) or pd.isnull(lng):
+                return -2
+            elif lat == 0 and lng == 0:
+                return -2
+            return (0, countryCode)
+
+        except LookupError:
+            try:
+                countryCode = self.countryCodes[country]
+                print("passed dictionary")
+                if pd.isnull(lat) or pd.isnull(lng):
+                    return -2
+                elif lat == 0 and lng == 0:
+                    return -2
+                return (0, countryCode)
+
+            except KeyError:
+                formatted = self.findFormattedName(country)
+                print(formatted)
+                if formatted == False:
+                    print("no country")
+                    return -3
+                else:
+                    countryCode = pc.countries.lookup(formatted).alpha_2
+                    print("foundalternative")
+                    return (0, countryCode)
+
+    def findFormattedName(self, alternativeName):
+
+        finder = nh.NameHandler()
+        return finder.findName(alternativeName)
+
+    def validateCoordinates(self, lat, lng, countryCode):
+
+        lat = float(lat)
+        lng = float(lng)
+
+        possibleCoords = [(lat, lng), (lng, lat), (-lng, lat), (-lng, -lat),
+                          (lng, -lat), (-lat, lng), (-lat, -lng), (lat, -lng)]
+
+        for i in range(len(possibleCoords)):
+            try:
+                shapePoint = np.array([possibleCoords[i][1], possibleCoords[i][0]])
+                point = Point(shapePoint)
+                filter = self.map['geometry'].contains(point)
+                mLoc = self.map.loc[filter, 'ISO2']
+                foundCountry = mLoc.iloc[0]
+
+                if (countryCode == foundCountry):
+                    return i
+
+            except IndexError:
                 continue
 
-            self.handleSingleLocation(index, row, geocodeTarget)
+        return -1
 
-            self.returnData(self)
+    def logEntry(self, type, index, location, country):
+        if type >= 0:
+            self.correctLog['location'].append((location, country))
+            self.correctLog['index'].append(index)
+            self.correctLog['type'].append(' ' + self.entryType[type])
+        else:
+            self.flaggedLocations.append(index)
+            self.incorrectLog['location'].append((location, country))
+            self.incorrectLog['index'].append(index)
+            self.incorrectLog['type'].append(' ' + self.entryType[type])
 
-    def handleSingleLocation(self, index, row, geocodeTarget):
+    def logResults(self):
+        print("Flagged locations are at indicies: " + str(self.flaggedLocations))
+        incorrectEntriesDF = pd.DataFrame(data=self.incorrectLog)
+        incorrectEntriesDF.to_csv('incorrect_validation_log_' + str(now) + '.csv', sep=',', encoding='utf-8')
 
-        tobe_validated_lat = row['Latitude']
-        tobe_validated_lng = row['Longitude']
-        if geocodeTarget not in self.geocoded_locations.keys():
-            geocoded_result = self.gmaps.geocode(geocodeTarget)
-            if geocoded_result == []:
-                print("Index: " + str(index) + " could not be geocoded.(Index flagged.) \n")
-                self.flagged_locations.append(index)
-                self.log['location'].append(geocodeTarget)
-                self.log['index'].append(index)
-                self.log['type'].append('Could not geocode')
-                return
+        correctEntriesDF = pd.DataFrame(data=self.correctLog)
+        correctEntriesDF.to_csv('correct_validation_lol_' + str(now) + '.csv', sep=',', encoding='utf-8')
 
-            # TODO
-            # No way to get the status right now
-            # elif(geocoded_result[0]['status'] != "OVER_QUERY_LIMIT"):
-            #     print('MAXED OUT CALLS, saving flagged so far.')
-            #     break
-            correct_lat = geocoded_result[0]['geometry']['location']['lat']
-            correct_lng = geocoded_result[0]['geometry']['location']['lng']
-            self.geocoded_locations[geocodeTarget] = (correct_lat, correct_lng)
+        return len(self.flaggedLocations) / (1e-10 + self.tobeValidatedLocation.shape[0])
 
-        self.validate(tobe_validated_lat, tobe_validated_lng, index, geocodeTarget)
+    def createCountryCodeDict(self):
+        """
+        Creates a dictionary whose (key, value) pairs are a country and its country code
+        in order to utilize the geocoder API calls.
+        :return:
+        """
+        countriesData = pd.read_csv("countryInfo.txt", delimiter="\t")
 
-    def validate(self, tobe_validated_lat, tobe_validated_lng, index, geocodeTarget):
-        distance = self.gmaps.distance_matrix((tobe_validated_lat, tobe_validated_lng), self.geocoded_locations[geocodeTarget])
-        top_level_distance_status = str(distance['status'])  # needs to be OK to check threshold
-        print("distance matrix API Status: " + top_level_distance_status + '\n')
-        element_level_distance_status = str(distance['rows'][0]['elements'][0]['status'])
-        distance_status = top_level_distance_status == 'OK' and element_level_distance_status == 'OK'
-        if (distance_status):
-            flag_threshold = distance['rows'][0]['elements'][0]['distance']['value'] * 0.000621371  # convert to miles
-            if flag_threshold > self.flagDistance:
-                print("Index: " + str(index) + " distance between points is too large.(Index flagged.) \n")
-                self.flagged_locations.append(index)  # mark index in original dataframe
-                self.log['location'].append(geocodeTarget)
-                self.log['index'].append(index)
-                self.log['type'].append('distance flag')
-        else:  # status is anything but 'OK'
-            self.flagged_locations.append(index)
-            self.log['location'].append(geocodeTarget)
-            self.log['index'].append(index)
-            self.log['type'].append('google api status not ok')
-
-    def returnData(self):
-        print("Flagged locations are at indicies: " + str(self.flagged_locations))
-        log_df = pd.DataFrame(data=self.log)
-        log_df.to_csv('validation_log_' + str(now) + '.csv', sep=',', encoding='utf-8')
-        return len(self.flagged_locations) / (1e-10 + self.tobe_validated_location.shape[0])
+        for (index, row) in countriesData.iterrows():
+            countryCode = str(row.loc["ISO"])
+            country = str(row.loc["Country"])
+            self.countryCodes[country] = countryCode
 
 
-# GeocodeValidator("test.xlsx", "sfritsche")
+validator = GeocodeValidator("NaNtblLocations.xlsx")
+validator.run()
+
+# Formatted long, lat
+# mPoint = np.array((6.1833333970000695, 11.21666718))
+# mPoint = Point(mPoint)
+# map = gpd.read_file("D:\IaaGeoDataCleaning\IaaGeoDataCleaning\mapinfo\TM_WORLD_BORDERS_SIMPL-0.3.shp")
+# filter = map['geometry'].contains(mPoint)
+# mLoc = map.loc[filter, 'NAME']
+# print(mLoc.iloc[0])
 #
+# zaire = validator.checkInputLocation(1005)
+# print(zaire)
