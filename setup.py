@@ -18,5 +18,5 @@ setup(name='IaaGeoDataCleaning',
       author_email='gonsongo@macalester.edu',
       license='BSD',
       packages=['IaaGeoDataCleaning'],
-      install_requires=['numpy', 'pandas', 'geocoder'],
+      install_requires=['numpy', 'pandas', 'geocoder', 'geopandas', 'fiona', 'gdal'],
       zip_safe=False)
