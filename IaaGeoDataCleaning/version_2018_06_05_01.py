@@ -25,7 +25,6 @@ now = datetime.datetime.now()
 now = now.strftime("%Y-%m-%d ")
 geoID = "thytng"
 
-
 class GeocodeValidator:
     def __init__(self, geoID, fileName, flagDistance=12.):
         self.geoID = geoID

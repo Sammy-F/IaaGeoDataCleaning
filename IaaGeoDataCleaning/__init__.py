@@ -27,12 +27,11 @@ See his original at: https://gis.stackexchange.com/questions/212796/get-lat-lon-
 Note that some borders used are disputed
 """
 
-now = datetime.datetime.now()
-now = now.strftime("%Y-%m-%d ")
-
-
 class GeocodeValidator:
     def __init__(self, fileName):
+        self.now = datetime.datetime.now()
+        self.now = self.now.strftime("%Y-%m-%d ")
+
         self.map = gpd.read_file("mapinfo/TM_WORLD_BORDERS-0.3.shp")
         self.fileName = fileName
 
@@ -58,7 +57,6 @@ class GeocodeValidator:
     def run(self):
         """
         Iterates through every row of the data and validates the locational information of each entry
-        :return:
         """
         for (index, row) in self.tobeValidatedLocation.iterrows():
             dataEntered = self.checkInputLocation(index)
@@ -91,6 +89,12 @@ class GeocodeValidator:
         self.logResults()
 
     def checkInputLocation(self, index):
+        """
+        For an entry at a given index, attempt to validate if the input country
+        are correct for the given lat/lon and return the code to log the outcome
+        :param index:
+        :return: log type code
+        """
         if pd.isnull(self.tobeValidatedLocation.loc[index, 'Location']) or pd.isnull(self.tobeValidatedLocation.loc[index, 'Country']):
             return -4
 
@@ -100,7 +104,6 @@ class GeocodeValidator:
 
         try:
             countryCode = pc.countries.lookup(country).alpha_2
-            print("Passed pycountry")
             if pd.isnull(lat) or pd.isnull(lng):
                 return -2
             elif lat == 0 and lng == 0:
@@ -110,7 +113,6 @@ class GeocodeValidator:
         except LookupError:
             try:
                 countryCode = self.countryCodes[country]
-                print("passed dictionary")
                 if pd.isnull(lat) or pd.isnull(lng):
                     return -2
                 elif lat == 0 and lng == 0:
@@ -119,21 +121,30 @@ class GeocodeValidator:
 
             except KeyError:
                 formatted = self.findFormattedName(country)
-                print(formatted)
                 if formatted == False:
-                    print("no country")
                     return -3
                 else:
                     countryCode = pc.countries.lookup(formatted).alpha_2
-                    print("foundalternative")
                     return (0, countryCode)
 
     def findFormattedName(self, alternativeName):
+        """
+        If a country name is invalid, assume it is an alternative name
+        and attempt to find and return the official one
+        :param alternativeName:
+        """
 
         finder = nh.NameHandler()
         return finder.findName(alternativeName)
 
     def validateCoordinates(self, lat, lng, countryCode):
+        """
+        Use geocoding to identify valid/invalid coordinates
+        :param lat: entry's input latitude
+        :param lng: entry's input longitude
+        :param countryCode: determined country code for entry's input country
+        :return: log type code
+        """
 
         lat = float(lat)
         lng = float(lng)
@@ -158,6 +169,14 @@ class GeocodeValidator:
         return -1
 
     def logEntry(self, type, index, location, country):
+        """
+        Generate an entry in one of the log dictionaries
+        based on the input parameters
+        :param type: error type, see entryType dict for details
+        :param index: index of entry
+        :param location: entry location
+        :param country: entry country
+        """
         if type >= 0:
             self.correctLog['location'].append((location, country))
             self.correctLog['index'].append(index)
@@ -169,12 +188,16 @@ class GeocodeValidator:
             self.incorrectLog['type'].append(' ' + self.entryType[type])
 
     def logResults(self):
+        """
+        Generate two .csv log files from correct and incorrect
+        log dictionaries.
+        """
         print("Flagged locations are at indicies: " + str(self.flaggedLocations))
         incorrectEntriesDF = pd.DataFrame(data=self.incorrectLog)
-        incorrectEntriesDF.to_csv('incorrect_validation_log_' + str(now) + '.csv', sep=',', encoding='utf-8')
+        incorrectEntriesDF.to_csv('incorrect_validation_log_' + str(self.now) + '.csv', sep=',', encoding='utf-8')
 
         correctEntriesDF = pd.DataFrame(data=self.correctLog)
-        correctEntriesDF.to_csv('correct_validation_lol_' + str(now) + '.csv', sep=',', encoding='utf-8')
+        correctEntriesDF.to_csv('correct_validation_lol_' + str(self.now) + '.csv', sep=',', encoding='utf-8')
 
         return len(self.flaggedLocations) / (1e-10 + self.tobeValidatedLocation.shape[0])
 
@@ -182,7 +205,6 @@ class GeocodeValidator:
         """
         Creates a dictionary whose (key, value) pairs are a country and its country code
         in order to utilize the geocoder API calls.
-        :return:
         """
         countriesData = pd.read_csv("countryInfo.txt", delimiter="\t")
 
@@ -194,14 +216,3 @@ class GeocodeValidator:
 
 validator = GeocodeValidator("NaNtblLocations.xlsx")
 validator.run()
-
-# Formatted long, lat
-# mPoint = np.array((6.1833333970000695, 11.21666718))
-# mPoint = Point(mPoint)
-# map = gpd.read_file("D:\IaaGeoDataCleaning\IaaGeoDataCleaning\mapinfo\TM_WORLD_BORDERS_SIMPL-0.3.shp")
-# filter = map['geometry'].contains(mPoint)
-# mLoc = map.loc[filter, 'NAME']
-# print(mLoc.iloc[0])
-#
-# zaire = validator.checkInputLocation(1005)
-# print(zaire)

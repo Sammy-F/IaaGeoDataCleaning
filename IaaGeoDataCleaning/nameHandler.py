@@ -19,8 +19,6 @@ class NameHandler:
         self.namesDict['Republic of South Africa'] = ['South Africa Rep.']
         self.namesDict['Trinidad and Tobago'] = ['Trinidad Y Tobago']
 
-        print("handler created")
-
     def findName(self, checkCountry):
         for formattedName, alternativeNames in self.namesDict.items():
             for alternativeName in alternativeNames:
