@@ -33,9 +33,7 @@ class GeocodeValidator:
         self.now = datetime.datetime.now()
         self.now = self.now.strftime("%Y-%m-%d ")
 
-        self.path = filePath
-        self.fileName = path.basename(self.path)
-        print(self.fileName)
+        self.filePath = filePath
 
         self.map = gpd.read_file("mapinfo/TM_WORLD_BORDERS-0.3.shp")
 
@@ -53,10 +51,10 @@ class GeocodeValidator:
         self.countryCodes = {}
         self.createCountryCodeDict()
 
-        if self.fileName.endswith('xlsx'):
-            self.tobeValidatedLocation = pd.read_excel(self.fileName)
+        if self.filePath.endswith('xlsx'):
+            self.tobeValidatedLocation = pd.read_excel(self.filePath)
         else:
-            self.tobeValidatedLocation = pd.read_csv(self.fileName)
+            self.tobeValidatedLocation = pd.read_csv(self.filePath)
 
     def run(self):
         """
@@ -219,7 +217,6 @@ class GeocodeValidator:
             countryCode = str(row.loc["ISO"])
             country = str(row.loc["Country"])
             self.countryCodes[country] = countryCode
-
 
 validator = GeocodeValidator("D:\\IaaGeoDataCleaning\\IaaGeoDataCleaning\\NaNtblLocations.xlsx")
 print(validator.run())
