@@ -91,7 +91,9 @@ class GeocodeValidator:
                     self.logEntry(dataEntered, index, location, country)
 
         self.logResults()
-        return len(self.flaggedLocations) / (1e-10 + self.tobeValidatedLocation.shape[0])
+        percent = len(self.flaggedLocations) / (1e-10 + self.tobeValidatedLocation.shape[0])
+        print(percent)
+        return percent
 
     def checkInputLocation(self, index):
         """

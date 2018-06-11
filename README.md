@@ -33,7 +33,7 @@ import IaaGeoDataCleaning as ij
 ```python
 filePath = 'path to csv or xlsx'
 validator = ij.GeocodeValidator(filePath)
-ij.run()
+validator.run()
 ```
 
 ### Example Output
