@@ -217,7 +217,3 @@ class GeocodeValidator:
             countryCode = str(row.loc["ISO"])
             country = str(row.loc["Country"])
             self.countryCodes[country] = countryCode
-
-validator = GeocodeValidator("D:\\IaaGeoDataCleaning\\IaaGeoDataCleaning\\NaNtblLocations.xlsx")
-print(validator.run())
-
