@@ -2,6 +2,7 @@ import pandas as pd
 import datetime
 import string
 import pycountry as pc
+from os import path
 
 import geopandas as gpd
 import numpy as np
@@ -28,12 +29,15 @@ Note that some borders used are disputed
 """
 
 class GeocodeValidator:
-    def __init__(self, fileName):
+    def __init__(self, filePath):
         self.now = datetime.datetime.now()
         self.now = self.now.strftime("%Y-%m-%d ")
 
+        self.path = filePath
+        self.fileName = path.basename(self.path)
+        print(self.fileName)
+
         self.map = gpd.read_file("mapinfo/TM_WORLD_BORDERS-0.3.shp")
-        self.fileName = fileName
 
         self.flaggedLocations = []  # flagged indexes in data frame
         self.incorrectLog = {'index': [], 'location': [], 'type': []}
@@ -49,10 +53,10 @@ class GeocodeValidator:
         self.countryCodes = {}
         self.createCountryCodeDict()
 
-        if fileName.endswith('xlsx'):
-            self.tobeValidatedLocation = pd.read_excel(fileName)
+        if self.fileName.endswith('xlsx'):
+            self.tobeValidatedLocation = pd.read_excel(self.fileName)
         else:
-            self.tobeValidatedLocation = pd.read_csv(fileName)
+            self.tobeValidatedLocation = pd.read_csv(self.fileName)
 
     def run(self):
         """
@@ -87,6 +91,7 @@ class GeocodeValidator:
                     self.logEntry(dataEntered, index, location, country)
 
         self.logResults()
+        return len(self.flaggedLocations) / (1e-10 + self.tobeValidatedLocation.shape[0])
 
     def checkInputLocation(self, index):
         """
@@ -214,5 +219,6 @@ class GeocodeValidator:
             self.countryCodes[country] = countryCode
 
 
-validator = GeocodeValidator("NaNtblLocations.xlsx")
-validator.run()
+validator = GeocodeValidator("D:\\IaaGeoDataCleaning\\IaaGeoDataCleaning\\NaNtblLocations.xlsx")
+print(validator.run())
+

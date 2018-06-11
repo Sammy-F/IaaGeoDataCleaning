@@ -28,6 +28,7 @@ now = now.strftime("%Y-%m-%d ")
 class GeocodeValidator:
     def __init__(self, fileName):
         self.fileName = fileName
+        print(fileName)
 
         self.flaggedLocations = []  # flagged indexes in data frame
         self.incorrectLog = {'index': [], 'location': [], 'type': []}
