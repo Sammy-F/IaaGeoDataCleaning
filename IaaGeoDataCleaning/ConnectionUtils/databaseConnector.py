@@ -212,7 +212,7 @@ class Table:
         cur.execute("COPY " + self.tableName + " FROM " + "'" + filePath + "'" + " DELIMITER ',' CSV HEADER")
 
 dc = DatabaseConnector()
-mConn = dc.getConnectFromKeywords(host='localhost', dbname='spatialpractice', username='postgres', password='Swa!Exa4')
+mConn = dc.getConnectFromKeywords(host='{host}', dbname='{yourdb}', username='{your username}', password='{your password}')
 mTable = Table(tableName='superKitties3', connection=mConn)
-mTable.buildTableFromFile('D:\\IaaGeoDataCleaning\\IaaGeoDataCleaning\\NaNtblLocations.csv')
+mTable.buildTableFromFile('{path to csv}')
 dc.closeConnection()
