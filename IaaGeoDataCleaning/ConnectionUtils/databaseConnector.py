@@ -2,7 +2,6 @@ import psycopg2 as psy
 from configparser import ConfigParser
 import pandas as pd
 
-
 class DatabaseConnector:
 
     def __init__(self):
@@ -35,7 +34,9 @@ class DatabaseConnector:
         :param section:
         :return:
         """
-        self.connection = None
+        if not self.connection is None:
+            self.connection.close()
+            self.connection = None
         try:
             params = self.__setConfig(filePath, section)
 
@@ -50,6 +51,8 @@ class DatabaseConnector:
             print(db_version)
 
             cur.close()
+
+            print("Connection opened. Don't forget to call closeConnection() on the DatabaseConnector when you're done!")
 
             return self.connection
         except (Exception, psy.DatabaseError) as error:
@@ -68,6 +71,10 @@ class DatabaseConnector:
         :param password:
         :param port:
         """
+
+        if not self.connection is None:
+            self.connection.close
+            self.connection = None
 
         try:
             print('Attempting connection to PostgreSQL database...')
@@ -101,8 +108,8 @@ class DatabaseConnector:
         """
         if self.connection is not None:
             self.connection.close()
+            self.connection = None
             print("Connection closed.")
-
 
 class Table:
 
@@ -210,8 +217,34 @@ class Table:
     def loadData(self, cur, filePath):
         cur.execute("COPY " + self.tableName + " FROM " + "'" + filePath + "'" + " DELIMITER ',' CSV HEADER")
 
+    def checkForEntryByLatLon(self, lat, lon):
+        """
+        Check if an entry with the given lat, lon exists. If so, return all rows that match..
+        :param lat:
+        :param lon:
+        :return:
+        """
+        if not self.connection is None:
+            cur = self.connection.cursor()
+            command = "SELECT * FROM " + self.tableName + " WHERE latitude = '" + str(lat) + "' AND longitude = '" + str(lon) + "';"
+            cur.execute(command)
+            rows = cur.fetchall()
+
+            for row in rows:
+                print(row)
+
+            return rows
+        else:
+            print(
+                "No connection open. Did you open a connection using getConnectFromKeywords() or getConnectFromConfig()?")
+
+    def changeTable(self, newName):
+        self.tableName = newName
+
 dc = DatabaseConnector()
-mConn = dc.getConnectFromKeywords(host='{host}', dbname='{yourdb}', username='{your username}', password='{your password}')
-mTable = Table(tableName='superKitties3', connection=mConn)
-mTable.buildTableFromFile('{path to csv}')
+mConn = dc.getConnectFromKeywords(host='localhost', dbname='spatialpractice', username='postgres', password='Swa!Exa4')
+mTable = Table(tableName='correcteddata', connection=mConn)
+# mTable.buildTableFromFile('D:\\realcorrected.csv')
+mTable.changeTable("superkitties3")
+mTable.checkForEntryByLatLon(34.48845, 69.20288)
 dc.closeConnection()
