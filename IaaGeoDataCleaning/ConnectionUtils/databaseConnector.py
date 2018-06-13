@@ -374,19 +374,13 @@ class Table:
 
                     cmnd = "INSERT INTO " + self.tableName + " VALUES (" + self.makeInsertionString(cmndArr) + " NULL);"
 
+
                     cur = self.connection.cursor()
                     cur.execute(cmnd)
                     cur.close()
 
         self.connection.commit()
-
-        try:
-            cur = self.connection.cursor()
-
-            cur.close()
-            self.connection.commit()
-        except (Exception, psy.DatabaseError) as error:
-            print(error)
+        self.checkGeomNulls()
 
     def makeInsertionString(self, valsArr):
 
@@ -401,14 +395,36 @@ class Table:
         print(valsStr)
         return valsStr
 
+    def checkGeomNulls(self):
+        cur = self.connection.cursor()
+        if self.isSpatial():
+            updateTable = "UPDATE " + self.tableName + " SET geom = ST_SETSRID(ST_MakePoint(found_lng, found_lat), 4326) WHERE geom IS NULL;"
+            print("tried update")
+            cur.execute(updateTable)
+        cur.close()
+        self.connection.commit()
+
+    def isSpatial(self):
+
+        cur = self.connection.cursor()
+        cur.execute("SELECT column_name FROM information_schema.columns WHERE table_name = '" + self.tableName + "' AND column_name = 'geom';")
+        names = cur.fetchall()
+        cur.close()
+
+        if len(names) > 0:
+            print("made it")
+            return True
+        return False
+
 dc = DatabaseConnector()
 mConn = dc.getConnectFromConfig(filePath='D:\\config.ini')
 # mConn = dc.getConnectFromKeywords(host='localhost', dbname='spatialpractice', username='postgres', password='Swa!Exa4')
-mTable = Table(tableName='realdata11', connection=mConn)
+mTable = Table(tableName='realdatal', connection=mConn)
 # mTable.buildTableFromFile('D:\\PostGISData\\data\\fixedfinal.csv')
 # mTable.makeTableSpatial()
 # mTable.changeTable("superkitties3")
-mTable.insertEntries('D:\\PostGISData\\data\\addtest.csv')
+# mTable.insertEntries('D:\\PostGISData\\data\\addtest.csv')
+mTable.checkGeomNulls()
 print()
 # mTable.checkForEntryByCountryLoc('AFGHANISTAN', 'DARUL AMAN')
 dc.closeConnection()
