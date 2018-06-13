@@ -39,10 +39,9 @@ class GeocodeValidator:
         self.pht = gp.Photon(timeout=3)
 
         self.flaggedLocations = []  # flagged indexes in data frame
-        self.incorrectLog = {'index': [], 'location': [], 'type': []}
-        self.correctLog = {'index': [], 'location': [], 'type': []}
-        self.geocodeLog = {'index': [], 'location': [], 'found_lat': [], 'found_lng': [], 'matched_location': []}
-
+        self.incorrectLog = {'index': [], 'location': [], 'country': [],  'type': []}
+        self.correctLog = {'index': [], 'location': [], 'country': [],'type': []}
+        self.geocodeLog = {'index': [], 'location': [], 'country': [], 'found_lat': [], 'found_lng': [], 'matched_location': []}
 
         self.entryType = {0: 'correct location data', 1: 'entered (lng, lat)',
                           2: 'entered (-lng, lat)', 3: 'entered (-lng, -lat)',
@@ -211,17 +210,20 @@ class GeocodeValidator:
         """
         if type >= 0:
             self.correctLog['index'].append(index)
-            self.correctLog['location'].append((location, country))
+            self.correctLog['location'].append(location.upper())
+            self.correctLog['country'].append(country.upper())
             self.correctLog['type'].append(' ' + self.entryType[type])
         else:
             self.flaggedLocations.append(index)
             self.incorrectLog['index'].append(index)
-            self.incorrectLog['location'].append((location, country))
+            self.incorrectLog['location'].append(location.upper())
+            self.incorrectLog['country'].append(country.upper())
             self.incorrectLog['type'].append(' ' + self.entryType[type])
 
     def logGeocode(self, index, location, country, latitude, longitude, foundLocation):
         self.geocodeLog['index'].append(index)
-        self.geocodeLog['location'].append((location, country))
+        self.geocodeLog['location'].append(location.upper())
+        self.geocodeLog['country'].append(country.upper())
         self.geocodeLog['found_lat'].append(latitude)
         self.geocodeLog['found_lng'].append(longitude)
         self.geocodeLog['matched_location'].append(foundLocation)
