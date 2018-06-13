@@ -8,7 +8,6 @@ from os import path
 import geopandas as gpd
 import numpy as np
 import geopy as gp
-import nameHandler as nh
 
 # import country_bounding_boxes as cbb
 from shapely.geometry import Point
@@ -257,5 +256,21 @@ class GeocodeValidator:
             country = str(row.loc["Country"])
             self.countryCodes[country] = countryCode
 
-validator = GeocodeValidator('/Users/thytnguyen/Desktop/tblLocation.xlsx')
-validator.run()
+class NameHandler:
+    def __init__(self):
+
+        self.namesDict = {}
+        self.namesDict['United States of America'] = ['United States', 'US', 'USA', 'America']
+        self.namesDict['Congo'] = ['Republic of Congo']
+        self.namesDict['Congo, The Democratic Republic of the'] = ['Zaire', 'DR Congo', 'DRC', 'East Congo', 'Congo-Kinshasa']
+        self.namesDict['Spain'] = ['España']
+        self.namesDict["Côte d'Ivoire"] = ["Cote d’Ivoire", "Cote D'ivoire", "Cote D'Ivoire"]
+        self.namesDict['Republic of South Africa'] = ['South Africa Rep.']
+        self.namesDict['Trinidad and Tobago'] = ['Trinidad Y Tobago']
+
+    def findName(self, checkCountry):
+        for formattedName, alternativeNames in self.namesDict.items():
+            for alternativeName in alternativeNames:
+                if (checkCountry == alternativeName):
+                    return formattedName
+        return False

@@ -1,6 +1,8 @@
 import psycopg2 as psy
 from configparser import ConfigParser
 import pandas as pd
+import xlrd
+import csv
 
 class DatabaseConnector:
 
@@ -119,15 +121,9 @@ class Table:
 
         self.table = None
 
-    def loadTable(self):
-        """
-        Load an existing table from the db
-        :return:
-        """
-
     def buildTableFromTuple(self, commandTuple):
         """
-        Build a table from a .csv file
+        Build table(s) from a command(s)
         :return:
         """
 
@@ -144,10 +140,32 @@ class Table:
             print(error)
 
     def buildTableFromFile(self, filePath):
+        """
+        Create a table on the database from a .xlsx or
+        .csv file.
+        :param filePath:
+        :return:
+        """
         if filePath.endswith('xlsx'):
-            tableFile = pd.read_excel(filePath)
-        else:
+            print('.xlsx files are not currently supported')
+            return
+            # wb = xlrd.open_workbook(filePath)
+            # sh = wb.sheet_by_name(wb.sheet_names()[0])
+            # fileString = filePath[:-5]
+            # csvfile = open(fileString, 'w', encoding='utf8')
+            # wr = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
+            #
+            # for rownum in range(sh.nrows):
+            #     wr.writerow(sh.row_values(rownum))
+            #
+            # csvfile.close()
+            # filePath = fileString
+            # tableFile = pd.read_excel(filePath)
+        elif filePath.endswith('csv'):
             tableFile = pd.read_csv(filePath)
+        else:
+            print('This tool currently only supports .csv files.')
+            return
 
         schemaTuple = self.loadTableSchema(tableFile)
 
@@ -156,10 +174,15 @@ class Table:
         schemaStr = "CREATE TABLE " + self.tableName + " " + schemaStr
         print(schemaStr)
 
+        addGeom = "ALTER TABLE " + self.tableName + " ADD COLUMN geom geometry(POINT, 4326);"
+        updateTable = "UPDATE " + self.tableName + " SET geom = ST_SETSRID(ST_MakePoint(longitude, latitude), 4326) WHERE latitude IS NOT NULL AND longitude IS NOT NULL;"
+
         try:
             cur = self.connection.cursor()
 
             cur.execute(schemaStr)
+            # cur.execute(addGeom)
+            # cur.execute(updateTable)
 
             self.loadData(cur, filePath)
 
@@ -169,9 +192,14 @@ class Table:
             print(error)
 
     def loadTableSchema(self, tableFile):
+        """
+        Use the pandas dataframe to generate a list of headers and types
+        :param tableFile:
+        :return:
+        """
 
         names = list(tableFile.columns.values)
-        typeArr = []
+        keepArr = []
 
         i = 0
 
@@ -182,32 +210,42 @@ class Table:
             elif i == 1:
                 for name in names:
                     typeStr = type(row[name]).__name__.capitalize()
-                    typeArr.append(typeStr)
+                    keepArr.append(typeStr)
                 i = i + 1
             else:
-                break
+                print("hit else")
+                typeArr = []
+                for name in names:
+                    typeStr = type(row[name]).__name__.capitalize()
+                    typeArr.append(typeStr)
 
-        return names, typeArr
+                for i in range(len(keepArr)):
+                    if keepArr[i] != typeArr[i]:
+                        print("notsame")
+                        keepArr[i] = "Str"
+
+        return names, keepArr
 
     def buildSchemaString(self, schemaTuple):
 
         schemaStr = """("""
         for i in range(len(schemaTuple[0])):
-            if schemaTuple[1][i] == "int":
+            print(schemaTuple[1][i])
+            if schemaTuple[1][i] == "Int":
                 if not i == len(schemaTuple[0]) - 1:
                     schemaStr += schemaTuple[0][i] + " " + "integer,"
                 else:
                     schemaStr += schemaTuple[0][i] + " " + "integer"
-            elif schemaTuple[1][i] == "float":
+            elif schemaTuple[1][i] == "Float":
                 if not i == len(schemaTuple[0]) - 1:
                     schemaStr += schemaTuple[0][i] + " " + "real,"
                 else:
                     schemaStr += schemaTuple[0][i] + " " + "real"
             else:
                 if not i == len(schemaTuple[0]) - 1:
-                    schemaStr += schemaTuple[0][i] + " " + "varchar(100),"
+                    schemaStr += schemaTuple[0][i] + " " + "varchar,"
                 else:
-                    schemaStr += schemaTuple[0][i] + " " + "varchar(100)"
+                    schemaStr += schemaTuple[0][i] + " " + "varchar"
 
 
         schemaStr += """)"""
@@ -233,6 +271,31 @@ class Table:
             for row in rows:
                 print(row)
 
+            cur.close()
+
+            return rows
+        else:
+            print(
+                "No connection open. Did you open a connection using getConnectFromKeywords() or getConnectFromConfig()?")
+
+    def checkForEntryByCountryLoc(self, countryName, locationName):
+        """
+        Check if an entry exists with the given country and location
+        :param countryName:
+        :param locationName:
+        :return:
+        """
+
+        if not self.connection is None:
+            cur = self.connection.cursor()
+            command = "SELECT * FROM " + self.tableName + " WHERE country = '" + countryName + "' AND location = '" + locationName + "';"
+            cur.execute(command)
+            rows = cur.fetchall()
+
+            for row in rows:
+                print(row)
+
+            cur.close()
             return rows
         else:
             print(
@@ -242,9 +305,12 @@ class Table:
         self.tableName = newName
 
 dc = DatabaseConnector()
-mConn = dc.getConnectFromKeywords(host='localhost', dbname='spatialpractice', username='postgres', password='Swa!Exa4')
-mTable = Table(tableName='correcteddata', connection=mConn)
-# mTable.buildTableFromFile('D:\\realcorrected.csv')
+mConn = dc.getConnectFromConfig(filePath='D:\\config.ini')
+# mConn = dc.getConnectFromKeywords(host='localhost', dbname='spatialpractice', username='postgres', password='Swa!Exa4')
+mTable = Table(tableName='realdata5', connection=mConn)
+mTable.buildTableFromFile('D:\\PostGISData\\data\\final_geocode.csv')
 mTable.changeTable("superkitties3")
-mTable.checkForEntryByLatLon(34.48845, 69.20288)
+# mTable.checkForEntryByLatLon(34.48845, 69.20288)
+print()
+# mTable.checkForEntryByCountryLoc('AFGHANISTAN', 'DARUL AMAN')
 dc.closeConnection()
