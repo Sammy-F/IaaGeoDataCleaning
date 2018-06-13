@@ -4,6 +4,11 @@ import pandas as pd
 import xlrd
 import csv
 
+"""
+TODO: Create tool for checking if a given row/entry already exists and insert it if it doesn't
+Otherwise, decide whether to update (?)
+"""
+
 class DatabaseConnector:
 
     def __init__(self):
@@ -187,23 +192,24 @@ class Table:
             print(error)
 
     def makeTableSpatial(self):
+        """
+        Add a geometry column and make it spatial
+        :return:
+        """
 
         addGeom = "ALTER TABLE " + self.tableName + " ADD COLUMN geom geometry(POINT, 4326);"
         updateTable = "UPDATE " + self.tableName + " SET geom = ST_SETSRID(ST_MakePoint(found_lng, found_lat), 4326);"
 
-        cur = self.connection.cursor()
-
-        cur.execute(addGeom)
-
-        cur.close()
-
-        cur = self.connection.cursor()
-
-        cur.execute(updateTable)
-
-        cur.close()
-
-        self.connection.commit();
+        try:
+            cur = self.connection.cursor()
+            cur.execute(addGeom)
+            cur.close()
+            cur = self.connection.cursor()
+            cur.execute(updateTable)
+            cur.close()
+            self.connection.commit();
+        except (Exception, psy.DatabaseError) as error:
+            print(error)
 
     def loadTableSchema(self, tableFile):
         """
@@ -241,6 +247,11 @@ class Table:
         return names, keepArr
 
     def buildSchemaString(self, schemaTuple):
+        """
+        Return string for use in queries
+        :param schemaTuple:
+        :return:
+        """
 
         schemaStr = """("""
         for i in range(len(schemaTuple[0])):
@@ -252,9 +263,9 @@ class Table:
                     schemaStr += schemaTuple[0][i] + " " + "integer"
             elif schemaTuple[1][i] == "Float":
                 if not i == len(schemaTuple[0]) - 1:
-                    schemaStr += schemaTuple[0][i] + " " + "real,"
+                    schemaStr += schemaTuple[0][i] + " " + "numeric,"
                 else:
-                    schemaStr += schemaTuple[0][i] + " " + "real"
+                    schemaStr += schemaTuple[0][i] + " " + "numeric"
             else:
                 if not i == len(schemaTuple[0]) - 1:
                     schemaStr += schemaTuple[0][i] + " " + "varchar,"
@@ -267,7 +278,10 @@ class Table:
         return schemaStr
 
     def loadData(self, cur, filePath):
-        cur.execute("COPY " + self.tableName + " FROM " + "'" + filePath + "'" + " DELIMITER ',' CSV HEADER")
+        try:
+            cur.execute("COPY " + self.tableName + " FROM " + "'" + filePath + "'" + " DELIMITER ',' CSV HEADER")
+        except (Exception, psy.DatabaseError) as error:
+            print(error)
 
     def checkForEntryByLatLon(self, lat, lon):
         """
@@ -276,21 +290,27 @@ class Table:
         :param lon:
         :return:
         """
-        if not self.connection is None:
-            cur = self.connection.cursor()
-            command = "SELECT * FROM " + self.tableName + " WHERE found_lat = '" + str(lat) + "' AND found_lng = '" + str(lon) + "';"
-            cur.execute(command)
-            rows = cur.fetchall()
+        tBool = False
+        rows = []
+        try:
+            if not self.connection is None:
+                cur = self.connection.cursor()
+                command = "SELECT * FROM " + self.tableName + " WHERE round(found_lat, 2) = '" + "{0:.2f}".format(lat) + "' AND round(found_lng, 2) = '" + "{0:.2f}".format(lon) + "';"
+                cur.execute(command)
+                rows = cur.fetchall()
 
-            for row in rows:
-                print(row)
+                cur.close()
 
-            cur.close()
+                if len(rows) > 0:
+                    tBool = True
 
-            return rows
-        else:
-            print(
-                "No connection open. Did you open a connection using getConnectFromKeywords() or getConnectFromConfig()?")
+            else:
+                print(
+                    "No connection open. Did you open a connection using getConnectFromKeywords() or getConnectFromConfig()?")
+        except (Exception, psy.DatabaseError) as error:
+            print(error)
+
+        return tBool, rows
 
     def checkForEntryByCountryLoc(self, countryName, locationName):
         """
@@ -299,7 +319,6 @@ class Table:
         :param locationName:
         :return:
         """
-
         if not self.connection is None:
             cur = self.connection.cursor()
             command = "SELECT * FROM " + self.tableName + " WHERE country = '" + countryName + "' AND location = '" + locationName + "';"
@@ -310,7 +329,11 @@ class Table:
                 print(row)
 
             cur.close()
-            return rows
+
+            if len(rows) > 0:
+                return True, rows
+            else:
+                return False, rows
         else:
             print(
                 "No connection open. Did you open a connection using getConnectFromKeywords() or getConnectFromConfig()?")
@@ -318,14 +341,74 @@ class Table:
     def changeTable(self, newName):
         self.tableName = newName
 
+    def insertEntries(self, filePath):
+        """
+        Insert entries from a file path
+        :param filePath:
+        :return:
+        """
+        if filePath.endswith('xlsx'):
+            print('.xlsx files are not currently supported')
+            return
+        elif filePath.endswith('csv'):
+            tableFile = pd.read_csv(filePath)
+        else:
+            print('This tool currently only supports .csv files.')
+            return
+
+        for (index, row) in tableFile.iterrows():
+            lat = row['found_lat']
+            long = row['found_lng']
+
+            if not self.checkForEntryByLatLon(lat, long)[0]:
+                countryName = row['Country']
+                locName = row['Location']
+
+                if not self.checkForEntryByCountryLoc(countryName, locName)[0]:
+                    # Entry does not exist
+                    print("Inserting")
+                    cmndStr = ""
+                    cmndArr = []
+                    for item in row.values:
+                        cmndArr.append(item)
+
+                    cmnd = "INSERT INTO " + self.tableName + " VALUES (" + self.makeInsertionString(cmndArr) + " NULL);"
+
+                    cur = self.connection.cursor()
+                    cur.execute(cmnd)
+                    cur.close()
+
+        self.connection.commit()
+
+        try:
+            cur = self.connection.cursor()
+
+            cur.close()
+            self.connection.commit()
+        except (Exception, psy.DatabaseError) as error:
+            print(error)
+
+    def makeInsertionString(self, valsArr):
+
+        valsStr = ''
+
+        for i in range(len(valsArr)):
+            if isinstance(valsArr[i], str):
+                valsStr += "'" + str(valsArr[i]) + "', "
+            else:
+                valsStr += str(valsArr[i]) + ", "
+
+        print(valsStr)
+        return valsStr
+
 dc = DatabaseConnector()
 mConn = dc.getConnectFromConfig(filePath='D:\\config.ini')
 # mConn = dc.getConnectFromKeywords(host='localhost', dbname='spatialpractice', username='postgres', password='Swa!Exa4')
-mTable = Table(tableName='realdata9', connection=mConn)
-mTable.buildTableFromFile('D:\\PostGISData\\data\\fixedfinal.csv')
-mTable.makeTableSpatial()
-mTable.changeTable("superkitties3")
-# mTable.checkForEntryByLatLon(34.48845, 69.20288)
+mTable = Table(tableName='realdata11', connection=mConn)
+# mTable.buildTableFromFile('D:\\PostGISData\\data\\fixedfinal.csv')
+# mTable.makeTableSpatial()
+# mTable.changeTable("superkitties3")
+mTable.insertEntries('D:\\PostGISData\\data\\addtest.csv')
 print()
 # mTable.checkForEntryByCountryLoc('AFGHANISTAN', 'DARUL AMAN')
 dc.closeConnection()
