@@ -1,0 +1,138 @@
+,index,location,type
+0,16,"('El Manantial', 'Argentina')", cannot find coordinates
+1,33,"('Rahmatpur Barisal', 'Bangladesh')", incorrect location data
+2,90,"('Kazakhstan', 'Central Asia')", country not found/wrong country format
+3,107,"('Wenshan', 'China')", incorrect location data
+4,113,"('Arguello Bajo, Yacuanquer', 'Colombia')", cannot find coordinates
+5,156,"('Monteria', 'Colombia')", incorrect location data
+6,207,"('Costa Rica', 'Costa Rica')", cannot find coordinates
+7,208,"('El Aguila, Pejibaye', 'Costa Rica')", cannot find coordinates
+8,209,"('El Parque, Los Chiles', 'Costa Rica')", cannot find coordinates
+9,210,"('El Progreso, Pejibaye', 'Costa Rica')", cannot find coordinates
+10,211,"('Guagaral', 'Costa Rica')", incorrect location data
+11,213,"('Las Ca╤as', 'Costa Rica')", cannot find coordinates
+12,214,"('Pejibaye De Perez Zeledon', 'Costa Rica')", cannot find coordinates
+13,216,"('Upala', 'Costa Rica')", cannot find coordinates
+14,217,"('Upala Pueblo Nuevo', 'Costa Rica')", cannot find coordinates
+15,218,"('Veracruz, Pejibaye', 'Costa Rica')", cannot find coordinates
+16,225,"('Alquizar', 'Cuba')", incorrect location data
+17,226,"('Tomeguin', 'Cuba')", incorrect location data
+18,228,"('Comuna San Rafael, Peninsula Sta Elena', 'Ecuador')", cannot find coordinates
+19,230,"('Fca. Exp. Josefina Balzar', 'Ecuador')", cannot find coordinates
+20,245,"('Apastepeque', 'El Salvador')", cannot find coordinates
+21,246,"('Armenia', 'El Salvador')", cannot find coordinates
+22,247,"('Barrio Nuevo, La Paz', 'El Salvador')", cannot find coordinates
+23,248,"('Chalchahuapa', 'El Salvador')", cannot find coordinates
+24,249,"('Cuhisnuat', 'El Salvador')", cannot find coordinates
+25,250,"('El Coyalito', 'El Salvador')", cannot find coordinates
+26,251,"('El Pepito, Concep., Chalate', 'El Salvador')", cannot find coordinates
+27,252,"('Jiquilisco', 'El Salvador')", cannot find coordinates
+28,253,"('Jocoro, Morazan', 'El Salvador')", cannot find coordinates
+29,254,"('Jucuapa, Usulutan', 'El Salvador')", cannot find coordinates
+30,255,"('La Libertad', 'El Salvador')", cannot find coordinates
+31,256,"('Lomas De Santiago', 'El Salvador')", cannot find coordinates
+32,257,"('Los Cipreses, Conchagua, La Union', 'El Salvador')", cannot find coordinates
+33,258,"('Nacimiento, La Union', 'El Salvador')", cannot find coordinates
+34,259,"('Nahuilingo', 'El Salvador')", cannot find coordinates
+35,260,"('Nueva Concepcion', 'El Salvador')", cannot find coordinates
+36,261,"('Quelepa, San Miguel', 'El Salvador')", cannot find coordinates
+37,262,"('San Andres', 'El Salvador')", cannot find coordinates
+38,263,"('San Andres (sb)', 'El Salvador')", cannot find coordinates
+39,264,"('San Mauricio', 'El Salvador')", cannot find coordinates
+40,265,"('San Pedro Puxtla, Ahuachapan', 'El Salvador')", cannot find coordinates
+41,266,"('San Vicente', 'El Salvador')", cannot find coordinates
+42,268,"('Santa Cruz Porrillo', 'El Salvador')", cannot find coordinates
+43,270,"('Suchitoto, Cuscatlan', 'El Salvador')", cannot find coordinates
+44,271,"('Tenancingo', 'El Salvador')", cannot find coordinates
+45,272,"('Uluazapa, La Union', 'El Salvador')", cannot find coordinates
+46,287,"('Kitale-ws', 'Ethiopia')", incorrect location data
+47,294,"('Nan', 'Ethiopia')", no location entered
+48,311,"('Thessaloniki-kentriko', 'Greece')", incorrect location data
+49,318,"('Finca, Las Vegas Tequisate.', 'Guatemala')", cannot find coordinates
+50,320,"('Isidro Avarez', 'Guatemala')", incorrect location data
+51,324,"('La M┴quina Caballo Blanco', 'Guatemala')", cannot find coordinates
+52,325,"('La Maquina, Linea A5', 'Guatemala')", cannot find coordinates
+53,343,"('Karoman, Lavallee', 'Haiti')", cannot find coordinates
+54,345,"('Nan- Jn Pierre, Cap-rouge', 'Haiti')", cannot find coordinates
+55,351,"('El Guaco Yorito, Yoro', 'Honduras')", cannot find coordinates
+56,359,"('Mina Handa (yorito Yoco)', 'Honduras')", cannot find coordinates
+57,362,"('Pata Stera (yorito Yoco)', 'Honduras')", cannot find coordinates
+58,365,"('Rio Arriba Yorito, Yoro', 'Honduras')", cannot find coordinates
+59,379,"('Bahraich, Crop Research Station', 'India')", cannot find coordinates
+60,393,"('Dmr I.a.r.i.', 'India')", incorrect location data
+61,412,"('Messina', 'India')", cannot find coordinates
+62,439,"('Weerasak Doungjan', 'India')", cannot find coordinates
+63,440,"('Bontobili', 'Indonesia')", incorrect location data
+64,446,"('Muneng', 'Indonesia')", incorrect location data
+65,452,"('Agricultural Research Station Of Gorgan', 'Iran')", cannot find coordinates
+66,456,"(""Bonghdad, Al_mada'en"", 'Iraq')", cannot find coordinates
+67,458,"('Central Asia', 'Kazakstan')", country not found/wrong country format
+68,488,"('Kitale Syn Ii (ethiopia)', 'Kenya')", cannot find coordinates
+69,556,"('Campeche, Campeche', 'Mexico')", incorrect location data
+70,570,"('Ciudad Obregon', 'Mexico')", incorrect location data
+71,623,"('La Huerta, Jalisco', 'Mexico')", incorrect location data
+72,653,"('Puerto Vallarta', 'Mexico')", incorrect location data
+73,721,"('Ex-instituto Nacional De Investigacion Agraria', 'Mozambique')", cannot find coordinates
+74,732,"('Ntengo Nucodgi Augoiris', 'Mozambique')", cannot find coordinates
+75,733,"('Ntengo Umadzi- Angoria', 'Mozambique')", cannot find coordinates
+76,743,"('Zaloke Research Farm', 'Myanmar')", cannot find coordinates
+77,744,"('Aungban, Burma', 'Myanmar (burma)')", country not found/wrong country format
+78,745,"('Yezin, Burma', 'Myanmar (burma)')", country not found/wrong country format
+79,811,"('Parita', 'Panama')", incorrect location data
+80,822,"('E.e. El Porvenir, Calzada Moyobamba', 'Peru')", cannot find coordinates
+81,859,"('Burgershall', 'South Africa')", cannot find coordinates
+82,861,"('Friedenheim Valley', 'South Africa')", cannot find coordinates
+83,862,"('Linkseed', 'South Africa')", cannot find coordinates
+84,863,"('Mpumalanga', 'South Africa')", cannot find coordinates
+85,865,"('North West Province', 'South Africa')", cannot find coordinates
+86,867,"('Petit', 'South Africa')", cannot find coordinates
+87,868,"('Tshiombo', 'South Africa')", cannot find coordinates
+88,883,"('Paramaribo', 'Surinam')", country not found/wrong country format
+89,885,"('Les', 'Swaziland')", cannot find coordinates
+90,886,"('Lowveld, Brabend', 'Swaziland')", cannot find coordinates
+91,897,"('Arusha Seed Farm Afsf', 'Tanzania')", cannot find coordinates
+92,908,"('Lambo', 'Tanzania')", incorrect location data
+93,934,"('El Carmen', 'Trinidad Y Tobago')", cannot find coordinates
+94,935,"('Goldsborough', 'Trinidad Y Tobago')", incorrect location data
+95,936,"(""Louis D'or"", 'Trinidad Y Tobago')", incorrect location data
+96,946,"('Likonde,songea', 'Uganda')", incorrect location data
+97,955,"('College Station, Texas', 'United States Of America')", cannot find coordinates
+98,956,"('Kenedy, Tx.', 'United States Of America')", cannot find coordinates
+99,958,"('Tifton, Georgia', 'United States Of America')", cannot find coordinates
+100,959,"('Tifton, Georgia (2)', 'United States Of America')", cannot find coordinates
+101,960,"('Weslaco, Texas', 'United States Of America')", cannot find coordinates
+102,969,"('Colonia Agricola De Turen', 'Venezuela')", cannot find coordinates
+103,982,"('Pascual Valetta, Laguna De Piedra', 'Venezuela')", cannot find coordinates
+104,991,"('Unidad Agricola De Turen', 'Venezuela')", cannot find coordinates
+105,994,"('Ars, Amberpet, Hyd.', 'Vietnam')", cannot find coordinates
+106,1008,"('Chisamba, Golden Valley', 'Zambia')", cannot find coordinates
+107,1064,"('Kaniaka', 'Congo')", incorrect location data
+108,1077,"('Puerto Gaitan-carpoica,taluma', 'Colombia')", cannot find coordinates
+109,1105,"('Changena, Buenos Aires', 'Costa Rica')", cannot find coordinates
+110,1106,"('Concepcion De Pilas', 'Costa Rica')", cannot find coordinates
+111,1107,"('Unknown', 'Unknown')", country not found/wrong country format
+112,1118,"('Ntugo-nmodzi', 'Mozambique')", cannot find coordinates
+113,1120,"('Mokonyane', 'South Africa')", cannot find coordinates
+114,1131,"('Nebo', 'South Africa')", cannot find coordinates
+115,1137,"('Un San County', 'South Korea')", cannot find coordinates
+116,1152,"('Los Chiles, Alajuela', 'Costa Rica')", cannot find coordinates
+117,1153,"('Upala, Alajuela', 'Costa Rica')", cannot find coordinates
+118,1163,"('Freidenheim Valley', 'South Africa')", cannot find coordinates
+119,1184,"('Kasapa', 'Democratic Republic Of Congo')", country not found/wrong country format
+120,1201,"('Las Cañas', 'Costa Rica')", cannot find coordinates
+121,1202,"('La Máquina Caballo Blanco', 'Guatemala')", cannot find coordinates
+122,1212,"('Los Horcones', 'El Salvador')", cannot find coordinates
+123,1213,"('San Andres, El Salvador', 'El Salvador')", cannot find coordinates
+124,1214,"('San Cristobal, Cuscatlan', 'El Salvador')", cannot find coordinates
+125,1234,"('Trial Series', 'Nan')", no location entered
+126,1243,"('Santa Cruz', 'El Salvador')", cannot find coordinates
+127,1270,"('San Adres', 'El Salvador')", cannot find coordinates
+128,1297,"('Mooi River', 'South Africa')", cannot find coordinates
+129,1298,"('Oaklands Farm Mooi River', 'South Africa')", cannot find coordinates
+130,1322,"('Hudeiba (eddamer)', 'Sudan')", cannot find coordinates
+131,1324,"('Hudeiba (eddaner)', 'Sudan')", cannot find coordinates
+132,1333,"('Makoholi Drewton', 'Zimbabwe')", cannot find coordinates
+133,1347,"('Koronnia Research Station - - - Koronivia Research', 'Fiji')", incorrect location data
+134,1439,"('Caruapoma, Bella Vista, Tarapoto', 'Peru')", cannot find coordinates
+135,1467,"('Yala Swamp (intercrop)', 'Kenya')", cannot find coordinates
+136,1468,"('Yala Swamp (sole Crop)', 'Kenya')", cannot find coordinates

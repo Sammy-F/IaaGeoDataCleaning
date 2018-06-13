@@ -3,7 +3,6 @@ from configparser import ConfigParser
 import pandas as pd
 
 
-
 class DatabaseConnector:
 
     def __init__(self):
