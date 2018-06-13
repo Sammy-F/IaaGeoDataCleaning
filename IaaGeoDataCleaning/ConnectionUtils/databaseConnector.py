@@ -174,15 +174,10 @@ class Table:
         schemaStr = "CREATE TABLE " + self.tableName + " " + schemaStr
         print(schemaStr)
 
-        addGeom = "ALTER TABLE " + self.tableName + " ADD COLUMN geom geometry(POINT, 4326);"
-        updateTable = "UPDATE " + self.tableName + " SET geom = ST_SETSRID(ST_MakePoint(longitude, latitude), 4326) WHERE latitude IS NOT NULL AND longitude IS NOT NULL;"
-
         try:
             cur = self.connection.cursor()
 
             cur.execute(schemaStr)
-            # cur.execute(addGeom)
-            # cur.execute(updateTable)
 
             self.loadData(cur, filePath)
 
@@ -190,6 +185,25 @@ class Table:
             self.connection.commit()
         except (Exception, psy.DatabaseError) as error:
             print(error)
+
+    def makeTableSpatial(self):
+
+        addGeom = "ALTER TABLE " + self.tableName + " ADD COLUMN geom geometry(POINT, 4326);"
+        updateTable = "UPDATE " + self.tableName + " SET geom = ST_SETSRID(ST_MakePoint(found_lng, found_lat), 4326);"
+
+        cur = self.connection.cursor()
+
+        cur.execute(addGeom)
+
+        cur.close()
+
+        cur = self.connection.cursor()
+
+        cur.execute(updateTable)
+
+        cur.close()
+
+        self.connection.commit();
 
     def loadTableSchema(self, tableFile):
         """
@@ -264,7 +278,7 @@ class Table:
         """
         if not self.connection is None:
             cur = self.connection.cursor()
-            command = "SELECT * FROM " + self.tableName + " WHERE latitude = '" + str(lat) + "' AND longitude = '" + str(lon) + "';"
+            command = "SELECT * FROM " + self.tableName + " WHERE found_lat = '" + str(lat) + "' AND found_lng = '" + str(lon) + "';"
             cur.execute(command)
             rows = cur.fetchall()
 
@@ -307,8 +321,9 @@ class Table:
 dc = DatabaseConnector()
 mConn = dc.getConnectFromConfig(filePath='D:\\config.ini')
 # mConn = dc.getConnectFromKeywords(host='localhost', dbname='spatialpractice', username='postgres', password='Swa!Exa4')
-mTable = Table(tableName='realdata5', connection=mConn)
-mTable.buildTableFromFile('D:\\PostGISData\\data\\final_geocode.csv')
+mTable = Table(tableName='realdata9', connection=mConn)
+mTable.buildTableFromFile('D:\\PostGISData\\data\\fixedfinal.csv')
+mTable.makeTableSpatial()
 mTable.changeTable("superkitties3")
 # mTable.checkForEntryByLatLon(34.48845, 69.20288)
 print()
