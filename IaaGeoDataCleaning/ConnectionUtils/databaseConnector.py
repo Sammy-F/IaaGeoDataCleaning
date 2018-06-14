@@ -295,7 +295,8 @@ class Table:
         try:
             if not self.connection is None:
                 cur = self.connection.cursor()
-                command = "SELECT * FROM " + self.tableName + " WHERE round(found_lat, 2) = '" + "{0:.2f}".format(lat) + "' AND round(found_lng, 2) = '" + "{0:.2f}".format(lon) + "';"
+                # command = "SELECT * FROM " + self.tableName + " WHERE round(found_lat, 2) = '" + "{0:.2f}".format(lat) + "' AND round(found_lng, 2) = '" + "{0:.2f}".format(lon) + "';"
+                command = "SELECT * FROM " + self.tableName + " WHERE ST_DWITHIN(ST_TRANSFORM(ST_GEOMFROMTEXT('POINT(" + str(lon) + " " + str(lat) + ")', 4326),4326)::geography, ST_TRANSFORM(geom, 4326)::geography, 0.5, true)"
                 cur.execute(command)
                 rows = cur.fetchall()
 
@@ -319,6 +320,7 @@ class Table:
         :param locationName:
         :return:
         """
+        print("Went to country")
         if not self.connection is None:
             cur = self.connection.cursor()
             command = "SELECT * FROM " + self.tableName + " WHERE country = '" + countryName + "' AND location = '" + locationName + "';"
@@ -419,12 +421,11 @@ class Table:
 dc = DatabaseConnector()
 mConn = dc.getConnectFromConfig(filePath='D:\\config.ini')
 # mConn = dc.getConnectFromKeywords(host='localhost', dbname='spatialpractice', username='postgres', password='Swa!Exa4')
-mTable = Table(tableName='realdatal', connection=mConn)
+mTable = Table(tableName='insertionwork', connection=mConn)
 # mTable.buildTableFromFile('D:\\PostGISData\\data\\fixedfinal.csv')
 # mTable.makeTableSpatial()
 # mTable.changeTable("superkitties3")
-# mTable.insertEntries('D:\\PostGISData\\data\\addtest.csv')
-mTable.checkGeomNulls()
+mTable.insertEntries('D:\\PostGISData\\data\\addtest.csv')
 print()
 # mTable.checkForEntryByCountryLoc('AFGHANISTAN', 'DARUL AMAN')
 dc.closeConnection()
