@@ -343,9 +343,9 @@ class Table:
     def changeTable(self, newName):
         self.tableName = newName
 
-    def insertEntries(self, filePath):
+    def updateEntries(self, filePath):
         """
-        Insert entries from a file path
+        Insert or update entries from a .csv file.
         :param filePath:
         :return:
         """
@@ -407,6 +407,10 @@ class Table:
         self.connection.commit()
 
     def isSpatial(self):
+        """
+        Check if the given table is spatial.
+        :return:
+        """
 
         cur = self.connection.cursor()
         cur.execute("SELECT column_name FROM information_schema.columns WHERE table_name = '" + self.tableName + "' AND column_name = 'geom';")
@@ -418,6 +422,22 @@ class Table:
             return True
         return False
 
+    def cleanDuplicates(self):
+        """
+        Remove duplicate plant stations from the data. *IMPORTANT* Cannot be undone once changes are committed.
+        Must call commitChanges() to save them.
+        :return:
+        """
+
+
+    def commitChanges(self):
+        if self.connection is not None:
+            try:
+                self.connection.commit()
+            except (Exception, psy.DatabaseError) as error:
+                print(error)
+
+
 dc = DatabaseConnector()
 mConn = dc.getConnectFromConfig(filePath='D:\\config.ini')
 # mConn = dc.getConnectFromKeywords(host='localhost', dbname='spatialpractice', username='postgres', password='Swa!Exa4')
@@ -425,7 +445,8 @@ mTable = Table(tableName='insertionwork', connection=mConn)
 # mTable.buildTableFromFile('D:\\PostGISData\\data\\fixedfinal.csv')
 # mTable.makeTableSpatial()
 # mTable.changeTable("superkitties3")
-mTable.insertEntries('D:\\PostGISData\\data\\addtest.csv')
+mTable.updateEntries('D:\\PostGISData\\data\\addtest.csv')
 print()
 # mTable.checkForEntryByCountryLoc('AFGHANISTAN', 'DARUL AMAN')
+
 dc.closeConnection()
