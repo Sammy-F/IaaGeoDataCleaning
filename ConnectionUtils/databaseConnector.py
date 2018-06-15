@@ -285,7 +285,7 @@ class Table:
         except (Exception, psy.DatabaseError) as error:
             print(error)
 
-    def checkForEntryByLatLon(self, lat, lon):
+    def checkForEntryByLatLon(self, lat, lon, searchRadius=0.5):
         """
         Check if an entry with the given lat, lon exists. If so, return all rows that match..
         :param lat:
@@ -298,7 +298,7 @@ class Table:
             if not self.connector.connection is None:
                 cur = self.connector.connection.cursor()
                 # command = "SELECT * FROM " + self.tableName + " WHERE round(found_lat, 2) = '" + "{0:.2f}".format(lat) + "' AND round(found_lng, 2) = '" + "{0:.2f}".format(lon) + "';"
-                command = "SELECT * FROM " + self.tableName + " WHERE ST_DWITHIN(ST_TRANSFORM(ST_GEOMFROMTEXT('POINT(" + str(lon) + " " + str(lat) + ")', 4326),4326)::geography, ST_TRANSFORM(geom, 4326)::geography, 0.5, true)"
+                command = "SELECT * FROM " + self.tableName + " WHERE ST_DWITHIN(ST_TRANSFORM(ST_GEOMFROMTEXT('POINT(" + str(lon) + " " + str(lat) + ")', 4326),4326)::geography, ST_TRANSFORM(geom, 4326)::geography, " + str(searchRadius) + ", true)"
                 cur.execute(command)
                 rows = cur.fetchall()
 
@@ -423,21 +423,21 @@ class Table:
             return True
         return False
 
-    def cleanDuplicates(self):
-        """
-        Remove duplicate plant stations from the data. *IMPORTANT* Cannot be undone once changes are committed.
-        Must call commitChanges() to save them.
-        :return:
-        """
-        cur = self.connector.connection.cursor()
-        comm1 = "SELECT COUNT(*) FROM " + self.tableName + ";"
-        try:
-            count = cur.execute(comm1).fetchall()
-            print(count)
-        except AttributeError:
-            print("No results found.")
-        cur.close
-        comm = "DO $do$ FOR i IN 1.."
+    # def cleanDuplicates(self):
+    #     """
+    #     Remove duplicate plant stations from the data. *IMPORTANT* Cannot be undone once changes are committed.
+    #     Must call commitChanges() to save them.
+    #     :return:
+    #     """
+    #     cur = self.connector.connection.cursor()
+    #     comm1 = "SELECT COUNT(*) FROM " + self.tableName + ";"
+    #     try:
+    #         count = cur.execute(comm1).fetchall()
+    #         print(count)
+    #     except AttributeError:
+    #         print("No results found.")
+    #     cur.close
+    #     comm = "DO $do$ FOR i IN 1.."
 
     def commitChanges(self):
         """
