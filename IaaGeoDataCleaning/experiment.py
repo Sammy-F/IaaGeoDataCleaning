@@ -57,8 +57,7 @@ class GeocodeValidator:
         :param country:
         :param inpLat:
         :param inpLng:
-        :return: a tuple containing 2 values:
-         the type of entry as a tuple and the entry's information as a dictionary.
+        :return: the type of entry and the entry's information as a dictionary
         """
         locationInfo = self.formatInformation(location, country, inpLat, inpLng)
         checkedRow = self.checkRowInput(locationInfo)
@@ -68,7 +67,8 @@ class GeocodeValidator:
 
         # Location or country is not entered
         if inpType == -5:
-            return (inpType, self.entryType[inpType]), locationInfo
+            locationInfo['Type'] = self.entryType[inpType]
+            return inpType, locationInfo
 
         # Everything is entered
         elif inpType == 0:
@@ -90,7 +90,8 @@ class GeocodeValidator:
             coordType = findAltCoords[0]
             locationInfo = findAltCoords[1]
 
-        return (coordType, self.entryType[coordType]), locationInfo
+        locationInfo['Type'] = self.entryType[coordType]
+        return coordType, locationInfo
 
     def formatInformation(self, location, country, latitude, longitude):
         """
@@ -208,7 +209,7 @@ class GeocodeValidator:
             return -1, locationDict
 
     def queryAllFields(self, location, country, latitude, longitude,
-                       filePath='/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/verified_data_2018-06-14.csv'):
+                       filePath='/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/verified_data_2018-06-15.csv'):
         """
         Does a full search for entries matching the fields.
         :param location:
@@ -239,7 +240,7 @@ class GeocodeValidator:
         return results
 
     def queryByLocation(self, location, country,
-                        filePath='/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/verified_data_2018-06-14.csv'):
+                        filePath='/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/verified_data_2018-06-15.csv'):
         """
         Finds all rows with the matching location and country.
         Can find locations that contain the query but not the other way around (sadly).
@@ -266,7 +267,7 @@ class GeocodeValidator:
         return results
 
     def queryByCoordinates(self, latitude, longitude,
-                           filePath='/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/verified_data_2018-06-14.csv'):
+                           filePath='/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/verified_data_2018-06-15.csv'):
         """
         Finds all rows with the matching latitude and longitude.
         :param latitude:
@@ -288,29 +289,38 @@ class GeocodeValidator:
                 results.append(loc)
         return results
 
-    def addLocation(self, location=None, country=None, latitude=None, longitude=None):
+    def addLocation(self, location=None, country=None, latitude=None, longitude=None,
+                    filePath='/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/verified_data_2018-06-15.csv'):
         querySearch = []
         if location is not None and country is not None:
-            querySearch = self.queryByLocation(location, country)
+            querySearch = self.queryByLocation(location, country, filePath)
         elif (location is None or country is None) and (latitude is not None and longitude is not None):
-            querySearch = self.queryByCoordinates(latitude, longitude)
+            querySearch = self.queryByCoordinates(latitude, longitude, filePath)
 
         if len(querySearch) > 0:
             print('Entry already exists in database.')
             return querySearch
+
         # Completely new entry
         else:
             verified = self.verifyInfo(location, country, latitude, longitude)
             # Location is valid
-            if verified[0][0] > 0:
-               # Check to see whether it is an entry in the pending db
-                queryInPending = self.queryByLocation(verified[1]['Location'], verified[1]['Country'])
+            if verified[0] >= 0:
+                # Check to see whether it is an entry in the pending db
+                queryInPending = self.queryByLocation(verified[1]['Location'], verified[1]['Country'],
+                                                      '/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/pending_data_2018-06-15.csv')
                 if len(queryInPending) > 0:
-                    # Remove them from pending
-                    print('')
+                    indices = [row['Index'] for row in queryInPending]
+                    indices.sort(key=int)
+                    indices.sort(reverse=True)
+                    for index in indices:
+                        print(index)
+                        self.dbi.deleteRowFromDB(index,
+                                                 '/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/pending_data_2018-06-15.csv')
                 # Add to verified
                 newRowDF = pd.DataFrame.from_dict([verified[1]])
-                self.dbi.updateDatabase(newRow)
+                self.dbi.addRowToDB(newRowDF, filePath)
+                return verified
 
     def findFormattedName(self, alternativeName):
         """
@@ -332,7 +342,6 @@ class GeocodeValidator:
             countryCode = str(row.loc["ISO"])
             country = str(row.loc["Country"])
             self.countryCodes[country] = countryCode
-
 
 class DatabaseInitializer:
     def createNewDatabase(self, filePath):
@@ -369,11 +378,11 @@ class DatabaseInitializer:
 
             rowInfo = self.validator.verifyInfo(location, country, latitude, longitude)
 
-            if rowInfo[0][0] < 0:
+            if rowInfo[0] < 0:
                 self.flaggedLocations.append(index)
-                self.logEntry(self.pending, rowInfo[0][1], rowInfo[1])
+                self.logEntry(self.pending, rowInfo[1])
             else:
-                self.logEntry(self.verified, rowInfo[0][1], rowInfo[1])
+                self.logEntry(self.verified, rowInfo[1])
 
         self.exportResults()
 
@@ -392,8 +401,7 @@ class DatabaseInitializer:
     def getPendingFile(self):
         return self.pendingDatabase
 
-    def logEntry(self, log, type, rowDict):
-        log['Type'].append(type)
+    def logEntry(self, log, rowDict):
         for key in rowDict.keys():
             log[key].append(rowDict[key])
 
@@ -419,16 +427,27 @@ class DatabaseInitializer:
             data = None
         return data
 
-    def updateDatabase(self, newDF, databasePath):
+    def addRowToDB(self, newDF, databasePath):
         database = self.readFile(databasePath)
         if database is None:
             return False
-        else:
-            database = pd.concat([databasePath, newDF], ignore_index=True, sort=True)
-            if databasePath.endswith('xlsx'):
-                databasePath = databasePath.replace('xlsx', 'csv')
-            database.to_csv(databasePath, sep=',', encoding='utf-8', index=False)
-            return True
+
+        database = pd.concat([database, newDF], ignore_index=True, sort=True)
+        if databasePath.endswith('xlsx'):
+            databasePath = databasePath.replace('xlsx', 'csv')
+        database.to_csv('test_verified.csv', sep=',', encoding='utf-8', index=False)
+        return True
+
+    def deleteRowFromDB(self, rowIndex, databasePath):
+        database = self.readFile(databasePath)
+        if database is None:
+            return False
+
+        database = database.drop(database.index[rowIndex])
+
+        if databasePath.endswith('xlsx'):
+            databasePath = databasePath.replace('xlsx', 'csv')
+        database.to_csv(databasePath, sep=',', encoding='utf-8', index=False)
 
 class NameHandler:
     def __init__(self):
@@ -451,16 +470,26 @@ class NameHandler:
                     return formattedName
         return False
 
-database = DatabaseInitializer()
-database.createNewDatabase("D:\\PostGISData\\data\\TblLocation.xlsx")
-correctLog = database.getVerifiedLog()
-incorrectLog = database.getPendingLog()
-
+# database = DatabaseInitializer("/Users/thytnguyen/Desktop/tblLocation.xlsx")
+# database.run()
+# correctLog = database.getVerifiedLog()
+# incorrectLog = database.getPendingLog()
 
 validator = GeocodeValidator()
+# res = validator.queryAllFields(location='Kilombo', country='Angola', latitude=-8.9, longitude=14.75)
+# print(res)
+# #
+# # queryLoc = validator.queryByLocation('El Ovejero', 'China')
+# # print(queryLoc)
+# #
+# # queryCoord = validator.queryByCoordinates(-16.73, -179.87)
+# # print(queryCoord)
 #
-# queryLoc = validator.queryByLocation('El Ovejero', 'China')
-# print(queryLoc)
+# add = validator.addLocation('Toronto', 'Canada', 43.65, 79.38)
+# print(add)
+
+# inPending = validator.addLocation('Yala Swamp', 'Kenya', 0.03, 34.1)
+# print(inPending)
 #
-# queryCoord = validator.queryByCoordinates(-16.73, -179.87)
-# print(queryCoord)
+# inVerified = validator.addLocation('Dholi', 'India')
+# print(inVerified)
