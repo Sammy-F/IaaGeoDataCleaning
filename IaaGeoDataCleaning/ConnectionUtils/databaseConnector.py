@@ -144,6 +144,21 @@ class Table:
         except (Exception, psy.DatabaseError) as error:
             print(error)
 
+    def csvToXlsx(self, filePath):
+        wb = xlrd.open_workbook(filePath)
+        sh = wb.sheet_by_name(wb.sheet_names()[0])
+        fileString = filePath[:-5]
+        fileString += ".csv"
+        csvfile = open(fileString, 'w', encoding='utf8')
+        wr = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
+
+        for rownum in range(sh.nrows):
+            wr.writerow(sh.row_values(rownum))
+
+        csvfile.close()
+        filePath = fileString
+        return pd.read_csv(filePath)
+
     def buildTableFromFile(self, filePath):
         """
         Create a table on the database from a .xlsx or
@@ -152,20 +167,7 @@ class Table:
         :return:
         """
         if filePath.endswith('xlsx'):
-            print('.xlsx files are not currently supported')
-            return
-            # wb = xlrd.open_workbook(filePath)
-            # sh = wb.sheet_by_name(wb.sheet_names()[0])
-            # fileString = filePath[:-5]
-            # csvfile = open(fileString, 'w', encoding='utf8')
-            # wr = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
-            #
-            # for rownum in range(sh.nrows):
-            #     wr.writerow(sh.row_values(rownum))
-            #
-            # csvfile.close()
-            # filePath = fileString
-            # tableFile = pd.read_excel(filePath)
+            tableFile = self.csvToXlsx(filePath)
         elif filePath.endswith('csv'):
             tableFile = pd.read_csv(filePath)
         else:
@@ -350,8 +352,7 @@ class Table:
         :return:
         """
         if filePath.endswith('xlsx'):
-            print('.xlsx files are not currently supported')
-            return
+            tableFile = self.csvToXlsx(filePath)
         elif filePath.endswith('csv'):
             tableFile = pd.read_csv(filePath)
         else:
@@ -428,25 +429,100 @@ class Table:
         Must call commitChanges() to save them.
         :return:
         """
-
+        cur = self.connection.cursor()
+        comm1 = "SELECT COUNT(*) FROM " + self.tableName + ";"
+        count = cur.execute(comm1).fetchall()
+        cur.close
+        print(count)
+        comm = "DO $do$ FOR i IN 1.."
 
     def commitChanges(self):
-        if self.connection is not None:
-            try:
-                self.connection.commit()
-            except (Exception, psy.DatabaseError) as error:
-                print(error)
+        """
+        Commit changes made to the database.
+        :return:
+        """
+        confirmation = input("Once these changes are committed, they cannot be undone. Proceed? (y/n): ")
+        while confirmation is "y" or confirmation is "Y":
+            confirmation = "n"
+            if self.connection is not None:
+                try:
+                    self.connection.commit()
+                except (Exception, psy.DatabaseError) as error:
+                    print(error)
 
+    def getEntriesByInput(self, vals, columnNames):
+        """
+        Return all entries that match ALL search terms. Returns False
+        if an error occurs
+        :param vals:
+        :return:
+        """
+
+        if not (isinstance(vals, list) and isinstance(columnNames, list)):
+            print("Keywords must be passed in as a list of strings")
+            return False
+        if not len(vals) == len(columnNames):
+            print("Keywords and columnNames lists must have the same length.")
+            return False
+        if not self.validateColumns(columnNames):
+            print("Input column names are invalid.")
+            return False
+        else:
+            requestVals = "(SELECT * FROM " + self.tableName + " WHERE "
+            for i in range(len(vals)):
+                if not i == len(vals) - 1:
+                    requestVals += columnNames[i] + "=" + "'" + vals[i] + "' AND "
+                else:
+                    requestVals += columnNames[i] + "=" + "'" + vals[i] + "');"
+            print("Request cmmnd is: " + requestVals)
+            cur = self.connection.cursor()
+            cur.execute(requestVals)
+            try:
+                rows = cur.fetchall()
+                cur.close()
+                print(rows)
+                return rows
+            except AttributeError:
+                print("None found")
+
+    def validateColumns(self, columnNames):
+        """
+        Validates whether all string in a list correlate to a valid
+        column name in the table.
+        :param columnNames:
+        :return: True if all names exist in table, False if not
+        """
+        if not isinstance(columnNames, list):
+            print("Names must be passed in as a list of strings.")
+        else:
+            cmmnd = "SELECT column_name FROM information_schema.columns WHERE table_name = '" + self.tableName + "';"
+            print("validate cmmnd is: " + cmmnd)
+            cur = self.connection.cursor()
+            cur.execute(cmmnd)
+            nameList = list(cur.fetchall())
+            cur.close()
+            for name in columnNames:
+                if not (name,) in nameList:
+                    return False
+        return True
 
 dc = DatabaseConnector()
 mConn = dc.getConnectFromConfig(filePath='D:\\config.ini')
 # mConn = dc.getConnectFromKeywords(host='localhost', dbname='spatialpractice', username='postgres', password='Swa!Exa4')
 mTable = Table(tableName='insertionwork', connection=mConn)
-# mTable.buildTableFromFile('D:\\PostGISData\\data\\fixedfinal.csv')
+# mTable.buildTableFromFile('D:\\PostGISData\\data\\addtest.csv.xlsx')
 # mTable.makeTableSpatial()
 # mTable.changeTable("superkitties3")
-mTable.updateEntries('D:\\PostGISData\\data\\addtest.csv')
-print()
+# mTable.updateEntries('D:\\PostGISData\\data\\addtest.csv')
+# mTable.cleanDuplicates()
+# mTable.commitChanges()
 # mTable.checkForEntryByCountryLoc('AFGHANISTAN', 'DARUL AMAN')
+
+print(mTable.getEntriesByInput(['United States'], ['Country']))
+print(mTable.getEntriesByInput(['United Staweeftes'], ['Country']))
+print(mTable.getEntriesByInput(['United States'], ['Couweentry']))
+print(mTable.getEntriesByInput(['United States', 'Dogs'], ['Country']))
+print(mTable.getEntriesByInput(['United States'], ['Country', 'Location']))
+print(mTable.getEntriesByInput(['Angola', 'ANGOLA'], ['country', 'location']))
 
 dc.closeConnection()
