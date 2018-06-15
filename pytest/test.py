@@ -1,7 +1,8 @@
 from ConnectionUtils import databaseConnector as cu
 import pytest
-
-def testConnecting():
+from random import choice
+from string import ascii_uppercase
+def testConnectingWithGoodParams():
     mConnector = cu.DatabaseConnector()
 
     mConnector.getConnectFromConfig(filePath='D:\\config.ini')
@@ -13,4 +14,19 @@ def testConnecting():
     assert mConnector.connection is None    # Check that a connection is removed.
     assert connTest.status > 0  # Check that the connection is closed
 
-testConnecting()
+def testTableGeneration():
+    mConnector = cu.DatabaseConnector()
+    mConnector.getConnectFromConfig(filePath='D:\\config.ini')
+    name = ''.join(choice(ascii_uppercase) for i in range(16))
+
+    mTable = cu.Table(name, mConnector)
+    mTable.buildTableFromFile('D:\\IaaGeoDataCleaning\\IaaGeoDataCleaning\\verified_data_2018-06-14.csv')
+
+    assert len(mTable.getTable(10)) == 10
+    assert len(mTable.getTable(0)) == 734   # Test data has 734 entries.
+
+    print(mTable.getTable(10))  # Visual test
+    print(mTable.getTable(0))   # Visual test
+
+testConnectingWithGoodParams()
+testTableGeneration()

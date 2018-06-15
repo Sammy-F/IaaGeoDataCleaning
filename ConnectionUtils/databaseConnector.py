@@ -120,11 +120,13 @@ class DatabaseConnector:
 
 class Table:
 
-    def __init__(self, tableName, connection):
+    def __init__(self, tableName, databaseConnector):
         self.tableName = tableName
-        self.connection = connection
-
+        self.connector = databaseConnector
         self.table = None
+
+        if databaseConnector.connection is None:
+            print("Your connection does not exist. Please instantiate a connection using the DatabaseConnector and try again.")
 
     def buildTableFromTuple(self, commandTuple):
         """
@@ -135,12 +137,12 @@ class Table:
         commands = (commandTuple)
 
         try:
-            if not self.connection is None:
-                cur = self.connection.cursor()
+            if not self.connector.connection is None:
+                cur = self.connector.connection.cursor()
                 for command in commands:
                     cur.execute(command)
                 cur.close()
-                self.connection.commit()
+                self.connector.connection.commit()
         except (Exception, psy.DatabaseError) as error:
             print(error)
 
@@ -182,14 +184,14 @@ class Table:
         print(schemaStr)
 
         try:
-            cur = self.connection.cursor()
+            cur = self.connector.connection.cursor()
 
             cur.execute(schemaStr)
 
             self.loadData(cur, filePath)
 
             cur.close()
-            self.connection.commit()
+            self.connector.connection.commit()
         except (Exception, psy.DatabaseError) as error:
             print(error)
 
@@ -203,13 +205,13 @@ class Table:
         updateTable = "UPDATE " + self.tableName + " SET geom = ST_SETSRID(ST_MakePoint(found_lng, found_lat), 4326);"
 
         try:
-            cur = self.connection.cursor()
+            cur = self.connector.connection.cursor()
             cur.execute(addGeom)
             cur.close()
-            cur = self.connection.cursor()
+            cur = self.connector.connection.cursor()
             cur.execute(updateTable)
             cur.close()
-            self.connection.commit();
+            self.connector.connection.commit()
         except (Exception, psy.DatabaseError) as error:
             print(error)
 
@@ -295,8 +297,8 @@ class Table:
         tBool = False
         rows = []
         try:
-            if not self.connection is None:
-                cur = self.connection.cursor()
+            if not self.connector.connection is None:
+                cur = self.connector.connection.cursor()
                 # command = "SELECT * FROM " + self.tableName + " WHERE round(found_lat, 2) = '" + "{0:.2f}".format(lat) + "' AND round(found_lng, 2) = '" + "{0:.2f}".format(lon) + "';"
                 command = "SELECT * FROM " + self.tableName + " WHERE ST_DWITHIN(ST_TRANSFORM(ST_GEOMFROMTEXT('POINT(" + str(lon) + " " + str(lat) + ")', 4326),4326)::geography, ST_TRANSFORM(geom, 4326)::geography, 0.5, true)"
                 cur.execute(command)
@@ -323,8 +325,8 @@ class Table:
         :return:
         """
         print("Went to country")
-        if not self.connection is None:
-            cur = self.connection.cursor()
+        if not self.connector.connection is None:
+            cur = self.connector.connection.cursor()
             command = "SELECT * FROM " + self.tableName + " WHERE country = '" + countryName + "' AND location = '" + locationName + "';"
             cur.execute(command)
             rows = cur.fetchall()
@@ -378,11 +380,11 @@ class Table:
                     cmnd = "INSERT INTO " + self.tableName + " VALUES (" + self.makeInsertionString(cmndArr) + " NULL);"
 
 
-                    cur = self.connection.cursor()
+                    cur = self.connector.connection.cursor()
                     cur.execute(cmnd)
                     cur.close()
 
-        self.connection.commit()
+        self.connector.connection.commit()
         self.checkGeomNulls()
 
     def makeInsertionString(self, valsArr):
@@ -399,13 +401,13 @@ class Table:
         return valsStr
 
     def checkGeomNulls(self):
-        cur = self.connection.cursor()
+        cur = self.connector.connection.cursor()
         if self.isSpatial():
             updateTable = "UPDATE " + self.tableName + " SET geom = ST_SETSRID(ST_MakePoint(found_lng, found_lat), 4326) WHERE geom IS NULL;"
             print("tried update")
             cur.execute(updateTable)
         cur.close()
-        self.connection.commit()
+        self.connector.connection.commit()
 
     def isSpatial(self):
         """
@@ -413,7 +415,7 @@ class Table:
         :return:
         """
 
-        cur = self.connection.cursor()
+        cur = self.connector.connection.cursor()
         cur.execute("SELECT column_name FROM information_schema.columns WHERE table_name = '" + self.tableName + "' AND column_name = 'geom';")
         names = cur.fetchall()
         cur.close()
@@ -429,11 +431,14 @@ class Table:
         Must call commitChanges() to save them.
         :return:
         """
-        cur = self.connection.cursor()
+        cur = self.connector.connection.cursor()
         comm1 = "SELECT COUNT(*) FROM " + self.tableName + ";"
-        count = cur.execute(comm1).fetchall()
+        try:
+            count = cur.execute(comm1).fetchall()
+            print(count)
+        except AttributeError:
+            print("No results found.")
         cur.close
-        print(count)
         comm = "DO $do$ FOR i IN 1.."
 
     def commitChanges(self):
@@ -444,9 +449,9 @@ class Table:
         confirmation = input("Once these changes are committed, they cannot be undone. Proceed? (y/n): ")
         while confirmation is "y" or confirmation is "Y":
             confirmation = "n"
-            if self.connection is not None:
+            if self.connector.connection is not None:
                 try:
-                    self.connection.commit()
+                    self.connector.connection.commit()
                 except (Exception, psy.DatabaseError) as error:
                     print(error)
 
@@ -475,7 +480,7 @@ class Table:
                 else:
                     requestVals += columnNames[i] + "=" + "'" + vals[i] + "');"
             print("Request cmmnd is: " + requestVals)
-            cur = self.connection.cursor()
+            cur = self.connector.connection.cursor()
             cur.execute(requestVals)
             try:
                 rows = cur.fetchall()
@@ -497,7 +502,7 @@ class Table:
         else:
             cmmnd = "SELECT column_name FROM information_schema.columns WHERE table_name = '" + self.tableName + "';"
             print("validate cmmnd is: " + cmmnd)
-            cur = self.connection.cursor()
+            cur = self.connector.connection.cursor()
             cur.execute(cmmnd)
             nameList = list(cur.fetchall())
             cur.close()
@@ -506,23 +511,38 @@ class Table:
                     return False
         return True
 
+    def getTable(self, limit=0):
+        """
+        Return a number of rows of the table. If limit=0, return all.
+        :param limit:
+        :return:
+        """
+        cur = self.connector.connection.cursor()
+        if limit == 0:
+            cmmnd = "SELECT * FROM " + self.tableName + ";"
+        else:
+            cmmnd = "SELECT * FROM " + self.tableName + " LIMIT " + str(limit) + ";"
+        cur.execute(cmmnd)
+        rows = cur.fetchall()
+        return rows
+
 # dc = DatabaseConnector()
 # mConn = dc.getConnectFromConfig(filePath='D:\\config.ini')
-# # mConn = dc.getConnectFromKeywords(host='localhost', dbname='spatialpractice', username='postgres', password='Swa!Exa4')
-# mTable = Table(tableName='insertionwork', connection=mConn)
-# # mTable.buildTableFromFile('D:\\PostGISData\\data\\addtest.csv.xlsx')
+# # # # mConn = dc.getConnectFromKeywords(host='localhost', dbname='spatialpractice', username='postgres', password='Swa!Exa4')
+# mTable = Table(tableName='insertionwork3', databaseConnector=dc)
+# # mTable.buildTableFromFile('D:\\PostGISData\\data\\addtest.csv')
 # # mTable.makeTableSpatial()
-# # mTable.changeTable("superkitties3")
+# # # # mTable.changeTable("superkitties3")
 # # mTable.updateEntries('D:\\PostGISData\\data\\addtest.csv')
 # # mTable.cleanDuplicates()
 # # mTable.commitChanges()
 # # mTable.checkForEntryByCountryLoc('AFGHANISTAN', 'DARUL AMAN')
-#
-# print(mTable.getEntriesByInput(['United States'], ['Country']))
-# print(mTable.getEntriesByInput(['United Staweeftes'], ['Country']))
-# print(mTable.getEntriesByInput(['United States'], ['Couweentry']))
-# print(mTable.getEntriesByInput(['United States', 'Dogs'], ['Country']))
-# print(mTable.getEntriesByInput(['United States'], ['Country', 'Location']))
-# print(mTable.getEntriesByInput(['Angola', 'ANGOLA'], ['country', 'location']))
-
+# # #
+# # print(mTable.getEntriesByInput(['United States'], ['Country']))
+# # print(mTable.getEntriesByInput(['United Staweeftes'], ['Country']))
+# # print(mTable.getEntriesByInput(['United States'], ['Couweentry']))
+# # print(mTable.getEntriesByInput(['United States', 'Dogs'], ['Country']))
+# # print(mTable.getEntriesByInput(['United States'], ['Country', 'Location']))
+# # print(mTable.getEntriesByInput(['Angola', 'ANGOLA'], ['country', 'location']))
+# mTable.getTable(10)
 # dc.closeConnection()

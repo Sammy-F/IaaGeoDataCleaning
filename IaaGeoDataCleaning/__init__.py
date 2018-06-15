@@ -317,6 +317,6 @@ class NameHandler:
                     return formattedName
         return False
 
-validator = GeocodeValidator("D:\\PostGISData\\data\\tblLocations.xlsx")
+validator = GeocodeValidator("D:\\PostGISData\\data\\tblLocation.xlsx")
 validator.run()
 
