@@ -28,32 +28,5 @@ from string import ascii_uppercase
 #     print(mTable.getTable(10))  # Visual test
 #     print(mTable.getTable(0))   # Visual test
 
-def testMakeTableSpatial():
-    mConnector = cu.DatabaseConnector()
-    mConnector.getConnectFromConfig(filePath='D:\\config.ini')
-    name = ''.join(choice(ascii_uppercase) for i in range(16))
-
-    mTable = cu.Table(name, mConnector)
-    mTable.buildTableFromFile('D:\\IaaGeoDataCleaning\\IaaGeoDataCleaning\\verified_data_2018-06-15.csv')
-    mTable.makeTableSpatial()
-    mTable.commitChanges()
-
-    cmmnd = "SELECT EXISTS ( SELECT 1 FROM information_schema.columns WHERE table_name='" + mTable.tableName + "' AND column_name='geom');"
-    cmmnd = "SELECT EXISTS(SELECT 1 FROM information_schema.columns WHERE table_name = '" + name + "' AND column_name = 'geom');"
-    cur = mConnector.connection.cursor()
-    cur.execute(cmmnd)
-    entry = cur.fetchone()
-    print(entry)
-    cur.close()
-
-    assert entry is (True,)
-
-    print(entry)
-
-    print(mTable.getTable(10))  # Visual test
-    print(mTable.getTable(0))  # Visual test
-
-
 # testConnectingWithGoodParams()
 # testTableGeneration()
-testMakeTableSpatial()
