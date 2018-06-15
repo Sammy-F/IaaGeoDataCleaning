@@ -11,9 +11,7 @@ import geopy as gp
 # import country_bounding_boxes as cbb
 from shapely.geometry import Point
 
-# TODO: Clean up logging methods: create a dictionary to represent values in a row?
-# TODO: Write a class to merge files
-# TODO: Return the logs
+# TODO: Document code
 
 """
 GeocodeValidator allows the user to perform reverse geocoding
@@ -33,7 +31,9 @@ Note that some borders used are disputed
 
 
 class GeocodeValidator:
-    def __init__(self):
+    def __init__(self, filePath):
+        self.filePath = filePath
+
         self.map = gpd.read_file("mapinfo/TM_WORLD_BORDERS-0.3.shp")
         self.pht = gp.Photon(timeout=3)
 
@@ -51,43 +51,67 @@ class GeocodeValidator:
         self.countryCodes = {}
         self.createCountryCodeDict()
 
-    def verifyInfo(self, location, country, inp_lat, inp_lng):
-        locationInfo = self.formatInformation(location, country, inp_lat, inp_lng)
+    def verifyInfo(self, location=None, country=None, inpLat=None, inpLng=None):
+        """
+        Reads in data for a single location and verifies its information/checks for missing data.
+        :param location:
+        :param country:
+        :param inpLat:
+        :param inpLng:
+        :return: a tuple containing 2 values:
+         the type of entry as a tuple and the entry's information as a dictionary.
+        """
+        locationInfo = self.formatInformation(location, country, inpLat, inpLng)
         checkedRow = self.checkRowInput(locationInfo)
         # tuple (inp_type, dict)
         inpType = checkedRow[0]
         locationInfo = checkedRow[1]
 
+        # Location or country is not entered
         if inpType == -5:
             return (inpType, self.entryType[inpType]), locationInfo
 
-        elif inpType == 0:    # Everything is entered
-            # Validate those coordinates
+        # Everything is entered
+        elif inpType == 0:
+            # Validate entered coordinates
             checkedRowCoords = self.verifyCoordinates(locationInfo)
 
             coordType = checkedRowCoords[0]
             locationInfo = checkedRowCoords[1]
-            print(coordType)
 
+            # Attempt to find actual coordinates if the ones entered are not correct
             if coordType == -1:
                 findAltCoords = self.geocodeCoordinates(locationInfo)
                 coordType = findAltCoords[0]
                 locationInfo = findAltCoords[1]
 
+        # Attempt to find coordinates if not entered
         else:
-            # Geocode
             findAltCoords = self.geocodeCoordinates(locationInfo)
             coordType = findAltCoords[0]
             locationInfo = findAltCoords[1]
 
-        print(locationInfo)
         return (coordType, self.entryType[coordType]), locationInfo
 
     def formatInformation(self, location, country, latitude, longitude):
+        """
+        Formats the entered data in a standardized dictionary.
+        :param location:
+        :param country:
+        :param latitude:
+        :param longitude:
+        :return:
+        """
         return {'Location': location, 'Country': country, 'Latitude': latitude, 'Longitude': longitude,
                 'Recorded_Lat': None, 'Recorded_Lng': None, 'Address': None, 'Country_Code': None}
 
     def checkRowInput(self, locationDict):
+        """
+        Checks to see if all the necessary fields are entered.
+        :param locationDict:
+        :return: a tuple containing 2 values:
+        the type of entry as an integer and the (altered) location dictionary.
+        """
         if pd.isnull(locationDict['Location']) or pd.isnull(locationDict['Country']):
             return -5, locationDict
 
@@ -116,6 +140,12 @@ class GeocodeValidator:
         return 0, locationDict
 
     def verifyCoordinates(self, locationDict):
+        """
+        Uses a shapefile to determine whether the entered coordinates fall within the borders of the country entered.
+        :param locationDict:
+        :return: a tuple containing 2 values:
+        the type of entry and the (altered) location dictionary.
+        """
         lat = locationDict['Latitude']
         lng = locationDict['Longitude']
 
@@ -143,6 +173,12 @@ class GeocodeValidator:
         return -1, locationDict
 
     def geocodeCoordinates(self, locationDict):
+        """
+        Finds the coordinates of a location based on the entered location and country.
+        :param locationDict:
+        :return: a tuple containing 2 values:
+        the type of entry and the (altered) location dictionary.
+        """
         location = locationDict['Location']
         country = locationDict['Country']
 
@@ -170,29 +206,88 @@ class GeocodeValidator:
             return -1, locationDict
 
         except:
-            print('y')
             return -1, locationDict
 
-    def queryFromDatabase(self, filePath, location, country, latitude, longitude):
-        database = DatabaseInitializer(filePath).readFile()
+    def queryAllFields(self, location, country, latitude, longitude,
+                       filePath='/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/verified_data_2018-06-14.csv'):
+        """
+        Does a full search for entries matching the fields.
+        :param location:
+        :param country:
+        :param latitude:
+        :param longitude:
+        :param filePath:
+        :return: a list of matched rows as dictionaries.
+        """
+        database = DatabaseInitializer().readFile(filePath)
         if database is None:
-            return False
+            return None
+
+        results = []
 
         locationInfo = self.formatInformation(location, country, latitude, longitude)
         # See whether location is in the database
-        # Reverse contains
-        indices = database[(database['Location'].str.contains(locationInfo['Location'], case=False, na=False) &
-                            database['Country'].str.contains(locationInfo['Country'], case=False, na=False))].index.tolist()
-        print(indices)
-        for row in indices:
-            latInData = database.loc[row, 'Latitude']
-            lngInData = database.loc[row, 'Longitude']
-            if math.isclose(latInData, locationInfo['Latitude'], rel_tol=1e-2) and \
-                    math.isclose(lngInData, locationInfo['Longitude'], rel_tol=1e-2):
-                return True
+        # TODO: Reverse contains
+        closestDF = database[(database['Location'].str.contains(locationInfo['Location'], case=False, na=False) &
+                            database['Country'].str.contains(locationInfo['Country'], case=False, na=False))]
+        for (index, row) in closestDF.iterrows():
+            if math.isclose(latitude, row['Recorded_Lat'], rel_tol=1e-1) and \
+                    math.isclose(longitude, row['Recorded_Lng'], rel_tol=1e-1):
+                loc = database.to_dict(orient='records')[index]
+                results.append(loc)
         # That location is not yet inputted
         # What about asking for whether any of these locations are a match?
-        return False
+        return results
+
+    def queryByLocation(self, location, country,
+                        filePath=None):
+        """
+        Finds all rows with the matching location and country.
+        Can find locations that contain the query but not the other way around (sadly).
+        :param location:
+        :param country:
+        :param filePath:
+        :return: a list of matched rows as dictionaries.
+        """
+        database = DatabaseInitializer().readFile(filePath)
+        if database is None:
+            return None
+
+        results = []
+
+        locationInfo = self.formatInformation(location, country, None, None)
+
+        closestDF = database[(database['Location'].str.contains(locationInfo['Location'], case=False, na=False) &
+                              database['Country'].str.contains(locationInfo['Country'], case=False, na=False))]
+
+        for (index, row) in closestDF.iterrows():
+            loc = database.to_dict(orient='records')[index]
+            results.append(loc)
+
+        return results
+
+    def queryByCoordinates(self, latitude, longitude,
+                           filePath='/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/verified_data_2018-06-14.csv'):
+        """
+        Finds all rows with the matching latitude and longitude.
+        :param latitude:
+        :param longitude:
+        :param filePath:
+        :return: a list of matched rows as dictionaries.
+        """
+        database = DatabaseInitializer().readFile(filePath)
+        if database is None:
+            return None
+
+        results = []
+
+        closestDF = database.ix[(database['Recorded_Lat'] - latitude).abs().argsort()[:10]]
+        for (index, row) in closestDF.iterrows():
+            if math.isclose(latitude, row['Recorded_Lat'], rel_tol=1e-1) and \
+                    math.isclose(longitude, row['Recorded_Lng'], rel_tol=1e-1):
+                loc = database.to_dict(orient='records')[index]
+                results.append(loc)
+        return results
 
     def findFormattedName(self, alternativeName):
         """
@@ -200,7 +295,6 @@ class GeocodeValidator:
         and attempt to find and return the official one
         :param alternativeName:
         """
-
         finder = NameHandler()
         return finder.findName(alternativeName)
 
@@ -218,10 +312,7 @@ class GeocodeValidator:
 
 
 class DatabaseInitializer:
-    def __init__(self, filePath):
-        self.filePath = filePath
-
-    def createNewDatabase(self):
+    def createNewDatabase(self, filePath):
         self.now = datetime.datetime.now()
         self.now = self.now.strftime("%Y-%m-%d")
 
@@ -238,7 +329,7 @@ class DatabaseInitializer:
 
         self.validator = GeocodeValidator()
 
-        self.tobeValidatedLocation = self.readFile()
+        self.tobeValidatedLocation = self.readFile(filePath)
 
         self.run()
 
@@ -290,16 +381,16 @@ class DatabaseInitializer:
         print("Flagged locations are at indicies: " + str(self.flaggedLocations))
 
         pendingData = pd.DataFrame(data=self.pending)
-        pendingData.to_csv(self.pendingDatabase, sep=',', encoding='utf-8')
+        pendingData.to_csv(self.pendingDatabase, sep=',', encoding='utf-8', index=False)
 
         verifiedData = pd.DataFrame(data=self.verified)
-        verifiedData.to_csv(self.verifiedDatabase, sep=',', encoding='utf-8')
+        verifiedData.to_csv(self.verifiedDatabase, sep=',', encoding='utf-8', index=False)
 
-    def readFile(self):
-        if self.filePath.endswith('xlsx'):
-            data = pd.read_excel(self.filePath)
-        elif self.filePath.endswith('csv'):
-            data = pd.read_csv(self.filePath)
+    def readFile(self, filePath):
+        if filePath.endswith('xlsx'):
+            data = pd.read_excel(filePath)
+        elif filePath.endswith('csv'):
+            data = pd.read_csv(filePath)
         else:
             print('Support is only available for .xlsx and .csv files.')
             data = None
@@ -333,5 +424,11 @@ class NameHandler:
 
 
 validator = GeocodeValidator()
-res = validator.queryFromDatabase('verified_data_2018-06-14.csv', 'Kilombo', 'Angola', -8.95, 14.75)
+res = validator.queryAllFields('Kilombo', 'Angola', -8.95, 14.75)
 print(res)
+
+queryLoc = validator.queryByLocation('El Ovejero', 'China')
+print(queryLoc)
+
+queryCoord = validator.queryByCoordinates(-16.73, -179.87)
+print(queryCoord)
