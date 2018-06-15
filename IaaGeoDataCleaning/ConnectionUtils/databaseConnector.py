@@ -377,7 +377,6 @@ class Table:
 
                     cmnd = "INSERT INTO " + self.tableName + " VALUES (" + self.makeInsertionString(cmndArr) + " NULL);"
 
-
                     cur = self.connection.cursor()
                     cur.execute(cmnd)
                     cur.close()
