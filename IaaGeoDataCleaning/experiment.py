@@ -451,15 +451,13 @@ class NameHandler:
                     return formattedName
         return False
 
-# database = DatabaseInitializer("/Users/thytnguyen/Desktop/tblLocation.xlsx")
-# database.run()
-# correctLog = database.getVerifiedLog()
-# incorrectLog = database.getPendingLog()
+database = DatabaseInitializer()
+database.createNewDatabase("D:\\PostGISData\\data\\TblLocation.xlsx")
+correctLog = database.getVerifiedLog()
+incorrectLog = database.getPendingLog()
 
 
 validator = GeocodeValidator()
-res = validator.queryAllFields(location='Kilombo', latitude=-8.9, longitude=14.75)
-print(res)
 #
 # queryLoc = validator.queryByLocation('El Ovejero', 'China')
 # print(queryLoc)

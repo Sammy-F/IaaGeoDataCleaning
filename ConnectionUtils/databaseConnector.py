@@ -202,7 +202,7 @@ class Table:
         """
 
         addGeom = "ALTER TABLE " + self.tableName + " ADD COLUMN geom geometry(POINT, 4326);"
-        updateTable = "UPDATE " + self.tableName + " SET geom = ST_SETSRID(ST_MakePoint(found_lng, found_lat), 4326);"
+        updateTable = "UPDATE " + self.tableName + " SET geom = ST_SETSRID(ST_MakePoint(Recorded_Lng, Recorded_Lat), 4326);"
 
         try:
             cur = self.connector.connection.cursor()
@@ -237,7 +237,6 @@ class Table:
                     keepArr.append(typeStr)
                 i = i + 1
             else:
-                print("hit else")
                 typeArr = []
                 for name in names:
                     typeStr = type(row[name]).__name__.capitalize()
@@ -245,7 +244,6 @@ class Table:
 
                 for i in range(len(keepArr)):
                     if keepArr[i] != typeArr[i]:
-                        print("notsame")
                         keepArr[i] = "Str"
 
         return names, keepArr
@@ -362,8 +360,8 @@ class Table:
             return
 
         for (index, row) in tableFile.iterrows():
-            lat = row['found_lat']
-            long = row['found_lng']
+            lat = row['Recorded_Lat']
+            long = row['Recorded_Lng']
 
             if not self.checkForEntryByLatLon(lat, long)[0]:
                 countryName = row['Country']
@@ -403,7 +401,7 @@ class Table:
     def checkGeomNulls(self):
         cur = self.connector.connection.cursor()
         if self.isSpatial():
-            updateTable = "UPDATE " + self.tableName + " SET geom = ST_SETSRID(ST_MakePoint(found_lng, found_lat), 4326) WHERE geom IS NULL;"
+            updateTable = "UPDATE " + self.tableName + " SET geom = ST_SETSRID(ST_MakePoint(Recorded_Lng, Recorded_Lat), 4326) WHERE geom IS NULL;"
             print("tried update")
             cur.execute(updateTable)
         cur.close()
