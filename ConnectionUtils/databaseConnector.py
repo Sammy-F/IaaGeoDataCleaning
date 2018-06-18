@@ -3,6 +3,7 @@ from configparser import ConfigParser
 import pandas as pd
 import xlrd
 import csv
+import numpy as np
 
 """
 TODO: Create tool for checking if a given row/entry already exists and insert it if it doesn't
@@ -364,8 +365,12 @@ class Table:
             long = row['Recorded_Lng']
 
             if not self.checkForEntryByLatLon(lat, long)[0]:
+                print("Latlon not found")
                 countryName = row['Country']
                 locName = row['Location']
+
+                print(countryName)
+                print(locName)
 
                 if not self.checkForEntryByCountryLoc(countryName, locName)[0]:
                     # Entry does not exist
@@ -375,7 +380,7 @@ class Table:
                     for item in row.values:
                         cmndArr.append(item)
 
-                    cmnd = "INSERT INTO " + self.tableName + " VALUES (" + self.makeInsertionString(cmndArr) + " NULL);"
+                    cmnd = "INSERT INTO " + self.tableName + " VALUES (" + self.makeInsertionString(cmndArr) + " );"
 
 
                     cur = self.connector.connection.cursor()
@@ -389,11 +394,27 @@ class Table:
 
         valsStr = ''
 
-        for i in range(len(valsArr)):
+        for i in range(len(valsArr)-2):
             if isinstance(valsArr[i], str):
+                print("isstr")
+                print(valsArr[i])
                 valsStr += "'" + str(valsArr[i]) + "', "
             else:
-                valsStr += str(valsArr[i]) + ", "
+                if valsArr[i] is None or pd.isnull(valsArr[i]) or valsArr[i] == np.nan:
+                    print("got null")
+                    valsStr += "NULL,"
+                else:
+                    print(valsArr[i])
+                    valsStr += str(valsArr[i]) + ", "
+
+        if isinstance(valsArr[len(valsArr)-1], str):
+            valsStr += "'" + str(valsArr[len(valsArr)-1]) + "' "
+        else:
+            if valsArr[len(valsArr)-1] is None or pd.isnull(valsArr[len(valsArr)-1]) or valsArr[len(valsArr)-1] == np.nan:
+                print("got nonetype")
+                valsStr += "NULL"
+            else:
+                valsStr += str(valsArr[len(valsStr)-1]) + " "
 
         print(valsStr)
         return valsStr
@@ -524,16 +545,16 @@ class Table:
         rows = cur.fetchall()
         return rows
 
-# dc = DatabaseConnector()
-# mConn = dc.getConnectFromConfig(filePath='D:\\config.ini')
+dc = DatabaseConnector()
+mConn = dc.getConnectFromConfig(filePath='D:\\config.ini')
 # # # # mConn = dc.getConnectFromKeywords(host='localhost', dbname='spatialpractice', username='postgres', password='Swa!Exa4')
-# mTable = Table(tableName='insertionwork3', databaseConnector=dc)
-# # mTable.buildTableFromFile('D:\\PostGISData\\data\\addtest.csv')
-# # mTable.makeTableSpatial()
+mTable = Table(tableName='tester4', databaseConnector=dc)
+# mTable.buildTableFromFile('D:\\IaaGeoDataCleaning\\IaaGeoDataCleaning\\verified_data_2018-06-14.csv')
+# mTable.makeTableSpatial()
 # # # # mTable.changeTable("superkitties3")
-# # mTable.updateEntries('D:\\PostGISData\\data\\addtest.csv')
+mTable.updateEntries('D:\\IaaGeoDataCleaning\\IaaGeoDataCleaning\\verified_data_2018-06-14.csv')
 # # mTable.cleanDuplicates()
-# # mTable.commitChanges()
+mTable.commitChanges()
 # # mTable.checkForEntryByCountryLoc('AFGHANISTAN', 'DARUL AMAN')
 # # #
 # # print(mTable.getEntriesByInput(['United States'], ['Country']))
@@ -543,4 +564,4 @@ class Table:
 # # print(mTable.getEntriesByInput(['United States'], ['Country', 'Location']))
 # # print(mTable.getEntriesByInput(['Angola', 'ANGOLA'], ['country', 'location']))
 # mTable.getTable(10)
-# dc.closeConnection()
+dc.closeConnection()

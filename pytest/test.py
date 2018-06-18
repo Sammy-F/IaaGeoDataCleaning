@@ -2,6 +2,7 @@ from ConnectionUtils import databaseConnector as cu
 import pytest
 from random import choice
 from string import ascii_uppercase
+
 # def testConnectingWithGoodParams():
 #     mConnector = cu.DatabaseConnector()
 #
@@ -45,6 +46,35 @@ from string import ascii_uppercase
 #
 #     mConnector.closeConnection()
 
+def testMakeSpatial():
+    mConnector = cu.DatabaseConnector()
+
+    mConnector.getConnectFromConfig(filePath='D:\\config.ini')
+    name = ''.join(choice(ascii_uppercase) for i in range(16))
+
+    mTable = cu.Table(name, mConnector)
+    mTable.buildTableFromFile('D:\\IaaGeoDataCleaning\\IaaGeoDataCleaning\\verified_data_2018-06-15.csv')
+
+    mConnector.connection.commit()
+
+    cmmnd = "SELECT column_name FROM information_schema.columns WHERE table_name = '" + name + "' AND column_name = 'geom';";
+    cur = mConnector.connection.cursor()
+    cur.execute(cmmnd)
+    result = cur.fetchall()
+    cur.close()
+    print(result)
+    assert len(result) == 0
+
+    mTable.makeTableSpatial()
+
+    cmmnd = "SELECT column_name FROM information_schema.columns WHERE table_name='" + name + "' AND column_name='geom'"
+    cur = mConnector.connection.cursor()
+    cur.execute(cmmnd)
+    result = cur.fetchall()
+    cur.close()
+    print(result)
+    assert len(result) > 0
+
 def testGetEntries():
     mConnector = cu.DatabaseConnector()
 
@@ -57,13 +87,13 @@ def testGetEntries():
 
     check = mTable.checkForEntryByLatLon(lat=34.48845, lon=69.20288)
     assert check[0] is True
-    print(str(check[1])) # Visual check
+    print(str(check[1]))    # Visual check
     check = mTable.checkForEntryByLatLon(lat=-133, lon=0.1)
     assert check[0] is False
 
     check = mTable.checkForEntryByCountryLoc(countryName='Afghanistan', locationName='Darul Aman')
     assert check[0] is True
-    print(str(check[1])) # Visual check
+    print(str(check[1]))    # Visual check
     check = mTable.checkForEntryByCountryLoc(countryName='Afghanfeedistan', locationName='Darugl Aman')
     assert check[0] is False
     check = mTable.checkForEntryByCountryLoc(countryName='Afghasdsnistan', locationName='Darul Aman')
