@@ -1,5 +1,7 @@
 from IaaGeoDataCleaning.IaaGeoDataCleaning import experiment as exp
 import pytest
+import pandas as pd
+
 # entryType = {0: 'correct location data', 1: 'entered (lat, -lng)', 2: 'entered (-lat, lng)',
 #              3: 'entered (-lat, -lng)', 4: 'entered (lng, lat)', 5: 'entered (lng, -lat)',
 #              6: 'entered (-lng, lat', 7: 'entered (-lng, -lat)', 8: 'no lat/lng entered - geocoded location',
@@ -8,6 +10,7 @@ import pytest
 #              -5: 'no location/country entered / wrong country format'}
 
 validator = exp.GeocodeValidator()
+
 
 def testCheckInput():
     # Missing location information
@@ -28,7 +31,6 @@ def testCheckInput():
     check = validator.checkInput(wrongCountryFormat)
     assert check[0] == -5
     assert isinstance(check[1], dict)
-
 
     # Missing latitude and longitude but should pass location because the names will be found in nameHandler
     missingLng = validator.formatInformation('Touba', "Cote d'Ivoire", 8.366, None)
@@ -133,7 +135,79 @@ def testVerifyInfo():
     assert pytest.approx(incorrect[1]['Recorded_Lng'], 1e-1) == 39.15
 
 
+def testQueryAllFields():
+    # In the database
+    inDB = validator.queryAllFields('Ambo', 'Ethiopia', 8.96, 38.9)
+    assert len(inDB) == 1
+
+    # Location and country is in the database but wrong latitude/longitude
+    missing = validator.queryAllFields('Ambo', 'Ethiopia', 10.31, -23.912)
+    assert len(missing) == 0
+
+    # Different country name
+    dif = validator.queryAllFields('Tifton', 'United States', 31.45, -83.51)
+    assert len(dif) == 2
 
 
+def testQueryByLocation():
+    inDB = validator.queryByLocation('Campos Azules', 'Nicaragua')
+    assert len(inDB) == 2
 
-testVerifyInfo()
+    # Entry in pending data
+    notInDB = validator.queryByLocation('Mungushi', 'Tanzania')
+    assert len(notInDB) == 0
+    inDB = validator.queryByLocation('Mungushi', 'Tanzania',
+                                     '~/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/pending_data_2018-06-15.csv')
+    assert len(inDB) == 1
+
+
+def testQuery():
+    # Missing location and country
+    inDB = validator.query(latitude=13.534, longitude=-85.926)
+    assert len(inDB) > 0
+    # Missing location and country but not in database
+    notInDB = validator.query(latitude=42.12, longitude=0)
+    assert len(notInDB) == 0
+
+    # Missing latitude and longitude
+    inDB = validator.query(location='LAYIN', country='Nigeria')
+    assert len(inDB) == 1
+
+    # All arguments are entered
+    inDB = validator.query(location='LA TRINIDAD', country='NICARAGUA', latitude=12.96, longitude=-86.27)
+    assert len(inDB) == 1
+
+
+def testAddLocation():
+    # Entries already in the data
+    inDB = validator.addLocation('College Station', 'United States')
+    assert isinstance(inDB, list)
+    inDB = validator.addLocation(latitude=19.67, longitude=-103.6)
+    assert len(inDB) > 0
+
+    # Location and country entered, no latitude and longitude
+    newEntry = validator.addLocation('Hudson Ohio', 'USA')
+    assert isinstance(newEntry, tuple)
+    assert newEntry[0] == 8
+
+    # Flipped coordinates
+    newEntry = validator.addLocation('SICILY', 'ITALY', -37.6, -14.01)
+    assert isinstance(newEntry, tuple)
+    assert newEntry[0] == 3
+    assert pytest.approx(newEntry[1]['Recorded_Lat'], 1e-2) == -newEntry[1]['Latitude']
+    assert pytest.approx(newEntry[1]['Recorded_Lng'], 1e-2) == -newEntry[1]['Longitude']
+
+    # Entry in the pending database
+    newEntry = validator.addLocation('Yezin', 'Myanmar', 23.03, 95.47)
+    df = pd.read_csv('test_pending.csv')
+    assert df.shape[0] == 67
+    df = pd.read_csv('test_verified.csv')
+    assert df.shape[0] == 1404
+
+    # TODO: Recheck for entries in the existing database after verifying coordinates
+    # Cannot be added, no location and country provided
+    newEntry = validator.addLocation(latitude=0, longitude=0)
+    assert newEntry[0] == -5
+
+
+testAddLocation()

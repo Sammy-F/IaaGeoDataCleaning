@@ -32,7 +32,8 @@ Note that some borders used are disputed
 
 class GeocodeValidator:
     def __init__(self):
-        self.map = gpd.read_file("/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/mapinfo/TM_WORLD_BORDERS-0.3.shp")
+        self.map = gpd.read_file(
+            "/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/mapinfo/TM_WORLD_BORDERS-0.3.shp")
         self.pht = gp.Photon(timeout=3)
         self.dbi = DatabaseInitializer()
 
@@ -119,6 +120,7 @@ class GeocodeValidator:
         # Looking up with pycountry
         try:
             locationDict['Country_Code'] = pc.countries.lookup(locationDict['Country']).alpha_2
+            locationDict['Country'] = pc.countries.lookup(locationDict['Country']).name
         except LookupError:
             # Looking up in the dictionary
             try:
@@ -133,7 +135,8 @@ class GeocodeValidator:
                     locationDict['Country_Code'] = pc.countries.lookup(altCountryName).alpha_2
 
         # Checking if lat/lng were entered
-        if (pd.isnull(locationDict['Latitude']) or pd.isnull(locationDict['Longitude'])) or (locationDict['Latitude'] == 0 and locationDict['Longitude'] == 0):
+        if (pd.isnull(locationDict['Latitude']) or pd.isnull(locationDict['Longitude'])) or (
+                locationDict['Latitude'] == 0 and locationDict['Longitude'] == 0):
             return -2, locationDict
 
         return 0, locationDict
@@ -207,6 +210,19 @@ class GeocodeValidator:
         except:
             return -1, locationDict
 
+    def query(self, location=None, country=None, latitude=None, longitude=None,
+              filePath='/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/verified_data_2018-06-15.csv'):
+        if location is not None and country is not None and latitude is not None and longitude is not None:
+            return self.queryAllFields(location, country, latitude, longitude, filePath)
+        elif (location is not None and country is not None) and (latitude is None or longitude is None):
+            return self.queryByLocation(location, country, filePath)
+        elif (location is None or country is None) and (latitude is not None and longitude is not None):
+            return self.queryByCoordinates(latitude, longitude, filePath)
+        else:
+            print('Not enough information.')
+            return []
+
+    # TODO: add a query method that can handle all cases
     def queryAllFields(self, location, country, latitude, longitude,
                        filePath='/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/verified_data_2018-06-15.csv'):
         """
@@ -228,7 +244,7 @@ class GeocodeValidator:
         # See whether location is in the database
         # TODO: Reverse contains
         closestDF = database[(database['Location'].str.contains(locationInfo['Location'], case=False, na=False) &
-                            database['Country'].str.contains(locationInfo['Country'], case=False, na=False))]
+                              database['Country'].str.contains(locationInfo['Country'], case=False, na=False))]
         for (index, row) in closestDF.iterrows():
             if math.isclose(latitude, row['Recorded_Lat'], rel_tol=1e-1) and \
                     math.isclose(longitude, row['Recorded_Lng'], rel_tol=1e-1):
@@ -290,6 +306,17 @@ class GeocodeValidator:
 
     def addLocation(self, location=None, country=None, latitude=None, longitude=None,
                     filePath='/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/verified_data_2018-06-15.csv'):
+        """
+        Checks to see whether a location is already in the database,
+        if not then add it to the database.
+        :param location:
+        :param country:
+        :param latitude:
+        :param longitude:
+        :param filePath:
+        :return: the found rows as a list if the location is already in the database or
+                 a tuple containing the input type and the location information in a dictionary
+        """
         querySearch = []
         if location is not None and country is not None:
             querySearch = self.queryByLocation(location, country, filePath)
@@ -313,13 +340,12 @@ class GeocodeValidator:
                     indices.sort(key=int)
                     indices.sort(reverse=True)
                     for index in indices:
-                        print(index)
                         self.dbi.deleteRowFromDB(index,
                                                  '/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/pending_data_2018-06-15.csv')
                 # Add to verified
                 newRowDF = pd.DataFrame.from_dict([verified[1]])
                 self.dbi.addRowToDB(newRowDF, filePath)
-                return verified
+            return verified
 
     def findFormattedName(self, alternativeName):
         """
@@ -335,12 +361,14 @@ class GeocodeValidator:
         Creates a dictionary whose (key, value) pairs are a country and its country code
         in order to utilize the geocoder API calls.
         """
-        countriesData = pd.read_csv("/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/countryInfo.txt", delimiter="\t")
+        countriesData = pd.read_csv(
+            "/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/countryInfo.txt", delimiter="\t")
 
         for (index, row) in countriesData.iterrows():
             countryCode = str(row.loc["ISO"])
             country = str(row.loc["Country"])
             self.countryCodes[country] = countryCode
+
 
 class DatabaseInitializer:
     def createNewDatabase(self, filePath):
@@ -417,6 +445,11 @@ class DatabaseInitializer:
         verifiedData.to_csv(self.verifiedDatabase, sep=',', encoding='utf-8', index_label='Index')
 
     def readFile(self, filePath):
+        """
+        Reads in csv or excel file.
+        :param filePath:
+        :return: a pandas data frame.
+        """
         if filePath.endswith('xlsx'):
             data = pd.read_excel(filePath)
         elif filePath.endswith('csv'):
@@ -427,6 +460,13 @@ class DatabaseInitializer:
         return data
 
     def addRowToDB(self, newDF, databasePath):
+        """
+        Adds a row to the database the file path points to,
+        overwrites the file with the new database file in csv format.
+        :param newDF: the new row as a data frame
+        :param databasePath: the file path to the database to update
+        :return: True if updated.
+        """
         database = self.readFile(databasePath)
         if database is None:
             return False
@@ -438,6 +478,13 @@ class DatabaseInitializer:
         return True
 
     def deleteRowFromDB(self, rowIndex, databasePath):
+        """
+        Deletes a row from the database the file path points to,
+        overwrites the file with the new database file in csv format.
+        :param rowIndex: the index of the row to be deleted
+        :param databasePath: the file path to the database to update
+        :return: True if updated.
+        """
         database = self.readFile(databasePath)
         if database is None:
             return False
@@ -446,7 +493,8 @@ class DatabaseInitializer:
 
         if databasePath.endswith('xlsx'):
             databasePath = databasePath.replace('xlsx', 'csv')
-        database.to_csv(databasePath, sep=',', encoding='utf-8', index=False)
+        database.to_csv('test_pending.csv', sep=',', encoding='utf-8', index=False)
+
 
 class NameHandler:
     def __init__(self):
@@ -468,6 +516,7 @@ class NameHandler:
                 if (checkCountry.lower() == alternativeName.lower()):
                     return formattedName
         return False
+
 
 # database = DatabaseInitializer("/Users/thytnguyen/Desktop/tblLocation.xlsx")
 # database.run()
