@@ -133,7 +133,47 @@ def testVerifyInfo():
     assert pytest.approx(incorrect[1]['Recorded_Lng'], 1e-1) == 39.15
 
 
+def testQueryAllFields():
+    # In the database
+    inDB = validator.queryAllFields('Ambo', 'Ethiopia', 8.96, 38.9)
+    assert len(inDB) == 1
+
+    # Location and country is in the database but wrong latitude/longitude
+    missing = validator.queryAllFields('Ambo', 'Ethiopia', 10.31, -23.912)
+    assert len(missing) == 0
+
+    # Different country name
+    dif = validator.queryAllFields('Tifton', 'United States', 31.45, -83.51)
+    assert len(dif) == 2
 
 
+def testQueryByLocation():
+    inDB = validator.queryByLocation('Campos Azules', 'Nicaragua')
+    assert len(inDB) == 2
 
-testVerifyInfo()
+    # Entry in pending data
+    notInDB = validator.queryByLocation('Mungushi', 'Tanzania')
+    assert len(notInDB) == 0
+    inDB = validator.queryByLocation('Mungushi', 'Tanzania',
+                                     '~/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/pending_data_2018-06-15.csv')
+    assert len(inDB) == 1
+
+
+def testQuery():
+    # Missing location and country
+    inDB = validator.query(latitude=13.534, longitude=-85.926)
+    assert len(inDB) > 0
+    # Missing location and country but not in database
+    notInDB = validator.query(latitude=42.12, longitude=0)
+    assert len(notInDB) == 0
+
+    # Missing latitude and longitude
+    inDB = validator.query(location='LAYIN', country='Nigeria')
+    assert len(inDB) == 1
+
+    # All arguments are entered
+    inDB = validator.query(location='LA TRINIDAD', country='NICARAGUA', latitude=12.96, longitude=-86.27)
+    assert len(inDB) == 1
+
+
+testQuery()
