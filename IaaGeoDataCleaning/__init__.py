@@ -39,7 +39,7 @@ class GeocodeValidator:
 
         self.filePath = filePath
 
-        self.map = gpd.read_file("mapinfo/TM_WORLD_BORDERS-0.3.shp")
+        self.map = gpd.read_file("/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/mapinfo/TM_WORLD_BORDERS-0.3.shp")
         self.pht = gp.Photon(timeout=3)
 
         self.flaggedLocations = []  # flagged indexes in data frame
@@ -316,7 +316,7 @@ class NameHandler:
                 if (checkCountry == alternativeName):
                     return formattedName
         return False
-
-validator = GeocodeValidator("D:\\PostGISData\\data\\tblLocation.xlsx")
-validator.run()
+#
+# validator = GeocodeValidator("D:\\PostGISData\\data\\tblLocation.xlsx")
+# validator.run()
 

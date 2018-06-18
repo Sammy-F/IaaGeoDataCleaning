@@ -32,7 +32,7 @@ Note that some borders used are disputed
 
 class GeocodeValidator:
     def __init__(self):
-        self.map = gpd.read_file("mapinfo/TM_WORLD_BORDERS-0.3.shp")
+        self.map = gpd.read_file("/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/mapinfo/TM_WORLD_BORDERS-0.3.shp")
         self.pht = gp.Photon(timeout=3)
         self.dbi = DatabaseInitializer()
 
@@ -43,8 +43,6 @@ class GeocodeValidator:
                           8: 'no lat/lng entered - geocoded location',
                           -1: 'incorrect location data/cannot find coordinates',
                           -2: 'no latitude and longitude entered',
-                          -3: 'country not found/wrong country format',
-                          -4: 'no location/country entered',
                           -5: 'no location/country entered / wrong country format'}
 
         self.countryCodes = {}
@@ -60,7 +58,7 @@ class GeocodeValidator:
         :return: the type of entry and the entry's information as a dictionary
         """
         locationInfo = self.formatInformation(location, country, inpLat, inpLng)
-        checkedRow = self.checkRowInput(locationInfo)
+        checkedRow = self.checkInput(locationInfo)
         # tuple (inp_type, dict)
         inpType = checkedRow[0]
         locationInfo = checkedRow[1]
@@ -105,7 +103,7 @@ class GeocodeValidator:
         return {'Location': location, 'Country': country, 'Latitude': latitude, 'Longitude': longitude,
                 'Recorded_Lat': None, 'Recorded_Lng': None, 'Address': None, 'Country_Code': None}
 
-    def checkRowInput(self, locationDict):
+    def checkInput(self, locationDict):
         """
         Checks to see if all the necessary fields are entered.
         :param locationDict:
@@ -131,6 +129,7 @@ class GeocodeValidator:
                 if not altCountryName:
                     return -5, locationDict
                 else:
+                    locationDict['Country'] = altCountryName
                     locationDict['Country_Code'] = pc.countries.lookup(altCountryName).alpha_2
 
         # Checking if lat/lng were entered
@@ -306,7 +305,7 @@ class GeocodeValidator:
             verified = self.verifyInfo(location, country, latitude, longitude)
             # Location is valid
             if verified[0] >= 0:
-                # Check to see whether it is an entry in the pending db
+                # Check to see whether it is an entry in the pending database
                 queryInPending = self.queryByLocation(verified[1]['Location'], verified[1]['Country'],
                                                       '/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/pending_data_2018-06-15.csv')
                 if len(queryInPending) > 0:
@@ -336,7 +335,7 @@ class GeocodeValidator:
         Creates a dictionary whose (key, value) pairs are a country and its country code
         in order to utilize the geocoder API calls.
         """
-        countriesData = pd.read_csv("countryInfo.txt", delimiter="\t")
+        countriesData = pd.read_csv("/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/countryInfo.txt", delimiter="\t")
 
         for (index, row) in countriesData.iterrows():
             countryCode = str(row.loc["ISO"])
@@ -460,13 +459,13 @@ class NameHandler:
                                                                    'Democratic Republic of Congo']
         self.namesDict['Spain'] = ['España']
         self.namesDict["Côte d'Ivoire"] = ["Cote d’Ivoire", "Cote D'ivoire", "Cote D'Ivoire"]
-        self.namesDict['Republic of South Africa'] = ['South Africa Rep.']
+        self.namesDict['South Africa'] = ['South Africa Rep.', 'Republic of South Africa']
         self.namesDict['Trinidad and Tobago'] = ['Trinidad Y Tobago']
 
     def findName(self, checkCountry):
         for formattedName, alternativeNames in self.namesDict.items():
             for alternativeName in alternativeNames:
-                if (checkCountry == alternativeName):
+                if (checkCountry.lower() == alternativeName.lower()):
                     return formattedName
         return False
 
