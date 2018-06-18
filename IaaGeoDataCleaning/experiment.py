@@ -11,7 +11,8 @@ import geopy as gp
 # import country_bounding_boxes as cbb
 from shapely.geometry import Point
 
-# TODO: Document code
+# TODO: Recheck for entries in the existing database after verifying coordinates
+# TODO: Make a case that has coordinates but no location info
 
 """
 GeocodeValidator allows the user to perform reverse geocoding

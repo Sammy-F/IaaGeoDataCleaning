@@ -109,7 +109,6 @@ def testVerifyInfo():
     assert pytest.approx(correct[1]['Recorded_Lng'], 1e-2) == correct[1]['Longitude']
 
     # Missing location and country
-    # TODO: Make a case that has coordinates but no location info
     missing = validator.verifyInfo(country='Zaire')
     assert missing[0] == -5
     missing = validator.verifyInfo(location='Jashipur')
@@ -130,7 +129,6 @@ def testVerifyInfo():
     # Incorrect coordinates, geocode
     incorrect = validator.verifyInfo('Kulumsa', 'Ethiopia', 17.8, 20.24)
     assert incorrect[0] == 8
-    print(incorrect[1])
     assert pytest.approx(incorrect[1]['Recorded_Lat'], 1e-1) == 8.0
     assert pytest.approx(incorrect[1]['Recorded_Lng'], 1e-1) == 39.15
 
@@ -204,10 +202,15 @@ def testAddLocation():
     df = pd.read_csv('test_verified.csv')
     assert df.shape[0] == 1404
 
-    # TODO: Recheck for entries in the existing database after verifying coordinates
     # Cannot be added, no location and country provided
     newEntry = validator.addLocation(latitude=0, longitude=0)
     assert newEntry[0] == -5
 
-
+testCheckInput()
+testVerifyCoordinates()
+testGeocodeCoordinates()
+testVerifyInfo()
+testQueryAllFields()
+testQueryByLocation()
+testQuery()
 testAddLocation()
