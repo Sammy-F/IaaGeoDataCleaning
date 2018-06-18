@@ -1,6 +1,7 @@
 from IaaGeoDataCleaning.IaaGeoDataCleaning import experiment as exp
 import pytest
 import pandas as pd
+
 # entryType = {0: 'correct location data', 1: 'entered (lat, -lng)', 2: 'entered (-lat, lng)',
 #              3: 'entered (-lat, -lng)', 4: 'entered (lng, lat)', 5: 'entered (lng, -lat)',
 #              6: 'entered (-lng, lat', 7: 'entered (-lng, -lat)', 8: 'no lat/lng entered - geocoded location',
@@ -9,6 +10,7 @@ import pandas as pd
 #              -5: 'no location/country entered / wrong country format'}
 
 validator = exp.GeocodeValidator()
+
 
 def testCheckInput():
     # Missing location information
@@ -29,7 +31,6 @@ def testCheckInput():
     check = validator.checkInput(wrongCountryFormat)
     assert check[0] == -5
     assert isinstance(check[1], dict)
-
 
     # Missing latitude and longitude but should pass location because the names will be found in nameHandler
     missingLng = validator.formatInformation('Touba', "Cote d'Ivoire", 8.366, None)
@@ -204,9 +205,9 @@ def testAddLocation():
     assert df.shape[0] == 1404
 
     # TODO: Recheck for entries in the existing database after verifying coordinates
-
-
     # Cannot be added, no location and country provided
+    newEntry = validator.addLocation(latitude=0, longitude=0)
+    assert newEntry[0] == -5
 
 
 testAddLocation()
