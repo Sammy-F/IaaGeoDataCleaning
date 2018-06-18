@@ -1,5 +1,6 @@
 from IaaGeoDataCleaning.IaaGeoDataCleaning import experiment as exp
 import pytest
+import pandas as pd
 # entryType = {0: 'correct location data', 1: 'entered (lat, -lng)', 2: 'entered (-lat, lng)',
 #              3: 'entered (-lat, -lng)', 4: 'entered (lng, lat)', 5: 'entered (lng, -lat)',
 #              6: 'entered (-lng, lat', 7: 'entered (-lng, -lat)', 8: 'no lat/lng entered - geocoded location',
@@ -176,4 +177,36 @@ def testQuery():
     assert len(inDB) == 1
 
 
-testQuery()
+def testAddLocation():
+    # Entries already in the data
+    inDB = validator.addLocation('College Station', 'United States')
+    assert isinstance(inDB, list)
+    inDB = validator.addLocation(latitude=19.67, longitude=-103.6)
+    assert len(inDB) > 0
+
+    # Location and country entered, no latitude and longitude
+    newEntry = validator.addLocation('Hudson Ohio', 'USA')
+    assert isinstance(newEntry, tuple)
+    assert newEntry[0] == 8
+
+    # Flipped coordinates
+    newEntry = validator.addLocation('SICILY', 'ITALY', -37.6, -14.01)
+    assert isinstance(newEntry, tuple)
+    assert newEntry[0] == 3
+    assert pytest.approx(newEntry[1]['Recorded_Lat'], 1e-2) == -newEntry[1]['Latitude']
+    assert pytest.approx(newEntry[1]['Recorded_Lng'], 1e-2) == -newEntry[1]['Longitude']
+
+    # Entry in the pending database
+    newEntry = validator.addLocation('Yezin', 'Myanmar', 23.03, 95.47)
+    df = pd.read_csv('test_pending.csv')
+    assert df.shape[0] == 67
+    df = pd.read_csv('test_verified.csv')
+    assert df.shape[0] == 1404
+
+    # TODO: Recheck for entries in the existing database after verifying coordinates
+
+
+    # Cannot be added, no location and country provided
+
+
+testAddLocation()

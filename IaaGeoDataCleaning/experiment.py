@@ -119,6 +119,7 @@ class GeocodeValidator:
         # Looking up with pycountry
         try:
             locationDict['Country_Code'] = pc.countries.lookup(locationDict['Country']).alpha_2
+            locationDict['Country'] = pc.countries.lookup(locationDict['Country']).name
         except LookupError:
             # Looking up in the dictionary
             try:
@@ -207,6 +208,19 @@ class GeocodeValidator:
         except:
             return -1, locationDict
 
+    def query(self, location=None, country=None, latitude=None, longitude=None,
+              filePath='/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/verified_data_2018-06-15.csv'):
+        if location is not None and country is not None and latitude is not None and longitude is not None:
+            return self.queryAllFields(location, country, latitude, longitude, filePath)
+        elif (location is not None and country is not None) and (latitude is None or longitude is None):
+            return self.queryByLocation(location, country, filePath)
+        elif (location is None or country is None) and (latitude is not None and longitude is not None):
+            return self.queryByCoordinates(latitude, longitude, filePath)
+        else:
+            print('Not enough information.')
+            return []
+
+    # TODO: add a query method that can handle all cases
     def queryAllFields(self, location, country, latitude, longitude,
                        filePath='/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/verified_data_2018-06-15.csv'):
         """
@@ -313,13 +327,12 @@ class GeocodeValidator:
                     indices.sort(key=int)
                     indices.sort(reverse=True)
                     for index in indices:
-                        print(index)
                         self.dbi.deleteRowFromDB(index,
                                                  '/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/pending_data_2018-06-15.csv')
                 # Add to verified
                 newRowDF = pd.DataFrame.from_dict([verified[1]])
                 self.dbi.addRowToDB(newRowDF, filePath)
-                return verified
+            return verified
 
     def findFormattedName(self, alternativeName):
         """
@@ -446,7 +459,7 @@ class DatabaseInitializer:
 
         if databasePath.endswith('xlsx'):
             databasePath = databasePath.replace('xlsx', 'csv')
-        database.to_csv(databasePath, sep=',', encoding='utf-8', index=False)
+        database.to_csv('test_pending.csv', sep=',', encoding='utf-8', index=False)
 
 class NameHandler:
     def __init__(self):
