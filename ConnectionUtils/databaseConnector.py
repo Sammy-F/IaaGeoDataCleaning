@@ -135,6 +135,8 @@ class Table:
         :return:
         """
 
+        print("Attempting to build table.")
+
         commands = (commandTuple)
 
         try:
@@ -146,6 +148,7 @@ class Table:
                 self.connector.connection.commit()
         except (Exception, psy.DatabaseError) as error:
             print(error)
+            return
 
     def csvToXlsx(self, filePath):
         wb = xlrd.open_workbook(filePath)
@@ -177,8 +180,8 @@ class Table:
             print('This tool currently only supports .csv files.')
             return
 
+        print("Constructing query from file.")
         schemaTuple = self.loadTableSchema(tableFile)
-
         schemaStr = self.buildSchemaString(schemaTuple)
 
         schemaStr = "CREATE TABLE " + self.tableName + " " + schemaStr
@@ -288,7 +291,8 @@ class Table:
 
     def checkForEntryByLatLon(self, lat, lon, searchRadius=0.5):
         """
-        Check if an entry with the given lat, lon exists. If so, return all rows that match..
+        Check if an entry with the given lat, lon exists. If so, return all rows that match in a tuple where the first
+        value is True or False for whether an entry exist, and the second value is the the rows.
         :param lat:
         :param lon:
         :return:
@@ -298,7 +302,6 @@ class Table:
         try:
             if not self.connector.connection is None:
                 cur = self.connector.connection.cursor()
-                # command = "SELECT * FROM " + self.tableName + " WHERE round(found_lat, 2) = '" + "{0:.2f}".format(lat) + "' AND round(found_lng, 2) = '" + "{0:.2f}".format(lon) + "';"
                 command = "SELECT * FROM " + self.tableName + " WHERE ST_DWITHIN(ST_TRANSFORM(ST_GEOMFROMTEXT('POINT(" + str(lon) + " " + str(lat) + ")', 4326),4326)::geography, ST_TRANSFORM(geom, 4326)::geography, " + str(searchRadius) + ", true)"
                 cur.execute(command)
                 rows = cur.fetchall()
@@ -318,7 +321,8 @@ class Table:
 
     def checkForEntryByCountryLoc(self, countryName, locationName):
         """
-        Check if an entry exists with the given country and location
+        Check if an entry exists with the given country and location. If so, return all rows that match in a
+        tuple where the first value is True or False for whether an entry exist, and the second value is the the rows.
         :param countryName:
         :param locationName:
         :return:
@@ -365,12 +369,8 @@ class Table:
             long = row['Recorded_Lng']
 
             if not self.checkForEntryByLatLon(lat, long)[0]:
-                print("Latlon not found")
                 countryName = row['Country']
                 locName = row['Location']
-
-                print(countryName)
-                print(locName)
 
                 if not self.checkForEntryByCountryLoc(countryName, locName)[0]:
                     # Entry does not exist
@@ -396,34 +396,27 @@ class Table:
 
         for i in range(len(valsArr)-2):
             if isinstance(valsArr[i], str):
-                print("isstr")
-                print(valsArr[i])
                 valsStr += "'" + str(valsArr[i]) + "', "
             else:
                 if valsArr[i] is None or pd.isnull(valsArr[i]) or valsArr[i] == np.nan:
-                    print("got null")
                     valsStr += "NULL,"
                 else:
-                    print(valsArr[i])
                     valsStr += str(valsArr[i]) + ", "
 
         if isinstance(valsArr[len(valsArr)-1], str):
             valsStr += "'" + str(valsArr[len(valsArr)-1]) + "' "
         else:
             if valsArr[len(valsArr)-1] is None or pd.isnull(valsArr[len(valsArr)-1]) or valsArr[len(valsArr)-1] == np.nan:
-                print("got nonetype")
                 valsStr += "NULL"
             else:
                 valsStr += str(valsArr[len(valsStr)-1]) + " "
 
-        print(valsStr)
         return valsStr
 
     def checkGeomNulls(self):
         cur = self.connector.connection.cursor()
         if self.isSpatial():
             updateTable = "UPDATE " + self.tableName + " SET geom = ST_SETSRID(ST_MakePoint(Recorded_Lng, Recorded_Lat), 4326) WHERE geom IS NULL;"
-            print("tried update")
             cur.execute(updateTable)
         cur.close()
         self.connector.connection.commit()
@@ -440,7 +433,6 @@ class Table:
         cur.close()
 
         if len(names) > 0:
-            print("made it")
             return True
         return False
 
@@ -545,23 +537,22 @@ class Table:
         rows = cur.fetchall()
         return rows
 
-dc = DatabaseConnector()
-mConn = dc.getConnectFromConfig(filePath='D:\\config.ini')
-# # # # mConn = dc.getConnectFromKeywords(host='localhost', dbname='spatialpractice', username='postgres', password='Swa!Exa4')
-mTable = Table(tableName='tester4', databaseConnector=dc)
-# mTable.buildTableFromFile('D:\\IaaGeoDataCleaning\\IaaGeoDataCleaning\\verified_data_2018-06-14.csv')
+# dc = DatabaseConnector()
+# mConn = dc.getConnectFromConfig(filePath='D:\\config.ini')
+# mTable = Table(tableName='tester4', databaseConnector=dc)
+# mTable.buildTableFromFile('D:\\IaaGeoDataCleaning\\IaaGeoDataCleaning\\verified_data_2018-06-14-2.csv')
 # mTable.makeTableSpatial()
-# # # # mTable.changeTable("superkitties3")
-mTable.updateEntries('D:\\IaaGeoDataCleaning\\IaaGeoDataCleaning\\verified_data_2018-06-14.csv')
-# # mTable.cleanDuplicates()
-mTable.commitChanges()
-# # mTable.checkForEntryByCountryLoc('AFGHANISTAN', 'DARUL AMAN')
-# # #
-# # print(mTable.getEntriesByInput(['United States'], ['Country']))
-# # print(mTable.getEntriesByInput(['United Staweeftes'], ['Country']))
-# # print(mTable.getEntriesByInput(['United States'], ['Couweentry']))
-# # print(mTable.getEntriesByInput(['United States', 'Dogs'], ['Country']))
-# # print(mTable.getEntriesByInput(['United States'], ['Country', 'Location']))
-# # print(mTable.getEntriesByInput(['Angola', 'ANGOLA'], ['country', 'location']))
-# mTable.getTable(10)
-dc.closeConnection()
+# # # # # # mTable.changeTable("superkitties3")
+# # mTable.updateEntries('D:\\IaaGeoDataCleaning\\IaaGeoDataCleaning\\verified_data_2018-06-14.csv')
+# # # # mTable.cleanDuplicates()
+# # mTable.commitChanges()
+# # # # mTable.checkForEntryByCountryLoc('AFGHANISTAN', 'DARUL AMAN')
+# # # # #
+# # # # print(mTable.getEntriesByInput(['United States'], ['Country']))
+# # # # print(mTable.getEntriesByInput(['United Staweeftes'], ['Country']))
+# # # # print(mTable.getEntriesByInput(['United States'], ['Couweentry']))
+# # # # print(mTable.getEntriesByInput(['United States', 'Dogs'], ['Country']))
+# # # # print(mTable.getEntriesByInput(['United States'], ['Country', 'Location']))
+# # # # print(mTable.getEntriesByInput(['Angola', 'ANGOLA'], ['country', 'location']))
+# # # mTable.getTable(10)
+# dc.closeConnection()
