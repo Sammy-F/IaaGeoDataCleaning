@@ -92,10 +92,8 @@ class DatabaseConnector:
             cur = self.connection.cursor()
             print('PostgreSQL database version:')
             cur.execute('SELECT version()')
-
             db_version = cur.fetchone()
             print(db_version)
-
             cur.close()
 
             return self.connection
@@ -228,9 +226,7 @@ class Table:
 
         names = list(tableFile.columns.values)
         keepArr = []
-
         i = 0
-
         for (index, row) in tableFile.iterrows():
             if i == 0:
                 i = i + 1
@@ -333,19 +329,16 @@ class Table:
             command = "SELECT * FROM " + self.tableName + " WHERE country = '" + countryName + "' AND location = '" + locationName + "';"
             cur.execute(command)
             rows = cur.fetchall()
-
             for row in rows:
                 print(row)
-
             cur.close()
-
             if len(rows) > 0:
                 return True, rows
             else:
                 return False, rows
         else:
-            print(
-                "No connection open. Did you open a connection using getConnectFromKeywords() or getConnectFromConfig()?")
+            print("""No connection open. Did you open a connection using getConnectFromKeywords() 
+                    or getConnectFromConfig()?""")
 
     def changeTable(self, newName):
         self.tableName = newName
@@ -367,11 +360,9 @@ class Table:
         for (index, row) in tableFile.iterrows():
             lat = row['Recorded_Lat']
             long = row['Recorded_Lng']
-
             if not self.checkForEntryByLatLon(lat, long)[0]:
                 countryName = row['Country']
                 locName = row['Location']
-
                 if not self.checkForEntryByCountryLoc(countryName, locName)[0]:
                     # Entry does not exist
                     print("Inserting")
@@ -381,8 +372,6 @@ class Table:
                         cmndArr.append(item)
 
                     cmnd = "INSERT INTO " + self.tableName + " VALUES (" + self.makeInsertionString(cmndArr) + " );"
-
-
                     cur = self.connector.connection.cursor()
                     cur.execute(cmnd)
                     cur.close()
@@ -402,7 +391,6 @@ class Table:
                     valsStr += "NULL,"
                 else:
                     valsStr += str(valsArr[i]) + ", "
-
         if isinstance(valsArr[len(valsArr)-1], str):
             valsStr += "'" + str(valsArr[len(valsArr)-1]) + "' "
         else:
@@ -416,7 +404,8 @@ class Table:
     def checkGeomNulls(self):
         cur = self.connector.connection.cursor()
         if self.isSpatial():
-            updateTable = "UPDATE " + self.tableName + " SET geom = ST_SETSRID(ST_MakePoint(Recorded_Lng, Recorded_Lat), 4326) WHERE geom IS NULL;"
+            updateTable = "UPDATE " + self.tableName + """ SET geom = ST_SETSRID(ST_MakePoint(Recorded_Lng, 
+                        Recorded_Lat), 4326) WHERE geom IS NULL;"""
             cur.execute(updateTable)
         cur.close()
         self.connector.connection.commit()
@@ -536,23 +525,3 @@ class Table:
         cur.execute(cmmnd)
         rows = cur.fetchall()
         return rows
-
-# dc = DatabaseConnector()
-# mConn = dc.getConnectFromConfig(filePath='D:\\config.ini')
-# mTable = Table(tableName='tester4', databaseConnector=dc)
-# mTable.buildTableFromFile('D:\\IaaGeoDataCleaning\\IaaGeoDataCleaning\\verified_data_2018-06-14-2.csv')
-# mTable.makeTableSpatial()
-# # # # # # mTable.changeTable("superkitties3")
-# # mTable.updateEntries('D:\\IaaGeoDataCleaning\\IaaGeoDataCleaning\\verified_data_2018-06-14.csv')
-# # # # mTable.cleanDuplicates()
-# # mTable.commitChanges()
-# # # # mTable.checkForEntryByCountryLoc('AFGHANISTAN', 'DARUL AMAN')
-# # # # #
-# # # # print(mTable.getEntriesByInput(['United States'], ['Country']))
-# # # # print(mTable.getEntriesByInput(['United Staweeftes'], ['Country']))
-# # # # print(mTable.getEntriesByInput(['United States'], ['Couweentry']))
-# # # # print(mTable.getEntriesByInput(['United States', 'Dogs'], ['Country']))
-# # # # print(mTable.getEntriesByInput(['United States'], ['Country', 'Location']))
-# # # # print(mTable.getEntriesByInput(['Angola', 'ANGOLA'], ['country', 'location']))
-# # # mTable.getTable(10)
-# dc.closeConnection()
