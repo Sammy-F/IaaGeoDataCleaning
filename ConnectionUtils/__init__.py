@@ -79,7 +79,6 @@ class DatabaseConnector:
         :param password:
         :param port:
         """
-
         if not self.connection is None:
             self.connection.close
             self.connection = None
@@ -132,11 +131,9 @@ class Table:
         Build table(s) from a command(s)
         :return:
         """
-
         print("Attempting to build table.")
 
         commands = (commandTuple)
-
         try:
             if not self.connector.connection is None:
                 cur = self.connector.connection.cursor()
@@ -223,7 +220,6 @@ class Table:
         :param tableFile:
         :return:
         """
-
         names = list(tableFile.columns.values)
         keepArr = []
         i = 0
@@ -254,7 +250,6 @@ class Table:
         :param schemaTuple:
         :return:
         """
-
         schemaStr = """("""
         for i in range(len(schemaTuple[0])):
             print(schemaTuple[1][i])
@@ -280,6 +275,12 @@ class Table:
         return schemaStr
 
     def loadData(self, cur, filePath):
+        """
+        Load data from a file into an empty table.
+        :param cur:
+        :param filePath:
+        :return:
+        """
         try:
             cur.execute("COPY " + self.tableName + " FROM " + "'" + filePath + "'" + " DELIMITER ',' CSV HEADER")
         except (Exception, psy.DatabaseError) as error:
@@ -341,6 +342,12 @@ class Table:
                     or getConnectFromConfig()?""")
 
     def changeTable(self, newName):
+        """
+        Switch to a different table without creating a new
+        DatabaseConnector
+        :param newName:
+        :return:
+        """
         self.tableName = newName
 
     def updateEntries(self, filePath):
@@ -356,7 +363,6 @@ class Table:
         else:
             print('This tool currently only supports .csv files.')
             return
-
         for (index, row) in tableFile.iterrows():
             lat = row['Recorded_Lat']
             long = row['Recorded_Lng']
@@ -370,19 +376,16 @@ class Table:
                     cmndArr = []
                     for item in row.values:
                         cmndArr.append(item)
-
                     cmnd = "INSERT INTO " + self.tableName + " VALUES (" + self.makeInsertionString(cmndArr) + " );"
                     cur = self.connector.connection.cursor()
                     cur.execute(cmnd)
                     cur.close()
-
         self.connector.connection.commit()
         self.checkGeomNulls()
 
     def makeInsertionString(self, valsArr):
 
         valsStr = ''
-
         for i in range(len(valsArr)-2):
             if isinstance(valsArr[i], str):
                 valsStr += "'" + str(valsArr[i]) + "', "
@@ -398,10 +401,14 @@ class Table:
                 valsStr += "NULL"
             else:
                 valsStr += str(valsArr[len(valsStr)-1]) + " "
-
         return valsStr
 
     def checkGeomNulls(self):
+        """
+        Check for null values in a spatial table and, if they exist, check the lat and lng
+        values to generate geometry.
+        :return:
+        """
         cur = self.connector.connection.cursor()
         if self.isSpatial():
             updateTable = "UPDATE " + self.tableName + """ SET geom = ST_SETSRID(ST_MakePoint(Recorded_Lng, 
@@ -420,26 +427,9 @@ class Table:
         cur.execute("SELECT column_name FROM information_schema.columns WHERE table_name = '" + self.tableName + "' AND column_name = 'geom';")
         names = cur.fetchall()
         cur.close()
-
         if len(names) > 0:
             return True
         return False
-
-    # def cleanDuplicates(self):
-    #     """
-    #     Remove duplicate plant stations from the data. *IMPORTANT* Cannot be undone once changes are committed.
-    #     Must call commitChanges() to save them.
-    #     :return:
-    #     """
-    #     cur = self.connector.connection.cursor()
-    #     comm1 = "SELECT COUNT(*) FROM " + self.tableName + ";"
-    #     try:
-    #         count = cur.execute(comm1).fetchall()
-    #         print(count)
-    #     except AttributeError:
-    #         print("No results found.")
-    #     cur.close
-    #     comm = "DO $do$ FOR i IN 1.."
 
     def commitChanges(self):
         """
@@ -462,7 +452,6 @@ class Table:
         :param vals:
         :return:
         """
-
         if not (isinstance(vals, list) and isinstance(columnNames, list)):
             print("Keywords must be passed in as a list of strings")
             return False
