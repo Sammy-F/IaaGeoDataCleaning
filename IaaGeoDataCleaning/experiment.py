@@ -11,8 +11,9 @@ import geopy as gp
 # import country_bounding_boxes as cbb
 from shapely.geometry import Point
 
-# TODO: Recheck for entries in the existing database after verifying coordinates
 # TODO: Make a case that has coordinates but no location info
+# TODO: Expand country checking method
+# TODO: Save file names into variables
 
 """
 GeocodeValidator allows the user to perform reverse geocoding
@@ -43,6 +44,7 @@ class GeocodeValidator:
                           4: 'entered (lng, lat)', 5: 'entered (lng, -lat)',
                           6: 'entered (-lng, lat', 7: 'entered (-lng, -lat)',
                           8: 'no lat/lng entered - geocoded location',
+                          9: 'no location entered - reverse geocoded for country',
                           -1: 'incorrect location data/cannot find coordinates',
                           -2: 'no latitude and longitude entered',
                           -5: 'no location/country entered / wrong country format'}
@@ -175,6 +177,16 @@ class GeocodeValidator:
 
         return -1, locationDict
 
+    def reverseGeocode(self, locationDict):
+        # TODO: Test this method
+        point = gp.Point(locationDict['Latitude'], locationDict['Longitude'])
+        match = self.pht.reverse(point)
+        locationDict['Recorded_Lat'] = match.latitude
+        locationDict['Recorded_Lng'] = match.longitude
+        locationDict['Country'] = match.address.split(',')[-1]
+        locationDict['Address'] = match.address
+        return 9
+
     def geocodeCoordinates(self, locationDict):
         """
         Finds the coordinates of a location based on the entered location and country.
@@ -227,7 +239,7 @@ class GeocodeValidator:
     def queryAllFields(self, location, country, latitude, longitude,
                        filePath='/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/verified_data_2018-06-15.csv'):
         """
-        Does a full search for entries matching the fields.
+        Verifies that the inputs are valid and does a full search to find matching rows in the database.
         :param location:
         :param country:
         :param latitude:
@@ -240,19 +252,23 @@ class GeocodeValidator:
             return None
 
         results = []
+        # Checking to see if the inputs are valid
+        checkedInfo = self.verifyInfo(location, country, latitude, longitude)
+        inpType = checkedInfo[0]
+        locationDict = checkedInfo[1]
+        if inpType > 0:
+            # See whether location is in the database
+            # TODO: Reverse contains
+            closestDF = database[(database['Location'].str.contains(locationDict['Location'], case=False, na=False) &
+                                  database['Country'].str.contains(locationDict['Country'], case=False, na=False))]
 
-        locationInfo = self.formatInformation(location, country, latitude, longitude)
-        # See whether location is in the database
-        # TODO: Reverse contains
-        closestDF = database[(database['Location'].str.contains(locationInfo['Location'], case=False, na=False) &
-                              database['Country'].str.contains(locationInfo['Country'], case=False, na=False))]
-        for (index, row) in closestDF.iterrows():
-            if math.isclose(latitude, row['Recorded_Lat'], rel_tol=1e-1) and \
-                    math.isclose(longitude, row['Recorded_Lng'], rel_tol=1e-1):
-                loc = database.to_dict(orient='records')[index]
-                results.append(loc)
-        # That location is not yet inputted
-        # What about asking for whether any of these locations are a match?
+            for (index, row) in closestDF.iterrows():
+                if math.isclose(locationDict['Recorded_Lat'], row['Recorded_Lat'], rel_tol=1e-1) and \
+                        math.isclose(locationDict['Recorded_Lng'], row['Recorded_Lng'], rel_tol=1e-1):
+                    loc = database.to_dict(orient='records')[index]
+                    results.append(loc)
+        else:
+            print('Location information might be incorrect. Please re-check.')
         return results
 
     def queryByLocation(self, location, country,
