@@ -43,7 +43,7 @@ class GeocodeValidator:
                           2: 'entered (-lat, lng)', 3: 'entered (-lat, -lng)',
                           4: 'entered (lng, lat)', 5: 'entered (lng, -lat)',
                           6: 'entered (-lng, lat', 7: 'entered (-lng, -lat)',
-                          8: 'no lat/lng entered - geocoded location',
+                          8: 'no lat/lng entered / incorrect lat/lng - geocoded location',
                           9: 'no location entered - reverse geocoded for country',
                           -1: 'incorrect location data/cannot find coordinates',
                           -2: 'no latitude and longitude entered',
@@ -93,6 +93,8 @@ class GeocodeValidator:
             locationInfo = findAltCoords[1]
 
         locationInfo['Type'] = self.entryType[coordType]
+        print(coordType)
+        print(locationInfo)
         return coordType, locationInfo
 
     def formatInformation(self, location, country, latitude, longitude):
@@ -122,7 +124,7 @@ class GeocodeValidator:
 
         # Looking up with pycountry
         try:
-            locationDict['Country_Code'] = pc.countries.lookup(locationDict['Country']).alpha_2
+            locationDict['Country_Code'] = pc.countries.lookup(locationDict['Country']).alpha_3
             locationDict['Country'] = pc.countries.lookup(locationDict['Country']).name
         except LookupError:
             # Looking up in the dictionary
@@ -135,7 +137,7 @@ class GeocodeValidator:
                     return -5, locationDict
                 else:
                     locationDict['Country'] = altCountryName
-                    locationDict['Country_Code'] = pc.countries.lookup(altCountryName).alpha_2
+                    locationDict['Country_Code'] = pc.countries.lookup(altCountryName).alpha_3
 
         # Checking if lat/lng were entered
         if (pd.isnull(locationDict['Latitude']) or pd.isnull(locationDict['Longitude'])) or (
@@ -164,7 +166,7 @@ class GeocodeValidator:
                 shapePoint = np.array([possibleCoords[i][1], possibleCoords[i][0]])
                 point = Point(shapePoint)
                 filter = self.map['geometry'].contains(point)
-                mLoc = self.map.loc[filter, 'ISO2']
+                mLoc = self.map.loc[filter, 'ISO3']
                 foundCountry = mLoc.iloc[0]
 
                 if locationDict['Country_Code'] == foundCountry:
@@ -256,7 +258,8 @@ class GeocodeValidator:
         checkedInfo = self.verifyInfo(location, country, latitude, longitude)
         inpType = checkedInfo[0]
         locationDict = checkedInfo[1]
-        if inpType > 0:
+        if inpType >= 0:
+            print('The input type is: ' + self.entryType[inpType])
             # See whether location is in the database
             # TODO: Reverse contains
             closestDF = database[(database['Location'].str.contains(locationDict['Location'], case=False, na=False) &
@@ -382,7 +385,7 @@ class GeocodeValidator:
             "/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/countryInfo.txt", delimiter="\t")
 
         for (index, row) in countriesData.iterrows():
-            countryCode = str(row.loc["ISO"])
+            countryCode = str(row.loc["ISO3"])
             country = str(row.loc["Country"])
             self.countryCodes[country] = countryCode
 
@@ -535,12 +538,13 @@ class NameHandler:
         return False
 
 
-# database = DatabaseInitializer("/Users/thytnguyen/Desktop/tblLocation.xlsx")
-# database.run()
+database = DatabaseInitializer()
+database.createNewDatabase('/Users/thytnguyen/Desktop/tblLocation.xlsx')
 # correctLog = database.getVerifiedLog()
 # incorrectLog = database.getPendingLog()
 
-validator = GeocodeValidator()
+# validator = GeocodeValidator()
+
 # res = validator.queryAllFields(location='Kilombo', country='Angola', latitude=-8.9, longitude=14.75)
 # print(res)
 # #

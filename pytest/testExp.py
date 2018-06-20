@@ -175,6 +175,13 @@ def testQuery():
     inDB = validator.query(location='LA TRINIDAD', country='NICARAGUA', latitude=12.96, longitude=-86.27)
     assert len(inDB) == 1
 
+    # All arguments are entered but the latitude and longitude are wrong
+    inDB = validator.query(location='Cuyuta', country='GUATEMALA', latitude=16.25, longitude=70.34)
+    assert len(inDB) == 1
+    assert inDB[0]['Country'] == 'Guatemala'
+    assert inDB[0]['Recorded_Lat'] == 14.25
+    assert inDB[0]['Recorded_Lng'] == -90.00
+
 
 def testAddLocation():
     # Entries already in the data
@@ -196,7 +203,7 @@ def testAddLocation():
     assert pytest.approx(newEntry[1]['Recorded_Lng'], 1e-2) == -newEntry[1]['Longitude']
 
     # Entry in the pending database
-    newEntry = validator.addLocation('Yezin', 'Myanmar', 23.03, 95.47)
+    validator.addLocation('Yezin', 'Myanmar', 23.03, 95.47)
     df = pd.read_csv('test_pending.csv')
     assert df.shape[0] == 67
     df = pd.read_csv('test_verified.csv')
@@ -206,11 +213,12 @@ def testAddLocation():
     newEntry = validator.addLocation(latitude=0, longitude=0)
     assert newEntry[0] == -5
 
-testCheckInput()
-testVerifyCoordinates()
-testGeocodeCoordinates()
-testVerifyInfo()
-testQueryAllFields()
-testQueryByLocation()
+
+#  testCheckInput()
+# testVerifyCoordinates()
+# testGeocodeCoordinates()
+# testVerifyInfo()
+# testQueryAllFields()
+# testQueryByLocation()
 testQuery()
-testAddLocation()
+# testAddLocation()

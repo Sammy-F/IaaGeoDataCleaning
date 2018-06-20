@@ -514,3 +514,13 @@ class Table:
         cur.execute(cmmnd)
         rows = cur.fetchall()
         return rows
+
+
+db = DatabaseConnector()
+connection = db.getConnectFromKeywords(host='localhost', dbname='gadm36', username='thytnguyen',
+                                              password='gRPvh4na')
+tm = Table('pending_data', db)
+tm.buildTableFromFile('/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/pending_data_2018-06-14.csv')
+# tm.makeTableSpatial()
+tm.commitChanges()
+
