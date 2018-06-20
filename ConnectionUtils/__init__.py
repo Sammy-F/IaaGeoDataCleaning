@@ -562,9 +562,9 @@ class Table:
         if len(name) > 0:
             print("Already validated once. Revalidating.")
             cur = self.connector.connection.cursor()
-            cmmnd = "UPDATE " + self.tableName + " SET dtype='Invalid' FROM " + self.tableName + ", " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + ".geom, " + worldTableName + ".geom) AND " + worldTableName + ".name_0  != " + self.tableName + ".country;"
+            cmmnd = "UPDATE " + self.tableName + " SET dtype='Invalid' FROM " + self.tableName + ", " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + ".geom, " + worldTableName + ".geom) AND " + worldTableName + ".gid_0  != " + self.tableName + ".country_code;"
             cur.execute(cmmnd)
-            cmmnd = "SELECT * FROM " + self.tableName + ", " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + ".geom, " + worldTableName + ".geom) AND " + worldTableName + ".name_0  != " + self.tableName + ".country;"
+            cmmnd = "SELECT * FROM " + self.tableName + ", " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + ".geom, " + worldTableName + ".geom) AND " + worldTableName + ".gid_0  != " + self.tableName + ".country_code;"
             cur.execute(cmmnd)
             rows = cur.fetchall()
             cur.close()
@@ -574,9 +574,9 @@ class Table:
             cur.execute(cmmnd)
             cmmnd = "UPDATE " + self.tableName + " SET dtype='Valid'"
             cur.execute(cmmnd)
-            cmmnd = "UPDATE " + self.tableName + " SET dtype='Invalid' FROM " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + ".geom, " + worldTableName + ".geom) AND " + worldTableName + ".name_0  != " + self.tableName + ".country;"
+            cmmnd = "UPDATE " + self.tableName + " SET dtype='Invalid' FROM " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + ".geom, " + worldTableName + ".geom) AND " + worldTableName + ".gid_0  != " + self.tableName + ".country_code;"
             cur.execute(cmmnd)
-            cmmnd = "SELECT * FROM " + self.tableName + ", " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + ".geom, " + worldTableName + ".geom) AND " + worldTableName + ".name_0  != " + self.tableName + ".country;"
+            cmmnd = "SELECT * FROM " + self.tableName + ", " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + ".geom, " + worldTableName + ".geom) AND " + worldTableName + ".gid_0  != " + self.tableName + ".country_code;"
             cur.execute(cmmnd)
             rows = cur.fetchall()
             cur.close()
@@ -587,7 +587,9 @@ class Table:
 
 mConnector = DatabaseConnector()
 mConnector.getConnectFromConfig(filePath='D:\\config.ini')
-mTable = Table('tester4', mConnector)
+mTable = Table('verified620', mConnector)
+mTable.buildTableFromFile('D:\\IaaGeoDataCleaning\\IaaGeoDataCleaning\\verified_data_2018-06-20.csv')
+mTable.makeTableSpatial()
 lines = mTable.checkValidity('world_map')
 for line in lines:
     print(line)
