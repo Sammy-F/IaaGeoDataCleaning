@@ -6,8 +6,9 @@ import csv
 import numpy as np
 
 """
-TODO: Create tool for checking if a given row/entry already exists and insert it if it doesn't
-Otherwise, decide whether to update (?)
+Classes to be used in interacting with a PostGIS database. DatabaseConnector can be used
+to initialize a single connection and close it. Table can be used to perform basic table operations
+via Python.
 """
 
 class DatabaseConnector:
@@ -562,13 +563,14 @@ class Table:
         if len(name) > 0:
             print("Already validated once. Revalidating.")
             cur = self.connector.connection.cursor()
-            cmmnd = "UPDATE " + self.tableName + " SET dtype='Invalid' FROM " + self.tableName + ", " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + ".geom, " + worldTableName + ".geom) AND " + worldTableName + ".gid_0  != " + self.tableName + ".country_code;"
+            cmmnd = "UPDATE " + self.tableName + " SET dtype='Invalid' FROM " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + ".geom, " + worldTableName + ".geom) AND " + worldTableName + ".gid_0  != " + self.tableName + ".country_code;"
             cur.execute(cmmnd)
             cmmnd = "SELECT * FROM " + self.tableName + ", " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + ".geom, " + worldTableName + ".geom) AND " + worldTableName + ".gid_0  != " + self.tableName + ".country_code;"
             cur.execute(cmmnd)
             rows = cur.fetchall()
             cur.close()
         else:
+            print("Not validated yet. Generating dtype column.")
             cur = self.connector.connection.cursor()
             cmmnd = "ALTER TABLE " + self.tableName + " ADD dtype varchar;"
             cur.execute(cmmnd)
@@ -585,11 +587,23 @@ class Table:
 
         return rows
 
+    def customQuery(self):
+        """
+        Run a custom query.
+        :return:
+        """
+        print("""This is an advanced method that can damage the table if used improperly. Please be careful when
+        using it. In order to prevent accidental mistakes, you must call commitChanges() on your DatabaseConnector.""")
+        query = input("Input a query:")
+        cur = self.connector.connection.cursor()
+        cur.execute(query)
+        cur.close()
+
 mConnector = DatabaseConnector()
 mConnector.getConnectFromConfig(filePath='D:\\config.ini')
 mTable = Table('verified620', mConnector)
-mTable.buildTableFromFile('D:\\IaaGeoDataCleaning\\IaaGeoDataCleaning\\verified_data_2018-06-20.csv')
-mTable.makeTableSpatial()
+# mTable.buildTableFromFile('D:\\IaaGeoDataCleaning\\IaaGeoDataCleaning\\verified_data_2018-06-20.csv')
+# mTable.makeTableSpatial()
 lines = mTable.checkValidity('world_map')
 for line in lines:
     print(line)
