@@ -6,8 +6,9 @@ import csv
 import numpy as np
 
 """
-TODO: Create tool for checking if a given row/entry already exists and insert it if it doesn't
-Otherwise, decide whether to update (?)
+Classes to be used in interacting with a PostGIS database. DatabaseConnector can be used
+to initialize a single connection and close it. Table can be used to perform basic table operations
+via Python.
 """
 
 class DatabaseConnector:
@@ -585,6 +586,18 @@ class Table:
         self.connector.connection.commit()
 
         return rows
+
+    def customQuery(self):
+        """
+        Run a custom query.
+        :return:
+        """
+        print("""This is an advanced method that can damage the table if used improperly. Please be careful when
+        using it. In order to prevent accidental mistakes, you must call commitChanges() on your DatabaseConnector.""")
+        query = input("Input a query:")
+        cur = self.connector.connection.cursor()
+        cur.execute(query)
+        cur.close()
 
 mConnector = DatabaseConnector()
 mConnector.getConnectFromConfig(filePath='D:\\config.ini')
