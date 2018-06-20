@@ -142,8 +142,8 @@ class Table:
                 cur.close()
                 self.connector.connection.commit()
         except (Exception, psy.DatabaseError) as error:
+            print("Building table failed.")
             print(error)
-            return
 
     def csvToXlsx(self, filePath):
         wb = xlrd.open_workbook(filePath)
@@ -192,6 +192,7 @@ class Table:
             cur.close()
             self.connector.connection.commit()
         except (Exception, psy.DatabaseError) as error:
+            print("Building table failed.")
             print(error)
 
     def makeTableSpatial(self):
@@ -212,6 +213,7 @@ class Table:
             cur.close()
             self.connector.connection.commit()
         except (Exception, psy.DatabaseError) as error:
+            print("Unable to alter table.")
             print(error)
 
     def loadTableSchema(self, tableFile):
@@ -284,6 +286,7 @@ class Table:
         try:
             cur.execute("COPY " + self.tableName + " FROM " + "'" + filePath + "'" + " DELIMITER ',' CSV HEADER")
         except (Exception, psy.DatabaseError) as error:
+            print("Failed to load data.")
             print(error)
 
     def checkForEntryByLatLon(self, lat, lon, searchRadius=0.5):
@@ -312,6 +315,7 @@ class Table:
                 print(
                     "No connection open. Did you open a connection using getConnectFromKeywords() or getConnectFromConfig()?")
         except (Exception, psy.DatabaseError) as error:
+            print("Failed to get entry.")
             print(error)
 
         return tBool, rows
@@ -325,21 +329,25 @@ class Table:
         :return:
         """
         print("Went to country")
-        if not self.connector.connection is None:
-            cur = self.connector.connection.cursor()
-            command = "SELECT * FROM " + self.tableName + " WHERE country = '" + countryName + "' AND location = '" + locationName + "';"
-            cur.execute(command)
-            rows = cur.fetchall()
-            for row in rows:
-                print(row)
-            cur.close()
-            if len(rows) > 0:
-                return True, rows
+        try:
+            if not self.connector.connection is None:
+                cur = self.connector.connection.cursor()
+                command = "SELECT * FROM " + self.tableName + " WHERE country = '" + countryName + "' AND location = '" + locationName + "';"
+                cur.execute(command)
+                rows = cur.fetchall()
+                for row in rows:
+                    print(row)
+                cur.close()
+                if len(rows) > 0:
+                    return True, rows
+                else:
+                    return False, rows
             else:
-                return False, rows
-        else:
-            print("""No connection open. Did you open a connection using getConnectFromKeywords() 
-                    or getConnectFromConfig()?""")
+                print("""No connection open. Did you open a connection using getConnectFromKeywords() 
+                        or getConnectFromConfig()?""")
+        except (Exception, psy.DatabaseError) as error:
+            print("Failed to get entries.")
+            print(error)
 
     def changeTable(self, newName):
         """
@@ -363,25 +371,29 @@ class Table:
         else:
             print('This tool currently only supports .csv files.')
             return
-        for (index, row) in tableFile.iterrows():
-            lat = row['Recorded_Lat']
-            long = row['Recorded_Lng']
-            if not self.checkForEntryByLatLon(lat, long)[0]:
-                countryName = row['Country']
-                locName = row['Location']
-                if not self.checkForEntryByCountryLoc(countryName, locName)[0]:
-                    # Entry does not exist
-                    print("Inserting")
-                    cmndStr = ""
-                    cmndArr = []
-                    for item in row.values:
-                        cmndArr.append(item)
-                    cmnd = "INSERT INTO " + self.tableName + " VALUES (" + self.makeInsertionString(cmndArr) + " );"
-                    cur = self.connector.connection.cursor()
-                    cur.execute(cmnd)
-                    cur.close()
-        self.connector.connection.commit()
-        self.checkGeomNulls()
+        try:
+            for (index, row) in tableFile.iterrows():
+                lat = row['Recorded_Lat']
+                long = row['Recorded_Lng']
+                if not self.checkForEntryByLatLon(lat, long)[0]:
+                    countryName = row['Country']
+                    locName = row['Location']
+                    if not self.checkForEntryByCountryLoc(countryName, locName)[0]:
+                        # Entry does not exist
+                        print("Inserting")
+                        cmndStr = ""
+                        cmndArr = []
+                        for item in row.values:
+                            cmndArr.append(item)
+                        cmnd = "INSERT INTO " + self.tableName + " VALUES (" + self.makeInsertionString(cmndArr) + " );"
+                        cur = self.connector.connection.cursor()
+                        cur.execute(cmnd)
+                        cur.close()
+            self.connector.connection.commit()
+            self.checkGeomNulls()
+        except (Exception, psy.DatabaseError) as error:
+            print("Updating failed.")
+            print(error)
 
     def makeInsertionString(self, valsArr):
 
@@ -409,41 +421,52 @@ class Table:
         values to generate geometry.
         :return:
         """
-        cur = self.connector.connection.cursor()
-        if self.isSpatial():
-            updateTable = "UPDATE " + self.tableName + """ SET geom = ST_SETSRID(ST_MakePoint(Recorded_Lng, 
-                        Recorded_Lat), 4326) WHERE geom IS NULL;"""
-            cur.execute(updateTable)
-        cur.close()
-        self.connector.connection.commit()
+        try:
+            cur = self.connector.connection.cursor()
+            if self.isSpatial():
+                updateTable = "UPDATE " + self.tableName + """ SET geom = ST_SETSRID(ST_MakePoint(Recorded_Lng, 
+                            Recorded_Lat), 4326) WHERE geom IS NULL;"""
+                cur.execute(updateTable)
+            cur.close()
+            self.connector.connection.commit()
+        except (Exception, psy.DatabaseError) as error:
+            print("Failed to check for nulls.")
+            print(error)
 
     def isSpatial(self):
         """
         Check if the given table is spatial.
         :return:
         """
-
-        cur = self.connector.connection.cursor()
-        cur.execute("SELECT column_name FROM information_schema.columns WHERE table_name = '" + self.tableName + "' AND column_name = 'geom';")
-        names = cur.fetchall()
-        cur.close()
-        if len(names) > 0:
-            return True
-        return False
+        try:
+            cur = self.connector.connection.cursor()
+            cur.execute("SELECT column_name FROM information_schema.columns WHERE table_name = '" + self.tableName + "' AND column_name = 'geom';")
+            names = cur.fetchall()
+            cur.close()
+            if len(names) > 0:
+                return True
+            return False
+        except (Exception, psy.DatabaseError) as error:
+            print("Unable to determine if table is spatial.")
+            print(error)
 
     def commitChanges(self):
         """
         Commit changes made to the database.
         :return:
         """
-        confirmation = input("Once these changes are committed, they cannot be undone. Proceed? (y/n): ")
-        while confirmation is "y" or confirmation is "Y":
-            confirmation = "n"
-            if self.connector.connection is not None:
-                try:
-                    self.connector.connection.commit()
-                except (Exception, psy.DatabaseError) as error:
-                    print(error)
+        try:
+            confirmation = input("Once these changes are committed, they cannot be undone. Proceed? (y/n): ")
+            while confirmation is "y" or confirmation is "Y":
+                confirmation = "n"
+                if self.connector.connection is not None:
+                    try:
+                        self.connector.connection.commit()
+                    except (Exception, psy.DatabaseError) as error:
+                        print(error)
+        except (Exception, psy.DatabaseError) as error:
+            print("Failed to commit!")
+            print(error)
 
     def getEntriesByInput(self, vals, columnNames):
         """
@@ -452,32 +475,36 @@ class Table:
         :param vals:
         :return:
         """
-        if not (isinstance(vals, list) and isinstance(columnNames, list)):
-            print("Keywords must be passed in as a list of strings")
-            return False
-        if not len(vals) == len(columnNames):
-            print("Keywords and columnNames lists must have the same length.")
-            return False
-        if not self.validateColumns(columnNames):
-            print("Input column names are invalid.")
-            return False
-        else:
-            requestVals = "(SELECT * FROM " + self.tableName + " WHERE "
-            for i in range(len(vals)):
-                if not i == len(vals) - 1:
-                    requestVals += columnNames[i] + "=" + "'" + vals[i] + "' AND "
-                else:
-                    requestVals += columnNames[i] + "=" + "'" + vals[i] + "');"
-            print("Request cmmnd is: " + requestVals)
-            cur = self.connector.connection.cursor()
-            cur.execute(requestVals)
-            try:
-                rows = cur.fetchall()
-                cur.close()
-                print(rows)
-                return rows
-            except AttributeError:
-                print("None found")
+        try:
+            if not (isinstance(vals, list) and isinstance(columnNames, list)):
+                print("Keywords must be passed in as a list of strings")
+                return False
+            if not len(vals) == len(columnNames):
+                print("Keywords and columnNames lists must have the same length.")
+                return False
+            if not self.validateColumns(columnNames):
+                print("Input column names are invalid.")
+                return False
+            else:
+                requestVals = "(SELECT * FROM " + self.tableName + " WHERE "
+                for i in range(len(vals)):
+                    if not i == len(vals) - 1:
+                        requestVals += columnNames[i] + "=" + "'" + vals[i] + "' AND "
+                    else:
+                        requestVals += columnNames[i] + "=" + "'" + vals[i] + "');"
+                print("Request cmmnd is: " + requestVals)
+                cur = self.connector.connection.cursor()
+                cur.execute(requestVals)
+                try:
+                    rows = cur.fetchall()
+                    cur.close()
+                    print(rows)
+                    return rows
+                except AttributeError:
+                    print("None found")
+        except (Exception, psy.DatabaseError) as error:
+            print("Getting entries failed.")
+            print(error)
 
     def validateColumns(self, columnNames):
         """
@@ -506,21 +533,39 @@ class Table:
         :param limit:
         :return:
         """
+        try:
+            cur = self.connector.connection.cursor()
+            if limit == 0:
+                cmmnd = "SELECT * FROM " + self.tableName + ";"
+            else:
+                cmmnd = "SELECT * FROM " + self.tableName + " LIMIT " + str(limit) + ";"
+            cur.execute(cmmnd)
+            rows = cur.fetchall()
+            return rows
+        except (Exception, psy.DatabaseError) as error:
+            print("Fetching table failed.")
+            print(error)
+
+    def checkValidity(self, worldTableName):
+        """
+        Validate using data in the database whether the entries in the table
+        have the correct country.
+        :param worldTableName:
+        :return:
+        """
         cur = self.connector.connection.cursor()
-        if limit == 0:
-            cmmnd = "SELECT * FROM " + self.tableName + ";"
-        else:
-            cmmnd = "SELECT * FROM " + self.tableName + " LIMIT " + str(limit) + ";"
+        cmmnd = "SELECT " + self.tableName + ".Country, " + worldTableName + ".name_0 FROM " + self.tableName + ", "+ worldTableName +" WHERE ST_WITHIN(" + self.tableName + ".geom, " + worldTableName + ".geom) AND " + worldTableName + ".name_0  != " + self.tableName +".country;"
         cur.execute(cmmnd)
         rows = cur.fetchall()
+        cur.close()
+
         return rows
 
-
-db = DatabaseConnector()
-connection = db.getConnectFromKeywords(host='localhost', dbname='gadm36', username='thytnguyen',
-                                              password='gRPvh4na')
-tm = Table('pending_data', db)
-tm.buildTableFromFile('/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/pending_data_2018-06-14.csv')
-# tm.makeTableSpatial()
-tm.commitChanges()
-
+mConnector = DatabaseConnector()
+mConnector.getConnectFromConfig(filePath='D:\\config.ini')
+mTable = Table('tester4', mConnector)
+lines = mTable.checkValidity('world_map')
+for line in lines:
+    print(line)
+print(len(lines))
+mConnector.closeConnection()
