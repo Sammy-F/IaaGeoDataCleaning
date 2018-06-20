@@ -5,7 +5,7 @@ import reverse_geocoder as rg
 import string
 import pycountry as pc
 
-from IaaGeoDataCleaning import nameHandler as nh
+import nameHandler as nh
 
 import country_bounding_boxes as cbb
 
@@ -28,6 +28,7 @@ now = now.strftime("%Y-%m-%d ")
 class GeocodeValidator:
     def __init__(self, fileName):
         self.fileName = fileName
+        print(fileName)
 
         self.flaggedLocations = []  # flagged indexes in data frame
         self.incorrectLog = {'index': [], 'location': [], 'type': []}
@@ -161,10 +162,10 @@ class GeocodeValidator:
     def logResults(self):
         print("Flagged locations are at indicies: " + str(self.flaggedLocations))
         incorrectEntriesDF = pd.DataFrame(data=self.incorrectLog)
-        incorrectEntriesDF.to_csv('incorrect_validation_log_' + str(now) + '.csv', sep=',', encoding='utf-8')
+        incorrectEntriesDF.to_csv('1incorrect_validation_log_' + str(now) + '.csv', sep=',', encoding='utf-8')
 
         correctEntriesDF = pd.DataFrame(data=self.correctLog)
-        correctEntriesDF.to_csv('correct_validation_lol_' + str(now) + '.csv', sep=',', encoding='utf-8')
+        correctEntriesDF.to_csv('1correct_validation_lol_' + str(now) + '.csv', sep=',', encoding='utf-8')
 
         return len(self.flaggedLocations) / (1e-10 + self.tobeValidatedLocation.shape[0])
 
@@ -180,7 +181,6 @@ class GeocodeValidator:
             countryCode = str(row.loc["ISO"])
             country = str(row.loc["Country"])
             self.countryCodes[country] = countryCode
-
 
 validator = GeocodeValidator("NaNtblLocations.xlsx")
 # sr = validator.checkInputLocation(1137)

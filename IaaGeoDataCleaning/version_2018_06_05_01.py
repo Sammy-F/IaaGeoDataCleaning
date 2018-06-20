@@ -14,6 +14,8 @@ is performed to check for human error.
 Created by Jonathan Scott
 
 Modified by: Samantha Fritsche, Thy Nguyen 6/5/2018
+
+DEPRECATED
 """
 
 # TODO: handle exceptions when making API calls
@@ -22,7 +24,6 @@ parenNumRegex = re.compile('\(\d\)')
 now = datetime.datetime.now()
 now = now.strftime("%Y-%m-%d ")
 geoID = "thytng"
-
 
 class GeocodeValidator:
     def __init__(self, geoID, fileName, flagDistance=12.):

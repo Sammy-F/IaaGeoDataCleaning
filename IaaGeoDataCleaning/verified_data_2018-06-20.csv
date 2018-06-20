@@ -1,0 +1,1331 @@
+Index,Type,Location,Country,Latitude,Longitude,Recorded_Lat,Recorded_Lng,Address,Country_Code
+0,correct location data,Darul Aman,Afghanistan,34.48845,69.20288,34.48845,69.20288,"Darul Aman, Afghanistan",AFG
+1,correct location data,Darul Aman Kabul (2),Afghanistan,34.48845,69.20288,34.48845,69.20288,"Darul Aman Kabul (2), Afghanistan",AFG
+2,correct location data,Qara- Boghe,Afghanistan,34.48845,69.20288,34.48845,69.20288,"Qara- Boghe, Afghanistan",AFG
+3,no lat/lng entered / incorrect lat/lng - geocoded location,Angola,Angola,0.0,0.0,-11.8775768,17.5691241,"Angola, Angola",AGO
+4,correct location data,"Cabinda, St Vincent",Angola,-5.6,12.2,-5.6,12.2,"Cabinda, St Vincent, Angola",AGO
+5,correct location data,Cacuso,Angola,-9.42,15.75,-9.42,15.75,"Cacuso, Angola",AGO
+6,correct location data,Cela,Angola,-11.42,15.12,-11.42,15.12,"Cela, Angola",AGO
+7,correct location data,Chianga,Angola,-12.73,15.83,-12.73,15.83,"Chianga, Angola",AGO
+8,correct location data,Humpata,Angola,-15.03,13.43,-15.03,13.43,"Humpata, Angola",AGO
+9,correct location data,Kilombo,Angola,-8.91,14.73,-8.91,14.73,"Kilombo, Angola",AGO
+10,correct location data,Kilombo Experimental Station,Angola,-8.9,14.7,-8.9,14.7,"Kilombo Experimental Station, Angola",AGO
+11,correct location data,Malange,Angola,-9.533,16.333,-9.533,16.333,"Malange, Angola",AGO
+12,correct location data,Mazozo Experimental Station,Angola,-9.1,13.7,-9.1,13.7,"Mazozo Experimental Station, Angola",AGO
+13,correct location data,Poligno-floresta,Angola,-9.52,16.32,-9.52,16.32,"Poligno-floresta, Angola",AGO
+14,no lat/lng entered / incorrect lat/lng - geocoded location,Anguil - Provincia La Pampa,Argentina,0.0,0.0,-36.5361755,-63.9442975,"Ruta Provincial 7, 63000, La Pampa, Argentina",ARG
+15,no lat/lng entered / incorrect lat/lng - geocoded location,Argentina,Argentina,0.0,0.0,-34.9964963,-64.9672817,"Argentina, Argentina",ARG
+16,no lat/lng entered / incorrect lat/lng - geocoded location,El Manantial,Argentina,0.0,0.0,-28.7273918,-66.1433925,"El Manantial, K4726, Catamarca, Argentina",ARG
+17,no lat/lng entered / incorrect lat/lng - geocoded location,Los Pereyras,Argentina,0.0,0.0,-34.5121516,-58.5248182,"Unilever Argentina, 4191, Alférez Hipólito Bouchard, B1605BNA, Alférez Hipólito Bouchard, Vicente López, Buenos Aires, Argentina",ARG
+18,correct location data,Tucuman,Argentina,-26.8,-65.2,-26.8,-65.2,"Tucuman, Argentina",ARG
+19,no lat/lng entered / incorrect lat/lng - geocoded location,"Zakatala, City",Azerbaijan,0.0,0.0,40.58189255,49.6918518562582,"Rivyera City, Sumgayit, Sumqayit, Azerbaijan",AZE
+20,no lat/lng entered / incorrect lat/lng - geocoded location,Dinajpur,Bangladesh,0.0,0.0,25.6260712,88.6346228,"Dinajpur, 5216, Rangpur Division, Bangladesh",BGD
+21,no lat/lng entered / incorrect lat/lng - geocoded location,"Ars, Rajbari, Dinajpur",Bangladesh,0.0,0.0,25.6422313,88.6462899,"aristocrats, Dhaka - Dinajpur Hwy, 5200, Dhaka - Dinajpur Hwy, Dinajpur, Rangpur Division, Bangladesh",BGD
+22,no lat/lng entered / incorrect lat/lng - geocoded location,"Ars. Burirhat, Rangpur",Bangladesh,0.0,0.0,25.754379999999998,89.24997547234628,"Police Area Quarter, Rangpur Police, Pourobazar Road, 5400, Pourobazar Road, Rangpur, Rangpur Division, Bangladesh",BGD
+23,no lat/lng entered / incorrect lat/lng - geocoded location,Bogra,Bangladesh,0.0,0.0,24.8480859,89.3729529,"Bogra, 5800, Rajshahi Division, Bangladesh",BGD
+24,correct location data,Burirhat Farm,Bangladesh,24.37,88.6,24.37,88.6,"Burirhat Farm, Bangladesh",BGD
+25,no lat/lng entered / incorrect lat/lng - geocoded location,Gazipur,Bangladesh,0.0,0.0,23.9980797,90.4229848,"Gazipur, 1702, Dhaka Division, Bangladesh",BGD
+26,correct location data,Hathazari,Bangladesh,22.5,91.78,22.5,91.78,"Hathazari, Bangladesh",BGD
+27,correct location data,Ishurdi,Bangladesh,24.12,89.08,24.12,89.08,"Ishurdi, Bangladesh",BGD
+28,correct location data,Ishurdi (2),Bangladesh,24.12,89.08,24.12,89.08,"Ishurdi (2), Bangladesh",BGD
+29,correct location data,Jamalpur,Bangladesh,24.93,89.95,24.93,89.95,"Jamalpur, Bangladesh",BGD
+30,correct location data,Jessore,Bangladesh,23.18,89.17,23.18,89.17,"Jessore, Bangladesh",BGD
+31,correct location data,Joydebpur,Bangladesh,24.0,90.42,24.0,90.42,"Joydebpur, Bangladesh",BGD
+32,no lat/lng entered / incorrect lat/lng - geocoded location,"Joydebpur, Gazipur",Bangladesh,0.0,0.0,23.9980797,90.4229848,"Gazipur, 1702, Dhaka Division, Bangladesh",BGD
+33,no lat/lng entered / incorrect lat/lng - geocoded location,Rahmatpur Barisal,Bangladesh,22.1,90.5,22.792110049999998,90.28801510193094,"Agriculture Training Institute - ATI- Rahmatpur, Barisal, Dhaka-Barisal Highway, 8220, Dhaka-Barisal Highway, Barisal Division, Bangladesh",BGD
+34,no lat/lng entered / incorrect lat/lng - geocoded location,Rajbari,Bangladesh,0.0,0.0,23.73987245,89.57039201261236,"Rajbari District, Dhaka Division, Bangladesh",BGD
+35,no lat/lng entered / incorrect lat/lng - geocoded location,"Rars, Bari, Jamalpur",Bangladesh,0.0,0.0,24.9510208,89.8722132,"Jamalpur-Melandah Rd, Char Banipakuri, Mymensingh Division, Bangladesh",BGD
+36,no lat/lng entered / incorrect lat/lng - geocoded location,"Belmopan, Cardi Station",Belize,0.0,0.0,17.2481986,-88.7647713,"Cardinal Avenue, BZ1000, Belmopan, Cayo, Belize",BLZ
+37,correct location data,Central Farm,Belize,17.0,-89.0,17.0,-89.0,"Central Farm, Belize",BLZ
+38,correct location data,San Pedro,Belize,16.23,-89.0,16.23,-89.0,"San Pedro, Belize",BLZ
+39,correct location data,Cotonou,Benin,6.3704,2.3715,6.3704,2.3715,"Cotonou, Benin",BEN
+40,correct location data,Algarrobal,"Bolivia, Plurinational State of",-21.45,-63.65,-21.45,-63.65,"Algarrobal, Bolivia, Plurinational State of",BOL
+41,correct location data,Ca╤ada Larga,"Bolivia, Plurinational State of",-17.57,-62.43,-17.57,-62.43,"Ca╤ada Larga, Bolivia, Plurinational State of",BOL
+42,correct location data,Charagua,"Bolivia, Plurinational State of",-19.78,-63.23,-19.78,-63.23,"Charagua, Bolivia, Plurinational State of",BOL
+43,correct location data,Chuquisaca,"Bolivia, Plurinational State of",-18.47,-64.47,-18.47,-64.47,"Chuquisaca, Bolivia, Plurinational State of",BOL
+44,correct location data,Cotoca,"Bolivia, Plurinational State of",-17.75,-62.95,-17.75,-62.95,"Cotoca, Bolivia, Plurinational State of",BOL
+45,correct location data,El Vallecito,"Bolivia, Plurinational State of",-17.77,-63.15,-17.77,-63.15,"El Vallecito, Bolivia, Plurinational State of",BOL
+46,correct location data,Iboperenda,"Bolivia, Plurinational State of",-19.87,-63.77,-19.87,-63.77,"Iboperenda, Bolivia, Plurinational State of",BOL
+47,correct location data,Okinawa,"Bolivia, Plurinational State of",-17.33,-62.08,-17.33,-62.08,"Okinawa, Bolivia, Plurinational State of",BOL
+48,correct location data,Pailon,"Bolivia, Plurinational State of",-17.65,-62.65,-17.65,-62.65,"Pailon, Bolivia, Plurinational State of",BOL
+49,correct location data,Pairumani,"Bolivia, Plurinational State of",-17.35,-66.32,-17.35,-66.32,"Pairumani, Bolivia, Plurinational State of",BOL
+50,correct location data,"San Julian, Santa Cruz","Bolivia, Plurinational State of",-16.8,-62.67,-16.8,-62.67,"San Julian, Santa Cruz, Bolivia, Plurinational State of",BOL
+51,correct location data,Vallegrande,"Bolivia, Plurinational State of",-18.47,-64.12,-18.47,-64.12,"Vallegrande, Bolivia, Plurinational State of",BOL
+52,correct location data,Zuda╤es,"Bolivia, Plurinational State of",-19.12,-64.2,-19.12,-64.2,"Zuda╤es, Bolivia, Plurinational State of",BOL
+53,correct location data,Goodhope,Botswana,-25.48,25.47,-25.48,25.47,"Goodhope, Botswana",BWA
+54,correct location data,Hukuntsi,Botswana,-24.0,21.8,-24.0,21.8,"Hukuntsi, Botswana",BWA
+55,correct location data,Pandamatenga,Botswana,-18.55,25.65,-18.55,25.65,"Pandamatenga, Botswana",BWA
+56,correct location data,Pelotshetlha,Botswana,-23.03,26.517,-23.03,26.517,"Pelotshetlha, Botswana",BWA
+57,correct location data,Sebele,Botswana,-24.57,25.95,-24.57,25.95,"Sebele, Botswana",BWA
+58,correct location data,Sebele-lown,Botswana,-24.6,26.0,-24.6,26.0,"Sebele-lown, Botswana",BWA
+59,no lat/lng entered / incorrect lat/lng - geocoded location,Brazil,Brazil,0.0,0.0,-10.3333333,-53.2,"Brazil, Brazil",BRA
+60,no lat/lng entered / incorrect lat/lng - geocoded location,Campo Largo - Pr,Brazil,0.0,0.0,-10.3926525,-41.4194351,"Campo Largo, Bahia, Brazil",BRA
+61,correct location data,Cascavel,Brazil,-24.93,-53.43,-24.93,-53.43,"Cascavel, Brazil",BRA
+62,correct location data,Cravinhos,Brazil,-21.32,-47.75,-21.32,-47.75,"Cravinhos, Brazil",BRA
+63,correct location data,Guaira,Brazil,-24.08,-54.25,-24.08,-54.25,"Guaira, Brazil",BRA
+64,correct location data,Jardinopolis,Brazil,-21.0,-47.1,-21.0,-47.1,"Jardinopolis, Brazil",BRA
+65,correct location data,Sete Lagoas,Brazil,-19.47,-44.25,-19.47,-44.25,"Sete Lagoas, Brazil",BRA
+66,correct location data,Farako-ba,Burkina Faso,11.1,-4.333333,11.1,-4.333333,"Farako-ba, Burkina Faso",BFA
+67,correct location data,Kamboinse,Burkina Faso,12.47,-1.53,12.47,-1.53,"Kamboinse, Burkina Faso",BFA
+68,correct location data,Kouare,Burkina Faso,11.916666,-0.166666,11.916666,-0.166666,"Kouare, Burkina Faso",BFA
+69,correct location data,Burundi,Burundi,-3.3731,29.9189,-3.3731,29.9189,"Burundi, Burundi",BDI
+70,correct location data,Mosso,Burundi,-4.0,30.07,-4.0,30.07,"Mosso, Burundi",BDI
+71,correct location data,Beijing,China,40.0,105.0,40.0,105.0,"Beijing, China",CHN
+72,correct location data,Bijie,China,27.05,105.23,27.05,105.23,"Bijie, China",CHN
+73,correct location data,Chengdu,China,30.67,104.07,30.67,104.07,"Chengdu, China",CHN
+74,correct location data,Fujian Province,China,24.5,117.65,24.5,117.65,"Fujian Province, China",CHN
+75,correct location data,Guang-xi,China,22.6,108.17,22.6,108.17,"Guang-xi, China",CHN
+76,correct location data,Gui-yang,China,26.48,106.65,26.48,106.65,"Gui-yang, China",CHN
+77,no lat/lng entered / incorrect lat/lng - geocoded location,Honghe,China,0.0,0.0,23.234737,102.301136,"Honghe County, Yunnan, China",CHN
+78,correct location data,"Jialize, Kunming, Yunnan",China,34.16182,105.29297,34.16182,105.29297,"Jialize, Kunming, Yunnan, China",CHN
+79,correct location data,Kunming,China,25.12,102.72,25.12,102.72,"Kunming, China",CHN
+80,correct location data,Linciang,China,23.7,100.03,23.7,100.03,"Linciang, China",CHN
+81,no lat/lng entered / incorrect lat/lng - geocoded location,Mian Yang,China,0.0,0.0,33.1051332,106.686846,"Yangjia River, 723000, Mian, Shaanxi, China",CHN
+82,correct location data,Mongzi,China,23.38,103.38,23.38,103.38,"Mongzi, China",CHN
+83,correct location data,Nanning,China,22.6,108.17,22.6,108.17,"Nanning, China",CHN
+84,correct location data,Oifin,China,25.5,103.8,25.5,103.8,"Oifin, China",CHN
+85,correct location data,Qujin,China,25.5,103.67,25.5,103.67,"Qujin, China",CHN
+86,correct location data,Simao,China,21.67,101.4,21.67,101.4,"Simao, China",CHN
+87,no lat/lng entered / incorrect lat/lng - geocoded location,Wenshan,China,22.47,106.18,23.4191513,104.0896466,"Wenshan City, Yunnan, China",CHN
+88,correct location data,Yunnan,China,25.08062,102.68681,25.08062,102.68681,"Yunnan, China",CHN
+89,no lat/lng entered / incorrect lat/lng - geocoded location,Aguas Blancas,Colombia,0.0,0.0,6.9003599,-75.7235025,"Aguas Blancas., Antioquia, Colombia",COL
+90,no lat/lng entered / incorrect lat/lng - geocoded location,Aguas Claras,Colombia,0.0,0.0,3.6304011,-73.8070253,"Aguas Claras, Meta, Colombia",COL
+91,no lat/lng entered / incorrect lat/lng - geocoded location,Andremoni,Colombia,0.0,0.0,2.8894434,-73.783892,"Colombia, Colombia",COL
+92,no lat/lng entered / incorrect lat/lng - geocoded location,Arborates,Colombia,0.0,0.0,2.8894434,-73.783892,"Colombia, Colombia",COL
+93,no lat/lng entered / incorrect lat/lng - geocoded location,"Atuncela, Dagua",Colombia,0.0,0.0,3.65186675,-76.72289271511232,"Dagua, Valle del Cauca, Colombia",COL
+94,no lat/lng entered / incorrect lat/lng - geocoded location,Bucaramanga,Colombia,0.0,0.0,7.1114611,-73.1172869,"Bucaramanga, Santander, Colombia",COL
+95,no lat/lng entered / incorrect lat/lng - geocoded location,"Bucaramanga, Pinchote",Colombia,0.0,0.0,7.1114611,-73.1172869,"Bucaramanga, Santander, Colombia",COL
+96,correct location data,Buga,Colombia,3.88,-76.28,3.88,-76.28,"Buga, Colombia",COL
+97,no lat/lng entered / incorrect lat/lng - geocoded location,"Buga, Media Canoa",Colombia,0.0,0.0,3.8916716,-76.3418933,"Vía Mediacanoa - Buga, 763042, Buga, Valle del Cauca, Colombia",COL
+98,no lat/lng entered / incorrect lat/lng - geocoded location,Caicedonia,Colombia,0.0,0.0,4.3080642000000005,-75.83980499303324,"Caicedonia, Valle del Cauca, Colombia",COL
+99,no lat/lng entered / incorrect lat/lng - geocoded location,Caldono,Colombia,0.0,0.0,2.796326,-76.4836526,"Caldono, Cauca, Colombia",COL
+100,correct location data,Cali,Colombia,3.5,-76.37,3.5,-76.37,"Cali, Colombia",COL
+101,no lat/lng entered / incorrect lat/lng - geocoded location,"Campo Alegre, Huila",Colombia,0.0,0.0,2.663056,-75.34,"Campo Alegre Airport, Huila, Colombia",COL
+102,no lat/lng entered / incorrect lat/lng - geocoded location,Ca╤a Flecha,Colombia,0.0,0.0,8.7241403,-75.6877463,"Arroyo Negro, Caserío Flecha, Córdoba, Colombia",COL
+103,no lat/lng entered / incorrect lat/lng - geocoded location,Carmen De Bolivar,Colombia,0.0,0.0,9.7178623,-75.1238318,"El Carmen de Bolívar, Bolívar, Colombia",COL
+104,no lat/lng entered / incorrect lat/lng - geocoded location,"Cerete, Cordoba",Colombia,0.0,0.0,8.8884178,-75.84239456572658,"Cereté, Córdoba, Colombia",COL
+105,no lat/lng entered / incorrect lat/lng - geocoded location,Cerrito,Colombia,0.0,0.0,6.8435992,-72.6939627,"Cerrito, Santander, Colombia",COL
+106,no lat/lng entered / incorrect lat/lng - geocoded location,Cienega De Oro,Colombia,0.0,0.0,9.1108885,-72.8089164,"Río de Oro, Norte de Santander, Colombia",COL
+107,no lat/lng entered / incorrect lat/lng - geocoded location,Ciudad Bolivar,Colombia,0.0,0.0,5.8500342,-76.0208666,"Ciudad Bolívar, Antioquia, Colombia",COL
+108,no lat/lng entered / incorrect lat/lng - geocoded location,Colombia,Colombia,0.0,0.0,2.8894434,-73.783892,"Colombia, Colombia",COL
+109,no lat/lng entered / incorrect lat/lng - geocoded location,Cordoba,Colombia,0.0,0.0,8.3344713,-75.6666238,"Córdoba, Colombia",COL
+110,no lat/lng entered / incorrect lat/lng - geocoded location,Corozal,Colombia,0.0,0.0,4.3988856,-75.9180591,"Corozal, Valle del Cauca, Colombia",COL
+111,no lat/lng entered / incorrect lat/lng - geocoded location,"Darien, Valle Del Cauca",Colombia,0.0,0.0,3.9318186,-76.4842408,"Darién, Valle del Cauca, Colombia",COL
+112,no lat/lng entered / incorrect lat/lng - geocoded location,Duitama,Colombia,0.0,0.0,5.8277055,-73.0338939,"Duitama, 150461, Boyacá, Colombia",COL
+113,correct location data,"El Cerrito, Valle Del Cauca",Colombia,3.7,-76.32,3.7,-76.32,"El Cerrito, Valle Del Cauca, Colombia",COL
+114,no lat/lng entered / incorrect lat/lng - geocoded location,"El Espinal, Tolima",Colombia,0.0,0.0,3.6461987,-75.3992722,"Mesetas De El Espinal, 73168, Tolima, Colombia",COL
+115,no lat/lng entered / incorrect lat/lng - geocoded location,El Libano,Colombia,0.0,0.0,4.65626495,-74.00975263481826,"El Líbano, Cundinamarca, Colombia",COL
+116,no lat/lng entered / incorrect lat/lng - geocoded location,El Naranjal,Colombia,0.0,0.0,2.9142726,-76.5053277,"El Naranjal, Cauca, Colombia",COL
+117,no lat/lng entered / incorrect lat/lng - geocoded location,El Rosario,Colombia,0.0,0.0,5.0330087,-75.5690318,"El Rosario, 176002, Caldas, Colombia",COL
+118,no lat/lng entered / incorrect lat/lng - geocoded location,"El Tambo, Valle Del Cauca",Colombia,0.0,0.0,3.7638803,-76.4861177,"El Tambor, Resguardo Indigena Gausirumos, Valle del Cauca, Colombia",COL
+119,no lat/lng entered / incorrect lat/lng - geocoded location,El Tomate,Colombia,0.0,0.0,8.4554247,-76.3655876,"El Tomate, 054, Antioquia, Colombia",COL
+120,no lat/lng entered / incorrect lat/lng - geocoded location,"Fuente De Oro, Granda",Colombia,0.0,0.0,3.4620439,-73.6174132,"Fuente de Oro, Meta, Colombia",COL
+121,no lat/lng entered / incorrect lat/lng - geocoded location,"Garzon, Huila",Colombia,0.0,0.0,2.1625835,-75.55514449355248,"Garzón, 414020, Huila, Colombia",COL
+122,no lat/lng entered / incorrect lat/lng - geocoded location,Granada,Colombia,0.0,0.0,6.1442998,-75.1844057,"Granada, Antioquia, Colombia",COL
+123,no lat/lng entered / incorrect lat/lng - geocoded location,Guadalajara De Buga,Colombia,0.0,0.0,3.8884715,-76.2593652,"Rio Guadalajara, 042, Valle del Cauca, Colombia",COL
+124,no lat/lng entered / incorrect lat/lng - geocoded location,"Independencia, Caldono",Colombia,0.0,0.0,2.796326,-76.4836526,"Caldono, Cauca, Colombia",COL
+125,no lat/lng entered / incorrect lat/lng - geocoded location,"La Catalina, Pereira",Colombia,0.0,0.0,4.8023263,-75.6964439,"Carrera 21 bis, 576, Bostón, Risaralda, Colombia",COL
+126,no lat/lng entered / incorrect lat/lng - geocoded location,"La Cubillera, Granada",Colombia,0.0,0.0,2.2768381,-74.9559382,"Rio La Granada, 182010, Caquetá, Colombia",COL
+127,no lat/lng entered / incorrect lat/lng - geocoded location,La Palomera,Colombia,0.0,0.0,2.9537984,-76.4195252,"La Palomera, Cauca, Colombia",COL
+128,no lat/lng entered / incorrect lat/lng - geocoded location,"La Trocha 12, Granda",Colombia,0.0,0.0,2.2551161,-76.90841105000001,"12, 12, Puerta Grande, Cauca, Colombia",COL
+129,correct location data,La Ulloa Mpio Rivera,Colombia,2.62,-75.42,2.62,-75.42,"La Ulloa Mpio Rivera, Colombia",COL
+130,no lat/lng entered / incorrect lat/lng - geocoded location,"La Union, Corcega",Colombia,0.0,0.0,4.5366453,-76.06681,"Corcega, Valle del Cauca, Colombia",COL
+131,no lat/lng entered / incorrect lat/lng - geocoded location,"Lejania, Granada",Colombia,0.0,0.0,2.7688153,-75.649768,"Lejania, Huila, Colombia",COL
+132,no lat/lng entered / incorrect lat/lng - geocoded location,Matazul,Colombia,0.0,0.0,2.8894434,-73.783892,"Colombia, Colombia",COL
+133,no lat/lng entered / incorrect lat/lng - geocoded location,Menegua,Colombia,0.0,0.0,4.0919294,-72.8149621,"Menegua, Meta, Colombia",COL
+134,no lat/lng entered / incorrect lat/lng - geocoded location,"Mondomo, Santander",Colombia,0.0,0.0,2.8606688,-76.5123296,"Rio Mondomo, El Arbolito, Cauca, Colombia",COL
+135,no lat/lng entered / incorrect lat/lng - geocoded location,Monteria,Colombia,8.83,-57.78,8.7558921,-75.887029,"Montería, Córdoba, Colombia",COL
+136,no lat/lng entered / incorrect lat/lng - geocoded location,"Neiva, Huila",Colombia,0.0,0.0,3.0332673000000003,-75.27944239597832,"Neiva, Huila, Colombia",COL
+137,no lat/lng entered / incorrect lat/lng - geocoded location,"Obando, Molina",Colombia,0.0,0.0,4.6220602,-76.0282284,"MOLINA, Valle del Cauca, Colombia",COL
+138,correct location data,Palmira,Colombia,4.27,-76.32,4.27,-76.32,"Palmira, Colombia",COL
+139,no lat/lng entered / incorrect lat/lng - geocoded location,"Paraguaicito, Armenia",Colombia,0.0,0.0,4.4923898,-75.73960166465673,"Armenia, Quindío, Colombia",COL
+140,no lat/lng entered / incorrect lat/lng - geocoded location,Pelaya-cesar (aguachica),Colombia,0.0,0.0,8.24811845,-73.62140380560058,"Aguachica, Cesar, Colombia",COL
+141,no lat/lng entered / incorrect lat/lng - geocoded location,Pereira,Colombia,0.0,0.0,4.8142912,-75.6946451,"Pereira, 660002, Risaralda, Colombia",COL
+142,no lat/lng entered / incorrect lat/lng - geocoded location,Piendamo,Colombia,0.0,0.0,2.735773,-76.5534967167817,"Piendamó, Cauca, Colombia",COL
+143,no lat/lng entered / incorrect lat/lng - geocoded location,Procampo,Colombia,0.0,0.0,2.8894434,-73.783892,"Colombia, Colombia",COL
+144,no lat/lng entered / incorrect lat/lng - geocoded location,Puerto Lopez,Colombia,0.0,0.0,7.7933241,-75.8401892,"Puerto Lopez, Córdoba, Colombia",COL
+145,no lat/lng entered / incorrect lat/lng - geocoded location,Puerto Lopez (2),Colombia,0.0,0.0,6.4902145,-74.3997197,"Carrera 2, 00000, Puerto Berrío, Antioquia, Colombia",COL
+146,no lat/lng entered / incorrect lat/lng - geocoded location,"Quindio, Montenegro",Colombia,0.0,0.0,4.5664176,-75.7507081,"Montenegro, Quindío, Colombia",COL
+147,no lat/lng entered / incorrect lat/lng - geocoded location,"Rivera, Huila",Colombia,0.0,0.0,2.7779482,-75.2582697,"Rivera, Huila, Colombia",COL
+148,no lat/lng entered / incorrect lat/lng - geocoded location,Roldanillo,Colombia,0.0,0.0,4.4440112,-76.16639092634387,"Roldanillo, Valle del Cauca, Colombia",COL
+149,no lat/lng entered / incorrect lat/lng - geocoded location,"Sabana De Torres, Santander",Colombia,0.0,0.0,7.3939416,-73.4998859,"Sabana de Torres, Santander, Colombia",COL
+150,no lat/lng entered / incorrect lat/lng - geocoded location,Sahagu,Colombia,0.0,0.0,8.9103343,-75.4817766,"Loma Grande, Córdoba, Colombia",COL
+151,no lat/lng entered / incorrect lat/lng - geocoded location,San Antonio,Colombia,0.0,0.0,7.7017427,-75.6206362,"San Antonio, Córdoba, Colombia",COL
+152,no lat/lng entered / incorrect lat/lng - geocoded location,San Barreto,Colombia,0.0,0.0,12.38051665,-81.6140750764522,"Archipiélago de San Andrés, Providencia y Santa Catalina (Colombia), Colombia",COL
+153,no lat/lng entered / incorrect lat/lng - geocoded location,"San Francisco, Sandona",Colombia,0.0,0.0,1.2991853500000001,-77.47593481408893,"Sandoná, Nariño, Colombia",COL
+154,no lat/lng entered / incorrect lat/lng - geocoded location,"San Ignacio, Granada",Colombia,0.0,0.0,3.5209285,-74.0519891,"San Ignacio, Meta, Colombia",COL
+155,no lat/lng entered / incorrect lat/lng - geocoded location,San Pedro De Uraba,Colombia,0.0,0.0,8.33372075,-76.34080137233052,"San Pedro de Urabá, 054, Antioquia, Colombia",COL
+156,no lat/lng entered / incorrect lat/lng - geocoded location,San Pelayo,Colombia,0.0,0.0,8.9572178,-75.8374769,"San Pelayo, Córdoba, Colombia",COL
+157,no lat/lng entered / incorrect lat/lng - geocoded location,"San Rafael, Consaca",Colombia,0.0,0.0,1.1638005,-77.4519397,"San Rafael, Nariño, Colombia",COL
+158,no lat/lng entered / incorrect lat/lng - geocoded location,"Sandona, Narino, Fidar",Colombia,0.0,0.0,1.2991853500000001,-77.47593481408893,"Sandoná, Nariño, Colombia",COL
+159,no lat/lng entered / incorrect lat/lng - geocoded location,Santa Helena,Colombia,0.0,0.0,4.7474328,-73.91733532236897,"Santa Helena, Cundinamarca, Colombia",COL
+160,no lat/lng entered / incorrect lat/lng - geocoded location,Santa Lucia,Colombia,0.0,0.0,6.0537421,-75.9961388,"Santa Lucía, Las Andes, Antioquia, Colombia",COL
+161,no lat/lng entered / incorrect lat/lng - geocoded location,Santander De Quilichao,Colombia,0.0,0.0,2.99828845,-76.51019933487012,"Santander de Quilichao, Cauca, Colombia",COL
+162,no lat/lng entered / incorrect lat/lng - geocoded location,Segovia,Colombia,0.0,0.0,7.2775945,-74.62085391976942,"Segovia, Antioquia, Colombia",COL
+163,no lat/lng entered / incorrect lat/lng - geocoded location,Semivalle,Colombia,0.0,0.0,2.8894434,-73.783892,"Colombia, Colombia",COL
+164,no lat/lng entered / incorrect lat/lng - geocoded location,Sincelejo,Colombia,0.0,0.0,9.315429349999999,-75.43298059079754,"Sincelejo, 70001, Sucre, Colombia",COL
+165,no lat/lng entered / incorrect lat/lng - geocoded location,Taluma,Colombia,0.0,0.0,2.8894434,-73.783892,"Colombia, Colombia",COL
+166,no lat/lng entered / incorrect lat/lng - geocoded location,Tierra Alta,Colombia,0.0,0.0,8.3119698,-75.4425907,"Tierra Alta, Córdoba, Colombia",COL
+167,no lat/lng entered / incorrect lat/lng - geocoded location,Tulenapa,Colombia,0.0,0.0,2.8894434,-73.783892,"Colombia, Colombia",COL
+168,no lat/lng entered / incorrect lat/lng - geocoded location,Tunja,Colombia,0.0,0.0,5.5158168,-73.37773195372108,"Tunja, Boyacá, Colombia",COL
+169,correct location data,Turipana,Colombia,8.65,-75.97,8.65,-75.97,"Turipana, Colombia",COL
+170,correct location data,Turipana (2),Colombia,8.65,-75.97,8.65,-75.97,"Turipana (2), Colombia",COL
+171,no lat/lng entered / incorrect lat/lng - geocoded location,Turipana (3),Colombia,0.0,0.0,2.9405994,-75.25635620782482,"Turipaná, Comuna Oriente, Huila, Colombia",COL
+172,no lat/lng entered / incorrect lat/lng - geocoded location,Turipana (4),Colombia,0.0,0.0,2.9402105,-75.2568126,"Carrera 43B, Comuna Oriente, Huila, Colombia",COL
+173,no lat/lng entered / incorrect lat/lng - geocoded location,Valle De Magdalena,Colombia,0.0,0.0,10.717347,-73.6220434,"Valle de Mamancanaca, Magdalena, Colombia",COL
+174,no lat/lng entered / incorrect lat/lng - geocoded location,Valle De Magdalena (2),Colombia,0.0,0.0,10.717347,-73.6220434,"Valle de Mamancanaca, Magdalena, Colombia",COL
+175,no lat/lng entered / incorrect lat/lng - geocoded location,Valle De Magdalena (3),Colombia,0.0,0.0,10.717347,-73.6220434,"Valle de Mamancanaca, Magdalena, Colombia",COL
+176,no lat/lng entered / incorrect lat/lng - geocoded location,Valle De Magdalena (4),Colombia,0.0,0.0,3.5378217,-76.2976028,"Flota Magdalena S.A., Calle 42, 763531, Calle 42, Palmira, Valle del Cauca, Colombia",COL
+177,no lat/lng entered / incorrect lat/lng - geocoded location,Valle Del Cauca,Colombia,0.0,0.0,4.063969999999999,-76.12337981939545,"Valle del Cauca, Colombia",COL
+178,no lat/lng entered / incorrect lat/lng - geocoded location,Venecia,Colombia,0.0,0.0,5.9458914,-75.77586492822118,"Venecia, Antioquia, Colombia",COL
+179,no lat/lng entered / incorrect lat/lng - geocoded location,Villavicencio,Colombia,0.0,0.0,4.1315113,-73.6206667,"Villavicencio, 500005, Villavicencio, Meta, Colombia",COL
+180,no lat/lng entered / incorrect lat/lng - geocoded location,Villavo,Colombia,0.0,0.0,4.5066393,-74.1129318,"Salida para Villavo en Yomasa, Avenida Boyacá, 110541, Avenida Boyacá, Usme, Bogota Capital District, Colombia",COL
+181,no lat/lng entered / incorrect lat/lng - geocoded location,Yotoco-valle Del Cauca,Colombia,0.0,0.0,3.89766105,-76.387873049896,"Yotoco, Valle del Cauca, Colombia",COL
+182,no lat/lng entered / incorrect lat/lng - geocoded location,Congo,Congo,0.0,0.0,-0.7264327,15.6419155,"Congo-Brazzaville, Republic of the Congo",COG
+183,correct location data,Odziba,Congo,-3.55,15.516666,-3.55,15.516666,"Odziba, Congo",COG
+184,no lat/lng entered / incorrect lat/lng - geocoded location,Tshibati,Congo,0.0,0.0,-0.7264327,15.6419155,"Congo-Brazzaville, Republic of the Congo",COG
+185,correct location data,"Ca╤as, Guanacaste",Costa Rica,10.43,-85.1,10.43,-85.1,"Ca╤as, Guanacaste, Costa Rica",CRI
+186,no lat/lng entered / incorrect lat/lng - geocoded location,Costa Rica,Costa Rica,0.0,0.0,10.2735633,-84.0739102,"Costa Rica, Costa Rica",CRI
+187,no lat/lng entered / incorrect lat/lng - geocoded location,"El Aguila, Pejibaye",Costa Rica,0.0,0.0,9.1194544,-83.5303297,"Río Águila, 11907, Pejibaye, Provincia San José, Costa Rica",CRI
+188,no lat/lng entered / incorrect lat/lng - geocoded location,"El Parque, Los Chiles",Costa Rica,0.0,0.0,10.89066895,-84.78596013649482,"Parque de Caño Negro, 21402, Caño Negro, Provincia Alajuela, Costa Rica",CRI
+189,no lat/lng entered / incorrect lat/lng - geocoded location,"El Progreso, Pejibaye",Costa Rica,0.0,0.0,10.7306671,-84.915083,"El Progreso, 21504, Provincia Alajuela, Costa Rica",CRI
+190,no lat/lng entered / incorrect lat/lng - geocoded location,Guagaral,Costa Rica,11.69527,-85.78125,9.0749483,-83.511078,"Guagaral de Buenos Aires, Provincia Puntarenas, Costa Rica",CRI
+191,correct location data,Guanacaste,Costa Rica,10.35,-85.13,10.35,-85.13,"Guanacaste, Costa Rica",CRI
+192,no lat/lng entered / incorrect lat/lng - geocoded location,Las Ca╤as,Costa Rica,0.0,0.0,10.27969975,-84.95930039143778,"Parque Central de Las Juntas, 50701, Las Juntas, Provincia Guanacaste, Costa Rica",CRI
+193,no lat/lng entered / incorrect lat/lng - geocoded location,Pejibaye De Perez Zeledon,Costa Rica,0.0,0.0,9.16834465,-83.5713993251368,"Cementerio de Pejibaye, 11907, Pejibaye, Provincia San José, Costa Rica",CRI
+194,correct location data,"San Jose, Costa Rica",Costa Rica,9.98,-84.07,9.98,-84.07,"San Jose, Costa Rica, Costa Rica",CRI
+195,no lat/lng entered / incorrect lat/lng - geocoded location,Upala,Costa Rica,0.0,0.0,10.8838931,-85.14527533051114,"Cantón Upala, Provincia Alajuela, Costa Rica",CRI
+196,no lat/lng entered / incorrect lat/lng - geocoded location,Upala Pueblo Nuevo,Costa Rica,0.0,0.0,10.9710491,-85.1232129,"Barrio Pueblo Nuevo, Provincia Alajuela, Costa Rica",CRI
+197,no lat/lng entered / incorrect lat/lng - geocoded location,"Veracruz, Pejibaye",Costa Rica,0.0,0.0,9.1604954,-83.5693607,"Pejibaye, 11907, Provincia San José, Costa Rica",CRI
+198,correct location data,Badikaha,Côte d'Ivoire,8.0,-5.0,8.0,-5.0,"Badikaha, Côte d'Ivoire",CIV
+199,correct location data,Bouake,Côte d'Ivoire,7.68,-5.03,7.68,-5.03,"Bouake, Côte d'Ivoire",CIV
+200,correct location data,Ferkessedougou,Côte d'Ivoire,9.58,-5.23,9.58,-5.23,"Ferkessedougou, Côte d'Ivoire",CIV
+201,correct location data,Sinematiali,Côte d'Ivoire,9.62,-3.07,9.62,-3.07,"Sinematiali, Côte d'Ivoire",CIV
+202,correct location data,Touba,Côte d'Ivoire,8.366666,-7.7,8.366666,-7.7,"Touba, Côte d'Ivoire",CIV
+203,correct location data,Warda/adrao-mbe,Côte d'Ivoire,7.866666,-5.1,7.866666,-5.1,"Warda/adrao-mbe, Côte d'Ivoire",CIV
+204,no lat/lng entered / incorrect lat/lng - geocoded location,Alquizar,Cuba,23.83,-82.52,22.7664656,-82.60529356062673,"Alquízar, Artemisa, Cuba",CUB
+205,no lat/lng entered / incorrect lat/lng - geocoded location,Tomeguin,Cuba,23.85,-82.52,23.0131338,-80.8328748,"Cuba, Cuba",CUB
+206,correct location data,Bani,Dominican Republic,18.32,-70.35,18.32,-70.35,"Bani, Dominican Republic",DOM
+207,no lat/lng entered / incorrect lat/lng - geocoded location,Ecuador,Ecuador,0.0,0.0,-1.3397668,-79.3666965,"Ecuador, Ecuador",ECU
+208,no lat/lng entered / incorrect lat/lng - geocoded location,La Virginia Quevedo,Ecuador,0.0,0.0,-1.0465244,-79.4895278,"La Virginia, 120305, Los Ríos, Ecuador",ECU
+209,no lat/lng entered / incorrect lat/lng - geocoded location,Lodana,Ecuador,0.0,0.0,-1.1786654,-80.384962,"Lodana, Manabí, Ecuador",ECU
+210,correct location data,Los Rios,Ecuador,-1.1,-79.48,-1.1,-79.48,"Los Rios, Ecuador",ECU
+211,no lat/lng entered / incorrect lat/lng - geocoded location,Organos,Ecuador,0.0,0.0,-1.3397668,-79.3666965,"Ecuador, Ecuador",ECU
+212,correct location data,Pichilingue,Ecuador,-1.1,-79.48,-1.1,-79.48,"Pichilingue, Ecuador",ECU
+213,no lat/lng entered / incorrect lat/lng - geocoded location,Pindal,Ecuador,0.0,0.0,-4.10051445,-80.13880820830161,"Cantón Pindal, Loja, Ecuador",ECU
+214,correct location data,Porto Viejo,Ecuador,-1.07,-80.43,-1.07,-80.43,"Porto Viejo, Ecuador",ECU
+215,correct location data,Porto Viejo (2),Ecuador,-1.12,-80.47,-1.12,-80.47,"Porto Viejo (2), Ecuador",ECU
+216,correct location data,Gemmeiza,Egypt,30.72,31.12,30.72,31.12,"Gemmeiza, Egypt",EGY
+217,no lat/lng entered / incorrect lat/lng - geocoded location,Giza,Egypt,0.0,0.0,30.0170059,31.2134513,"Giza, 12541, Giza Governorate, Egypt",EGY
+218,correct location data,Nubaria,Egypt,31.0,30.5,31.0,30.5,"Nubaria, Egypt",EGY
+219,correct location data,Sakha,Egypt,31.12,30.95,31.12,30.95,"Sakha, Egypt",EGY
+220,correct location data,Sids,Egypt,28.93,30.98,28.93,30.98,"Sids, Egypt",EGY
+221,correct location data,Ahuachapan,El Salvador,13.92,-89.85,13.92,-89.85,"Ahuachapan, El Salvador",SLV
+222,no lat/lng entered / incorrect lat/lng - geocoded location,Apastepeque,El Salvador,0.0,0.0,13.8000382,-88.9140683,"El Salvador, El Salvador",SLV
+223,no lat/lng entered / incorrect lat/lng - geocoded location,"Barrio Nuevo, La Paz",El Salvador,0.0,0.0,13.5622223,-89.1150024,"Autopista a Aeropuerto Internacional El Salvador, Departamento de La Paz, El Salvador",SLV
+224,no lat/lng entered / incorrect lat/lng - geocoded location,Chalchahuapa,El Salvador,0.0,0.0,13.8000382,-88.9140683,"El Salvador, El Salvador",SLV
+225,no lat/lng entered / incorrect lat/lng - geocoded location,Cuhisnuat,El Salvador,0.0,0.0,13.8000382,-88.9140683,"El Salvador, El Salvador",SLV
+226,no lat/lng entered / incorrect lat/lng - geocoded location,El Coyalito,El Salvador,0.0,0.0,13.8000382,-88.9140683,"El Salvador, El Salvador",SLV
+227,no lat/lng entered / incorrect lat/lng - geocoded location,Jiquilisco,El Salvador,0.0,0.0,13.8000382,-88.9140683,"El Salvador, El Salvador",SLV
+228,no lat/lng entered / incorrect lat/lng - geocoded location,"Jocoro, Morazan",El Salvador,0.0,0.0,13.6993111,-89.19031923357137,"Plaza Morazán, CP 1102, San Salvador, Departamento de San Salvador, El Salvador",SLV
+229,no lat/lng entered / incorrect lat/lng - geocoded location,"Jucuapa, Usulutan",El Salvador,0.0,0.0,13.191240050000001,-88.36871601380577,"Isla El Platanar, Jucuarán, Departamento de Usulután, El Salvador",SLV
+230,no lat/lng entered / incorrect lat/lng - geocoded location,La Libertad,El Salvador,0.0,0.0,13.67551125,-89.24383353889507,"MCormick El Salvador, 1114, Antiguo Cuscatlán, Departamento de La Libertad, El Salvador",SLV
+231,no lat/lng entered / incorrect lat/lng - geocoded location,Lomas De Santiago,El Salvador,0.0,0.0,13.8300527,-89.3809173,"Quebrada El Zapote, Departamento de La Libertad, El Salvador",SLV
+232,no lat/lng entered / incorrect lat/lng - geocoded location,"Nacimiento, La Union",El Salvador,0.0,0.0,13.2003965,-87.71245064931787,"Cantón El Salvador, Departamento de La Unión, El Salvador",SLV
+233,no lat/lng entered / incorrect lat/lng - geocoded location,Nahuilingo,El Salvador,0.0,0.0,13.8000382,-88.9140683,"El Salvador, El Salvador",SLV
+234,no lat/lng entered / incorrect lat/lng - geocoded location,"Quelepa, San Miguel",El Salvador,0.0,0.0,13.4677996,-88.1926121,"Pasaje El Salvador, San Miguel, Departamento de San Miguel, El Salvador",SLV
+235,no lat/lng entered / incorrect lat/lng - geocoded location,San Mauricio,El Salvador,0.0,0.0,13.7338605,-89.22964259059421,"Cancha El Milagro, CP 1102, Residencial Monte Bello, Departamento de San Salvador, El Salvador",SLV
+236,no lat/lng entered / incorrect lat/lng - geocoded location,"San Pedro Puxtla, Ahuachapan",El Salvador,0.0,0.0,13.7424589,-89.8140037,"Escuela El Cortez, San Pedro Puxtla, Departamento de Ahuachapán, El Salvador",SLV
+237,no lat/lng entered / incorrect lat/lng - geocoded location,San Vicente,El Salvador,0.0,0.0,13.6977668,-89.18805,"Calle Presbiterio Vicente Aguilar, CP 1102, San Salvador, Departamento de San Salvador, El Salvador",SLV
+238,correct location data,Santa Cruz (2),El Salvador,13.33,-88.83,13.33,-88.83,"Santa Cruz (2), El Salvador",SLV
+239,correct location data,"Santa Cruz, El Salvador",El Salvador,13.33,-88.83,13.33,-88.83,"Santa Cruz, El Salvador, El Salvador",SLV
+240,no lat/lng entered / incorrect lat/lng - geocoded location,"Suchitoto, Cuscatlan",El Salvador,0.0,0.0,13.934355199999999,-89.02801160200242,"Plataforma Global El Salvador, 39, 2a Avenida Sur, 2a Avenida Sur, Suchitoto, Departamento de Cuscatlán, El Salvador",SLV
+241,no lat/lng entered / incorrect lat/lng - geocoded location,Tenancingo,El Salvador,0.0,0.0,13.8000382,-88.9140683,"El Salvador, El Salvador",SLV
+242,no lat/lng entered / incorrect lat/lng - geocoded location,"Uluazapa, La Union",El Salvador,0.0,0.0,13.2003965,-87.71245064931787,"Cantón El Salvador, Departamento de La Unión, El Salvador",SLV
+243,correct location data,Halhale,Eritrea,15.0,39.0,15.0,39.0,"Halhale, Eritrea",ERI
+244,correct location data,Shambiko,Eritrea,14.92,37.83,14.92,37.83,"Shambiko, Eritrea",ERI
+245,correct location data,Pontevedra,Spain,40.9799,-2.10938,40.9799,-2.10938,"Pontevedra, Spain",ESP
+246,correct location data,Adet,Ethiopia,11.27,37.48,11.27,37.48,"Adet, Ethiopia",ETH
+247,correct location data,Alemaya,Ethiopia,9.5,41.95,9.5,41.95,"Alemaya, Ethiopia",ETH
+248,correct location data,Ambo,Ethiopia,8.96,38.857,8.96,38.857,"Ambo, Ethiopia",ETH
+249,correct location data,Awassa,Ethiopia,7.05,38.47,7.05,38.47,"Awassa, Ethiopia",ETH
+250,correct location data,Awassa (2),Ethiopia,7.08,38.48,7.08,38.48,"Awassa (2), Ethiopia",ETH
+251,correct location data,Bako,Ethiopia,9.1,37.15,9.1,37.15,"Bako, Ethiopia",ETH
+252,correct location data,Bako (2),Ethiopia,5.85,37.08,5.85,37.08,"Bako (2), Ethiopia",ETH
+253,correct location data,Ethiopia,Ethiopia,7.71099,42.53906,7.71099,42.53906,"Ethiopia, Ethiopia",ETH
+254,no lat/lng entered / incorrect lat/lng - geocoded location,Haramaya,Ethiopia,0.0,0.0,9.41467595,42.03515001516861,"Haramaya University, Didimtu, Harari Region, Ethiopia",ETH
+255,correct location data,Holetta,Ethiopia,9.05,38.5,9.05,38.5,"Holetta, Ethiopia",ETH
+256,correct location data,Jimma,Ethiopia,7.67,36.83,7.67,36.83,"Jimma, Ethiopia",ETH
+257,no lat/lng entered / incorrect lat/lng - geocoded location,Kitale-ws,Ethiopia,1.01666998863,34.9833297729,12.91667,39.56666,"Kitare, Tigray Region, Ethiopia",ETH
+258,correct location data,Kokate,Ethiopia,10.7853002548,38.0278015137,10.7853002548,38.0278015137,"Kokate, Ethiopia",ETH
+259,correct location data,Kulumsa,Ethiopia,8.0,39.15,8.0,39.15,"Kulumsa, Ethiopia",ETH
+260,correct location data,Melkasa,Ethiopia,8.4,39.33,8.4,39.33,"Melkasa, Ethiopia",ETH
+261,correct location data,Mieso,Ethiopia,9.33,41.18,9.33,41.18,"Mieso, Ethiopia",ETH
+262,correct location data,Nazareth,Ethiopia,8.5,39.5,8.5,39.5,"Nazareth, Ethiopia",ETH
+263,correct location data,Nazret,Ethiopia,8.5239,39.2582,8.5239,39.2582,"Nazret, Ethiopia",ETH
+264,correct location data,Pawe,Ethiopia,11.23,38.0,11.23,38.0,"Pawe, Ethiopia",ETH
+265,no lat/lng entered / incorrect lat/lng - geocoded location,Ws,Ethiopia,0.0,0.0,10.2116702,38.6521203,"Ethiopia, Ethiopia",ETH
+266,correct location data,Ziway,Ethiopia,8.0,38.83,8.0,38.83,"Ziway, Ethiopia",ETH
+267,no lat/lng entered / incorrect lat/lng - geocoded location,Dobuleni Research Station,Fiji,0.0,0.0,-16.7056525,-179.9082564,"Mua Research Station, West Coast Road, West Coast Road, Matei, Northern, Fiji",FJI
+268,no lat/lng entered / incorrect lat/lng - geocoded location,Koronnia Research Station,Fiji,0.0,0.0,-16.7056525,-179.9082564,"Mua Research Station, West Coast Road, West Coast Road, Matei, Northern, Fiji",FJI
+269,no lat/lng entered / incorrect lat/lng - geocoded location,Legalega Research Station,Fiji,0.0,0.0,-16.7056525,-179.9082564,"Mua Research Station, West Coast Road, West Coast Road, Matei, Northern, Fiji",FJI
+270,no lat/lng entered / incorrect lat/lng - geocoded location,Sigatoka Research Station,Fiji,0.0,0.0,-16.7056525,-179.9082564,"Mua Research Station, West Coast Road, West Coast Road, Matei, Northern, Fiji",FJI
+271,no lat/lng entered / incorrect lat/lng - geocoded location,Tserovani,Georgia,0.0,0.0,41.894183,44.6744183,"Tserovani, Mtskheta-Mtianeti, Georgia",GEO
+272,correct location data,Damongo,Ghana,9.066666,-1.816666,9.066666,-1.816666,"Damongo, Ghana",GHA
+273,correct location data,Ejura,Ghana,7.383333,-1.366666,7.383333,-1.366666,"Ejura, Ghana",GHA
+274,correct location data,Fumesua,Ghana,6.75,-1.583333,6.75,-1.583333,"Fumesua, Ghana",GHA
+275,correct location data,Kwadaso,Ghana,6.75,-1.58,6.75,-1.58,"Kwadaso, Ghana",GHA
+276,correct location data,Nyankpala,Ghana,9.42,-0.97,9.42,-0.97,"Nyankpala, Ghana",GHA
+277,correct location data,Pokuase,Ghana,5.683333,-0.283333,5.683333,-0.283333,"Pokuase, Ghana",GHA
+278,"entered (lat, -lng)",Tamale,Ghana,9.3972,0.8329,9.3972,-0.8329,"Tamale, Ghana",GHA
+279,correct location data,Thessaloniki,Greece,40.55,23.0,40.55,23.0,"Thessaloniki, Greece",GRC
+280,no lat/lng entered / incorrect lat/lng - geocoded location,Thessaloniki-kentriko,Greece,39.09596,23.37891,40.6370053,22.9365145,"Kentriko Thessalonikis, 1, Leondos Sofou, 54626, Leondos Sofou, Thessaloniki, Macedonia - Thrace, Greece",GRC
+281,correct location data,"Barcenas, Villa Nuev",Guatemala,14.5467,-90.62283,14.5467,-90.62283,"Barcenas, Villa Nuev, Guatemala",GTM
+282,no lat/lng entered / incorrect lat/lng - geocoded location,"Caballo Blanco, Retalhuleu",Guatemala,0.0,0.0,14.485095699999999,-91.65043931764578,"Casa Blanca, Retalhuleu, Guatemala",GTM
+283,correct location data,Chimaltenango,Guatemala,14.67,-90.8,14.67,-90.8,"Chimaltenango, Guatemala",GTM
+284,correct location data,Cuyuta,Guatemala,14.25,-90.0,14.25,-90.0,"Cuyuta, Guatemala",GTM
+285,no lat/lng entered / incorrect lat/lng - geocoded location,"El Ovejero, Jutiapa",Guatemala,0.0,0.0,14.4393269,-89.8680008,"El Ovejero, Jutiapa, Guatemala",GTM
+286,no lat/lng entered / incorrect lat/lng - geocoded location,Estanzuela,Guatemala,0.0,0.0,14.9788616,-89.60987405581477,"Estanzuela, Zacapa, Guatemala",GTM
+287,no lat/lng entered / incorrect lat/lng - geocoded location,Guatemala,Guatemala,,,15.6356088,-89.8988087,"Guatemala, Guatemala",GTM
+288,no lat/lng entered / incorrect lat/lng - geocoded location,Isidro Avarez,Guatemala,16.87,-96.78,15.1318255,-91.7181262,"San Isidro, San Marcos, Guatemala",GTM
+289,correct location data,Jutiapa,Guatemala,14.25,-89.92,14.25,-89.92,"Jutiapa, Guatemala",GTM
+290,no lat/lng entered / incorrect lat/lng - geocoded location,La Flecha,Guatemala,0.0,0.0,17.2708286,-90.8744237,"Río San Pedro (Guatemala-México), Petén, Guatemala",GTM
+291,no lat/lng entered / incorrect lat/lng - geocoded location,La Maquina,Guatemala,0.0,0.0,14.30496535,-91.56539103867601,"Parque San José La Máquina, Suchitepéquez, Guatemala",GTM
+292,no lat/lng entered / incorrect lat/lng - geocoded location,"La Maquina, Tulate",Guatemala,0.0,0.0,14.2371945,-91.6748598,"Centro 2 La Máquina, Tulate, Retalhuleu, Guatemala",GTM
+293,no lat/lng entered / incorrect lat/lng - geocoded location,Las Monjas,Guatemala,0.0,0.0,14.51342945,-89.8990143228134,"Monjas, Jalapa, Guatemala",GTM
+294,correct location data,Las Vegas,Guatemala,14.58358,-90.59326,14.58358,-90.59326,"Las Vegas, Guatemala",GTM
+295,no lat/lng entered / incorrect lat/lng - geocoded location,"Monjas, Jalapa",Guatemala,0.0,0.0,14.51342945,-89.8990143228134,"Monjas, Jalapa, Guatemala",GTM
+296,no lat/lng entered / incorrect lat/lng - geocoded location,Nueva Concepcion,Guatemala,0.0,0.0,14.126215349999999,-91.29472825431031,"Nueva Concepción, Escuintla, Guatemala",GTM
+297,no lat/lng entered / incorrect lat/lng - geocoded location,"Ovejero, Jutiapa",Guatemala,0.0,0.0,14.4393269,-89.8680008,"El Ovejero, Jutiapa, Guatemala",GTM
+298,no lat/lng entered / incorrect lat/lng - geocoded location,"Quesada, Jutiapa",Guatemala,0.0,0.0,14.2853523,-90.03049884223813,"Quesada, Jutiapa, Guatemala",GTM
+299,no lat/lng entered / incorrect lat/lng - geocoded location,Salam B. V.,Guatemala,0.0,0.0,15.0446519,-90.32065034806926,"Salamá, Baja Verapaz, Guatemala",GTM
+300,no lat/lng entered / incorrect lat/lng - geocoded location,San Jos╔ Pinula,Guatemala,0.0,0.0,14.55343475,-90.34585630827843,"San José Pinula, Guatemala, Guatemala",GTM
+301,no lat/lng entered / incorrect lat/lng - geocoded location,"San Pedro Pinula, Jalapa",Guatemala,0.0,0.0,14.7148894,-89.83911116760636,"San Pedro Pinula, Jalapa, Guatemala",GTM
+302,no lat/lng entered / incorrect lat/lng - geocoded location,Sto Domingo,Guatemala,0.0,0.0,14.2812826,-91.49676486660707,"Santo Domingo Suchitepéquez, Suchitepéquez, Guatemala",GTM
+303,correct location data,Tequinzate,Guatemala,14.27,-91.35,14.27,-91.35,"Tequinzate, Guatemala",GTM
+304,correct location data,Tequinzate (2),Guatemala,14.27,-91.35,14.27,-91.35,"Tequinzate (2), Guatemala",GTM
+305,no lat/lng entered / incorrect lat/lng - geocoded location,Zacapa,Guatemala,0.0,0.0,14.96919145,-89.44919255064195,"Zacapa, Zacapa, Guatemala",GTM
+306,correct location data,Cayes,Haiti,18.27,-73.78,18.27,-73.78,"Cayes, Haiti",HTI
+307,no lat/lng entered / incorrect lat/lng - geocoded location,Chantilly,Haiti,0.0,0.0,19.1399952,-72.3570972,"Haiti, Haiti",HTI
+308,correct location data,Damien Farm.,Haiti,19.3,-72.25,19.3,-72.25,"Damien Farm., Haiti",HTI
+309,correct location data,Levy-cayes,Haiti,18.2,-73.75,18.2,-73.75,"Levy-cayes, Haiti",HTI
+310,no lat/lng entered / incorrect lat/lng - geocoded location,"Candelaria, Lempira",Honduras,0.0,0.0,14.0905089,-88.5607372,"Candelaria, Lempira, Honduras",HND
+311,no lat/lng entered / incorrect lat/lng - geocoded location,"Catacamas, Olancho",Honduras,0.0,0.0,14.8484732,-85.894113,"Catacamas, Olancho, Honduras",HND
+312,correct location data,Comayagua,Honduras,14.5,-87.65,14.5,-87.65,"Comayagua, Honduras",HND
+313,no lat/lng entered / incorrect lat/lng - geocoded location,"Comayagua, E.e. Playitas",Honduras,0.0,0.0,14.3188383,-87.5135833,"El Coyolito, Comayagua, Comayagua, Honduras",HND
+314,correct location data,Danli,Honduras,14.03,-86.5,14.03,-86.5,"Danli, Honduras",HND
+315,no lat/lng entered / incorrect lat/lng - geocoded location,"El Pital, Atlantida",Honduras,0.0,0.0,14.3846736,-89.1293056,"Cerro El Pital, Nueva Ocotepeque, Ocotepeque, Honduras",HND
+316,correct location data,"Higuero Qumado, Yori",Honduras,15.07,-87.33,15.07,-87.33,"Higuero Qumado, Yori, Honduras",HND
+317,no lat/lng entered / incorrect lat/lng - geocoded location,"Jutiquile, Olancho",Honduras,0.0,0.0,14.7432601,-86.0952627,"Jutiquile, Olancho, Honduras",HND
+318,correct location data,La Esperanza,Honduras,14.25,-88.2,14.25,-88.2,"La Esperanza, Honduras",HND
+319,correct location data,Las Acacias,Honduras,14.55,-86.43,14.55,-86.43,"Las Acacias, Honduras",HND
+320,no lat/lng entered / incorrect lat/lng - geocoded location,Litoral Atlantico,Honduras,0.0,0.0,15.771626399999999,-87.46722434647117,"Escuela Normal Mixta Del Litoral Atlantico, Puerto Arturo, Atlántida, Honduras",HND
+321,no lat/lng entered / incorrect lat/lng - geocoded location,"Luquigue Yorito, Yoro",Honduras,0.0,0.0,15.0654325,-87.2820675,"Yorito, Yoro, Honduras",HND
+322,no lat/lng entered / incorrect lat/lng - geocoded location,"Obraje, Danli",Honduras,0.0,0.0,14.0332817,-86.5686813,"Danli, El Paraíso, Honduras",HND
+323,correct location data,Omonita,Honduras,14.4,-87.67,14.4,-87.67,"Omonita, Honduras",HND
+324,no lat/lng entered / incorrect lat/lng - geocoded location,Playita,Honduras,0.0,0.0,13.641861,-87.3636421,"Las Playitas, Choluteca, Honduras",HND
+325,no lat/lng entered / incorrect lat/lng - geocoded location,"Potrerillos, Olancho",Honduras,0.0,0.0,14.5958328,-86.1500015,"Desvio Potrerillos Airport, Juticalpa, Olancho, Honduras",HND
+326,no lat/lng entered / incorrect lat/lng - geocoded location,"San Lucas, El Paraiso",Honduras,0.0,0.0,15.7776096,-87.4810315,"Barrio El Paraiso, Aldea de San Juan, Atlántida, Honduras",HND
+327,no lat/lng entered / incorrect lat/lng - geocoded location,"San Pedro De Catacamas, Olancho",Honduras,0.0,0.0,14.7511235,-86.0574774,"Carretera Hacia Catacamas, Santa Maria del Real, Olancho, Honduras",HND
+328,correct location data,"Santa Cruz, Yorito,y",Honduras,15.07,-87.23,15.07,-87.23,"Santa Cruz, Yorito,y, Honduras",HND
+329,no lat/lng entered / incorrect lat/lng - geocoded location,"Yoro, El Pate",Honduras,0.0,0.0,15.3067118,-87.6991901,"El Negrito, Yoro, Honduras",HND
+330,no lat/lng entered / incorrect lat/lng - geocoded location,"Yoro, Morazan",Honduras,0.0,0.0,15.3202182,-87.598286,"Morazan, Yoro, Honduras",HND
+331,correct location data,Adoni Mandal,India,15.63,77.27,15.63,77.27,"Adoni Mandal, India",IND
+332,correct location data,Almora,India,29.6,79.67,29.6,79.67,"Almora, India",IND
+333,no lat/lng entered / incorrect lat/lng - geocoded location,Amberpet,India,0.0,0.0,17.7776835,78.5705066,"Amberpet, Telangana, India",IND
+334,correct location data,Anantnagar,India,34.0,74.7,34.0,74.7,"Anantnagar, India",IND
+335,correct location data,Arabhavi,India,16.2,74.9,16.2,74.9,"Arabhavi, India",IND
+336,correct location data,Auli,India,30.52,79.57,30.52,79.57,"Auli, India",IND
+337,correct location data,Aurangabad,India,24.73935,84.33655,24.73935,84.33655,"Aurangabad, India",IND
+338,correct location data,Bahraich,India,27.72,81.6,27.72,81.6,"Bahraich, India",IND
+339,correct location data,Bajaura,India,32.55,78.3,32.55,78.3,"Bajaura, India",IND
+340,correct location data,Bangalore,India,12.97,77.58,12.97,77.58,"Bangalore, India",IND
+341,correct location data,Bangalore (2),India,12.97,77.58,12.97,77.58,"Bangalore (2), India",IND
+342,correct location data,Banswara,India,23.55,74.45,23.55,74.45,"Banswara, India",IND
+343,correct location data,"Begusarai, Bihar",India,25.4169,86.13,25.4169,86.13,"Begusarai, Bihar, India",IND
+344,no lat/lng entered / incorrect lat/lng - geocoded location,"Belipar, Gorakhpur, U.p.",India,0.0,0.0,26.7600217,83.3668129,"Gorakhpur, Uttar Pradesh, India",IND
+345,no lat/lng entered / incorrect lat/lng - geocoded location,Bihar,India,0.0,0.0,25.6440845,85.906508,"Bihar, India",IND
+346,correct location data,Chhindwara,India,22.82,79.4,22.82,79.4,"Chhindwara, India",IND
+347,correct location data,Coimbatore,India,11.0,77.0,11.0,77.0,"Coimbatore, India",IND
+348,correct location data,Delhi,India,28.07,77.17,28.07,77.17,"Delhi, India",IND
+349,correct location data,Dhaulakuan,India,30.08,77.08,30.08,77.08,"Dhaulakuan, India",IND
+350,correct location data,Dholi,India,25.98,86.25,25.98,86.25,"Dholi, India",IND
+351,no lat/lng entered / incorrect lat/lng - geocoded location,Dholi (2),India,0.0,0.0,28.3513155,76.1198738,"Dholi, 123029, Haryana, India",IND
+352,no lat/lng entered / incorrect lat/lng - geocoded location,Dmr I.a.r.i.,India,18.35,-66.76,28.6128924,77.2294312,"India Gate, Rajpath, 020626, Rajpath, New Delhi, Delhi, India",IND
+353,no lat/lng entered / incorrect lat/lng - geocoded location,Dohad,India,0.0,0.0,22.3511148,78.6677428,"India, India",IND
+354,correct location data,Godhra,India,22.75,73.67,22.75,73.67,"Godhra, India",IND
+355,no lat/lng entered / incorrect lat/lng - geocoded location,Godhsa Gaujasat,India,0.0,0.0,22.7785001,73.6245157,"Godhra, 389001, Gujarat, India",IND
+356,correct location data,Hyderabad,India,17.33,78.5,17.33,78.5,"Hyderabad, India",IND
+357,no lat/lng entered / incorrect lat/lng - geocoded location,India,India,0.0,0.0,22.3511148,78.6677428,"India, India",IND
+358,correct location data,Issarwadi,India,19.87,75.37,19.87,75.37,"Issarwadi, India",IND
+359,correct location data,Jalna,India,19.85,75.88,19.85,75.88,"Jalna, India",IND
+360,correct location data,Jashipur,India,21.28,85.68,21.28,85.68,"Jashipur, India",IND
+361,correct location data,Jorhat,India,26.77,94.27,26.77,94.27,"Jorhat, India",IND
+362,correct location data,Kangra (h.p.),India,29.68805,76.88232,29.68805,76.88232,"Kangra (h.p.), India",IND
+363,correct location data,Kanpur,India,26.45,80.67,26.45,80.67,"Kanpur, India",IND
+364,correct location data,Karnal,India,29.72,76.97,29.72,76.97,"Karnal, India",IND
+365,correct location data,Karnataka,India,14.0,76.0,14.0,76.0,"Karnataka, India",IND
+366,no lat/lng entered / incorrect lat/lng - geocoded location,Khadbrabhra,India,0.0,0.0,22.3511148,78.6677428,"India, India",IND
+367,no lat/lng entered / incorrect lat/lng - geocoded location,Khedbrahma,India,0.0,0.0,24.0310797,73.0484074,"Khedbrahma, 383255, Gujarat, India",IND
+368,correct location data,Kolhapur,India,16.72,74.23,16.72,74.23,"Kolhapur, India",IND
+369,correct location data,Ludhiana,India,30.9,75.8,30.9,75.8,"Ludhiana, India",IND
+370,correct location data,Medchal,India,17.68,78.45,17.68,78.45,"Medchal, India",IND
+371,no lat/lng entered / incorrect lat/lng - geocoded location,Muzafferpur,India,0.0,0.0,22.3511148,78.6677428,"India, India",IND
+372,no lat/lng entered / incorrect lat/lng - geocoded location,New Delhi,India,0.0,0.0,28.6141793,77.2022662,"New Delhi, Delhi, India",IND
+373,correct location data,P.r Pally,India,18.98,77.92,18.98,77.92,"P.r Pally, India",IND
+374,correct location data,Pahalgam,India,29.68805,76.88232,29.68805,76.88232,"Pahalgam, India",IND
+375,correct location data,Pantnagar,India,29.0,79.45,29.0,79.45,"Pantnagar, India",IND
+376,no lat/lng entered / incorrect lat/lng - geocoded location,Pantnagar (2),India,0.0,0.0,29.0264162,79.4859989,"Pantnagar, 263145, Uttarakhand, India",IND
+377,no lat/lng entered / incorrect lat/lng - geocoded location,Parbhani,India,0.0,0.0,19.262469,76.7718,"Parbhani, 431400, Maharashtra, India",IND
+378,no lat/lng entered / incorrect lat/lng - geocoded location,Poonch,India,0.0,0.0,25.8241798,79.0444959,"Poonch, Uttar Pradesh, India",IND
+379,no lat/lng entered / incorrect lat/lng - geocoded location,Prabhakar Reddy,India,0.0,0.0,17.4202917,78.42046362794693,"Kasu Brahmananda Reddy Park, KBR Park Peripheral Jogging Track, 500034, KBR Park Peripheral Jogging Track, Greater Hyderabad Municipal Corporation, Telangana, India",IND
+380,no lat/lng entered / incorrect lat/lng - geocoded location,Probhakor,India,0.0,0.0,22.3511148,78.6677428,"India, India",IND
+381,correct location data,Pune,India,18.57,73.97,18.57,73.97,"Pune, India",IND
+382,no lat/lng entered / incorrect lat/lng - geocoded location,Pusa,India,0.0,0.0,28.63629965,77.15764441079895,"Pusa, Delhi, India",IND
+383,no lat/lng entered / incorrect lat/lng - geocoded location,R&d (pachora).,India,0.0,0.0,28.6128924,77.2294312,"India Gate, Rajpath, 020626, Rajpath, New Delhi, Delhi, India",IND
+384,no lat/lng entered / incorrect lat/lng - geocoded location,R&d (wadadhe).,India,0.0,0.0,28.6128924,77.2294312,"India Gate, Rajpath, 020626, Rajpath, New Delhi, Delhi, India",IND
+385,correct location data,Raipur,India,21.2336,81.63,21.2336,81.63,"Raipur, India",IND
+386,no lat/lng entered / incorrect lat/lng - geocoded location,Ranchi,India,0.0,0.0,23.3700354,85.3250132,"Ranchi, 834001, Jharkhand, India",IND
+387,no lat/lng entered / incorrect lat/lng - geocoded location,Rau Pusa (bihar),India,0.0,0.0,25.3851063,86.46769912015446,"Bihar School of Yoga, 811201, Munger, Bihar, India",IND
+388,no lat/lng entered / incorrect lat/lng - geocoded location,Rayalkole,India,0.0,0.0,22.3511148,78.6677428,"India, India",IND
+389,no lat/lng entered / incorrect lat/lng - geocoded location,Samastipur,India,0.0,0.0,25.75,85.916667,"Samastīpur, Bihar, India",IND
+390,correct location data,Sonipat,India,29.0,77.02,29.0,77.02,"Sonipat, India",IND
+391,correct location data,Srinagar,India,34.1,74.9,34.1,74.9,"Srinagar, India",IND
+392,no lat/lng entered / incorrect lat/lng - geocoded location,"Srinagar, K.d. Research Station",India,0.0,0.0,13.69846395,75.2334723654391,"Horticulture Research Station, 577432, Surani, Karnataka, India",IND
+393,correct location data,Udaipur,India,24.58,73.68,24.58,73.68,"Udaipur, India",IND
+394,correct location data,Umiam Meghalaya,India,25.36388,90.92285,25.36388,90.92285,"Umiam Meghalaya, India",IND
+395,correct location data,Varanasi,India,25.3,83.05,25.3,83.05,"Varanasi, India",IND
+396,correct location data,"Wahdan, Pahalgam, Kashmir",India,29.68805,76.88232,29.68805,76.88232,"Wahdan, Pahalgam, Kashmir, India",IND
+397,no lat/lng entered / incorrect lat/lng - geocoded location,Bontobili,Indonesia,-5.25,119.05,-4.7993356,114.5632032,"Indonesia, Indonesia",IDN
+398,no lat/lng entered / incorrect lat/lng - geocoded location,Gowa S. Sulawesi,Indonesia,0.0,0.0,3.5490959,125.5386701,"Gowa, North Sulawesi, Indonesia",IDN
+399,no lat/lng entered / incorrect lat/lng - geocoded location,Hulu Sungai Selatan,Indonesia,0.0,0.0,-2.9241088,115.0135414,"Sungai Rutas Hulu, South Kalimantan, Indonesia",IDN
+400,no lat/lng entered / incorrect lat/lng - geocoded location,Jambegede,Indonesia,0.0,0.0,-4.7993356,114.5632032,"Indonesia, Indonesia",IDN
+401,correct location data,Malang,Indonesia,-7.98,112.75,-7.98,112.75,"Malang, Indonesia",IDN
+402,correct location data,Maros,Indonesia,-4.98,119.58,-4.98,119.58,"Maros, Indonesia",IDN
+403,no lat/lng entered / incorrect lat/lng - geocoded location,Muneng,Indonesia,-8.83,113.28,-7.9325776,111.4269451,"Muneng, East Java, Indonesia",IDN
+404,no lat/lng entered / incorrect lat/lng - geocoded location,Naibonat,Indonesia,0.0,0.0,-4.7993356,114.5632032,"Indonesia, Indonesia",IDN
+405,no lat/lng entered / incorrect lat/lng - geocoded location,"Natar, Lampung",Indonesia,0.0,0.0,-5.3188238,105.192809,"Natar, Lampung, Indonesia",IDN
+406,no lat/lng entered / incorrect lat/lng - geocoded location,Probolinggo,Indonesia,0.0,0.0,-7.7441461,113.2158401,"Probolinggo, 67214, East Java, Indonesia",IDN
+407,no lat/lng entered / incorrect lat/lng - geocoded location,"Takalar, South Sulawesi",Indonesia,0.0,0.0,-5.424416,119.4402163,"BRI Cabang Takalar, 01, jl. ince husain, 92261, jl. ince husain, Kalabbirang, South Sulawesi, Indonesia",IDN
+408,no lat/lng entered / incorrect lat/lng - geocoded location,Yogyakarta,Indonesia,0.0,0.0,-7.8011945,110.364917,"Yogyakarta, 55122, Special Region of Yogyakarta, Indonesia",IDN
+409,correct location data,Safiabad,Iran,32.54681,54.36035,32.54681,54.36035,"Safiabad, Iran",IRN
+410,no lat/lng entered / incorrect lat/lng - geocoded location,Ai - Latifyia,Iraq,0.0,0.0,32.550943,45.597238,"AI Malgayah, Wasit, Iraq",IRQ
+411,correct location data,Baghdad,Iraq,33.03,40.28,33.03,40.28,"Baghdad, Iraq",IRQ
+412,no lat/lng entered / incorrect lat/lng - geocoded location,Tuwaitha Baghdad,Iraq,0.0,0.0,33.20876715,44.514783343618504,"Tuwaitha Nuclear Research Center, 10001, Baghdad, Baghdad, Iraq",IRQ
+413,"entered (-lat, lng)",Alupe,Kenya,0.5,34.11,-0.5,34.11,"Alupe, Kenya",KEN
+414,no lat/lng entered / incorrect lat/lng - geocoded location,Baobab,Kenya,0.0,0.0,-4.0165731,39.7258892,"Baobab Road, 80101, Mombasa, Mombasa, Kenya",KEN
+415,correct location data,Bondo- On Farm,Kenya,-0.1003,34.2755,-0.1003,34.2755,"Bondo- On Farm, Kenya",KEN
+416,correct location data,Bukura,Kenya,0.2564,34.6899,0.2564,34.6899,"Bukura, Kenya",KEN
+417,correct location data,Bungema,Kenya,0.44769,37.81494,0.44769,37.81494,"Bungema, Kenya",KEN
+418,correct location data,Bungoma,Kenya,0.569369,34.561139,0.569369,34.561139,"Bungoma, Kenya",KEN
+419,correct location data,Burura,Kenya,0.44769,37.81494,0.44769,37.81494,"Burura, Kenya",KEN
+420,correct location data,Busia,Kenya,-0.7772,34.1728,-0.7772,34.1728,"Busia, Kenya",KEN
+421,correct location data,Emabwi,Kenya,0.0846,34.5569,0.0846,34.5569,"Emabwi, Kenya",KEN
+422,correct location data,Emali,Kenya,-2.1361,37.7856,-2.1361,37.7856,"Emali, Kenya",KEN
+423,correct location data,Embu,Kenya,-0.5,37.45,-0.5,37.45,"Embu, Kenya",KEN
+424,correct location data,Emuhaya,Kenya,0.092,34.5712,0.092,34.5712,"Emuhaya, Kenya",KEN
+425,correct location data,Endebess,Kenya,1.06424,34.85687,1.06424,34.85687,"Endebess, Kenya",KEN
+426,correct location data,Homabay,Kenya,-0.51,34.45,-0.51,34.45,"Homabay, Kenya",KEN
+427,correct location data,Ithookwe,Kenya,-1.0333,37.8333,-1.0333,37.8333,"Ithookwe, Kenya",KEN
+428,no lat/lng entered / incorrect lat/lng - geocoded location,K.t.i,Kenya,0.0,0.0,3.7326248499999997,34.8413908775106,"Kakuma I, Kakuma, Turkana, Kenya",KEN
+429,correct location data,Kakamega,Kenya,0.27,34.74,0.27,34.74,"Kakamega, Kenya",KEN
+430,correct location data,Kampiyamawe,Kenya,-1.85,37.67,-1.85,37.67,"Kampiyamawe, Kenya",KEN
+431,no lat/lng entered / incorrect lat/lng - geocoded location,Kari - Embu,Kenya,0.0,0.0,-0.5359626500000001,37.66530196902043,"Embu County, Kenya",KEN
+432,no lat/lng entered / incorrect lat/lng - geocoded location,Karurina,Kenya,0.0,0.0,1.4419683,38.4313975,"Kenya, Kenya",KEN
+433,correct location data,Katumani,Kenya,-1.6,37.23,-1.6,37.23,"Katumani, Kenya",KEN
+434,correct location data,Kenya,Kenya,0.44769,37.81494,0.44769,37.81494,"Kenya, Kenya",KEN
+435,correct location data,Kesref,Kenya,-0.0667,34.8167,-0.0667,34.8167,"Kesref, Kenya",KEN
+436,correct location data,Kiboko,Kenya,-2.25,37.73,-2.25,37.73,"Kiboko, Kenya",KEN
+437,correct location data,Kibos,Kenya,-0.07,34.82,-0.07,34.82,"Kibos, Kenya",KEN
+438,correct location data,Kimilili,Kenya,0.61385,37.66388,0.61385,37.66388,"Kimilili, Kenya",KEN
+439,correct location data,Kimlili (2),Kenya,0.61385,37.66388,0.61385,37.66388,"Kimlili (2), Kenya",KEN
+440,correct location data,Kitalale,Kenya,1.0044,34.9192,1.0044,34.9192,"Kitalale, Kenya",KEN
+441,correct location data,Kitale,Kenya,1.01,35.0,1.01,35.0,"Kitale, Kenya",KEN
+442,correct location data,Kitui,Kenya,-1.37,38.01,-1.37,38.01,"Kitui, Kenya",KEN
+443,correct location data,Ksc Field,Kenya,1.07,34.9979,1.07,34.9979,"Ksc Field, Kenya",KEN
+444,correct location data,Machakos,Kenya,-1.5143,37.2628,-1.5143,37.2628,"Machakos, Kenya",KEN
+445,correct location data,Makindu,Kenya,-2.278,37.8251,-2.278,37.8251,"Makindu, Kenya",KEN
+446,correct location data,Makueni,Kenya,-1.798,37.623,-1.798,37.623,"Makueni, Kenya",KEN
+447,correct location data,Mitungu,Kenya,0.057633,37.639197,0.057633,37.639197,"Mitungu, Kenya",KEN
+448,correct location data,Mombasa,Kenya,-4.07,39.67,-4.07,39.67,"Mombasa, Kenya",KEN
+449,correct location data,Mtwapa,Kenya,-3.93,39.75,-3.93,39.75,"Mtwapa, Kenya",KEN
+450,correct location data,Muguga,Kenya,-1.183,36.65,-1.183,36.65,"Muguga, Kenya",KEN
+451,correct location data,Nairobi,Kenya,-1.25,36.73,-1.25,36.73,"Nairobi, Kenya",KEN
+452,correct location data,"Narc, Kitale",Kenya,0.61385,37.66388,0.61385,37.66388,"Narc, Kitale, Kenya",KEN
+453,correct location data,Nyahera,Kenya,-0.0525,34.7405,-0.0525,34.7405,"Nyahera, Kenya",KEN
+454,correct location data,Rachuonyo,Kenya,-0.3684,34.6497,-0.3684,34.6497,"Rachuonyo, Kenya",KEN
+455,correct location data,Sigor,Kenya,1.483,35.467,1.483,35.467,"Sigor, Kenya",KEN
+456,no lat/lng entered / incorrect lat/lng - geocoded location,Tanseed,Kenya,0.0,0.0,1.4419683,38.4313975,"Kenya, Kenya",KEN
+457,correct location data,Vihiga,Kenya,0.0479,34.7271,0.0479,34.7271,"Vihiga, Kenya",KEN
+458,no lat/lng entered / incorrect lat/lng - geocoded location,Wanbugu,Kenya,0.0,0.0,1.4419683,38.4313975,"Kenya, Kenya",KEN
+459,correct location data,Western Kakamrga,Kenya,0.44769,37.81494,0.44769,37.81494,"Western Kakamrga, Kenya",KEN
+460,no lat/lng entered / incorrect lat/lng - geocoded location,Western Seeds,Kenya,0.0,0.0,0.5090396,34.5731341,"Western, Kenya",KEN
+461,correct location data,Leribe,Lesotho,-28.88,28.05,-28.88,28.05,"Leribe, Lesotho",LSO
+462,no lat/lng entered / incorrect lat/lng - geocoded location,Lesotho,Lesotho,0.0,0.0,-29.6039267,28.3350193,"Lesotho, Lesotho",LSO
+463,correct location data,Machache,Lesotho,-29.367,27.917,-29.367,27.917,"Machache, Lesotho",LSO
+464,correct location data,Mahobong,Lesotho,-28.88,28.05,-28.88,28.05,"Mahobong, Lesotho",LSO
+465,correct location data,Maseru,Lesotho,-29.28,27.5,-29.28,27.5,"Maseru, Lesotho",LSO
+466,correct location data,Mokhotlong,Lesotho,-29.28,29.08,-29.28,29.08,"Mokhotlong, Lesotho",LSO
+467,correct location data,Mokhotlong (2),Lesotho,-29.27,29.08,-29.27,29.08,"Mokhotlong (2), Lesotho",LSO
+468,correct location data,Nyakosoba,Lesotho,-29.55,27.78,-29.55,27.78,"Nyakosoba, Lesotho",LSO
+469,correct location data,Teyateyaneng,Lesotho,-29.15,27.75,-29.15,27.75,"Teyateyaneng, Lesotho",LSO
+470,correct location data,Tseka,Lesotho,-29.5,28.62,-29.5,28.62,"Tseka, Lesotho",LSO
+471,correct location data,Tulear,Madagascar,-23.33,43.68,-23.33,43.68,"Tulear, Madagascar",MDG
+472,no lat/lng entered / incorrect lat/lng - geocoded location,Baka Research Station,Malawi,0.0,0.0,-13.680208050000001,34.25890878313515,"Chitala Agricultural Research Station, Mphunga, Salima, Malawi",MWI
+473,correct location data,Bembeke,Malawi,-14.17,34.43,-14.17,34.43,"Bembeke, Malawi",MWI
+474,correct location data,Bolero,Malawi,-10.983,33.75,-10.983,33.75,"Bolero, Malawi",MWI
+475,correct location data,Bvumbwe,Malawi,-15.92,35.07,-15.92,35.07,"Bvumbwe, Malawi",MWI
+476,correct location data,Bwanje,Malawi,-14.08,34.95,-14.08,34.95,"Bwanje, Malawi",MWI
+477,correct location data,Chitala,Malawi,-13.13,34.07,-13.13,34.07,"Chitala, Malawi",MWI
+478,correct location data,Chitedze,Malawi,-13.98,33.63,-13.98,33.63,"Chitedze, Malawi",MWI
+479,correct location data,Lunyangwa,Malawi,-11.45,33.917,-11.45,33.917,"Lunyangwa, Malawi",MWI
+480,correct location data,Makoka,Malawi,-14.7,35.6,-14.7,35.6,"Makoka, Malawi",MWI
+481,correct location data,Mbawa,Malawi,-12.1,33.5,-12.1,33.5,"Mbawa, Malawi",MWI
+482,no lat/lng entered / incorrect lat/lng - geocoded location,Mphimbi,Malawi,0.0,0.0,-13.2687204,33.9301963,"Malawi, Malawi",MWI
+483,correct location data,Ngabu,Malawi,-16.47,34.92,-16.47,34.92,"Ngabu, Malawi",MWI
+484,no lat/lng entered / incorrect lat/lng - geocoded location,Not Identified,Malawi,0.0,0.0,-16.5043189,34.892303763072434,"Not known yet, Nsangwe, Chikwawa, Malawi",MWI
+485,correct location data,Salima,Malawi,-13.75,34.58,-13.75,34.58,"Salima, Malawi",MWI
+486,correct location data,Tsangano,Malawi,-15.18,34.62,-15.18,34.62,"Tsangano, Malawi",MWI
+487,correct location data,Zomba,Malawi,-15.38,35.33,-15.38,35.33,"Zomba, Malawi",MWI
+488,correct location data,Farako,Mali,10.75,-6.833333,10.75,-6.833333,"Farako, Mali",MLI
+489,no lat/lng entered / incorrect lat/lng - geocoded location,Katibougou,Mali,0.0,0.0,12.5017753,-8.0920452,"Katibougou, Koulikoro, Mali",MLI
+490,no lat/lng entered / incorrect lat/lng - geocoded location,Kolombada,Mali,0.0,0.0,12.69305,-7.0090667,"KOLOMBADA, Koulikoro, Mali",MLI
+491,"entered (lat, -lng)",Rue Mohamed,Mali,12.0,7.0,12.0,-7.0,"Rue Mohamed, Mali",MLI
+492,correct location data,Sotuba,Mali,12.666666,-8.45,12.666666,-8.45,"Sotuba, Mali",MLI
+493,no lat/lng entered / incorrect lat/lng - geocoded location,"Acatic, Jalisco",Mexico,0.0,0.0,20.76878345,-102.92039700254298,"Acatic, Jalisco, Mexico",MEX
+494,no lat/lng entered / incorrect lat/lng - geocoded location,"Acayucan, Veracruz",Mexico,0.0,0.0,18.0281048,-95.03593818139205,"Acayucan, 96000, Veracruz, Mexico",MEX
+495,correct location data,Aculco,Mexico,20.51707,-100.21179,20.51707,-100.21179,"Aculco, Mexico",MEX
+496,no lat/lng entered / incorrect lat/lng - geocoded location,Agua Fria,Mexico,0.0,0.0,20.53396,-97.623345,"Agua Fría, Puebla, Mexico",MEX
+497,correct location data,Aguascalientes,Mexico,21.85,-102.3,21.85,-102.3,"Aguascalientes, Mexico",MEX
+498,correct location data,"Ahuacatlan, Nayarit",Mexico,21.03,-104.5,21.03,-104.5,"Ahuacatlan, Nayarit, Mexico",MEX
+499,correct location data,Almoloya De Juarez,Mexico,19.36856,-99.76049,19.36856,-99.76049,"Almoloya De Juarez, Mexico",MEX
+500,correct location data,"Ameca, Jal.",Mexico,20.55,-104.05,20.55,-104.05,"Ameca, Jal., Mexico",MEX
+501,correct location data,"Ameca, Jal. (2)",Mexico,20.55,-104.05,20.55,-104.05,"Ameca, Jal. (2), Mexico",MEX
+502,correct location data,"Ameca, Jal. (3)",Mexico,20.55,-104.05,20.55,-104.05,"Ameca, Jal. (3), Mexico",MEX
+503,correct location data,"Amecameca, Mexico",Mexico,19.13,-98.77,19.13,-98.77,"Amecameca, Mexico, Mexico",MEX
+504,no lat/lng entered / incorrect lat/lng - geocoded location,"Apaseo El Guadalupe, Guanajuato",Mexico,0.0,0.0,20.5563477,-100.6388368,"Guadalupe del Monte, 38160, Guanajuato, Mexico",MEX
+505,no lat/lng entered / incorrect lat/lng - geocoded location,Atlacomulco,Mexico,0.0,0.0,19.81591915,-99.86811932469178,"Atlacomulco, Mexico, Mexico",MEX
+506,no lat/lng entered / incorrect lat/lng - geocoded location,"Axochio, San Andres Tuxtla, Veracruz",Mexico,0.0,0.0,18.3714731,-95.2992855,"Axochio, 95730, Veracruz, Mexico",MEX
+507,no lat/lng entered / incorrect lat/lng - geocoded location,"Buenavista Penjamo, Guanajuato",Mexico,0.0,0.0,20.4313763,-101.7241184,"Pénjamo, Guanajuato, Mexico",MEX
+508,correct location data,"Calera, Zacatecas",Mexico,22.9,-102.65,22.9,-102.65,"Calera, Zacatecas, Mexico",MEX
+509,no lat/lng entered / incorrect lat/lng - geocoded location,"Campeche, Campeche",Mexico,20.67,-90.53,19.3290208,-89.94398204458577,"Campeche, Mexico",MEX
+510,correct location data,"Candelaria Portezuelo, Puebla",Mexico,19.0,-98.0,19.0,-98.0,"Candelaria Portezuelo, Puebla, Mexico",MEX
+511,correct location data,"Candelaria Portezuelo, Puebla (2)",Mexico,19.0,-98.0,19.0,-98.0,"Candelaria Portezuelo, Puebla (2), Mexico",MEX
+512,no lat/lng entered / incorrect lat/lng - geocoded location,Cardel,Mexico,0.0,0.0,17.444722,-94.221389,"José Cardel, 96700, Veracruz, Mexico",MEX
+513,correct location data,"Celaya, Guanajuato",Mexico,20.52,-100.82,20.52,-100.82,"Celaya, Guanajuato, Mexico",MEX
+514,correct location data,"Celaya, Guanajuato (inifap)",Mexico,20.52,-100.82,20.52,-100.82,"Celaya, Guanajuato (inifap), Mexico",MEX
+515,correct location data,"Cerib, Tamaulipas",Mexico,25.98,-98.1,25.98,-98.1,"Cerib, Tamaulipas, Mexico",MEX
+516,no lat/lng entered / incorrect lat/lng - geocoded location,"Champoton, Campeche",Mexico,0.0,0.0,19.12975965,-90.45225444832099,"Champotón, Campeche, Mexico",MEX
+517,correct location data,"Chapingo, Estado De Mexico",Mexico,19.52,-98.88,19.52,-98.88,"Chapingo, Estado De Mexico, Mexico",MEX
+518,correct location data,Chavinda,Mexico,20.02,-102.45,20.02,-102.45,"Chavinda, Mexico",MEX
+519,no lat/lng entered / incorrect lat/lng - geocoded location,Chiapas,Mexico,0.0,0.0,16.5000001,-92.5000001,"Chiapas, Mexico",MEX
+520,no lat/lng entered / incorrect lat/lng - geocoded location,Chorrerones,Mexico,0.0,0.0,22.5000485,-100.0000375,"Mexico, Mexico",MEX
+521,correct location data,"Ciudad Anahuac, Nuevo Leon",Mexico,27.23,-100.15,27.23,-100.15,"Ciudad Anahuac, Nuevo Leon, Mexico",MEX
+522,correct location data,"Ciudad Guzman, Jalisco",Mexico,19.67,-103.5,19.67,-103.5,"Ciudad Guzman, Jalisco, Mexico",MEX
+523,no lat/lng entered / incorrect lat/lng - geocoded location,Ciudad Obregon,Mexico,26.67,-109.42,27.4846619,-109.9337782,"Ciudad Obregón, Sonora, Mexico",MEX
+524,correct location data,"Coatlinchan, Estado De Mexico",Mexico,19.44972,-98.87133,19.44972,-98.87133,"Coatlinchan, Estado De Mexico, Mexico",MEX
+525,correct location data,"Cocotitlan, Texcoco",Mexico,19.5238,-98.86764,19.5238,-98.86764,"Cocotitlan, Texcoco, Mexico",MEX
+526,correct location data,"Colon, Queretaro",Mexico,20.78581,-100.04957,20.78581,-100.04957,"Colon, Queretaro, Mexico",MEX
+527,no lat/lng entered / incorrect lat/lng - geocoded location,Colonia Del Turen,Mexico,0.0,0.0,20.949722,-97.458889,"Colonia México Lindo, 92770, Veracruz, Mexico",MEX
+528,no lat/lng entered / incorrect lat/lng - geocoded location,Coquimatlan,Mexico,0.0,0.0,19.1759779,-103.92391335718723,"Coquimatlán, Colima, Mexico",MEX
+529,no lat/lng entered / incorrect lat/lng - geocoded location,"Corralejo De Hidalgo, Guanajuato",Mexico,0.0,0.0,21.1693183,-100.9366005,"Corralejo, 37800, Colonia Padre Hidalgo, Guanajuato, Mexico",MEX
+530,no lat/lng entered / incorrect lat/lng - geocoded location,Cotaxla,Mexico,0.0,0.0,22.5000485,-100.0000375,"Mexico, Mexico",MEX
+531,correct location data,Cotaxtla (inifap),Mexico,19.33,-96.67,19.33,-96.67,"Cotaxtla (inifap), Mexico",MEX
+532,no lat/lng entered / incorrect lat/lng - geocoded location,"Coyoltepec, San Andres Tuxtla, Veracruz",Mexico,0.0,0.0,18.338333,-95.308889,"Coyoltepec, 95730, Veracruz, Mexico",MEX
+533,correct location data,"Cuautitlan, Estado De Mexico",Mexico,19.68,-99.18,19.68,-99.18,"Cuautitlan, Estado De Mexico, Mexico",MEX
+534,correct location data,Cuendo1,Mexico,19.4033,-99.02141,19.4033,-99.02141,"Cuendo1, Mexico",MEX
+535,correct location data,"Cuidad Guzman, Jalisco (2)",Mexico,19.67,-103.5,19.67,-103.5,"Cuidad Guzman, Jalisco (2), Mexico",MEX
+536,correct location data,"Culican, Sinaloa",Mexico,24.8,-107.4,24.8,-107.4,"Culican, Sinaloa, Mexico",MEX
+537,correct location data,"Delicias, Chihuahua",Mexico,28.18,-105.17,28.18,-105.17,"Delicias, Chihuahua, Mexico",MEX
+538,correct location data,"Diaz Ordaz, Tamaulipas",Mexico,26.08,-98.3,26.08,-98.3,"Diaz Ordaz, Tamaulipas, Mexico",MEX
+539,correct location data,"Dolores Enyeje, Ixtla",Mexico,19.55,-99.85,19.55,-99.85,"Dolores Enyeje, Ixtla, Mexico",MEX
+540,correct location data,"Dolores Hidalgo, Guanajuato",Mexico,21.15,-100.93,21.15,-100.93,"Dolores Hidalgo, Guanajuato, Mexico",MEX
+541,correct location data,"Durango, Durango",Mexico,24.0,-104.0,24.0,-104.0,"Durango, Durango, Mexico",MEX
+542,no lat/lng entered / incorrect lat/lng - geocoded location,"Edzna, Campeche",Mexico,0.0,0.0,19.5976011,-90.231118911752,"Zona Arqueológica de Edzná, Ramal a Edzná, Ramal a Edzná, Noyaxché, Campeche, Mexico",MEX
+543,no lat/lng entered / incorrect lat/lng - geocoded location,Ejido 1ro De Mayo,Mexico,0.0,0.0,18.657144,-91.8233753,"COL. 1ro DE MAYO, 24100, Campeche, Mexico",MEX
+544,correct location data,El Batan,Mexico,19.52,-98.87,19.52,-98.87,"El Batan, Mexico",MEX
+545,correct location data,El Batan (2),Mexico,19.52,-98.87,19.52,-98.87,"El Batan (2), Mexico",MEX
+546,correct location data,El Batan (3),Mexico,19.5238,-98.86764,19.5238,-98.86764,"El Batan (3), Mexico",MEX
+547,correct location data,El Molino Zinacantep,Mexico,19.25,-99.83,19.25,-99.83,"El Molino Zinacantep, Mexico",MEX
+548,correct location data,"El Refugio, San Luis De La Paz, Guanajuato",Mexico,21.29673,-100.54173,21.29673,-100.54173,"El Refugio, San Luis De La Paz, Guanajuato, Mexico",MEX
+549,no lat/lng entered / incorrect lat/lng - geocoded location,"El Zapote, Tonatico",Mexico,0.0,0.0,20.1974325,-97.5439497,"El Zapote, Veracruz, Mexico",MEX
+550,correct location data,"Gomez Farias, Jalisco",Mexico,19.78,-103.48,19.78,-103.48,"Gomez Farias, Jalisco, Mexico",MEX
+551,correct location data,Guadalajara,Mexico,20.67,-103.33,20.67,-103.33,"Guadalajara, Mexico",MEX
+552,no lat/lng entered / incorrect lat/lng - geocoded location,"Guadalajara, Jalisco",Mexico,0.0,0.0,20.676143,-103.3469982,"Guadalajara, 44100, Jalisco, Mexico",MEX
+553,correct location data,Guanajuato,Mexico,21.0,-101.27,21.0,-101.27,"Guanajuato, Mexico",MEX
+554,correct location data,"Guasave, Sinaloa",Mexico,25.55,-103.5,25.55,-103.5,"Guasave, Sinaloa, Mexico",MEX
+555,correct location data,"Gunyo, Aculco Estado De Mexico",Mexico,20.12,-99.85,20.12,-99.85,"Gunyo, Aculco Estado De Mexico, Mexico",MEX
+556,correct location data,Hidalgo,Mexico,20.09592,-98.75336,20.09592,-98.75336,"Hidalgo, Mexico",MEX
+557,correct location data,Huamantla Tlaxcala,Mexico,19.35,-97.97,19.35,-97.97,"Huamantla Tlaxcala, Mexico",MEX
+558,no lat/lng entered / incorrect lat/lng - geocoded location,"Huejutla De Reyes, Hidalgo",Mexico,0.0,0.0,21.14338025,-98.3883786710258,"Huejutla de Reyes, 43000, Hidalgo, Mexico",MEX
+559,no lat/lng entered / incorrect lat/lng - geocoded location,Huimanguillo,Mexico,0.0,0.0,17.7620967,-93.66344080511583,"Huimanguillo, Tabasco, Mexico",MEX
+560,no lat/lng entered / incorrect lat/lng - geocoded location,"Ignacio De La Llave, Veracruz",Mexico,0.0,0.0,19.333333,-96.666667,"Veracruz, Mexico",MEX
+561,correct location data,"Iguala, Guerrero",Mexico,18.35,-99.52,18.35,-99.52,"Iguala, Guerrero, Mexico",MEX
+562,correct location data,"Irapuato, Guanajuato",Mexico,20.73,-101.32,20.73,-101.32,"Irapuato, Guanajuato, Mexico",MEX
+563,no lat/lng entered / incorrect lat/lng - geocoded location,"Isla, Veracruz",Mexico,0.0,0.0,18.12289035,-95.58427533680396,"Isla, Veracruz, Mexico",MEX
+564,correct location data,"Iturbide, Guanajuato",Mexico,20.99943,-100.38912,20.99943,-100.38912,"Iturbide, Guanajuato, Mexico",MEX
+565,correct location data,Ixtapan De La Pano,Mexico,19.25,-99.6,19.25,-99.6,"Ixtapan De La Pano, Mexico",MEX
+566,no lat/lng entered / incorrect lat/lng - geocoded location,"Jalisco, Jalisco",Mexico,0.0,0.0,20.3333331,-103.6666671,"Jalisco, Mexico",MEX
+567,correct location data,Jamay,Mexico,20.3,-102.72,20.3,-102.72,"Jamay, Mexico",MEX
+568,no lat/lng entered / incorrect lat/lng - geocoded location,Jerico Chiapas,Mexico,0.0,0.0,15.5405542,-93.0162318,"Miguel Alemán Valdez (Jericó), Chiapas, Mexico",MEX
+569,no lat/lng entered / incorrect lat/lng - geocoded location,Jesus Maria,Mexico,0.0,0.0,20.64794705,-102.10757376228773,"Jesús María, Jalisco, Mexico",MEX
+570,correct location data,Jiquipilco,Mexico,19.55724,-99.60694,19.55724,-99.60694,"Jiquipilco, Mexico",MEX
+571,correct location data,Jocotitlan,Mexico,19.70753,-99.78813,19.70753,-99.78813,"Jocotitlan, Mexico",MEX
+572,correct location data,Jocotitlan 2,Mexico,19.70753,-99.78813,19.70753,-99.78813,"Jocotitlan 2, Mexico",MEX
+573,no lat/lng entered / incorrect lat/lng - geocoded location,"La Barca, Jalisco",Mexico,0.0,0.0,20.35720795,-102.50327003201096,"La Barca, Jalisco, Mexico",MEX
+574,no lat/lng entered / incorrect lat/lng - geocoded location,"La Cantera, Comonfort, Guanajuato",Mexico,0.0,0.0,21.146273,-101.0027656,"La Cantera, Guanajuato, Mexico",MEX
+575,no lat/lng entered / incorrect lat/lng - geocoded location,"La Cruz De Elota, Sinaloa",Mexico,0.0,0.0,23.9285579,-106.8946133,"Mar de la Plata, 82773, La Cruz, Sinaloa, Mexico",MEX
+576,no lat/lng entered / incorrect lat/lng - geocoded location,"La Huerta, Jalisco",Mexico,0.0,-104.63,19.4822921,-104.6408128,"La Huerta, Jalisco, Mexico",MEX
+577,correct location data,"La Loma Municipio, Tepatitla, Jalisco",Mexico,20.81646,-102.76122,20.81646,-102.76122,"La Loma Municipio, Tepatitla, Jalisco, Mexico",MEX
+578,correct location data,"La Piedad, Michoacan",Mexico,20.35,-102.0,20.35,-102.0,"La Piedad, Michoacan, Mexico",MEX
+579,no lat/lng entered / incorrect lat/lng - geocoded location,"La Torrecilla, Tlalixcoyan, Veracruz",Mexico,0.0,0.0,18.728889,-96.143333,"Torrecillas, Veracruz, Mexico",MEX
+580,correct location data,"Leon, Guanajuato",Mexico,21.12,-101.68,21.12,-101.68,"Leon, Guanajuato, Mexico",MEX
+581,correct location data,"Los Mochis, Sinaloa",Mexico,25.77,-109.0,25.77,-109.0,"Los Mochis, Sinaloa, Mexico",MEX
+582,correct location data,"Los Mochis, Sinaloa (2)",Mexico,25.77,-109.0,25.77,-109.0,"Los Mochis, Sinaloa (2), Mexico",MEX
+583,correct location data,"Malinalco, Mexico",Mexico,18.95,-99.5,18.95,-99.5,"Malinalco, Mexico, Mexico",MEX
+584,no lat/lng entered / incorrect lat/lng - geocoded location,Mata De Agua,Mexico,0.0,0.0,19.028889,-96.502222,"Mata de Agua, 94235, Veracruz, Mexico",MEX
+585,correct location data,"Mavoro, Estado De Mexico",Mexico,19.25,-99.6,19.25,-99.6,"Mavoro, Estado De Mexico, Mexico",MEX
+586,correct location data,Metepec,Mexico,19.3,-99.63,19.3,-99.63,"Metepec, Mexico",MEX
+587,correct location data,"Mixquihuala, Hidalgo",Mexico,20.22999,-99.2098,20.22999,-99.2098,"Mixquihuala, Hidalgo, Mexico",MEX
+588,correct location data,Montecillo,Mexico,19.5,-98.93,19.5,-98.93,"Montecillo, Mexico",MEX
+589,no lat/lng entered / incorrect lat/lng - geocoded location,Nayarit,Mexico,0.0,0.0,22.0000001,-105.0000001,"Nayarit, Mexico",MEX
+590,correct location data,"Nextipac, Jalisco",Mexico,20.75,-103.52,20.75,-103.52,"Nextipac, Jalisco, Mexico",MEX
+591,correct location data,"Nextipac, Jalisco (2)",Mexico,20.75,-103.52,20.75,-103.52,"Nextipac, Jalisco (2), Mexico",MEX
+592,correct location data,"Ocotitlan, Puebla",Mexico,18.879,-97.72339,18.879,-97.72339,"Ocotitlan, Puebla, Mexico",MEX
+593,correct location data,Ocozocoautla,Mexico,16.77,-93.37,16.77,-93.37,"Ocozocoautla, Mexico",MEX
+594,no lat/lng entered / incorrect lat/lng - geocoded location,"Ocuituco, Morelos",Mexico,0.0,0.0,18.879111899999998,-98.7772832902208,"Ocuituco, Morelos, Mexico",MEX
+595,no lat/lng entered / incorrect lat/lng - geocoded location,"Ojo De Agua, Santiago Tuxtla, Veracruz",Mexico,0.0,0.0,18.3725,-95.369722,"Ojo de Agua, Veracruz, Mexico",MEX
+596,no lat/lng entered / incorrect lat/lng - geocoded location,"Ojo De Agua, Tonatico",Mexico,0.0,0.0,18.7432956,-99.6127579,"Ojo de Agua, 39230.0, Mexico, Mexico",MEX
+597,correct location data,"Ojocaliente, Zacatecas",Mexico,22.63,-102.23,22.63,-102.23,"Ojocaliente, Zacatecas, Mexico",MEX
+598,correct location data,"Pabellon, Aguascalientes",Mexico,22.14615,-102.27533,22.14615,-102.27533,"Pabellon, Aguascalientes, Mexico",MEX
+599,correct location data,"Pedro Escobedo, Queretaro",Mexico,20.49923,-100.14291,20.49923,-100.14291,"Pedro Escobedo, Queretaro, Mexico",MEX
+600,no lat/lng entered / incorrect lat/lng - geocoded location,"Penjamo, Guanajuato",Mexico,0.0,0.0,20.4313763,-101.7241184,"Pénjamo, Guanajuato, Mexico",MEX
+601,correct location data,"Poncitlan, Jalisco",Mexico,20.37488,-102.91374,20.37488,-102.91374,"Poncitlan, Jalisco, Mexico",MEX
+602,correct location data,"Popotes Municipio De Tepatitlan, Jalisco",Mexico,20.82673,-102.75444,20.82673,-102.75444,"Popotes Municipio De Tepatitlan, Jalisco, Mexico",MEX
+603,correct location data,Poza Rica,Mexico,20.53,-97.43,20.53,-97.43,"Poza Rica, Mexico",MEX
+604,correct location data,Poza Rica (2),Mexico,20.53,-97.43,20.53,-97.43,"Poza Rica (2), Mexico",MEX
+605,correct location data,Puebla,Mexico,19.042,-98.21091,19.042,-98.21091,"Puebla, Mexico",MEX
+606,no lat/lng entered / incorrect lat/lng - geocoded location,Puerto Vallarta,Mexico,20.6,-105.25,20.69820775,-105.18152416996546,"Puerto Vallarta, Jalisco, Mexico",MEX
+607,correct location data,Queretaro,Mexico,20.52,-100.67,20.52,-100.67,"Queretaro, Mexico",MEX
+608,no lat/lng entered / incorrect lat/lng - geocoded location,"Quila, Sinaloa",Mexico,0.0,0.0,24.4244306,-107.2201796,"Quilá, Sinaloa, Mexico",MEX
+609,correct location data,"Rancheria Hernandez, Puebla",Mexico,18.98,-97.78,18.98,-97.78,"Rancheria Hernandez, Puebla, Mexico",MEX
+610,no lat/lng entered / incorrect lat/lng - geocoded location,"Rincon De Parangueo, Guanajuato",Mexico,0.0,0.0,20.4205322,-101.2537744,"Rincon de Parangueo, 38400, Guanajuato, Mexico",MEX
+611,correct location data,Rinconada Mazapiltepec,Mexico,18.80752,-98.00903,18.80752,-98.00903,"Rinconada Mazapiltepec, Mexico",MEX
+612,correct location data,"Rio Bravo, Tamaulipas",Mexico,25.98,-98.1,25.98,-98.1,"Rio Bravo, Tamaulipas, Mexico",MEX
+613,correct location data,"Roque, Guanajuato",Mexico,19.97,-99.82,19.97,-99.82,"Roque, Guanajuato, Mexico",MEX
+614,no lat/lng entered / incorrect lat/lng - geocoded location,San Andres Tuxtla,Mexico,0.0,0.0,18.4633672,-95.19831533920046,"San Andrés Tuxtla, 95730, Veracruz, Mexico",MEX
+615,correct location data,San Antonio La Isla Mexico,Mexico,19.16219,-99.56935,19.16219,-99.56935,"San Antonio La Isla Mexico, Mexico",MEX
+616,correct location data,San Jose De Gracia Michoacan,Mexico,19.98,-103.02,19.98,-103.02,"San Jose De Gracia Michoacan, Mexico",MEX
+617,correct location data,San Jose Del Valle Nayarit,Mexico,22.47,-105.45,22.47,-105.45,"San Jose Del Valle Nayarit, Mexico",MEX
+618,correct location data,"San Jose Iturbide, Guanajuato",Mexico,20.98965,-100.41779,20.98965,-100.41779,"San Jose Iturbide, Guanajuato, Mexico",MEX
+619,no lat/lng entered / incorrect lat/lng - geocoded location,San Juan De Abajo,Mexico,0.0,0.0,20.8516734,-100.7785417,"Don Juan Xido de Abajo, Guanajuato, Mexico",MEX
+620,correct location data,San Juan Del Rio,Mexico,20.38631,-99.99786,20.38631,-99.99786,"San Juan Del Rio, Mexico",MEX
+621,correct location data,San Juan Zitlaltepec,Mexico,19.77,-99.08,19.77,-99.08,"San Juan Zitlaltepec, Mexico",MEX
+622,correct location data,"San Luis De La Paz, Guanajuato",Mexico,21.29673,-100.54173,21.29673,-100.54173,"San Luis De La Paz, Guanajuato, Mexico",MEX
+623,no lat/lng entered / incorrect lat/lng - geocoded location,"San Miguel Allende, Guanajuato",Mexico,0.0,0.0,20.9139025,-100.744012,"San Miguel de Allende, Guanajuato, Mexico",MEX
+624,correct location data,"San Miguel Cuyutlan, Jalisco",Mexico,20.5,-103.5,20.5,-103.5,"San Miguel Cuyutlan, Jalisco, Mexico",MEX
+625,no lat/lng entered / incorrect lat/lng - geocoded location,"San Pedro Lagunillas, Nayarit",Mexico,0.0,0.0,21.16698955,-104.71791325047576,"San Pedro Lagunillas, Nayarit, Mexico",MEX
+626,correct location data,San Sebastian Teles,Mexico,22.17,-104.32,22.17,-104.32,"San Sebastian Teles, Mexico",MEX
+627,correct location data,"Santa Lucia, Estado De Mexico",Mexico,19.5,-98.92,19.5,-98.92,"Santa Lucia, Estado De Mexico, Mexico",MEX
+628,correct location data,Santa Maria Rayon,Mexico,19.14594,-99.58154,19.14594,-99.58154,"Santa Maria Rayon, Mexico",MEX
+629,correct location data,"Santiado Del Monte, Municipio Villa Victoria",Mexico,19.79659,-99.87722,19.79659,-99.87722,"Santiado Del Monte, Municipio Villa Victoria, Mexico",MEX
+630,correct location data,"Santiago Ixcuintla, Nayarit",Mexico,21.83,-105.18,21.83,-105.18,"Santiago Ixcuintla, Nayarit, Mexico",MEX
+631,correct location data,"Silao, Guanajuato",Mexico,20.93,-101.42,20.93,-101.42,"Silao, Guanajuato, Mexico",MEX
+632,no lat/lng entered / incorrect lat/lng - geocoded location,"Tamarindos, Veracruz",Mexico,0.0,0.0,19.043398850000003,-96.49325380452741,"EcoClub Tamarindos, S/N, 94235, Mata de Agua, Veracruz, Mexico",MEX
+633,no lat/lng entered / incorrect lat/lng - geocoded location,Tamaulipas,Mexico,0.0,0.0,23.9891553,-98.7026825,"Tamaulipas, Mexico",MEX
+634,correct location data,Tapachula,Mexico,14.92,-92.25,14.92,-92.25,"Tapachula, Mexico",MEX
+635,correct location data,Tejupilco,Mexico,18.92,-100.17,18.92,-100.17,"Tejupilco, Mexico",MEX
+636,no lat/lng entered / incorrect lat/lng - geocoded location,"Tepalcingo, Morelos",Mexico,0.0,0.0,18.56943655,-98.9080883044239,"Tepalcingo, Morelos, Mexico",MEX
+637,correct location data,"Tepatitlan, Jalisco",Mexico,20.82,-102.73,20.82,-102.73,"Tepatitlan, Jalisco, Mexico",MEX
+638,no lat/lng entered / incorrect lat/lng - geocoded location,Tlacomulco,Mexico,0.0,0.0,20.046667,-98.318889,"Tlacomulco, 43740, Hidalgo, Mexico",MEX
+639,correct location data,"Tlajomulco, De Zuniga",Mexico,20.47543,-103.44765,20.47543,-103.44765,"Tlajomulco, De Zuniga, Mexico",MEX
+640,correct location data,"Tlajomulco, Jalisco",Mexico,20.47,-103.77,20.47,-103.77,"Tlajomulco, Jalisco, Mexico",MEX
+641,correct location data,"Tlajomulco, Jalisco (2)",Mexico,20.47,-103.77,20.47,-103.77,"Tlajomulco, Jalisco (2), Mexico",MEX
+642,no lat/lng entered / incorrect lat/lng - geocoded location,Tlalixcoyan,Mexico,0.0,0.0,18.773168499999997,-96.20588646956678,"Tlalixcoyan, Veracruz, Mexico",MEX
+643,no lat/lng entered / incorrect lat/lng - geocoded location,Tlaltizapan,Mexico,0.0,0.0,18.7045227,-99.14191731588632,"Tlaltizapán de Zapata, Morelos, Mexico",MEX
+644,correct location data,Tlaltizapan (2),Mexico,18.68,-99.13,18.68,-99.13,"Tlaltizapan (2), Mexico",MEX
+645,correct location data,Tlaltizapan (3),Mexico,18.68,-99.13,18.68,-99.13,"Tlaltizapan (3), Mexico",MEX
+646,correct location data,Tlaxcoapan,Mexico,20.09523,-99.21774,20.09523,-99.21774,"Tlaxcoapan, Mexico",MEX
+647,correct location data,Toluca,Mexico,19.28,-99.65,19.28,-99.65,"Toluca, Mexico",MEX
+648,correct location data,"Tototlan, Jalisco",Mexico,20.55,-102.8,20.55,-102.8,"Tototlan, Jalisco, Mexico",MEX
+649,correct location data,"Uach, Campo Experimental",Mexico,19.48933,-98.89365,19.48933,-98.89365,"Uach, Campo Experimental, Mexico",MEX
+650,correct location data,"Usmajac Municipio De Sayula, Jalisco",Mexico,19.87373,-103.53953,19.87373,-103.53953,"Usmajac Municipio De Sayula, Jalisco, Mexico",MEX
+651,no lat/lng entered / incorrect lat/lng - geocoded location,Uxmal,Mexico,0.0,0.0,20.35930815,-89.77124282998557,"Uxmal, Carretera Umán-Chencollí, Carretera Umán-Chencollí, San Isidro, Yucatán, Mexico",MEX
+652,no lat/lng entered / incorrect lat/lng - geocoded location,"Valle De Bravo, Estado De Mexico",Mexico,0.0,0.0,19.1849101,-100.15126325880992,"Valle de Bravo, Mexico, Mexico",MEX
+653,no lat/lng entered / incorrect lat/lng - geocoded location,Valle De Culiacan,Mexico,0.0,0.0,24.7547946,-107.4580466,"Valle de Culiacan, 80148, Culiacán, Sinaloa, Mexico",MEX
+654,correct location data,Valle De Mexico,Mexico,23.86575,-102.46399,23.86575,-102.46399,"Valle De Mexico, Mexico",MEX
+655,no lat/lng entered / incorrect lat/lng - geocoded location,"Valle Del Fuerte, Sinaloa",Mexico,0.0,0.0,25.6859255,-109.07865204412306,"Federal del Valle del Fuerte International Airport, E.C. (Los Mochis - Topolobampo) - Los Paredones, 81250, E.C. (Los Mochis - Topolobampo) - Los Paredones, Los Mochis, Sinaloa, Mexico",MEX
+656,correct location data,Valle Del Yaqui,Mexico,27.38,-110.13,27.38,-110.13,"Valle Del Yaqui, Mexico",MEX
+657,correct location data,"Valparaiso, Zacatecas",Mexico,22.77163,-103.57086,22.77163,-103.57086,"Valparaiso, Zacatecas, Mexico",MEX
+658,no lat/lng entered / incorrect lat/lng - geocoded location,Veracrucito,Mexico,0.0,0.0,18.851667,-97.796111,"Veracrucito, 75610, Puebla, Mexico",MEX
+659,correct location data,Veracruz,Mexico,19.15,-96.12,19.15,-96.12,"Veracruz, Mexico",MEX
+660,correct location data,"Villa Flores, Chiapas",Mexico,16.5,-93.5,16.5,-93.5,"Villa Flores, Chiapas, Mexico",MEX
+661,no lat/lng entered / incorrect lat/lng - geocoded location,"Villa Hidalgo, Nayarit",Mexico,0.0,0.0,21.7418519,-105.2303018,"Villa Hidalgo, Nayarit, Mexico",MEX
+662,no lat/lng entered / incorrect lat/lng - geocoded location,"Villa Verde, Guanajuato",Mexico,0.0,0.0,20.5519216,-100.8345103,"Villa Verde, 38027, Celaya, Guanajuato, Mexico",MEX
+663,correct location data,"Villanueva, Zacatecas",Mexico,22.35,-102.88,22.35,-102.88,"Villanueva, Zacatecas, Mexico",MEX
+664,correct location data,"Xalisco, Nayarit",Mexico,21.43,-104.8,21.43,-104.8,"Xalisco, Nayarit, Mexico",MEX
+665,no lat/lng entered / incorrect lat/lng - geocoded location,"Xalostoc, Morelos",Mexico,0.0,0.0,19.5389294,-99.0777325,"San Pedro Xalostoc, 55520, San Andrés de la Cañada, Mexico, Mexico",MEX
+666,no lat/lng entered / incorrect lat/lng - geocoded location,"Xocoyucan, Tlaxcala",Mexico,0.0,0.0,19.307222,-98.372778,"San Diego Xocoyucan, 4475, Tlaxcala, Mexico",MEX
+667,correct location data,"Zotoluca, Hidalgo",Mexico,19.58688,-98.56805,19.58688,-98.56805,"Zotoluca, Hidalgo, Mexico",MEX
+668,correct location data,Zumpango,Mexico,19.794,-99.10028,19.794,-99.10028,"Zumpango, Mexico",MEX
+669,correct location data,El Menzeh,Morocco,33.52,-5.17,33.52,-5.17,"El Menzeh, Morocco",MAR
+670,no lat/lng entered / incorrect lat/lng - geocoded location,Khemiszemamra,Morocco,0.0,0.0,31.1728192,-7.3366043,"Morocco, Morocco",MAR
+671,correct location data,Angonia Tete,Mozambique,-16.16,33.59,-16.16,33.59,"Angonia Tete, Mozambique",MOZ
+672,no lat/lng entered / incorrect lat/lng - geocoded location,Angora,Mozambique,0.0,0.0,-19.302233,34.9144977,"Mozambique, Mozambique",MOZ
+673,correct location data,Chokwe,Mozambique,-24.53,33.0,-24.53,33.0,"Chokwe, Mozambique",MOZ
+674,correct location data,Lichinga,Mozambique,-13.3,35.23,-13.3,35.23,"Lichinga, Mozambique",MOZ
+675,correct location data,Mapupulo,Mozambique,-13.24,38.87,-13.24,38.87,"Mapupulo, Mozambique",MOZ
+676,correct location data,Maputo,Mozambique,-25.9689,32.5696,-25.9689,32.5696,"Maputo, Mozambique",MOZ
+677,correct location data,Mocuba,Mozambique,-16.84,38.26,-16.84,38.26,"Mocuba, Mozambique",MOZ
+678,correct location data,Morrumbala-zambezia,Mozambique,-17.33,35.58,-17.33,35.58,"Morrumbala-zambezia, Mozambique",MOZ
+679,no lat/lng entered / incorrect lat/lng - geocoded location,Mozambique,Mozambique,0.0,0.0,-19.302233,34.9144977,"Mozambique, Mozambique",MOZ
+680,correct location data,Mutarara,Mozambique,-17.45,35.067,-17.45,35.067,"Mutarara, Mozambique",MOZ
+681,correct location data,Namialo,Mozambique,-14.91,40.0,-14.91,40.0,"Namialo, Mozambique",MOZ
+682,correct location data,Nampula,Mozambique,-15.1,39.28,-15.1,39.28,"Nampula, Mozambique",MOZ
+683,correct location data,Nhacoongo,Mozambique,-24.49,34.75,-24.49,34.75,"Nhacoongo, Mozambique",MOZ
+684,no lat/lng entered / incorrect lat/lng - geocoded location,Semol,Mozambique,0.0,0.0,-19.302233,34.9144977,"Mozambique, Mozambique",MOZ
+685,correct location data,Sussundenga,Mozambique,-19.33,33.22,-19.33,33.22,"Sussundenga, Mozambique",MOZ
+686,correct location data,Umbeluzi,Mozambique,-26.0544,32.3635,-26.0544,32.3635,"Umbeluzi, Mozambique",MOZ
+687,no lat/lng entered / incorrect lat/lng - geocoded location,Ussudenga,Mozambique,0.0,0.0,-19.302233,34.9144977,"Mozambique, Mozambique",MOZ
+688,no lat/lng entered / incorrect lat/lng - geocoded location,Naung Mon,Myanmar,0.0,0.0,16.9786252,97.341379,"Naunggala, Mon, Myanmar",MMR
+689,no lat/lng entered / incorrect lat/lng - geocoded location,Sea,Myanmar,0.0,0.0,22.6405969,97.2675367,"Waterfall (wet season only)(still a fun trek anyway), Hsipaw Township, Shan State, Myanmar",MMR
+690,no lat/lng entered / incorrect lat/lng - geocoded location,Taryaw,Myanmar,0.0,0.0,17.1750495,95.9999652,"Myanmar, Myanmar",MMR
+691,no lat/lng entered / incorrect lat/lng - geocoded location,Tatkan,Myanmar,0.0,0.0,17.1750495,95.9999652,"Myanmar, Myanmar",MMR
+692,no lat/lng entered / incorrect lat/lng - geocoded location,Tatkone,Myanmar,0.0,0.0,20.1288844,96.2019535,"Tatkon Township, 15011, Naypyitaw, Myanmar",MMR
+693,"entered (-lng, -lat)",Mashare,Namibia,-17.88,20.22,-20.22,17.88,"Mashare, Namibia",NAM
+694,no lat/lng entered / incorrect lat/lng - geocoded location,Mitkomst Research Station,Namibia,0.0,0.0,-23.3421727,16.2250963,"Gamsberg Research Station, Khomas, Namibia",NAM
+695,correct location data,Runda,Namibia,-17.96,19.72,-17.96,19.72,"Runda, Namibia",NAM
+696,no lat/lng entered / incorrect lat/lng - geocoded location,Hardinath,Nepal,0.0,0.0,28.1083929,84.0917139,"Nepal, Nepal",NPL
+697,no lat/lng entered / incorrect lat/lng - geocoded location,Kabre,Nepal,0.0,0.0,27.2451214,87.7768534,"Kabre, 57408, Eastern Development Region, Nepal",NPL
+698,correct location data,Khumaltar,Nepal,27.67,85.33,27.67,85.33,"Khumaltar, Nepal",NPL
+699,no lat/lng entered / incorrect lat/lng - geocoded location,Lumle,Nepal,0.0,0.0,28.2992518,83.8023028,"Lumle, Western Development Region, Nepal",NPL
+700,no lat/lng entered / incorrect lat/lng - geocoded location,Pakhribas,Nepal,0.0,0.0,27.067448149999997,87.25030271671474,"Pakhribas, Eastern Development Region, Nepal",NPL
+701,correct location data,Parinanipur (p.a.s.),Nepal,27.07,84.97,27.07,84.97,"Parinanipur (p.a.s.), Nepal",NPL
+702,no lat/lng entered / incorrect lat/lng - geocoded location,Parwanipur,Nepal,0.0,0.0,27.113407950000003,85.73390863527482,"Parwanipur, 45800, Central Development Region, Nepal",NPL
+703,correct location data,Rampur,Nepal,27.5,85.42,27.5,85.42,"Rampur, Nepal",NPL
+704,correct location data,Surkhet,Nepal,28.5,81.8,28.5,81.8,"Surkhet, Nepal",NPL
+705,no lat/lng entered / incorrect lat/lng - geocoded location,Campos Azules,Nicaragua,0.0,0.0,12.0120715,-83.7624301,"Campos Azules, Calle Cabezas, 81000, Calle Cabezas, Bluefields, South Atlantic Autonomous Region, Nicaragua",NIC
+706,no lat/lng entered / incorrect lat/lng - geocoded location,"Campos Azules, Masatepe",Nicaragua,0.0,0.0,12.0120715,-83.7624301,"Campos Azules, Calle Cabezas, 81000, Calle Cabezas, Bluefields, South Atlantic Autonomous Region, Nicaragua",NIC
+707,no lat/lng entered / incorrect lat/lng - geocoded location,Carazo,Nicaragua,0.0,0.0,11.6635659,-86.3090376,"Carazo, Nicaragua",NIC
+708,correct location data,Chinandega,Nicaragua,12.63,-87.13,12.63,-87.13,"Chinandega, Nicaragua",NIC
+709,no lat/lng entered / incorrect lat/lng - geocoded location,Chontales,Nicaragua,0.0,0.0,11.8915422,-85.1013926,"Chontales, Nicaragua",NIC
+710,no lat/lng entered / incorrect lat/lng - geocoded location,"Chontales, Tamboral Sur",Nicaragua,0.0,0.0,12.2148404,-85.1654359,"6ta Calle Sur, 56300, La Libertad, Chontales, Nicaragua",NIC
+711,no lat/lng entered / incorrect lat/lng - geocoded location,"Condega, Esteli",Nicaragua,0.0,0.0,13.2712685,-86.363163,"Estelí-Condega, 32100, Estelí, Nicaragua",NIC
+712,no lat/lng entered / incorrect lat/lng - geocoded location,"El Areno, El Rama",Nicaragua,0.0,0.0,12.0131138,-84.543185,"Comarca El Areno, 82400, South Atlantic Autonomous Region, Nicaragua",NIC
+713,no lat/lng entered / incorrect lat/lng - geocoded location,"El Jicaro, Nueva Segovia",Nicaragua,0.0,0.0,13.5701676,-86.0196906,"Río El Jícaro, 38700, Nueva Segovia, Nicaragua",NIC
+714,no lat/lng entered / incorrect lat/lng - geocoded location,"El Pellizco, Chinandega",Nicaragua,0.0,0.0,12.8647263,-87.4757338,"El Calanchin, 26200, Chinandega, Nicaragua",NIC
+715,no lat/lng entered / incorrect lat/lng - geocoded location,Jalapa,Nicaragua,0.0,0.0,13.9192848,-86.1250346,"Jalapa, 39200, Nueva Segovia, Nicaragua",NIC
+716,no lat/lng entered / incorrect lat/lng - geocoded location,La Dal═a,Nicaragua,0.0,0.0,13.1673341,-85.6764429,"Via de acceso a Finca la fuente, 62700, Wasake, Matagalpa (Departemento), Nicaragua",NIC
+717,no lat/lng entered / incorrect lat/lng - geocoded location,La Presa,Nicaragua,0.0,0.0,13.1341173,-86.0366264,"Presa, 65000, La Ermita, Jinotega (Departamento), Nicaragua",NIC
+718,no lat/lng entered / incorrect lat/lng - geocoded location,"La Trinidad, Esteli",Nicaragua,0.0,0.0,12.9630934,-86.2679135,"Río La Trinidad, 32500, Estelí, Nicaragua",NIC
+719,no lat/lng entered / incorrect lat/lng - geocoded location,Las Cruces Carazo,Nicaragua,0.0,0.0,12.6374994,-86.2714557,"Quebrada Las Cruces, 62800, Managua, Nicaragua",NIC
+720,no lat/lng entered / incorrect lat/lng - geocoded location,"Las Piedras,nueva Segovia",Nicaragua,0.0,0.0,13.7235007,-86.482923,"Cerro Piedras Gordas, 38200, Nueva Segovia, Nicaragua",NIC
+721,no lat/lng entered / incorrect lat/lng - geocoded location,Llano Redondo,Nicaragua,0.0,0.0,12.8064933,-86.0142436,"Potrero Redondo, 62200, Matagalpa (Departemento), Nicaragua",NIC
+722,correct location data,Managua,Nicaragua,13.12,-86.18,13.12,-86.18,"Managua, Nicaragua",NIC
+723,no lat/lng entered / incorrect lat/lng - geocoded location,Mazatepec,Nicaragua,0.0,0.0,12.3724928,-84.8700308,"Nicaragua, Nicaragua",NIC
+724,no lat/lng entered / incorrect lat/lng - geocoded location,"Melchorita, San Carlos",Nicaragua,0.0,0.0,11.8137205,-86.4869739,"San Carlos, 16700, Managua, Nicaragua",NIC
+725,no lat/lng entered / incorrect lat/lng - geocoded location,"Nindiri, Mazaya",Nicaragua,0.0,0.0,12.0027086,-86.1186595,"Nindirí, 42200, Masaya, Nicaragua",NIC
+726,no lat/lng entered / incorrect lat/lng - geocoded location,Paz De Carazo,Nicaragua,0.0,0.0,11.8226879,-86.1278901,"La Paz de Carazo, 46500, Carazo, Nicaragua",NIC
+727,no lat/lng entered / incorrect lat/lng - geocoded location,Pueblo Nuevo,Nicaragua,0.0,0.0,13.3804064,-86.4383255,"Río Pueblo Nuevo, 32200, Estelí, Nicaragua",NIC
+728,no lat/lng entered / incorrect lat/lng - geocoded location,San Bartolo,Nicaragua,0.0,0.0,13.5337539,-85.9261882,"San Bartolo, 38700, Nueva Segovia, Nicaragua",NIC
+729,no lat/lng entered / incorrect lat/lng - geocoded location,"San Benito, Chinandega",Nicaragua,0.0,0.0,12.3089404,-86.0543097,"San Benito, 15100, Managua, Nicaragua",NIC
+730,correct location data,San Cristobal,Nicaragua,12.13,-86.18,12.13,-86.18,"San Cristobal, Nicaragua",NIC
+731,no lat/lng entered / incorrect lat/lng - geocoded location,"Santa Cruz, Esteli",Nicaragua,0.0,0.0,13.017159,-86.3113292,"Valle Santa Cruz, 35000, Estelí, Nicaragua",NIC
+732,no lat/lng entered / incorrect lat/lng - geocoded location,"Santa Juana, Nindiri",Nicaragua,0.0,0.0,12.0342866,-86.237774,"Santa Juana, 10000 (CODIGO MAESTRO), Managua, Nicaragua",NIC
+733,correct location data,Santa Rosa,Nicaragua,12.13,-86.18,12.13,-86.18,"Santa Rosa, Nicaragua",NIC
+734,no lat/lng entered / incorrect lat/lng - geocoded location,Baganda,Nigeria,0.0,0.0,9.6000359,7.9999721,"Nigeria, Nigeria",NGA
+735,correct location data,Ibadan,Nigeria,7.38,3.9,7.38,3.9,"Ibadan, Nigeria",NGA
+736,correct location data,Ikenne,Nigeria,6.333333,8.7,6.333333,8.7,"Ikenne, Nigeria",NGA
+737,correct location data,Jos Nig,Nigeria,9.87,8.9,9.87,8.9,"Jos Nig, Nigeria",NGA
+738,correct location data,Layin Taki,Nigeria,8.3324,6.1577,8.3324,6.1577,"Layin Taki, Nigeria",NGA
+739,correct location data,Mokwa,Nigeria,9.3,5.07,9.3,5.07,"Mokwa, Nigeria",NGA
+740,correct location data,Mokwa (2),Nigeria,5.066666,7.066666,5.066666,7.066666,"Mokwa (2), Nigeria",NGA
+741,correct location data,Samaru,Nigeria,11.183333,7.583333,11.183333,7.583333,"Samaru, Nigeria",NGA
+742,no lat/lng entered / incorrect lat/lng - geocoded location,Saminaka Nig,Nigeria,0.0,0.0,10.4110334,8.669981111225605,"Saminaka, Kaduna, Nigeria",NGA
+743,no lat/lng entered / incorrect lat/lng - geocoded location,Temti Jos,Nigeria,0.0,0.0,9.9175125,8.8979401,"Jos, 930214, Plateau, Nigeria",NGA
+744,correct location data,Tiga,Nigeria,11.5833,8.5,11.5833,8.5,"Tiga, Nigeria",NGA
+745,correct location data,Turunku,Nigeria,10.8167,7.7,10.8167,7.7,"Turunku, Nigeria",NGA
+746,correct location data,Zaria,Nigeria,11.12,7.72,11.12,7.72,"Zaria, Nigeria",NGA
+747,no lat/lng entered / incorrect lat/lng - geocoded location,"Ari, D,i. Kham",Pakistan,0.0,0.0,24.8265123,67.1014782,"Bayer Pakistan Head office, 75500, Karachi, Sindh, Pakistan",PAK
+748,correct location data,Dadu,Pakistan,26.7,67.8,26.7,67.8,"Dadu, Pakistan",PAK
+749,correct location data,Faisalabad,Pakistan,30.58,72.93,30.58,72.93,"Faisalabad, Pakistan",PAK
+750,correct location data,Islamabad,Pakistan,33.5,72.75,33.5,72.75,"Islamabad, Pakistan",PAK
+751,correct location data,Pirsabak,Pakistan,34.0,72.83,34.0,72.83,"Pirsabak, Pakistan",PAK
+752,correct location data,Yousafwala,Pakistan,31.0,74.0,31.0,74.0,"Yousafwala, Pakistan",PAK
+753,no lat/lng entered / incorrect lat/lng - geocoded location,Azuer,Panama,0.0,0.0,7.9656156,-80.43680914654468,"Hotel Azuero Plaza, Chitré, Provincia de Herrera, Panama",PAN
+754,correct location data,Ceiachi,Panama,8.38,-82.33,8.38,-82.33,"Ceiachi, Panama",PAN
+755,correct location data,Chiriqui,Panama,8.38,-82.33,8.38,-82.33,"Chiriqui, Panama",PAN
+756,correct location data,El Ejido,Panama,7.93,-80.38,7.93,-80.38,"El Ejido, Panama",PAN
+757,correct location data,Guarare,Panama,7.83,-80.33,7.83,-80.33,"Guarare, Panama",PAN
+758,no lat/lng entered / incorrect lat/lng - geocoded location,Parita,Panama,8.13,-80.4,9.0946994,-79.4028143,"Calle Parita, Altos de Tocumen, Provincia de Panamá, Panama",PAN
+759,correct location data,Rio Hato,Panama,8.35,-80.17,8.35,-80.17,"Rio Hato, Panama",PAN
+760,correct location data,Caacupe,Paraguay,-25.4,-57.1,-25.4,-57.1,"Caacupe, Paraguay",PRY
+761,no lat/lng entered / incorrect lat/lng - geocoded location,Capitan Miranda,Paraguay,0.0,0.0,-27.2196484,-55.8011417,"Capitán Miranda, Itapúa, Paraguay",PRY
+762,correct location data,Capitan Miranda (2),Paraguay,-27.28,-55.82,-27.28,-55.82,"Capitan Miranda (2), Paraguay",PRY
+763,correct location data,Chore (d. S. Pedro),Paraguay,-24.17,-56.62,-24.17,-56.62,"Chore (d. S. Pedro), Paraguay",PRY
+764,no lat/lng entered / incorrect lat/lng - geocoded location,San Juan Bautista,Paraguay,0.0,0.0,-26.6690511,-57.1457939,"San Juan Bautista, Misiones, Paraguay",PRY
+765,correct location data,Tomas Romero Pereira,Paraguay,-26.45,-55.27,-26.45,-55.27,"Tomas Romero Pereira, Paraguay",PRY
+766,no lat/lng entered / incorrect lat/lng - geocoded location,Yjhovy,Paraguay,0.0,0.0,-23.3165935,-58.1693445,"Paraguay, Paraguay",PRY
+767,no lat/lng entered / incorrect lat/lng - geocoded location,Ascope,Peru,0.0,0.0,-7.6871281,-79.1720231,"Province of Ascope, Ascope, La Libertad, Peru",PER
+768,no lat/lng entered / incorrect lat/lng - geocoded location,Aucaloma,Peru,0.0,0.0,-6.8699697,-75.0458515,"Peru, Peru",PER
+769,no lat/lng entered / incorrect lat/lng - geocoded location,E.e. Pucallpa,Peru,0.0,0.0,-8.38665005,-74.55998706947082,"Embotelladora Pucallpa, 250105, Yarinacocha, Ucayali, Peru",PER
+770,correct location data,El Porvenir,Peru,-6.52,-76.35,-6.52,-76.35,"El Porvenir, Peru",PER
+771,no lat/lng entered / incorrect lat/lng - geocoded location,Huaral,Peru,0.0,0.0,-11.4954877,-77.2071394,"Huaral, Lima, Peru",PER
+772,no lat/lng entered / incorrect lat/lng - geocoded location,Humay - Pisco,Peru,0.0,0.0,-13.7225359,-75.8866165,"Humay, 11601, Ica, Peru",PER
+773,correct location data,Iquitos,Peru,-3.75,-73.25,-3.75,-73.25,"Iquitos, Peru",PER
+774,no lat/lng entered / incorrect lat/lng - geocoded location,Juan Guerra,Peru,0.0,0.0,-6.5832708,-76.3299295,"Juan Guerra, San Martín, Peru",PER
+775,no lat/lng entered / incorrect lat/lng - geocoded location,La Vi╤a-jayanca-lambayeque,Peru,0.0,0.0,-6.4036672,-79.8252381,"Vista Alegre, Ruta 1b, 14000, Ruta 1b, Jayanca, Lambayeque, Peru",PER
+776,no lat/lng entered / incorrect lat/lng - geocoded location,Lambayeque,Peru,0.0,0.0,-6.333333,-80.0,"Lambayeque, Peru",PER
+777,no lat/lng entered / incorrect lat/lng - geocoded location,Lima,Peru,0.0,0.0,-12.0621065,-77.0365256,"Lima, Lima, Peru",PER
+778,no lat/lng entered / incorrect lat/lng - geocoded location,Montupe 99,Peru,0.0,0.0,-6.2769016,-79.748424,"Río Motupe, 14000, Motupe, Lambayeque, Peru",PER
+779,no lat/lng entered / incorrect lat/lng - geocoded location,Muy Finca Mochumi Lambayeque,Peru,0.0,0.0,-6.612434,-79.8946013,"Institución Educativa 10138 Augusto Castillo Muro Sime, Motupe, 14000, Motupe, Mochumí, Lambayeque, Peru",PER
+780,no lat/lng entered / incorrect lat/lng - geocoded location,Pachacamac,Peru,0.0,0.0,-12.3019444,-76.9022222,"Pachacámac, 15842, Lurín, Lima, Peru",PER
+781,no lat/lng entered / incorrect lat/lng - geocoded location,Peru,Peru,0.0,0.0,-6.8699697,-75.0458515,"Peru, Peru",PER
+782,no lat/lng entered / incorrect lat/lng - geocoded location,Pucallpa,Peru,0.0,0.0,-8.3820737,-74.5387507,"Pucallpa, 250105, Ucayali, Peru",PER
+783,no lat/lng entered / incorrect lat/lng - geocoded location,"Pucallpa, San Fernando, Sa",Peru,0.0,0.0,-13.659727,-73.3478504,"San Fernando, 03701, Apurímac, Peru",PER
+784,no lat/lng entered / incorrect lat/lng - geocoded location,Rioja,Peru,0.0,0.0,-6.0,-77.416667,"Province of Rioja, Nueva Cajamarca, San Martín, Peru",PER
+785,no lat/lng entered / incorrect lat/lng - geocoded location,"Rioja, San Fernando, Sa",Peru,0.0,0.0,-5.9029585,-77.2706361,"San Fernando, San Martín, Peru",PER
+786,no lat/lng entered / incorrect lat/lng - geocoded location,Victoria 99,Peru,0.0,0.0,-12.070200849999999,-77.0298013,"Primax, 999, Avenida Iquitos, LIMA 13, Avenida Iquitos, La Victoria, Lima, Peru",PER
+787,no lat/lng entered / incorrect lat/lng - geocoded location,Viru La Libertad,Peru,0.0,0.0,-8.4834983,-78.6713996,"Province of Virú, Chao, La Libertad, Peru",PER
+788,no lat/lng entered / incorrect lat/lng - geocoded location,Vista Florida,Peru,0.0,0.0,-4.8781674,-80.990203,"Vista Florida, 20701, Piura, Peru",PER
+789,no lat/lng entered / incorrect lat/lng - geocoded location,Vista Florida Chiclayo,Peru,0.0,0.0,-6.7631677,-79.8583674,"Vista Florida, 5174, Chiclayo, Lambayeque, Peru",PER
+790,no lat/lng entered / incorrect lat/lng - geocoded location,Vista Florida Chiclayo (2),Peru,0.0,0.0,-4.8781674,-80.990203,"Vista Florida, 20701, Piura, Peru",PER
+791,no lat/lng entered / incorrect lat/lng - geocoded location,Vista Florida Chiclayo (3),Peru,0.0,0.0,-6.7631677,-79.8583674,"Vista Florida, 5174, Chiclayo, Lambayeque, Peru",PER
+792,no lat/lng entered / incorrect lat/lng - geocoded location,Yurimagua,Peru,0.0,0.0,-5.8994825,-76.3906998,"Nuevo Yurimaguas, 16401, Loreto, Peru",PER
+793,no lat/lng entered / incorrect lat/lng - geocoded location,Baybay,Philippines,0.0,0.0,11.1912997,125.0218763,"Baybay, 6500, Leyte, Philippines",PHL
+794,correct location data,"Cabuyao, Laguna",Philippines,14.17,121.33,14.17,121.33,"Cabuyao, Laguna, Philippines",PHL
+795,correct location data,Cagayan Valley,Philippines,8.48,124.65,8.48,124.65,"Cagayan Valley, Philippines",PHL
+796,no lat/lng entered / incorrect lat/lng - geocoded location,Ipb Experiment Station,Philippines,0.0,0.0,9.78206895,118.737796789149,"Palawan Agricultural Experiment Station, 5300, Tagburos, Palawan, Philippines",PHL
+797,no lat/lng entered / incorrect lat/lng - geocoded location,Kabacan,Philippines,0.0,0.0,7.1082671,124.8232975,"Kabacan, Cotabato, Philippines",PHL
+798,no lat/lng entered / incorrect lat/lng - geocoded location,"Kabacan, Cotabato (2)",Philippines,0.0,0.0,7.1417611,125.0534924,"Kabacan Bridge 2, President Roxas, Cotabato, Philippines",PHL
+799,correct location data,Katangawan,Philippines,6.17,125.0,6.17,125.0,"Katangawan, Philippines",PHL
+800,no lat/lng entered / incorrect lat/lng - geocoded location,"San Felipe, Ilagan, Isabela.",Philippines,0.0,0.0,8.02297175,125.99278624466555,"Dalumpines, Felipe, NRJ Sta. Isabel-Tapaz Road, 8512, NRJ Sta. Isabel-Tapaz Road, Purok 1 Tapaz, Agusan del Sur, Philippines",PHL
+801,correct location data,Visca,Philippines,10.73,124.8,10.73,124.8,"Visca, Philippines",PHL
+802,correct location data,Rubona,Rwanda,-2.48,29.77,-2.48,29.77,"Rubona, Rwanda",RWA
+803,correct location data,Nioro,Senegal,13.67,-15.77,13.67,-15.77,"Nioro, Senegal",SEN
+804,correct location data,Barberton,South Africa,-25.79,31.06,-25.79,31.06,"Barberton, South Africa",ZAF
+805,no lat/lng entered / incorrect lat/lng - geocoded location,Burgershall,South Africa,0.0,0.0,-28.8166236,24.991639,"South Africa, South Africa",ZAF
+806,correct location data,Delmas,South Africa,-26.15,28.68,-26.15,28.68,"Delmas, South Africa",ZAF
+807,no lat/lng entered / incorrect lat/lng - geocoded location,Friedenheim Valley,South Africa,0.0,0.0,-25.4489113,30.9993523,"Friedenheim, 1201, Mbombela, Mpumalanga, South Africa",ZAF
+808,no lat/lng entered / incorrect lat/lng - geocoded location,Linkseed,South Africa,0.0,0.0,-28.8166236,24.991639,"South Africa, South Africa",ZAF
+809,no lat/lng entered / incorrect lat/lng - geocoded location,Mpumalanga,South Africa,0.0,0.0,-26.276849,30.1500153,"Mpumalanga, South Africa",ZAF
+810,correct location data,Nelspruit Mpumalanga,South Africa,-25.47,30.97,-25.47,30.97,"Nelspruit Mpumalanga, South Africa",ZAF
+811,no lat/lng entered / incorrect lat/lng - geocoded location,North West Province,South Africa,0.0,0.0,-25.7965065,25.62683721076813,"Joint Tactical Headquarters North-West Province, 2770, Mahikeng Local Municipality, North West, South Africa",ZAF
+812,correct location data,"Pannar, Graytown",South Africa,-29.07,30.58,-29.07,30.58,"Pannar, Graytown, South Africa",ZAF
+813,no lat/lng entered / incorrect lat/lng - geocoded location,Petit,South Africa,0.0,0.0,-26.1019444,28.3708333,"Petit, Gauteng, South Africa",ZAF
+814,no lat/lng entered / incorrect lat/lng - geocoded location,Tshiombo,South Africa,0.0,0.0,-22.8086111,30.4786111,"Tshiombo, 0950, Thulamela Local Municipality, Limpopo, South Africa",ZAF
+815,correct location data,Viljoonskroon,South Africa,-27.2,26.9,-27.2,26.9,"Viljoonskroon, South Africa",ZAF
+816,correct location data,Betlehem,South Africa,-28.25,28.33,-28.25,28.33,"Betlehem, South Africa",ZAF
+817,correct location data,Cedara,South Africa,-29.53,30.28,-29.53,30.28,"Cedara, South Africa",ZAF
+818,correct location data,Ezolimo,South Africa,-25.2,31.2,-25.2,31.2,"Ezolimo, South Africa",ZAF
+819,correct location data,Friedenhei,South Africa,-25.47,30.97,-25.47,30.97,"Friedenhei, South Africa",ZAF
+820,correct location data,Greytown,South Africa,-29.02,30.6,-29.02,30.6,"Greytown, South Africa",ZAF
+821,correct location data,Greytown (2),South Africa,-29.07,30.58,-29.07,30.58,"Greytown (2), South Africa",ZAF
+822,correct location data,Lwamongo,South Africa,-23.03,30.33,-23.03,30.33,"Lwamongo, South Africa",ZAF
+823,correct location data,Nelspruit,South Africa,-25.47,30.97,-25.47,30.97,"Nelspruit, South Africa",ZAF
+824,correct location data,Potchefstroom,South Africa,-26.67,27.07,-26.67,27.07,"Potchefstroom, South Africa",ZAF
+825,correct location data,Setlagole,South Africa,-26.28,25.12,-26.28,25.12,"Setlagole, South Africa",ZAF
+826,correct location data,Viljoenskroon,South Africa,-27.17,26.92,-27.17,26.92,"Viljoenskroon, South Africa",ZAF
+827,correct location data,Gezira,Sudan,14.4,33.48,14.4,33.48,"Gezira, Sudan",SDN
+828,correct location data,Wad Medani,Sudan,14.4,32.833333,14.4,32.833333,"Wad Medani, Sudan",SDN
+829,correct location data,Big-bend,Swaziland,-26.82,31.93,-26.82,31.93,"Big-bend, Swaziland",SWZ
+830,correct location data,Luve,Swaziland,-26.281,31.505,-26.281,31.505,"Luve, Swaziland",SWZ
+831,correct location data,Malkerns,Swaziland,-26.553,31.165,-26.553,31.165,"Malkerns, Swaziland",SWZ
+832,correct location data,Mangcongo,Swaziland,-26.57,30.85,-26.57,30.85,"Mangcongo, Swaziland",SWZ
+833,correct location data,Nhlangano,Swaziland,-27.11,31.216,-27.11,31.216,"Nhlangano, Swaziland",SWZ
+834,no lat/lng entered / incorrect lat/lng - geocoded location,Shewula,Swaziland,0.0,0.0,-26.1415941,32.0397707,"Shewula Mountaincamp, Shwula-Mbuluzi trail, Shwula-Mbuluzi trail, Lubombo, Swaziland",SWZ
+835,no lat/lng entered / incorrect lat/lng - geocoded location,Swaziland,Swaziland,0.0,0.0,-26.2950105,31.1398305,"Diplomat Swaziland Lane, H100, Mbabane, Hhohho, Swaziland",SWZ
+836,no lat/lng entered / incorrect lat/lng - geocoded location,Deir Al Zoor,Syria,0.0,0.0,35.3333335,40.1499999,"Deir ez-Zor, Deir ez-Zor, Syria",SYR
+837,no lat/lng entered / incorrect lat/lng - geocoded location,Raqqa,Syria,0.0,0.0,35.4782468,38.168005,"Salamiyah - Raqqa, Hama, Syria",SYR
+838,correct location data,Po-tzu-chia-i,"Taiwan, Province of China",23.5,120.23,23.5,120.23,"Po-tzu-chia-i, Taiwan, Province of China",TWN
+839,correct location data,Afsf-arusha,"Tanzania, United Republic of",-3.3658,36.6745,-3.3658,36.6745,"Afsf-arusha, Tanzania, United Republic of",TZA
+840,correct location data,Arusha Tan,"Tanzania, United Republic of",-3.36,36.67,-3.36,36.67,"Arusha Tan, Tanzania, United Republic of",TZA
+841,correct location data,Cholima,"Tanzania, United Republic of",-7.43,37.7,-7.43,37.7,"Cholima, Tanzania, United Republic of",TZA
+842,correct location data,Dabaga Uyole,"Tanzania, United Republic of",-8.83,34.83,-8.83,34.83,"Dabaga Uyole, Tanzania, United Republic of",TZA
+843,correct location data,Dakawa,"Tanzania, United Republic of",-7.43,37.7,-7.43,37.7,"Dakawa, Tanzania, United Republic of",TZA
+844,correct location data,Ilonga,"Tanzania, United Republic of",-6.77,37.03,-6.77,37.03,"Ilonga, Tanzania, United Republic of",TZA
+845,correct location data,Inyala,"Tanzania, United Republic of",-8.867,33.633,-8.867,33.633,"Inyala, Tanzania, United Republic of",TZA
+846,correct location data,Katrin,"Tanzania, United Republic of",-8.133,36.683,-8.133,36.683,"Katrin, Tanzania, United Republic of",TZA
+847,correct location data,Katrin1,"Tanzania, United Republic of",-8.13,36.68,-8.13,36.68,"Katrin1, Tanzania, United Republic of",TZA
+848,correct location data,Katrin2,"Tanzania, United Republic of",-8.13,36.68,-8.13,36.68,"Katrin2, Tanzania, United Republic of",TZA
+849,correct location data,Katrin-ifakara,"Tanzania, United Republic of",-8.13,36.68,-8.13,36.68,"Katrin-ifakara, Tanzania, United Republic of",TZA
+850,correct location data,Maruku,"Tanzania, United Republic of",-1.338,32.786,-1.338,32.786,"Maruku, Tanzania, United Republic of",TZA
+851,correct location data,Mbulumbulu,"Tanzania, United Republic of",-3.25,35.8,-3.25,35.8,"Mbulumbulu, Tanzania, United Republic of",TZA
+852,correct location data,Mlingano,"Tanzania, United Republic of",-5.07,38.92,-5.07,38.92,"Mlingano, Tanzania, United Republic of",TZA
+853,correct location data,Monduli,"Tanzania, United Republic of",-3.3,36.45,-3.3,36.45,"Monduli, Tanzania, United Republic of",TZA
+854,correct location data,Morogoro,"Tanzania, United Republic of",-6.83,37.65,-6.83,37.65,"Morogoro, Tanzania, United Republic of",TZA
+855,correct location data,Ngaramtoni,"Tanzania, United Republic of",-3.36,36.67,-3.36,36.67,"Ngaramtoni, Tanzania, United Republic of",TZA
+856,correct location data,Ngaramtoni-arusha,"Tanzania, United Republic of",-3.36,36.67,-3.36,36.67,"Ngaramtoni-arusha, Tanzania, United Republic of",TZA
+857,correct location data,Selian,"Tanzania, United Republic of",-3.22,36.37,-3.22,36.37,"Selian, Tanzania, United Republic of",TZA
+858,correct location data,Tabora,"Tanzania, United Republic of",-5.02,32.8,-5.02,32.8,"Tabora, Tanzania, United Republic of",TZA
+859,correct location data,Tumbi-tabora,"Tanzania, United Republic of",-5.07,32.73,-5.07,32.73,"Tumbi-tabora, Tanzania, United Republic of",TZA
+860,correct location data,Ukiriguru,"Tanzania, United Republic of",-2.719,33.024,-2.719,33.024,"Ukiriguru, Tanzania, United Republic of",TZA
+861,correct location data,Uyole,"Tanzania, United Republic of",-8.92,33.57,-8.92,33.57,"Uyole, Tanzania, United Republic of",TZA
+862,correct location data,Weruweru,"Tanzania, United Republic of",-3.317,37.25,-3.317,37.25,"Weruweru, Tanzania, United Republic of",TZA
+863,correct location data,Banmaisomrong,Thailand,14.87,101.65,14.87,101.65,"Banmaisomrong, Thailand",THA
+864,correct location data,Nakhon Sawan R.c.,Thailand,15.35,100.5,15.35,100.5,"Nakhon Sawan R.c., Thailand",THA
+865,correct location data,Nakhon Sawan R.c.(2),Thailand,15.35,100.5,15.35,100.5,"Nakhon Sawan R.c.(2), Thailand",THA
+866,correct location data,Phetchabun,Thailand,16.43,101.15,16.43,101.15,"Phetchabun, Thailand",THA
+867,correct location data,Phraphutthabat,Thailand,14.73,100.6,14.73,100.6,"Phraphutthabat, Thailand",THA
+868,no lat/lng entered / incorrect lat/lng - geocoded location,Sawankalok Sukhotha,Thailand,0.0,0.0,17.1446985,99.4375845,"Sukhothai Province, Thailand",THA
+869,correct location data,Suwan,Thailand,14.08,101.0,14.08,101.0,"Suwan, Thailand",THA
+870,no lat/lng entered / incorrect lat/lng - geocoded location,Tak Fa,Thailand,0.0,0.0,15.3525676,100.496798,"Tak Fa, Nakhon Sawan Province, Thailand",THA
+871,correct location data,Tak Fa (2),Thailand,15.5,100.17,15.5,100.17,"Tak Fa (2), Thailand",THA
+872,no lat/lng entered / incorrect lat/lng - geocoded location,El Carmen,Trinidad and Tobago,0.0,0.0,10.5800369,-61.3275496,"El Carmen Est, 00129, Saint Helena, Tunapuna-Piarco, Trinidad and Tobago",TTO
+873,no lat/lng entered / incorrect lat/lng - geocoded location,Goldsborough,Trinidad and Tobago,11.0,-61.0,11.2128986,-60.6308368,"Goldsborough, Tobago, Trinidad and Tobago",TTO
+874,no lat/lng entered / incorrect lat/lng - geocoded location,Louis D'or,Trinidad and Tobago,11.08,-60.08,11.2538732,-60.5614864,"Louis D'or, Tobago, Trinidad and Tobago",TTO
+875,correct location data,Adapazari,Turkey,40.75,30.38,40.75,30.38,"Adapazari, Turkey",TUR
+876,no lat/lng entered / incorrect lat/lng - geocoded location,Aydin,Turkey,0.0,0.0,37.8413007,27.8328374,"Aydin, 09010, Aydın, Turkey",TUR
+877,no lat/lng entered / incorrect lat/lng - geocoded location,Anny Settl,Turkmenistan,0.0,0.0,38.0466859,58.033832652179576,"Aba Annaýew, Ahal, Turkmenistan",TKM
+878,no lat/lng entered / incorrect lat/lng - geocoded location,Bulegeni,Uganda,0.0,0.0,1.2932763,34.2852388,"Bulegeni Secondary, Sironko Kapchorwa Road, Sironko Kapchorwa Road, Buyaga, Sironko, Uganda",UGA
+879,no lat/lng entered / incorrect lat/lng - geocoded location,Bulengeni,Uganda,0.0,0.0,1.5333554,32.2166578,"Uganda, Uganda",UGA
+880,correct location data,Kamayanmiggo,Uganda,-0.25,31.25,-0.25,31.25,"Kamayanmiggo, Uganda",UGA
+881,correct location data,Kamenyamiggo,Uganda,-0.25,31.25,-0.25,31.25,"Kamenyamiggo, Uganda",UGA
+882,correct location data,Kampala,Uganda,0.3528,32.5801,0.3528,32.5801,"Kampala, Uganda",UGA
+883,correct location data,Kapchorwa,Uganda,1.38279998302,34.5243988037,1.38279998302,34.5243988037,"Kapchorwa, Uganda",UGA
+884,no lat/lng entered / incorrect lat/lng - geocoded location,"Likonde,songea",Uganda,-10.66,35.58,1.6446775,31.2193473,"Songagagi, Hoima, Hoima, Uganda",UGA
+885,correct location data,Masaka,Uganda,-0.333,31.767,-0.333,31.767,"Masaka, Uganda",UGA
+886,no lat/lng entered / incorrect lat/lng - geocoded location,Msk,Uganda,0.0,0.0,1.5333554,32.2166578,"Uganda, Uganda",UGA
+887,correct location data,Naari,Uganda,0.5333,34.1167,0.5333,34.1167,"Naari, Uganda",UGA
+888,correct location data,Namulonge Uga,Uganda,0.53,32.58,0.53,32.58,"Namulonge Uga, Uganda",UGA
+889,correct location data,Serere,Uganda,1.517,33.45,1.517,33.45,"Serere, Uganda",UGA
+890,correct location data,Tororo,Uganda,0.7,34.18,0.7,34.18,"Tororo, Uganda",UGA
+891,no lat/lng entered / incorrect lat/lng - geocoded location,Uganda,Uganda,0.0,0.0,1.5333554,32.2166578,"Uganda, Uganda",UGA
+892,correct location data,Barnum Mn,United States,46.50241,-92.6944,46.50241,-92.6944,"Barnum Mn, United States",USA
+893,no lat/lng entered / incorrect lat/lng - geocoded location,"College Station, Texas",United States,0.0,0.0,30.6253463,-96.3271538,"College Station, Texas, United States of America",USA
+894,no lat/lng entered / incorrect lat/lng - geocoded location,"Kenedy, Tx.",United States,0.0,0.0,26.9205171,-97.7461361,"Kenedy County, 78385, Texas, United States of America",USA
+895,correct location data,Sn Antonio,United States,29.42,-99.0,29.42,-99.0,"Sn Antonio, United States",USA
+896,no lat/lng entered / incorrect lat/lng - geocoded location,"Tifton, Georgia",United States,0.0,0.0,31.4504629,-83.5084973,"Tifton, Georgia, United States of America",USA
+897,no lat/lng entered / incorrect lat/lng - geocoded location,"Tifton, Georgia (2)",United States,0.0,0.0,31.466866,-83.503898,"14 1/2 Street West, 31794, Tifton, Georgia, United States of America",USA
+898,no lat/lng entered / incorrect lat/lng - geocoded location,"Weslaco, Texas",United States,0.0,0.0,26.1595156,-97.9908429,"Weslaco, Texas, United States of America",USA
+899,correct location data,La Estanzuela,Uruguay,-34.33,-57.68,-34.33,-57.68,"La Estanzuela, Uruguay",URY
+900,correct location data,Agua Blanca,"Venezuela, Bolivarian Republic of",9.57,-69.22,9.57,-69.22,"Agua Blanca, Venezuela, Bolivarian Republic of",VEN
+901,correct location data,Las Guacamayas,"Venezuela, Bolivarian Republic of",9.17,-66.97,9.17,-66.97,"Las Guacamayas, Venezuela, Bolivarian Republic of",VEN
+902,correct location data,Las Guacamayas (2),"Venezuela, Bolivarian Republic of",9.17,-66.97,9.17,-66.97,"Las Guacamayas (2), Venezuela, Bolivarian Republic of",VEN
+903,correct location data,Maracay,"Venezuela, Bolivarian Republic of",10.25,-67.6,10.25,-67.6,"Maracay, Venezuela, Bolivarian Republic of",VEN
+904,correct location data,Sabana Del Medio,"Venezuela, Bolivarian Republic of",9.62,-69.22,9.62,-69.22,"Sabana Del Medio, Venezuela, Bolivarian Republic of",VEN
+905,correct location data,Dan Phuong,Viet Nam,21.03,105.75,21.03,105.75,"Dan Phuong, Viet Nam",VNM
+906,correct location data,"Hoc May District, Hochimin",Viet Nam,10.82,106.67,10.82,106.67,"Hoc May District, Hochimin, Viet Nam",VNM
+907,correct location data,Lam Dong Province,Viet Nam,12.0,108.0,12.0,108.0,"Lam Dong Province, Viet Nam",VNM
+908,correct location data,Song-boi,Viet Nam,20.48,105.78,20.48,105.78,"Song-boi, Viet Nam",VNM
+909,correct location data,Gandajika,"Congo, The Democratic Republic of the",-6.75,23.95,-6.75,23.95,"Gandajika, Congo, The Democratic Republic of the",COD
+910,correct location data,Mvuazi,"Congo, The Democratic Republic of the",-5.45,14.9,-5.45,14.9,"Mvuazi, Congo, The Democratic Republic of the",COD
+911,no lat/lng entered / incorrect lat/lng - geocoded location,"Chisamba, Golden Valley",Zambia,0.0,0.0,-14.971526,28.091192341119783,"Golden Valley, Central Province, Zambia",ZMB
+912,correct location data,"Kasama, Misanfu",Zambia,-10.2,31.1,-10.2,31.1,"Kasama, Misanfu, Zambia",ZMB
+913,correct location data,Katuba,Zambia,-15.17,28.23,-15.17,28.23,"Katuba, Zambia",ZMB
+914,no lat/lng entered / incorrect lat/lng - geocoded location,Kutumani,Zambia,0.0,0.0,-14.5186239,27.5599164,"Zambia, Zambia",ZMB
+915,no lat/lng entered / incorrect lat/lng - geocoded location,Lyempe,Zambia,0.0,0.0,-14.5186239,27.5599164,"Zambia, Zambia",ZMB
+916,no lat/lng entered / incorrect lat/lng - geocoded location,Magobo,Zambia,0.0,0.0,-14.5186239,27.5599164,"Zambia, Zambia",ZMB
+917,correct location data,Magoye,Zambia,-15.526,27.45,-15.526,27.45,"Magoye, Zambia",ZMB
+918,correct location data,Mansa,Zambia,-11.12,28.53,-11.12,28.53,"Mansa, Zambia",ZMB
+919,correct location data,Masumba,Zambia,-13.16,31.58,-13.16,31.58,"Masumba, Zambia",ZMB
+920,correct location data,Mogoye,Zambia,-16.0,27.6,-16.0,27.6,"Mogoye, Zambia",ZMB
+921,correct location data,Mount Makulu,Zambia,-15.5,28.3,-15.5,28.3,"Mount Makulu, Zambia",ZMB
+922,correct location data,Mpongwe,Zambia,-13.533,28.15,-13.533,28.15,"Mpongwe, Zambia",ZMB
+923,correct location data,Msekera,Zambia,-13.38,32.39,-13.38,32.39,"Msekera, Zambia",ZMB
+924,correct location data,Nanga,Zambia,-15.767,27.92,-15.767,27.92,"Nanga, Zambia",ZMB
+925,correct location data,Sesheke,Zambia,-17.28,24.18,-17.28,24.18,"Sesheke, Zambia",ZMB
+926,no lat/lng entered / incorrect lat/lng - geocoded location,Zambia,Zambia,0.0,0.0,-14.5186239,27.5599164,"Zambia, Zambia",ZMB
+927,correct location data,"Zamseed, Farm",Zambia,-14.2,28.4,-14.2,28.4,"Zamseed, Farm, Zambia",ZMB
+928,correct location data,Arcturus,Zimbabwe,-17.783,31.317,-17.783,31.317,"Arcturus, Zimbabwe",ZWE
+929,correct location data,"Arex Drss, Harare",Zimbabwe,-17.8,31.1,-17.8,31.1,"Arex Drss, Harare, Zimbabwe",ZWE
+930,correct location data,"Art Farm, Harare",Zimbabwe,-17.8,31.05,-17.8,31.05,"Art Farm, Harare, Zimbabwe",ZWE
+931,correct location data,Chiredzi,Zimbabwe,-21.02,31.58,-21.02,31.58,"Chiredzi, Zimbabwe",ZWE
+932,no lat/lng entered / incorrect lat/lng - geocoded location,"Cimmyt, Harare",Zimbabwe,0.0,0.0,-17.831773,31.045686,"Harare, 0000, Harare Province, Zimbabwe",ZWE
+933,no lat/lng entered / incorrect lat/lng - geocoded location,Dedza,Zimbabwe,0.0,0.0,-18.4554963,29.7468414,"Zimbabwe, Zimbabwe",ZWE
+934,correct location data,Glendale,Zimbabwe,-17.08,31.03,-17.08,31.03,"Glendale, Zimbabwe",ZWE
+935,correct location data,Gwebi,Zimbabwe,-17.7,30.85,-17.7,30.85,"Gwebi, Zimbabwe",ZWE
+936,correct location data,Harare,Zimbabwe,-17.8,31.05,-17.8,31.05,"Harare, Zimbabwe",ZWE
+937,correct location data,Kadoma,Zimbabwe,-18.32,30.9,-18.32,30.9,"Kadoma, Zimbabwe",ZWE
+938,correct location data,Lucydale,Zimbabwe,-19.8,30.8,-19.8,30.8,"Lucydale, Zimbabwe",ZWE
+939,correct location data,Makoholi,Zimbabwe,-19.83,30.78,-19.83,30.78,"Makoholi, Zimbabwe",ZWE
+940,correct location data,Marondera,Zimbabwe,-18.8,31.6,-18.8,31.6,"Marondera, Zimbabwe",ZWE
+941,correct location data,Matopos,Zimbabwe,-20.38,28.5,-20.38,28.5,"Matopos, Zimbabwe",ZWE
+942,correct location data,Mazowe,Zimbabwe,-17.51,30.91,-17.51,30.91,"Mazowe, Zimbabwe",ZWE
+943,correct location data,Muzarabani,Zimbabwe,-16.37,31.02,-16.37,31.02,"Muzarabani, Zimbabwe",ZWE
+944,no lat/lng entered / incorrect lat/lng - geocoded location,Pannar,Zimbabwe,0.0,0.0,-18.4554963,29.7468414,"Zimbabwe, Zimbabwe",ZWE
+945,no lat/lng entered / incorrect lat/lng - geocoded location,Pioneer,Zimbabwe,0.0,0.0,-17.9365916,25.8347374,"Pioneer Road, 00236, Victoria Falls, Matabeleland North, Zimbabwe",ZWE
+946,no lat/lng entered / incorrect lat/lng - geocoded location,Radoma,Zimbabwe,0.0,0.0,-18.4554963,29.7468414,"Zimbabwe, Zimbabwe",ZWE
+947,correct location data,Rattray Arnold Farm,Zimbabwe,-18.116667,31.283333,-18.116667,31.283333,"Rattray Arnold Farm, Zimbabwe",ZWE
+948,correct location data,Ruwa,Zimbabwe,-17.89,31.24,-17.89,31.24,"Ruwa, Zimbabwe",ZWE
+949,correct location data,Save Valley,Zimbabwe,-20.35,32.33,-20.35,32.33,"Save Valley, Zimbabwe",ZWE
+950,correct location data,Shamva Zim,Zimbabwe,-17.32,31.57,-17.32,31.57,"Shamva Zim, Zimbabwe",ZWE
+951,no lat/lng entered / incorrect lat/lng - geocoded location,Zimbabwe,Zimbabwe,0.0,0.0,-18.4554963,29.7468414,"Zimbabwe, Zimbabwe",ZWE
+952,correct location data,Kachwekano,Uganda,-1.26670002937,29.9500007629,-1.26670002937,29.9500007629,"Kachwekano, Uganda",UGA
+953,correct location data,Gakuta,Rwanda,-2.16669988632,29.3332996368,-2.16669988632,29.3332996368,"Gakuta, Rwanda",RWA
+954,correct location data,Rwerere,Rwanda,-1.5,29.6333007813,-1.5,29.6333007813,"Rwerere, Rwanda",RWA
+955,correct location data,Tamira,Rwanda,-1.50310003757,29.6292991638,-1.50310003757,29.6292991638,"Tamira, Rwanda",RWA
+956,no lat/lng entered / incorrect lat/lng - geocoded location,Gisozi,Burundi,0.0,0.0,-3.5659737,29.6825013,"Gisozi, Mwaro, Burundi",BDI
+957,correct location data,Eldoret,Kenya,0.5,35.2832984924,0.5,35.2832984924,"Eldoret, Kenya",KEN
+958,correct location data,"Pentecostes, Texcoco",Mexico,19.55134,-98.86279,19.55134,-98.86279,"Pentecostes, Texcoco, Mexico",MEX
+959,correct location data,Texcoco,Mexico,19.55134,-98.86279,19.55134,-98.86279,"Texcoco, Mexico",MEX
+960,no lat/lng entered / incorrect lat/lng - geocoded location,"Zacatepec, Morelos",Mexico,0.0,0.0,18.65059575,-99.20307754840212,"Zacatepec, Morelos, Mexico",MEX
+961,no lat/lng entered / incorrect lat/lng - geocoded location,Miacatlan,Mexico,0.0,0.0,18.765853,-99.3593994,"Miacatlan, 62630.0, Morelos, Mexico",MEX
+962,no lat/lng entered / incorrect lat/lng - geocoded location,Salandhar (punjab),India,0.0,0.0,30.9293211,75.5004841,"Punjab, India",IND
+963,correct location data,Dago,Kenya,-0.052517,34.740475,-0.052517,34.740475,"Dago, Kenya",KEN
+964,correct location data,Kodiaga,Kenya,-0.066,34.711892,-0.066,34.711892,"Kodiaga, Kenya",KEN
+965,correct location data,Luanda,Kenya,0.025922,34.584678,0.025922,34.584678,"Luanda, Kenya",KEN
+966,correct location data,Siaya,Kenya,0.067564,34.276828,0.067564,34.276828,"Siaya, Kenya",KEN
+967,no lat/lng entered / incorrect lat/lng - geocoded location,Kaniaka,Congo,-6.8167,23.9,-0.7264327,15.6419155,"Congo-Brazzaville, Republic of the Congo",COG
+968,correct location data,Chakol,Kenya,3.45,39.066667,3.45,39.066667,"Chakol, Kenya",KEN
+969,correct location data,Kibale,Uganda,0.566667,30.366667,0.566667,30.366667,"Kibale, Uganda",UGA
+970,correct location data,Yala,Kenya,0.09425,34.533453,0.09425,34.533453,"Yala, Kenya",KEN
+971,correct location data,Tanga,"Tanzania, United Republic of",-5.069489,39.098758,-5.069489,39.098758,"Tanga, Tanzania, United Republic of",TZA
+972,correct location data,"Mungoshi, Hai","Tanzania, United Republic of",-3.177825,37.211583,-3.177825,37.211583,"Mungoshi, Hai, Tanzania, United Republic of",TZA
+973,correct location data,Kiharu,Kenya,-0.827636,37.232997,-0.827636,37.232997,"Kiharu, Kenya",KEN
+974,correct location data,Kilifi,Kenya,-3.615072,39.85445,-3.615072,39.85445,"Kilifi, Kenya",KEN
+975,correct location data,Kisumu,Kenya,-0.095161,34.747331,-0.095161,34.747331,"Kisumu, Kenya",KEN
+976,correct location data,Kwale,Kenya,-4.174478,39.460461,-4.174478,39.460461,"Kwale, Kenya",KEN
+977,correct location data,Malindi,Kenya,-3.216433,40.10925,-3.216433,40.10925,"Malindi, Kenya",KEN
+978,no lat/lng entered / incorrect lat/lng - geocoded location,Gondar,Ethiopia,0.0,0.0,4.9,43.08333,"El Gondar, Somali Region, Ethiopia",ETH
+979,no lat/lng entered / incorrect lat/lng - geocoded location,Quindio,Colombia,0.0,0.0,4.3435926,-75.7232898,"Quindío, Colombia",COL
+980,no lat/lng entered / incorrect lat/lng - geocoded location,Kisama,Kenya,0.0,0.0,1.4419683,38.4313975,"Kenya, Kenya",KEN
+981,no lat/lng entered / incorrect lat/lng - geocoded location,Angecha,Ethiopia,0.0,0.0,10.2116702,38.6521203,"Ethiopia, Ethiopia",ETH
+982,no lat/lng entered / incorrect lat/lng - geocoded location,Mparambo,Burundi,0.0,0.0,-3.3634357,29.8870575,"Burundi, Burundi",BDI
+983,no lat/lng entered / incorrect lat/lng - geocoded location,Thika,Kenya,0.0,0.0,-1.036648,37.077523,"Thika, Kiambu County, Kenya",KEN
+984,no lat/lng entered / incorrect lat/lng - geocoded location,Matisi,Kenya,0.0,0.0,1.4419683,38.4313975,"Kenya, Kenya",KEN
+985,no lat/lng entered / incorrect lat/lng - geocoded location,Kutus,Kenya,0.0,0.0,-0.573059,37.32785,"Kutus, Kirinyaga County, Kenya",KEN
+986,no lat/lng entered / incorrect lat/lng - geocoded location,Kimaeti,Kenya,0.0,0.0,0.605,34.41,"Kimaeti, Bungoma, Kenya",KEN
+987,no lat/lng entered / incorrect lat/lng - geocoded location,Elgon Downs,Kenya,0.0,0.0,-1.3021085,36.8159039,"Elgon Road, 764, Nairobi, Nairobi, Kenya",KEN
+988,no lat/lng entered / incorrect lat/lng - geocoded location,Bumula,Kenya,0.0,0.0,1.4419683,38.4313975,"Kenya, Kenya",KEN
+989,no lat/lng entered / incorrect lat/lng - geocoded location,Bulindi,Uganda,0.0,0.0,1.476389,31.440556,"Bulindi, Hoima, Uganda",UGA
+990,no lat/lng entered / incorrect lat/lng - geocoded location,Bugiri,Uganda,0.0,0.0,0.52060155,33.77215775654412,"Bugiri, Uganda",UGA
+991,no lat/lng entered / incorrect lat/lng - geocoded location,Nyagatare,Rwanda,0.0,0.0,-1.298632,30.329535,"Nyagatare, East Province, Rwanda",RWA
+992,no lat/lng entered / incorrect lat/lng - geocoded location,Kagumo,Kenya,0.0,0.0,-0.4064921,37.0142017,"Kagumo High School, 10100, Chaka, Nyeri, Kenya",KEN
+993,no lat/lng entered / incorrect lat/lng - geocoded location,Screen House,Kenya,0.0,0.0,-0.43120795,34.2064672,"icipe screenhouses, icipe guest house road, icipe guest house road, Mbita, Homa Bay, Kenya",KEN
+994,no lat/lng entered / incorrect lat/lng - geocoded location,Chitedzi,Malawi,0.0,0.0,-13.93356,33.66009553625388,"Chitedzi Agricultural Research Station, P.BAG B525, Lilongwe, Lilongwe, Malawi",MWI
+995,no lat/lng entered / incorrect lat/lng - geocoded location,Kiteta,Kenya,0.0,0.0,-1.4999764,37.5174943,"Kiteta, Machakos, Kenya",KEN
+996,no lat/lng entered / incorrect lat/lng - geocoded location,Kyuu,Kenya,0.0,0.0,-1.6691117,37.4276063,"Kyuu River, Makueni, Kenya",KEN
+997,no lat/lng entered / incorrect lat/lng - geocoded location,Bingu,Malawi,0.0,0.0,-13.94380235,33.75318330526527,"Bingu Stadium, Kaunda Road, 492283, Kaunda Road, Lilongwe, Lilongwe, Malawi",MWI
+998,no lat/lng entered / incorrect lat/lng - geocoded location,Mpingu,Malawi,0.0,0.0,-13.2687204,33.9301963,"Malawi, Malawi",MWI
+999,no lat/lng entered / incorrect lat/lng - geocoded location,Pomela,Malawi,0.0,0.0,-13.2687204,33.9301963,"Malawi, Malawi",MWI
+1000,no lat/lng entered / incorrect lat/lng - geocoded location,Pallisa,Uganda,0.0,0.0,1.2106561,33.759372605323406,"Pallisa, Uganda",UGA
+1001,no lat/lng entered / incorrect lat/lng - geocoded location,"Rancho Guadalupe, Toluca",Mexico,0.0,0.0,28.2020701,-106.2336761,"Rancho Guadalupe, Chihuahua, Mexico",MEX
+1002,no lat/lng entered / incorrect lat/lng - geocoded location,Mwea,Kenya,0.0,0.0,-0.7786437,37.5153156,"Mwea sub-location, Embu County, Kenya",KEN
+1003,no lat/lng entered / incorrect lat/lng - geocoded location,Tlaxcala,Mexico,,,19.416667,-98.166667,"Tlaxcala, Mexico",MEX
+1004,no lat/lng entered / incorrect lat/lng - geocoded location,Chuquipata,Ecuador,,,-2.7432269,-78.8418618,"Calle Chuquipata, 030201, Azogues, Cañar, Ecuador",ECU
+1005,no lat/lng entered / incorrect lat/lng - geocoded location,"Changena, Buenos Aires",Costa Rica,,,9.08251365,-83.2465025101169,"Cantón Buenos Aires, Provincia Puntarenas, Costa Rica",CRI
+1006,no lat/lng entered / incorrect lat/lng - geocoded location,Concepcion De Pilas,Costa Rica,,,10.0287589,-84.0670393,"Concepción, 40505, Provincia Heredia, Costa Rica",CRI
+1007,no lat/lng entered / incorrect lat/lng - geocoded location,Africa University,Zimbabwe,,,-18.89671215,32.6016041639447,"Africa University, Old Mutare, Manicaland, Zimbabwe",ZWE
+1008,no lat/lng entered / incorrect lat/lng - geocoded location,Francistown,Botswana,,,-21.16636,27.502515,"Francistown, North-East District, Botswana",BWA
+1009,no lat/lng entered / incorrect lat/lng - geocoded location,Kipopo,Congo,,,-4.96834,17.8331,"Kipopo, Kwilu, Democratic Republic of the Congo",COG
+1010,no lat/lng entered / incorrect lat/lng - geocoded location,Kisanga,Congo,,,-11.720744,27.397472385626152,"Kisanga, Haut-Katanga, Democratic Republic of the Congo",COG
+1011,no lat/lng entered / incorrect lat/lng - geocoded location,Kasinga,Congo,,,0.031729,29.209892,"Ecole primaire Kasinga, 256, Musienene, North Kivu, Democratic Republic of the Congo",COG
+1012,no lat/lng entered / incorrect lat/lng - geocoded location,Kaniameshi,Congo,,,-0.7264327,15.6419155,"Congo-Brazzaville, Republic of the Congo",COG
+1013,no lat/lng entered / incorrect lat/lng - geocoded location,Kiniameshi,Congo,,,-0.7264327,15.6419155,"Congo-Brazzaville, Republic of the Congo",COG
+1014,no lat/lng entered / incorrect lat/lng - geocoded location,Tsali-tlama,Lesotho,,,-29.4848462,27.519636,"Tlametlu, Mafeteng, Lesotho",LSO
+1015,no lat/lng entered / incorrect lat/lng - geocoded location,Siloe,Lesotho,,,-29.1443297,27.7406226,"Silos road, 200, Koro koro, Berea, Lesotho",LSO
+1016,no lat/lng entered / incorrect lat/lng - geocoded location,Ntengo-nmodzi,Mozambique,,,-14.89400005,33.61511136317877,"Mártires de Ntengo wa Minga, Furancungo, Tete, Mozambique",MOZ
+1017,no lat/lng entered / incorrect lat/lng - geocoded location,Inhaloongo,Mozambique,,,-19.302233,34.9144977,"Mozambique, Mozambique",MOZ
+1018,no lat/lng entered / incorrect lat/lng - geocoded location,Mokonyane,South Africa,,,-24.1275828,28.9996348,"ND Mokonyane Primary School, Nelson Mandela Drive, 0626, Nelson Mandela Drive, Mogalakwena Local Municipality, Limpopo, South Africa",ZAF
+1019,no lat/lng entered / incorrect lat/lng - geocoded location,Rahad Res,Sudan,,,12.7124966,30.6285116,"Al Rahad Tourist Resort, Kosti-al-Ubayyid Road, Kosti-al-Ubayyid Road, Kosti, White Nile State, Sudan",SDN
+1020,correct location data,Namulonge,Uganda,0.53,32.58,0.53,32.58,"Namulonge, Uganda",UGA
+1021,no lat/lng entered / incorrect lat/lng - geocoded location,Palotaka,Sudan,,,14.5844444,29.4917691,"Sudan, Sudan",SDN
+1022,no lat/lng entered / incorrect lat/lng - geocoded location,Yei,Sudan,,,4.0926733,30.6773928,"Yei, Central Equatoria, South Sudan",SDN
+1023,no lat/lng entered / incorrect lat/lng - geocoded location,Ngetta,Uganda,,,2.2453884,32.8987714,"Ngetta Road, Central, Lira, Uganda",UGA
+1024,no lat/lng entered / incorrect lat/lng - geocoded location,Patancheru,India,,,17.5286092,78.2674254,"Patancheru, 502319, Greater Hyderabad Municipal Corporation, Telangana, India",IND
+1025,no lat/lng entered / incorrect lat/lng - geocoded location,Kagio,Kenya,,,-0.6166,37.25,"Kagio, Kirinyaga County, Kenya",KEN
+1026,no lat/lng entered / incorrect lat/lng - geocoded location,Maseno,Kenya,,,-0.007851799999999999,34.59989681631588,"Maseno, Kisumu, Kenya",KEN
+1027,no lat/lng entered / incorrect lat/lng - geocoded location,Nebo,South Africa,,,-24.9063889,29.7616667,"Nebo, 0470, Makhuduthamaga Local Municipality, Limpopo, South Africa",ZAF
+1028,no lat/lng entered / incorrect lat/lng - geocoded location,Tecamac,Mexico,,,19.711716250000002,-98.97832693188553,"Tecámac, Mexico, Mexico",MEX
+1029,no lat/lng entered / incorrect lat/lng - geocoded location,Pashad,Afghanistan,,,33.7680065,66.2385139,"Afghanistan, Afghanistan",AFG
+1030,no lat/lng entered / incorrect lat/lng - geocoded location,"Calpulalpan, Tlaxcala",Mexico,,,19.55201735,-98.61129267708826,"Calpulalpan, Tlaxcala, Mexico",MEX
+1031,no lat/lng entered / incorrect lat/lng - geocoded location,"Nanacamilpa, Tlaxcala",Mexico,,,19.5080315,-98.54324076456274,"Nanacamilpa de Mariano Arista, Tlaxcala, Mexico",MEX
+1032,no lat/lng entered / incorrect lat/lng - geocoded location,La Vizcaina,Colombia,,,6.7365719,-73.808934,"La Forfia, Vizcaina, Santander, Colombia",COL
+1033,no lat/lng entered / incorrect lat/lng - geocoded location,Edelira,Paraguay,,,-26.767587,-55.2780964,"Edelira Km. 20, Itapúa, Paraguay",PRY
+1034,no lat/lng entered / incorrect lat/lng - geocoded location,Shendi,Sudan,,,16.67803365,34.23751047226567,"Shendi, River Nile State, Sudan",SDN
+1035,no lat/lng entered / incorrect lat/lng - geocoded location,Shambat,Sudan,,,15.6676933,32.5330139652732,"Shambat, 11114, Khartoum, Khartoum State, Sudan",SDN
+1036,no lat/lng entered / incorrect lat/lng - geocoded location,Santa Catalina,Ecuador,,,-2.9306541,-78.9620347,"Quebrada Santa Catalina, 010170, El Valle, Azuay, Ecuador",ECU
+1037,no lat/lng entered / incorrect lat/lng - geocoded location,"Calimaya, Toluca",Mexico,,,19.297111,-99.668411,"Calimaya, 50040, Toluca, Mexico, Mexico",MEX
+1038,no lat/lng entered / incorrect lat/lng - geocoded location,"Arroyo, Almoloya De Juarez",Mexico,,,19.3259269,-99.9117235,"Arroyo Zarco, Mexico, Mexico",MEX
+1039,no lat/lng entered / incorrect lat/lng - geocoded location,Villavicencio1,Colombia,,,2.8894434,-73.783892,"Colombia, Colombia",COL
+1040,no lat/lng entered / incorrect lat/lng - geocoded location,"Darien1, Valle Del Cauca",Colombia,,,4.063969999999999,-76.12337981939545,"Valle del Cauca, Colombia",COL
+1041,no lat/lng entered / incorrect lat/lng - geocoded location,"Darien2, Valle Del Cauca",Colombia,,,4.063969999999999,-76.12337981939545,"Valle del Cauca, Colombia",COL
+1042,no lat/lng entered / incorrect lat/lng - geocoded location,"Paraguaicito, Quindio",Colombia,,,4.3435926,-75.7232898,"Quindío, Colombia",COL
+1043,no lat/lng entered / incorrect lat/lng - geocoded location,"Villavicencio, La Libertad",Colombia,,,4.0594202,-73.4612829,"La Libertad, 500005, Villavicencio, Meta, Colombia",COL
+1044,no lat/lng entered / incorrect lat/lng - geocoded location,"Villavicencio, Universidad",Colombia,,,4.14614665,-73.64307289689945,"Universidad de los Llanos Sede San Antonio, Calle 37, 500001, Calle 37, Villavicencio, Meta, Colombia",COL
+1045,no lat/lng entered / incorrect lat/lng - geocoded location,Tumaco,Colombia,,,1.8077554,-78.7705977,"Tumaco, Nariño, Colombia",COL
+1046,no lat/lng entered / incorrect lat/lng - geocoded location,"Los Chiles, Alajuela",Costa Rica,,,10.8591828,-84.71546311262927,"Cantón Los Chiles, Provincia Alajuela, Costa Rica",CRI
+1047,no lat/lng entered / incorrect lat/lng - geocoded location,"Upala, Alajuela",Costa Rica,,,10.8838931,-85.14527533051114,"Cantón Upala, Provincia Alajuela, Costa Rica",CRI
+1048,no lat/lng entered / incorrect lat/lng - geocoded location,Ursulo Galvan,Mexico,,,19.4460638,-96.39799962655596,"Ursulo Galván, 91660, Veracruz, Mexico",MEX
+1049,no lat/lng entered / incorrect lat/lng - geocoded location,Kabul,Afghanistan,0.0,0.0,34.5260131,69.1776476,"Kabul, 1001, Kabul, Afghanistan",AFG
+1050,correct location data,Cabinda,Angola,-5.59999990463257,12.1999998092651,-5.59999990463257,12.1999998092651,"Cabinda, Angola",AGO
+1051,correct location data,Kilomba,Angola,-8.89999961853027,14.6999998092651,-8.89999961853027,14.6999998092651,"Kilomba, Angola",AGO
+1052,correct location data,Mazozo,Angola,-9.10000038146973,13.6999998092651,-9.10000038146973,13.6999998092651,"Mazozo, Angola",AGO
+1053,correct location data,St. Vincent,Angola,-5.57000017166138,12.1999998092651,-5.57000017166138,12.1999998092651,"St. Vincent, Angola",AGO
+1054,no lat/lng entered / incorrect lat/lng - geocoded location,La Catalina,Colombia,0.0,0.0,5.8104468,-74.9804958,"Q. La Catalina, Antioquia, Colombia",COL
+1055,no lat/lng entered / incorrect lat/lng - geocoded location,Paraguaicito,Colombia,0.0,0.0,2.8894434,-73.783892,"Colombia, Colombia",COL
+1056,correct location data,Baka,Malawi,-9.75,34.0,-9.75,34.0,"Baka, Malawi",MWI
+1057,no lat/lng entered / incorrect lat/lng - geocoded location,Freidenheim Valley,South Africa,0.0,0.0,-32.3136111,28.2047222,"Vully Valley, Eastern Cape, South Africa",ZAF
+1058,correct location data,Potchesftroom,South Africa,-26.7000007629395,27.1000003814697,-26.7000007629395,27.1000003814697,"Potchesftroom, South Africa",ZAF
+1059,correct location data,Arusha,"Tanzania, United Republic of",-3.1800000667572,36.7000007629395,-3.1800000667572,36.7000007629395,"Arusha, Tanzania, United Republic of",TZA
+1060,correct location data,Chollima,"Tanzania, United Republic of",-7.42999982833862,37.7000007629395,-7.42999982833862,37.7000007629395,"Chollima, Tanzania, United Republic of",TZA
+1061,correct location data,Tumbi,"Tanzania, United Republic of",-5.07000017166138,32.7299995422363,-5.07000017166138,32.7299995422363,"Tumbi, Tanzania, United Republic of",TZA
+1062,no lat/lng entered / incorrect lat/lng - geocoded location,Kibray,Uzbekistan,0.0,0.0,41.3873284,69.4641139,"Kibray, 111200, Tashkent Region, Uzbekistan",UZB
+1063,no lat/lng entered / incorrect lat/lng - geocoded location,Chisamba,Zambia,0.0,0.0,-14.979834,28.376099,"Chisamba, Central Province, Zambia",ZMB
+1064,correct location data,Golden Valley,Zambia,-14.1700000762939,28.3700008392334,-14.1700000762939,28.3700008392334,"Golden Valley, Zambia",ZMB
+1065,correct location data,Kasama,Zambia,-10.1000003814697,31.1000003814697,-10.1000003814697,31.1000003814697,"Kasama, Zambia",ZMB
+1066,correct location data,Misamfu,Zambia,-10.1999998092651,31.1000003814697,-10.1999998092651,31.1000003814697,"Misamfu, Zambia",ZMB
+1067,correct location data,Zamseed,Zambia,-14.1999998092651,28.3999996185303,-14.1999998092651,28.3999996185303,"Zamseed, Zambia",ZMB
+1068,correct location data,"Arex, Harare",Zimbabwe,-17.7999992370605,31.1000003814697,-17.7999992370605,31.1000003814697,"Arex, Harare, Zimbabwe",ZWE
+1069,correct location data,"Drss, Harare",Zimbabwe,-17.7999992370605,31.1000003814697,-17.7999992370605,31.1000003814697,"Drss, Harare, Zimbabwe",ZWE
+1070,correct location data,Makaholi,Zimbabwe,-19.8299999237061,30.7800006866455,-19.8299999237061,30.7800006866455,"Makaholi, Zimbabwe",ZWE
+1071,correct location data,Makhoholi,Zimbabwe,-19.8299999237061,30.7800006866455,-19.8299999237061,30.7800006866455,"Makhoholi, Zimbabwe",ZWE
+1072,correct location data,Rattray,Zimbabwe,-17.7000007629395,31.2000007629395,-17.7000007629395,31.2000007629395,"Rattray, Zimbabwe",ZWE
+1073,correct location data,Rattray Arnold,Zimbabwe,-17.6700000762939,31.1700000762939,-17.6700000762939,31.1700000762939,"Rattray Arnold, Zimbabwe",ZWE
+1074,correct location data,Rattray Farm,Zimbabwe,-17.7000007629395,31.2000007629395,-17.7000007629395,31.2000007629395,"Rattray Farm, Zimbabwe",ZWE
+1075,no lat/lng entered / incorrect lat/lng - geocoded location,Bondo,Kenya,0.0,0.0,-0.0993654,34.2739935,"Bondo, Siaya, Kenya",KEN
+1076,no lat/lng entered / incorrect lat/lng - geocoded location,Kakamega (monsanto),Kenya,0.0,0.0,0.4957104,34.801548861634615,"Kakamega, Kenya",KEN
+1077,no lat/lng entered / incorrect lat/lng - geocoded location,Epdowns,Kenya,,,1.4419683,38.4313975,"Kenya, Kenya",KEN
+1078,no lat/lng entered / incorrect lat/lng - geocoded location,Nai,Kenya,,,-1.3016977,36.769366486554645,"Kenya Rugby Football Union, 58911-00200, Nairobi, Nairobi, Kenya",KEN
+1079,no lat/lng entered / incorrect lat/lng - geocoded location,Eas,Mozambique,,,-26.6927911,32.8867927,"Track east of flood plain, Ponta Malangane, Maputo, Mozambique",MOZ
+1080,no lat/lng entered / incorrect lat/lng - geocoded location,Ntengo-nwodzi,Mozambique,,,-14.89400005,33.61511136317877,"Mártires de Ntengo wa Minga, Furancungo, Tete, Mozambique",MOZ
+1081,no lat/lng entered / incorrect lat/lng - geocoded location,Pan,Mozambique,,,-21.3684368,34.8656745,"Pande, Inhambane, Mozambique",MOZ
+1082,no lat/lng entered / incorrect lat/lng - geocoded location,Agriseeds Farm,Zimbabwe,,,-16.8289189,30.9952956,"Mutengezi Farm, Mashonaland Central, Zimbabwe",ZWE
+1083,no lat/lng entered / incorrect lat/lng - geocoded location,Art Farm Harare,Zimbabwe,,,-17.9030085,31.136802257418765,"Bellapaise Farm, 0000, Harare, Harare Province, Zimbabwe",ZWE
+1084,no lat/lng entered / incorrect lat/lng - geocoded location,Chisumbanje,Zimbabwe,,,-20.8671718,32.23553776718916,"Chisumbanje Ethanol Plant, 102, Manicaland, Zimbabwe",ZWE
+1085,no lat/lng entered / incorrect lat/lng - geocoded location,Rattray-arnold,Zimbabwe,,,-20.2218044,28.5979287,"Arnold Way, Bulawayo, Bulawayo Province, Zimbabwe",ZWE
+1086,no lat/lng entered / incorrect lat/lng - geocoded location,Shamva,Zimbabwe,,,-17.1763039,31.631377461133482,"Shamva, Mashonaland Central, Zimbabwe",ZWE
+1087,no lat/lng entered / incorrect lat/lng - geocoded location,Afsf,Kenya,,,1.4419683,38.4313975,"Kenya, Kenya",KEN
+1088,no lat/lng entered / incorrect lat/lng - geocoded location,Nacrri,Uganda,,,1.5333554,32.2166578,"Uganda, Uganda",UGA
+1089,correct location data,Cañada Larga,"Bolivia, Plurinational State of",-17.5699996948242,-62.4300003051758,-17.5699996948242,-62.4300003051758,"Cañada Larga, Bolivia, Plurinational State of",BOL
+1090,correct location data,Zudañes,"Bolivia, Plurinational State of",-19.1200008392334,-64.1999969482422,-19.1200008392334,-64.1999969482422,"Zudañes, Bolivia, Plurinational State of",BOL
+1091,no lat/lng entered / incorrect lat/lng - geocoded location,Caña Flecha,Colombia,0.0,0.0,7.3743507,-74.8788184,"Río Caná, Antioquia, Colombia",COL
+1092,correct location data,"Cañas, Guanacaste",Costa Rica,10.4300003051758,-85.0999984741211,10.4300003051758,-85.0999984741211,"Cañas, Guanacaste, Costa Rica",CRI
+1093,no lat/lng entered / incorrect lat/lng - geocoded location,Las Cañas,Costa Rica,0.0,0.0,10.0024047,-84.2022887,"Bajo Las Cañas, 20109, Río Segundo, Provincia Alajuela, Costa Rica",CRI
+1094,no lat/lng entered / incorrect lat/lng - geocoded location,San José Pinula,Guatemala,0.0,0.0,14.55343475,-90.34585630827843,"San José Pinula, Guatemala, Guatemala",GTM
+1095,no lat/lng entered / incorrect lat/lng - geocoded location,La Dalía,Nicaragua,,,12.8640648,-87.4949795,"La Dalia, 26200, Chinandega, Nicaragua",NIC
+1096,no lat/lng entered / incorrect lat/lng - geocoded location,La Viña-jayanca-lambayeque,Peru,0.0,0.0,-6.3922485,-79.822774,"Jayanca, 14000, Lambayeque, Peru",PER
+1097,no lat/lng entered / incorrect lat/lng - geocoded location,"El Vergel Municipio Navolato, Sin.",Mexico,,,24.716682,-107.7990497,"El Vergel, Sinaloa, Mexico",MEX
+1098,no lat/lng entered / incorrect lat/lng - geocoded location,"Chapingo, Edo.mex",Mexico,,,19.486698,-98.909827,"Rio Chapingo, 56236, Mexico, Mexico",MEX
+1099,no lat/lng entered / incorrect lat/lng - geocoded location,"Coatlinchan, Edo. Mex",Mexico,,,19.4505209,-98.8740641,"Coatlinchán, 56250, Mexico, Mexico",MEX
+1100,no lat/lng entered / incorrect lat/lng - geocoded location,"Celaya,gto.",Mexico,,,20.52253925,-100.83073034202397,"Celaya, Guanajuato, Mexico",MEX
+1101,no lat/lng entered / incorrect lat/lng - geocoded location,"Guadalajara, Jal.",Mexico,,,20.676143,-103.3469982,"Guadalajara, 44100, Jalisco, Mexico",MEX
+1102,no lat/lng entered / incorrect lat/lng - geocoded location,Los Horcones,El Salvador,,,13.7453787,-89.2564853,"Cerro El Picacho, 00000, Distrito Municipal 3, Departamento de San Salvador, El Salvador",SLV
+1103,no lat/lng entered / incorrect lat/lng - geocoded location,"San Cristobal, Cuscatlan",El Salvador,,,13.67551125,-89.24383353889507,"MCormick El Salvador, 1114, Antiguo Cuscatlán, Departamento de La Libertad, El Salvador",SLV
+1104,no lat/lng entered / incorrect lat/lng - geocoded location,La Catalina-pereira,Colombia,,,4.8023263,-75.6964439,"Carrera 21 bis, 576, Bostón, Risaralda, Colombia",COL
+1105,no lat/lng entered / incorrect lat/lng - geocoded location,Guararé,Panama,,,7.7987372,-80.3499059,"Rio Guararé, Provincia de Los Santos, Panama",PAN
+1106,no lat/lng entered / incorrect lat/lng - geocoded location,La Colorada,Panama,,,8.0163715,-80.9840861,"La Colorada, Provincia de Veraguas, Panama",PAN
+1107,no lat/lng entered / incorrect lat/lng - geocoded location,Nuevo Ocu,Panama,,,8.4184813,-82.7277216,"Nuevo México, Provincia de Chiriquí, Panama",PAN
+1108,no lat/lng entered / incorrect lat/lng - geocoded location,Peña Blanca,Panama,,,7.7189511,-80.2833921,"Peña Blanca, Provincia de Los Santos, Panama",PAN
+1109,no lat/lng entered / incorrect lat/lng - geocoded location,Santo Domingo,Panama,,,8.5139574,-82.7170431,"Santo Domingo, Provincia de Chiriquí, Panama",PAN
+1110,no lat/lng entered / incorrect lat/lng - geocoded location,"Santa Rosa, Managua",Nicaragua,,,11.7950245,-86.4096549,"Quebrada Santa Rosa, 16700, Managua, Nicaragua",NIC
+1111,no lat/lng entered / incorrect lat/lng - geocoded location,La Nueva Concepcion,Guatemala,,,14.5630149,-90.4786637,"La Nueva Concepcion, 01051, Guatemala, Guatemala",GTM
+1112,no lat/lng entered / incorrect lat/lng - geocoded location,"Comayagua, E.e. Playita",Honduras,,,14.3188383,-87.5135833,"El Coyolito, Comayagua, Comayagua, Honduras",HND
+1113,no lat/lng entered / incorrect lat/lng - geocoded location,"Danli, E.e. Las Acacias",Honduras,,,13.8026649,-86.558441,"Volcan de Las Barrancas, Danli, El Paraíso, Honduras",HND
+1114,no lat/lng entered / incorrect lat/lng - geocoded location,La Union,Honduras,,,15.0209565,-86.710294,"La Union, Olancho, Honduras",HND
+1115,no lat/lng entered / incorrect lat/lng - geocoded location,"San Pedro Sula, E.e. Omonita",Honduras,,,15.4898469,-88.0276247919928,"Embotelladora de Sula, 21104, San Pedro Sula, Cortés, Honduras",HND
+1116,no lat/lng entered / incorrect lat/lng - geocoded location,Dinajpur,Bangladesh,0.0,0.0,25.6260712,88.6346228,"Dinajpur, 5216, Rangpur Division, Bangladesh",BGD
+1117,no lat/lng entered / incorrect lat/lng - geocoded location,Paraguaicito-quindio,Colombia,,,4.3435926,-75.7232898,"Quindío, Colombia",COL
+1118,no lat/lng entered / incorrect lat/lng - geocoded location,Cañaveral-guajira,Colombia,,,10.7549138,-72.8442087,"Cañaverales, La Guajira, Colombia",COL
+1119,no lat/lng entered / incorrect lat/lng - geocoded location,Villlavicencio,Colombia,,,2.8894434,-73.783892,"Colombia, Colombia",COL
+1120,no lat/lng entered / incorrect lat/lng - geocoded location,Menegua - Puerto López,Colombia,,,7.7933241,-75.8401892,"Puerto Lopez, Córdoba, Colombia",COL
+1121,no lat/lng entered / incorrect lat/lng - geocoded location,Villavicencio1-la Libertad,Colombia,,,4.0594202,-73.4612829,"La Libertad, 500005, Villavicencio, Meta, Colombia",COL
+1122,no lat/lng entered / incorrect lat/lng - geocoded location,Paraguaicito-armenia,Colombia,,,4.4923898,-75.73960166465673,"Armenia, Quindío, Colombia",COL
+1123,no lat/lng entered / incorrect lat/lng - geocoded location,Paraguaicito-colombia,Colombia,,,2.8894434,-73.783892,"Colombia, Colombia",COL
+1124,no lat/lng entered / incorrect lat/lng - geocoded location,Tumaco-nariño,Colombia,,,1.8077554,-78.7705977,"Tumaco, Nariño, Colombia",COL
+1125,no lat/lng entered / incorrect lat/lng - geocoded location,Menegua-puerto López,Colombia,,,7.7933241,-75.8401892,"Puerto Lopez, Córdoba, Colombia",COL
+1126,no lat/lng entered / incorrect lat/lng - geocoded location,Cañaveral-la Guajira,Colombia,,,10.7549138,-72.8442087,"Cañaverales, La Guajira, Colombia",COL
+1127,no lat/lng entered / incorrect lat/lng - geocoded location,Chiclayo V.florida,Peru,,,-6.7631677,-79.8583674,"Vista Florida, 5174, Chiclayo, Lambayeque, Peru",PER
+1128,no lat/lng entered / incorrect lat/lng - geocoded location,Celaya Gto (2),Mexico,,,32.2705,-115.022,"Eduardo Celaya Martinez, 21820, Sonora, Mexico",MEX
+1129,no lat/lng entered / incorrect lat/lng - geocoded location,Acayucan,Mexico,,,18.0281048,-95.03593818139205,"Acayucan, 96000, Veracruz, Mexico",MEX
+1130,no lat/lng entered / incorrect lat/lng - geocoded location,Villa Flores,Mexico,,,18.01487755,-96.90708723299721,"Mazatlán Villa de Flores, Oaxaca, Mexico",MEX
+1131,no lat/lng entered / incorrect lat/lng - geocoded location,Santa Cruz,El Salvador,,,13.985060950000001,-89.67894119814815,"Banco Hipotecario de El Salvador, 2a Calle Oriente, 2a Calle Oriente, Chalchuapa, Departamento de Santa Ana, El Salvador",SLV
+1132,no lat/lng entered / incorrect lat/lng - geocoded location,Monjas,Guatemala,,,14.51342945,-89.8990143228134,"Monjas, Jalapa, Guatemala",GTM
+1133,no lat/lng entered / incorrect lat/lng - geocoded location,Quesada,Guatemala,,,14.2853523,-90.03049884223813,"Quesada, Jutiapa, Guatemala",GTM
+1134,no lat/lng entered / incorrect lat/lng - geocoded location,Sanarate,Guatemala,,,14.7669329,-90.19860906475421,"Sanarate, El Progreso, Guatemala",GTM
+1135,no lat/lng entered / incorrect lat/lng - geocoded location,Sonarate,Guatemala,,,15.6356088,-89.8988087,"Guatemala, Guatemala",GTM
+1136,no lat/lng entered / incorrect lat/lng - geocoded location,Choluteca,Honduras,,,13.3696253,-87.07564445652513,"Choluteca, Honduras",HND
+1137,no lat/lng entered / incorrect lat/lng - geocoded location,Tulancingo,Mexico,,,17.75231415,-97.44210454689073,"San Miguel Tulancingo, Oaxaca, Mexico",MEX
+1138,no lat/lng entered / incorrect lat/lng - geocoded location,E. Downs,Kenya,,,-1.3083784,36.8856095,"Downstream Community School, Lunga Lunga Road, 00200, Lunga Lunga Road, Nairobi, Nairobi, Kenya",KEN
+1139,no lat/lng entered / incorrect lat/lng - geocoded location,Eldoret Downs,Kenya,,,0.5198329,35.2715481,"Eldoret, 30100, Uasin Gishu, Kenya",KEN
+1140,no lat/lng entered / incorrect lat/lng - geocoded location,Fipah,Honduras,,,15.0610686,-84.5978534,"Honduras, Honduras",HND
+1141,no lat/lng entered / incorrect lat/lng - geocoded location,La Ceiba,Honduras,,,15.7833743,-86.7917749,"La Ceiba, Atlántida, Honduras",HND
+1142,no lat/lng entered / incorrect lat/lng - geocoded location,Sulaco,Honduras,,,14.9071999,-87.2633972,"Sulaco Airport, Yoro, Yoro, Honduras",HND
+1143,no lat/lng entered / incorrect lat/lng - geocoded location,"Iguala, Gro.",Mexico,,,18.352485350000002,-99.52996126668887,"Pepsi Bottling Group, Calle Federal a Taxco, 40000, Calle Federal a Taxco, Iguala, Guerrero, Mexico",MEX
+1144,no lat/lng entered / incorrect lat/lng - geocoded location,Estili / Pueblo Nuevo,Nicaragua,,,13.3804064,-86.4383255,"Río Pueblo Nuevo, 32200, Estelí, Nicaragua",NIC
+1145,no lat/lng entered / incorrect lat/lng - geocoded location,Juigalpa,Nicaragua,,,12.1085987,-85.3689381,"Juigalpa, 55000, Chontales, Nicaragua",NIC
+1146,no lat/lng entered / incorrect lat/lng - geocoded location,Masatepe,Nicaragua,,,11.914505,-86.1445563,"Masatepe, 42600, Masaya, Nicaragua",NIC
+1147,no lat/lng entered / incorrect lat/lng - geocoded location,Santa Rosa/managua,Nicaragua,,,11.7950245,-86.4096549,"Quebrada Santa Rosa, 16700, Managua, Nicaragua",NIC
+1148,no lat/lng entered / incorrect lat/lng - geocoded location,Las Lajitas,Panama,,,8.3743193,-81.6488659,"Las Lajitas, Comarca Ngäbe-Buglé, Panama",PAN
+1149,no lat/lng entered / incorrect lat/lng - geocoded location,Nuevo Ocú,Panama,,,8.4184813,-82.7277216,"Nuevo México, Provincia de Chiriquí, Panama",PAN
+1150,no lat/lng entered / incorrect lat/lng - geocoded location,Pocrí,Panama,,,7.659308,-80.1179001,"Pocrí, Provincia de Los Santos, Panama",PAN
+1151,no lat/lng entered / incorrect lat/lng - geocoded location,La Molina,Peru,,,-12.0901768,-76.92233779667893,"La Molina, Lima, Peru",PER
+1152,no lat/lng entered / incorrect lat/lng - geocoded location,Santa Rosa/managua,Nicaragua,,,11.7950245,-86.4096549,"Quebrada Santa Rosa, 16700, Managua, Nicaragua",NIC
+1153,no lat/lng entered / incorrect lat/lng - geocoded location,Estili/condega,Nicaragua,,,13.4012543,-86.2191268,"Telpaneca-Condega, 35700, Madriz, Nicaragua",NIC
+1154,no lat/lng entered / incorrect lat/lng - geocoded location,Santa Tereza Carazo / La Vainilla,Nicaragua,,,11.6238581,-86.1904384,"La_Conquista-Santa_Teresa, 46600, Carazo, Nicaragua",NIC
+1155,no lat/lng entered / incorrect lat/lng - geocoded location,La Zumbona,Panama,,,9.484668,-82.8815329,"La Amistad Panamá - Costa Rica, Provincia de Bocas del Toro, Panama",PAN
+1156,no lat/lng entered / incorrect lat/lng - geocoded location,Taltizapan,Mexico,,,32.5206856,-117.0387142,"Callejón Taltizapan, 22055, Tijuana, Baja California, Mexico",MEX
+1157,no lat/lng entered / incorrect lat/lng - geocoded location,San Adres,El Salvador,,,13.8000382,-88.9140683,"El Salvador, El Salvador",SLV
+1158,no lat/lng entered / incorrect lat/lng - geocoded location,"Inifap-iguala, Gro",Mexico,,,19.3828167,-99.2167443,"Iguala, 01279, Mexico City, Mexico",MEX
+1159,no lat/lng entered / incorrect lat/lng - geocoded location,"Inifap-iguala, Gro.",Mexico,,,19.3828167,-99.2167443,"Iguala, 01279, Mexico City, Mexico",MEX
+1160,no lat/lng entered / incorrect lat/lng - geocoded location,"Amealco, Qro",Mexico,,,20.2541644,-100.0422385,"Estancia de Santa Lucía - La Muralla - E.C. Amealco de Bonfil - Límite Estados (Qro - Edo de Mex), 76803, San Juan del Rio, Querétaro, Mexico",MEX
+1161,no lat/lng entered / incorrect lat/lng - geocoded location,"Arroyo, Edo De Mex",Mexico,,,18.960642,-99.6821978,"San Mateo Coapexco, Villa Guerrero Edo. Mex., 51760, Mexico, Mexico",MEX
+1162,no lat/lng entered / incorrect lat/lng - geocoded location,"Arroyo, Edo. De Mexico",Mexico,,,20.3509081,-97.1518057,"Arroyo de Cañas, Veracruz, Mexico",MEX
+1163,no lat/lng entered / incorrect lat/lng - geocoded location,Jocotitlan Edo. Mexico,Mexico,,,19.7156587,-99.76222786953815,"Jocotitlán, 50700, Mexico, Mexico",MEX
+1164,no lat/lng entered / incorrect lat/lng - geocoded location,"Progeso, Hgo.",Mexico,,,19.3860289,-99.0094641,"Progeso Nacional, 59720, Nezahualcóyotl, Mexico, Mexico",MEX
+1165,no lat/lng entered / incorrect lat/lng - geocoded location,"Sta. Lucia, Edo. De Mexico",Mexico,,,19.79659,-98.7103892,"Sta. Lucia, Nopaltepec, Mexico, Mexico",MEX
+1166,no lat/lng entered / incorrect lat/lng - geocoded location,"Tetela Del Volcan, Morelos",Mexico,,,18.918346,-98.72015249609856,"Tetela del Volcán, Morelos, Mexico",MEX
+1167,no lat/lng entered / incorrect lat/lng - geocoded location,Texcoco Edo. De Mexico,Mexico,,,19.5144327,-98.8821254,"Texcoco de Mora, 56100, Mexico, Mexico",MEX
+1168,no lat/lng entered / incorrect lat/lng - geocoded location,"Tlaltizapan, Morelos",Mexico,,,18.7045227,-99.14191731588632,"Tlaltizapán de Zapata, Morelos, Mexico",MEX
+1169,no lat/lng entered / incorrect lat/lng - geocoded location,"Tlaxcoapan, Hidalgo",Mexico,,,20.097502650000003,-99.23306962708496,"Tlaxcoapan, Hidalgo, Mexico",MEX
+1170,no lat/lng entered / incorrect lat/lng - geocoded location,"Zumpango, Estado De Mexico",Mexico,,,19.81293675,-99.08180953352705,"Zumpango, Mexico, Mexico",MEX
+1171,no lat/lng entered / incorrect lat/lng - geocoded location,Lanet,Kenya,,,-0.2966963,36.1564327,"Nakuru Airport Lanet Barraks, 20100, Nakuru, Nakuru, Kenya",KEN
+1172,no lat/lng entered / incorrect lat/lng - geocoded location,Mabanga,Kenya,,,0.5978944,34.6209158,"Mabanga, Eldoret Road, Eldoret Road, Kimaeti, Bungoma, Kenya",KEN
+1173,no lat/lng entered / incorrect lat/lng - geocoded location,Njoro,Kenya,,,-3.3740499,37.840045,"Njoro, Taita Taveta, Kenya",KEN
+1174,no lat/lng entered / incorrect lat/lng - geocoded location,Bani Snef,Egypt,,,31.023889,31.648333,"Bani Ubayd, Dakahlia Governorate, Egypt",EGY
+1175,no lat/lng entered / incorrect lat/lng - geocoded location,Bani Suef,Egypt,,,29.3,31.15,"Bani Ghunaym, Beni Suef Governorate, Egypt",EGY
+1176,no lat/lng entered / incorrect lat/lng - geocoded location,El Menia,Egypt,,,31.3827023,30.8516791133286,"Kafr el-Sheikh Governorate, Egypt",EGY
+1177,no lat/lng entered / incorrect lat/lng - geocoded location,Baka Research,Malawi,,,-13.680208050000001,34.25890878313515,"Chitala Agricultural Research Station, Mphunga, Salima, Malawi",MWI
+1178,no lat/lng entered / incorrect lat/lng - geocoded location,Zombwe,Malawi,,,-11.3140201,33.8527879,"Zombwe 2, Mzimba, Malawi",MWI
+1179,no lat/lng entered / incorrect lat/lng - geocoded location,Mooi River,South Africa,,,-29.06039505,30.330517980091393,"Mooi River, KwaZulu-Natal, South Africa",ZAF
+1180,no lat/lng entered / incorrect lat/lng - geocoded location,Lusaka,Zambia,,,-15.416697,28.281381,"Lusaka, Lusaka Province, Zambia",ZMB
+1181,no lat/lng entered / incorrect lat/lng - geocoded location,Msrs,Zambia,,,-14.5186239,27.5599164,"Zambia, Zambia",ZMB
+1182,no lat/lng entered / incorrect lat/lng - geocoded location,Musamfu Kasama,Zambia,,,-10.2088378,31.188255,"Kasama, Northern Province, Zambia",ZMB
+1183,no lat/lng entered / incorrect lat/lng - geocoded location,Arex Harare,Zimbabwe,,,-17.831773,31.045686,"Harare, 0000, Harare Province, Zimbabwe",ZWE
+1184,no lat/lng entered / incorrect lat/lng - geocoded location,Golden Valley Zambia,Zimbabwe,,,-18.2291438,29.7958704,"Golden Valley, Mashonaland West, Zimbabwe",ZWE
+1185,no lat/lng entered / incorrect lat/lng - geocoded location,Mutare,Zimbabwe,,,-18.974656,32.670473,"Mutare, Manicaland, Zimbabwe",ZWE
+1186,no lat/lng entered / incorrect lat/lng - geocoded location,Panmure,Zimbabwe,,,-18.4554963,29.7468414,"Zimbabwe, Zimbabwe",ZWE
+1187,no lat/lng entered / incorrect lat/lng - geocoded location,Athi River,Kenya,,,-1.4269207,36.929805,"Athi River, 00519, Nairobi, Nairobi, Kenya",KEN
+1188,no lat/lng entered / incorrect lat/lng - geocoded location,Kampi Ya Mawe,Kenya,,,-2.9166,40.1333,"Kampi ya Kerenzeni, Kilifi, Kenya",KEN
+1189,no lat/lng entered / incorrect lat/lng - geocoded location,Shikusa,Kenya,,,0.3179733,34.8126303,"Shikusa Prison, Lubao, Kakamega, Kenya",KEN
+1190,no lat/lng entered / incorrect lat/lng - geocoded location,Yatta,Kenya,,,-1.28413,36.8325567,"Yatta Road, 00200, Nairobi, Nairobi, Kenya",KEN
+1191,no lat/lng entered / incorrect lat/lng - geocoded location,"Almoloya De Juarez, Estado De Mexico",Mexico,,,19.39712725,-99.82162587396992,"Almoloya de Juárez, Mexico, Mexico",MEX
+1192,no lat/lng entered / incorrect lat/lng - geocoded location,"Arroyo, Estado De Mexico",Mexico,,,19.1893502,-100.0673778,"Arroyo Chiquito, 51200, Mexico, Mexico",MEX
+1193,no lat/lng entered / incorrect lat/lng - geocoded location,"Atitalaquia, Hidalgo",Mexico,,,20.0597395,-99.21328819731298,"Atitalaquia, Hidalgo, Mexico",MEX
+1194,no lat/lng entered / incorrect lat/lng - geocoded location,"Boximo, Toluca",Mexico,,,19.292545,-99.6569007,"Toluca, 50150, Mexico, Mexico",MEX
+1195,no lat/lng entered / incorrect lat/lng - geocoded location,"Calixtlahuaca, Estado De Mexico",Mexico,,,19.3343316,-99.6889279,"Calixtlahuaca, 50290, Mexico, Mexico",MEX
+1196,no lat/lng entered / incorrect lat/lng - geocoded location,"Epitacio Huerta, Michoacan",Mexico,,,20.14291355,-100.30214017658625,"Epitacio Huerta, Michoacán, Mexico",MEX
+1197,no lat/lng entered / incorrect lat/lng - geocoded location,"La Trinidad, Texcoco",Mexico,,,19.488390449999997,-98.86436975667431,"Iglesia de la Santísima Trinidad, 83, Geranios, 56223, Geranios, San Nicolás Huexotla, Mexico, Mexico",MEX
+1198,no lat/lng entered / incorrect lat/lng - geocoded location,Kti,Kenya,,,1.4419683,38.4313975,"Kenya, Kenya",KEN
+1199,no lat/lng entered / incorrect lat/lng - geocoded location,Isinya,Kenya,,,-1.684538,36.846708,"Isinya, Kajiado County, Kenya",KEN
+1200,no lat/lng entered / incorrect lat/lng - geocoded location,"Playita, Comayagua",Honduras,,,14.55509585,-87.67794635681561,"Comayagua, Honduras",HND
+1201,no lat/lng entered / incorrect lat/lng - geocoded location,Ceniab. Managua,Nicaragua,,,12.1461244,-86.273717,"Managua, 10000 (CODIGO MAESTRO), Managua, Nicaragua",NIC
+1202,no lat/lng entered / incorrect lat/lng - geocoded location,"San Gilberto, Leon",Nicaragua,,,12.2804233,-86.6505005,"Río San Gabriel, 22200, Leon, Nicaragua",NIC
+1203,no lat/lng entered / incorrect lat/lng - geocoded location,Sennar,Sudan,,,13.54727615,33.63265493088987,"Sennar Dam, Sennar, Sennar State, Sudan",SDN
+1204,no lat/lng entered / incorrect lat/lng - geocoded location,Lusaka West,Zambia,,,-15.5141009,28.2555507,"West Rotana Road, 31914, Lusaka Province, Zambia",ZMB
+1205,no lat/lng entered / incorrect lat/lng - geocoded location,Zamseed Farm,Zambia,,,-16.0277442,28.1062417,"Mubuyu Farm Dam, Southern Province, Zambia",ZMB
+1206,no lat/lng entered / incorrect lat/lng - geocoded location,Cimmyt Harare,Zimbabwe,,,-17.831773,31.045686,"Harare, 0000, Harare Province, Zimbabwe",ZWE
+1207,no lat/lng entered / incorrect lat/lng - geocoded location,Sandburst Farm,Zimbabwe,,,-16.8289189,30.9952956,"Mutengezi Farm, Mashonaland Central, Zimbabwe",ZWE
+1208,no lat/lng entered / incorrect lat/lng - geocoded location,Sandhurst Farm,Zimbabwe,,,-16.8289189,30.9952956,"Mutengezi Farm, Mashonaland Central, Zimbabwe",ZWE
+1209,no lat/lng entered / incorrect lat/lng - geocoded location,"Vallecillo, Fco. Morazan",Honduras,,,14.4958159,-87.3483698,"Vallecillos, Francisco Morazán, Honduras",HND
+1210,no lat/lng entered / incorrect lat/lng - geocoded location,"Yorito, Yoro",Honduras,,,15.0654325,-87.2820675,"Yorito, Yoro, Honduras",HND
+1211,no lat/lng entered / incorrect lat/lng - geocoded location,"Bauta, Artemisa",Cuba,,,22.982412,-82.547409,"Bauta, 30600, Artemisa, Cuba",CUB
+1212,no lat/lng entered / incorrect lat/lng - geocoded location,Panner,Zimbabwe,,,-18.4554963,29.7468414,"Zimbabwe, Zimbabwe",ZWE
+1213,correct location data,Sahagu - - - - Sahagun,Colombia,8.94632816314697,-75.4312591552734,8.94632816314697,-75.4312591552734,"Sahagu - - - - Sahagun, Colombia",COL
+1214,correct location data,Tshibati - - - - Kibati,Congo,-4.01666688919067,12.1833333969116,-4.01666688919067,12.1833333969116,"Tshibati - - - - Kibati, Congo",COG
+1215,correct location data,Lodana - - - - - Lodano,Ecuador,-1.18333327770233,-80.4000015258789,-1.18333327770233,-80.4000015258789,"Lodana - - - - - Lodano, Ecuador",ECU
+1216,correct location data,Organos - - - - Horganos,Ecuador,-4.11289691925049,-80.1526107788086,-4.11289691925049,-80.1526107788086,"Organos - - - - Horganos, Ecuador",ECU
+1217,correct location data,Chalchahuapa - - - Chalchuapa,El Salvador,13.981632232666,-89.6813735961914,13.981632232666,-89.6813735961914,"Chalchahuapa - - - Chalchuapa, El Salvador",SLV
+1218,correct location data,El Coyalito - - - El Coyolito,El Salvador,14.0782823562622,-89.1396331787109,14.0782823562622,-89.1396331787109,"El Coyalito - - - El Coyolito, El Salvador",SLV
+1219,correct location data,Dobuleni Research Station - - - Dobuilevu Research,Fiji,-17.3736000061035,178.170608520508,-17.3736000061035,178.170608520508,"Dobuleni Research Station - - - Dobuilevu Research, Fiji",FJI
+1220,correct location data,La Maquina Caballo Blanco,Guatemala,14.4956617355347,-91.8501205444336,14.4956617355347,-91.8501205444336,"La Maquina Caballo Blanco, Guatemala",GTM
+1221,correct location data,San Jose Pinula,Guatemala,14.5500001907349,-90.4166641235352,14.5500001907349,-90.4166641235352,"San Jose Pinula, Guatemala",GTM
+1222,correct location data,"Catacamas, Olancho - - - Catacama",Honduras,14.8473997116089,-85.8921966552734,14.8473997116089,-85.8921966552734,"Catacamas, Olancho - - - Catacama, Honduras",HND
+1223,correct location data,La Dalia,Nicaragua,13.1373748779297,-85.7346115112305,13.1373748779297,-85.7346115112305,"La Dalia, Nicaragua",NIC
+1224,"entered (lat, -lng)",Finkolo,Mali,11.216667175293,6.18333339691162,11.216667175293,-6.18333339691162,"Finkolo, Mali",MLI
+1225,correct location data,"Villa Flores, Chiap.",Mexico,16.2333335876465,-93.2666702270508,16.2333335876465,-93.2666702270508,"Villa Flores, Chiap., Mexico",MEX
+1226,"entered (lat, -lng)",Finkolo,Mali,11.216667175293,6.18333339691162,11.216667175293,-6.18333339691162,"Finkolo, Mali",MLI
+1227,"entered (lat, -lng)","El Aguila, Pejibaye, Perez Zeledon",Costa Rica,9.13074016571045,83.5256271362305,9.13074016571045,-83.5256271362305,"El Aguila, Pejibaye, Perez Zeledon, Costa Rica",CRI
+1228,"entered (lat, -lng)",Los Chiles,Costa Rica,10.9072999954224,84.5482864379883,10.9072999954224,-84.5482864379883,"Los Chiles, Costa Rica",CRI
+1229,"entered (lat, -lng)","Araure, Edo. Portuguesa","Venezuela, Bolivarian Republic of",9.31999969482422,68.5199966430664,9.31999969482422,-68.5199966430664,"Araure, Edo. Portuguesa, Venezuela, Bolivarian Republic of",VEN
+1230,"entered (lat, -lng)","Las Velas, Edo. Yaracuy","Venezuela, Bolivarian Republic of",9.59000015258789,69.0800018310547,9.59000015258789,-69.0800018310547,"Las Velas, Edo. Yaracuy, Venezuela, Bolivarian Republic of",VEN
+1231,"entered (lat, -lng)","Tiznados, Edo. Guarico","Venezuela, Bolivarian Republic of",9.26000022888184,67.3399963378906,9.26000022888184,-67.3399963378906,"Tiznados, Edo. Guarico, Venezuela, Bolivarian Republic of",VEN
+1232,"entered (lat, -lng)","Concepcion De Pilas, Buenos Aires",Costa Rica,9.10365009307861,83.4467010498047,9.10365009307861,-83.4467010498047,"Concepcion De Pilas, Buenos Aires, Costa Rica",CRI
+1233,"entered (lat, -lng)","El Amparo, El Gallito, Los Chiles, Alajuela",Costa Rica,10.8362998962402,84.6432876586914,10.8362998962402,-84.6432876586914,"El Amparo, El Gallito, Los Chiles, Alajuela, Costa Rica",CRI
+1234,"entered (lat, -lng)","Guagaral, Buenos Aires Puntarenas",Costa Rica,9.07569980621338,83.5074768066406,9.07569980621338,-83.5074768066406,"Guagaral, Buenos Aires Puntarenas, Costa Rica",CRI
+1235,"entered (lat, -lng)","Pueblo Nuevo, San Jose, Upala",Costa Rica,10.9829301834106,85.1275329589844,10.9829301834106,-85.1275329589844,"Pueblo Nuevo, San Jose, Upala, Costa Rica",CRI
+1236,"entered (lat, -lng)","Veracruz, Pejibaye, Perez Zeledon",Costa Rica,9.09609985351563,83.5466079711914,9.09609985351563,-83.5466079711914,"Veracruz, Pejibaye, Perez Zeledon, Costa Rica",CRI
+1237,"entered (lat, -lng)","El Progreso, Pejibaye, Perez Zeledon",Costa Rica,9.1004695892334,83.5448684692383,9.1004695892334,-83.5448684692383,"El Progreso, Pejibaye, Perez Zeledon, Costa Rica",CRI
+1238,"entered (lat, -lng)","Guagaral, Buenos Aires",Costa Rica,9.07569980621338,83.5074768066406,9.07569980621338,-83.5074768066406,"Guagaral, Buenos Aires, Costa Rica",CRI
+1239,no lat/lng entered / incorrect lat/lng - geocoded location,La Fazenda-puerto Lopez(meta),Colombia,,,4.3019136,-72.3720927,"Via Puerto López - Puerto Gaitán, Caserío La Victoria, Meta, Colombia",COL
+1240,no lat/lng entered / incorrect lat/lng - geocoded location,Taluma-puerto Lopez(meta),Colombia,,,4.085013,-72.9584671,"Puerto Lopez, Meta, Colombia",COL
+1241,no lat/lng entered / incorrect lat/lng - geocoded location,Libertad Pto Lopez Meta,Colombia,,,4.080558,-73.46033,"La Libertad (La Represa), vía Alto Pompeya - Pachaquiaro - Puerto López, 057, vía Alto Pompeya - Pachaquiaro - Puerto López, Puerto Lopez, Meta, Colombia",COL
+1242,no lat/lng entered / incorrect lat/lng - geocoded location,Aucaloma-san Martin,Peru,,,-7.0,-76.833333,"San Martín, Peru",PER
+1243,no lat/lng entered / incorrect lat/lng - geocoded location,Carimagua,Colombia,,,5.3958472,-71.0521725,"Carimagua, Casanare, Colombia",COL
+1244,no lat/lng entered / incorrect lat/lng - geocoded location,"Dholi, Bihar",India,,,25.9944458,85.658769,"Dholi, 843114, Bihar, India",IND
+1245,no lat/lng entered / incorrect lat/lng - geocoded location,West Bengal,India,,,22.9964948,87.6855882,"West Bengal, India",IND
+1246,no lat/lng entered / incorrect lat/lng - geocoded location,Bihar-drt,India,,,25.6440845,85.906508,"Bihar, India",IND
+1247,no lat/lng entered / incorrect lat/lng - geocoded location,Hyderabad-drt,India,,,17.3616079,78.4746286,"Hyderabad, 500012, Telangana, India",IND
+1248,no lat/lng entered / incorrect lat/lng - geocoded location,Hyderabad-opt,India,,,17.4520413,78.3934676,"Option Matrix Infotech Private Limited., Wing B, 100 Feet Road, 500081, 100 Feet Road, Greater Hyderabad Municipal Corporation, Telangana, India",IND
+1249,no lat/lng entered / incorrect lat/lng - geocoded location,Udaipur-drt,India,,,24.5787228,73.6862551,"Udaipur, 313001, Rajasthan, India",IND
+1250,no lat/lng entered / incorrect lat/lng - geocoded location,Sabour,India,,,25.238384,87.0461306,"Sabour Railway Station, 812002, Bhagalpur, Bihar, India",IND
+1251,no lat/lng entered / incorrect lat/lng - geocoded location,Mandya,India,,,12.594106700000001,76.86426781799315,"Mandya taluk, Karnataka, India",IND
+1252,no lat/lng entered / incorrect lat/lng - geocoded location,China,China,,,35.000074,104.999927,"China, China",CHN
+1253,no lat/lng entered / incorrect lat/lng - geocoded location,Aurangabad-ww,India,,,19.8739536,75.3277803,"Aurangabad, 431002, Maharashtra, India",IND
+1254,no lat/lng entered / incorrect lat/lng - geocoded location,Bakaram/kanchan,India,,,17.2890993,78.3134553,"Bakaram Jagir, Telangana, India",IND
+1255,no lat/lng entered / incorrect lat/lng - geocoded location,Banswara-drt,India,,,23.5,74.333333,"Bānswāra, Rajasthan, India",IND
+1256,no lat/lng entered / incorrect lat/lng - geocoded location,Bihar Agr Uni,India,,,25.2383952,87.05065963208676,"Bihar Agricultural University, 812002, Bhagalpur, Bihar, India",IND
+1257,no lat/lng entered / incorrect lat/lng - geocoded location,Drt-hyd,India,,,17.4051873,78.5107256,"State Bank of India, Adikmet Main Road, 500013, Adikmet Main Road, Greater Hyderabad Municipal Corporation, Telangana, India",IND
+1258,no lat/lng entered / incorrect lat/lng - geocoded location,Gowraram/kaveri,India,,,10.9142248,79.1814096,"Kaveri river, 613001, Thanjavur, Tamil Nadu, India",IND
+1259,no lat/lng entered / incorrect lat/lng - geocoded location,Guntur/nuzi,India,,,16.2915189,80.4541588,"Guntur, 522001, Andhra Pradesh, India",IND
+1260,no lat/lng entered / incorrect lat/lng - geocoded location,Hs- Lud,India,,,30.8996281,75.806559,"CoHSc, Ayalli Road, 141027, Ayalli Road, Sunet, Punjab, India",IND
+1261,no lat/lng entered / incorrect lat/lng - geocoded location,Hs-del,India,,,12.9159629,77.623725,"Srinagar - Kanyakumari Highway, 560068, Bengaluru, Karnataka, India",IND
+1262,no lat/lng entered / incorrect lat/lng - geocoded location,Hs-guj,India,,,22.69425765,72.85909723785187,"State Bank of India, Station Road, 387001, Station Road, Nadiad, Gujarat, India",IND
+1263,no lat/lng entered / incorrect lat/lng - geocoded location,Hs-hyd,India,,,17.45626725,78.36807320789387,"HSBC, 500032, Greater Hyderabad Municipal Corporation, Telangana, India",IND
+1264,no lat/lng entered / incorrect lat/lng - geocoded location,Hs-kar,India,,,12.8954065,77.6019489,"State Bank of India, Bannerghatta Road, 560076, Bannerghatta Road, Bengaluru, Karnataka, India",IND
+1265,no lat/lng entered / incorrect lat/lng - geocoded location,Hs-pan,India,,,30.1533559,74.2092357,"HS Public School, Panjpeer Rd, 152116, Panjpeer Rd, Abohar, Punjab, India",IND
+1266,no lat/lng entered / incorrect lat/lng - geocoded location,Hs-pant,India,,,28.6128924,77.2294312,"India Gate, Rajpath, 020626, Rajpath, New Delhi, Delhi, India",IND
+1267,no lat/lng entered / incorrect lat/lng - geocoded location,Hyd,India,,,17.4051873,78.5107256,"State Bank of India, Adikmet Main Road, 500013, Adikmet Main Road, Greater Hyderabad Municipal Corporation, Telangana, India",IND
+1268,no lat/lng entered / incorrect lat/lng - geocoded location,Hyderabad-ww,India,,,17.3616079,78.4746286,"Hyderabad, 500012, Telangana, India",IND
+1269,no lat/lng entered / incorrect lat/lng - geocoded location,Jalna/krishidhan,India,,,19.6171238,75.7970552,"State Bank of India, 431204, Ambad, Maharashtra, India",IND
+1270,no lat/lng entered / incorrect lat/lng - geocoded location,Jalna-drt,India,,,19.6171238,75.7970552,"State Bank of India, 431204, Ambad, Maharashtra, India",IND
+1271,no lat/lng entered / incorrect lat/lng - geocoded location,Phaltan/nimbkar,India,,,17.9907746,74.4298834,"Phaltan, 415523, Maharashtra, India",IND
+1272,no lat/lng entered / incorrect lat/lng - geocoded location,Vijayawada,India,,,16.5087586,80.6185102,"Vijayawada, 520001, Andhra Pradesh, India",IND
+1273,no lat/lng entered / incorrect lat/lng - geocoded location,Ww-bh,India,,,13.054758,80.2412002,"Padma Seshadri Bala Bhavan Higher Secondary School, Nungambakkam, Chennai -., Lake Area 1st Main Road, 600034, Lake Area 1st Main Road, Chennai, Tamil Nadu, India",IND
+1274,no lat/lng entered / incorrect lat/lng - geocoded location,Ww-hyd,India,,,17.4051873,78.5107256,"State Bank of India, Adikmet Main Road, 500013, Adikmet Main Road, Greater Hyderabad Municipal Corporation, Telangana, India",IND
+1275,no lat/lng entered / incorrect lat/lng - geocoded location,Yellampet/nuziveedu,India,,,17.6828696,78.4895896,"Yellampet, 501401, Telangana, India",IND
+1276,no lat/lng entered / incorrect lat/lng - geocoded location,Hs-pak,Pakistan,,,24.8164906,67.0411623,"HSN Pakistan- Zamzama, 5th Commercial Lane, 75500, 5th Commercial Lane, Karachi, Sindh, Pakistan",PAK
+1277,no lat/lng entered / incorrect lat/lng - geocoded location,Phillipines-drt,Philippines,,,16.405670800000003,120.59832638819113,"University of the Philippines Baguio, UP Drive, 2600, UP Drive, Baguio, Benguet, Philippines",PHL
+1278,no lat/lng entered / incorrect lat/lng - geocoded location,Thailand,Thailand,,,14.8971921,100.83273,"Thailand, Thailand",THA
+1279,no lat/lng entered / incorrect lat/lng - geocoded location,"Amealco, Queretaro",Mexico,,,20.18744455,-100.06915521888163,"Amealco de Bonfil, Querétaro, Mexico",MEX
+1280,no lat/lng entered / incorrect lat/lng - geocoded location,San Diego Texcoco De Mora,Mexico,,,19.50475275,-98.87219091316118,"Escuela Primaria José María Luis Mora, Miguel Hidalgo, 56130, Miguel Hidalgo, San Diego, Mexico, Mexico",MEX
+1281,no lat/lng entered / incorrect lat/lng - geocoded location,"Coyuta, Escuintla",Guatemala,,,14.1914955,-90.98821497117913,"Escuintla, Guatemala",GTM
+1282,no lat/lng entered / incorrect lat/lng - geocoded location,"La Maquina, Suchitepequez",Guatemala,,,14.30496535,-91.56539103867601,"Parque San José La Máquina, Suchitepéquez, Guatemala",GTM
+1283,no lat/lng entered / incorrect lat/lng - geocoded location,"E.e. La Lujosa, Cholulteca",Honduras,,,13.121331999999999,-86.99301134833182,"Plaza de la Virgen, El Triunfo, Choluteca, Honduras",HND
+1284,no lat/lng entered / incorrect lat/lng - geocoded location,E.e. La Lujosa.cholulteca,Honduras,,,13.121331999999999,-86.99301134833182,"Plaza de la Virgen, El Triunfo, Choluteca, Honduras",HND
+1285,no lat/lng entered / incorrect lat/lng - geocoded location,"E.e. La Playita, Comayagua",Honduras,,,14.098398750000001,-87.20854067337245,"La Esperanza, 504, Comayaguela, Francisco Morazán, Honduras",HND
+1286,no lat/lng entered / incorrect lat/lng - geocoded location,Kibugu-embu,Kenya,,,-0.5359626500000001,37.66530196902043,"Embu County, Kenya",KEN
+1287,no lat/lng entered / incorrect lat/lng - geocoded location,Alemaya (2),Ethiopia,,,9.38333,41.93333,"`Alemaya, Oromia Region, Ethiopia",ETH
+1288,no lat/lng entered / incorrect lat/lng - geocoded location,Cereté-cordoba,Colombia,,,8.8884178,-75.84239456572658,"Cereté, Córdoba, Colombia",COL
+1289,no lat/lng entered / incorrect lat/lng - geocoded location,"La Catalina (pereira, Risaralda)",Colombia,,,4.8023263,-75.6964439,"Carrera 21 bis, 576, Bostón, Risaralda, Colombia",COL
+1290,no lat/lng entered / incorrect lat/lng - geocoded location,"La Catalina (pereira, Risasralda)",Colombia,,,4.80171205,-75.6964201745624,"Santa Catalina II, Bostón, Risaralda, Colombia",COL
+1291,no lat/lng entered / incorrect lat/lng - geocoded location,"La Catalina (perira, Risaralda)",Colombia,,,4.80171205,-75.6964201745624,"Santa Catalina II, Bostón, Risaralda, Colombia",COL
+1292,no lat/lng entered / incorrect lat/lng - geocoded location,La Catalina- Pereira (risaralda),Colombia,,,4.8023263,-75.6964439,"Carrera 21 bis, 576, Bostón, Risaralda, Colombia",COL
+1293,no lat/lng entered / incorrect lat/lng - geocoded location,La Catalina-pereira (meta),Colombia,,,2.389606,-73.5311851,"La Catalina, Meta, Colombia",COL
+1294,no lat/lng entered / incorrect lat/lng - geocoded location,La Catalina-pereira (risaralda),Colombia,,,4.8023263,-75.6964439,"Carrera 21 bis, 576, Bostón, Risaralda, Colombia",COL
+1295,no lat/lng entered / incorrect lat/lng - geocoded location,Menegua - Puerto Lopez (meta),Colombia,,,4.085013,-72.9584671,"Puerto Lopez, Meta, Colombia",COL
+1296,no lat/lng entered / incorrect lat/lng - geocoded location,Menegua-puerto Lopez (meta),Colombia,,,4.085013,-72.9584671,"Puerto Lopez, Meta, Colombia",COL
+1297,no lat/lng entered / incorrect lat/lng - geocoded location,Menegua-puerto Lopez (meta),Colombia,,,4.085013,-72.9584671,"Puerto Lopez, Meta, Colombia",COL
+1298,no lat/lng entered / incorrect lat/lng - geocoded location,Menegua-puerto López (meta),Colombia,,,4.085013,-72.9584671,"Puerto Lopez, Meta, Colombia",COL
+1299,no lat/lng entered / incorrect lat/lng - geocoded location,Paraguaicito (armenia),Colombia,,,4.4923898,-75.73960166465673,"Armenia, Quindío, Colombia",COL
+1300,no lat/lng entered / incorrect lat/lng - geocoded location,Paraguaicito-armenia (quindio),Colombia,,,4.4923898,-75.73960166465673,"Armenia, Quindío, Colombia",COL
+1301,no lat/lng entered / incorrect lat/lng - geocoded location,Sampués-cordoba,Colombia,,,8.3344713,-75.6666238,"Córdoba, Colombia",COL
+1302,no lat/lng entered / incorrect lat/lng - geocoded location,Semillas Valle - Cerrito,Colombia,,,3.6829185,-76.3071487,"El Cerrito, Valle del Cauca, Colombia",COL
+1303,no lat/lng entered / incorrect lat/lng - geocoded location,Turipana-cordoba,Colombia,,,8.3344713,-75.6666238,"Córdoba, Colombia",COL
+1304,no lat/lng entered / incorrect lat/lng - geocoded location,Villavicencio (1),Colombia,,,4.6195293,-74.1652038,"Avenida Villavicencio, 110881, Kennedy, Bogota Capital District, Colombia",COL
+1305,no lat/lng entered / incorrect lat/lng - geocoded location,Villavicencio (meta),Colombia,,,4.1315113,-73.6206667,"Villavicencio, 500005, Villavicencio, Meta, Colombia",COL
+1306,no lat/lng entered / incorrect lat/lng - geocoded location,Villavivencio (meta),Colombia,,,3.5000086,-73.0000086,"Meta, Colombia",COL
+1307,no lat/lng entered / incorrect lat/lng - geocoded location,"Paraguaicito,",Cambodia,,,13.5066394,104.869423,"Cambodia, Cambodia",KHM
+1308,no lat/lng entered / incorrect lat/lng - geocoded location,Taluma (meta),Colombia,,,3.5000086,-73.0000086,"Meta, Colombia",COL
+1309,no lat/lng entered / incorrect lat/lng - geocoded location,Barranca (lima),Peru,,,-10.6742472,-77.7207774,"Province of Barranca, Pativilca, Lima, Peru",PER
+1310,no lat/lng entered / incorrect lat/lng - geocoded location,"Chachapoyas, Chimbote",Peru,,,-9.0783629,-78.5900838,"Chimbote, Ancash, Peru",PER
+1311,no lat/lng entered / incorrect lat/lng - geocoded location,"Ee El Porvenir, Tarapoto",Peru,,,-6.4989451,-76.3782804,"Jirón El Porvenir, TARAPOTO, Tarapoto, San Martín, Peru",PER
+1312,no lat/lng entered / incorrect lat/lng - geocoded location,Huaral Ee Donoso,Peru,,,-9.5872445,-77.5215493,"EESS SAN NICOLAS, Km. 8, Longitudinal de la Sierra Norte, 02690, Longitudinal de la Sierra Norte, Huaraz, Ancash, Peru",PER
+1313,no lat/lng entered / incorrect lat/lng - geocoded location,"La Molina, Lima",Peru,,,-12.0901768,-76.92233779667893,"La Molina, Lima, Peru",PER
+1314,no lat/lng entered / incorrect lat/lng - geocoded location,Aguachica-cesar,Colombia,,,8.24811845,-73.62140380560058,"Aguachica, Cesar, Colombia",COL
+1315,no lat/lng entered / incorrect lat/lng - geocoded location,Allahabad,India,,,25.4381302,81.8338005,"Allahabad, 211001, Uttar Pradesh, India",IND
+1316,no lat/lng entered / incorrect lat/lng - geocoded location,Aligarh,India,,,27.8815412,78.0690216,"Aligarh, 202001, Uttar Pradesh, India",IND
+1317,no lat/lng entered / incorrect lat/lng - geocoded location,Attur,India,,,11.5998273,78.5960829,"Attur, 636102, Tamil Nadu, India",IND
+1318,no lat/lng entered / incorrect lat/lng - geocoded location,Bakaram,India,,,17.2890993,78.3134553,"Bakaram Jagir, Telangana, India",IND
+1319,no lat/lng entered / incorrect lat/lng - geocoded location,Bihar Sabor,India,,,25.6440845,85.906508,"Bihar, India",IND
+1320,no lat/lng entered / incorrect lat/lng - geocoded location,Chitradurga,India,,,14.2548525,76.34828932491845,"Chitradurga taluku, Karnataka, India",IND
+1321,no lat/lng entered / incorrect lat/lng - geocoded location,Dhangaon,India,,,19.58766755,75.38201640261204,"Lilasones Agro Industri,Dhangaon, Dhorkingaon, Maharashtra, India",IND
+1322,no lat/lng entered / incorrect lat/lng - geocoded location,Haveri,India,,,14.84627745,75.49272552005591,"Haveri taluku, Karnataka, India",IND
+1323,no lat/lng entered / incorrect lat/lng - geocoded location,Karimnagar,India,,,18.4346438,79.1322648,"Karimnagar, 505001, Telangana, India",IND
+1324,no lat/lng entered / incorrect lat/lng - geocoded location,Yellampet,India,,,17.6828696,78.4895896,"Yellampet, 501401, Telangana, India",IND
+1325,no lat/lng entered / incorrect lat/lng - geocoded location,"Tarimbaro, Michoacan",Mexico,,,19.81627885,-101.16373112841322,"Tarímbaro, 58880, Michoacán, Mexico",MEX
+1326,no lat/lng entered / incorrect lat/lng - geocoded location,Dhera,Ethiopia,,,10.2116702,38.6521203,"Ethiopia, Ethiopia",ETH
+1327,no lat/lng entered / incorrect lat/lng - geocoded location,Endebes,Kenya,,,1.0321015,34.8482511,"C44, Endebess, Trans Nzoia, Kenya",KEN
+1328,no lat/lng entered / incorrect lat/lng - geocoded location,Kakamega (intercrop),Kenya,,,0.4957104,34.801548861634615,"Kakamega, Kenya",KEN
+1329,no lat/lng entered / incorrect lat/lng - geocoded location,Kakamega (solecrop),Kenya,,,0.4957104,34.801548861634615,"Kakamega, Kenya",KEN

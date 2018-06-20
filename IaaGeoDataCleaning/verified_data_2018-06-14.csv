@@ -1,0 +1,4 @@
+Type,Location,Country,Latitude,Longitude,Recorded_Lat,Recorded_Lng,Address,Country_Code
+no lat/lng entered - geocoded location,Kakamega (solecrop),KenyaSameLatLon,,,0.49571040000000005,34.80154886163461,"Kakamega, Kenya",KE
+no lat/lng entered - geocoded location,Kakamega (solecrop),Kenya,,,200.49571040000000005,34.80154886163461,"Kakamega, Kenya",KE
+no lat/lng entered - geocoded location,Kakamega (solecrop),KenyaDiffLatLon,,,200.49571040000000005,34.80154886163461,"Kakamega, Kenya",KE
