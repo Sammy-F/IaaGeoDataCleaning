@@ -554,10 +554,34 @@ class Table:
         :return:
         """
         cur = self.connector.connection.cursor()
-        cmmnd = "SELECT " + self.tableName + ".Country, " + worldTableName + ".name_0 FROM " + self.tableName + ", "+ worldTableName +" WHERE ST_WITHIN(" + self.tableName + ".geom, " + worldTableName + ".geom) AND " + worldTableName + ".name_0  != " + self.tableName +".country;"
-        cur.execute(cmmnd)
-        rows = cur.fetchall()
+        cmmnd1 = "SELECT column_name FROM information_schema.columns WHERE table_name = '" + self.tableName + "' AND column_name = 'dtype';"
+        cur.execute(cmmnd1)
+        name = cur.fetchall()
         cur.close()
+
+        if len(name) > 0:
+            print("Already validated once. Revalidating.")
+            cur = self.connector.connection.cursor()
+            cmmnd = "UPDATE " + self.tableName + " SET dtype='Invalid' FROM " + self.tableName + ", " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + ".geom, " + worldTableName + ".geom) AND " + worldTableName + ".name_0  != " + self.tableName + ".country;"
+            cur.execute(cmmnd)
+            cmmnd = "SELECT * FROM " + self.tableName + ", " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + ".geom, " + worldTableName + ".geom) AND " + worldTableName + ".name_0  != " + self.tableName + ".country;"
+            cur.execute(cmmnd)
+            rows = cur.fetchall()
+            cur.close()
+        else:
+            cur = self.connector.connection.cursor()
+            cmmnd = "ALTER TABLE " + self.tableName + " ADD dtype varchar;"
+            cur.execute(cmmnd)
+            cmmnd = "UPDATE " + self.tableName + " SET dtype='Valid'"
+            cur.execute(cmmnd)
+            cmmnd = "UPDATE " + self.tableName + " SET dtype='Invalid' FROM " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + ".geom, " + worldTableName + ".geom) AND " + worldTableName + ".name_0  != " + self.tableName + ".country;"
+            cur.execute(cmmnd)
+            cmmnd = "SELECT * FROM " + self.tableName + ", " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + ".geom, " + worldTableName + ".geom) AND " + worldTableName + ".name_0  != " + self.tableName + ".country;"
+            cur.execute(cmmnd)
+            rows = cur.fetchall()
+            cur.close()
+
+        self.connector.connection.commit()
 
         return rows
 
