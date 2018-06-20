@@ -545,3 +545,27 @@ class Table:
         except (Exception, psy.DatabaseError) as error:
             print("Fetching table failed.")
             print(error)
+
+    def checkValidity(self, worldTableName):
+        """
+        Validate using data in the database whether the entries in the table
+        have the correct country.
+        :param worldTableName:
+        :return:
+        """
+        cur = self.connector.connection.cursor()
+        cmmnd = "SELECT " + self.tableName + ".Country, " + worldTableName + ".name_0 FROM " + self.tableName + ", "+ worldTableName +" WHERE ST_WITHIN(" + self.tableName + ".geom, " + worldTableName + ".geom) AND " + worldTableName + ".name_0  != " + self.tableName +".country;"
+        cur.execute(cmmnd)
+        rows = cur.fetchall()
+        cur.close()
+
+        return rows
+
+mConnector = DatabaseConnector()
+mConnector.getConnectFromConfig(filePath='D:\\config.ini')
+mTable = Table('tester4', mConnector)
+lines = mTable.checkValidity('world_map')
+for line in lines:
+    print(line)
+print(len(lines))
+mConnector.closeConnection()
