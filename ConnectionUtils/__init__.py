@@ -562,13 +562,14 @@ class Table:
         if len(name) > 0:
             print("Already validated once. Revalidating.")
             cur = self.connector.connection.cursor()
-            cmmnd = "UPDATE " + self.tableName + " SET dtype='Invalid' FROM " + self.tableName + ", " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + ".geom, " + worldTableName + ".geom) AND " + worldTableName + ".gid_0  != " + self.tableName + ".country_code;"
+            cmmnd = "UPDATE " + self.tableName + " SET dtype='Invalid' FROM " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + ".geom, " + worldTableName + ".geom) AND " + worldTableName + ".gid_0  != " + self.tableName + ".country_code;"
             cur.execute(cmmnd)
             cmmnd = "SELECT * FROM " + self.tableName + ", " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + ".geom, " + worldTableName + ".geom) AND " + worldTableName + ".gid_0  != " + self.tableName + ".country_code;"
             cur.execute(cmmnd)
             rows = cur.fetchall()
             cur.close()
         else:
+            print("Not validated yet. Generating dtype column.")
             cur = self.connector.connection.cursor()
             cmmnd = "ALTER TABLE " + self.tableName + " ADD dtype varchar;"
             cur.execute(cmmnd)
@@ -588,8 +589,8 @@ class Table:
 mConnector = DatabaseConnector()
 mConnector.getConnectFromConfig(filePath='D:\\config.ini')
 mTable = Table('verified620', mConnector)
-mTable.buildTableFromFile('D:\\IaaGeoDataCleaning\\IaaGeoDataCleaning\\verified_data_2018-06-20.csv')
-mTable.makeTableSpatial()
+# mTable.buildTableFromFile('D:\\IaaGeoDataCleaning\\IaaGeoDataCleaning\\verified_data_2018-06-20.csv')
+# mTable.makeTableSpatial()
 lines = mTable.checkValidity('world_map')
 for line in lines:
     print(line)
