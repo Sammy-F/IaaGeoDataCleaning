@@ -146,7 +146,8 @@ class Table:
             print("Building table failed.")
             print(error)
 
-    def csvToXlsx(self, filePath):
+    def xlsxToCsv(self, filePath):
+        print("Converting .xlsx to .csv")
         wb = xlrd.open_workbook(filePath)
         sh = wb.sheet_by_name(wb.sheet_names()[0])
         fileString = filePath[:-5]
@@ -169,7 +170,7 @@ class Table:
         :return:
         """
         if filePath.endswith('xlsx'):
-            tableFile = self.csvToXlsx(filePath)
+            tableFile = self.xlsxToCsv(filePath)
         elif filePath.endswith('csv'):
             tableFile = pd.read_csv(filePath)
         else:
@@ -180,16 +181,14 @@ class Table:
         schemaTuple = self.loadTableSchema(tableFile)
         schemaStr = self.buildSchemaString(schemaTuple)
 
+        print("Creating table.")
         schemaStr = "CREATE TABLE " + self.tableName + " " + schemaStr
         print(schemaStr)
 
         try:
             cur = self.connector.connection.cursor()
-
             cur.execute(schemaStr)
-
             self.loadData(cur, filePath)
-
             cur.close()
             self.connector.connection.commit()
         except (Exception, psy.DatabaseError) as error:
@@ -206,6 +205,7 @@ class Table:
         updateTable = "UPDATE " + self.tableName + " SET geom = ST_SETSRID(ST_MakePoint(Recorded_Lng, Recorded_Lat), 4326);"
 
         try:
+            print("Adding geometry column to table.")
             cur = self.connector.connection.cursor()
             cur.execute(addGeom)
             cur.close()
@@ -271,8 +271,6 @@ class Table:
                     schemaStr += schemaTuple[0][i] + " " + "varchar,"
                 else:
                     schemaStr += schemaTuple[0][i] + " " + "varchar"
-
-
         schemaStr += """)"""
 
         return schemaStr
@@ -285,7 +283,9 @@ class Table:
         :return:
         """
         try:
+            print("Loading data from file.")
             cur.execute("COPY " + self.tableName + " FROM " + "'" + filePath + "'" + " DELIMITER ',' CSV HEADER")
+            cur.close()
         except (Exception, psy.DatabaseError) as error:
             print("Failed to load data.")
             print(error)
@@ -301,6 +301,7 @@ class Table:
         tBool = False
         rows = []
         try:
+            print("Attempting to find entry.")
             if not self.connector.connection is None:
                 cur = self.connector.connection.cursor()
                 command = "SELECT * FROM " + self.tableName + " WHERE ST_DWITHIN(ST_TRANSFORM(ST_GEOMFROMTEXT('POINT(" + str(lon) + " " + str(lat) + ")', 4326),4326)::geography, ST_TRANSFORM(geom, 4326)::geography, " + str(searchRadius) + ", true)"
@@ -329,8 +330,8 @@ class Table:
         :param locationName:
         :return:
         """
-        print("Went to country")
         try:
+            print("Attempting to find entry.")
             if not self.connector.connection is None:
                 cur = self.connector.connection.cursor()
                 command = "SELECT * FROM " + self.tableName + " WHERE country = '" + countryName + "' AND location = '" + locationName + "';"
@@ -357,6 +358,7 @@ class Table:
         :param newName:
         :return:
         """
+        print("Active table is now " + newName)
         self.tableName = newName
 
     def updateEntries(self, filePath):
@@ -366,11 +368,11 @@ class Table:
         :return:
         """
         if filePath.endswith('xlsx'):
-            tableFile = self.csvToXlsx(filePath)
+            tableFile = self.xlsxToCsv(filePath)
         elif filePath.endswith('csv'):
             tableFile = pd.read_csv(filePath)
         else:
-            print('This tool currently only supports .csv files.')
+            print('This tool currently only supports .csv and .xlsx files.')
             return
         try:
             for (index, row) in tableFile.iterrows():
@@ -397,7 +399,6 @@ class Table:
             print(error)
 
     def makeInsertionString(self, valsArr):
-
         valsStr = ''
         for i in range(len(valsArr)-2):
             if isinstance(valsArr[i], str):
@@ -599,13 +600,14 @@ class Table:
         cur.execute(query)
         cur.close()
 
-mConnector = DatabaseConnector()
-mConnector.getConnectFromConfig(filePath='D:\\config.ini')
-mTable = Table('verified620', mConnector)
-# mTable.buildTableFromFile('D:\\IaaGeoDataCleaning\\IaaGeoDataCleaning\\verified_data_2018-06-20.csv')
-# mTable.makeTableSpatial()
-lines = mTable.checkValidity('world_map')
-for line in lines:
-    print(line)
-print(len(lines))
-mConnector.closeConnection()
+# SAMPLE CODE
+# mConnector = DatabaseConnector()
+# mConnector.getConnectFromConfig(filePath='D:\\config.ini')
+# mTable = Table('verified620', mConnector)
+# # mTable.buildTableFromFile('D:\\IaaGeoDataCleaning\\IaaGeoDataCleaning\\verified_data_2018-06-20.csv')
+# # mTable.makeTableSpatial()
+# lines = mTable.checkValidity('world_map')
+# for line in lines:
+#     print(line)
+# print(len(lines))
+# mConnector.closeConnection()
