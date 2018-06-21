@@ -9,6 +9,10 @@ import numpy as np
 Classes to be used in interacting with a PostGIS database. DatabaseConnector can be used
 to initialize a single connection and close it. Table can be used to perform basic table operations
 via Python.
+
+Created by: Samantha Fritsche
+
+Modified 6/21/2018
 """
 
 class DatabaseConnector:
@@ -195,7 +199,7 @@ class Table:
             print("Building table failed.")
             print(error)
 
-    def makeTableSpatial(self, lngColName, latColName, geomColName='geom'):
+    def makeTableSpatial(self, lngColName='Longitude', latColName='Latitude', geomColName='geom'):
         """
         Add a geometry column and make it spatial
         :return:
@@ -550,7 +554,7 @@ class Table:
             print("Fetching table failed.")
             print(error)
 
-    def checkValidity(self, worldTableName, pointGeomColName='geom', worldGeomColName='geom', worldCountryCodeColName='gid_0', pointsCountryCodeColName='country_code', worldCountryNameColName='name_0'):
+    def checkValidity(self, worldTableName, pointsGeomColName='geom', worldGeomColName='geom', worldCountryCodeColName='gid_0', pointsCountryCodeColName='country_code', worldCountryNameColName='name_0'):
         """
         Validate using data in the database whether the entries in the table
         have the correct country.
@@ -570,7 +574,7 @@ class Table:
             cur.execute(cmmnd)
             cmmnd = "UPDATE " + self.tableName + " SET dbCountry=" + worldTableName + "." + worldCountryNameColName + " FROM " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + "." + pointsGeomColName + ", " + worldTableName + "." + worldGeomColName + ") AND " + worldTableName + "." + worldCountryCodeColName + "  != " + self.tableName + "." + pointsCountryCodeColName + ";"
             cur.execute(cmmnd)
-            cmmnd = "SELECT * FROM " + self.tableName + ", " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + "." + pointGeomColName + ", " + worldTableName + "." + worldGeomColName + ") AND " + worldTableName + "." + worldCountryCodeColName + "  != " + self.tableName + "." + pointsCountryCodeColName + ";"
+            cmmnd = "SELECT * FROM " + self.tableName + ", " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + "." + pointsGeomColName + ", " + worldTableName + "." + worldGeomColName + ") AND " + worldTableName + "." + worldCountryCodeColName + "  != " + self.tableName + "." + pointsCountryCodeColName + ";"
             cur.execute(cmmnd)
             rows = cur.fetchall()
             cur.close()
@@ -587,7 +591,7 @@ class Table:
             cur.execute(cmmnd)
             cmmnd = "UPDATE " + self.tableName + " SET dbCountry=" + worldTableName + "." + worldCountryNameColName + " FROM " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + "." + pointsGeomColName + ", " + worldTableName + "." + worldGeomColName + ") AND " + worldTableName + "." + worldCountryCodeColName + "  != " + self.tableName + "." + pointsCountryCodeColName + ";"
             cur.execute(cmmnd)
-            cmmnd = "SELECT * FROM " + self.tableName + ", " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + "." + pointGeomColName + ", " + worldTableName + "." + worldGeomColName + ") AND " + worldTableName + "." + worldCountryCodeColName + "  != " + self.tableName + "." + pointsCountryCodeColName + ";"
+            cmmnd = "SELECT * FROM " + self.tableName + ", " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + "." + pointsGeomColName + ", " + worldTableName + "." + worldGeomColName + ") AND " + worldTableName + "." + worldCountryCodeColName + "  != " + self.tableName + "." + pointsCountryCodeColName + ";"
             cur.execute(cmmnd)
             rows = cur.fetchall()
             cur.close()
@@ -609,41 +613,41 @@ class Table:
         cur.close()
 
 # SAMPLE CODE
-# mConnector = DatabaseConnector()
-# mConnector.getConnectFromConfig(filePath='D:\\config.ini')
-# mTable = Table('checkvals3', mConnector)
-# mTable.buildTableFromFile('D:\\master\\IaaGeoDataCleaning\\resources\\csv\\pending_data_2018-06-20.csv')
-# mTable.makeTableSpatial()
-# lines = mTable.checkValidity('world_map')
-# for line in lines:
-#     print(line)
-# print(len(lines))
-# mConnector.closeConnection()
+mConnector = DatabaseConnector()
+mConnector.getConnectFromConfig(filePath='D:\\config.ini')
+mTable = Table('checkvals3231', mConnector)
+mTable.buildTableFromFile('D:\\master\\IaaGeoDataCleaning\\resources\\csv\\pending_data_2018-06-20.csv')
+mTable.makeTableSpatial(lngColName='Longitude', latColName='Latitude')
+lines = mTable.checkValidity('world_map')
+for line in lines:
+    print(line)
+print(len(lines))
+mConnector.closeConnection()
 
 # SAMPLE CODE 2
-# mConnector = DatabaseConnector()
-#
-# mConnector.getConnectFromConfig(filePath='D:\\config.ini')
-#
-# mTable = Table('testy', mConnector)
-# mTable.buildTableFromFile('D:\\IaaGeoDataCleaning\\IaaGeoDataCleaning\\verified_data_2018-06-20.csv')
-#
-# mConnector.connection.commit()
-#
-# cmmnd = "SELECT column_name FROM information_schema.columns WHERE table_name = 'hi' AND column_name = 'geom';";
-# cur = mConnector.connection.cursor()
-# cur.execute(cmmnd)
-# result = cur.fetchall()
-# cur.close()
-# print(result)
-#
-# mTable.makeTableSpatial()
-# mConnector.connection.commit()
-# cur = mConnector.connection.cursor()
-# cur.execute(cmmnd)
-# result = cur.fetchall()
-# cur.close()
-# print
+mConnector = DatabaseConnector()
+
+mConnector.getConnectFromConfig(filePath='D:\\config.ini')
+
+mTable = Table('testy312', mConnector)
+mTable.buildTableFromFile('D:\\IaaGeoDataCleaning\\IaaGeoDataCleaning\\verified_data_2018-06-20.csv')
+
+mConnector.connection.commit()
+
+cmmnd = "SELECT column_name FROM information_schema.columns WHERE table_name = 'hi' AND column_name = 'geom';";
+cur = mConnector.connection.cursor()
+cur.execute(cmmnd)
+result = cur.fetchall()
+cur.close()
+print(result)
+
+mTable.makeTableSpatial()
+mConnector.connection.commit()
+cur = mConnector.connection.cursor()
+cur.execute(cmmnd)
+result = cur.fetchall()
+cur.close()
+mConnector.closeConnection()
 
 # mConnector = DatabaseConnector()
 #
