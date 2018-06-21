@@ -554,7 +554,7 @@ class Table:
             print("Fetching table failed.")
             print(error)
 
-    def checkValidity(self, worldTableName, pointsGeomColName='geom', worldGeomColName='geom', worldCountryCodeColName='gid_0', pointsCountryCodeColName='country_code', worldCountryNameColName='name_0'):
+    def checkValidity(self, worldTableName, setTypeColName='dtype', setFoundCountryName='dbCountry', pointsGeomColName='geom', worldGeomColName='geom', worldCountryCodeColName='gid_0', pointsCountryCodeColName='country_code', worldCountryNameColName='name_0'):
         """
         Validate using data in the database whether the entries in the table
         have the correct country.
@@ -562,7 +562,7 @@ class Table:
         :return:
         """
         cur = self.connector.connection.cursor()
-        cmmnd1 = "SELECT column_name FROM information_schema.columns WHERE table_name = '" + self.tableName + "' AND column_name = 'dtype';"
+        cmmnd1 = "SELECT column_name FROM information_schema.columns WHERE table_name = '" + self.tableName + "' AND column_name = '" + setTypeColName + "';"
         cur.execute(cmmnd1)
         name = cur.fetchall()
         cur.close()
@@ -570,9 +570,9 @@ class Table:
         if len(name) > 0:
             print("Already validated once. Revalidating.")
             cur = self.connector.connection.cursor()
-            cmmnd = "UPDATE " + self.tableName + " SET dtype='Invalid' FROM " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + "." + pointsGeomColName + ", " + worldTableName + "." + worldGeomColName + ") AND " + worldTableName + "." + worldCountryCodeColName + "  != " + self.tableName + "." + pointsCountryCodeColName + ";"
+            cmmnd = "UPDATE " + self.tableName + " SET " + setTypeColName + "='Invalid' FROM " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + "." + pointsGeomColName + ", " + worldTableName + "." + worldGeomColName + ") AND " + worldTableName + "." + worldCountryCodeColName + "  != " + self.tableName + "." + pointsCountryCodeColName + ";"
             cur.execute(cmmnd)
-            cmmnd = "UPDATE " + self.tableName + " SET dbCountry=" + worldTableName + "." + worldCountryNameColName + " FROM " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + "." + pointsGeomColName + ", " + worldTableName + "." + worldGeomColName + ") AND " + worldTableName + "." + worldCountryCodeColName + "  != " + self.tableName + "." + pointsCountryCodeColName + ";"
+            cmmnd = "UPDATE " + self.tableName + " SET " + setFoundCountryName + "=" + worldTableName + "." + worldCountryNameColName + " FROM " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + "." + pointsGeomColName + ", " + worldTableName + "." + worldGeomColName + ") AND " + worldTableName + "." + worldCountryCodeColName + "  != " + self.tableName + "." + pointsCountryCodeColName + ";"
             cur.execute(cmmnd)
             cmmnd = "SELECT * FROM " + self.tableName + ", " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + "." + pointsGeomColName + ", " + worldTableName + "." + worldGeomColName + ") AND " + worldTableName + "." + worldCountryCodeColName + "  != " + self.tableName + "." + pointsCountryCodeColName + ";"
             cur.execute(cmmnd)
@@ -581,15 +581,15 @@ class Table:
         else:
             print("Not validated yet. Generating dtype column.")
             cur = self.connector.connection.cursor()
-            cmmnd = "ALTER TABLE " + self.tableName + " ADD dtype varchar;"
+            cmmnd = "ALTER TABLE " + self.tableName + " ADD " + setTypeColName + " varchar;"
             cur.execute(cmmnd)
-            cmmnd = "ALTER TABLE " + self.tableName + " ADD dbCountry varchar;"
+            cmmnd = "ALTER TABLE " + self.tableName + " ADD " + setFoundCountryName + " varchar;"
             cur.execute(cmmnd)
-            cmmnd = "UPDATE " + self.tableName + " SET dtype='Valid'"
+            cmmnd = "UPDATE " + self.tableName + " SET " + setTypeColName + "='Valid'"
             cur.execute(cmmnd)
-            cmmnd = "UPDATE " + self.tableName + " SET dtype='Invalid' FROM " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + "." + pointsGeomColName + ", " + worldTableName + "." + worldGeomColName + ") AND " + worldTableName + "." + worldCountryCodeColName + "  != " + self.tableName + "." + pointsCountryCodeColName + ";"
+            cmmnd = "UPDATE " + self.tableName + " SET " + setTypeColName + "='Invalid' FROM " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + "." + pointsGeomColName + ", " + worldTableName + "." + worldGeomColName + ") AND " + worldTableName + "." + worldCountryCodeColName + "  != " + self.tableName + "." + pointsCountryCodeColName + ";"
             cur.execute(cmmnd)
-            cmmnd = "UPDATE " + self.tableName + " SET dbCountry=" + worldTableName + "." + worldCountryNameColName + " FROM " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + "." + pointsGeomColName + ", " + worldTableName + "." + worldGeomColName + ") AND " + worldTableName + "." + worldCountryCodeColName + "  != " + self.tableName + "." + pointsCountryCodeColName + ";"
+            cmmnd = "UPDATE " + self.tableName + " SET " + setFoundCountryName + "=" + worldTableName + "." + worldCountryNameColName + " FROM " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + "." + pointsGeomColName + ", " + worldTableName + "." + worldGeomColName + ") AND " + worldTableName + "." + worldCountryCodeColName + "  != " + self.tableName + "." + pointsCountryCodeColName + ";"
             cur.execute(cmmnd)
             cmmnd = "SELECT * FROM " + self.tableName + ", " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + "." + pointsGeomColName + ", " + worldTableName + "." + worldGeomColName + ") AND " + worldTableName + "." + worldCountryCodeColName + "  != " + self.tableName + "." + pointsCountryCodeColName + ";"
             cur.execute(cmmnd)
