@@ -320,3 +320,6 @@ class NameHandler:
 # validator = GeocodeValidator("D:\\PostGISData\\data\\tblLocation.xlsx")
 # validator.run()
 
+togettofiles = str(path.abspath(path.join(path.dirname(__file__), '..', '..', '..', '..', 'resources', 'mapinfo', 'TM_WORLD_BORDERS-0.3.shp')))
+
+print(togettofiles)

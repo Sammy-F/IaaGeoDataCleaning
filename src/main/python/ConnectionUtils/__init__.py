@@ -202,7 +202,7 @@ class Table:
         """
 
         addGeom = "ALTER TABLE " + self.tableName + " ADD COLUMN geom geometry(POINT, 4326);"
-        updateTable = "UPDATE " + self.tableName + " SET geom = ST_SETSRID(ST_MakePoint(Recorded_Lng, Recorded_Lat), 4326);"
+        updateTable = "UPDATE " + self.tableName + " SET geom = ST_SETSRID(ST_MakePoint(Longitude, Latitude), 4326);"
 
         try:
             print("Adding geometry column to table.")
@@ -376,8 +376,8 @@ class Table:
             return
         try:
             for (index, row) in tableFile.iterrows():
-                lat = row['Recorded_Lat']
-                long = row['Recorded_Lng']
+                lat = row['Latitude']
+                long = row['Longitude']
                 if not self.checkForEntryByLatLon(lat, long)[0]:
                     countryName = row['Country']
                     locName = row['Location']
@@ -426,8 +426,8 @@ class Table:
         try:
             cur = self.connector.connection.cursor()
             if self.isSpatial():
-                updateTable = "UPDATE " + self.tableName + """ SET geom = ST_SETSRID(ST_MakePoint(Recorded_Lng, 
-                            Recorded_Lat), 4326) WHERE geom IS NULL;"""
+                updateTable = "UPDATE " + self.tableName + """ SET geom = ST_SETSRID(ST_MakePoint(Longitude, 
+                            Latitude), 4326) WHERE geom IS NULL;"""
                 cur.execute(updateTable)
             cur.close()
             self.connector.connection.commit()
@@ -523,8 +523,10 @@ class Table:
             cur = self.connector.connection.cursor()
             cur.execute(cmmnd)
             nameList = list(cur.fetchall())
+            print(nameList)
             cur.close()
             for name in columnNames:
+                print(name)
                 if not (name,) in nameList:
                     return False
         return True
@@ -566,6 +568,8 @@ class Table:
             cur = self.connector.connection.cursor()
             cmmnd = "UPDATE " + self.tableName + " SET dtype='Invalid' FROM " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + ".geom, " + worldTableName + ".geom) AND " + worldTableName + ".gid_0  != " + self.tableName + ".country_code;"
             cur.execute(cmmnd)
+            cmmnd = "UPDATE " + self.tableName + " SET dbCountry=" + worldTableName + ".name_0 FROM " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + ".geom, " + worldTableName + ".geom) AND " + worldTableName + ".gid_0  != " + self.tableName + ".country_code;"
+            cur.execute(cmmnd)
             cmmnd = "SELECT * FROM " + self.tableName + ", " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + ".geom, " + worldTableName + ".geom) AND " + worldTableName + ".gid_0  != " + self.tableName + ".country_code;"
             cur.execute(cmmnd)
             rows = cur.fetchall()
@@ -575,9 +579,13 @@ class Table:
             cur = self.connector.connection.cursor()
             cmmnd = "ALTER TABLE " + self.tableName + " ADD dtype varchar;"
             cur.execute(cmmnd)
+            cmmnd = "ALTER TABLE " + self.tableName + " ADD dbCountry varchar;"
+            cur.execute(cmmnd)
             cmmnd = "UPDATE " + self.tableName + " SET dtype='Valid'"
             cur.execute(cmmnd)
             cmmnd = "UPDATE " + self.tableName + " SET dtype='Invalid' FROM " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + ".geom, " + worldTableName + ".geom) AND " + worldTableName + ".gid_0  != " + self.tableName + ".country_code;"
+            cur.execute(cmmnd)
+            cmmnd = "UPDATE " + self.tableName + " SET dbCountry=" + worldTableName + ".name_0 FROM " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + ".geom, " + worldTableName + ".geom) AND " + worldTableName + ".gid_0  != " + self.tableName + ".country_code;"
             cur.execute(cmmnd)
             cmmnd = "SELECT * FROM " + self.tableName + ", " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + ".geom, " + worldTableName + ".geom) AND " + worldTableName + ".gid_0  != " + self.tableName + ".country_code;"
             cur.execute(cmmnd)
@@ -603,11 +611,54 @@ class Table:
 # SAMPLE CODE
 # mConnector = DatabaseConnector()
 # mConnector.getConnectFromConfig(filePath='D:\\config.ini')
-# mTable = Table('verified620', mConnector)
-# # mTable.buildTableFromFile('D:\\IaaGeoDataCleaning\\IaaGeoDataCleaning\\verified_data_2018-06-20.csv')
-# # mTable.makeTableSpatial()
+# mTable = Table('checkvals3', mConnector)
+# mTable.buildTableFromFile('D:\\master\\IaaGeoDataCleaning\\resources\\csv\\pending_data_2018-06-20.csv')
+# mTable.makeTableSpatial()
 # lines = mTable.checkValidity('world_map')
 # for line in lines:
 #     print(line)
 # print(len(lines))
 # mConnector.closeConnection()
+
+# SAMPLE CODE 2
+# mConnector = DatabaseConnector()
+#
+# mConnector.getConnectFromConfig(filePath='D:\\config.ini')
+#
+# mTable = Table('testy', mConnector)
+# mTable.buildTableFromFile('D:\\IaaGeoDataCleaning\\IaaGeoDataCleaning\\verified_data_2018-06-20.csv')
+#
+# mConnector.connection.commit()
+#
+# cmmnd = "SELECT column_name FROM information_schema.columns WHERE table_name = 'hi' AND column_name = 'geom';";
+# cur = mConnector.connection.cursor()
+# cur.execute(cmmnd)
+# result = cur.fetchall()
+# cur.close()
+# print(result)
+#
+# mTable.makeTableSpatial()
+# mConnector.connection.commit()
+# cur = mConnector.connection.cursor()
+# cur.execute(cmmnd)
+# result = cur.fetchall()
+# cur.close()
+# print
+
+# mConnector = DatabaseConnector()
+#
+#     mConnector.getConnectFromConfig(filePath='D:\\config.ini')
+#     name = ''.join(choice(ascii_uppercase) for i in range(16))
+#
+#     mTable = Table(name, mConnector)
+#     mTable.buildTableFromFile('D:\\IaaGeoDataCleaning\\IaaGeoDataCleaning\\verified_data_2018-06-20.csv')
+#     # vals1 = ['Tanzania', 'no lat/lng entered - geocoded location']
+#     # cols1 = ['country', 'type']
+#     vals1 = ['Tanzania']
+#     cols1 = ['Country']
+#
+#     results = mTable.getEntriesByInput(vals=vals1, columnNames=cols1)
+#
+#     assert len(results) == 19
+#
+#     mConnector.closeConnection()

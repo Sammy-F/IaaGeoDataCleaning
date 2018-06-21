@@ -1,4 +1,4 @@
-from ConnectionUtils import databaseConnector as cu
+from src.main.python.ConnectionUtils import DatabaseConnector, Table
 import pytest
 from random import choice
 from string import ascii_uppercase
@@ -47,29 +47,29 @@ from string import ascii_uppercase
 #     mConnector.closeConnection()
 
 # TODO: THIS TEST IS NOT WORKING
-# # def testMakeSpatial():
-# #     mConnector = cu.DatabaseConnector()
-# #
-# #     mConnector.getConnectFromConfig(filePath='D:\\config.ini')
-# #     name = ''.join(choice(ascii_uppercase) for i in range(16))
-# #
-# #     mTable = cu.Table(name, mConnector)
-# #     mTable.buildTableFromFile('D:\\IaaGeoDataCleaning\\IaaGeoDataCleaning\\verified_data_2018-06-14.csv')
-# #
-# #     mConnector.connection.commit()
-# #
-# #     cmmnd = "SELECT column_name FROM information_schema.columns WHERE table_name = '" + name + "' AND column_name = 'geom';";
-# #     cur = mConnector.connection.cursor()
-# #     cur.execute(cmmnd)
-# #     result = cur.fetchall()
-# #     cur.close()
-# #     print(result)
-# #     assert len(result) == 0
-# #
-# #     mConnector.getConnectFromConfig(filePath='D:\\config.ini')
-# #
-# #     mTable.makeTableSpatial()
-# #     mConnector.connection.commit()
+def testMakeSpatial():
+    mConnector = DatabaseConnector()
+
+    mConnector.getConnectFromConfig(filePath='D:\\config.ini')
+    name = ''.join(choice(ascii_uppercase) for i in range(16))
+
+    mTable = Table(name, mConnector)
+    mTable.buildTableFromFile('D:\\IaaGeoDataCleaning\\IaaGeoDataCleaning\\verified_data_2018-06-20.csv')
+
+    mConnector.connection.commit()
+
+    cmmnd = "SELECT column_name FROM information_schema.columns WHERE table_name = '" + name + "' AND column_name = 'geom';";
+    cur = mConnector.connection.cursor()
+    cur.execute(cmmnd)
+    result = cur.fetchall()
+    cur.close()
+    print(result)
+    assert len(result) == 0
+
+    mConnector.getConnectFromConfig(filePath='D:\\config.ini')
+
+    mTable.makeTableSpatial()
+    mConnector.connection.commit()
 
 #     cmmnd2 = "SELECT column_name FROM information_schema.columns WHERE table_name='" + name + "' AND column_name='geom';"
 #     cur = mConnector.connection.cursor()
@@ -130,22 +130,22 @@ from string import ascii_uppercase
 #     mConnector.closeConnection()
 
 # TODO: THIS TEST IS NOT WORKING
-#     # def testGetEntriesByInput():
-#     # mConnector = cu.DatabaseConnector()
-#     #
-#     # mConnector.getConnectFromConfig(filePath='D:\\config.ini')
-#     # name = ''.join(choice(ascii_uppercase) for i in range(16))
-#     #
-#     # mTable = cu.Table(name, mConnector)
-#     # mTable.buildTableFromFile('D:\\IaaGeoDataCleaning\\IaaGeoDataCleaning\\verified_data_2018-06-14-2.csv')
-#     # # vals1 = ['Tanzania', 'no lat/lng entered - geocoded location']
-#     # # cols1 = ['country', 'type']
-#     # vals1 = ['Tanzania']
-#     # cols1 = ['Country']
-#     #
-#     # results = mTable.getEntriesByInput(vals=vals1, columnNames=cols1)
-#     #
-#     # assert len(results) == 19
-#     #
-#     # mConnector.closeConnection()
+def testGetEntriesByInput():
+    mConnector = DatabaseConnector()
+
+    mConnector.getConnectFromConfig(filePath='D:\\config.ini')
+    name = ''.join(choice(ascii_uppercase) for i in range(16))
+
+    mTable = Table(name, mConnector)
+    mTable.buildTableFromFile('D:\\IaaGeoDataCleaning\\IaaGeoDataCleaning\\verified_data_2018-06-20.csv')
+    # vals1 = ['Tanzania', 'no lat/lng entered - geocoded location']
+    # cols1 = ['country', 'type']
+    vals1 = ['Tanzania']
+    cols1 = ['Country']
+
+    results = mTable.getEntriesByInput(vals=vals1, columnNames=cols1)
+
+    assert len(results) == 19
+
+    mConnector.closeConnection()
 
