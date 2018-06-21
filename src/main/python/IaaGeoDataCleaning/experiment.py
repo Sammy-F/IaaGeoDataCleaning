@@ -1,5 +1,4 @@
 import pandas as pd
-import datetime
 import string
 import re
 import pycountry as pc
@@ -7,13 +6,16 @@ import math
 import geopandas as gpd
 import numpy as np
 import geopy as gp
+from os import path
 
 # import country_bounding_boxes as cbb
 from shapely.geometry import Point
 
 # TODO: Make a case that has coordinates but no location info
-# TODO: Expand country checking method
+# TODO: Expand country checking method (split and contain?)
 # TODO: Save file names into variables
+# TODO: Eliminate repeats (number in location column)
+# TODO: Use only photon reverse?
 
 """
 GeocodeValidator allows the user to perform reverse geocoding
@@ -34,8 +36,6 @@ Note that some borders used are disputed
 
 class GeocodeValidator:
     def __init__(self):
-        self.map = gpd.read_file(
-            "/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/mapinfo/TM_WORLD_BORDERS-0.3.shp")
         self.pht = gp.Photon(timeout=3)
         self.dbi = DatabaseInitializer()
 
@@ -44,13 +44,13 @@ class GeocodeValidator:
                           4: 'entered (lng, lat)', 5: 'entered (lng, -lat)',
                           6: 'entered (-lng, lat', 7: 'entered (-lng, -lat)',
                           8: 'no lat/lng entered / incorrect lat/lng - geocoded location',
-                          9: 'no location entered - reverse geocoded for country',
                           -1: 'incorrect location data/cannot find coordinates',
                           -2: 'no latitude and longitude entered',
-                          -5: 'no location/country entered / wrong country format'}
+                          -3: 'no location/country entered / wrong country format'}
 
-        self.countryCodes = {}
-        self.createCountryCodeDict()
+        mapFile = str(path.abspath(path.join(path.dirname(__file__), '..', '..', '..', '..',
+                                             'resources', 'mapinfo', 'TM_WORLD_BORDERS-0.3.shp')))
+        self.map = gpd.read_file(mapFile)
 
     def verifyInfo(self, location=None, country=None, inpLat=None, inpLng=None):
         """
@@ -68,7 +68,7 @@ class GeocodeValidator:
         locationInfo = checkedRow[1]
 
         # Location or country is not entered
-        if inpType == -5:
+        if inpType == -3:
             locationInfo['Type'] = self.entryType[inpType]
             return inpType, locationInfo
 
@@ -106,8 +106,15 @@ class GeocodeValidator:
         :param longitude:
         :return:
         """
+        if pd.notnull(location):
+            location = string.capwords(location)
+        if pd.notnull(country):
+            country = string.capwords(country)
         return {'Location': location, 'Country': country, 'Latitude': latitude, 'Longitude': longitude,
                 'Recorded_Lat': None, 'Recorded_Lng': None, 'Address': None, 'Country_Code': None}
+
+    def getCountrySource(self):
+        return self.countrySource
 
     def checkInput(self, locationDict):
         """
@@ -117,27 +124,20 @@ class GeocodeValidator:
         the type of entry as an integer and the (altered) location dictionary.
         """
         if pd.isnull(locationDict['Location']) or pd.isnull(locationDict['Country']):
-            return -5, locationDict
-
-        locationDict['Location'] = string.capwords(locationDict['Location'])
-        locationDict['Country'] = string.capwords(locationDict['Country'])
+            return -3, locationDict
 
         # Looking up with pycountry
         try:
             locationDict['Country_Code'] = pc.countries.lookup(locationDict['Country']).alpha_3
             locationDict['Country'] = pc.countries.lookup(locationDict['Country']).name
+
         except LookupError:
-            # Looking up in the dictionary
-            try:
-                locationDict['Country_Code'] = self.countryCodes[locationDict['Country']]
-            except KeyError:
-                # Checking for alternative name format
-                altCountryName = self.findFormattedName(locationDict['Country'])
-                if not altCountryName:
-                    return -5, locationDict
-                else:
-                    locationDict['Country'] = altCountryName
-                    locationDict['Country_Code'] = pc.countries.lookup(altCountryName).alpha_3
+            altCountryName = self.findFormattedName(locationDict['Country'])
+            if not altCountryName:
+                return -3, locationDict
+            else:
+                locationDict['Country'] = altCountryName
+                locationDict['Country_Code'] = pc.countries.lookup(altCountryName).alpha_3
 
         # Checking if lat/lng were entered
         if (pd.isnull(locationDict['Latitude']) or pd.isnull(locationDict['Longitude'])) or (
@@ -178,16 +178,6 @@ class GeocodeValidator:
                 continue
 
         return -1, locationDict
-
-    def reverseGeocode(self, locationDict):
-        # TODO: Test this method
-        point = gp.Point(locationDict['Latitude'], locationDict['Longitude'])
-        match = self.pht.reverse(point)
-        locationDict['Recorded_Lat'] = match.latitude
-        locationDict['Recorded_Lng'] = match.longitude
-        locationDict['Country'] = match.address.split(',')[-1]
-        locationDict['Address'] = match.address
-        return 9
 
     def geocodeCoordinates(self, locationDict):
         """
@@ -376,93 +366,68 @@ class GeocodeValidator:
         finder = NameHandler()
         return finder.findName(alternativeName)
 
-    def createCountryCodeDict(self):
-        """
-        Creates a dictionary whose (key, value) pairs are a country and its country code
-        in order to utilize the geocoder API calls.
-        """
-        countriesData = pd.read_csv(
-            "/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/countryInfo.txt", delimiter="\t")
-
-        for (index, row) in countriesData.iterrows():
-            countryCode = str(row.loc["ISO3"])
-            country = str(row.loc["Country"])
-            self.countryCodes[country] = countryCode
-
 
 class DatabaseInitializer:
-    def createNewDatabase(self, filePath):
-        self.now = datetime.datetime.now()
-        self.now = self.now.strftime("%Y-%m-%d")
+    def createNewDB(self, originalDB, locationCol, countryCol, latitudeCol, longitudeCol, validator):
+        # Reading the original data
+        data = self.readFile(originalDB)
+        if data is None:
+            return
 
-        self.flaggedLocations = []  # flagged indexes in data frame
-        self.verified = {'Type': [], 'Location': [], 'Country': [], 'Latitude': [], 'Longitude': [],
-                         'Recorded_Lat': [], 'Recorded_Lng': [], 'Address': [],
-                         'Country_Code': []}
-        self.pending = {'Type': [], 'Location': [], 'Country': [], 'Latitude': [], 'Longitude': [],
-                        'Recorded_Lat': [], 'Recorded_Lng': [], 'Address': [],
-                        'Country_Code': []}
+        # Variables to save entries
+        verifiedEntries = {'Type': [], 'Location': [], 'Country': [], 'Latitude': [], 'Longitude': [],
+                           'Recorded_Lat': [], 'Recorded_Lng': [], 'Address': [], 'Country_Code': []}
+        pendingEntries = {'Type': [], 'Location': [], 'Country': [], 'Latitude': [], 'Longitude': [],
+                          'Recorded_Lat': [], 'Recorded_Lng': [], 'Address': [], 'Country_Code': []}
+        flaggedLocations = []
 
-        self.verifiedDatabase = 'verified_data_' + str(self.now) + '.csv'
-        self.pendingDatabase = 'pending_data_' + str(self.now) + '.csv'
+        # Cleaning the data
+        self.cleanData(data, locationCol, countryCol, latitudeCol, longitudeCol, validator,
+                       verifiedEntries, pendingEntries, flaggedLocations)
 
-        self.validator = GeocodeValidator()
+        # Exporting the data
+        extension = ''
+        pendingDB = input('Enter file name for pending entry data frame (without extension): ')
+        verifiedDB = input('Enter file name for verified entry data frame (without extension): ')
+        while extension != 'csv' and extension != 'xlsx':
+            extension = input('Enter file extension (csv/xlsx): ').lower()
+        self.exportFile(verifiedEntries, verifiedDB, extension)
+        self.exportFile(pendingEntries, pendingDB, extension)
+        print(validator.getCountrySource())
 
-        self.tobeValidatedLocation = self.readFile(filePath)
+    def cleanData(self, data, locCol, ctyCol, latCol, lngCol, validator, verified, pending, flagged):
+        for (index, row) in data.iterrows():
+            location = row[locCol]
+            country = row[ctyCol]
+            latitude = row[latCol]
+            longitude = row[lngCol]
 
-        self.run()
-
-    def run(self):
-        """
-        Iterates through every row of the data and validates the locational information of each entry
-        """
-        for (index, row) in self.tobeValidatedLocation.iterrows():
-            print('Verifying at index ' + str(index))
-            location = self.tobeValidatedLocation.loc[index, 'Location']
-            country = self.tobeValidatedLocation.loc[index, 'Country']
-            latitude = self.tobeValidatedLocation.loc[index, 'Latitude']
-            longitude = self.tobeValidatedLocation.loc[index, 'Longitude']
-
-            rowInfo = self.validator.verifyInfo(location, country, latitude, longitude)
-
-            if rowInfo[0] < 0:
-                self.flaggedLocations.append(index)
-                self.logEntry(self.pending, rowInfo[1])
+            entry = validator.verifyInfo(location, country, latitude, longitude)
+            if entry[0] < 0:
+                flagged.append(index)
+                self.logToDict(pending, entry[1])
             else:
-                self.logEntry(self.verified, rowInfo[1])
+                self.logToDict(verified, entry[1])
 
-        self.exportResults()
+    def getIncorrectPercent(self, data, flagged):
+        return len(flagged) / (1e-10 + data.shape[0])
 
-    def getVerifiedLog(self):
-        return self.verified
-
-    def getPendingLog(self):
-        return self.pending
-
-    def getIncorrectPercent(self):
-        return len(self.flaggedLocations) / (1e-10 + self.tobeValidatedLocation.shape[0])
-
-    def getVerifiedFile(self):
-        return self.verifiedDatabase
-
-    def getPendingFile(self):
-        return self.pendingDatabase
-
-    def logEntry(self, log, rowDict):
+    def logToDict(self, log, rowDict):
         for key in rowDict.keys():
             log[key].append(rowDict[key])
 
-    def exportResults(self):
-        """
-        Generate two .csv log files: verified locations and pending locations.
-        """
-        print("Flagged locations are at indicies: " + str(self.flaggedLocations))
+    def exportFile(self, dataDict, fileName, type):
+        fileName = fileName + '.' + type
+        filePath = str(path.abspath(path.join(path.dirname(__file__), '..', '..', '..', '..', 'resources', type, fileName)))
 
-        pendingData = pd.DataFrame(data=self.pending)
-        pendingData.to_csv(self.pendingDatabase, sep=',', encoding='utf-8', index_label='Index')
+        df = pd.DataFrame(dataDict)
+        if fileName.endswith('.csv'):
+            df.to_csv(filePath, index_label='Index', sep=',', encoding='utf-8')
+        elif fileName.endswith('.xlsx'):
+            df.to_excel(filePath, index_label='Index')
 
-        verifiedData = pd.DataFrame(data=self.verified)
-        verifiedData.to_csv(self.verifiedDatabase, sep=',', encoding='utf-8', index_label='Index')
+        print('Finished exporting. File can be found at: ')
+        print(filePath)
 
     def readFile(self, filePath):
         """
@@ -479,7 +444,7 @@ class DatabaseInitializer:
             data = None
         return data
 
-    def addRowToDB(self, newDF, databasePath):
+    def addRowToDB(self, rowDF, databasePath):
         """
         Adds a row to the database the file path points to,
         overwrites the file with the new database file in csv format.
@@ -491,10 +456,12 @@ class DatabaseInitializer:
         if database is None:
             return False
 
-        database = pd.concat([database, newDF], ignore_index=True, sort=True)
+        database = pd.concat([database, rowDF], ignore_index=True, sort=True)
+
         if databasePath.endswith('xlsx'):
-            databasePath = databasePath.replace('xlsx', 'csv')
-        database.to_csv('test_verified.csv', sep=',', encoding='utf-8', index=False)
+            database.to_excel(databasePath, index=False)
+        else:
+            database.to_csv(databasePath, sep=',', encoding='utf-8', index=False)
         return True
 
     def deleteRowFromDB(self, rowIndex, databasePath):
@@ -512,8 +479,10 @@ class DatabaseInitializer:
         database = database.drop(database.index[rowIndex])
 
         if databasePath.endswith('xlsx'):
-            databasePath = databasePath.replace('xlsx', 'csv')
-        database.to_csv('test_pending.csv', sep=',', encoding='utf-8', index=False)
+            database.to_excel(databasePath, index=False)
+        else:
+            database.to_csv(databasePath, sep=',', encoding='utf-8', index=False)
+        return True
 
 
 class NameHandler:
@@ -537,28 +506,7 @@ class NameHandler:
                     return formattedName
         return False
 
-
-database = DatabaseInitializer()
-database.createNewDatabase('/Users/thytnguyen/Desktop/tblLocation.xlsx')
-# correctLog = database.getVerifiedLog()
-# incorrectLog = database.getPendingLog()
-
-# validator = GeocodeValidator()
-
-# res = validator.queryAllFields(location='Kilombo', country='Angola', latitude=-8.9, longitude=14.75)
-# print(res)
-# #
-# # queryLoc = validator.queryByLocation('El Ovejero', 'China')
-# # print(queryLoc)
-# #
-# # queryCoord = validator.queryByCoordinates(-16.73, -179.87)
-# # print(queryCoord)
-#
-# add = validator.addLocation('Toronto', 'Canada', 43.65, 79.38)
-# print(add)
-
-# inPending = validator.addLocation('Yala Swamp', 'Kenya', 0.03, 34.1)
-# print(inPending)
-#
-# inVerified = validator.addLocation('Dholi', 'India')
-# print(inVerified)
+validator = GeocodeValidator()
+initializer = DatabaseInitializer()
+initializer.createNewDB('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/resources/xlsx/tblLocation.xlsx',
+                        'Location', 'Country', 'Latitude', 'Longitude', validator)
