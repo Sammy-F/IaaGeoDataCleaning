@@ -195,14 +195,14 @@ class Table:
             print("Building table failed.")
             print(error)
 
-    def makeTableSpatial(self):
+    def makeTableSpatial(self, lngColName, latColName, geomColName='geom'):
         """
         Add a geometry column and make it spatial
         :return:
         """
 
-        addGeom = "ALTER TABLE " + self.tableName + " ADD COLUMN geom geometry(POINT, 4326);"
-        updateTable = "UPDATE " + self.tableName + " SET geom = ST_SETSRID(ST_MakePoint(Longitude, Latitude), 4326);"
+        addGeom = "ALTER TABLE " + self.tableName + " ADD COLUMN " + geomColName + " geometry(POINT, 4326);"
+        updateTable = "UPDATE " + self.tableName + " SET geom = ST_SETSRID(ST_MakePoint(" + lngColName + ", " + latColName + "), 4326);"
 
         try:
             print("Adding geometry column to table.")
@@ -290,7 +290,7 @@ class Table:
             print("Failed to load data.")
             print(error)
 
-    def checkForEntryByLatLon(self, lat, lon, searchRadius=0.5):
+    def checkForEntryByLatLon(self, lat, lon, searchRadius=0.5, geomColName='geom'):
         """
         Check if an entry with the given lat, lon exists. If so, return all rows that match in a tuple where the first
         value is True or False for whether an entry exist, and the second value is the the rows.
@@ -304,7 +304,7 @@ class Table:
             print("Attempting to find entry.")
             if not self.connector.connection is None:
                 cur = self.connector.connection.cursor()
-                command = "SELECT * FROM " + self.tableName + " WHERE ST_DWITHIN(ST_TRANSFORM(ST_GEOMFROMTEXT('POINT(" + str(lon) + " " + str(lat) + ")', 4326),4326)::geography, ST_TRANSFORM(geom, 4326)::geography, " + str(searchRadius) + ", true)"
+                command = "SELECT * FROM " + self.tableName + " WHERE ST_DWITHIN(ST_TRANSFORM(ST_GEOMFROMTEXT('POINT(" + str(lon) + " " + str(lat) + ")', 4326),4326)::geography, ST_TRANSFORM(" + geomColName + ", 4326)::geography, " + str(searchRadius) + ", true)"
                 cur.execute(command)
                 rows = cur.fetchall()
 
@@ -322,7 +322,7 @@ class Table:
 
         return tBool, rows
 
-    def checkForEntryByCountryLoc(self, countryName, locationName):
+    def checkForEntryByCountryLoc(self, countryName, locationName, countryColName='country', locationColName='location'):
         """
         Check if an entry exists with the given country and location. If so, return all rows that match in a
         tuple where the first value is True or False for whether an entry exist, and the second value is the the rows.
@@ -334,7 +334,7 @@ class Table:
             print("Attempting to find entry.")
             if not self.connector.connection is None:
                 cur = self.connector.connection.cursor()
-                command = "SELECT * FROM " + self.tableName + " WHERE country = '" + countryName + "' AND location = '" + locationName + "';"
+                command = "SELECT * FROM " + self.tableName + " WHERE " + countryColName + " = '" + countryName + "' AND " + locationColName + " = '" + locationName + "';"
                 cur.execute(command)
                 rows = cur.fetchall()
                 for row in rows:
@@ -361,7 +361,7 @@ class Table:
         print("Active table is now " + newName)
         self.tableName = newName
 
-    def updateEntries(self, filePath):
+    def updateEntries(self, filePath, lngColName='Longitude', latColName='Latitude', countryColName='Country', locationColName='Location'):
         """
         Insert or update entries from a .csv file.
         :param filePath:
@@ -376,11 +376,11 @@ class Table:
             return
         try:
             for (index, row) in tableFile.iterrows():
-                lat = row['Latitude']
-                long = row['Longitude']
+                lat = row[latColName]
+                long = row[lngColName]
                 if not self.checkForEntryByLatLon(lat, long)[0]:
-                    countryName = row['Country']
-                    locName = row['Location']
+                    countryName = row[countryColName]
+                    locName = row[locationColName]
                     if not self.checkForEntryByCountryLoc(countryName, locName)[0]:
                         # Entry does not exist
                         print("Inserting")
@@ -417,7 +417,7 @@ class Table:
                 valsStr += str(valsArr[len(valsStr)-1]) + " "
         return valsStr
 
-    def checkGeomNulls(self):
+    def checkGeomNulls(self, lngColName='Longitude', latColName='Latitude', geomColName='geom'):
         """
         Check for null values in a spatial table and, if they exist, check the lat and lng
         values to generate geometry.
@@ -426,8 +426,8 @@ class Table:
         try:
             cur = self.connector.connection.cursor()
             if self.isSpatial():
-                updateTable = "UPDATE " + self.tableName + """ SET geom = ST_SETSRID(ST_MakePoint(Longitude, 
-                            Latitude), 4326) WHERE geom IS NULL;"""
+                updateTable = "UPDATE " + self.tableName + """ SET """ + geomColName + """"= ST_SETSRID(ST_MakePoint(""" + lngColName + """, 
+                            """ + latColName + """), 4326) WHERE """ + geomColName + """ IS NULL;"""
                 cur.execute(updateTable)
             cur.close()
             self.connector.connection.commit()
@@ -435,14 +435,14 @@ class Table:
             print("Failed to check for nulls.")
             print(error)
 
-    def isSpatial(self):
+    def isSpatial(self, geomColName='geom'):
         """
         Check if the given table is spatial.
         :return:
         """
         try:
             cur = self.connector.connection.cursor()
-            cur.execute("SELECT column_name FROM information_schema.columns WHERE table_name = '" + self.tableName + "' AND column_name = 'geom';")
+            cur.execute("SELECT column_name FROM information_schema.columns WHERE table_name = '" + self.tableName + "' AND column_name = '" + geomColName + "';")
             names = cur.fetchall()
             cur.close()
             if len(names) > 0:
@@ -550,7 +550,7 @@ class Table:
             print("Fetching table failed.")
             print(error)
 
-    def checkValidity(self, worldTableName):
+    def checkValidity(self, worldTableName, pointGeomColName='geom', worldGeomColName='geom', worldCountryCodeColName='gid_0', pointsCountryCodeColName='country_code', worldCountryNameColName='name_0'):
         """
         Validate using data in the database whether the entries in the table
         have the correct country.
@@ -566,11 +566,11 @@ class Table:
         if len(name) > 0:
             print("Already validated once. Revalidating.")
             cur = self.connector.connection.cursor()
-            cmmnd = "UPDATE " + self.tableName + " SET dtype='Invalid' FROM " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + ".geom, " + worldTableName + ".geom) AND " + worldTableName + ".gid_0  != " + self.tableName + ".country_code;"
+            cmmnd = "UPDATE " + self.tableName + " SET dtype='Invalid' FROM " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + "." + pointsGeomColName + ", " + worldTableName + "." + worldGeomColName + ") AND " + worldTableName + "." + worldCountryCodeColName + "  != " + self.tableName + "." + pointsCountryCodeColName + ";"
             cur.execute(cmmnd)
-            cmmnd = "UPDATE " + self.tableName + " SET dbCountry=" + worldTableName + ".name_0 FROM " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + ".geom, " + worldTableName + ".geom) AND " + worldTableName + ".gid_0  != " + self.tableName + ".country_code;"
+            cmmnd = "UPDATE " + self.tableName + " SET dbCountry=" + worldTableName + "." + worldCountryNameColName + " FROM " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + "." + pointsGeomColName + ", " + worldTableName + "." + worldGeomColName + ") AND " + worldTableName + "." + worldCountryCodeColName + "  != " + self.tableName + "." + pointsCountryCodeColName + ";"
             cur.execute(cmmnd)
-            cmmnd = "SELECT * FROM " + self.tableName + ", " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + ".geom, " + worldTableName + ".geom) AND " + worldTableName + ".gid_0  != " + self.tableName + ".country_code;"
+            cmmnd = "SELECT * FROM " + self.tableName + ", " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + "." + pointGeomColName + ", " + worldTableName + "." + worldGeomColName + ") AND " + worldTableName + "." + worldCountryCodeColName + "  != " + self.tableName + "." + pointsCountryCodeColName + ";"
             cur.execute(cmmnd)
             rows = cur.fetchall()
             cur.close()
@@ -583,11 +583,11 @@ class Table:
             cur.execute(cmmnd)
             cmmnd = "UPDATE " + self.tableName + " SET dtype='Valid'"
             cur.execute(cmmnd)
-            cmmnd = "UPDATE " + self.tableName + " SET dtype='Invalid' FROM " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + ".geom, " + worldTableName + ".geom) AND " + worldTableName + ".gid_0  != " + self.tableName + ".country_code;"
+            cmmnd = "UPDATE " + self.tableName + " SET dtype='Invalid' FROM " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + "." + pointsGeomColName + ", " + worldTableName + "." + worldGeomColName + ") AND " + worldTableName + "." + worldCountryCodeColName + "  != " + self.tableName + "." + pointsCountryCodeColName + ";"
             cur.execute(cmmnd)
-            cmmnd = "UPDATE " + self.tableName + " SET dbCountry=" + worldTableName + ".name_0 FROM " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + ".geom, " + worldTableName + ".geom) AND " + worldTableName + ".gid_0  != " + self.tableName + ".country_code;"
+            cmmnd = "UPDATE " + self.tableName + " SET dbCountry=" + worldTableName + "." + worldCountryNameColName + " FROM " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + "." + pointsGeomColName + ", " + worldTableName + "." + worldGeomColName + ") AND " + worldTableName + "." + worldCountryCodeColName + "  != " + self.tableName + "." + pointsCountryCodeColName + ";"
             cur.execute(cmmnd)
-            cmmnd = "SELECT * FROM " + self.tableName + ", " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + ".geom, " + worldTableName + ".geom) AND " + worldTableName + ".gid_0  != " + self.tableName + ".country_code;"
+            cmmnd = "SELECT * FROM " + self.tableName + ", " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + "." + pointGeomColName + ", " + worldTableName + "." + worldGeomColName + ") AND " + worldTableName + "." + worldCountryCodeColName + "  != " + self.tableName + "." + pointsCountryCodeColName + ";"
             cur.execute(cmmnd)
             rows = cur.fetchall()
             cur.close()
