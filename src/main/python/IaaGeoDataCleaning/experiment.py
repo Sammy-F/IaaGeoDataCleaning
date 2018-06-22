@@ -14,6 +14,8 @@ from shapely.geometry import Point
 # TODO: Expand country checking method (split and contain?)
 # TODO: Document code
 # TODO: Query class? Database Utils?
+# TODO: When searching for repeats, strip all punctuations and numbers, then compare.
+# TODO: Return location query as a list or single index?
 
 """
 GeocodeValidator allows the user to perform reverse geocoding
@@ -260,7 +262,7 @@ class DatabaseInitializer:
             longitude = row[lngCol]
 
             locInDB = self.locationInDatabase(location, country, verified['Location'], verified['Country'])
-            # TODO: TEST THIS !!
+
             if locInDB[0]:
                 for verIdx in locInDB[1]:
                     verLoc = verified['Location'][verIdx]
@@ -396,9 +398,9 @@ class DatabaseInitializer:
         if pd.isnull(location) or pd.isnull(country):
             return False, results
         location = regex.sub('', location)
-        inLoc = any(re.search(location, str(loc), re.IGNORECASE) for loc in locationList)
+        inLoc = any(location.lower() == regex.sub('', str(loc).lower()) for loc in locationList)
         if inLoc:
-            indices = [i for i, v in enumerate(locationList) if re.search(location, str(v), re.IGNORECASE)]
+            indices = [i for i, v in enumerate(locationList) if location.lower() == regex.sub('', str(v).lower())]
             for index in indices:
                 if re.search(country, countryList[index], re.IGNORECASE):
                     results.append(index)

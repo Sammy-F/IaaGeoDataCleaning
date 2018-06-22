@@ -194,11 +194,11 @@ def testCoordinatesInDatabase():
 
 def setUpFiles():
     verified = str(path.abspath(path.join(path.dirname(__file__), '..', '..', '..', '..', 'IaaGeoDataCleaning',
-                                          'src', 'test', 'resources', 'verified_entries-06-22.xlsx')))
+                                          'src', 'test', 'resources', 'verified_entries.xlsx')))
     pending = str(path.abspath(path.join(path.dirname(__file__), '..', '..', '..', '..', 'IaaGeoDataCleaning',
-                                         'src', 'test', 'resources', 'pending_entries-06-22.xlsx')))
+                                         'src', 'test', 'resources', 'pending_entries.xlsx')))
     repeated = str(path.abspath(path.join(path.dirname(__file__), '..', '..', '..', '..', 'IaaGeoDataCleaning',
-                                          'src', 'test', 'resources', 'repeated_entries-06-22.xlsx')))
+                                          'src', 'test', 'resources', 'repeated_entries.xlsx')))
 
     return verified, pending, repeated
 
@@ -223,16 +223,16 @@ def testQueryByLocation():
     # VALLE DE MAGDALENA (2) - COLOMBIA
     inDB = di.queryByLocation(files[2], 'Valle de Magdalena', 'Colombia', 'Location', 'Country')
     print(inDB)
-    assert inDB[1] == [10, 11, 12]
+    assert inDB[1] == [5, 6, 7]
 
 
 def testQueryByCoordinates():
     # (9.3154, -75.4329)
     inDB = di.queryByCoordinates(files[0], 9.32, -75.4, 'Recorded_Lat', 'Recorded_Lng')
-    assert inDB[1][0] == 157
+    assert inDB[1][0] == 162
     # (14.92, 37.83)
     inDB = di.queryByCoordinates(files[0], 14.9, 37.8, 'Recorded_Lat', 'Recorded_Lng')
-    assert inDB[1][0] == 228
+    assert inDB[1][0] == 235
     notInDB = di.queryByCoordinates(files[0], 14.8, 37.8, 'Recorded_Lat', 'Recorded_Lng')
     assert notInDB[0] is False
     # (-0.5359, 37.6653)
@@ -247,12 +247,17 @@ def testQueryByAll():
     # 395: Embu - Kenya (-0.5, 37.45)
     mismatched = di.queryByAll(files[0], 'EMBU', 'KENYA', 0.1, 34.5, 'Location', 'Country', 'Latitude', 'Longitude')
     assert mismatched[0] is False
+
+    # Names have to be completely equal
     # 597: Uach, Campo Experimental - Mexico (19.48933,	-98.89365)
-    inDB = di.queryByAll(files[0], 'UACH', 'MEXICO', 19.49, -98.8, 'Location', 'Country', 'Recorded_Lat', 'Recorded_Lng')
-    assert inDB[1][0] == 597
+    notInDB = di.queryByAll(files[0], 'UACH', 'MEXICO', 19.49, -98.8, 'Location', 'Country', 'Recorded_Lat', 'Recorded_Lng')
+    assert notInDB[0] is False
     # Harare - Zimbabwe
     inDB = di.queryByAll(files[0], 'HARARE (2)', 'ZIMBABWE', -17.78, 31.00, 'Location', 'Country', 'Recorded_Lat', 'Recorded_Lng')
-    assert len(inDB[1]) > 0
+    assert inDB[1][0] == 900
+    # Cimmyt Harare - Zimbabwe
+    inDB = di.queryByAll(files[0], 'CIMMYT HARARE (2)', 'ZIMBABWE', -17.78, 31.00, 'Location', 'Country', 'Recorded_Lat', 'Recorded_Lng')
+    assert inDB[1][0] == 1167
 
 
 testCheckInput()
