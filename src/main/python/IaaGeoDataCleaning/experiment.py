@@ -1,20 +1,18 @@
+from os import path
 import pandas as pd
+import numpy as np
+import math
 import string
 import re
-import pycountry as pc
-import math
-import geopandas as gpd
-import numpy as np
-import geopy as gp
-from os import path
 
-# import country_bounding_boxes as cbb
+import pycountry as pc
+import geopandas as gpd
+import geopy as gp
 from shapely.geometry import Point
 
 # TODO: Make a case that has coordinates but no location info
 # TODO: Expand country checking method (split and contain?)
-# TODO: Save file names into variables
-# TODO: Eliminate repeats (number in location column)
+# TODO: Document code
 
 """
 GeocodeValidator allows the user to perform reverse geocoding
@@ -211,49 +209,6 @@ class GeocodeValidator:
         except:
             return -1, locationDict
 
-    def addLocation(self, location=None, country=None, latitude=None, longitude=None,
-                    filePath='/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/verified_data_2018-06-15.csv'):
-        """
-        Checks to see whether a location is already in the database,
-        if not then add it to the database.
-        :param location:
-        :param country:
-        :param latitude:
-        :param longitude:
-        :param filePath:
-        :return: the found rows as a list if the location is already in the database or
-                 a tuple containing the input type and the location information in a dictionary
-        """
-        querySearch = []
-        if location is not None and country is not None:
-            querySearch = self.queryByLocation(location, country, filePath)
-        elif (location is None or country is None) and (latitude is not None and longitude is not None):
-            querySearch = self.queryByCoordinates(latitude, longitude, filePath)
-
-        if len(querySearch) > 0:
-            print('Entry already exists in database.')
-            return querySearch
-
-        # Completely new entry
-        else:
-            verified = self.verifyInfo(location, country, latitude, longitude)
-            # Location is valid
-            if verified[0] >= 0:
-                # Check to see whether it is an entry in the pending database
-                queryInPending = self.queryByLocation(verified[1]['Location'], verified[1]['Country'],
-                                                      '/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/pending_data_2018-06-15.csv')
-                if len(queryInPending) > 0:
-                    indices = [row['Index'] for row in queryInPending]
-                    indices.sort(key=int)
-                    indices.sort(reverse=True)
-                    for index in indices:
-                        self.dbi.deleteRowFromDB(index,
-                                                 '/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/pending_data_2018-06-15.csv')
-                # Add to verified
-                newRowDF = pd.DataFrame.from_dict([verified[1]])
-                self.dbi.addRowToDB(newRowDF, filePath)
-            return verified
-
     def findFormattedName(self, alternativeName):
         """
         If a country name is invalid, assume it is an alternative name
@@ -358,8 +313,9 @@ class DatabaseInitializer:
             data = None
         return data
 
-    def queryByAll(self, filePath, loc, cty, lat, lng, locCol, ctyCol, latCol, lngCol):
+    def queryByAll(self, filePath, loc, cty, lat, lng, locCol, ctyCol, latCol, lngCol, printRes=True):
         results = []
+        tBool = False
         locInDB = self.queryByLocation(filePath, loc, cty, locCol, ctyCol, printRes=False)
         if locInDB[0]:
             locIndices = locInDB[1]
@@ -367,17 +323,19 @@ class DatabaseInitializer:
             for idx in locIndices:
                 if idx in coordIndices:
                     results.append(idx)
-            if len(results) > 0:
-                print('Entry is found at indices: ' + str(results))
-                return True, results
+                    tBool = True
 
-            print('Location and coordinates do not correspond:')
-            print('\t' + loc + ', ' + cty + ' is found at indices: ' + str(locIndices))
-            print('\t(' + str(lat) + ', ' + str(lng) + ') is found at indices: ' + str(coordIndices))
-            return False, results
+            if printRes:
+                if len(results) > 0:
+                    print('Entry is found at indices: ' + str(results))
+
+                print('Location and coordinates do not correspond:')
+                print('\t' + loc + ', ' + cty + ' is found at indices: ' + str(locIndices))
+                print('\t(' + str(lat) + ', ' + str(lng) + ') is found at indices: ' + str(coordIndices))
+            return tBool, results
 
         print('Entry is not in database.')
-        return False, results
+        return tBool, results
 
     def queryByLocation(self, filePath, loc, cty, locCol, ctyCol, printRes=True):
         database = self.readFile(filePath)
@@ -487,6 +445,19 @@ class DatabaseInitializer:
         else:
             database.to_csv(databasePath, sep=',', encoding='utf-8', index=False)
         return True
+
+    # def addEntry(self, validator, filePath, loc, cty, locCol, ctyCol, latCol, lngCol, lat=None, lng=None):
+    #     if lat is None or lng is None:
+    #         results = self.queryByLocation(filePath, loc, cty, locCol, ctyCol, False)
+    #     else:
+    #         results = self.queryByAll(filePath, loc, cty, lat, lng, locCol, ctyCol, latCol, lngCol, False)
+    #
+    #     if results[0]:
+    #         print('Entry exists in the database at indices: ' + str(results[1]))
+    #         return False
+    #
+    #     entry = validator.verifyInfo(loc, cty, lat, lng)
+    #     if entry >= 0:
 
 
 class NameHandler:

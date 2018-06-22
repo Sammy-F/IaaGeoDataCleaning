@@ -20,18 +20,18 @@ def testCheckInput():
     missingLocation = validator.formatInformation(None, 'Mexico', 20.6, -105.25)
 
     check = validator.checkInput(missingCountry)
-    assert check[0] == -5
+    assert check[0] == -3
     check = validator.checkInput(missingLocation)
-    assert check[0] == -5
+    assert check[0] == -3
 
     # Should be Kingdom of Swaziland
     wrongCountryFormat = validator.formatInformation('Mangcongo', 'Republic of Swaziland', None, None)
     check = validator.checkInput(wrongCountryFormat)
-    assert check[0] == -5
+    assert check[0] == -3
     # Should be Republic of South Africa
     wrongCountryFormat = validator.formatInformation('Cedara', 'South Africa Republic', None, None)
     check = validator.checkInput(wrongCountryFormat)
-    assert check[0] == -5
+    assert check[0] == -3
     assert isinstance(check[1], dict)
 
     # Missing latitude and longitude but should pass location because the names will be found in nameHandler
@@ -40,7 +40,7 @@ def testCheckInput():
     missingBoth = validator.formatInformation('El Carmen', 'Trinidad Y Tobago', None, 0)
 
     check = validator.checkInput(missingLng)
-    assert check[0] != -5
+    assert check[0] != -3
     assert check[0] == -2
     check = validator.checkInput(missingLat)
     assert check[0] == -2
@@ -112,9 +112,9 @@ def testVerifyInfo():
 
     # Missing location and country
     missing = validator.verifyInfo(country='Zaire')
-    assert missing[0] == -5
+    assert missing[0] == -3
     missing = validator.verifyInfo(location='Jashipur')
-    assert missing[0] == -5
+    assert missing[0] == -3
 
     # Missing latitude and longitude
     missing = validator.verifyInfo('New Delhi', 'India', 0, None)
@@ -254,14 +254,10 @@ def testQueryByAll():
     assert len(inDB[1]) > 0
 
 
-#  testCheckInput()
-# testVerifyCoordinates()
-# testGeocodeCoordinates()
-# testVerifyInfo()
-# testQueryAllFields()
-# testQueryByLocation()
-# testQuery()
-# testAddLocation()
+testCheckInput()
+testVerifyCoordinates()
+testGeocodeCoordinates()
+testVerifyInfo()
 testLocationInDatabase()
 testCoordinatesInDatabase()
 testQueryByLocation()
