@@ -5,6 +5,8 @@ import xlrd
 import csv
 import numpy as np
 
+from tkinter import Tk, filedialog
+
 """
 Classes to be used in interacting with a PostGIS database. DatabaseConnector can be used
 to initialize a single connection and close it. Table can be used to perform basic table operations
@@ -40,13 +42,16 @@ class DatabaseConnector:
             raise Exception('Section {0} not found in the {1} file'.format(section, filePath))
         return db
 
-    def getConnectFromConfig(self, filePath, section='postgresql'):
+    def getConnectFromConfig(self, section='postgresql'):
         """
         Connect to database from parameters
         :param filePath:
         :param section:
         :return:
         """
+        Tk().withdraw()
+        filePath = filedialog.askopenfilename(title='Please select a config.ini file')
+
         if not self.connection is None:
             self.connection.close()
             self.connection = None
@@ -70,6 +75,7 @@ class DatabaseConnector:
             return self.connection
         except (Exception, psy.DatabaseError) as error:
             print(error)
+            print("Woops")
             if self.connection is not None:
                 self.connection.close()
                 print('Connection closed.')
@@ -166,13 +172,17 @@ class Table:
         filePath = fileString
         return pd.read_csv(filePath)
 
-    def buildTableFromFile(self, filePath):
+    def buildTableFromFile(self):
         """
         Create a table on the database from a .xlsx or
         .csv file.
         :param filePath:
         :return:
         """
+        Tk().withdraw()
+        filePath = filedialog.askopenfilename(title='Please select a .csv or .xlsx file')
+        print(filename)
+
         if filePath.endswith('xlsx'):
             tableFile = self.xlsxToCsv(filePath)
         elif filePath.endswith('csv'):
@@ -192,7 +202,7 @@ class Table:
         try:
             cur = self.connector.connection.cursor()
             cur.execute(schemaStr)
-            self.loadData(cur, filePath)
+            self.__loadData(cur, filePath)
             cur.close()
             self.connector.connection.commit()
         except (Exception, psy.DatabaseError) as error:
@@ -279,7 +289,7 @@ class Table:
 
         return schemaStr
 
-    def loadData(self, cur, filePath):
+    def __loadData(self, cur, filePath):
         """
         Load data from a file into an empty table.
         :param cur:
@@ -365,12 +375,15 @@ class Table:
         print("Active table is now " + newName)
         self.tableName = newName
 
-    def updateEntries(self, filePath, lngColName='Longitude', latColName='Latitude', countryColName='Country', locationColName='Location'):
+    def updateEntries(self, lngColName='Longitude', latColName='Latitude', countryColName='Country', locationColName='Location'):
         """
         Insert or update entries from a .csv file.
         :param filePath:
         :return:
         """
+        Tk().withdraw()
+        filePath = filedialog.askopenfilename(title='Please select a file')
+
         if filePath.endswith('xlsx'):
             tableFile = self.xlsxToCsv(filePath)
         elif filePath.endswith('csv'):
@@ -614,40 +627,40 @@ class Table:
 
 # SAMPLE CODE
 mConnector = DatabaseConnector()
-mConnector.getConnectFromConfig(filePath='D:\\config.ini')
-mTable = Table('checkvals3231', mConnector)
-mTable.buildTableFromFile('D:\\master\\IaaGeoDataCleaning\\resources\\csv\\pending_data_2018-06-20.csv')
+mConnector.getConnectFromConfig()
+mTable = Table('checkvals32331', mConnector)
+mTable.buildTableFromFile()
 mTable.makeTableSpatial(lngColName='Longitude', latColName='Latitude')
 lines = mTable.checkValidity('world_map')
 for line in lines:
     print(line)
 print(len(lines))
 mConnector.closeConnection()
-
-# SAMPLE CODE 2
-mConnector = DatabaseConnector()
-
-mConnector.getConnectFromConfig(filePath='D:\\config.ini')
-
-mTable = Table('testy312', mConnector)
-mTable.buildTableFromFile('D:\\IaaGeoDataCleaning\\IaaGeoDataCleaning\\verified_data_2018-06-20.csv')
-
-mConnector.connection.commit()
-
-cmmnd = "SELECT column_name FROM information_schema.columns WHERE table_name = 'hi' AND column_name = 'geom';";
-cur = mConnector.connection.cursor()
-cur.execute(cmmnd)
-result = cur.fetchall()
-cur.close()
-print(result)
-
-mTable.makeTableSpatial()
-mConnector.connection.commit()
-cur = mConnector.connection.cursor()
-cur.execute(cmmnd)
-result = cur.fetchall()
-cur.close()
-mConnector.closeConnection()
+#
+# # SAMPLE CODE 2
+# mConnector = DatabaseConnector()
+#
+# mConnector.getConnectFromConfig(filePath='D:\\config.ini')
+#
+# mTable = Table('testy312', mConnector)
+# mTable.buildTableFromFile('D:\\IaaGeoDataCleaning\\IaaGeoDataCleaning\\verified_data_2018-06-20.csv')
+#
+# mConnector.connection.commit()
+#
+# cmmnd = "SELECT column_name FROM information_schema.columns WHERE table_name = 'hi' AND column_name = 'geom';";
+# cur = mConnector.connection.cursor()
+# cur.execute(cmmnd)
+# result = cur.fetchall()
+# cur.close()
+# print(result)
+#
+# mTable.makeTableSpatial()
+# mConnector.connection.commit()
+# cur = mConnector.connection.cursor()
+# cur.execute(cmmnd)
+# result = cur.fetchall()
+# cur.close()
+# mConnector.closeConnection()
 
 # mConnector = DatabaseConnector()
 #
