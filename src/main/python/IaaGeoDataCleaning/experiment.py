@@ -13,6 +13,7 @@ from shapely.geometry import Point
 # TODO: Make a case that has coordinates but no location info
 # TODO: Expand country checking method (split and contain?)
 # TODO: Document code
+# TODO: Query class? Database Utils?
 
 """
 GeocodeValidator allows the user to perform reverse geocoding
@@ -253,7 +254,6 @@ class DatabaseInitializer:
     def cleanData(self, data, locCol, ctyCol, latCol, lngCol, validator, verified, pending, repeated, flagged):
         for (index, row) in data.iterrows():
             print('Verifying row at index: ' + str(index))
-            print(row)
             location = row[locCol]
             country = row[ctyCol]
             latitude = row[latCol]
@@ -406,45 +406,45 @@ class DatabaseInitializer:
                 return True, results
         return False, results
 
-    def addRowToDB(self, rowDF, databasePath):
-        """
-        Adds a row to the database the file path points to,
-        overwrites the file with the new database file in csv format.
-        :param newDF: the new row as a data frame
-        :param databasePath: the file path to the database to update
-        :return: True if updated.
-        """
-        database = self.readFile(databasePath)
-        if database is None:
-            return False
-
-        database = pd.concat([database, rowDF], ignore_index=True, sort=True)
-
-        if databasePath.endswith('xlsx'):
-            database.to_excel(databasePath, index=False)
-        else:
-            database.to_csv(databasePath, sep=',', encoding='utf-8', index=False)
-        return True
-
-    def deleteRowFromDB(self, rowIndex, databasePath):
-        """
-        Deletes a row from the database the file path points to,
-        overwrites the file with the new database file in csv format.
-        :param rowIndex: the index of the row to be deleted
-        :param databasePath: the file path to the database to update
-        :return: True if updated.
-        """
-        database = self.readFile(databasePath)
-        if database is None:
-            return False
-
-        database = database.drop(database.index[rowIndex])
-
-        if databasePath.endswith('xlsx'):
-            database.to_excel(databasePath, index=False)
-        else:
-            database.to_csv(databasePath, sep=',', encoding='utf-8', index=False)
-        return True
+    # def addRowToDB(self, rowDF, databasePath):
+    #     """
+    #     Adds a row to the database the file path points to,
+    #     overwrites the file with the new database file in csv format.
+    #     :param newDF: the new row as a data frame
+    #     :param databasePath: the file path to the database to update
+    #     :return: True if updated.
+    #     """
+    #     database = self.readFile(databasePath)
+    #     if database is None:
+    #         return False
+    #
+    #     database = pd.concat([database, rowDF], ignore_index=True, sort=True)
+    #
+    #     if databasePath.endswith('xlsx'):
+    #         database.to_excel(databasePath, index=False)
+    #     else:
+    #         database.to_csv(databasePath, sep=',', encoding='utf-8', index=False)
+    #     return True
+    #
+    # def deleteRowFromDB(self, rowIndex, databasePath):
+    #     """
+    #     Deletes a row from the database the file path points to,
+    #     overwrites the file with the new database file in csv format.
+    #     :param rowIndex: the index of the row to be deleted
+    #     :param databasePath: the file path to the database to update
+    #     :return: True if updated.
+    #     """
+    #     database = self.readFile(databasePath)
+    #     if database is None:
+    #         return False
+    #
+    #     database = database.drop(database.index[rowIndex])
+    #
+    #     if databasePath.endswith('xlsx'):
+    #         database.to_excel(databasePath, index=False)
+    #     else:
+    #         database.to_csv(databasePath, sep=',', encoding='utf-8', index=False)
+    #     return True
 
     # def addEntry(self, validator, filePath, loc, cty, locCol, ctyCol, latCol, lngCol, lat=None, lng=None):
     #     if lat is None or lng is None:
