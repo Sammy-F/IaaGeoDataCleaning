@@ -21,7 +21,7 @@ GeocodeValidator allows the user to perform reverse geocoding
 on a .xlsx or .csv to ensure that input locations correspond to
 the correct latitude and longitude. If not, then basic data cleaning
 is performed to check for human error.
-
+d
 Created by Jonathan Scott
 
 Modified by: Samantha Fritsche, Thy Nguyen 6/7/2018
