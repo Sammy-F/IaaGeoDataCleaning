@@ -276,7 +276,8 @@ class DatabaseInitializer:
                            'Recorded_Lat': [], 'Recorded_Lng': [], 'Address': [], 'Country_Code': []}
         pendingEntries = {'Type': [], 'Location': [], 'Country': [], 'Latitude': [], 'Longitude': [],
                           'Recorded_Lat': [], 'Recorded_Lng': [], 'Address': [], 'Country_Code': []}
-        repeatedEntries = {'Index': [], 'Location': [], 'Country': [], 'Latitude': [], 'Longitude': []}
+        repeatedEntries = {'Location': [], 'Country': [], 'Latitude': [], 'Longitude': [],
+                           'ver_Index': [], 'ver_Loc': [], 'ver_Cty': [], 'ver_Lat': [], 'ver_Lng': []}
         flaggedLocations = []
 
         # Cleaning the data
@@ -304,12 +305,16 @@ class DatabaseInitializer:
             longitude = row[lngCol]
 
             locInDB = self.locationInDatabase(location, country, verified['Location'], verified['Country'])
-            coordInDB = self.coordinatesInDatabase(latitude, longitude, verified['Latitude'], verified['Longitude'])
-
-            if locInDB[0] or coordInDB[0]:
-                entry = {'Index': index, 'Location': location, 'Country': country,
-                         'Latitude': latitude, 'Longitude': longitude}
-                self.logToDict(repeated, entry)
+            # TODO: TEST THIS !!
+            if locInDB[0]:
+                for verIdx in locInDB[1]:
+                    verLoc = verified['Location'][verIdx]
+                    verCty = verified['Country'][verIdx]
+                    verLat = verified['Recorded_Lat'][verIdx]
+                    verLng = verified['Recorded_Lng'][verIdx]
+                    entry = {'Location': location, 'Country': country, 'Latitude': latitude, 'Longitude': longitude,
+                             'ver_Index': verIdx, 'ver_Loc': verLoc, 'ver_Cty': verCty, 'ver_Lat': verLat, 'ver_Lng': verLng}
+                    self.logToDict(repeated, entry)
             else:
                 entry = validator.verifyInfo(location, country, latitude, longitude)
                 if entry[0] < 0:
@@ -354,25 +359,30 @@ class DatabaseInitializer:
         return data
 
     def queryByAll(self, filePath, loc, cty, lat, lng, locCol, ctyCol, latCol, lngCol):
+        results = []
         locInDB = self.queryByLocation(filePath, loc, cty, locCol, ctyCol, printRes=False)
         if locInDB[0]:
-            locIndex = locInDB[1]
-            coordIndex = self.queryByCoordinates(filePath, lat, lng, latCol, lngCol, printRes=False)[1]
-            if locIndex == coordIndex:
-                print('Entry is found at index ' + str(locIndex))
-                return True, locIndex
-            else:
-                print('Location and coordinates do not correspond:')
-                print('\t' + loc + ', ' + cty + ' is found at index ' + str(locIndex) + '.')
-                print('\t(' + lat + ', ' + lng + ') is found at index ' + str(coordIndex) + '.')
-                return False, -1
+            locIndices = locInDB[1]
+            coordIndices = self.queryByCoordinates(filePath, lat, lng, latCol, lngCol, printRes=False)[1]
+            for idx in locIndices:
+                if idx in coordIndices:
+                    results.append(idx)
+            if len(results) > 0:
+                print('Entry is found at indices: ' + str(results))
+                return True, results
+
+            print('Location and coordinates do not correspond:')
+            print('\t' + loc + ', ' + cty + ' is found at indices: ' + str(locIndices))
+            print('\t(' + str(lat) + ', ' + str(lng) + ') is found at indices: ' + str(coordIndices))
+            return False, results
+
         print('Entry is not in database.')
-        return False, -1
+        return False, results
 
     def queryByLocation(self, filePath, loc, cty, locCol, ctyCol, printRes=True):
         database = self.readFile(filePath)
         if database is None:
-            return False, -1
+            return False, []
 
         try:
             locList = database[locCol].tolist()
@@ -380,19 +390,19 @@ class DatabaseInitializer:
             result = self.locationInDatabase(loc, cty, locList, ctyList)
             if printRes:
                 if result[0]:
-                    print(loc + ', ' + cty + ' is found at index ' + str(result[1]) + '.')
+                    print(loc + ', ' + cty + ' is found at indices: ' + str(result[1]))
                 else:
                     print(loc + ', ' + cty + ' is not in database.')
             return result
 
         except KeyError:
             print("Cannot find columns with names: '" + locCol + "' and '" + ctyCol + "'")
-            return False, -1
+            return False, []
 
     def queryByCoordinates(self, filePath, lat, lng, latCol, lngCol, printRes=True):
         database = self.readFile(filePath)
         if database is None:
-            return False, -1
+            return False, []
 
         try:
             latList = database[latCol].tolist()
@@ -400,38 +410,43 @@ class DatabaseInitializer:
             result = self.coordinatesInDatabase(lat, lng, latList, lngList)
             if printRes:
                 if result[0]:
-                    print('(' + lat + ', ' + lng + ') is found at index ' + str(result[1]) + '.')
+                    print('(' + str(lat) + ', ' + str(lng) + ') is found at indices: ' + str(result[1]))
                 else:
-                    print('(' + lat + ', ' + lng + ') is not in database.')
+                    print('(' + str(lat) + ', ' + str(lng) + ') is not in database.')
             return result
 
         except KeyError:
             print("Cannot find columns with names: '" + latCol + "' and '" + lngCol + "'")
-            return False, -1
+            return False, []
 
     def coordinatesInDatabase(self, latitude, longitude, latitudeList, longitudeList):
+        results = []
         if pd.isnull(latitude) or pd.isnull(longitude):
-            return False
-        inLat = any(math.isclose(latitude, latInList, rel_tol=1e-2) for latInList in latitudeList)
+            return False, results
+        inLat = any(math.isclose(latitude, latInList, abs_tol=1e-1) for latInList in latitudeList)
         if inLat:
-            indices = [i for i, v in enumerate(latitudeList) if math.isclose(latitude, v, rel_tol=1e-2)]
+            indices = [i for i, v in enumerate(latitudeList) if math.isclose(latitude, v, abs_tol=1e-1)]
             for index in indices:
-                if math.isclose(longitude, longitudeList[index], rel_tol=1e-2):
-                    return True, index
-        return False, -1
+                if math.isclose(longitude, longitudeList[index], abs_tol=1e-1):
+                    results.append(index)
+            if len(results) > 0:
+                return True, results
+        return False, results
 
     def locationInDatabase(self, location, country, locationList, countryList):
+        results = []
         if pd.isnull(location) or pd.isnull(country):
-            return False
+            return False, results
         location = regex.sub('', location)
         inLoc = any(re.search(location, str(loc), re.IGNORECASE) for loc in locationList)
-        print(inLoc)
         if inLoc:
             indices = [i for i, v in enumerate(locationList) if re.search(location, str(v), re.IGNORECASE)]
             for index in indices:
                 if re.search(country, countryList[index], re.IGNORECASE):
-                    return True, index
-        return False, -1
+                    results.append(index)
+            if len(results) > 0:
+                return True, results
+        return False, results
 
     def addRowToDB(self, rowDF, databasePath):
         """

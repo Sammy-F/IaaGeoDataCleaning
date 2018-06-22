@@ -11,6 +11,8 @@ from os import path
 #              -5: 'no location/country entered / wrong country format'}
 
 validator = exp.GeocodeValidator()
+di = exp.DatabaseInitializer()
+
 
 def testCheckInput():
     # Missing location information
@@ -165,27 +167,25 @@ def testAddLocation():
 
 
 def testLocationInDatabase():
-    di = exp.DatabaseInitializer()
     locList = ['Darul Aman', 'Kilombo', 'Ishurdi', 'Sids']
     ctyList = ['Afghanistan', 'Angola', 'Bangladesh', 'Egypt']
 
     inDB = di.locationInDatabase('DARUL AMAN (2)', 'AFGHANISTAN', locList, ctyList)
-    assert inDB[0] is True and inDB[1] == 0
+    assert inDB[0] is True and inDB[1][0] == 0
     inDB = di.locationInDatabase('SIDS (1)', 'eGyPt', locList, ctyList)
-    assert inDB[0] is True and inDB[1] == 3
+    assert inDB[0] is True and inDB[1][0] == 3
     notInDB = di.locationInDatabase('Darul Aman Kabul (2)', 'Afghanistan', locList, ctyList)
-    assert notInDB[0] is False and notInDB[1] == -1
+    assert notInDB[0] is False
 
 
 def testCoordinatesInDatabase():
-    di = exp.DatabaseInitializer()
     latList = [23.41, 23.41, 23.5, 30.00, 87.12]
     lngList = [53.78, -12.09, -12.00, 9.44, 71.31]
 
-    inDB = di.coordinatesInDatabase(23.40, 53.77, latList, lngList)
-    assert inDB[0] is True and inDB[1] == 0
+    inDB = di.coordinatesInDatabase(23.42, 53.77, latList, lngList)
+    assert inDB[0] is True and inDB[1][0] == 0
     inDB = di.coordinatesInDatabase(23.40, -12.1, latList, lngList)
-    assert inDB[0] is True and inDB[1] == 1
+    assert inDB[0] is True and inDB[1][0] == 1
     notInDB = di.coordinatesInDatabase(33.02, 9.54, latList, lngList)
     assert notInDB[0] is False
     notInDB = di.coordinatesInDatabase(87.11, -12.08, latList, lngList)
@@ -203,27 +203,55 @@ def setUpFiles():
     return verified, pending, repeated
 
 
-def testQueryByLocation():
-    di = exp.DatabaseInitializer()
-    files = setUpFiles()
+files = setUpFiles()
 
+
+def testQueryByLocation():
+    # Burura - Kenya
     inDB = di.queryByLocation(files[0], 'BURURA (2)', 'KENYA', 'Location', 'Country')
     assert inDB[0] is True
     notInDB = di.queryByLocation(files[1], 'BURURA (2)', 'KENYA', 'Location', 'Country')
     assert notInDB[0] is False
 
     wrongColName = di.queryByLocation(files[0], 'MAROS', 'INDONESIA', 'LOCATION', 'COUNTRY')
-    assert wrongColName[1] == -1
+    assert wrongColName[1] == []
 
     # re.search is True for re.search('United States', 'United States of America') but not the other way around
     wrongCty = di.queryByLocation(files[0], 'BARNUM MN (2)', 'UNITED STATES OF AMERICA', 'Location', 'Country')
     assert wrongCty[0] is False
+
+    # VALLE DE MAGDALENA (2) - COLOMBIA
     inDB = di.queryByLocation(files[2], 'Valle de Magdalena', 'Colombia', 'Location', 'Country')
-    assert inDB[1] == 5
+    assert inDB[1][0] == 5
 
 
+def testQueryByCoordinates():
+    # (9.3154, -75.4329)
+    inDB = di.queryByCoordinates(files[0], 9.32, -75.4, 'Recorded_Lat', 'Recorded_Lng')
+    assert inDB[1][0] == 162
+    # (14.92, 37.83)
+    inDB = di.queryByCoordinates(files[0], 14.9, 37.8, 'Recorded_Lat', 'Recorded_Lng')
+    assert inDB[1][0] == 235
+    notInDB = di.queryByCoordinates(files[0], 14.8, 37.8, 'Recorded_Lat', 'Recorded_Lng')
+    assert notInDB[0] is False
+    # (-0.5359, 37.6653)
+    notInDB = di.queryByCoordinates(files[0], -0.5, 37.7, 'Latitude', 'Longitude')  # Geocoded this one, lat/lng empty
+    assert notInDB[0] is False
+    inDB = di.queryByCoordinates(files[0], -0.5, 37.7, 'Recorded_Lat', 'Recorded_Lng')
+    assert inDB[1][0] == 415
 
 
+def testQueryByAll():
+    # Location and coordinates do not match
+    # 407: Embu - Kenya (-0.5, 37.45)
+    mismatched = di.queryByAll(files[0], 'EMBU', 'KENYA', 0.1, 34.5, 'Location', 'Country', 'Latitude', 'Longitude')
+    assert mismatched[0] is False
+    # 621: Uach, Campo Experimental - Mexico (19.48933,	-98.89365)
+    inDB = di.queryByAll(files[0], 'UACH', 'MEXICO', 19.49, -98.8, 'Location', 'Country', 'Recorded_Lat', 'Recorded_Lng')
+    assert inDB[1][0] == 621
+    # Harare - Zimbabwe
+    inDB = di.queryByAll(files[0], 'HARARE (2)', 'ZIMBABWE', -17.78, 31.00, 'Location', 'Country', 'Recorded_Lat', 'Recorded_Lng')
+    assert len(inDB[1]) > 0
 
 
 #  testCheckInput()
@@ -234,6 +262,8 @@ def testQueryByLocation():
 # testQueryByLocation()
 # testQuery()
 # testAddLocation()
-# testLocationInDatabase()
-# testCoordinatesInDatabase()
+testLocationInDatabase()
+testCoordinatesInDatabase()
 testQueryByLocation()
+testQueryByCoordinates()
+testQueryByAll()
