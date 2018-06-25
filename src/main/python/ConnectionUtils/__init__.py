@@ -7,6 +7,8 @@ import numpy as np
 
 from tkinter import Tk, filedialog
 
+import src.main.python.IaaGeoDataCleaning
+
 """
 Classes to be used in interacting with a PostGIS database. DatabaseConnector can be used
 to initialize a single connection and close it. Table can be used to perform basic table operations
@@ -42,15 +44,16 @@ class DatabaseConnector:
             raise Exception('Section {0} not found in the {1} file'.format(section, filePath))
         return db
 
-    def getConnectFromConfig(self, section='postgresql'):
+    def getConnectFromConfig(self, section='postgresql', filePath=False):
         """
         Connect to database from parameters
         :param filePath:
         :param section:
         :return:
         """
-        Tk().withdraw()
-        filePath = filedialog.askopenfilename(title='Please select a config.ini file')
+        if filePath is False or filePath == '':
+            Tk().withdraw()
+            filePath = filedialog.askopenfilename(title='Please select a config.ini file')
 
         if not self.connection is None:
             self.connection.close()
@@ -172,16 +175,16 @@ class Table:
         filePath = fileString
         return pd.read_csv(filePath)
 
-    def buildTableFromFile(self):
+    def buildTableFromFile(self, filePath=False):
         """
         Create a table on the database from a .xlsx or
         .csv file.
         :param filePath:
         :return:
         """
-        Tk().withdraw()
-        filePath = filedialog.askopenfilename(title='Please select a .csv or .xlsx file')
-        print(filename)
+        if filePath is False or filePath == '':
+            Tk().withdraw()
+            filePath = filedialog.askopenfilename(title='Please select a .csv or .xlsx file')
 
         if filePath.endswith('xlsx'):
             tableFile = self.xlsxToCsv(filePath)
@@ -304,7 +307,7 @@ class Table:
             print("Failed to load data.")
             print(error)
 
-    def checkForEntryByLatLon(self, lat, lon, searchRadius=0.5, geomColName='geom'):
+    def checkForEntryByLatLon(self, lat, lon, searchRadius=300000, geomColName='geom'):
         """
         Check if an entry with the given lat, lon exists. If so, return all rows that match in a tuple where the first
         value is True or False for whether an entry exist, and the second value is the the rows.
@@ -318,7 +321,7 @@ class Table:
             print("Attempting to find entry.")
             if not self.connector.connection is None:
                 cur = self.connector.connection.cursor()
-                command = "SELECT * FROM " + self.tableName + " WHERE ST_DWITHIN(ST_TRANSFORM(ST_GEOMFROMTEXT('POINT(" + str(lon) + " " + str(lat) + ")', 4326),4326)::geography, ST_TRANSFORM(" + geomColName + ", 4326)::geography, " + str(searchRadius) + ", true)"
+                command = "SELECT * FROM " + self.tableName + " WHERE ST_DWITHIN(ST_TRANSFORM(ST_GEOMFROMTEXT('POINT(" + str(lon) + " " + str(lat) + ")', 4326),4326)::geography, ST_TRANSFORM(" + geomColName + ", 4326)::geography, " + str(searchRadius) + ", true);"
                 cur.execute(command)
                 rows = cur.fetchall()
 
@@ -326,7 +329,8 @@ class Table:
 
                 if len(rows) > 0:
                     tBool = True
-
+                else:
+                    print("No matching entries found.")
             else:
                 print(
                     "No connection open. Did you open a connection using getConnectFromKeywords() or getConnectFromConfig()?")
@@ -357,6 +361,7 @@ class Table:
                 if len(rows) > 0:
                     return True, rows
                 else:
+                    print("No matching entries found.")
                     return False, rows
             else:
                 print("""No connection open. Did you open a connection using getConnectFromKeywords() 
@@ -375,14 +380,15 @@ class Table:
         print("Active table is now " + newName)
         self.tableName = newName
 
-    def updateEntries(self, lngColName='Longitude', latColName='Latitude', countryColName='Country', locationColName='Location'):
+    def updateEntries(self, lngColName='Longitude', latColName='Latitude', countryColName='Country', locationColName='Location', filePath=False):
         """
         Insert or update entries from a .csv file.
         :param filePath:
         :return:
         """
-        Tk().withdraw()
-        filePath = filedialog.askopenfilename(title='Please select a file')
+        if filePath == False or filePath == '':
+            Tk().withdraw()
+            filePath = filedialog.askopenfilename(title='Please select a file')
 
         if filePath.endswith('xlsx'):
             tableFile = self.xlsxToCsv(filePath)
@@ -623,19 +629,27 @@ class Table:
         query = input("Input a query:")
         cur = self.connector.connection.cursor()
         cur.execute(query)
+
+        datareturn = cur.fetchall()
+
+        if datareturn is not None:
+            print(datareturn)
+
         cur.close()
 
 # SAMPLE CODE
-mConnector = DatabaseConnector()
-mConnector.getConnectFromConfig()
-mTable = Table('checkvals32331', mConnector)
-mTable.buildTableFromFile()
-mTable.makeTableSpatial(lngColName='Longitude', latColName='Latitude')
-lines = mTable.checkValidity('world_map')
-for line in lines:
-    print(line)
-print(len(lines))
-mConnector.closeConnection()
+# mConnector = DatabaseConnector()
+# mConnector.getConnectFromConfig()
+# mTable = Table('hello', mConnector)
+# mTable.checkForEntryByLatLon(lat=34.5, lon=69.2, searchRadius=1)
+# mConnector.closeConnection()
+# mTable.buildTableFromFile()
+# mTable.makeTableSpatial(lngColName='Longitude', latColName='Latitude')
+# lines = mTable.checkValidity('world_map')
+# for line in lines:
+#     print(line)
+# print(len(lines))
+# mConnector.closeConnection()
 #
 # # SAMPLE CODE 2
 # mConnector = DatabaseConnector()
