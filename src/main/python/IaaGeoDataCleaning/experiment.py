@@ -1,21 +1,21 @@
+from os import path
 import pandas as pd
+import numpy as np
+import math
 import string
 import re
-import pycountry as pc
-import math
-import geopandas as gpd
-import numpy as np
-import geopy as gp
-from os import path
 
-# import country_bounding_boxes as cbb
+import pycountry as pc
+import geopandas as gpd
+import geopy as gp
 from shapely.geometry import Point
 
 # TODO: Make a case that has coordinates but no location info
 # TODO: Expand country checking method (split and contain?)
-# TODO: Save file names into variables
-# TODO: Eliminate repeats (number in location column)
-# TODO: Use only photon reverse?
+# TODO: Document code
+# TODO: Query class? Database Utils?
+# TODO: When searching for repeats, strip all punctuations and numbers, then compare.
+# TODO: Return location query as a list or single index?
 
 """
 GeocodeValidator allows the user to perform reverse geocoding
@@ -32,6 +32,8 @@ See his original at: https://gis.stackexchange.com/questions/212796/get-lat-lon-
 
 Note that some borders used are disputed
 """
+
+regex = re.compile(' \(\d\)')
 
 
 class GeocodeValidator:
@@ -93,8 +95,6 @@ class GeocodeValidator:
             locationInfo = findAltCoords[1]
 
         locationInfo['Type'] = self.entryType[coordType]
-        print(coordType)
-        print(locationInfo)
         return coordType, locationInfo
 
     def formatInformation(self, location, country, latitude, longitude):
@@ -112,9 +112,6 @@ class GeocodeValidator:
             country = string.capwords(country)
         return {'Location': location, 'Country': country, 'Latitude': latitude, 'Longitude': longitude,
                 'Recorded_Lat': None, 'Recorded_Lng': None, 'Address': None, 'Country_Code': None}
-
-    def getCountrySource(self):
-        return self.countrySource
 
     def checkInput(self, locationDict):
         """
@@ -215,148 +212,6 @@ class GeocodeValidator:
         except:
             return -1, locationDict
 
-    def query(self, location=None, country=None, latitude=None, longitude=None,
-              filePath='/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/verified_data_2018-06-15.csv'):
-        if location is not None and country is not None and latitude is not None and longitude is not None:
-            return self.queryAllFields(location, country, latitude, longitude, filePath)
-        elif (location is not None and country is not None) and (latitude is None or longitude is None):
-            return self.queryByLocation(location, country, filePath)
-        elif (location is None or country is None) and (latitude is not None and longitude is not None):
-            return self.queryByCoordinates(latitude, longitude, filePath)
-        else:
-            print('Not enough information.')
-            return []
-
-    # TODO: add a query method that can handle all cases
-    def queryAllFields(self, location, country, latitude, longitude,
-                       filePath='/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/verified_data_2018-06-15.csv'):
-        """
-        Verifies that the inputs are valid and does a full search to find matching rows in the database.
-        :param location:
-        :param country:
-        :param latitude:
-        :param longitude:
-        :param filePath:
-        :return: a list of matched rows as dictionaries.
-        """
-        database = self.dbi.readFile(filePath)
-        if database is None:
-            return None
-
-        results = []
-        # Checking to see if the inputs are valid
-        checkedInfo = self.verifyInfo(location, country, latitude, longitude)
-        inpType = checkedInfo[0]
-        locationDict = checkedInfo[1]
-        if inpType >= 0:
-            print('The input type is: ' + self.entryType[inpType])
-            # See whether location is in the database
-            # TODO: Reverse contains
-            closestDF = database[(database['Location'].str.contains(locationDict['Location'], case=False, na=False) &
-                                  database['Country'].str.contains(locationDict['Country'], case=False, na=False))]
-
-            for (index, row) in closestDF.iterrows():
-                if math.isclose(locationDict['Recorded_Lat'], row['Recorded_Lat'], rel_tol=1e-1) and \
-                        math.isclose(locationDict['Recorded_Lng'], row['Recorded_Lng'], rel_tol=1e-1):
-                    loc = database.to_dict(orient='records')[index]
-                    results.append(loc)
-        else:
-            print('Location information might be incorrect. Please re-check.')
-        return results
-
-    def queryByLocation(self, location, country,
-                        filePath='/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/verified_data_2018-06-15.csv'):
-        """
-        Finds all rows with the matching location and country.
-        Can find locations that contain the query but not the other way around (sadly).
-        :param location:
-        :param country:
-        :param filePath:
-        :return: a list of matched rows as dictionaries.
-        """
-        database = self.dbi.readFile(filePath)
-        if database is None:
-            return None
-
-        results = []
-
-        locationInfo = self.formatInformation(location, country, None, None)
-
-        closestDF = database[(database['Location'].str.contains(locationInfo['Location'], case=False, na=False) &
-                              database['Country'].str.contains(locationInfo['Country'], case=False, na=False))]
-
-        for (index, row) in closestDF.iterrows():
-            loc = database.to_dict(orient='records')[index]
-            results.append(loc)
-
-        return results
-
-    def queryByCoordinates(self, latitude, longitude,
-                           filePath='/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/verified_data_2018-06-15.csv'):
-        """
-        Finds all rows with the matching latitude and longitude.
-        :param latitude:
-        :param longitude:
-        :param filePath:
-        :return: a list of matched rows as dictionaries.
-        """
-        database = self.dbi.readFile(filePath)
-        if database is None:
-            return None
-
-        results = []
-
-        closestDF = database.ix[(database['Recorded_Lat'] - latitude).abs().argsort()[:10]]
-        for (index, row) in closestDF.iterrows():
-            if math.isclose(latitude, row['Recorded_Lat'], rel_tol=1e-1) and \
-                    math.isclose(longitude, row['Recorded_Lng'], rel_tol=1e-1):
-                loc = database.to_dict(orient='records')[index]
-                results.append(loc)
-        return results
-
-    def addLocation(self, location=None, country=None, latitude=None, longitude=None,
-                    filePath='/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/verified_data_2018-06-15.csv'):
-        """
-        Checks to see whether a location is already in the database,
-        if not then add it to the database.
-        :param location:
-        :param country:
-        :param latitude:
-        :param longitude:
-        :param filePath:
-        :return: the found rows as a list if the location is already in the database or
-                 a tuple containing the input type and the location information in a dictionary
-        """
-        querySearch = []
-        if location is not None and country is not None:
-            querySearch = self.queryByLocation(location, country, filePath)
-        elif (location is None or country is None) and (latitude is not None and longitude is not None):
-            querySearch = self.queryByCoordinates(latitude, longitude, filePath)
-
-        if len(querySearch) > 0:
-            print('Entry already exists in database.')
-            return querySearch
-
-        # Completely new entry
-        else:
-            verified = self.verifyInfo(location, country, latitude, longitude)
-            # Location is valid
-            if verified[0] >= 0:
-                # Check to see whether it is an entry in the pending database
-                queryInPending = self.queryByLocation(verified[1]['Location'], verified[1]['Country'],
-                                                      '/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/pending_data_2018-06-15.csv')
-                if len(queryInPending) > 0:
-                    indices = [row['Index'] for row in queryInPending]
-                    indices.sort(key=int)
-                    indices.sort(reverse=True)
-                    for index in indices:
-                        self.dbi.deleteRowFromDB(index,
-                                                 '/Users/thytnguyen/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/pending_data_2018-06-15.csv')
-                # Add to verified
-                newRowDF = pd.DataFrame.from_dict([verified[1]])
-                self.dbi.addRowToDB(newRowDF, filePath)
-            return verified
-
     def findFormattedName(self, alternativeName):
         """
         If a country name is invalid, assume it is an alternative name
@@ -379,35 +234,51 @@ class DatabaseInitializer:
                            'Recorded_Lat': [], 'Recorded_Lng': [], 'Address': [], 'Country_Code': []}
         pendingEntries = {'Type': [], 'Location': [], 'Country': [], 'Latitude': [], 'Longitude': [],
                           'Recorded_Lat': [], 'Recorded_Lng': [], 'Address': [], 'Country_Code': []}
+        repeatedEntries = {'Location': [], 'Country': [], 'Latitude': [], 'Longitude': [],
+                           'ver_Index': [], 'ver_Loc': [], 'ver_Cty': [], 'ver_Lat': [], 'ver_Lng': []}
         flaggedLocations = []
 
         # Cleaning the data
         self.cleanData(data, locationCol, countryCol, latitudeCol, longitudeCol, validator,
-                       verifiedEntries, pendingEntries, flaggedLocations)
+                       verifiedEntries, pendingEntries, repeatedEntries, flaggedLocations)
 
         # Exporting the data
         extension = ''
         pendingDB = input('Enter file name for pending entry data frame (without extension): ')
         verifiedDB = input('Enter file name for verified entry data frame (without extension): ')
+        repeatedDB = input('Enter file name for repeated entry data frame (without extension): ')
         while extension != 'csv' and extension != 'xlsx':
             extension = input('Enter file extension (csv/xlsx): ').lower()
         self.exportFile(verifiedEntries, verifiedDB, extension)
         self.exportFile(pendingEntries, pendingDB, extension)
-        print(validator.getCountrySource())
+        self.exportFile(repeatedEntries, repeatedDB, extension)
 
-    def cleanData(self, data, locCol, ctyCol, latCol, lngCol, validator, verified, pending, flagged):
+    def cleanData(self, data, locCol, ctyCol, latCol, lngCol, validator, verified, pending, repeated, flagged):
         for (index, row) in data.iterrows():
+            print('Verifying row at index: ' + str(index))
             location = row[locCol]
             country = row[ctyCol]
             latitude = row[latCol]
             longitude = row[lngCol]
 
-            entry = validator.verifyInfo(location, country, latitude, longitude)
-            if entry[0] < 0:
-                flagged.append(index)
-                self.logToDict(pending, entry[1])
+            locInDB = self.locationInDatabase(location, country, verified['Location'], verified['Country'])
+
+            if locInDB[0]:
+                for verIdx in locInDB[1]:
+                    verLoc = verified['Location'][verIdx]
+                    verCty = verified['Country'][verIdx]
+                    verLat = verified['Recorded_Lat'][verIdx]
+                    verLng = verified['Recorded_Lng'][verIdx]
+                    entry = {'Location': location, 'Country': country, 'Latitude': latitude, 'Longitude': longitude,
+                             'ver_Index': verIdx, 'ver_Loc': verLoc, 'ver_Cty': verCty, 'ver_Lat': verLat, 'ver_Lng': verLng}
+                    self.logToDict(repeated, entry)
             else:
-                self.logToDict(verified, entry[1])
+                entry = validator.verifyInfo(location, country, latitude, longitude)
+                if entry[0] < 0:
+                    flagged.append(index)
+                    self.logToDict(pending, entry[1])
+                else:
+                    self.logToDict(verified, entry[1])
 
     def getIncorrectPercent(self, data, flagged):
         return len(flagged) / (1e-10 + data.shape[0])
@@ -444,45 +315,151 @@ class DatabaseInitializer:
             data = None
         return data
 
-    def addRowToDB(self, rowDF, databasePath):
-        """
-        Adds a row to the database the file path points to,
-        overwrites the file with the new database file in csv format.
-        :param newDF: the new row as a data frame
-        :param databasePath: the file path to the database to update
-        :return: True if updated.
-        """
-        database = self.readFile(databasePath)
+    def queryByAll(self, filePath, loc, cty, lat, lng, locCol, ctyCol, latCol, lngCol, printRes=True):
+        results = []
+        tBool = False
+        locInDB = self.queryByLocation(filePath, loc, cty, locCol, ctyCol, printRes=False)
+        if locInDB[0]:
+            locIndices = locInDB[1]
+            coordIndices = self.queryByCoordinates(filePath, lat, lng, latCol, lngCol, printRes=False)[1]
+            for idx in locIndices:
+                if idx in coordIndices:
+                    results.append(idx)
+                    tBool = True
+
+            if printRes:
+                if len(results) > 0:
+                    print('Entry is found at indices: ' + str(results))
+
+                print('Location and coordinates do not correspond:')
+                print('\t' + loc + ', ' + cty + ' is found at indices: ' + str(locIndices))
+                print('\t(' + str(lat) + ', ' + str(lng) + ') is found at indices: ' + str(coordIndices))
+            return tBool, results
+
+        print('Entry is not in database.')
+        return tBool, results
+
+    def queryByLocation(self, filePath, loc, cty, locCol, ctyCol, printRes=True):
+        database = self.readFile(filePath)
         if database is None:
-            return False
+            return False, []
 
-        database = pd.concat([database, rowDF], ignore_index=True, sort=True)
+        try:
+            locList = database[locCol].tolist()
+            ctyList = database[ctyCol].tolist()
+            result = self.locationInDatabase(loc, cty, locList, ctyList)
+            if printRes:
+                if result[0]:
+                    print(loc + ', ' + cty + ' is found at indices: ' + str(result[1]))
+                else:
+                    print(loc + ', ' + cty + ' is not in database.')
+            return result
 
-        if databasePath.endswith('xlsx'):
-            database.to_excel(databasePath, index=False)
-        else:
-            database.to_csv(databasePath, sep=',', encoding='utf-8', index=False)
-        return True
+        except KeyError:
+            print("Cannot find columns with names: '" + locCol + "' and '" + ctyCol + "'")
+            return False, []
 
-    def deleteRowFromDB(self, rowIndex, databasePath):
-        """
-        Deletes a row from the database the file path points to,
-        overwrites the file with the new database file in csv format.
-        :param rowIndex: the index of the row to be deleted
-        :param databasePath: the file path to the database to update
-        :return: True if updated.
-        """
-        database = self.readFile(databasePath)
+    def queryByCoordinates(self, filePath, lat, lng, latCol, lngCol, printRes=True):
+        database = self.readFile(filePath)
         if database is None:
-            return False
+            return False, []
 
-        database = database.drop(database.index[rowIndex])
+        try:
+            latList = database[latCol].tolist()
+            lngList = database[lngCol].tolist()
+            result = self.coordinatesInDatabase(lat, lng, latList, lngList)
+            if printRes:
+                if result[0]:
+                    print('(' + str(lat) + ', ' + str(lng) + ') is found at indices: ' + str(result[1]))
+                else:
+                    print('(' + str(lat) + ', ' + str(lng) + ') is not in database.')
+            return result
 
-        if databasePath.endswith('xlsx'):
-            database.to_excel(databasePath, index=False)
-        else:
-            database.to_csv(databasePath, sep=',', encoding='utf-8', index=False)
-        return True
+        except KeyError:
+            print("Cannot find columns with names: '" + latCol + "' and '" + lngCol + "'")
+            return False, []
+
+    def coordinatesInDatabase(self, latitude, longitude, latitudeList, longitudeList):
+        results = []
+        if pd.isnull(latitude) or pd.isnull(longitude):
+            return False, results
+        inLat = any(math.isclose(latitude, latInList, abs_tol=1e-1) for latInList in latitudeList)
+        if inLat:
+            indices = [i for i, v in enumerate(latitudeList) if math.isclose(latitude, v, abs_tol=1e-1)]
+            for index in indices:
+                if math.isclose(longitude, longitudeList[index], abs_tol=1e-1):
+                    results.append(index)
+            if len(results) > 0:
+                return True, results
+        return False, results
+
+    def locationInDatabase(self, location, country, locationList, countryList):
+        results = []
+        if pd.isnull(location) or pd.isnull(country):
+            return False, results
+        location = regex.sub('', location)
+        inLoc = any(location.lower() == regex.sub('', str(loc).lower()) for loc in locationList)
+        if inLoc:
+            indices = [i for i, v in enumerate(locationList) if location.lower() == regex.sub('', str(v).lower())]
+            for index in indices:
+                if re.search(country, countryList[index], re.IGNORECASE):
+                    results.append(index)
+            if len(results) > 0:
+                return True, results
+        return False, results
+
+    # def addRowToDB(self, rowDF, databasePath):
+    #     """
+    #     Adds a row to the database the file path points to,
+    #     overwrites the file with the new database file in csv format.
+    #     :param newDF: the new row as a data frame
+    #     :param databasePath: the file path to the database to update
+    #     :return: True if updated.
+    #     """
+    #     database = self.readFile(databasePath)
+    #     if database is None:
+    #         return False
+    #
+    #     database = pd.concat([database, rowDF], ignore_index=True, sort=True)
+    #
+    #     if databasePath.endswith('xlsx'):
+    #         database.to_excel(databasePath, index=False)
+    #     else:
+    #         database.to_csv(databasePath, sep=',', encoding='utf-8', index=False)
+    #     return True
+    #
+    # def deleteRowFromDB(self, rowIndex, databasePath):
+    #     """
+    #     Deletes a row from the database the file path points to,
+    #     overwrites the file with the new database file in csv format.
+    #     :param rowIndex: the index of the row to be deleted
+    #     :param databasePath: the file path to the database to update
+    #     :return: True if updated.
+    #     """
+    #     database = self.readFile(databasePath)
+    #     if database is None:
+    #         return False
+    #
+    #     database = database.drop(database.index[rowIndex])
+    #
+    #     if databasePath.endswith('xlsx'):
+    #         database.to_excel(databasePath, index=False)
+    #     else:
+    #         database.to_csv(databasePath, sep=',', encoding='utf-8', index=False)
+    #     return True
+
+    # def addEntry(self, validator, filePath, loc, cty, locCol, ctyCol, latCol, lngCol, lat=None, lng=None):
+    #     if lat is None or lng is None:
+    #         results = self.queryByLocation(filePath, loc, cty, locCol, ctyCol, False)
+    #     else:
+    #         results = self.queryByAll(filePath, loc, cty, lat, lng, locCol, ctyCol, latCol, lngCol, False)
+    #
+    #     if results[0]:
+    #         print('Entry exists in the database at indices: ' + str(results[1]))
+    #         return False
+    #
+    #     entry = validator.verifyInfo(loc, cty, lat, lng)
+    #     if entry >= 0:
 
 
 class NameHandler:
@@ -505,8 +482,8 @@ class NameHandler:
                 if (checkCountry.lower() == alternativeName.lower()):
                     return formattedName
         return False
-
-validator = GeocodeValidator()
-initializer = DatabaseInitializer()
-initializer.createNewDB('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/resources/xlsx/tblLocation.xlsx',
-                        'Location', 'Country', 'Latitude', 'Longitude', validator)
+#
+# validator = GeocodeValidator()
+# initializer = DatabaseInitializer()
+# initializer.createNewDB('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/resources/xlsx/tblLocation.xlsx',
+#                         'Location', 'Country', 'Latitude', 'Longitude', validator)

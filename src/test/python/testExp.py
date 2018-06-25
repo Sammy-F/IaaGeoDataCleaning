@@ -1,6 +1,7 @@
-from IaaGeoDataCleaning.IaaGeoDataCleaning import experiment as exp
+from src.main.python.IaaGeoDataCleaning import experiment as exp
 import pytest
 import pandas as pd
+from os import path
 
 # entryType = {0: 'correct location data', 1: 'entered (lat, -lng)', 2: 'entered (-lat, lng)',
 #              3: 'entered (-lat, -lng)', 4: 'entered (lng, lat)', 5: 'entered (lng, -lat)',
@@ -10,6 +11,7 @@ import pandas as pd
 #              -5: 'no location/country entered / wrong country format'}
 
 validator = exp.GeocodeValidator()
+di = exp.DatabaseInitializer()
 
 
 def testCheckInput():
@@ -18,18 +20,18 @@ def testCheckInput():
     missingLocation = validator.formatInformation(None, 'Mexico', 20.6, -105.25)
 
     check = validator.checkInput(missingCountry)
-    assert check[0] == -5
+    assert check[0] == -3
     check = validator.checkInput(missingLocation)
-    assert check[0] == -5
+    assert check[0] == -3
 
     # Should be Kingdom of Swaziland
     wrongCountryFormat = validator.formatInformation('Mangcongo', 'Republic of Swaziland', None, None)
     check = validator.checkInput(wrongCountryFormat)
-    assert check[0] == -5
+    assert check[0] == -3
     # Should be Republic of South Africa
     wrongCountryFormat = validator.formatInformation('Cedara', 'South Africa Republic', None, None)
     check = validator.checkInput(wrongCountryFormat)
-    assert check[0] == -5
+    assert check[0] == -3
     assert isinstance(check[1], dict)
 
     # Missing latitude and longitude but should pass location because the names will be found in nameHandler
@@ -38,7 +40,7 @@ def testCheckInput():
     missingBoth = validator.formatInformation('El Carmen', 'Trinidad Y Tobago', None, 0)
 
     check = validator.checkInput(missingLng)
-    assert check[0] != -5
+    assert check[0] != -3
     assert check[0] == -2
     check = validator.checkInput(missingLat)
     assert check[0] == -2
@@ -110,9 +112,9 @@ def testVerifyInfo():
 
     # Missing location and country
     missing = validator.verifyInfo(country='Zaire')
-    assert missing[0] == -5
+    assert missing[0] == -3
     missing = validator.verifyInfo(location='Jashipur')
-    assert missing[0] == -5
+    assert missing[0] == -3
 
     # Missing latitude and longitude
     missing = validator.verifyInfo('New Delhi', 'India', 0, None)
@@ -131,56 +133,6 @@ def testVerifyInfo():
     assert incorrect[0] == 8
     assert pytest.approx(incorrect[1]['Recorded_Lat'], 1e-1) == 8.0
     assert pytest.approx(incorrect[1]['Recorded_Lng'], 1e-1) == 39.15
-
-
-def testQueryAllFields():
-    # In the database
-    inDB = validator.queryAllFields('Ambo', 'Ethiopia', 8.96, 38.9)
-    assert len(inDB) == 1
-
-    # Location and country is in the database but wrong latitude/longitude
-    missing = validator.queryAllFields('Ambo', 'Ethiopia', 10.31, -23.912)
-    assert len(missing) == 0
-
-    # Different country name
-    dif = validator.queryAllFields('Tifton', 'United States', 31.45, -83.51)
-    assert len(dif) == 2
-
-
-def testQueryByLocation():
-    inDB = validator.queryByLocation('Campos Azules', 'Nicaragua')
-    assert len(inDB) == 2
-
-    # Entry in pending data
-    notInDB = validator.queryByLocation('Mungushi', 'Tanzania')
-    assert len(notInDB) == 0
-    inDB = validator.queryByLocation('Mungushi', 'Tanzania',
-                                     '~/Desktop/geodata/IaaGeoDataCleaning/IaaGeoDataCleaning/pending_data_2018-06-15.csv')
-    assert len(inDB) == 1
-
-
-def testQuery():
-    # Missing location and country
-    inDB = validator.query(latitude=13.534, longitude=-85.926)
-    assert len(inDB) > 0
-    # Missing location and country but not in database
-    notInDB = validator.query(latitude=42.12, longitude=0)
-    assert len(notInDB) == 0
-
-    # Missing latitude and longitude
-    inDB = validator.query(location='LAYIN', country='Nigeria')
-    assert len(inDB) == 1
-
-    # All arguments are entered
-    inDB = validator.query(location='LA TRINIDAD', country='NICARAGUA', latitude=12.96, longitude=-86.27)
-    assert len(inDB) == 1
-
-    # All arguments are entered but the latitude and longitude are wrong
-    inDB = validator.query(location='Cuyuta', country='GUATEMALA', latitude=16.25, longitude=70.34)
-    assert len(inDB) == 1
-    assert inDB[0]['Country'] == 'Guatemala'
-    assert inDB[0]['Recorded_Lat'] == 14.25
-    assert inDB[0]['Recorded_Lng'] == -90.00
 
 
 def testAddLocation():
@@ -214,11 +166,106 @@ def testAddLocation():
     assert newEntry[0] == -5
 
 
-#  testCheckInput()
-# testVerifyCoordinates()
-# testGeocodeCoordinates()
-# testVerifyInfo()
-# testQueryAllFields()
-# testQueryByLocation()
-testQuery()
-# testAddLocation()
+def testLocationInDatabase():
+    locList = ['Darul Aman', 'Kilombo', 'Ishurdi', 'Sids']
+    ctyList = ['Afghanistan', 'Angola', 'Bangladesh', 'Egypt']
+
+    inDB = di.locationInDatabase('DARUL AMAN (2)', 'AFGHANISTAN', locList, ctyList)
+    assert inDB[0] is True and inDB[1][0] == 0
+    inDB = di.locationInDatabase('SIDS (1)', 'eGyPt', locList, ctyList)
+    assert inDB[0] is True and inDB[1][0] == 3
+    notInDB = di.locationInDatabase('Darul Aman Kabul (2)', 'Afghanistan', locList, ctyList)
+    assert notInDB[0] is False
+
+
+def testCoordinatesInDatabase():
+    latList = [23.41, 23.41, 23.5, 30.00, 87.12]
+    lngList = [53.78, -12.09, -12.00, 9.44, 71.31]
+
+    inDB = di.coordinatesInDatabase(23.42, 53.77, latList, lngList)
+    assert inDB[0] is True and inDB[1][0] == 0
+    inDB = di.coordinatesInDatabase(23.40, -12.1, latList, lngList)
+    assert inDB[0] is True and inDB[1][0] == 1
+    notInDB = di.coordinatesInDatabase(33.02, 9.54, latList, lngList)
+    assert notInDB[0] is False
+    notInDB = di.coordinatesInDatabase(87.11, -12.08, latList, lngList)
+    assert notInDB[0] is False
+
+
+def setUpFiles():
+    verified = str(path.abspath(path.join(path.dirname(__file__), '..', '..', '..', '..', 'IaaGeoDataCleaning',
+                                          'src', 'test', 'resources', 'verified_entries.xlsx')))
+    pending = str(path.abspath(path.join(path.dirname(__file__), '..', '..', '..', '..', 'IaaGeoDataCleaning',
+                                         'src', 'test', 'resources', 'pending_entries.xlsx')))
+    repeated = str(path.abspath(path.join(path.dirname(__file__), '..', '..', '..', '..', 'IaaGeoDataCleaning',
+                                          'src', 'test', 'resources', 'repeated_entries.xlsx')))
+
+    return verified, pending, repeated
+
+
+files = setUpFiles()
+
+
+def testQueryByLocation():
+    # Burura - Kenya
+    inDB = di.queryByLocation(files[0], 'BURURA (2)', 'KENYA', 'Location', 'Country')
+    assert inDB[0] is True
+    notInDB = di.queryByLocation(files[1], 'BURURA (2)', 'KENYA', 'Location', 'Country')
+    assert notInDB[0] is False
+
+    wrongColName = di.queryByLocation(files[0], 'MAROS', 'INDONESIA', 'LOCATION', 'COUNTRY')
+    assert wrongColName[1] == []
+
+    # re.search is True for re.search('United States', 'United States of America') but not the other way around
+    wrongCty = di.queryByLocation(files[0], 'BARNUM MN (2)', 'UNITED STATES OF AMERICA', 'Location', 'Country')
+    assert wrongCty[0] is False
+
+    # VALLE DE MAGDALENA (2) - COLOMBIA
+    inDB = di.queryByLocation(files[2], 'Valle de Magdalena', 'Colombia', 'Location', 'Country')
+    print(inDB)
+    assert inDB[1] == [5, 6, 7]
+
+
+def testQueryByCoordinates():
+    # (9.3154, -75.4329)
+    inDB = di.queryByCoordinates(files[0], 9.32, -75.4, 'Recorded_Lat', 'Recorded_Lng')
+    assert inDB[1][0] == 162
+    # (14.92, 37.83)
+    inDB = di.queryByCoordinates(files[0], 14.9, 37.8, 'Recorded_Lat', 'Recorded_Lng')
+    assert inDB[1][0] == 235
+    notInDB = di.queryByCoordinates(files[0], 14.8, 37.8, 'Recorded_Lat', 'Recorded_Lng')
+    assert notInDB[0] is False
+    # (-0.5359, 37.6653)
+    notInDB = di.queryByCoordinates(files[0], -0.5, 37.7, 'Latitude', 'Longitude')  # Geocoded this one, lat/lng empty
+    assert notInDB[0] is False
+    inDB = di.queryByCoordinates(files[0], 1.06, 35, 'Recorded_Lat', 'Recorded_Lng')
+    assert len(inDB[1]) > 0
+
+
+def testQueryByAll():
+    # Location and coordinates do not match
+    # 395: Embu - Kenya (-0.5, 37.45)
+    mismatched = di.queryByAll(files[0], 'EMBU', 'KENYA', 0.1, 34.5, 'Location', 'Country', 'Latitude', 'Longitude')
+    assert mismatched[0] is False
+
+    # Names have to be completely equal
+    # 597: Uach, Campo Experimental - Mexico (19.48933,	-98.89365)
+    notInDB = di.queryByAll(files[0], 'UACH', 'MEXICO', 19.49, -98.8, 'Location', 'Country', 'Recorded_Lat', 'Recorded_Lng')
+    assert notInDB[0] is False
+    # Harare - Zimbabwe
+    inDB = di.queryByAll(files[0], 'HARARE (2)', 'ZIMBABWE', -17.78, 31.00, 'Location', 'Country', 'Recorded_Lat', 'Recorded_Lng')
+    assert inDB[1][0] == 900
+    # Cimmyt Harare - Zimbabwe
+    inDB = di.queryByAll(files[0], 'CIMMYT HARARE (2)', 'ZIMBABWE', -17.78, 31.00, 'Location', 'Country', 'Recorded_Lat', 'Recorded_Lng')
+    assert inDB[1][0] == 1167
+
+
+testCheckInput()
+testVerifyCoordinates()
+testGeocodeCoordinates()
+testVerifyInfo()
+testLocationInDatabase()
+testCoordinatesInDatabase()
+testQueryByLocation()
+testQueryByCoordinates()
+testQueryByAll()
