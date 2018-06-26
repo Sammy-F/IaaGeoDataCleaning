@@ -1,4 +1,4 @@
-from src.main.python.IaaGeoDataCleaning import experiment as exp
+from src.main.python.IaaGeoDataCleaning import cleandatabase as exp
 import pytest
 import pandas as pd
 from os import path
@@ -11,73 +11,73 @@ from os import path
 #              -5: 'no location/country entered / wrong country format'}
 
 validator = exp.GeocodeValidator()
-di = exp.DatabaseInitializer()
+di = exp.TableCleaner()
 
 
 def testCheckInput():
     # Missing location information
-    missingCountry = validator.formatInformation('Puebla', None, 19.042, -98.21)
-    missingLocation = validator.formatInformation(None, 'Mexico', 20.6, -105.25)
+    missingCountry = validator.format_info('Puebla', None, 19.042, -98.21)
+    missingLocation = validator.format_info(None, 'Mexico', 20.6, -105.25)
 
-    check = validator.checkInput(missingCountry)
+    check = validator.check_input(missingCountry)
     assert check[0] == -3
-    check = validator.checkInput(missingLocation)
+    check = validator.check_input(missingLocation)
     assert check[0] == -3
 
     # Should be Kingdom of Swaziland
-    wrongCountryFormat = validator.formatInformation('Mangcongo', 'Republic of Swaziland', None, None)
-    check = validator.checkInput(wrongCountryFormat)
+    wrongCountryFormat = validator.format_info('Mangcongo', 'Republic of Swaziland', None, None)
+    check = validator.check_input(wrongCountryFormat)
     assert check[0] == -3
     # Should be Republic of South Africa
-    wrongCountryFormat = validator.formatInformation('Cedara', 'South Africa Republic', None, None)
-    check = validator.checkInput(wrongCountryFormat)
+    wrongCountryFormat = validator.format_info('Cedara', 'South Africa Republic', None, None)
+    check = validator.check_input(wrongCountryFormat)
     assert check[0] == -3
     assert isinstance(check[1], dict)
 
     # Missing latitude and longitude but should pass location because the names will be found in nameHandler
-    missingLng = validator.formatInformation('Touba', "Cote d'Ivoire", 8.366, None)
-    missingLat = validator.formatInformation('Mvuazi', 'Zaire', None, 14.9)
-    missingBoth = validator.formatInformation('El Carmen', 'Trinidad Y Tobago', None, 0)
+    missingLng = validator.format_info('Touba', "Cote d'Ivoire", 8.366, None)
+    missingLat = validator.format_info('Mvuazi', 'Zaire', None, 14.9)
+    missingBoth = validator.format_info('El Carmen', 'Trinidad Y Tobago', None, 0)
 
-    check = validator.checkInput(missingLng)
+    check = validator.check_input(missingLng)
     assert check[0] != -3
     assert check[0] == -2
-    check = validator.checkInput(missingLat)
+    check = validator.check_input(missingLat)
     assert check[0] == -2
-    check = validator.checkInput(missingBoth)
+    check = validator.check_input(missingBoth)
     assert check[0] == -2
     assert isinstance(check[1], dict)
 
     # If only lat or lng is 0 then it should pass
-    validLng = validator.formatInformation('Touba', "Cote d'Ivoire", 8.366, 0)
-    validLat = validator.formatInformation('Mvuazi', 'Zaire', 0, 14.9)
-    check = validator.checkInput(validLng)
+    validLng = validator.format_info('Touba', "Cote d'Ivoire", 8.366, 0)
+    validLat = validator.format_info('Mvuazi', 'Zaire', 0, 14.9)
+    check = validator.check_input(validLng)
     assert check[0] == 0
-    check = validator.checkInput(validLat)
+    check = validator.check_input(validLat)
     assert check[0] == 0
     assert isinstance(check[1], dict)
 
 
 def testVerifyCoordinates():
     # Should be (12.0, -7.0)
-    flipped = validator.formatInformation('Rue Mohamed', 'Mali', -12.0, -7)
-    check = validator.checkInput(flipped)
+    flipped = validator.format_info('Rue Mohamed', 'Mali', -12.0, -7)
+    check = validator.check_input(flipped)
     assert check[0] == 0
-    verified = validator.verifyCoordinates(check[1])
+    verified = validator.verify_coords(check[1])
     assert verified[0] == 2
     assert verified[1]['Recorded_Lat'] == 12.0
 
     # Incorrect coordinates
-    incorrect = validator.formatInformation('Gwebi', 'Zimbabwe', 89.8, -13.2)
-    check = validator.checkInput(incorrect)
-    verified = validator.verifyCoordinates(check[1])
+    incorrect = validator.format_info('Gwebi', 'Zimbabwe', 89.8, -13.2)
+    check = validator.check_input(incorrect)
+    verified = validator.verify_coords(check[1])
     assert verified[0] == -1
     assert verified[1] == check[1]
 
     # Correct coordinates
-    correct = validator.formatInformation('Hudson', 'USA', 41.239, -81.441)
-    check = validator.checkInput(correct)
-    verified = validator.verifyCoordinates(check[1])
+    correct = validator.format_info('Hudson', 'USA', 41.239, -81.441)
+    check = validator.check_input(correct)
+    verified = validator.verify_coords(check[1])
     assert verified[0] == 0
     assert verified[1]['Recorded_Lat'] == verified[1]['Latitude']
     assert verified[1]['Recorded_Lng'] == -81.441
@@ -85,18 +85,18 @@ def testVerifyCoordinates():
 
 def testGeocodeCoordinates():
     # Correct coordinates
-    correct = validator.formatInformation('Rampur', 'Nepal', 27.848, 83.9)
-    check = validator.checkInput(correct)
-    geocoded = validator.geocodeCoordinates(check[1])
+    correct = validator.format_info('Rampur', 'Nepal', 27.848, 83.9)
+    check = validator.check_input(correct)
+    geocoded = validator.geocode_coords(check[1])
     assert geocoded[0] == 8
     assert pytest.approx(geocoded[1]['Recorded_Lng'], 1e-2) == geocoded[1]['Longitude']
     assert pytest.approx(geocoded[1]['Recorded_Lat'], 1e-2) == geocoded[1]['Latitude']
 
     # No coordinates entered
-    missing = validator.formatInformation('Greytown', 'South Africa Rep.', 0, 0)
-    check = validator.checkInput(missing)
+    missing = validator.format_info('Greytown', 'South Africa Rep.', 0, 0)
+    check = validator.check_input(missing)
     assert check[0] == -2
-    geocoded = validator.geocodeCoordinates(check[1])
+    geocoded = validator.geocode_coords(check[1])
     assert geocoded[0] == 8
     assert pytest.approx(geocoded[1]['Recorded_Lng'], 1e-2) == 30.608
     assert pytest.approx(geocoded[1]['Recorded_Lat'], 1e-2) == -29.054
@@ -105,31 +105,31 @@ def testGeocodeCoordinates():
 def testVerifyInfo():
     # 5 cases in total
     # Correct inputs, country is in a different format
-    correct = validator.verifyInfo('Greytown', 'Republic of South Africa', -29.054, 30.608)
+    correct = validator.verify_info('Greytown', 'Republic of South Africa', -29.054, 30.608)
     assert correct[0] == 0
     assert pytest.approx(correct[1]['Recorded_Lat'], 1e-2) == correct[1]['Latitude']
     assert pytest.approx(correct[1]['Recorded_Lng'], 1e-2) == correct[1]['Longitude']
 
     # Missing location and country
-    missing = validator.verifyInfo(country='Zaire')
+    missing = validator.verify_info(country='Zaire')
     assert missing[0] == -3
-    missing = validator.verifyInfo(location='Jashipur')
+    missing = validator.verify_info(location='Jashipur')
     assert missing[0] == -3
 
     # Missing latitude and longitude
-    missing = validator.verifyInfo('New Delhi', 'India', 0, None)
+    missing = validator.verify_info('New Delhi', 'India', 0, None)
     assert missing[0] == 8
     assert pytest.approx(missing[1]['Recorded_Lat'], 1e-2) == 28.6139
     assert pytest.approx(missing[1]['Recorded_Lng'], 1e-2) == 77.2090
 
     # Flipped lat/lng
-    flipped = validator.verifyInfo('Jashipur', 'India', 86.075, 21.968)
+    flipped = validator.verify_info('Jashipur', 'India', 86.075, 21.968)
     assert flipped[0] == 4
     assert pytest.approx(flipped[1]['Recorded_Lat'], 1e-2) == flipped[1]['Longitude']
     assert pytest.approx(flipped[1]['Recorded_Lng'], 1e-2) == flipped[1]['Latitude']
 
     # Incorrect coordinates, geocode
-    incorrect = validator.verifyInfo('Kulumsa', 'Ethiopia', 17.8, 20.24)
+    incorrect = validator.verify_info('Kulumsa', 'Ethiopia', 17.8, 20.24)
     assert incorrect[0] == 8
     assert pytest.approx(incorrect[1]['Recorded_Lat'], 1e-1) == 8.0
     assert pytest.approx(incorrect[1]['Recorded_Lng'], 1e-1) == 39.15
@@ -170,11 +170,11 @@ def testLocationInDatabase():
     locList = ['Darul Aman', 'Kilombo', 'Ishurdi', 'Sids']
     ctyList = ['Afghanistan', 'Angola', 'Bangladesh', 'Egypt']
 
-    inDB = di.locationInDatabase('DARUL AMAN (2)', 'AFGHANISTAN', locList, ctyList)
+    inDB = di.location_in_db('DARUL AMAN (2)', 'AFGHANISTAN', locList, ctyList)
     assert inDB[0] is True and inDB[1][0] == 0
-    inDB = di.locationInDatabase('SIDS (1)', 'eGyPt', locList, ctyList)
+    inDB = di.location_in_db('SIDS (1)', 'eGyPt', locList, ctyList)
     assert inDB[0] is True and inDB[1][0] == 3
-    notInDB = di.locationInDatabase('Darul Aman Kabul (2)', 'Afghanistan', locList, ctyList)
+    notInDB = di.location_in_db('Darul Aman Kabul (2)', 'Afghanistan', locList, ctyList)
     assert notInDB[0] is False
 
 
@@ -182,13 +182,13 @@ def testCoordinatesInDatabase():
     latList = [23.41, 23.41, 23.5, 30.00, 87.12]
     lngList = [53.78, -12.09, -12.00, 9.44, 71.31]
 
-    inDB = di.coordinatesInDatabase(23.42, 53.77, latList, lngList)
+    inDB = di.coords_in_db(23.42, 53.77, latList, lngList)
     assert inDB[0] is True and inDB[1][0] == 0
-    inDB = di.coordinatesInDatabase(23.40, -12.1, latList, lngList)
+    inDB = di.coords_in_db(23.40, -12.1, latList, lngList)
     assert inDB[0] is True and inDB[1][0] == 1
-    notInDB = di.coordinatesInDatabase(33.02, 9.54, latList, lngList)
+    notInDB = di.coords_in_db(33.02, 9.54, latList, lngList)
     assert notInDB[0] is False
-    notInDB = di.coordinatesInDatabase(87.11, -12.08, latList, lngList)
+    notInDB = di.coords_in_db(87.11, -12.08, latList, lngList)
     assert notInDB[0] is False
 
 
@@ -208,55 +208,55 @@ files = setUpFiles()
 
 def testQueryByLocation():
     # Burura - Kenya
-    inDB = di.queryByLocation(files[0], 'BURURA (2)', 'KENYA', 'Location', 'Country')
+    inDB = di.query_by_location(files[0], 'BURURA (2)', 'KENYA', 'Location', 'Country')
     assert inDB[0] is True
-    notInDB = di.queryByLocation(files[1], 'BURURA (2)', 'KENYA', 'Location', 'Country')
+    notInDB = di.query_by_location(files[1], 'BURURA (2)', 'KENYA', 'Location', 'Country')
     assert notInDB[0] is False
 
-    wrongColName = di.queryByLocation(files[0], 'MAROS', 'INDONESIA', 'LOCATION', 'COUNTRY')
+    wrongColName = di.query_by_location(files[0], 'MAROS', 'INDONESIA', 'LOCATION', 'COUNTRY')
     assert wrongColName[1] == []
 
     # re.search is True for re.search('United States', 'United States of America') but not the other way around
-    wrongCty = di.queryByLocation(files[0], 'BARNUM MN (2)', 'UNITED STATES OF AMERICA', 'Location', 'Country')
+    wrongCty = di.query_by_location(files[0], 'BARNUM MN (2)', 'UNITED STATES OF AMERICA', 'Location', 'Country')
     assert wrongCty[0] is False
 
     # VALLE DE MAGDALENA (2) - COLOMBIA
-    inDB = di.queryByLocation(files[2], 'Valle de Magdalena', 'Colombia', 'Location', 'Country')
+    inDB = di.query_by_location(files[2], 'Valle de Magdalena', 'Colombia', 'Location', 'Country')
     print(inDB)
     assert inDB[1] == [5, 6, 7]
 
 
 def testQueryByCoordinates():
     # (9.3154, -75.4329)
-    inDB = di.queryByCoordinates(files[0], 9.32, -75.4, 'Recorded_Lat', 'Recorded_Lng')
+    inDB = di.query_by_coords(files[0], 9.32, -75.4, 'Recorded_Lat', 'Recorded_Lng')
     assert inDB[1][0] == 162
     # (14.92, 37.83)
-    inDB = di.queryByCoordinates(files[0], 14.9, 37.8, 'Recorded_Lat', 'Recorded_Lng')
+    inDB = di.query_by_coords(files[0], 14.9, 37.8, 'Recorded_Lat', 'Recorded_Lng')
     assert inDB[1][0] == 235
-    notInDB = di.queryByCoordinates(files[0], 14.8, 37.8, 'Recorded_Lat', 'Recorded_Lng')
+    notInDB = di.query_by_coords(files[0], 14.8, 37.8, 'Recorded_Lat', 'Recorded_Lng')
     assert notInDB[0] is False
     # (-0.5359, 37.6653)
-    notInDB = di.queryByCoordinates(files[0], -0.5, 37.7, 'Latitude', 'Longitude')  # Geocoded this one, lat/lng empty
+    notInDB = di.query_by_coords(files[0], -0.5, 37.7, 'Latitude', 'Longitude')  # Geocoded this one, lat/lng empty
     assert notInDB[0] is False
-    inDB = di.queryByCoordinates(files[0], 1.06, 35, 'Recorded_Lat', 'Recorded_Lng')
+    inDB = di.query_by_coords(files[0], 1.06, 35, 'Recorded_Lat', 'Recorded_Lng')
     assert len(inDB[1]) > 0
 
 
 def testQueryByAll():
     # Location and coordinates do not match
     # 395: Embu - Kenya (-0.5, 37.45)
-    mismatched = di.queryByAll(files[0], 'EMBU', 'KENYA', 0.1, 34.5, 'Location', 'Country', 'Latitude', 'Longitude')
+    mismatched = di.query_by_all(files[0], 'EMBU', 'KENYA', 0.1, 34.5, 'Location', 'Country', 'Latitude', 'Longitude')
     assert mismatched[0] is False
 
     # Names have to be completely equal
     # 597: Uach, Campo Experimental - Mexico (19.48933,	-98.89365)
-    notInDB = di.queryByAll(files[0], 'UACH', 'MEXICO', 19.49, -98.8, 'Location', 'Country', 'Recorded_Lat', 'Recorded_Lng')
+    notInDB = di.query_by_all(files[0], 'UACH', 'MEXICO', 19.49, -98.8, 'Location', 'Country', 'Recorded_Lat', 'Recorded_Lng')
     assert notInDB[0] is False
     # Harare - Zimbabwe
-    inDB = di.queryByAll(files[0], 'HARARE (2)', 'ZIMBABWE', -17.78, 31.00, 'Location', 'Country', 'Recorded_Lat', 'Recorded_Lng')
+    inDB = di.query_by_all(files[0], 'HARARE (2)', 'ZIMBABWE', -17.78, 31.00, 'Location', 'Country', 'Recorded_Lat', 'Recorded_Lng')
     assert inDB[1][0] == 900
     # Cimmyt Harare - Zimbabwe
-    inDB = di.queryByAll(files[0], 'CIMMYT HARARE (2)', 'ZIMBABWE', -17.78, 31.00, 'Location', 'Country', 'Recorded_Lat', 'Recorded_Lng')
+    inDB = di.query_by_all(files[0], 'CIMMYT HARARE (2)', 'ZIMBABWE', -17.78, 31.00, 'Location', 'Country', 'Recorded_Lat', 'Recorded_Lng')
     assert inDB[1][0] == 1167
 
 
