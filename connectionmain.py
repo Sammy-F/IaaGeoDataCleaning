@@ -1,5 +1,6 @@
 import argparse
-import src.main.python.ConnectionUtils as cu
+from src.main.python.ConnectionUtils.DatabaseConnector import DatabaseConnector
+from src.main.python.ConnectionUtils.Table import Table
 
 def getParser():
     desc = 'Tools for database interaction'
@@ -32,9 +33,9 @@ if __name__ == '__main__':
     parser = getParser()
     args = parser.parse_args()
 
-    connector = cu.DatabaseConnector()
+    connector = DatabaseConnector()
     connector.getConnectFromConfig(filePath=args.configpath)
-    table = cu.Table(args.table, connector)
+    table = Table(args.table, connector)
 
     if args.build is True:
         table.buildTableFromFile(args.datapath)
@@ -54,5 +55,3 @@ if __name__ == '__main__':
                                                locationColName=args.locationcol, countryColName=args.countrycol)[1], sep='\n')
 
     connector.closeConnection()
-
-
