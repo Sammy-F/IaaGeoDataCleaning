@@ -1,0 +1,40 @@
+Index,Address,Country,Country_Code,Latitude,Location,Longitude,Recorded_Lat,Recorded_Lng,Region,Type,ver_Index
+28,"Ishurdi, Bangladesh",Bangladesh,BGD,24.12,Ishurdi,89.08,24.12,89.08,Asia,correct location data,27
+166,"Puerto Lopez, Córdoba, Colombia",Colombia,COL,0.0,Puerto Lopez,0.0,7.7933241,-75.8401892,South America,no lat/lng entered / incorrect lat/lng - geocoded location,143
+193,"Turipana, Colombia",Colombia,COL,8.65,Turipana,-75.97,8.65,-75.97,South America,correct location data,167
+193,"Turipana, Colombia",Colombia,COL,8.65,Turipana,-75.97,8.65,-75.97,South America,correct location data,167
+193,"Turipana, Colombia",Colombia,COL,8.65,Turipana,-75.97,8.65,-75.97,South America,correct location data,167
+197,"Valle de Mamancanaca, Magdalena, Colombia",Colombia,COL,0.0,Valle De Magdalena,0.0,10.717347,-73.6220434,South America,no lat/lng entered / incorrect lat/lng - geocoded location,168
+197,"Valle de Mamancanaca, Magdalena, Colombia",Colombia,COL,0.0,Valle De Magdalena,0.0,10.717347,-73.6220434,South America,no lat/lng entered / incorrect lat/lng - geocoded location,168
+197,"Valle de Mamancanaca, Magdalena, Colombia",Colombia,COL,0.0,Valle De Magdalena,0.0,10.717347,-73.6220434,South America,no lat/lng entered / incorrect lat/lng - geocoded location,168
+238,"Porto Viejo, Ecuador",Ecuador,ECU,-1.07,Porto Viejo,-80.43,-1.07,-80.43,South America,correct location data,206
+280,"Awassa, Ethiopia",Ethiopia,ETH,7.05,Awassa,38.47,7.05,38.47,Eastern and Southern Africa,correct location data,240
+282,"Bako, Ethiopia",Ethiopia,ETH,9.1,Bako,37.15,9.1,37.15,Eastern and Southern Africa,correct location data,241
+338,"Tequinzate, Guatemala",Guatemala,GTM,14.27,Tequinzate,-91.35,14.27,-91.35,Central America and Caribbean,correct location data,292
+382,"Bangalore, India",India,IND,12.97,Bangalore,77.58,12.97,77.58,Asia,correct location data,328
+392,"Dholi, India",India,IND,25.98,Dholi,86.25,25.98,86.25,Asia,correct location data,337
+418,"Pantnagar, India",India,IND,29.0,Pantnagar,79.45,29.0,79.45,Asia,correct location data,361
+514,"Mokhotlong, Lesotho",Lesotho,LSO,-29.28,Mokhotlong,29.08,-29.28,29.08,Eastern and Southern Africa,correct location data,450
+549,"Ameca, Jal., Mexico",Mexico,MEX,20.55,"Ameca, Jal.",-104.05,20.55,-104.05,Central America and Caribbean,correct location data,483
+549,"Ameca, Jal., Mexico",Mexico,MEX,20.55,"Ameca, Jal.",-104.05,20.55,-104.05,Central America and Caribbean,correct location data,483
+558,"Candelaria Portezuelo, Puebla, Mexico",Mexico,MEX,19.0,"Candelaria Portezuelo, Puebla",-98.0,19.0,-98.0,Central America and Caribbean,correct location data,491
+593,"El Batan, Mexico",Mexico,MEX,19.52,El Batan,-98.87,19.52,-98.87,Central America and Caribbean,correct location data,524
+593,"El Batan, Mexico",Mexico,MEX,19.52,El Batan,-98.87,19.52,-98.87,Central America and Caribbean,correct location data,524
+629,"Los Mochis, Sinaloa, Mexico",Mexico,MEX,25.77,"Los Mochis, Sinaloa",-109.0,25.77,-109.0,Central America and Caribbean,correct location data,559
+638,"Nextipac, Jalisco, Mexico",Mexico,MEX,20.75,"Nextipac, Jalisco",-103.52,20.75,-103.52,Central America and Caribbean,correct location data,567
+651,"Poza Rica, Mexico",Mexico,MEX,20.53,Poza Rica,-97.43,20.53,-97.43,Central America and Caribbean,correct location data,579
+688,"Tlajomulco, Jalisco, Mexico",Mexico,MEX,20.47,"Tlajomulco, Jalisco",-103.77,20.47,-103.77,Central America and Caribbean,correct location data,615
+692,"Tlaltizapán de Zapata, Morelos, Mexico",Mexico,MEX,0.0,Tlaltizapan,0.0,18.7045227,-99.14191731588632,Central America and Caribbean,no lat/lng entered / incorrect lat/lng - geocoded location,617
+692,"Tlaltizapán de Zapata, Morelos, Mexico",Mexico,MEX,0.0,Tlaltizapan,0.0,18.7045227,-99.14191731588632,Central America and Caribbean,no lat/lng entered / incorrect lat/lng - geocoded location,617
+793,"Mokwa, Nigeria",Nigeria,NGA,9.3,Mokwa,5.07,9.3,5.07,Western Africa,correct location data,711
+815,"Capitán Miranda, Itapúa, Paraguay",Paraguay,PRY,0.0,Capitan Miranda,0.0,-27.2196484,-55.8011417,South America,no lat/lng entered / incorrect lat/lng - geocoded location,732
+845,"Vista Florida, 5174, Chiclayo, Lambayeque, Peru",Peru,PER,0.0,Vista Florida Chiclayo,0.0,-6.7631677,-79.8583674,South America,no lat/lng entered / incorrect lat/lng - geocoded location,759
+845,"Vista Florida, 5174, Chiclayo, Lambayeque, Peru",Peru,PER,0.0,Vista Florida Chiclayo,0.0,-6.7631677,-79.8583674,South America,no lat/lng entered / incorrect lat/lng - geocoded location,759
+933,"Tak Fa, Nakhon Sawan Province, Thailand",Thailand,THA,0.0,Tak Fa,0.0,15.3525676,100.496798,Asia,no lat/lng entered / incorrect lat/lng - geocoded location,836
+1227,"Dinajpur, 5216, Rangpur Division, Bangladesh",Bangladesh,BGD,0.0,Dinajpur,0.0,25.6260712,88.6346228,Asia,no lat/lng entered / incorrect lat/lng - geocoded location,20
+1243,"Santa Cruz (2), El Salvador",El Salvador,SLV,13.33,Santa Cruz (2),-88.83,13.33,-88.83,Central America and Caribbean,correct location data,229
+1265,"Quebrada Santa Rosa, 16700, Managua, Nicaragua",Nicaragua,NIC,,Santa Rosa/managua,,11.7950245,-86.4096549,,no lat/lng entered / incorrect lat/lng - geocoded location,1110
+1354,"Finkolo, Mali",Mali,MLI,11.216667175293,Finkolo,6.18333339691162,11.216667175293,-6.18333339691162,Eastern and Southern Africa,"entered (lat, -lng)",1186
+1416,"Alemaya, Ethiopia",Ethiopia,ETH,9.5,Alemaya,41.95,9.5,41.95,Eastern and Southern Africa,correct location data,238
+1426,"Puerto Lopez, Meta, Colombia",Colombia,COL,,Menegua-puerto Lopez (meta),,4.085013,-72.9584671,,no lat/lng entered / incorrect lat/lng - geocoded location,1256
+1433,"Villavicencio, 500005, Villavicencio, Meta, Colombia",Colombia,COL,0.0,Villavicencio,0.0,4.1315113,-73.6206667,South America,no lat/lng entered / incorrect lat/lng - geocoded location,171

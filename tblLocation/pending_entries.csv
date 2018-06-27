@@ -1,0 +1,144 @@
+Index,Address,Country,Country_Code,Latitude,Location,Longitude,Recorded_Lat,Recorded_Lng,Region,Type
+41,,"Bolivia, Plurinational State of",BOL,0.0,Bolivia,0.0,,,South America,incorrect location data/cannot find coordinates
+46,,"Bolivia, Plurinational State of",BOL,0.0,El Abra (santa Cruz),0.0,,,South America,incorrect location data/cannot find coordinates
+47,,"Bolivia, Plurinational State of",BOL,0.0,El Palmar (santa Cruz),0.0,,,South America,incorrect location data/cannot find coordinates
+49,,"Bolivia, Plurinational State of",BOL,0.0,Entre Rios,0.0,,,South America,incorrect location data/cannot find coordinates
+50,,"Bolivia, Plurinational State of",BOL,0.0,Fundacion Proinpa,0.0,,,South America,incorrect location data/cannot find coordinates
+52,,"Bolivia, Plurinational State of",BOL,0.0,Lomas De Arena (santa Cruz),0.0,,,South America,incorrect location data/cannot find coordinates
+53,,"Bolivia, Plurinational State of",BOL,0.0,"Mairana, Santa Cruz",0.0,,,South America,incorrect location data/cannot find coordinates
+54,,"Bolivia, Plurinational State of",BOL,0.0,Monteagudo,0.0,,,South America,incorrect location data/cannot find coordinates
+58,,"Bolivia, Plurinational State of",BOL,0.0,Pajonal,0.0,,,South America,incorrect location data/cannot find coordinates
+59,,"Bolivia, Plurinational State of",BOL,0.0,Saavedra,0.0,,,South America,incorrect location data/cannot find coordinates
+60,,"Bolivia, Plurinational State of",BOL,0.0,San Ignacio,0.0,,,South America,incorrect location data/cannot find coordinates
+62,,"Bolivia, Plurinational State of",BOL,0.0,Santa Cruz (cuatro Caminos),0.0,,,South America,incorrect location data/cannot find coordinates
+63,,"Bolivia, Plurinational State of",BOL,0.0,Santa Cruz De La Sierra,0.0,,,South America,incorrect location data/cannot find coordinates
+64,,"Bolivia, Plurinational State of",BOL,0.0,Santa Cruz De La Sierra (el Vallecito),0.0,,,South America,incorrect location data/cannot find coordinates
+65,,"Bolivia, Plurinational State of",BOL,0.0,Tarija,0.0,,,South America,incorrect location data/cannot find coordinates
+66,,"Bolivia, Plurinational State of",BOL,0.0,Valle Del Medio,0.0,,,South America,incorrect location data/cannot find coordinates
+67,,"Bolivia, Plurinational State of",BOL,0.0,Vallecitos (iboperenda),0.0,,,South America,incorrect location data/cannot find coordinates
+69,,"Bolivia, Plurinational State of",BOL,0.0,Yacuiba,0.0,,,South America,incorrect location data/cannot find coordinates
+70,,"Bolivia, Plurinational State of",BOL,0.0,Zona Norte De Santa Cruz,0.0,,,South America,incorrect location data/cannot find coordinates
+90,,Central Asia,,0.0,Kazakhstan,0.0,,,Asia,no location/country entered / wrong country format
+113,,Colombia,COL,0.0,"Arguello Bajo, Yacuanquer",0.0,,,South America,incorrect location data/cannot find coordinates
+228,,Ecuador,ECU,0.0,"Comuna San Rafael, Peninsula Sta Elena",0.0,,,South America,incorrect location data/cannot find coordinates
+230,,Ecuador,ECU,0.0,Fca. Exp. Josefina Balzar,0.0,,,South America,incorrect location data/cannot find coordinates
+246,,El Salvador,SLV,0.0,Armenia,0.0,,,Central America and Caribbean,incorrect location data/cannot find coordinates
+251,,El Salvador,SLV,0.0,"El Pepito, Concep., Chalate",0.0,,,Central America and Caribbean,incorrect location data/cannot find coordinates
+257,,El Salvador,SLV,0.0,"Los Cipreses, Conchagua, La Union",0.0,,,Central America and Caribbean,incorrect location data/cannot find coordinates
+260,,El Salvador,SLV,0.0,Nueva Concepcion,0.0,,,Central America and Caribbean,incorrect location data/cannot find coordinates
+262,,El Salvador,SLV,0.0,San Andres,0.0,,,Central America and Caribbean,incorrect location data/cannot find coordinates
+263,,El Salvador,SLV,0.0,San Andres (sb),0.0,,,Central America and Caribbean,incorrect location data/cannot find coordinates
+268,,El Salvador,SLV,0.0,Santa Cruz Porrillo,0.0,,,Central America and Caribbean,incorrect location data/cannot find coordinates
+294,,Ethiopia,,0.0,,0.0,,,Eastern and Southern Africa,no location/country entered / wrong country format
+318,,Guatemala,GTM,0.0,"Finca, Las Vegas Tequisate.",0.0,,,Central America and Caribbean,incorrect location data/cannot find coordinates
+324,,Guatemala,GTM,0.0,La M┴quina Caballo Blanco,0.0,,,Central America and Caribbean,incorrect location data/cannot find coordinates
+325,,Guatemala,GTM,0.0,"La Maquina, Linea A5",0.0,,,Central America and Caribbean,incorrect location data/cannot find coordinates
+343,,Haiti,HTI,0.0,"Karoman, Lavallee",0.0,,,Central America and Caribbean,incorrect location data/cannot find coordinates
+345,,Haiti,HTI,0.0,"Nan- Jn Pierre, Cap-rouge",0.0,,,Central America and Caribbean,incorrect location data/cannot find coordinates
+351,,Honduras,HND,0.0,"El Guaco Yorito, Yoro",0.0,,,Central America and Caribbean,incorrect location data/cannot find coordinates
+359,,Honduras,HND,0.0,Mina Handa (yorito Yoco),0.0,,,Central America and Caribbean,incorrect location data/cannot find coordinates
+362,,Honduras,HND,0.0,Pata Stera (yorito Yoco),0.0,,,Central America and Caribbean,incorrect location data/cannot find coordinates
+365,,Honduras,HND,0.0,"Rio Arriba Yorito, Yoro",0.0,,,Central America and Caribbean,incorrect location data/cannot find coordinates
+379,,India,IND,0.0,"Bahraich, Crop Research Station",0.0,,,Asia,incorrect location data/cannot find coordinates
+412,,India,IND,0.0,Messina,0.0,,,Asia,incorrect location data/cannot find coordinates
+439,,India,IND,0.0,Weerasak Doungjan,0.0,,,Asia,incorrect location data/cannot find coordinates
+452,,Iran,,0.0,Agricultural Research Station Of Gorgan,0.0,,,Asia,no location/country entered / wrong country format
+453,,Iran,,32.54681,Safiabad,54.36035,,,Asia,no location/country entered / wrong country format
+456,,Iraq,IRQ,0.0,"Bonghdad, Al_mada'en",0.0,,,North Africa and Near East,incorrect location data/cannot find coordinates
+458,,Kazakstan,,0.0,Central Asia,0.0,,,Asia,no location/country entered / wrong country format
+488,,Kenya,KEN,0.0,Kitale Syn Ii (ethiopia),0.0,,,Eastern and Southern Africa,incorrect location data/cannot find coordinates
+721,,Mozambique,MOZ,0.0,Ex-instituto Nacional De Investigacion Agraria,0.0,,,Eastern and Southern Africa,incorrect location data/cannot find coordinates
+732,,Mozambique,MOZ,0.0,Ntengo Nucodgi Augoiris,0.0,,,Eastern and Southern Africa,incorrect location data/cannot find coordinates
+733,,Mozambique,MOZ,0.0,Ntengo Umadzi- Angoria,0.0,,,Eastern and Southern Africa,incorrect location data/cannot find coordinates
+743,,Myanmar,MMR,0.0,Zaloke Research Farm,0.0,,,Asia,incorrect location data/cannot find coordinates
+744,,Myanmar (burma),,20.13,"Aungban, Burma",96.15,,,Asia,no location/country entered / wrong country format
+745,,Myanmar (burma),,23.03,"Yezin, Burma",95.47,,,Asia,no location/country entered / wrong country format
+822,,Peru,PER,0.0,"E.e. El Porvenir, Calzada Moyobamba",0.0,,,South America,incorrect location data/cannot find coordinates
+883,,Surinam,,5.87,Paramaribo,-55.23,,,South America,no location/country entered / wrong country format
+885,,Swaziland,SWZ,0.0,Les,0.0,,,Eastern and Southern Africa,incorrect location data/cannot find coordinates
+886,,Swaziland,SWZ,0.0,"Lowveld, Brabend",0.0,,,Eastern and Southern Africa,incorrect location data/cannot find coordinates
+893,,Syria,,0.0,Deir Al Zoor,0.0,,,,no location/country entered / wrong country format
+894,,Syria,,0.0,Raqqa,0.0,,,,no location/country entered / wrong country format
+897,,"Tanzania, United Republic of",TZA,0.0,Arusha Seed Farm Afsf,0.0,,,Eastern and Southern Africa,incorrect location data/cannot find coordinates
+908,"Lambo, Tanzania, United Republic of","Tanzania, United Republic of",TZA,-3.23,Lambo,37.88,,,Eastern and Southern Africa,incorrect location data/cannot find coordinates
+914,,"Tanzania, United Republic of",TZA,0.0,Mwanza - Region,0.0,,,Eastern and Southern Africa,incorrect location data/cannot find coordinates
+917,,"Tanzania, United Republic of",TZA,0.0,Nm,0.0,,,Eastern and Southern Africa,incorrect location data/cannot find coordinates
+920,,"Tanzania, United Republic of",TZA,0.0,Tanzania,0.0,,,Eastern and Southern Africa,incorrect location data/cannot find coordinates
+963,,"Venezuela, Bolivarian Republic of",VEN,0.0,"Agua Blanca, Portuguesa",0.0,,,South America,incorrect location data/cannot find coordinates
+964,,"Venezuela, Bolivarian Republic of",VEN,0.0,Aragua (ceniap),0.0,,,South America,incorrect location data/cannot find coordinates
+965,,"Venezuela, Bolivarian Republic of",VEN,0.0,Araure (acarigua),0.0,,,South America,incorrect location data/cannot find coordinates
+966,,"Venezuela, Bolivarian Republic of",VEN,0.0,Araure (portuguesa),0.0,,,South America,incorrect location data/cannot find coordinates
+967,,"Venezuela, Bolivarian Republic of",VEN,0.0,"Carretera O, Turen, Portuguesa",0.0,,,South America,incorrect location data/cannot find coordinates
+968,,"Venezuela, Bolivarian Republic of",VEN,0.0,Centro Norte,0.0,,,South America,incorrect location data/cannot find coordinates
+969,,"Venezuela, Bolivarian Republic of",VEN,0.0,Colonia Agricola De Turen,0.0,,,South America,incorrect location data/cannot find coordinates
+970,,"Venezuela, Bolivarian Republic of",VEN,0.0,"El Diamante, Yaritagua",0.0,,,South America,incorrect location data/cannot find coordinates
+971,,"Venezuela, Bolivarian Republic of",VEN,0.0,El Playon,0.0,,,South America,incorrect location data/cannot find coordinates
+972,,"Venezuela, Bolivarian Republic of",VEN,0.0,El Socorro,0.0,,,South America,incorrect location data/cannot find coordinates
+973,,"Venezuela, Bolivarian Republic of",VEN,0.0,Guarico,0.0,,,South America,incorrect location data/cannot find coordinates
+974,,"Venezuela, Bolivarian Republic of",VEN,0.0,La Lucia,0.0,,,South America,incorrect location data/cannot find coordinates
+975,,"Venezuela, Bolivarian Republic of",VEN,0.0,Las Caramas,0.0,,,South America,incorrect location data/cannot find coordinates
+978,,"Venezuela, Bolivarian Republic of",VEN,0.0,"Las Guacamayas, El Sombrero",0.0,,,South America,incorrect location data/cannot find coordinates
+979,,"Venezuela, Bolivarian Republic of",VEN,0.0,"Los Guayos, Carabobo State",0.0,,,South America,incorrect location data/cannot find coordinates
+980,,"Venezuela, Bolivarian Republic of",VEN,0.0,Manzanita,0.0,,,South America,incorrect location data/cannot find coordinates
+982,,"Venezuela, Bolivarian Republic of",VEN,0.0,"Pascual Valetta, Laguna De Piedra",0.0,,,South America,incorrect location data/cannot find coordinates
+983,,"Venezuela, Bolivarian Republic of",VEN,0.0,Punta Gorda,0.0,,,South America,incorrect location data/cannot find coordinates
+985,,"Venezuela, Bolivarian Republic of",VEN,0.0,Santa Barbara,0.0,,,South America,incorrect location data/cannot find coordinates
+986,,"Venezuela, Bolivarian Republic of",VEN,0.0,Semillas Aragua,0.0,,,South America,incorrect location data/cannot find coordinates
+987,,"Venezuela, Bolivarian Republic of",VEN,0.0,Tocoron,0.0,,,South America,incorrect location data/cannot find coordinates
+988,,"Venezuela, Bolivarian Republic of",VEN,0.0,"Tocoron, Estado Aragua",0.0,,,South America,incorrect location data/cannot find coordinates
+989,,"Venezuela, Bolivarian Republic of",VEN,0.0,Tucupido,0.0,,,South America,incorrect location data/cannot find coordinates
+990,,"Venezuela, Bolivarian Republic of",VEN,0.0,Turen,0.0,,,South America,incorrect location data/cannot find coordinates
+991,,"Venezuela, Bolivarian Republic of",VEN,0.0,Unidad Agricola De Turen,0.0,,,South America,incorrect location data/cannot find coordinates
+992,,"Venezuela, Bolivarian Republic of",VEN,0.0,Venezuela,0.0,,,South America,incorrect location data/cannot find coordinates
+993,,"Venezuela, Bolivarian Republic of",VEN,0.0,"Villa De Cura, Aragua",0.0,,,South America,incorrect location data/cannot find coordinates
+994,,Viet Nam,VNM,0.0,"Ars, Amberpet, Hyd.",0.0,,,Asia,incorrect location data/cannot find coordinates
+995,,Viet Nam,VNM,0.0,Binh Chanh Dictrict - Ho Chi Minh City,0.0,,,Asia,incorrect location data/cannot find coordinates
+996,,Viet Nam,VNM,0.0,Binh Duong,0.0,,,Asia,incorrect location data/cannot find coordinates
+998,,Viet Nam,VNM,0.0,Dan Phuong Hatay,0.0,,,Asia,incorrect location data/cannot find coordinates
+999,,Viet Nam,VNM,0.0,Danphing Dist.,0.0,,,Asia,incorrect location data/cannot find coordinates
+1000,,Viet Nam,VNM,0.0,"Duc Hoa District, Long An Province",0.0,,,Asia,incorrect location data/cannot find coordinates
+1001,,Viet Nam,VNM,0.0,Gorakhpur,0.0,,,Asia,incorrect location data/cannot find coordinates
+1005,,Viet Nam,VNM,0.0,Tay Ninh Province,0.0,,,Asia,incorrect location data/cannot find coordinates
+1077,,Colombia,COL,0.0,"Puerto Gaitan-carpoica,taluma",0.0,,,South America,incorrect location data/cannot find coordinates
+1080,,"Tanzania, United Republic of",TZA,0.0,Ivumwe,0.0,,,Eastern and Southern Africa,incorrect location data/cannot find coordinates
+1103,,"Bolivia, Plurinational State of",BOL,,Cochabamba,,,,South America,incorrect location data/cannot find coordinates
+1107,,Unknown,,,Unknown,,,,UNKNOWN,no location/country entered / wrong country format
+1118,,Mozambique,MOZ,,Ntugo-nmodzi,,,,Eastern and Southern Africa,incorrect location data/cannot find coordinates
+1122,,"Tanzania, United Republic of",TZA,,Sari,,,,Eastern and Southern Africa,incorrect location data/cannot find coordinates
+1123,,"Tanzania, United Republic of",TZA,,Karatu,,,,Eastern and Southern Africa,incorrect location data/cannot find coordinates
+1134,,"Venezuela, Bolivarian Republic of",VEN,,"Finca Las Matas, Palo Negro",,,,South America,incorrect location data/cannot find coordinates
+1137,,South Korea,,,Un San County,,,,,no location/country entered / wrong country format
+1181,,"Tanzania, United Republic of",TZA,0.0,"Mungushi, Hai",0.0,,,Eastern and Southern Africa,incorrect location data/cannot find coordinates
+1184,,"Congo, The Democratic Republic of the",COD,,Kasapa,,,,,incorrect location data/cannot find coordinates
+1202,,Guatemala,GTM,0.0,La Máquina Caballo Blanco,0.0,,,Central America and Caribbean,incorrect location data/cannot find coordinates
+1210,,"Venezuela, Bolivarian Republic of",VEN,,Tocorón-edo. Aragua,,,,,incorrect location data/cannot find coordinates
+1213,,El Salvador,SLV,,"San Andres, El Salvador",,,,,incorrect location data/cannot find coordinates
+1234,,,,,Trial Series,,,,,no location/country entered / wrong country format
+1264,,Viet Nam,VNM,,"Dan Phuong, Hanoi",,,,,incorrect location data/cannot find coordinates
+1284,,"Tanzania, United Republic of",TZA,,Babati,,,,,incorrect location data/cannot find coordinates
+1285,,"Tanzania, United Republic of",TZA,,Sanya Juu,,,,,incorrect location data/cannot find coordinates
+1286,,"Tanzania, United Republic of",TZA,,Tengeru,,,,,incorrect location data/cannot find coordinates
+1290,,"Tanzania, United Republic of",TZA,,Hamdeni,,,,,incorrect location data/cannot find coordinates
+1291,,"Tanzania, United Republic of",TZA,,Mwele,,,,,incorrect location data/cannot find coordinates
+1298,,South Africa,ZAF,,Oaklands Farm Mooi River,,,,,incorrect location data/cannot find coordinates
+1322,,Sudan,SDN,,Hudeiba (eddamer),,,,,incorrect location data/cannot find coordinates
+1324,,Sudan,SDN,,Hudeiba (eddaner),,,,,incorrect location data/cannot find coordinates
+1325,,"Bolivia, Plurinational State of",BOL,,Carapari,,,,,incorrect location data/cannot find coordinates
+1326,,"Bolivia, Plurinational State of",BOL,,Pajonal Entre Rios,,,,,incorrect location data/cannot find coordinates
+1327,,"Bolivia, Plurinational State of",BOL,,Piriti Villa Montes,,,,,incorrect location data/cannot find coordinates
+1328,,"Bolivia, Plurinational State of",BOL,,San Jose Norte,,,,,incorrect location data/cannot find coordinates
+1329,,"Venezuela, Bolivarian Republic of",VEN,,Palo Negro,,,,,incorrect location data/cannot find coordinates
+1333,,Zimbabwe,ZWE,,Makoholi Drewton,,,,,incorrect location data/cannot find coordinates
+1347,"Koronnia Research Station - - - Koronivia Research, Fiji",Fiji,FJI,-18.0961112976074,Koronnia Research Station - - - Koronivia Research,178.545562744141,,,,incorrect location data/cannot find coordinates
+1415,,"Tanzania, United Republic of",TZA,,Boma Ngombe,,,,,incorrect location data/cannot find coordinates
+1439,,Peru,PER,,"Caruapoma, Bella Vista, Tarapoto",,,,,incorrect location data/cannot find coordinates
+1444,,"Bolivia, Plurinational State of",BOL,,Sagrado Corazónl,,,,,incorrect location data/cannot find coordinates
+1457,,"Tanzania, United Republic of",TZA,,Handeni,,,,,incorrect location data/cannot find coordinates
+1458,,"Tanzania, United Republic of",TZA,,Mlangarini,,,,,incorrect location data/cannot find coordinates
+1461,,"Tanzania, United Republic of",TZA,,Dutwa-bariadi,,,,,incorrect location data/cannot find coordinates
+1462,,"Tanzania, United Republic of",TZA,,Kilimatembo,,,,,incorrect location data/cannot find coordinates
+1463,,"Tanzania, United Republic of",TZA,,Mara Farm,,,,,incorrect location data/cannot find coordinates
+1464,,"Tanzania, United Republic of",TZA,,Meru,,,,,incorrect location data/cannot find coordinates
+1467,,Kenya,KEN,,Yala Swamp (intercrop),,,,,incorrect location data/cannot find coordinates
+1468,,Kenya,KEN,,Yala Swamp (sole Crop),,,,,incorrect location data/cannot find coordinates
+1469,,"Tanzania, United Republic of",TZA,,Tlawi,,,,,incorrect location data/cannot find coordinates
