@@ -554,10 +554,12 @@ class Table:
 
         df.to_csv(filePath, sep=',', encoding='utf-8', index=False)
 
-connector = DatabaseConnector()
-connector.getConnectFromConfig(filePath="D:\\config.ini")
-
-mTable = Table('hello', connector)
-mTable.updateEntries()
-
-connector.closeConnection()
+# connector = DatabaseConnector()
+# connector.getConnectFromConfig()
+#
+# table = Table(tableName='Goodbyes', databaseConnector=connector)
+#
+# table.buildTableFromFile('D:\\master\\IaaGeoDataCleaning\\resources\\csv\\databaseoutputmodified.csv')
+# table.makeTableSpatial()
+#
+# connector.closeConnection()
