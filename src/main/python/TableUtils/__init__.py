@@ -28,7 +28,8 @@ regex = re.compile(' \(\d\)')
 class TableTools:
     def __init__(self, file_path=str(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', '..',
                                                                   'resources', 'xlsx', 'verified_entries.xlsx'))),
-                 loc_col='Location', ctry_col='Country', reg_col ='Region', lat_col='Latitude', lng_col='Longitude'):
+                 outfile_type='.csv', loc_col='Location', ctry_col='Country', reg_col ='Region',
+                 lat_col='Latitude', lng_col='Longitude'):
         self.file_path = file_path
         self.df = self.read_file(self.file_path)
         self.validator = verify.GeocodeValidator()
@@ -42,6 +43,11 @@ class TableTools:
 
         else:
             raise KeyError('Column names not found in table.')
+
+        if outfile_type != '.csv' or outfile_type != '.xlsx':
+            raise TypeError('Support is only available for .xlsx and .csv files.')
+
+        self.outfile_type = outfile_type
 
         self.directory = str(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', '..',
                                                           os.path.splitext(os.path.basename(self.file_path))[0])))
@@ -62,8 +68,8 @@ class TableTools:
             raise TypeError('Support is only available for .xlsx and .csv files.')
         return data
 
-    def export_file(self, df, outfile, directory, file_type):
-        outfile = outfile + file_type
+    def export_file(self, df, outfile, directory):
+        outfile = outfile + self.outfile_type
         file_path = str(
             os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', '..', directory, outfile)))
 
@@ -104,7 +110,7 @@ class TableTools:
                 raise TypeError('Type unsupported in the data frame.')
         return val_in
 
-    def verify_rows(self, indices, outfile_type):
+    def verify_by_indices(self, indices):
         if not (isinstance(indices, list) or isinstance(indices, tuple)):
             indices = [indices]
         results = []
@@ -116,7 +122,11 @@ class TableTools:
         if results:
             df = pd.DataFrame(results)
             df = df.set_index('Index')
-            self.export_file(df, 'validation_result', self.directory, outfile_type)
+            self.export_file(df, 'validation_result', self.directory)
+
+    def verify_by_value(self, loc=None, ctry=None, lat=None, lng=None):
+        indices = self.query_table(loc, ctry, lat, lng)
+        self.verify_by_indices(indices)
 
     def verify_row(self, index):
         """
@@ -138,13 +148,14 @@ class TableTools:
         except IndexError:
             return None
 
-    def clean_table(self, outfile_type):
+    def clean_table(self):
         # Variables for logging data
         logs = {'verified_entries': [], 'pending_entries': [], 'repeated_entries': []}
         flagged_indices = []
 
         # Iterating through the rows to clean data
         for (index, row) in self.df.iterrows():
+            print('Verifying at index: ', index)
             location = str(row[self.loc_col])
             country = str(row[self.ctry_col])
 
@@ -175,7 +186,7 @@ class TableTools:
         for k, v in logs.items():
             df = pd.DataFrame(v)
             df = df.set_index('Index')
-            self.export_file(df, k, self.directory, outfile_type)
+            self.export_file(df, k, self.directory)
 
         return len(flagged_indices) / (1e-10 + len(self.df))
 
@@ -195,10 +206,11 @@ class TableTools:
                 index = len(self.df)
                 for k, v in row[1].items():
                     self.df.loc[index, k] = v
-                self.export_file(self.df, self.file_path, self.directory, outfile_type)
+                self.export_file(self.df, self.file_path, self.directory)
             return row
 
 
 tools = TableTools(file_path=str(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', '..',
                                                                   'resources', 'xlsx', 'tblLocation.xlsx'))))
-tools.verify_rows([10, 5000], '.xlsx')
+tools.clean_table()
+
