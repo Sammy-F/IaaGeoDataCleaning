@@ -2,7 +2,7 @@ import math
 import pandas as pd
 import re
 import os
-from src.main.python.IaaGeoDataCleaning import verify, filenames
+from src.main.python.IaaGeoDataCleaning import verify
 
 
 """
@@ -32,8 +32,6 @@ class TableTools:
         self.file_path = file_path
         self.df = self.read_file(self.file_path)
         self.validator = verify.GeocodeValidator()
-        self.directory = os.path.splitext(os.path.basename(self.file_path))[0]
-        # os.mkdir(self.directory)
 
         if {loc_col, ctry_col, reg_col, lat_col, lng_col}.issubset(self.df.columns):
             self.loc_col = loc_col
@@ -44,6 +42,11 @@ class TableTools:
 
         else:
             raise KeyError('Column names not found in table.')
+
+        self.directory = str(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', '..',
+                                                          os.path.splitext(os.path.basename(self.file_path))[0])))
+        if not os.path.exists(self.directory):
+            os.mkdir(self.directory)
 
     def read_file(self, file_path):
         """
@@ -101,86 +104,101 @@ class TableTools:
                 raise TypeError('Type unsupported in the data frame.')
         return val_in
 
+    def verify_rows(self, indices, outfile_type):
+        if not (isinstance(indices, list) or isinstance(indices, tuple)):
+            indices = [indices]
+        results = []
+        for idx in indices:
+            row = self.verify_row(idx)
+            if row:
+                results.append(row[1])
+
+        if results:
+            df = pd.DataFrame(results)
+            df = df.set_index('Index')
+            self.export_file(df, 'validation_result', self.directory, outfile_type)
+
+    def verify_row(self, index):
+        """
+
+        :param indices: an index or a list of indices
+        :param outfile_type:
+        :return:
+        """
+        try:
+            loc = self.df.iloc[index][self.loc_col]
+            ctry = self.df.iloc[index][self.ctry_col]
+            reg = self.df.iloc[index][self.reg_col]
+            lat = self.df.iloc[index][self.lat_col]
+            lng = self.df.iloc[index][self.lng_col]
+
+            row_info = self.validator.verify_info(loc, ctry, reg, lat, lng)
+            row_info[1]['Index'] = index
+            return row_info
+        except IndexError:
+            return None
+
     def clean_table(self, outfile_type):
         # Variables for logging data
-        verified_entries = {'Type': [], 'Location': [], 'Country': [], 'Region': [], 'Latitude': [], 'Longitude': [],
-                            'Recorded_Lat': [], 'Recorded_Lng': [], 'Address': [], 'Country_Code': []}
-        pending_entries = {'Type': [], 'Location': [], 'Country': [], 'Region': [], 'Latitude': [], 'Longitude': [],
-                           'Recorded_Lat': [], 'Recorded_Lng': [], 'Address': [], 'Country_Code': []}
-        repeated_entries = {'Type': [], 'Location': [], 'Country': [], 'Region': [], 'Latitude': [], 'Longitude': [],
-                            'ver_Index': [], 'Recorded_Lat': [], 'Recorded_Lng': [], 'Address': [], 'Country_Code': []}
+        logs = {'verified_entries': [], 'pending_entries': [], 'repeated_entries': []}
         flagged_indices = []
 
         # Iterating through the rows to clean data
         for (index, row) in self.df.iterrows():
-            print('Verifying row at index: ' + str(index))
-            location = row[self.loc_col]
-            country = row[self.ctry_col]
-            region = row[self.reg_col]
-            latitude = row[self.lat_col]
-            longitude = row[self.lng_col]
+            location = str(row[self.loc_col])
+            country = str(row[self.ctry_col])
 
-            row_info = self.clean_data(location, country, region, latitude, longitude, verified_entries)
-            print(row_info)
-            # Row already exists in the verified dictionary
-            if isinstance(row_info, list):
-                for ver_idx in row_info:
-                    entry = {}
-                    for key in verified_entries.keys():
-                        entry[key] = verified_entries[key][ver_idx]
-                    entry['ver_Index'] = ver_idx
-                    del entry['Type']
-                    self.log_to_dict(repeated_entries, entry)
-            # Completely new entry
+            # Checking to see whether entry already exists
+            all_loc = [dct['Location'] for dct in logs['verified_entries']]
+            all_ctry = [dct['Country'] for dct in logs['verified_entries']]
+
+            loc_in_table = self.cell_in_table(value=location, col_list=all_loc)
+            ctry_in_table = self.cell_in_table(value=country, col_list=all_ctry)
+            in_table = set(loc_in_table) & set(ctry_in_table)
+
+            if in_table:
+                for idx in in_table:
+                    row = logs['verified_entries'][idx]
+                    row['Index'] = index
+                    row['ver_Index'] = idx
+                    logs['repeated_entries'].append(row)
             else:
-                if row_info[0] < 0:
-                    flagged_indices.append(index)
-                    self.log_to_dict(pending_entries, row_info[1])
+                row = self.verify_row(index)
+                row[1]['Index'] = index
+                if row[0] >= 0:
+                    logs['verified_entries'].append(row[1])
                 else:
-                    self.log_to_dict(verified_entries, row_info[1])
+                    logs['pending_entries'].append(row[1])
+                    flagged_indices.append(index)
 
-        # Exporting the data
-        for key in repeated_entries.keys():
-            print(key, ' ', len(repeated_entries[key]))
-        self.export_file(pd.DataFrame(verified_entries), filenames.VERIFIED_ENTRIES_FILENAME, self.directory, outfile_type)
-        self.export_file(pd.DataFrame(pending_entries), filenames.PENDING_ENTRIES_FILENAME, self.directory, outfile_type)
-
-        self.export_file(pd.DataFrame(repeated_entries), filenames.REPEATED_ENTRIES_FILENAME, self.directory, outfile_type)
+        # Exporting the results
+        for k, v in logs.items():
+            df = pd.DataFrame(v)
+            df = df.set_index('Index')
+            self.export_file(df, k, self.directory, outfile_type)
 
         return len(flagged_indices) / (1e-10 + len(self.df))
 
-    def clean_data(self, location, country, region, latitude, longitude, verified_log):
-        loc_in_table = self.cell_in_table(value=str(location), col_list=list(verified_log['Location']))
-        ctry_in_table = self.cell_in_table(value=str(country), col_list=list(verified_log['Country']))
-        in_table = list(set(loc_in_table) & set(ctry_in_table))
+    def add_entry(self, loc, ctry, reg, lat, lng, outfile_type):
+        loc_in_table = self.cell_in_table(value=loc, col_list=list(self.df[self.loc_col]))
+        ctry_in_table = self.cell_in_table(value=ctry, col_list=list(self.df[self.loc_col]))
+        in_table = set(loc_in_table) & set(ctry_in_table)
+
         if in_table:
-            return in_table
-        else:
-            return self.validator.verify_info(location, country, region, latitude, longitude)
-
-    def log_to_dict(self, log, row_dict):
-        for key in row_dict.keys():
-            log[key].append(row_dict[key])
-
-    def verify_row(self, index, outfile_type):
-        loc = self.df.iloc[index, self.loc_col]
-        ctry = self.df.iloc[index, self.ctry_col]
-        reg = self.df.iloc[index, self.reg_col]
-        lat = self.df.iloc[index, self.lat_col]
-        lng = self.df.iloc[index, self.lng_col]
-
-        in_table = self.query_table(loc=loc, ctry=ctry)
-        if in_table:
-            new_df = pd.DataFrame(columns=self.df.columns)
+            results = []
             for idx in in_table:
-                new_df.loc[len(new_df)] = dict(self.df.iloc[idx])
+                results.append(dict(self.df.iloc[idx]))
+            return results
         else:
-            row_info = self.validator.verify_info(loc, ctry, reg, lat, lng)
-            new_df = pd.DataFrame(row_info[1])
-
-        self.export_file(new_df, filenames.VALIDATION_RESULT_FILENAME, self.directory, outfile_type)
+            row = self.validator.verify_info(loc, ctry, reg, lat, lng)
+            if row[0] >= 0:
+                index = len(self.df)
+                for k, v in row[1].items():
+                    self.df.loc[index, k] = v
+                self.export_file(self.df, self.file_path, self.directory, outfile_type)
+            return row
 
 
 tools = TableTools(file_path=str(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', '..',
                                                                   'resources', 'xlsx', 'tblLocation.xlsx'))))
-tools.clean_table('.csv')
+tools.verify_rows([10, 5000], '.xlsx')
