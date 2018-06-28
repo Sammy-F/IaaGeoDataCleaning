@@ -28,7 +28,7 @@ If interacting with a PostgreSQL database, import ```IaaGeoDataCleaning.Connecti
 
 Data cleaning on a file can be performed by instantiating a TableTools Object and call its clean_table() method. \
 The cleaned data will be saved in the same directory as the original data, and will include
-the verified entries, pending entries, and repeated entries.
+the verified entries, pending entries, and repeated entries. \
 
 ```
 cleaner = TableTools(file_path=<path to data>)
@@ -36,11 +36,24 @@ cleaner.clean_table()
 
 ```
 
+To interact with the database, instantiate a DatabaseConnector and a Table. If loading data from an existing table, the Table's
+name should be passed as the name of the existing table. Otherwise, choose an appropriate unique name. \
+
+```
+connector = DatabaseConnector()
+Table = Table(tablename='helloworld', databaseConnector=connector)
+
+```
+
+
+
 ### Acknowledgment:
 
 Initial development by  [Jonathan Scott ](https://github.com/lionely/).
 
 Continued development by [Samantha Fritsche ](https://github.com/Sammy-F) and [Thy Nguyen ](https://github.com/thytng).
+
+Many thanks to Getiria Onsongo for his mentorship in development of this package.
 
 ### Contributing
 
