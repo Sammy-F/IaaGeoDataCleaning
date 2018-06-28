@@ -442,7 +442,7 @@ class Table:
                     return False
         return True
 
-    def getTable(self, limit=0):
+    def getTable(self, limit=5):
         """
         Return a number of rows of the table. If limit=0, return all.
         :param limit:
@@ -557,9 +557,7 @@ class Table:
 # connector = DatabaseConnector()
 # connector.getConnectFromConfig()
 #
-# table = Table(tableName='Goodbyes', databaseConnector=connector)
+# table = Table(tableName='testtable', databaseConnector=connector)
 #
-# table.buildTableFromFile('D:\\master\\IaaGeoDataCleaning\\resources\\csv\\databaseoutputmodified.csv')
-# table.makeTableSpatial()
-#
+# table.updateEntries(latColName='Latitude', lngColName='Longitude', countryColName='Country', locationColName='Location')
 # connector.closeConnection()

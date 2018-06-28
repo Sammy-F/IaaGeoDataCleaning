@@ -62,7 +62,6 @@ class DatabaseConnector:
             return self.connection
         except (Exception, psy.DatabaseError) as error:
             print(error)
-            print("Woops")
             if self.connection is not None:
                 self.connection.close()
                 print('Connection closed.')
