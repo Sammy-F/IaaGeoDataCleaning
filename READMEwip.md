@@ -1,5 +1,6 @@
 # IaaGeoDataCleaning
-Finding potential corrupt data entries using geocoding.
+Finds potential corrupt data entries using geocoding and includes tools for interacting with a PostgreSQL
+database.
 
 ### Overview
 This a python library for detecting potential corrupt entries in a dataframe.
@@ -42,12 +43,20 @@ DatabaseConnector's getConnect methods.
 
 ```
 connector = DatabaseConnector()
-Table = Table(tablename='helloworld', databaseConnector=connector)
+table = Table(tablename='helloworld', databaseConnector=connector)
 
 connector.getConnectFromConfig()
 ```
 
+Building a table and making it spatial can be done using buildTableFromFile() and makeTableSpatial(). See documentation
+for optional arguments. If the file path is not indicated as an argument, a file dialog will be opened to select it.
 
+```
+table.buildTableFromFile()
+table.makeTableSpatial()
+```
+
+Other methods and examples can be found in the documentation (to be written).
 
 ### Acknowledgment:
 
@@ -62,3 +71,5 @@ Many thanks to [Getiria Onsongo](https://github.com/getiria-onsongo/) for his me
 Feel free to submit a pull request if you have any features/improvements to add to the package. \
 You can also open an issue if you ecountered a problem while using the current core functionalities \
 of the package.
+
+
