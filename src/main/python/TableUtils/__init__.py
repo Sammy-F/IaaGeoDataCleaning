@@ -28,12 +28,23 @@ regex = re.compile(' \(\d\)')
 class TableTools:
     def __init__(self, file_path=str(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', '..',
                                                                   'resources', 'xlsx', 'verified_entries.xlsx'))),
-                 outfile_type='.csv', loc_col='Location', ctry_col='Country', reg_col ='Region',
+                 outfile_type='.csv', loc_col='Location', ctry_col='Country', reg_col='Region',
                  lat_col='Latitude', lng_col='Longitude'):
+        """
+        Initializes a TableTools object to clean, query, or validate latitudinal and longitudinal inputs.
+        :param file_path: the file path of the data being used.
+        :param outfile_type: the extension of all output files to be produced.
+        :param loc_col: the name of the location column.
+        :param ctry_col: the name of the country column.
+        :param reg_col: the name of the region column.
+        :param lat_col: the name of the latitude column.
+        :param lng_col: the name of the latitude column.
+        """
         self.file_path = file_path
         self.df = self.read_file(self.file_path)
         self.validator = verify.GeocodeValidator()
 
+        # Checking to see whether the columns actually exist in the data frame
         if {loc_col, ctry_col, reg_col, lat_col, lng_col}.issubset(self.df.columns):
             self.loc_col = loc_col
             self.ctry_col = ctry_col
@@ -44,11 +55,13 @@ class TableTools:
         else:
             raise KeyError('Column names not found in table.')
 
-        if outfile_type != '.csv' or outfile_type != '.xlsx':
+        # Checking to see the output file extension is supported or not
+        if outfile_type != '.csv' and outfile_type != '.xlsx':
             raise TypeError('Support is only available for .xlsx and .csv files.')
 
         self.outfile_type = outfile_type
 
+        # Creating a new directory if none has been created for output files.
         self.directory = str(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', '..',
                                                           os.path.splitext(os.path.basename(self.file_path))[0])))
         if not os.path.exists(self.directory):
@@ -56,8 +69,8 @@ class TableTools:
 
     def read_file(self, file_path):
         """
-        Reads in csv or excel file.
-        :param file_path:
+        Reads in csv or excel file. Raises an error if a different file type was entered.
+        :param file_path: .csv or .xlsx
         :return: a pandas data frame.
         """
         if file_path.endswith('.xlsx'):
@@ -69,6 +82,13 @@ class TableTools:
         return data
 
     def export_file(self, df, outfile, directory):
+        """
+        Exports the input data frame to the designated directory and outfile type.
+        :param df: the data frame
+        :param outfile: name of the output file
+        :param directory: name of the directory
+        :return:
+        """
         outfile = outfile + self.outfile_type
         file_path = str(
             os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', '..', directory, outfile)))
@@ -82,6 +102,18 @@ class TableTools:
         print('Finished exporting. File can be found at: %s' % file_path)
 
     def query_table(self, loc=None, ctry=None, lat=None, lng=None):
+        """
+        Queries the table for entries that match the conditions. Conditions must be:
+        - Location, country, latitude, longitude
+        - Location
+        - Location and country
+        - Latitude and longitude
+        :param loc:
+        :param ctry:
+        :param lat:
+        :param lng:
+        :return: the indices of the entries matching the query.
+        """
         loc_in = self.cell_in_table(loc, self.df[self.loc_col].tolist())
         ctry_in = self.cell_in_table(ctry, self.df[self.ctry_col].tolist())
         lat_in = self.cell_in_table(lat, self.df[self.lat_col].tolist())
@@ -100,6 +132,12 @@ class TableTools:
         return indices
 
     def cell_in_table(self, value, col_list):
+        """
+        Checks to see whether a cell with a certain value exists in the column.
+        :param value: the condition being checked for.
+        :param col_list: all of the entries in the column in a list.
+        :return: a list of indices of rows with the value.
+        """
         val_in = []
         if pd.notnull(value):
             if isinstance(value, float):
@@ -111,6 +149,11 @@ class TableTools:
         return val_in
 
     def verify_by_indices(self, indices):
+        """
+        Verifies certain rows in the data frame given the indices and exports the results to a separate file.
+        :param indices: all of the indices being checked for in a list.
+        :return:
+        """
         if not (isinstance(indices, list) or isinstance(indices, tuple)):
             indices = [indices]
         results = []
@@ -125,15 +168,23 @@ class TableTools:
             self.export_file(df, 'validation_result', self.directory)
 
     def verify_by_value(self, loc=None, ctry=None, lat=None, lng=None):
+        """
+        Verifies certain rows in the data frame using location, country, latitude, or longitude conditions,
+        exports the results to a separate file.
+        :param loc:
+        :param ctry:
+        :param lat:
+        :param lng:
+        :return:
+        """
         indices = self.query_table(loc, ctry, lat, lng)
         self.verify_by_indices(indices)
 
     def verify_row(self, index):
         """
-
-        :param indices: an index or a list of indices
-        :param outfile_type:
-        :return:
+        Verifies a single row in the data frame.
+        :param index: index of the row.
+        :return: a tuple containing the type of entry and the information of the row represented in a dictionary.
         """
         try:
             loc = self.df.iloc[index][self.loc_col]
@@ -149,6 +200,11 @@ class TableTools:
             return None
 
     def clean_table(self):
+        """
+        Runs through the entire data frame and verifies all of the entries,
+        exports 3 output files: verified entries, pending entries, and repeated entries.
+        :return: the percentage of entries that could not be validated/geocoded.
+        """
         # Variables for logging data
         logs = {'verified_entries': [], 'pending_entries': [], 'repeated_entries': []}
         flagged_indices = []
@@ -167,12 +223,14 @@ class TableTools:
             ctry_in_table = self.cell_in_table(value=country, col_list=all_ctry)
             in_table = set(loc_in_table) & set(ctry_in_table)
 
+            # Saving the entry in the repeated log if it has already been validated
             if in_table:
                 for idx in in_table:
                     row = logs['verified_entries'][idx]
                     row['Index'] = index
                     row['ver_Index'] = idx
                     logs['repeated_entries'].append(row)
+            # Verifying it using the geocode validator if not
             else:
                 row = self.verify_row(index)
                 row[1]['Index'] = index
@@ -190,7 +248,16 @@ class TableTools:
 
         return len(flagged_indices) / (1e-10 + len(self.df))
 
-    def add_entry(self, loc, ctry, reg, lat, lng, outfile_type):
+    def add_entry(self, loc, ctry, reg, lat, lng):
+        """
+        Adds a new row to the data frame and overwrites the input file if successfully added.
+        :param loc:
+        :param ctry:
+        :param reg:
+        :param lat:
+        :param lng:
+        :return: a tuple containing the type of entry and the information of the row represented in a dictionary.
+        """
         loc_in_table = self.cell_in_table(value=loc, col_list=list(self.df[self.loc_col]))
         ctry_in_table = self.cell_in_table(value=ctry, col_list=list(self.df[self.loc_col]))
         in_table = set(loc_in_table) & set(ctry_in_table)
@@ -211,6 +278,7 @@ class TableTools:
 
 
 tools = TableTools(file_path=str(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', '..',
-                                                                  'resources', 'xlsx', 'tblLocation.xlsx'))))
-tools.clean_table()
+                                                              'resources', 'xlsx', 'tblLocation.xlsx'))),
+                   outfile_type='.xlsx')
+tools.verify_by_indices([1, 20, 52, 1024, 599])
 
