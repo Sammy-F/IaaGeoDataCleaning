@@ -277,8 +277,8 @@ class TableTools:
             return row
 
 
-tools = TableTools(file_path=str(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', '..',
-                                                              'resources', 'xlsx', 'tblLocation.xlsx'))),
-                   outfile_type='.xlsx')
-tools.verify_by_indices([1, 20, 52, 1024, 599])
+# tools = TableTools(file_path=str(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', '..',
+#                                                               'resources', 'xlsx', 'tblLocation.xlsx'))),
+#                    outfile_type='.xlsx')
+# tools.verify_by_indices([1, 20, 52, 1024, 599])
 
