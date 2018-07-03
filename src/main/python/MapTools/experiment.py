@@ -33,10 +33,3 @@ class MapTool:
         m.add_child(cluster)
 
         return m
-
-    def plot_no_country(self):
-
-
-
-
-

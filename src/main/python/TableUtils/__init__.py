@@ -3,7 +3,11 @@ import pandas as pd
 import re
 import os
 from src.main.python.IaaGeoDataCleaning import verify
-
+import os
+from ipyleaflet import Map, Marker, Circle
+import folium
+import numpy
+from folium.plugins import MarkerCluster
 
 """
 GeocodeValidator allows the user to perform reverse geocoding
@@ -276,9 +280,96 @@ class TableTools:
                 self.export_file(self.df, self.file_path, self.directory)
             return row
 
+class MapTool:
+    def __init__(self, file_path=str(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', '..',
+                                                                  'tblLocation', 'verified_entries.csv'))),
+                 outfile_type='.csv', loc_col='Location', ctry_col='Country', reg_col='Region',
+                 lat_col='Recorded_Lat', lng_col='Recorded_Lng'):
 
-tools = TableTools(file_path=str(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', '..',
-                                                              'resources', 'xlsx', 'tblLocation.xlsx'))),
-                   outfile_type='.xlsx')
-tools.verify_by_indices([1, 20, 52, 1024, 599])
+        self.tableTools = TableTools(file_path=file_path, loc_col=loc_col, ctry_col=ctry_col,
+                                     reg_col=reg_col, lat_col=lat_col, lng_col=lng_col)
 
+    # def plot_point(self, lat, lng, desc=None):
+    #     m = Map(location=[lat, lng], zoom_start=5)
+    #     if desc:
+    #         marker = Marker([lat, lng], popup=desc, icon=Icon(prefix='fa', icon='circle', icon_color='white'))
+    #     else:
+    #         marker = Marker([lat, lng], icon=Icon(prefix='fa', icon='circle', icon_color='white'))
+    #     m.add_child(marker)
+    #     return m
+
+    def plot_all_stations(self):
+        # m = Map(location=[0, 0], zoom_start=2)
+        m = Map(center=(0, 0), zoom=2)
+
+        lat_list = list(self.tableTools.df[self.tableTools.lat_col])
+        lng_list = list(self.tableTools.df[self.tableTools.lng_col])
+        loc_list = list(self.tableTools.df[self.tableTools.loc_col])
+        ctry_list = list(self.tableTools.df[self.tableTools.ctry_col])
+
+        for i in range(len(loc_list)):
+            point = Circle(location=(lat_list[i], lng_list[i]), opacity=0.3, radius=5)
+            m.add_layer(point)
+
+        return m
+
+class MapDrawer:
+    def __init__(self):
+        self.map = None
+
+    def generate_map(self):
+        self.map = folium.Map(location=[0, 0], zoom_start=2)
+
+    def draw_cleaned(self, file_path):
+        self.generate_map()
+        lat_list = []
+        lng_list = []
+
+        rec_lat_list = []
+        rec_lng_list = []
+
+        df = self.read_file(file_path)
+        for (index, entry) in df.iterrows():
+            if not entry['Type'] == 'correct location data':
+                rec_lat_list.append(entry['Recorded_Lat'])
+                rec_lng_list.append(entry['Recorded_Lng'])
+                if not (math.isnan(entry['Latitude'])) and not (math.isnan(entry['Longitude'])):
+                    lat_list.append(entry['Latitude'])
+                    lng_list.append(entry['Longitude'])
+                else:
+                    lat_list.append(0.0)
+                    lng_list.append(0.0)
+
+        coord_list = [[lat_list[i], lng_list[i]] for i in range(len(lat_list))]
+        rec_coord_list = [[rec_lat_list[i], rec_lng_list[i]] for i in range(len(rec_lat_list))]
+
+        red_list = []
+        green_list = []
+
+        for i in range(len(coord_list)):
+            red_list.append(folium.Icon(prefix='fa', color='red'))
+            green_list.append(folium.Icon(prefix='fa', color='green'))
+
+        cluster = MarkerCluster(name='Input Locations', locations=coord_list, icons=red_list)
+        rec_cluster = MarkerCluster(name='Geocoded Locations', locations=rec_coord_list, icons=green_list)
+
+        self.map.add_child(cluster)
+        self.map.add_child(rec_cluster)
+
+        print(len(coord_list))
+
+        return self.map
+
+    def read_file(self, file_path):
+        """
+        Reads in csv or excel file. Raises an error if a different file type was entered.
+        :param file_path: .csv or .xlsx
+        :return: a pandas data frame.
+        """
+        if file_path.endswith('.xlsx'):
+            data = pd.read_excel(file_path)
+        elif file_path.endswith('.csv'):
+            data = pd.read_csv(file_path)
+        else:
+            raise TypeError('Support is only available for .xlsx and .csv files.')
+        return data
