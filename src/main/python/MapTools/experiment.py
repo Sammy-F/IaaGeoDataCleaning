@@ -1,11 +1,14 @@
-import folium as foli
+from folium import Map, Marker, Icon, Popup
 from folium.plugins import MarkerCluster
-import os
-from src.main.python.IaaGeoDataCleaning.verify import Point, gpd, np, pd
+from os import path
+import pandas as pd
+import numpy as np
+from shapely.geometry import Point
+
 
 class MapTool:
     def __init__(self):
-        mapFile = str(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', '..',
+        mapFile = str(path.abspath(path.join(path.dirname(__file__), '..', '..', '..', '..',
                                              'resources', 'mapinfo', 'TM_WORLD_BORDERS-0.3.shp')))
         self.map = self.read_file(mapFile)
 
@@ -37,14 +40,14 @@ class MapTool:
             return df
 
     def create_map(self, center=(0, 0), zoom=2):
-        return foli.Map(location=center, zoom_start=zoom)
+        return Map(location=center, zoom_start=zoom)
 
     def plot_point(self, lat, lng, desc=None, clr='blue'):
         if desc:
-            marker = foli.Marker((lat, lng), popup=foli.Popup(desc, parse_html=True),
-                                 icon=foli.Icon(prefix='fa', color=clr, icon='circle', icon_color='white'))
+            marker = Marker((lat, lng), popup=Popup(desc, parse_html=True),
+                            icon=Icon(prefix='fa', color=clr, icon='circle', icon_color='white'))
         else:
-            marker = foli.Marker((lat, lng), icon=foli.Icon(prefix='fa', color=clr, icon='circle', icon_color='white'))
+            marker = Marker((lat, lng), icon=Icon(prefix='fa', color=clr, icon='circle', icon_color='white'))
         return marker
 
     def plot_all_stations(self, infile, loc_col, ctry_col, lat_col, lng_col, clr='blue', as_cluster=True):
@@ -56,9 +59,9 @@ class MapTool:
         lng_list = list(df[lng_col])
 
         if as_cluster:
-            popups = [foli.Popup('%s, %s' % (loc_list[i], ctry_list[i]), parse_html=True) for i in range(len(loc_list))]
+            popups = [Popup('%s, %s' % (loc_list[i], ctry_list[i]), parse_html=True) for i in range(len(loc_list))]
             coords = [(lat_list[i], lng_list[i]) for i in range(len(lat_list))]
-            icons = [foli.Icon(prefix='fa', color=clr, icon='circle', icon_color='white') for i in range(len(df))]
+            icons = [Icon(prefix='fa', color=clr, icon='circle', icon_color='white') for i in range(len(df))]
 
             cluster = MarkerCluster(locations=coords, icons=icons, popups=popups)
             return cluster
@@ -96,8 +99,8 @@ class MapTool:
                 if len(list(mLoc)) == 0:
                     if as_cluster:
                         coords.append((lat, lng))
-                        popups.append(foli.Popup('%s, %s' % (loc, ctry), parse_html=True))
-                        icons.append(foli.Icon(prefix='fa', color=clr, icon='circle', icon_color='white'))
+                        popups.append(Popup('%s, %s' % (loc, ctry), parse_html=True))
+                        icons.append(Icon(prefix='fa', color=clr, icon='circle', icon_color='white'))
                     else:
                         markers.append(self.plot_point(lat=lat, lng=lng, desc='%s, %s' % (loc, ctry), clr=clr))
 
@@ -106,8 +109,8 @@ class MapTool:
         else:
             return markers
 
-    def plot_type(self, infile, type, type_col, loc_col, ctry_col, lat_col, lng_col, clr='blue', as_cluster=False):
-        df = self.clean_dataframe(infile, {type_col, loc_col, ctry_col, lat_col, lng_col})
+    def plot_condition(self, infile, condition, cnd_col, loc_col, ctry_col, lat_col, lng_col, clr='blue', as_cluster=False):
+        df = self.clean_dataframe(infile, {cnd_col, loc_col, ctry_col, lat_col, lng_col})
 
         coords = []
         popups = []
@@ -116,7 +119,7 @@ class MapTool:
         markers = []
 
         for (index, row) in df.iterrows():
-            if row[type_col] == type:
+            if str(row[cnd_col]).lower() == str(condition).lower():
                 if pd.notnull(row[lat_col]) and pd.notnull(row[lng_col]):
                     lat = row[lat_col]
                     lng = row[lng_col]
@@ -131,8 +134,8 @@ class MapTool:
 
                     if as_cluster:
                         coords.append((lat, lng))
-                        popups.append(foli.Popup('%s, %s' % (loc, ctry), parse_html=True))
-                        icons.append(foli.Icon(prefix='fa', color=clr, icon='circle', icon_color='white'))
+                        popups.append(Popup('%s, %s' % (loc, ctry), parse_html=True))
+                        icons.append(Icon(prefix='fa', color=clr, icon='circle', icon_color='white'))
                     else:
                         markers.append(self.plot_point(lat, lng, '%s, %s' % (loc, ctry), clr))
 
@@ -157,10 +160,3 @@ class MapTool:
         marker1 = self.plot_point(lat=coords1[0], lng=coords1[1], desc=str(coords1), clr=clr1)
 
         return marker0, marker1
-
-
-
-
-
-
-
