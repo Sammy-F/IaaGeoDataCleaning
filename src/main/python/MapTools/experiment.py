@@ -3,14 +3,18 @@ from folium.plugins import MarkerCluster
 from os import path
 import pandas as pd
 import numpy as np
+import geopandas as gpd
 from shapely.geometry import Point
+
+
+# TODO: altair, side by side maps, plot points within a range
 
 
 class MapTool:
     def __init__(self):
         mapFile = str(path.abspath(path.join(path.dirname(__file__), '..', '..', '..', '..',
                                              'resources', 'mapinfo', 'TM_WORLD_BORDERS-0.3.shp')))
-        self.map = self.read_file(mapFile)
+        self.map = gpd.read_file(mapFile)
 
     def read_file(self, file_path):
         """
