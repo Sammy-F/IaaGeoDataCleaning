@@ -134,7 +134,7 @@ class MapTool:
 
         return markers
 
-    def plot_potential_errors(self, infile, loc_col, ctry_col, lat_col, lng_col, clr='lightred', as_cluster=False):
+    def plot_no_country(self, infile, loc_col, ctry_col, lat_col, lng_col, clr='lightred', as_cluster=False):
         """
         Plots all data points whose coordinates do not fall within any country.
         :param infile:
@@ -161,9 +161,9 @@ class MapTool:
 
                 point = Point(np.array([lng, lat]))
                 filtered = self.map['geometry'].contains(point)
-                mLoc = self.map.loc[filtered, 'ISO3']
+                mLoc = list(self.map.loc[filtered, 'ISO3'])
 
-                if len(list(mLoc)) == 0:
+                if len(mLoc) == 0:
                     marker = self.plot_point(lat=lat, lng=lng, desc='%s, %s' % (location[0], location[1]), clr=clr)
                     if as_cluster:
                         marker.add_to(markers)
@@ -171,6 +171,52 @@ class MapTool:
                         markers.append(marker)
 
         return markers
+
+    def plot_wrong_country(self, infile, loc_col, ctry_col, lat_col, lng_col, clr='lightred'):
+        """
+        Plots all data points whose country does not match the country indicated by the coordinates and shapefile.
+        Note: Given the differences in spelling, correct data points might still be plotted.
+        :param infile:
+        :param loc_col:
+        :param ctry_col:
+        :param lat_col:
+        :param lng_col:
+        :param clr:
+        :return: the data points as Marker objects.
+        """
+        df = self.clean_dataframe(infile, {loc_col, ctry_col, lat_col, lng_col})
+        markers = []
+
+        for (index, row) in df.iterrows():
+            if pd.notnull(row[lat_col]) and pd.notnull(row[lng_col]):
+                lat = row[lat_col]
+                lng = row[lng_col]
+                location = self.format_popup(row[loc_col], row[ctry_col])
+
+                point = Point(np.array([lng, lat]))
+                filtered = self.map['geometry'].contains(point)
+                mLoc = list(self.map.loc[filtered, 'NAME'])
+
+                if len(mLoc) > 0 and mLoc[0].lower() != location[1].lower():
+                    markers.append(self.plot_point(lat=lat, lng=lng, desc='%s, %s' % (location[0], location[1]), clr=clr))
+
+        return markers
+
+    def plot_potential_errors(self, infile, loc_col, ctry_col, lat_col, lng_col, clr0='lightred', clr1='orange'):
+        """
+        Plots all of the potentially incorrect location data points.
+        :param infile:
+        :param loc_col:
+        :param ctry_col:
+        :param lat_col:
+        :param lng_col:
+        :param clr0: color of the markers for entries that do not fall within any country border.
+        :param clr1: color of the markers for entries whose country does not match
+                     the country indicated by the shapefile and coordinates.
+        :return: a list of Marker objects.
+        """
+        return self.plot_no_country(infile, loc_col, ctry_col, lat_col, lng_col, clr=clr0, as_cluster=False) + \
+               self.plot_wrong_country(infile, loc_col, ctry_col, lat_col, lng_col, clr=clr1)
 
     def plot_condition(self, infile, condition, cnd_col, loc_col, ctry_col, lat_col, lng_col, clr='blue', as_cluster=False):
         """
