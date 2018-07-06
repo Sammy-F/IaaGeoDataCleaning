@@ -28,6 +28,8 @@ regex = re.compile(' \(\d\)')
 class TableTools:
     def __init__(self, file_path=str(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', '..',
                                                                   'resources', 'xlsx', 'verified_entries.xlsx'))),
+                 map_file=str(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', '..',
+                                                           'resources', 'mapinfo', 'TM_WORLD_BORDERS-0.3.shp'))),
                  outfile_type='.csv', loc_col='Location', ctry_col='Country', reg_col='Region',
                  lat_col='Latitude', lng_col='Longitude'):
         """
@@ -42,7 +44,7 @@ class TableTools:
         """
         self.file_path = file_path
         self.df = self.read_file(self.file_path)
-        self.validator = verify.GeocodeValidator()
+        self.validator = verify.GeocodeValidator(map_file)
 
         # Checking to see whether the columns actually exist in the data frame
         if {loc_col, ctry_col, reg_col, lat_col, lng_col}.issubset(self.df.columns):
@@ -275,10 +277,3 @@ class TableTools:
                     self.df.loc[index, k] = v
                 self.export_file(self.df, self.file_path, self.directory)
             return row
-
-
-# tools = TableTools(file_path=str(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', '..',
-#                                                               'resources', 'xlsx', 'tblLocation.xlsx'))),
-#                    outfile_type='.xlsx')
-# tools.verify_by_indices([1, 20, 52, 1024, 599])
-

@@ -10,7 +10,8 @@ import string
 
 
 class GeocodeValidator:
-    def __init__(self):
+    def __init__(self, map_file=str(path.abspath(path.join(path.dirname(__file__), '..', '..', '..', '..',
+                                                           'resources', 'mapinfo', 'TM_WORLD_BORDERS-0.3.shp')))):
         self.pht = gp.Photon(timeout=3)
 
         self.entry_type = {0: 'correct location data', 1: 'entered (lat, -lng)',
@@ -22,9 +23,7 @@ class GeocodeValidator:
                            -2: 'no latitude and longitude entered',
                            -3: 'no location/country entered / wrong country format'}
 
-        mapFile = str(path.abspath(path.join(path.dirname(__file__), '..', '..', '..', '..',
-                                             'resources', 'mapinfo', 'TM_WORLD_BORDERS-0.3.shp')))
-        self.map = gpd.read_file(mapFile)
+        self.map = gpd.read_file(map_file)
 
     def verify_info(self, location=None, country=None, region=None, input_lat=None, inp_lng=None):
         """
@@ -203,6 +202,6 @@ class NameHandler:
     def findName(self, checkCountry):
         for formattedName, alternativeNames in self.namesDict.items():
             for alternativeName in alternativeNames:
-                if (checkCountry.lower() == alternativeName.lower()):
+                if checkCountry.lower() == alternativeName.lower():
                     return formattedName
         return False

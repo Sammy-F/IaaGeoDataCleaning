@@ -6,17 +6,15 @@ import numpy as np
 import geopandas as gpd
 from shapely.geometry import Point
 import math
-# TODO: plot all stations whose coordinates do not match the country.
 
 
 class MapTool:
-    def __init__(self):
+    def __init__(self, map_file=str(path.abspath(path.join(path.dirname(__file__), '..', '..', '..', '..',
+                                                           'resources', 'mapinfo', 'TM_WORLD_BORDERS-0.3.shp')))):
         """
         Initializes a tool for mapping data points as markers using the folium package.
         """
-        mapFile = str(path.abspath(path.join(path.dirname(__file__), '..', '..', '..', '..',
-                                             'resources', 'mapinfo', 'TM_WORLD_BORDERS-0.3.shp')))
-        self.map = gpd.read_file(mapFile)
+        self.map = gpd.read_file(map_file)
 
     def read_file(self, file_path):
         """
@@ -94,12 +92,10 @@ class MapTool:
         :param clr:
         :return:
         """
-        if desc:
-            marker = Marker((lat, lng), popup=Popup(desc, parse_html=True),
-                            icon=Icon(prefix='fa', color=clr, icon='circle', icon_color='white'))
-        else:
-            marker = Marker((lat, lng), icon=Icon(prefix='fa', color=clr, icon='circle', icon_color='white'))
-        return marker
+        if not desc:
+            desc = str((lat, lng))
+        return Marker(location=(lat, lng), popup=Popup(desc, parse_html=True),
+                      icon=Icon(prefix='fa', color=clr, icon='circle', icon_color='white'))
 
     def plot_all_stations(self, infile, loc_col, ctry_col, lat_col, lng_col, clr='blue', as_cluster=True):
         """
@@ -319,7 +315,7 @@ class MapTool:
                 if d < radius:
                     location = self.format_popup(row[loc_col], row[ctry_col])
                     markers.append(self.plot_point(lat=lat, lng=lng, clr=clr1,
-                                                   desc='%s, %s, %s km' % (location[0], location[1], format(d, '.3f'))))
+                                                   desc='%s, %s - %s km' % (location[0], location[1], format(d, '.3f'))))
 
         markers.append(self.plot_point(lat=center[0], lng=center[1], desc=desc0, clr=clr0))
         return markers
@@ -345,3 +341,4 @@ class MapTool:
             return self.plot_within_range(infile, coords, radius, loc_col, ctry_col, lat_col, lng_col, location, clr0, clr1)
         else:
             raise KeyError('Index out of range.')
+
