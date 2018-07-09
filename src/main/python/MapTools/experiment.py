@@ -7,7 +7,7 @@ import geopandas as gpd
 from shapely.geometry import Point
 import math
 
-
+# TODO: plot all of the stations and their counterpart; read in a pandas data frame for visualization
 class MapTool:
     def __init__(self, map_file=str(path.abspath(path.join(path.dirname(__file__), '..', '..', '..', '..',
                                                            'resources', 'mapinfo', 'TM_WORLD_BORDERS-0.3.shp')))):
@@ -261,7 +261,7 @@ class MapTool:
         :param lng1_col:
         :param clr0:
         :param clr1:
-        :return: the data points as Marker objects.
+        :return: the data points as a tuple of Marker objects.
         """
         df = self.clean_dataframe(infile, {lat0_col, lng0_col, lat1_col, lng1_col})
 
@@ -280,7 +280,7 @@ class MapTool:
         :param coords1:
         :param clr0:
         :param clr1:
-        :return: two Marker objects.
+        :return: the data points as a tuple of two Marker objects.
         """
         marker0 = self.plot_point(lat=coords0[0], lng=coords0[1], desc=str(coords0), clr=clr0)
         marker1 = self.plot_point(lat=coords1[0], lng=coords1[1], desc=str(coords1), clr=clr1)
@@ -300,7 +300,7 @@ class MapTool:
         :param desc0:
         :param clr0:
         :param clr1:
-        :return: all of the data points as Marker objects.
+        :return: all of the data points as a list of Marker objects.
         """
         df = self.clean_dataframe(infile, {loc_col, ctry_col, lat_col, lng_col})
         if not desc0:
@@ -341,4 +341,3 @@ class MapTool:
             return self.plot_within_range(infile, coords, radius, loc_col, ctry_col, lat_col, lng_col, location, clr0, clr1)
         else:
             raise KeyError('Index out of range.')
-
