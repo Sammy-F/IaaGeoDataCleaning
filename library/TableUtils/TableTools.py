@@ -2,8 +2,7 @@ import math
 import pandas as pd
 import re
 import os
-from CleaningUtils.GeocodeValidator import GeocodeValidator as GeocodeValidator
-from CleaningUtils import *
+from CleaningUtils.GeocodeValidator import GeocodeValidator
 
 """
 GeocodeValidator allows the user to perform reverse geocoding
@@ -33,6 +32,7 @@ class TableTool:
                  lat_col='Latitude', lng_col='Longitude'):
         """
         Initializes a TableTools object to clean, query, or validate latitudinal and longitudinal inputs.
+
         :param file_path: the file path of the data being used.
         :param outfile_type: the extension of all output files to be produced.
         :param loc_col: the name of the location column.
@@ -43,7 +43,7 @@ class TableTool:
         """
         self.file_path = file_path
         self.df = self.read_file(self.file_path)
-        self.validator = verify.GeocodeValidator(map_file)
+        self.validator = GeocodeValidator(map_file)
 
         # Checking to see whether the columns actually exist in the data frame
         if {loc_col, ctry_col, reg_col, lat_col, lng_col}.issubset(self.df.columns):
@@ -71,6 +71,7 @@ class TableTool:
     def read_file(self, file_path):
         """
         Reads in csv or excel file. Raises an error if a different file type was entered.
+
         :param file_path: .csv or .xlsx
         :return: a pandas data frame.
         """
@@ -85,6 +86,7 @@ class TableTool:
     def export_file(self, df, outfile, directory):
         """
         Exports the input data frame to the designated directory and outfile type.
+
         :param df: the data frame
         :param outfile: name of the output file
         :param directory: name of the directory
@@ -105,10 +107,15 @@ class TableTool:
     def query_table(self, loc=None, ctry=None, lat=None, lng=None):
         """
         Queries the table for entries that match the conditions. Conditions must be:
+
         - Location, country, latitude, longitude
-        - Location
+
+        - Location or country
+
         - Location and country
+
         - Latitude and longitude
+
         :param loc:
         :param ctry:
         :param lat:
@@ -137,6 +144,7 @@ class TableTool:
     def cell_in_table(self, value, col_list):
         """
         Checks to see whether a cell with a certain value exists in the column.
+
         :param value: the condition being checked for.
         :param col_list: all of the entries in the column in a list.
         :return: a list of indices of rows with the value.
@@ -154,6 +162,7 @@ class TableTool:
     def verify_by_indices(self, indices):
         """
         Verifies certain rows in the data frame given the indices and exports the results to a separate file.
+
         :param indices: all of the indices being checked for in a list.
         :return:
         """
@@ -174,6 +183,7 @@ class TableTool:
         """
         Verifies certain rows in the data frame using location, country, latitude, or longitude conditions,
         exports the results to a separate file.
+
         :param loc:
         :param ctry:
         :param lat:
@@ -186,6 +196,7 @@ class TableTool:
     def verify_row(self, index):
         """
         Verifies a single row in the data frame.
+
         :param index: index of the row.
         :return: a tuple containing the type of entry and the information of the row represented in a dictionary.
         """
@@ -206,6 +217,7 @@ class TableTool:
         """
         Runs through the entire data frame and verifies all of the entries,
         exports 3 output files: verified entries, pending entries, and repeated entries.
+
         :return: the percentage of entries that could not be validated/geocoded.
         """
         # Variables for logging data
@@ -254,6 +266,7 @@ class TableTool:
     def add_entry(self, loc, ctry, reg, lat, lng):
         """
         Adds a new row to the data frame and overwrites the input file if successfully added.
+
         :param loc:
         :param ctry:
         :param reg:

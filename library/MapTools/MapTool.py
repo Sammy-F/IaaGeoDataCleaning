@@ -1,4 +1,4 @@
-from folium import Map, Marker, Icon, Popup, Vega
+from folium import Map, Marker, Icon, Popup
 from folium.plugins import MarkerCluster
 from os import path
 import pandas as pd
@@ -7,6 +7,7 @@ import geopandas as gpd
 from shapely.geometry import Point
 import math
 from TableUtils.TableTools import TableTool
+
 
 # TODO: plot all of the stations and their counterpart
 class MapTool:
@@ -20,6 +21,7 @@ class MapTool:
     def read_file(self, file_path):
         """
         Reads in csv or excel file. Raises an error if a different file type was entered.
+
         :param file_path: .csv or .xlsx
         :return: a pandas data frame.
         """
@@ -34,6 +36,7 @@ class MapTool:
     def check_columns(self, df, cols):
         """
         Checks to see whether the columns exist in the dataframe.
+
         :param df: pandas dataframe.
         :param cols: a tuple, list, or set of column names.
         :return:
@@ -48,11 +51,11 @@ class MapTool:
     def clean_dataframe(self, infile, cols):
         """
         Confirms that a file can be used as a dataframe.
+
         :param infile: filepath to the data.
         :param cols: a tuple, list, or set of column names.
         :return: a pandas dataframe of the file.
         """
-
         if '.' in infile:
             df = self.read_file(infile)
         else:
@@ -73,6 +76,7 @@ class MapTool:
     def haversine(self, lat0, lng0, lat1, lng1):
         """
         Calculates the distance between two coordinates using the haversine formula.
+
         :param lat0:
         :param lng0:
         :param lat1:
@@ -91,6 +95,7 @@ class MapTool:
     def plot_point(self, lat, lng, desc=None, clr='blue'):
         """
         Creates a single marker.
+
         :param lat:
         :param lng:
         :param desc:
@@ -105,6 +110,7 @@ class MapTool:
     def plot_all_stations(self, infile, loc_col, ctry_col, lat_col, lng_col, clr='blue', as_cluster=True):
         """
         Plots all data points in the file.
+
         :param infile: filepath to the data/a pandas dataframe
         :param loc_col: name of the location column.
         :param ctry_col: name of the country column.
@@ -138,6 +144,7 @@ class MapTool:
     def plot_no_country(self, infile, loc_col, ctry_col, lat_col, lng_col, clr='lightred', as_cluster=False):
         """
         Plots all data points whose coordinates do not fall within any country.
+
         :param infile:
         :param loc_col:
         :param ctry_col:
@@ -177,6 +184,7 @@ class MapTool:
         """
         Plots all data points whose country does not match the country indicated by the coordinates and shapefile.
         Note: Given the differences in spelling, correct data points might still be plotted.
+
         :param infile:
         :param loc_col:
         :param ctry_col:
@@ -206,6 +214,7 @@ class MapTool:
     def plot_potential_errors(self, infile, loc_col, ctry_col, lat_col, lng_col, clr0='lightred', clr1='orange'):
         """
         Plots all of the potentially incorrect location data points.
+
         :param infile:
         :param loc_col:
         :param ctry_col:
@@ -222,6 +231,7 @@ class MapTool:
     def plot_condition(self, infile, condition, cnd_col, loc_col, ctry_col, lat_col, lng_col, clr='blue', as_cluster=False):
         """
         Plots all of the data points that meet the specified condition.
+
         :param infile:
         :param condition: condition of the entries (currently works best with strings).
         :param cnd_col: name of the column to be evaluated.
@@ -258,6 +268,7 @@ class MapTool:
     def plot_pair_in_df(self, infile, index, lat0_col, lng0_col, lat1_col, lng1_col, clr0='lightblue', clr1='darkblue'):
         """
         Plots a data point if it contains two different coordinates for comparison.
+
         :param infile:
         :param index:
         :param lat0_col:
@@ -281,6 +292,7 @@ class MapTool:
     def plot_pair(self, coords0, coords1, clr0='lightblue', clr1='darkblue'):
         """
         Plots two coordinates for comparison.
+
         :param coords0:
         :param coords1:
         :param clr0:
@@ -295,6 +307,7 @@ class MapTool:
     def plot_within_range(self, infile, center, radius, loc_col, ctry_col, lat_col, lng_col, desc0=None, clr0='blue', clr1='lightblue'):
         """
         Plots all data points within the range of the given center and radius.
+
         :param infile:
         :param center:
         :param radius: in km.
@@ -328,6 +341,7 @@ class MapTool:
     def plot_within_station(self, infile, index, radius, loc_col, ctry_col, lat_col, lng_col, clr0='blue', clr1='lightblue'):
         """
         Plots all of the data points within the radius of the specified data point.
+
         :param infile:
         :param index: index of the entry.
         :param radius:

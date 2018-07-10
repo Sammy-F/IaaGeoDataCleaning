@@ -14,14 +14,14 @@
 #
 import os
 import sys
-sys.path.append('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/library')
+sys.path.insert(0, '/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/library')
 
 
 # -- Project information -----------------------------------------------------
 
 project = 'IaaGeoData'
-copyright = '2018, Sammy Fritsche, Thy Nguyen'
-author = 'Sammy Fritsche, Thy Nguyen'
+copyright = '2018, Samantha Fritsche, Thy Nguyen'
+author = 'Samantha Fritsche, Thy Nguyen'
 
 # The short X.Y version
 version = ''
@@ -75,7 +75,7 @@ pygments_style = 'sphinx'
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+html_theme = 'classic'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -130,7 +130,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'IaaGeoData.tex', 'IaaGeoData Documentation',
-     'Sammy Fritsche, Thy Nguyen', 'manual'),
+     'Samantha Fritsche, Thy Nguyen', 'manual'),
 ]
 
 

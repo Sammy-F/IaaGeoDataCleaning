@@ -12,14 +12,6 @@ CleaningUtils.GeocodeValidator module
     :undoc-members:
     :show-inheritance:
 
-CleaningUtils.NameHandler module
---------------------------------
-
-.. automodule:: CleaningUtils.NameHandler
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
 
 Module contents
 ---------------

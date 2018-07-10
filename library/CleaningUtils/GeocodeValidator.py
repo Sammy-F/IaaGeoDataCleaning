@@ -8,6 +8,7 @@ from shapely.geometry import Point
 import re
 import string
 
+
 class GeocodeValidator:
     def __init__(self, map_file=str(path.abspath(path.join(path.dirname(__file__), '..', '..', '..', '..',
                                                            'resources', 'mapinfo', 'TM_WORLD_BORDERS-0.3.shp')))):
@@ -27,6 +28,7 @@ class GeocodeValidator:
     def verify_info(self, location=None, country=None, region=None, input_lat=None, inp_lng=None):
         """
         Reads in data for a single location and verifies its information/checks for missing data.
+
         :param location:
         :param country:
         :param input_lat:
@@ -78,6 +80,7 @@ class GeocodeValidator:
     def check_input(self, loc_dict):
         """
         Checks to see if all the necessary fields are entered.
+
         :param loc_dict:
         :return: a tuple containing 2 values:
         the type of entry as an integer and the (altered) location dictionary.
@@ -108,6 +111,7 @@ class GeocodeValidator:
     def verify_coords(self, loc_dict):
         """
         Uses a shapefile to determine whether the entered coordinates fall within the borders of the country entered.
+
         :param loc_dict:
         :return: a tuple containing 2 values:
         the type of entry and the (altered) location dictionary.
@@ -141,6 +145,7 @@ class GeocodeValidator:
     def geocode_coords(self, loc_dict):
         """
         Finds the coordinates of a location based on the entered location and country.
+
         :param loc_dict:
         :return: a tuple containing 2 values:
         the type of entry and the (altered) location dictionary.
@@ -177,30 +182,30 @@ class GeocodeValidator:
     def find_alt_name(self, country_name):
         """
         If a country name is invalid, assume it is an alternative name
-        and attempt to find and return the official one
+        and attempt to find and return the official one.
+
         :param country_name:
         """
         finder = NameHandler()
-        return finder.findName(country_name)
+        return finder.find_name(country_name)
 
 
 class NameHandler:
     def __init__(self):
-
-        self.namesDict = {}
-        self.namesDict['United States of America'] = ['United States', 'US', 'USA', 'America']
-        self.namesDict['Congo'] = ['Republic of Congo']
-        self.namesDict['Congo, The Democratic Republic of the'] = ['Zaire', 'DR Congo', 'DRC', 'East Congo',
+        self.names_dict = dict()
+        self.names_dict['United States of America'] = ['United States', 'US', 'USA', 'America']
+        self.names_dict['Congo'] = ['Republic of Congo']
+        self.names_dict['Congo, The Democratic Republic of the'] = ['Zaire', 'DR Congo', 'DRC', 'East Congo',
                                                                    'Congo-Kinshasa', 'Democratic Republic Of Congo',
                                                                    'Democratic Republic of Congo']
-        self.namesDict['Spain'] = ['España']
-        self.namesDict["Côte d'Ivoire"] = ["Cote d’Ivoire", "Cote D'ivoire", "Cote D'Ivoire"]
-        self.namesDict['South Africa'] = ['South Africa Rep.', 'Republic of South Africa']
-        self.namesDict['Trinidad and Tobago'] = ['Trinidad Y Tobago']
+        self.names_dict['Spain'] = ['España']
+        self.names_dict["Côte d'Ivoire"] = ["Cote d’Ivoire", "Cote D'ivoire", "Cote D'Ivoire"]
+        self.names_dict['South Africa'] = ['South Africa Rep.', 'Republic of South Africa']
+        self.names_dict['Trinidad and Tobago'] = ['Trinidad Y Tobago']
 
-    def findName(self, checkCountry):
-        for formattedName, alternativeNames in self.namesDict.items():
+    def find_name(self, check_country):
+        for formattedName, alternativeNames in self.names_dict.items():
             for alternativeName in alternativeNames:
-                if checkCountry.lower() == alternativeName.lower():
+                if check_country.lower() == alternativeName.lower():
                     return formattedName
         return False

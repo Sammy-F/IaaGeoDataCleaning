@@ -3,15 +3,15 @@ from configparser import ConfigParser
 
 from tkinter import Tk, filedialog
 
-class DatabaseConnector:
 
+class DatabaseConnector:
     def __init__(self):
         self.connection = None
 
     def __set_config(self, file_path, section='postgresql'):
         """
-        Load config file and return database params
-        based off of it
+        Load config file and return database params based off of it.
+
         :param file_path:
         :param section:
         :return:
@@ -30,7 +30,8 @@ class DatabaseConnector:
 
     def connect_from_config(self, section='postgresql', file_path=False):
         """
-        Connect to database from parameters
+        Connect to database from parameters.
+
         :param file_path:
         :param section:
         :return:
@@ -69,7 +70,8 @@ class DatabaseConnector:
 
     def connect_from_credentials(self, host, dbname, username, password, port=5432):
         """
-        Set up from keywords, not secure
+        Set up from keywords, not secure.
+
         :param host:
         :param dbname:
         :param username:
@@ -104,10 +106,6 @@ class DatabaseConnector:
         return self.connection
 
     def close_connection(self):
-        """
-        Close the connection to the database if it exists.
-        :return:
-        """
         if self.connection is not None:
             self.connection.close()
             self.connection = None

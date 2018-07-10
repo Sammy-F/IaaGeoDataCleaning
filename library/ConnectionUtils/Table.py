@@ -6,12 +6,9 @@ import numpy as np
 from os import path
 
 from tkinter import Tk, filedialog
-from ConnectionUtils.DatabaseConnector import DatabaseConnector
 
-mConnector = DatabaseConnector(filepath='hi')
 
 class Table:
-
     def __init__(self, tableName, databaseConnector):
         self.table_name = tableName
         self.connector = databaseConnector
@@ -19,6 +16,26 @@ class Table:
 
         if databaseConnector.connection is None:
             print("Your connection does not exist. Please instantiate a connection using the DatabaseConnector and try again.")
+
+    def table_from_tuple(self, command_tuple):
+        """
+        Build table(s) from a command(s).
+
+        :return:
+        """
+        print("Attempting to build table.")
+
+        commands = (command_tuple)
+        try:
+            if not self.connector.connection is None:
+                cur = self.connector.connection.cursor()
+                for command in commands:
+                    cur.execute(command)
+                cur.close()
+                self.connector.connection.commit()
+        except (Exception, psy.DatabaseError) as error:
+            print("Building table failed.")
+            print(error)
 
     def xlsx_to_csv(self, file_path):
         print("Converting .xlsx to .csv")
@@ -38,8 +55,8 @@ class Table:
 
     def table_from_file(self, file_path=False):
         """
-        Create a table on the database from a .xlsx or
-        .csv file.
+        Create a table on the database from a .xlsx or .csv file.
+
         :param file_path:
         :return:
         """
@@ -75,7 +92,8 @@ class Table:
 
     def make_spatial(self, lngcol_name='Longitude', latcol_name='Latitude', geomcol_name='geom'):
         """
-        Add a geometry column and make it spatial
+        Add a geometry column and make it spatial.
+
         :return:
         """
 
@@ -97,7 +115,8 @@ class Table:
 
     def __load_schema(self, table_file):
         """
-        Use the pandas dataframe to generate a list of headers and types
+        Use the pandas dataframe to generate a list of headers and types.
+
         :param table_file:
         :return:
         """
@@ -127,7 +146,8 @@ class Table:
 
     def __build_schema_string(self, schema_tuple):
         """
-        Return string for use in queries
+        Return string for use in queries.
+
         :param schema_tuple:
         :return:
         """
@@ -156,6 +176,7 @@ class Table:
     def __load_data(self, cur, file_path):
         """
         Load data from a file into an empty table.
+
         :param cur:
         :param file_path:
         :return:
@@ -172,6 +193,7 @@ class Table:
         """
         Check if an entry with the given lat, lon exists. If so, return all rows that match in a tuple where the first
         value is True or False for whether an entry exist, and the second value is the the rows.
+
         :param lat:
         :param lon:
         :return:
@@ -206,6 +228,7 @@ class Table:
         """
         Check if an entry exists with the given country and location. If so, return all rows that match in a
         tuple where the first value is True or False for whether an entry exist, and the second value is the the rows.
+
         :param country_name:
         :param location_name:
         :return:
@@ -234,8 +257,8 @@ class Table:
 
     def change_table(self, new_table):
         """
-        Switch to a different table without creating a new
-        DatabaseConnector
+        Switch to a different table without creating a new DatabaseConnector.
+
         :param new_table:
         :return:
         """
@@ -245,6 +268,7 @@ class Table:
     def update_entries(self, lngcol_name='longitude', latcol_name='latitude', countrycol_name='country', locationcol_name='location', file_path=False):
         """
         Insert or update entries from a .csv file.
+
         :param file_path:
         :return:
         """
@@ -316,6 +340,7 @@ class Table:
         """
         Check for null values in a spatial table and, if they exist, check the lat and lng
         values to generate geometry.
+
         :return:
         """
         try:
@@ -333,6 +358,7 @@ class Table:
     def is_spatial(self, geomcol_name='geom'):
         """
         Check if the given table is spatial.
+
         :return:
         """
         try:
@@ -350,6 +376,7 @@ class Table:
     def commit_changes(self):
         """
         Commit changes made to the database.
+
         :return:
         """
         try:
@@ -367,8 +394,8 @@ class Table:
 
     def entries_by_input(self, vals, column_names):
         """
-        Return all entries that match ALL search terms. Returns False
-        if an error occurs
+        Return all entries that match ALL search terms. Returns False if an error occurs.
+
         :param vals:
         :return:
         """
@@ -407,6 +434,7 @@ class Table:
         """
         Validates whether all string in a list correlate to a valid
         column name in the table.
+
         :param column_names:
         :return: True if all names exist in table, False if not
         """
@@ -428,6 +456,7 @@ class Table:
     def get_table(self, limit=5):
         """
         Return a number of rows of the table. If limit=0, return all.
+
         :param limit:
         :return:
         """
@@ -448,6 +477,7 @@ class Table:
         """
         Validate using data in the database whether the entries in the table
         have the correct country.
+
         :param world_table_name:
         :return:
         """
