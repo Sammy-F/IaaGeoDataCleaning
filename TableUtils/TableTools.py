@@ -2,8 +2,8 @@ import math
 import pandas as pd
 import re
 import os
-from IaaGeoDataCleaning.GeocodeValidator import GeocodeValidator as GeocodeValidator
-from IaaGeoDataCleaning import *
+from CleaningUtils.GeocodeValidator import GeocodeValidator as GeocodeValidator
+from CleaningUtils import *
 
 """
 GeocodeValidator allows the user to perform reverse geocoding
