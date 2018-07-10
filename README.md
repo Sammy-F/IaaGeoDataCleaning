@@ -20,8 +20,21 @@ Marks indices of potentially corrupt entries and allows the user to determine wh
 * folium
 
 ### Installation
+
+Easy install dependencies:
+```
+cd path/to/IaaGeoDataCleaning
+pip install requirements.txt
+```
+
+Using pip:
 ```
 pip install IaaGeoDataCleaning
+```
+
+From source:
+```
+python setup.py install
 ```
 ### Usage
 To perform data cleaning on a .csv or .xlsx file, ```import IaaGeoDataCleaning.TableUtils.TableTool as TableTool```.
