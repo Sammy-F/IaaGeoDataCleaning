@@ -129,6 +129,8 @@ class TableTools:
             indices = list(set(lat_in) & set(lng_in))
         elif loc:
             indices = loc_in
+        elif ctry:
+            indices = ctry_in
         else:
             raise TypeError('Not enough arguments provided.')
         return indices

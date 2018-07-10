@@ -1,4 +1,4 @@
-from folium import Map, Marker, Icon, Popup
+from folium import Map, Marker, Icon, Popup, Vega
 from folium.plugins import MarkerCluster
 from os import path
 import pandas as pd
@@ -6,8 +6,10 @@ import numpy as np
 import geopandas as gpd
 from shapely.geometry import Point
 import math
+from src.main.python.TableUtils import TableTools
 
-# TODO: plot all of the stations and their counterpart; read in a pandas data frame for visualization
+
+# TODO: plot all of the stations and their counterpart
 class MapTool:
     def __init__(self, map_file=str(path.abspath(path.join(path.dirname(__file__), '..', '..', '..', '..',
                                                            'resources', 'mapinfo', 'TM_WORLD_BORDERS-0.3.shp')))):
@@ -51,7 +53,11 @@ class MapTool:
         :param cols: a tuple, list, or set of column names.
         :return: a pandas dataframe of the file.
         """
-        df = self.read_file(infile)
+
+        if '.' in infile:
+            df = self.read_file(infile)
+        else:
+            df = infile
         if self.check_columns(df, cols):
             return df
 
@@ -100,7 +106,7 @@ class MapTool:
     def plot_all_stations(self, infile, loc_col, ctry_col, lat_col, lng_col, clr='blue', as_cluster=True):
         """
         Plots all data points in the file.
-        :param infile: filepath to the data.
+        :param infile: filepath to the data/a pandas dataframe
         :param loc_col: name of the location column.
         :param ctry_col: name of the country column.
         :param lat_col: name of the latitude column.
@@ -341,3 +347,16 @@ class MapTool:
             return self.plot_within_range(infile, coords, radius, loc_col, ctry_col, lat_col, lng_col, location, clr0, clr1)
         else:
             raise KeyError('Index out of range.')
+
+    def plot_query(self, infile, loc_col, ctry_col, lat_col, lng_col, loc=None, ctry=None, lat=None, lng=None, clr='blue'):
+        tTool = TableTools(file_path=infile, loc_col=loc_col, ctry_col=ctry_col, lat_col=lat_col, lng_col=lng_col)
+        df = self.clean_dataframe(infile, {loc_col, ctry_col, lat_col, lng_col})
+
+        indices = tTool.query_table(loc, ctry, lat, lng)
+        markers = []
+        for idc in indices:
+            location = self.format_popup(df.loc[idc, loc_col], df.loc[idc, ctry_col])
+            markers.append(self.plot_point(df.loc[idc, lat_col], df.loc[idc, lng_col],
+                                           desc='%s, %s' % (location[0], location[1]), clr=clr))
+
+        return markers
