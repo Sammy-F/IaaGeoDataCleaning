@@ -8,16 +8,16 @@ class DatabaseConnector:
     def __init__(self):
         self.connection = None
 
-    def __set_config(self, filePath, section='postgresql'):
+    def __set_config(self, file_path, section='postgresql'):
         """
         Load config file and return database params
         based off of it
-        :param filePath:
+        :param file_path:
         :param section:
         :return:
         """
         parser = ConfigParser()
-        parser.read(filePath)
+        parser.read(file_path)
 
         db = {}
         if parser.has_section(section):
@@ -25,7 +25,7 @@ class DatabaseConnector:
             for param in params:
                 db[param[0]] = param[1]
         else:
-            raise Exception('Section {0} not found in the {1} file'.format(section, filePath))
+            raise Exception('Section {0} not found in the {1} file'.format(section, file_path))
         return db
 
     def connect_from_config(self, section='postgresql', file_path=False):

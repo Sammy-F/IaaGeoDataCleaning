@@ -20,25 +20,6 @@ class Table:
         if databaseConnector.connection is None:
             print("Your connection does not exist. Please instantiate a connection using the DatabaseConnector and try again.")
 
-    def table_from_tuple(self, command_tuple):
-        """
-        Build table(s) from a command(s)
-        :return:
-        """
-        print("Attempting to build table.")
-
-        commands = (command_tuple)
-        try:
-            if not self.connector.connection is None:
-                cur = self.connector.connection.cursor()
-                for command in commands:
-                    cur.execute(command)
-                cur.close()
-                self.connector.connection.commit()
-        except (Exception, psy.DatabaseError) as error:
-            print("Building table failed.")
-            print(error)
-
     def xlsx_to_csv(self, file_path):
         print("Converting .xlsx to .csv")
         wb = xlrd.open_workbook(file_path)
