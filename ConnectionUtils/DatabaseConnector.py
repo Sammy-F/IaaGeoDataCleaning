@@ -8,7 +8,7 @@ class DatabaseConnector:
     def __init__(self):
         self.connection = None
 
-    def __setConfig(self, filePath, section='postgresql'):
+    def __set_config(self, filePath, section='postgresql'):
         """
         Load config file and return database params
         based off of it
@@ -28,7 +28,7 @@ class DatabaseConnector:
             raise Exception('Section {0} not found in the {1} file'.format(section, filePath))
         return db
 
-    def getConnectFromConfig(self, section='postgresql', filePath=False):
+    def connect_from_config(self, section='postgresql', filePath=False):
         """
         Connect to database from parameters
         :param filePath:
@@ -43,7 +43,7 @@ class DatabaseConnector:
             self.connection.close()
             self.connection = None
         try:
-            params = self.__setConfig(filePath, section)
+            params = self.__set_config(filePath, section)
 
             print('Attempting connection to PostgreSQL database...')
             self.connection = psy.connect(**params)
@@ -67,7 +67,7 @@ class DatabaseConnector:
                 print('Connection closed.')
                 self.connection = None
 
-    def getConnectFromKeywords(self, host, dbname, username, password, port=5432):
+    def connect_from_credentials(self, host, dbname, username, password, port=5432):
         """
         Set up from keywords, not secure
         :param host:
@@ -100,10 +100,10 @@ class DatabaseConnector:
                 print('Connection closed.')
                 self.connection = None
 
-    def getExistingConnection(self):
+    def get_connection(self):
         return self.connection
 
-    def closeConnection(self):
+    def close_connection(self):
         """
         Close the connection to the database if it exists.
         :return:

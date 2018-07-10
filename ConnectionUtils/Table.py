@@ -6,7 +6,9 @@ import numpy as np
 from os import path
 
 from tkinter import Tk, filedialog
-from ConnectionUtils.DatabaseConnector import DatabaseConnector as DatabaseConnector
+from ConnectionUtils.DatabaseConnector import DatabaseConnector
+
+mConnector = DatabaseConnector(filepath='hi')
 
 class Table:
 
@@ -18,7 +20,7 @@ class Table:
         if databaseConnector.connection is None:
             print("Your connection does not exist. Please instantiate a connection using the DatabaseConnector and try again.")
 
-    def buildTableFromTuple(self, commandTuple):
+    def table_from_tuple(self, commandTuple):
         """
         Build table(s) from a command(s)
         :return:
@@ -37,7 +39,7 @@ class Table:
             print("Building table failed.")
             print(error)
 
-    def xlsxToCsv(self, filePath):
+    def xlsx_to_csv(self, filePath):
         print("Converting .xlsx to .csv")
         wb = xlrd.open_workbook(filePath)
         sh = wb.sheet_by_name(wb.sheet_names()[0])
@@ -53,7 +55,7 @@ class Table:
         filePath = fileString
         return pd.read_csv(filePath)
 
-    def buildTableFromFile(self, filePath=False):
+    def table_from_file(self, filePath=False):
         """
         Create a table on the database from a .xlsx or
         .csv file.
@@ -65,7 +67,7 @@ class Table:
             filePath = filedialog.askopenfilename(title='Please select a .csv or .xlsx file')
 
         if filePath.endswith('xlsx'):
-            tableFile = self.xlsxToCsv(filePath)
+            tableFile = self.xlsx_to_csv(filePath)
         elif filePath.endswith('csv'):
             tableFile = pd.read_csv(filePath)
         else:
@@ -73,8 +75,8 @@ class Table:
             return
 
         print("Constructing query from file.")
-        schemaTuple = self.loadTableSchema(tableFile)
-        schemaStr = self.buildSchemaString(schemaTuple)
+        schemaTuple = self.__load_schema(tableFile)
+        schemaStr = self.__build_schema_string(schemaTuple)
 
         print("Creating table.")
         schemaStr = "CREATE TABLE " + self.tableName + " " + schemaStr
@@ -83,14 +85,14 @@ class Table:
         try:
             cur = self.connector.connection.cursor()
             cur.execute(schemaStr)
-            self.__loadData(cur, filePath)
+            self.__load_data(cur, filePath)
             cur.close()
             self.connector.connection.commit()
         except (Exception, psy.DatabaseError) as error:
             print("Building table failed.")
             print(error)
 
-    def makeTableSpatial(self, lngColName='Longitude', latColName='Latitude', geomColName='geom'):
+    def make_spatial(self, lngColName='Longitude', latColName='Latitude', geomColName='geom'):
         """
         Add a geometry column and make it spatial
         :return:
@@ -112,7 +114,7 @@ class Table:
             print("Unable to alter table.")
             print(error)
 
-    def loadTableSchema(self, tableFile):
+    def __load_schema(self, tableFile):
         """
         Use the pandas dataframe to generate a list of headers and types
         :param tableFile:
@@ -142,7 +144,7 @@ class Table:
 
         return names, keepArr
 
-    def buildSchemaString(self, schemaTuple):
+    def __build_schema_string(self, schemaTuple):
         """
         Return string for use in queries
         :param schemaTuple:
@@ -170,7 +172,7 @@ class Table:
 
         return schemaStr
 
-    def __loadData(self, cur, filePath):
+    def __load_data(self, cur, filePath):
         """
         Load data from a file into an empty table.
         :param cur:
@@ -185,7 +187,7 @@ class Table:
             print("Failed to load data.")
             print(error)
 
-    def checkForEntryByLatLon(self, lat, lon, searchRadius=300000, geomColName='geom'):
+    def check_by_latlng(self, lat, lon, searchRadius=300000, geomColName='geom'):
         """
         Check if an entry with the given lat, lon exists. If so, return all rows that match in a tuple where the first
         value is True or False for whether an entry exist, and the second value is the the rows.
@@ -219,7 +221,7 @@ class Table:
 
         return tBool, rows
 
-    def checkForEntryByCountryLoc(self, countryName, locationName, countryColName='country', locationColName='location'):
+    def check_by_countryloc(self, countryName, locationName, countryColName='country', locationColName='location'):
         """
         Check if an entry exists with the given country and location. If so, return all rows that match in a
         tuple where the first value is True or False for whether an entry exist, and the second value is the the rows.
@@ -249,7 +251,7 @@ class Table:
             print("Failed to get entries.")
             print(error)
 
-    def changeTable(self, newName):
+    def change_table(self, newName):
         """
         Switch to a different table without creating a new
         DatabaseConnector
@@ -259,7 +261,7 @@ class Table:
         print("Active table is now " + newName)
         self.tableName = newName
 
-    def updateEntries(self, lngColName='longitude', latColName='latitude', countryColName='country', locationColName='location', filePath=False):
+    def update_entries(self, lngColName='longitude', latColName='latitude', countryColName='country', locationColName='location', filePath=False):
         """
         Insert or update entries from a .csv file.
         :param filePath:
@@ -270,7 +272,7 @@ class Table:
             filePath = filedialog.askopenfilename(title='Please select a file')
 
         if filePath.endswith('xlsx'):
-            tableFile = self.xlsxToCsv(filePath)
+            tableFile = self.xlsx_to_csv(filePath)
         elif filePath.endswith('csv'):
             tableFile = pd.read_csv(filePath)
         else:
@@ -282,14 +284,14 @@ class Table:
                 long = row[lngColName]
                 countryName = row[countryColName]
                 locName = row[locationColName]
-                if not self.checkForEntryByCountryLoc(countryName, locName)[0]:
+                if not self.check_by_countryloc(countryName, locName)[0]:
                     # Entry does not exist
                     print("Entry does not exist.")
                     print("Inserting new entry")
                     cmndArr = []
                     for item in row.values:
                         cmndArr.append(item)
-                    cmnd = "INSERT INTO " + self.tableName + " VALUES (" + self.makeInsertionString(cmndArr) + " );"
+                    cmnd = "INSERT INTO " + self.tableName + " VALUES (" + self.__build_insertion_string(cmndArr) + " );"
                     cur = self.connector.connection.cursor()
                     cur.execute(cmnd)
                     cur.close()
@@ -305,12 +307,12 @@ class Table:
                     cur.execute(cmmnd2)
                     cur.close()
             self.connector.connection.commit()
-            self.checkGeomNulls()
+            self.__check_geom_nulls()
         except (Exception, psy.DatabaseError) as error:
             print("Updating failed.")
             print(error)
 
-    def makeInsertionString(self, valsArr):
+    def __build_insertion_string(self, valsArr):
         valsStr = ''
         for i in range(len(valsArr)-2):
             if isinstance(valsArr[i], str):
@@ -329,7 +331,7 @@ class Table:
                 valsStr += str(valsArr[len(valsStr)-1]) + " "
         return valsStr
 
-    def checkGeomNulls(self, lngColName='Longitude', latColName='Latitude', geomColName='geom'):
+    def __check_geom_nulls(self, lngColName='Longitude', latColName='Latitude', geomColName='geom'):
         """
         Check for null values in a spatial table and, if they exist, check the lat and lng
         values to generate geometry.
@@ -337,7 +339,7 @@ class Table:
         """
         try:
             cur = self.connector.connection.cursor()
-            if self.isSpatial():
+            if self.is_spatial():
                 updateTable = "UPDATE " + self.tableName + """ SET """ + geomColName + """= ST_SETSRID(ST_MakePoint(""" + lngColName + """, 
                             """ + latColName + """), 4326) WHERE """ + geomColName + """ IS NULL;"""
                 cur.execute(updateTable)
@@ -347,7 +349,7 @@ class Table:
             print("Failed to check for nulls.")
             print(error)
 
-    def isSpatial(self, geomColName='geom'):
+    def is_spatial(self, geomColName='geom'):
         """
         Check if the given table is spatial.
         :return:
@@ -364,7 +366,7 @@ class Table:
             print("Unable to determine if table is spatial.")
             print(error)
 
-    def commitChanges(self):
+    def commit_changes(self):
         """
         Commit changes made to the database.
         :return:
@@ -382,7 +384,7 @@ class Table:
             print("Failed to commit!")
             print(error)
 
-    def getEntriesByInput(self, vals, columnNames):
+    def entries_by_input(self, vals, columnNames):
         """
         Return all entries that match ALL search terms. Returns False
         if an error occurs
@@ -396,7 +398,7 @@ class Table:
             if not len(vals) == len(columnNames):
                 print("Keywords and columnNames lists must have the same length.")
                 return False
-            if not self.validateColumns(columnNames):
+            if not self.__validate_columns(columnNames):
                 print("Input column names are invalid.")
                 return False
             else:
@@ -420,7 +422,7 @@ class Table:
             print("Getting entries failed.")
             print(error)
 
-    def validateColumns(self, columnNames):
+    def __validate_columns(self, columnNames):
         """
         Validates whether all string in a list correlate to a valid
         column name in the table.
@@ -442,7 +444,7 @@ class Table:
                     return False
         return True
 
-    def getTable(self, limit=5):
+    def get_table(self, limit=5):
         """
         Return a number of rows of the table. If limit=0, return all.
         :param limit:
@@ -461,7 +463,7 @@ class Table:
             print("Fetching table failed.")
             print(error)
 
-    def checkValidity(self, worldTableName, setTypeColName='dtype', setFoundCountryName='dbCountry', pointsGeomColName='geom', worldGeomColName='geom', worldCountryCodeColName='gid_0', pointsCountryCodeColName='country_code', worldCountryNameColName='name_0'):
+    def check_validity(self, worldTableName, setTypeColName='dtype', setFoundCountryName='dbCountry', pointsGeomColName='geom', worldGeomColName='geom', worldCountryCodeColName='gid_0', pointsCountryCodeColName='country_code', worldCountryNameColName='name_0'):
         """
         Validate using data in the database whether the entries in the table
         have the correct country.
@@ -507,25 +509,7 @@ class Table:
 
         return rows
 
-    def customQuery(self):
-        """
-        Run a custom query.
-        :return:
-        """
-        print("""This is an advanced method that can damage the table if used improperly. Please be careful when
-        using it. In order to prevent accidental mistakes, you must call commitChanges() on your DatabaseConnector.""")
-        query = input("Input a query:")
-        cur = self.connector.connection.cursor()
-        cur.execute(query)
-
-        datareturn = cur.fetchall()
-
-        if datareturn is not None:
-            print(datareturn)
-
-        cur.close()
-
-    def loadTableToCSV(self, fileName):
+    def table_to_csv(self, fileName):
         namesList = []
         valsList = []
         cmmnd1 = "SELECT column_name FROM information_schema.columns WHERE table_name = '" + self.tableName + "';"
@@ -550,14 +534,7 @@ class Table:
             valsList.append(row)
             i += 1
         df = pd.DataFrame(data=valsList, columns=namesList)
-        filePath = str(path.abspath(path.join(path.dirname(__file__), '..', '..', '..', '..', 'resources', 'csv', fileName)))
+        filePath = str(path.abspath(path.join(path.dirname(__file__), '..', 'resources', 'csv', fileName)))
 
         df.to_csv(filePath, sep=',', encoding='utf-8', index=False)
 
-# connector = DatabaseConnector()
-# connector.getConnectFromConfig()
-#
-# table = Table(tableName='testtable', databaseConnector=connector)
-#
-# table.updateEntries(latColName='Latitude', lngColName='Longitude', countryColName='Country', locationColName='Location')
-# connector.closeConnection()
