@@ -28,22 +28,22 @@ class DatabaseConnector:
             raise Exception('Section {0} not found in the {1} file'.format(section, filePath))
         return db
 
-    def connect_from_config(self, section='postgresql', filePath=False):
+    def connect_from_config(self, section='postgresql', file_path=False):
         """
         Connect to database from parameters
-        :param filePath:
+        :param file_path:
         :param section:
         :return:
         """
-        if filePath is False or filePath == '':
+        if file_path is False or file_path == '':
             Tk().withdraw()
-            filePath = filedialog.askopenfilename(title='Please select a config.ini file')
+            file_path = filedialog.askopenfilename(title='Please select a config.ini file')
 
         if not self.connection is None:
             self.connection.close()
             self.connection = None
         try:
-            params = self.__set_config(filePath, section)
+            params = self.__set_config(file_path, section)
 
             print('Attempting connection to PostgreSQL database...')
             self.connection = psy.connect(**params)

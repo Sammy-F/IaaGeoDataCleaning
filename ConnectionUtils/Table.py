@@ -13,21 +13,21 @@ mConnector = DatabaseConnector(filepath='hi')
 class Table:
 
     def __init__(self, tableName, databaseConnector):
-        self.tableName = tableName
+        self.table_name = tableName
         self.connector = databaseConnector
         self.table = None
 
         if databaseConnector.connection is None:
             print("Your connection does not exist. Please instantiate a connection using the DatabaseConnector and try again.")
 
-    def table_from_tuple(self, commandTuple):
+    def table_from_tuple(self, command_tuple):
         """
         Build table(s) from a command(s)
         :return:
         """
         print("Attempting to build table.")
 
-        commands = (commandTuple)
+        commands = (command_tuple)
         try:
             if not self.connector.connection is None:
                 cur = self.connector.connection.cursor()
@@ -39,11 +39,11 @@ class Table:
             print("Building table failed.")
             print(error)
 
-    def xlsx_to_csv(self, filePath):
+    def xlsx_to_csv(self, file_path):
         print("Converting .xlsx to .csv")
-        wb = xlrd.open_workbook(filePath)
+        wb = xlrd.open_workbook(file_path)
         sh = wb.sheet_by_name(wb.sheet_names()[0])
-        fileString = filePath[:-5]
+        fileString = file_path[:-5]
         fileString += ".csv"
         csvfile = open(fileString, 'w', encoding='utf8')
         wr = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
@@ -52,24 +52,24 @@ class Table:
             wr.writerow(sh.row_values(rownum))
 
         csvfile.close()
-        filePath = fileString
-        return pd.read_csv(filePath)
+        file_path = fileString
+        return pd.read_csv(file_path)
 
-    def table_from_file(self, filePath=False):
+    def table_from_file(self, file_path=False):
         """
         Create a table on the database from a .xlsx or
         .csv file.
-        :param filePath:
+        :param file_path:
         :return:
         """
-        if filePath is False or filePath == '':
+        if file_path is False or file_path == '':
             Tk().withdraw()
-            filePath = filedialog.askopenfilename(title='Please select a .csv or .xlsx file')
+            file_path = filedialog.askopenfilename(title='Please select a .csv or .xlsx file')
 
-        if filePath.endswith('xlsx'):
-            tableFile = self.xlsx_to_csv(filePath)
-        elif filePath.endswith('csv'):
-            tableFile = pd.read_csv(filePath)
+        if file_path.endswith('xlsx'):
+            tableFile = self.xlsx_to_csv(file_path)
+        elif file_path.endswith('csv'):
+            tableFile = pd.read_csv(file_path)
         else:
             print('This tool currently only supports .csv files.')
             return
@@ -79,27 +79,27 @@ class Table:
         schemaStr = self.__build_schema_string(schemaTuple)
 
         print("Creating table.")
-        schemaStr = "CREATE TABLE " + self.tableName + " " + schemaStr
+        schemaStr = "CREATE TABLE " + self.table_name + " " + schemaStr
         print(schemaStr)
 
         try:
             cur = self.connector.connection.cursor()
             cur.execute(schemaStr)
-            self.__load_data(cur, filePath)
+            self.__load_data(cur, file_path)
             cur.close()
             self.connector.connection.commit()
         except (Exception, psy.DatabaseError) as error:
             print("Building table failed.")
             print(error)
 
-    def make_spatial(self, lngColName='Longitude', latColName='Latitude', geomColName='geom'):
+    def make_spatial(self, lngcol_name='Longitude', latcol_name='Latitude', geomcol_name='geom'):
         """
         Add a geometry column and make it spatial
         :return:
         """
 
-        addGeom = "ALTER TABLE " + self.tableName + " ADD COLUMN " + geomColName + " geometry(POINT, 4326);"
-        updateTable = "UPDATE " + self.tableName + " SET geom = ST_SETSRID(ST_MakePoint(" + lngColName + ", " + latColName + "), 4326);"
+        addGeom = "ALTER TABLE " + self.table_name + " ADD COLUMN " + geomcol_name + " geometry(POINT, 4326);"
+        updateTable = "UPDATE " + self.table_name + " SET geom = ST_SETSRID(ST_MakePoint(" + lngcol_name + ", " + latcol_name + "), 4326);"
 
         try:
             print("Adding geometry column to table.")
@@ -114,80 +114,80 @@ class Table:
             print("Unable to alter table.")
             print(error)
 
-    def __load_schema(self, tableFile):
+    def __load_schema(self, table_file):
         """
         Use the pandas dataframe to generate a list of headers and types
-        :param tableFile:
+        :param table_file:
         :return:
         """
-        names = list(tableFile.columns.values)
-        keepArr = []
+        names = list(table_file.columns.values)
+        keep_arr = []
         i = 0
-        for (index, row) in tableFile.iterrows():
+        for (index, row) in table_file.iterrows():
             if i == 0:
                 i = i + 1
                 continue
             elif i == 1:
                 for name in names:
-                    typeStr = type(row[name]).__name__.capitalize()
-                    keepArr.append(typeStr)
+                    type_str = type(row[name]).__name__.capitalize()
+                    keep_arr.append(type_str)
                 i = i + 1
             else:
-                typeArr = []
+                type_arr = []
                 for name in names:
-                    typeStr = type(row[name]).__name__.capitalize()
-                    typeArr.append(typeStr)
+                    type_str = type(row[name]).__name__.capitalize()
+                    type_arr.append(type_str)
 
-                for i in range(len(keepArr)):
-                    if keepArr[i] != typeArr[i]:
-                        keepArr[i] = "Str"
+                for i in range(len(keep_arr)):
+                    if keep_arr[i] != type_arr[i]:
+                        keep_arr[i] = "Str"
 
-        return names, keepArr
+        return names, keep_arr
 
-    def __build_schema_string(self, schemaTuple):
+    def __build_schema_string(self, schema_tuple):
         """
         Return string for use in queries
-        :param schemaTuple:
+        :param schema_tuple:
         :return:
         """
-        schemaStr = """("""
-        for i in range(len(schemaTuple[0])):
-            print(schemaTuple[1][i])
-            if schemaTuple[1][i] == "Int":
-                if not i == len(schemaTuple[0]) - 1:
-                    schemaStr += schemaTuple[0][i] + " " + "integer,"
+        schema_str = """("""
+        for i in range(len(schema_tuple[0])):
+            print(schema_tuple[1][i])
+            if schema_tuple[1][i] == "Int":
+                if not i == len(schema_tuple[0]) - 1:
+                    schema_str += schema_tuple[0][i] + " " + "integer,"
                 else:
-                    schemaStr += schemaTuple[0][i] + " " + "integer"
-            elif schemaTuple[1][i] == "Float":
-                if not i == len(schemaTuple[0]) - 1:
-                    schemaStr += schemaTuple[0][i] + " " + "numeric,"
+                    schema_str += schema_tuple[0][i] + " " + "integer"
+            elif schema_tuple[1][i] == "Float":
+                if not i == len(schema_tuple[0]) - 1:
+                    schema_str += schema_tuple[0][i] + " " + "numeric,"
                 else:
-                    schemaStr += schemaTuple[0][i] + " " + "numeric"
+                    schema_str += schema_tuple[0][i] + " " + "numeric"
             else:
-                if not i == len(schemaTuple[0]) - 1:
-                    schemaStr += schemaTuple[0][i] + " " + "varchar,"
+                if not i == len(schema_tuple[0]) - 1:
+                    schema_str += schema_tuple[0][i] + " " + "varchar,"
                 else:
-                    schemaStr += schemaTuple[0][i] + " " + "varchar"
-        schemaStr += """)"""
+                    schema_str += schema_tuple[0][i] + " " + "varchar"
+        schema_str += """)"""
 
-        return schemaStr
+        return schema_str
 
-    def __load_data(self, cur, filePath):
+    def __load_data(self, cur, file_path):
         """
         Load data from a file into an empty table.
         :param cur:
-        :param filePath:
+        :param file_path:
         :return:
         """
         try:
             print("Loading data from file.")
-            cur.execute("COPY " + self.tableName + " FROM " + "'" + filePath + "'" + " DELIMITER ',' CSV HEADER")
+            cur.execute("COPY " + self.table_name + " FROM " + "'" + file_path + "'" + " DELIMITER ',' CSV HEADER")
             cur.close()
         except (Exception, psy.DatabaseError) as error:
             print("Failed to load data.")
             print(error)
 
-    def check_by_latlng(self, lat, lon, searchRadius=300000, geomColName='geom'):
+    def check_by_latlng(self, lat, lon, search_radius=300000, geomcol_name='geom'):
         """
         Check if an entry with the given lat, lon exists. If so, return all rows that match in a tuple where the first
         value is True or False for whether an entry exist, and the second value is the the rows.
@@ -195,13 +195,13 @@ class Table:
         :param lon:
         :return:
         """
-        tBool = False
+        found = False
         rows = []
         try:
             print("Attempting to find entry.")
             if not self.connector.connection is None:
                 cur = self.connector.connection.cursor()
-                command = "SELECT * FROM " + self.tableName + " WHERE ST_DWITHIN(ST_TRANSFORM(ST_GEOMFROMTEXT('POINT(" + str(lon) + " " + str(lat) + ")', 4326),4326)::geography, ST_TRANSFORM(" + geomColName + ", 4326)::geography, " + str(searchRadius) + ", true);"
+                command = "SELECT * FROM " + self.table_name + " WHERE ST_DWITHIN(ST_TRANSFORM(ST_GEOMFROMTEXT('POINT(" + str(lon) + " " + str(lat) + ")', 4326),4326)::geography, ST_TRANSFORM(" + geomcol_name + ", 4326)::geography, " + str(search_radius) + ", true);"
                 cur.execute(command)
                 rows = cur.fetchall()
 
@@ -209,7 +209,7 @@ class Table:
 
                 if len(rows) > 0:
                     print("Found")
-                    tBool = True
+                    found = True
                 else:
                     print("No matching entries found.")
             else:
@@ -219,21 +219,21 @@ class Table:
             print("Failed to get entry.")
             print(error)
 
-        return tBool, rows
+        return found, rows
 
-    def check_by_countryloc(self, countryName, locationName, countryColName='country', locationColName='location'):
+    def check_by_countryloc(self, country_name, location_name, countrycol_name='country', locationcol_name='location'):
         """
         Check if an entry exists with the given country and location. If so, return all rows that match in a
         tuple where the first value is True or False for whether an entry exist, and the second value is the the rows.
-        :param countryName:
-        :param locationName:
+        :param country_name:
+        :param location_name:
         :return:
         """
         try:
             print("Attempting to find entry.")
             if not self.connector.connection is None:
                 cur = self.connector.connection.cursor()
-                command = "SELECT * FROM " + self.tableName + " WHERE " + countryColName + " = '" + countryName + "' AND " + locationColName + " = '" + locationName + "';"
+                command = "SELECT * FROM " + self.table_name + " WHERE " + countrycol_name + " = '" + country_name + "' AND " + locationcol_name + " = '" + location_name + "';"
                 cur.execute(command)
                 rows = cur.fetchall()
                 for row in rows:
@@ -251,59 +251,59 @@ class Table:
             print("Failed to get entries.")
             print(error)
 
-    def change_table(self, newName):
+    def change_table(self, new_table):
         """
         Switch to a different table without creating a new
         DatabaseConnector
-        :param newName:
+        :param new_table:
         :return:
         """
-        print("Active table is now " + newName)
-        self.tableName = newName
+        print("Active table is now " + new_table)
+        self.table_name = new_table
 
-    def update_entries(self, lngColName='longitude', latColName='latitude', countryColName='country', locationColName='location', filePath=False):
+    def update_entries(self, lngcol_name='longitude', latcol_name='latitude', countrycol_name='country', locationcol_name='location', file_path=False):
         """
         Insert or update entries from a .csv file.
-        :param filePath:
+        :param file_path:
         :return:
         """
-        if filePath is False or filePath == '':
+        if file_path is False or file_path == '':
             Tk().withdraw()
-            filePath = filedialog.askopenfilename(title='Please select a file')
+            file_path = filedialog.askopenfilename(title='Please select a file')
 
-        if filePath.endswith('xlsx'):
-            tableFile = self.xlsx_to_csv(filePath)
-        elif filePath.endswith('csv'):
-            tableFile = pd.read_csv(filePath)
+        if file_path.endswith('xlsx'):
+            tableFile = self.xlsx_to_csv(file_path)
+        elif file_path.endswith('csv'):
+            tableFile = pd.read_csv(file_path)
         else:
             print('This tool currently only supports .csv and .xlsx files.')
             return
         try:
             for (index, row) in tableFile.iterrows():
-                lat = row[latColName]
-                long = row[lngColName]
-                countryName = row[countryColName]
-                locName = row[locationColName]
-                if not self.check_by_countryloc(countryName, locName)[0]:
+                lat = row[latcol_name]
+                long = row[lngcol_name]
+                country_name = row[countrycol_name]
+                loc_name = row[locationcol_name]
+                if not self.check_by_countryloc(country_name, loc_name)[0]:
                     # Entry does not exist
                     print("Entry does not exist.")
                     print("Inserting new entry")
-                    cmndArr = []
+                    cmnd_arr = []
                     for item in row.values:
-                        cmndArr.append(item)
-                    cmnd = "INSERT INTO " + self.tableName + " VALUES (" + self.__build_insertion_string(cmndArr) + " );"
+                        cmnd_arr.append(item)
+                    cmnd = "INSERT INTO " + self.table_name + " VALUES (" + self.__build_insertion_string(cmnd_arr) + " );"
                     cur = self.connector.connection.cursor()
                     cur.execute(cmnd)
                     cur.close()
                 else:
                     print("Entry exists.")
                     print("Updating existing entry")
-                    cmmnd = "UPDATE " + self.tableName + " SET " + latColName + " = '" + str(lat) + "', " + lngColName + " = '" + str(long) + """' WHERE 
-                    """ + countryColName + " = '" + countryName + "' AND " + locationColName + " = '" + locName + "';"
+                    cmmnd = "UPDATE " + self.table_name + " SET " + latcol_name + " = '" + str(lat) + "', " + lngcol_name + " = '" + str(long) + """' WHERE 
+                    """ + countrycol_name + " = '" + country_name + "' AND " + locationcol_name + " = '" + loc_name + "';"
                     cur = self.connector.connection.cursor()
                     cur.execute(cmmnd)
-                    cmmnd2 = "UPDATE " + self.tableName + " SET geom = ST_SETSRID(ST_MakePoint(" + lngColName + ", " + latColName + """), 4326) 
-                    WHERE """ + countryColName + " = '" + countryName + "' AND " + locationColName + " = '" + locName + "';"
+                    cmmnd2 = "UPDATE " + self.table_name + " SET geom = ST_SETSRID(ST_MakePoint(" + lngcol_name + ", " + latcol_name + """), 4326) 
+                    WHERE """ + countrycol_name + " = '" + country_name + "' AND " + locationcol_name + " = '" + loc_name + "';"
                     cur.execute(cmmnd2)
                     cur.close()
             self.connector.connection.commit()
@@ -312,26 +312,26 @@ class Table:
             print("Updating failed.")
             print(error)
 
-    def __build_insertion_string(self, valsArr):
-        valsStr = ''
-        for i in range(len(valsArr)-2):
-            if isinstance(valsArr[i], str):
-                valsStr += "'" + str(valsArr[i]) + "', "
+    def __build_insertion_string(self, vals_arr):
+        vals_str = ''
+        for i in range(len(vals_arr) - 2):
+            if isinstance(vals_arr[i], str):
+                vals_str += "'" + str(vals_arr[i]) + "', "
             else:
-                if valsArr[i] is None or pd.isnull(valsArr[i]) or valsArr[i] == np.nan:
-                    valsStr += "NULL,"
+                if vals_arr[i] is None or pd.isnull(vals_arr[i]) or vals_arr[i] == np.nan:
+                    vals_str += "NULL,"
                 else:
-                    valsStr += str(valsArr[i]) + ", "
-        if isinstance(valsArr[len(valsArr)-1], str):
-            valsStr += "'" + str(valsArr[len(valsArr)-1]) + "' "
+                    vals_str += str(vals_arr[i]) + ", "
+        if isinstance(vals_arr[len(vals_arr) - 1], str):
+            vals_str += "'" + str(vals_arr[len(vals_arr) - 1]) + "' "
         else:
-            if valsArr[len(valsArr)-1] is None or pd.isnull(valsArr[len(valsArr)-1]) or valsArr[len(valsArr)-1] == np.nan:
-                valsStr += "NULL"
+            if vals_arr[len(vals_arr) - 1] is None or pd.isnull(vals_arr[len(vals_arr) - 1]) or vals_arr[len(vals_arr) - 1] == np.nan:
+                vals_str += "NULL"
             else:
-                valsStr += str(valsArr[len(valsStr)-1]) + " "
-        return valsStr
+                vals_str += str(vals_arr[len(vals_str) - 1]) + " "
+        return vals_str
 
-    def __check_geom_nulls(self, lngColName='Longitude', latColName='Latitude', geomColName='geom'):
+    def __check_geom_nulls(self, lngcol_name='Longitude', latcol_name='Latitude', geomcol_name='geom'):
         """
         Check for null values in a spatial table and, if they exist, check the lat and lng
         values to generate geometry.
@@ -340,23 +340,23 @@ class Table:
         try:
             cur = self.connector.connection.cursor()
             if self.is_spatial():
-                updateTable = "UPDATE " + self.tableName + """ SET """ + geomColName + """= ST_SETSRID(ST_MakePoint(""" + lngColName + """, 
-                            """ + latColName + """), 4326) WHERE """ + geomColName + """ IS NULL;"""
-                cur.execute(updateTable)
+                update_table = "UPDATE " + self.table_name + """ SET """ + geomcol_name + """= ST_SETSRID(ST_MakePoint(""" + lngcol_name + """, 
+                            """ + latcol_name + """), 4326) WHERE """ + geomcol_name + """ IS NULL;"""
+                cur.execute(update_table)
             cur.close()
             self.connector.connection.commit()
         except (Exception, psy.DatabaseError) as error:
             print("Failed to check for nulls.")
             print(error)
 
-    def is_spatial(self, geomColName='geom'):
+    def is_spatial(self, geomcol_name='geom'):
         """
         Check if the given table is spatial.
         :return:
         """
         try:
             cur = self.connector.connection.cursor()
-            cur.execute("SELECT column_name FROM information_schema.columns WHERE table_name = '" + self.tableName + "' AND column_name = '" + geomColName + "';")
+            cur.execute("SELECT column_name FROM information_schema.columns WHERE table_name = '" + self.table_name + "' AND column_name = '" + geomcol_name + "';")
             names = cur.fetchall()
             cur.close()
             if len(names) > 0:
@@ -384,7 +384,7 @@ class Table:
             print("Failed to commit!")
             print(error)
 
-    def entries_by_input(self, vals, columnNames):
+    def entries_by_input(self, vals, column_names):
         """
         Return all entries that match ALL search terms. Returns False
         if an error occurs
@@ -392,25 +392,25 @@ class Table:
         :return:
         """
         try:
-            if not (isinstance(vals, list) and isinstance(columnNames, list)):
+            if not (isinstance(vals, list) and isinstance(column_names, list)):
                 print("Keywords must be passed in as a list of strings")
                 return False
-            if not len(vals) == len(columnNames):
+            if not len(vals) == len(column_names):
                 print("Keywords and columnNames lists must have the same length.")
                 return False
-            if not self.__validate_columns(columnNames):
+            if not self.__validate_columns(column_names):
                 print("Input column names are invalid.")
                 return False
             else:
-                requestVals = "(SELECT * FROM " + self.tableName + " WHERE "
+                request_vals = "(SELECT * FROM " + self.table_name + " WHERE "
                 for i in range(len(vals)):
                     if not i == len(vals) - 1:
-                        requestVals += columnNames[i] + "=" + "'" + vals[i] + "' AND "
+                        request_vals += column_names[i] + "=" + "'" + vals[i] + "' AND "
                     else:
-                        requestVals += columnNames[i] + "=" + "'" + vals[i] + "');"
-                print("Request cmmnd is: " + requestVals)
+                        request_vals += column_names[i] + "=" + "'" + vals[i] + "');"
+                print("Request cmmnd is: " + request_vals)
                 cur = self.connector.connection.cursor()
-                cur.execute(requestVals)
+                cur.execute(request_vals)
                 try:
                     rows = cur.fetchall()
                     cur.close()
@@ -422,23 +422,23 @@ class Table:
             print("Getting entries failed.")
             print(error)
 
-    def __validate_columns(self, columnNames):
+    def __validate_columns(self, column_names):
         """
         Validates whether all string in a list correlate to a valid
         column name in the table.
-        :param columnNames:
+        :param column_names:
         :return: True if all names exist in table, False if not
         """
-        if not isinstance(columnNames, list):
+        if not isinstance(column_names, list):
             print("Names must be passed in as a list of strings.")
         else:
-            cmmnd = "SELECT column_name FROM information_schema.columns WHERE table_name = '" + self.tableName + "';"
+            cmmnd = "SELECT column_name FROM information_schema.columns WHERE table_name = '" + self.table_name + "';"
             cur = self.connector.connection.cursor()
             cur.execute(cmmnd)
             nameList = list(cur.fetchall())
             print(nameList)
             cur.close()
-            for name in columnNames:
+            for name in column_names:
                 print(name)
                 if not (name,) in nameList:
                     return False
@@ -453,9 +453,9 @@ class Table:
         try:
             cur = self.connector.connection.cursor()
             if limit == 0:
-                cmmnd = "SELECT * FROM " + self.tableName + ";"
+                cmmnd = "SELECT * FROM " + self.table_name + ";"
             else:
-                cmmnd = "SELECT * FROM " + self.tableName + " LIMIT " + str(limit) + ";"
+                cmmnd = "SELECT * FROM " + self.table_name + " LIMIT " + str(limit) + ";"
             cur.execute(cmmnd)
             rows = cur.fetchall()
             return rows
@@ -463,15 +463,15 @@ class Table:
             print("Fetching table failed.")
             print(error)
 
-    def check_validity(self, worldTableName, setTypeColName='dtype', setFoundCountryName='dbCountry', pointsGeomColName='geom', worldGeomColName='geom', worldCountryCodeColName='gid_0', pointsCountryCodeColName='country_code', worldCountryNameColName='name_0'):
+    def check_validity(self, world_table_name, new_typecol_name='dtype', new_foundcountrycol_name='dbCountry', points_geomcol_name='geom', world_geomcol_name='geom', wolrd_countrycodecol_name='gid_0', points_countrycodecol_name='country_code', world_countrynamecol_name='name_0'):
         """
         Validate using data in the database whether the entries in the table
         have the correct country.
-        :param worldTableName:
+        :param world_table_name:
         :return:
         """
         cur = self.connector.connection.cursor()
-        cmmnd1 = "SELECT column_name FROM information_schema.columns WHERE table_name = '" + self.tableName + "' AND column_name = '" + setTypeColName + "';"
+        cmmnd1 = "SELECT column_name FROM information_schema.columns WHERE table_name = '" + self.table_name + "' AND column_name = '" + new_typecol_name + "';"
         cur.execute(cmmnd1)
         name = cur.fetchall()
         cur.close()
@@ -479,28 +479,28 @@ class Table:
         if len(name) > 0:
             print("Already validated once. Revalidating.")
             cur = self.connector.connection.cursor()
-            cmmnd = "UPDATE " + self.tableName + " SET " + setTypeColName + "='Invalid' FROM " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + "." + pointsGeomColName + ", " + worldTableName + "." + worldGeomColName + ") AND " + worldTableName + "." + worldCountryCodeColName + "  != " + self.tableName + "." + pointsCountryCodeColName + ";"
+            cmmnd = "UPDATE " + self.table_name + " SET " + new_typecol_name + "='Invalid' FROM " + world_table_name + " WHERE ST_WITHIN(" + self.table_name + "." + points_geomcol_name + ", " + world_table_name + "." + world_geomcol_name + ") AND " + world_table_name + "." + wolrd_countrycodecol_name + "  != " + self.table_name + "." + points_countrycodecol_name + ";"
             cur.execute(cmmnd)
-            cmmnd = "UPDATE " + self.tableName + " SET " + setFoundCountryName + "=" + worldTableName + "." + worldCountryNameColName + " FROM " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + "." + pointsGeomColName + ", " + worldTableName + "." + worldGeomColName + ") AND " + worldTableName + "." + worldCountryCodeColName + "  != " + self.tableName + "." + pointsCountryCodeColName + ";"
+            cmmnd = "UPDATE " + self.table_name + " SET " + new_foundcountrycol_name + "=" + world_table_name + "." + world_countrynamecol_name + " FROM " + world_table_name + " WHERE ST_WITHIN(" + self.table_name + "." + points_geomcol_name + ", " + world_table_name + "." + world_geomcol_name + ") AND " + world_table_name + "." + wolrd_countrycodecol_name + "  != " + self.table_name + "." + points_countrycodecol_name + ";"
             cur.execute(cmmnd)
-            cmmnd = "SELECT * FROM " + self.tableName + ", " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + "." + pointsGeomColName + ", " + worldTableName + "." + worldGeomColName + ") AND " + worldTableName + "." + worldCountryCodeColName + "  != " + self.tableName + "." + pointsCountryCodeColName + ";"
+            cmmnd = "SELECT * FROM " + self.table_name + ", " + world_table_name + " WHERE ST_WITHIN(" + self.table_name + "." + points_geomcol_name + ", " + world_table_name + "." + world_geomcol_name + ") AND " + world_table_name + "." + wolrd_countrycodecol_name + "  != " + self.table_name + "." + points_countrycodecol_name + ";"
             cur.execute(cmmnd)
             rows = cur.fetchall()
             cur.close()
         else:
             print("Not validated yet. Generating dtype column.")
             cur = self.connector.connection.cursor()
-            cmmnd = "ALTER TABLE " + self.tableName + " ADD " + setTypeColName + " varchar;"
+            cmmnd = "ALTER TABLE " + self.table_name + " ADD " + new_typecol_name + " varchar;"
             cur.execute(cmmnd)
-            cmmnd = "ALTER TABLE " + self.tableName + " ADD " + setFoundCountryName + " varchar;"
+            cmmnd = "ALTER TABLE " + self.table_name + " ADD " + new_foundcountrycol_name + " varchar;"
             cur.execute(cmmnd)
-            cmmnd = "UPDATE " + self.tableName + " SET " + setTypeColName + "='Valid'"
+            cmmnd = "UPDATE " + self.table_name + " SET " + new_typecol_name + "='Valid'"
             cur.execute(cmmnd)
-            cmmnd = "UPDATE " + self.tableName + " SET " + setTypeColName + "='Invalid' FROM " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + "." + pointsGeomColName + ", " + worldTableName + "." + worldGeomColName + ") AND " + worldTableName + "." + worldCountryCodeColName + "  != " + self.tableName + "." + pointsCountryCodeColName + ";"
+            cmmnd = "UPDATE " + self.table_name + " SET " + new_typecol_name + "='Invalid' FROM " + world_table_name + " WHERE ST_WITHIN(" + self.table_name + "." + points_geomcol_name + ", " + world_table_name + "." + world_geomcol_name + ") AND " + world_table_name + "." + wolrd_countrycodecol_name + "  != " + self.table_name + "." + points_countrycodecol_name + ";"
             cur.execute(cmmnd)
-            cmmnd = "UPDATE " + self.tableName + " SET " + setFoundCountryName + "=" + worldTableName + "." + worldCountryNameColName + " FROM " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + "." + pointsGeomColName + ", " + worldTableName + "." + worldGeomColName + ") AND " + worldTableName + "." + worldCountryCodeColName + "  != " + self.tableName + "." + pointsCountryCodeColName + ";"
+            cmmnd = "UPDATE " + self.table_name + " SET " + new_foundcountrycol_name + "=" + world_table_name + "." + world_countrynamecol_name + " FROM " + world_table_name + " WHERE ST_WITHIN(" + self.table_name + "." + points_geomcol_name + ", " + world_table_name + "." + world_geomcol_name + ") AND " + world_table_name + "." + wolrd_countrycodecol_name + "  != " + self.table_name + "." + points_countrycodecol_name + ";"
             cur.execute(cmmnd)
-            cmmnd = "SELECT * FROM " + self.tableName + ", " + worldTableName + " WHERE ST_WITHIN(" + self.tableName + "." + pointsGeomColName + ", " + worldTableName + "." + worldGeomColName + ") AND " + worldTableName + "." + worldCountryCodeColName + "  != " + self.tableName + "." + pointsCountryCodeColName + ";"
+            cmmnd = "SELECT * FROM " + self.table_name + ", " + world_table_name + " WHERE ST_WITHIN(" + self.table_name + "." + points_geomcol_name + ", " + world_table_name + "." + world_geomcol_name + ") AND " + world_table_name + "." + wolrd_countrycodecol_name + "  != " + self.table_name + "." + points_countrycodecol_name + ";"
             cur.execute(cmmnd)
             rows = cur.fetchall()
             cur.close()
@@ -509,11 +509,11 @@ class Table:
 
         return rows
 
-    def table_to_csv(self, fileName):
-        namesList = []
-        valsList = []
-        cmmnd1 = "SELECT column_name FROM information_schema.columns WHERE table_name = '" + self.tableName + "';"
-        cmmnd2 = "SELECT * FROM " + self.tableName + ";"
+    def table_to_csv(self, file_name):
+        names_list = []
+        vals_list = []
+        cmmnd1 = "SELECT column_name FROM information_schema.columns WHERE table_name = '" + self.table_name + "';"
+        cmmnd2 = "SELECT * FROM " + self.table_name + ";"
 
         cur = self.connector.connection.cursor()
         cur.execute(cmmnd1)
@@ -526,15 +526,15 @@ class Table:
         cur.close()
 
         for tTuple in names:
-            namesList.append(tTuple[0])
+            names_list.append(tTuple[0])
 
         i = 0
         for row in rows:
             print(row)
-            valsList.append(row)
+            vals_list.append(row)
             i += 1
-        df = pd.DataFrame(data=valsList, columns=namesList)
-        filePath = str(path.abspath(path.join(path.dirname(__file__), '..', 'resources', 'csv', fileName)))
+        df = pd.DataFrame(data=vals_list, columns=names_list)
+        file_path = str(path.abspath(path.join(path.dirname(__file__), '..', 'resources', 'csv', file_name)))
 
-        df.to_csv(filePath, sep=',', encoding='utf-8', index=False)
+        df.to_csv(file_path, sep=',', encoding='utf-8', index=False)
 
