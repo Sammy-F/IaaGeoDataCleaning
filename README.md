@@ -60,7 +60,7 @@ connector.getConnectFromConfig()
 
 Usage samples can be found in the documentation.
 
-### Acknowledgment:
+### Acknowledgments:
 
 Continued development by [Samantha Fritsche ](https://github.com/Sammy-F) and [Thy Nguyen ](https://github.com/thytng).
 

@@ -6,6 +6,7 @@ import numpy as np
 import geopandas as gpd
 from shapely.geometry import Point
 import math
+sys.path.append('../')
 from TableUtils.TableTools import TableTool
 
 
