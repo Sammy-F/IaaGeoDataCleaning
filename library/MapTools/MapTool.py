@@ -11,11 +11,13 @@ from TableUtils.TableTools import TableTool
 
 # TODO: plot all of the stations and their counterpart
 class MapTool:
-    def __init__(self, map_file=str(path.abspath(path.join(path.dirname(__file__), '..', '..', '..', '..',
-                                                           'resources', 'mapinfo', 'TM_WORLD_BORDERS-0.3.shp')))):
+    def __init__(self, map_file=None):
         """
         Initializes a tool for mapping data points as markers using the folium package.
         """
+        if not map_file:
+            map_file = str(path.abspath(path.join(path.dirname(__file__), '..', '..', '..', '..', 'resources',
+                                                  'mapinfo', 'TM_WORLD_BORDERS-0.3.shp')))
         self.map = gpd.read_file(map_file)
 
     def read_file(self, file_path):

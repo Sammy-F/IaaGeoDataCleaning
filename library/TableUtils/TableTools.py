@@ -23,13 +23,10 @@ Note that some borders used are disputed
 
 regex = re.compile(' \(\d\)')
 
+
 class TableTool:
-    def __init__(self, file_path=str(os.path.abspath(os.path.join(os.path.dirname(__file__), '..',
-                                                                  'resources', 'xlsx', 'verified_entries.xlsx'))),
-                 map_file=str(os.path.abspath(os.path.join(os.path.dirname(__file__), '..',
-                                                           'resources', 'mapinfo', 'TM_WORLD_BORDERS-0.3.shp'))),
-                 outfile_type='.csv', loc_col='Location', ctry_col='Country', reg_col='Region',
-                 lat_col='Latitude', lng_col='Longitude'):
+    def __init__(self, file_path=None, map_file=None, outfile_type='.csv', loc_col='Location', ctry_col='Country',
+                 reg_col='Region', lat_col='Latitude', lng_col='Longitude'):
         """
         Initializes a TableTools object to clean, query, or validate latitudinal and longitudinal inputs.
 
@@ -41,6 +38,13 @@ class TableTool:
         :param lat_col: the name of the latitude column.
         :param lng_col: the name of the latitude column.
         """
+        # TODO: should we include tblLocation.xlsx in the package?
+        if not file_path:
+            file_path = str(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'resources', 'xlsx',
+                                                         'tblLocation.xlsx')))
+        if not map_file:
+            map_file = str(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'resources', 'mapinfo',
+                                                        'TM_WORLD_BORDERS-0.3.shp')))
         self.file_path = file_path
         self.df = self.read_file(self.file_path)
         self.validator = GeocodeValidator(map_file)
