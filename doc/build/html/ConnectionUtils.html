@@ -1,0 +1,381 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ConnectionUtils package &#8212; IaaGeoData  documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">IaaGeoData  documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="connectionutils-package">
+<h1>ConnectionUtils package<a class="headerlink" href="#connectionutils-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-ConnectionUtils.DatabaseConnector">
+<span id="connectionutils-databaseconnector-module"></span><h2>ConnectionUtils.DatabaseConnector module<a class="headerlink" href="#module-ConnectionUtils.DatabaseConnector" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="ConnectionUtils.DatabaseConnector.DatabaseConnector">
+<em class="property">class </em><code class="descclassname">ConnectionUtils.DatabaseConnector.</code><code class="descname">DatabaseConnector</code><a class="headerlink" href="#ConnectionUtils.DatabaseConnector.DatabaseConnector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="ConnectionUtils.DatabaseConnector.DatabaseConnector.close_connection">
+<code class="descname">close_connection</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ConnectionUtils.DatabaseConnector.DatabaseConnector.close_connection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ConnectionUtils.DatabaseConnector.DatabaseConnector.connect_from_config">
+<code class="descname">connect_from_config</code><span class="sig-paren">(</span><em>section='postgresql'</em>, <em>file_path=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ConnectionUtils.DatabaseConnector.DatabaseConnector.connect_from_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connect to database from parameters.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>file_path</strong> – </li>
+<li><strong>section</strong> – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ConnectionUtils.DatabaseConnector.DatabaseConnector.connect_from_credentials">
+<code class="descname">connect_from_credentials</code><span class="sig-paren">(</span><em>host</em>, <em>dbname</em>, <em>username</em>, <em>password</em>, <em>port=5432</em><span class="sig-paren">)</span><a class="headerlink" href="#ConnectionUtils.DatabaseConnector.DatabaseConnector.connect_from_credentials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set up from keywords, not secure.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>host</strong> – </li>
+<li><strong>dbname</strong> – </li>
+<li><strong>username</strong> – </li>
+<li><strong>password</strong> – </li>
+<li><strong>port</strong> – </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ConnectionUtils.DatabaseConnector.DatabaseConnector.get_connection">
+<code class="descname">get_connection</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ConnectionUtils.DatabaseConnector.DatabaseConnector.get_connection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-ConnectionUtils.Table">
+<span id="connectionutils-table-module"></span><h2>ConnectionUtils.Table module<a class="headerlink" href="#module-ConnectionUtils.Table" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="ConnectionUtils.Table.Table">
+<em class="property">class </em><code class="descclassname">ConnectionUtils.Table.</code><code class="descname">Table</code><span class="sig-paren">(</span><em>tableName</em>, <em>databaseConnector</em><span class="sig-paren">)</span><a class="headerlink" href="#ConnectionUtils.Table.Table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="ConnectionUtils.Table.Table.change_table">
+<code class="descname">change_table</code><span class="sig-paren">(</span><em>new_table</em><span class="sig-paren">)</span><a class="headerlink" href="#ConnectionUtils.Table.Table.change_table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Switch to a different table without creating a new DatabaseConnector.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>new_table</strong> – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ConnectionUtils.Table.Table.check_by_countryloc">
+<code class="descname">check_by_countryloc</code><span class="sig-paren">(</span><em>country_name</em>, <em>location_name</em>, <em>countrycol_name='country'</em>, <em>locationcol_name='location'</em><span class="sig-paren">)</span><a class="headerlink" href="#ConnectionUtils.Table.Table.check_by_countryloc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if an entry exists with the given country and location. If so, return all rows that match in a
+tuple where the first value is True or False for whether an entry exist, and the second value is the the rows.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>country_name</strong> – </li>
+<li><strong>location_name</strong> – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ConnectionUtils.Table.Table.check_by_latlng">
+<code class="descname">check_by_latlng</code><span class="sig-paren">(</span><em>lat</em>, <em>lon</em>, <em>search_radius=300000</em>, <em>geomcol_name='geom'</em><span class="sig-paren">)</span><a class="headerlink" href="#ConnectionUtils.Table.Table.check_by_latlng" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if an entry with the given lat, lon exists. If so, return all rows that match in a tuple where the first
+value is True or False for whether an entry exist, and the second value is the the rows.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>lat</strong> – </li>
+<li><strong>lon</strong> – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ConnectionUtils.Table.Table.check_validity">
+<code class="descname">check_validity</code><span class="sig-paren">(</span><em>world_table_name</em>, <em>new_typecol_name='dtype'</em>, <em>new_foundcountrycol_name='dbCountry'</em>, <em>points_geomcol_name='geom'</em>, <em>world_geomcol_name='geom'</em>, <em>wolrd_countrycodecol_name='gid_0'</em>, <em>points_countrycodecol_name='country_code'</em>, <em>world_countrynamecol_name='name_0'</em><span class="sig-paren">)</span><a class="headerlink" href="#ConnectionUtils.Table.Table.check_validity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validate using data in the database whether the entries in the table
+have the correct country.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>world_table_name</strong> – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ConnectionUtils.Table.Table.commit_changes">
+<code class="descname">commit_changes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ConnectionUtils.Table.Table.commit_changes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Commit changes made to the database.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ConnectionUtils.Table.Table.entries_by_input">
+<code class="descname">entries_by_input</code><span class="sig-paren">(</span><em>vals</em>, <em>column_names</em><span class="sig-paren">)</span><a class="headerlink" href="#ConnectionUtils.Table.Table.entries_by_input" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all entries that match ALL search terms. Returns False if an error occurs.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>vals</strong> – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ConnectionUtils.Table.Table.get_table">
+<code class="descname">get_table</code><span class="sig-paren">(</span><em>limit=5</em><span class="sig-paren">)</span><a class="headerlink" href="#ConnectionUtils.Table.Table.get_table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a number of rows of the table. If limit=0, return all.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>limit</strong> – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ConnectionUtils.Table.Table.is_spatial">
+<code class="descname">is_spatial</code><span class="sig-paren">(</span><em>geomcol_name='geom'</em><span class="sig-paren">)</span><a class="headerlink" href="#ConnectionUtils.Table.Table.is_spatial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the given table is spatial.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ConnectionUtils.Table.Table.make_spatial">
+<code class="descname">make_spatial</code><span class="sig-paren">(</span><em>lngcol_name='Longitude'</em>, <em>latcol_name='Latitude'</em>, <em>geomcol_name='geom'</em><span class="sig-paren">)</span><a class="headerlink" href="#ConnectionUtils.Table.Table.make_spatial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a geometry column and make it spatial.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ConnectionUtils.Table.Table.table_from_file">
+<code class="descname">table_from_file</code><span class="sig-paren">(</span><em>file_path=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ConnectionUtils.Table.Table.table_from_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a table on the database from a .xlsx or .csv file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file_path</strong> – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ConnectionUtils.Table.Table.table_from_tuple">
+<code class="descname">table_from_tuple</code><span class="sig-paren">(</span><em>command_tuple</em><span class="sig-paren">)</span><a class="headerlink" href="#ConnectionUtils.Table.Table.table_from_tuple" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build table(s) from a command(s).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ConnectionUtils.Table.Table.table_to_csv">
+<code class="descname">table_to_csv</code><span class="sig-paren">(</span><em>file_name</em><span class="sig-paren">)</span><a class="headerlink" href="#ConnectionUtils.Table.Table.table_to_csv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="ConnectionUtils.Table.Table.update_entries">
+<code class="descname">update_entries</code><span class="sig-paren">(</span><em>lngcol_name='longitude'</em>, <em>latcol_name='latitude'</em>, <em>countrycol_name='country'</em>, <em>locationcol_name='location'</em>, <em>file_path=False</em><span class="sig-paren">)</span><a class="headerlink" href="#ConnectionUtils.Table.Table.update_entries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert or update entries from a .csv file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file_path</strong> – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ConnectionUtils.Table.Table.xlsx_to_csv">
+<code class="descname">xlsx_to_csv</code><span class="sig-paren">(</span><em>file_path</em><span class="sig-paren">)</span><a class="headerlink" href="#ConnectionUtils.Table.Table.xlsx_to_csv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-ConnectionUtils">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-ConnectionUtils" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">ConnectionUtils package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-ConnectionUtils.DatabaseConnector">ConnectionUtils.DatabaseConnector module</a></li>
+<li><a class="reference internal" href="#module-ConnectionUtils.Table">ConnectionUtils.Table module</a></li>
+<li><a class="reference internal" href="#module-ConnectionUtils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/ConnectionUtils.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">IaaGeoData  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Samantha Fritsche, Thy Nguyen.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.5.
+    </div>
+  </body>
+</html>
