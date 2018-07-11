@@ -1,0 +1,298 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>TableUtils package &#8212; IaaGeoDataCleaning  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="tableutils-package">
+<h1>TableUtils package<a class="headerlink" href="#tableutils-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-TableUtils.TableTools">
+<span id="tableutils-tabletools-module"></span><h2>TableUtils.TableTools module<a class="headerlink" href="#module-TableUtils.TableTools" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="TableUtils.TableTools.TableTool">
+<em class="property">class </em><code class="descclassname">TableUtils.TableTools.</code><code class="descname">TableTool</code><span class="sig-paren">(</span><em>file_path=None</em>, <em>map_file=None</em>, <em>outfile_type='.csv'</em>, <em>loc_col='Location'</em>, <em>ctry_col='Country'</em>, <em>reg_col='Region'</em>, <em>lat_col='Latitude'</em>, <em>lng_col='Longitude'</em><span class="sig-paren">)</span><a class="headerlink" href="#TableUtils.TableTools.TableTool" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="TableUtils.TableTools.TableTool.add_entry">
+<code class="descname">add_entry</code><span class="sig-paren">(</span><em>loc</em>, <em>ctry</em>, <em>reg</em>, <em>lat</em>, <em>lng</em><span class="sig-paren">)</span><a class="headerlink" href="#TableUtils.TableTools.TableTool.add_entry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a new row to the data frame and overwrites the input file if successfully added.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>loc</strong> – </li>
+<li><strong>ctry</strong> – </li>
+<li><strong>reg</strong> – </li>
+<li><strong>lat</strong> – </li>
+<li><strong>lng</strong> – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">a tuple containing the type of entry and the information of the row represented in a dictionary.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="TableUtils.TableTools.TableTool.cell_in_table">
+<code class="descname">cell_in_table</code><span class="sig-paren">(</span><em>value</em>, <em>col_list</em><span class="sig-paren">)</span><a class="headerlink" href="#TableUtils.TableTools.TableTool.cell_in_table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks to see whether a cell with a certain value exists in the column.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> – the condition being checked for.</li>
+<li><strong>col_list</strong> – all of the entries in the column in a list.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">a list of indices of rows with the value.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="TableUtils.TableTools.TableTool.clean_table">
+<code class="descname">clean_table</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#TableUtils.TableTools.TableTool.clean_table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs through the entire data frame and verifies all of the entries,
+exports 3 output files: verified entries, pending entries, and repeated entries.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the percentage of entries that could not be validated/geocoded.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="TableUtils.TableTools.TableTool.export_file">
+<code class="descname">export_file</code><span class="sig-paren">(</span><em>df</em>, <em>outfile</em>, <em>directory</em><span class="sig-paren">)</span><a class="headerlink" href="#TableUtils.TableTools.TableTool.export_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exports the input data frame to the designated directory and outfile type.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>df</strong> – the data frame</li>
+<li><strong>outfile</strong> – name of the output file</li>
+<li><strong>directory</strong> – name of the directory</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="TableUtils.TableTools.TableTool.query_table">
+<code class="descname">query_table</code><span class="sig-paren">(</span><em>loc=None</em>, <em>ctry=None</em>, <em>lat=None</em>, <em>lng=None</em><span class="sig-paren">)</span><a class="headerlink" href="#TableUtils.TableTools.TableTool.query_table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Queries the table for entries that match the conditions. Conditions must be:</p>
+<ul class="simple">
+<li>Location, country, latitude, longitude</li>
+<li>Location or country</li>
+<li>Location and country</li>
+<li>Latitude and longitude</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>loc</strong> – </li>
+<li><strong>ctry</strong> – </li>
+<li><strong>lat</strong> – </li>
+<li><strong>lng</strong> – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">the indices of the entries matching the query.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="TableUtils.TableTools.TableTool.read_file">
+<code class="descname">read_file</code><span class="sig-paren">(</span><em>file_path</em><span class="sig-paren">)</span><a class="headerlink" href="#TableUtils.TableTools.TableTool.read_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads in csv or excel file. Raises an error if a different file type was entered.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file_path</strong> – .csv or .xlsx</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">a pandas data frame.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="TableUtils.TableTools.TableTool.verify_by_indices">
+<code class="descname">verify_by_indices</code><span class="sig-paren">(</span><em>indices</em><span class="sig-paren">)</span><a class="headerlink" href="#TableUtils.TableTools.TableTool.verify_by_indices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verifies certain rows in the data frame given the indices and exports the results to a separate file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>indices</strong> – all of the indices being checked for in a list.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="TableUtils.TableTools.TableTool.verify_by_value">
+<code class="descname">verify_by_value</code><span class="sig-paren">(</span><em>loc=None</em>, <em>ctry=None</em>, <em>lat=None</em>, <em>lng=None</em><span class="sig-paren">)</span><a class="headerlink" href="#TableUtils.TableTools.TableTool.verify_by_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verifies certain rows in the data frame using location, country, latitude, or longitude conditions,
+exports the results to a separate file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>loc</strong> – </li>
+<li><strong>ctry</strong> – </li>
+<li><strong>lat</strong> – </li>
+<li><strong>lng</strong> – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="TableUtils.TableTools.TableTool.verify_row">
+<code class="descname">verify_row</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#TableUtils.TableTools.TableTool.verify_row" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verifies a single row in the data frame.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>index</strong> – index of the row.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">a tuple containing the type of entry and the information of the row represented in a dictionary.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-TableUtils">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-TableUtils" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">TableUtils package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-TableUtils.TableTools">TableUtils.TableTools module</a></li>
+<li><a class="reference internal" href="#module-TableUtils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/TableUtils.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Samantha Fritsche, Thy Nguyen.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      |
+      <a href="_sources/TableUtils.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
