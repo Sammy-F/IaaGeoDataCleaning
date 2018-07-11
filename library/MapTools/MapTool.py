@@ -8,7 +8,6 @@ from shapely.geometry import Point
 import math
 from ..TableUtils.TableTools import TableTool
 
-
 # TODO: plot all of the stations and their counterpart
 class MapTool:
     def __init__(self, map_file=None):
@@ -16,7 +15,7 @@ class MapTool:
         Initializes a tool for mapping data points as markers using the folium package.
         """
         if not map_file:
-            map_file = str(path.abspath(path.join(path.dirname(__file__), '..', '..', '..', '..', 'resources',
+            map_file = str(path.abspath(path.join(path.dirname(__file__), '..', '..', 'resources',
                                                   'mapinfo', 'TM_WORLD_BORDERS-0.3.shp')))
         self.map = gpd.read_file(map_file)
 

@@ -545,7 +545,7 @@ class Table:
             vals_list.append(row)
             i += 1
         df = pd.DataFrame(data=vals_list, columns=names_list)
-        file_path = str(path.abspath(path.join(path.dirname(__file__), '..', 'resources', 'csv', file_name)))
+        file_path = str(path.abspath(path.join(path.dirname(__file__), '..', '..', 'resources', 'csv', file_name)))
 
         df.to_csv(file_path, sep=',', encoding='utf-8', index=False)
 

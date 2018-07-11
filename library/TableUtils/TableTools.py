@@ -41,10 +41,10 @@ class TableTool:
         """
         # TODO: should we include tblLocation.xlsx in the package?
         if not file_path:
-            file_path = str(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'resources', 'xlsx',
+            file_path = str(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'resources', 'xlsx',
                                                          'tblLocation.xlsx')))
         if not map_file:
-            map_file = str(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'resources', 'mapinfo',
+            map_file = str(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'resources', 'mapinfo',
                                                         'TM_WORLD_BORDERS-0.3.shp')))
         self.file_path = file_path
         self.df = self.read_file(self.file_path)
@@ -68,7 +68,7 @@ class TableTool:
         self.outfile_type = outfile_type
 
         # Creating a new directory if none has been created for output files.
-        self.directory = str(os.path.abspath(os.path.join(os.path.dirname(__file__),'..',
+        self.directory = str(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..',
                                                           os.path.splitext(os.path.basename(self.file_path))[0])))
         if not os.path.exists(self.directory):
             os.mkdir(self.directory)
@@ -99,7 +99,7 @@ class TableTool:
         """
         outfile = outfile + self.outfile_type
         file_path = str(
-            os.path.abspath(os.path.join(os.path.dirname(__file__), '..', directory, outfile)))
+            os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', directory, outfile)))
 
         if outfile.endswith('.csv'):
             df.to_csv(file_path, index_label='Index', sep=',', encoding='utf-8')

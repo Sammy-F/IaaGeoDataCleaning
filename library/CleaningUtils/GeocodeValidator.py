@@ -12,7 +12,7 @@ import string
 class GeocodeValidator:
     def __init__(self, map_file=None):
         if not map_file:
-            map_file = str(path.abspath(path.join(path.dirname(__file__), '..', '..', '..', '..', 'resources',
+            map_file = str(path.abspath(path.join(path.dirname(__file__), '..', '..', 'resources',
                                                   'mapinfo', 'TM_WORLD_BORDERS-0.3.shp')))
         self.pht = gp.Photon(timeout=3)
 
