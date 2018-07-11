@@ -3,8 +3,8 @@ import pandas as pd
 import re
 import os
 import sys
-sys.path.append('../')
-from CleaningUtils.GeocodeValidator import GeocodeValidator
+from ..CleaningUtils.GeocodeValidator import GeocodeValidator
+
 """
 GeocodeValidator allows the user to perform reverse geocoding
 on a .xlsx or .csv to ensure that input locations correspond to
