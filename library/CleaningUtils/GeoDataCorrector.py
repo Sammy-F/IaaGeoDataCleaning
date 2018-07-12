@@ -9,6 +9,14 @@ import string
 import country_converter as coco
 
 class GeoDataCorrector:
+    """
+    Handles cleaning of data whose lat/lng values due not match its input country.
+
+    Cases tested for: Non-standard country name, flipped lat/lng values,
+    no lat/lng entered
+
+    See the documentation for usage examples.
+    """
     def __init__(self, map_file=None, map=None):
         # Offer opportunity to input an already existing shapefile GeoDataFrame
         if not map:
@@ -35,13 +43,18 @@ class GeoDataCorrector:
     def verify_info(self, location=None, country=None, region=None, input_lat=None, inp_lng=None):
         """
         Reads in data for a single location and verifies its information/checks for missing data.
+        Returns a dictionary with the completed entry.
 
-        :param location:
-        :param country:
-        :param input_lat:
-        :param inp_lng:
+        :param location: string
+        :param country: string
+        :param input_lat: float
+        :param inp_lng: float
         :return: the type of entry and the entry's information as a dictionary
         """
+        if location and country:
+            print("Beginning verification of " + str(location) + ", " + str(country))
+        else:
+            print("Beginning verification of unknown.")
         loc_info = self.format_info(location, country, region, input_lat, inp_lng)
         loc_checked = self.check_input(loc_info)
         # tuple (inp_type, dict)
@@ -77,6 +90,17 @@ class GeoDataCorrector:
         return coords_type, loc_info
 
     def format_info(self, location, country, region, latitude, longitude):
+        """
+        Formats the passed parameters as a dictionary representation for
+        further processing in other methods.
+
+        :param location: string
+        :param country: string
+        :param region: string
+        :param latitude: float
+        :param longitude: float
+        :return: The dictionary representation of the data.
+        """
         if pd.notnull(location):
             location = string.capwords(location)
         if pd.notnull(country):
@@ -88,21 +112,17 @@ class GeoDataCorrector:
         """
         Checks to see if all the necessary fields are entered.
 
-        :param entry:
+        :param entry: A dictionary (or functionally similar) representation of a given row/entry
         :return: a tuple containing 2 values:
         the type of entry as an integer and the (altered) location dictionary.
         """
         if pd.isnull(entry['Location']) or pd.isnull(entry['Country']):
             return -3, entry
 
-        # Looking up with pycountry
+        # Looking up with coco
         try:
-            print('check 1 start')
             entry['Country'] = self.name_handler.find_name(entry['Country'])
             entry['ISO3'] = self.name_handler.find_iso(entry['Country'], True)
-            print(entry['Country'])
-            print(entry['ISO3'])
-            print('check 1 end')
 
         except LookupError:
             alt_ctry = self.name_handler.find_name(entry['Country'])
@@ -113,7 +133,6 @@ class GeoDataCorrector:
                 entry['Country'] = alt_ctry
                 entry['ISO3'] = self.name_handler.find_iso(alt_ctry, True)
                 print('check 2 end')
-                # entry['Country_Code'] = pc.countries.lookup(alt_ctry).alpha_3
 
         # Checking if lat/lng were entered
         if (pd.isnull(entry['Latitude']) or pd.isnull(entry['Longitude'])) or (
@@ -124,12 +143,14 @@ class GeoDataCorrector:
 
     def verify_coords(self, loc_dict, use_iso3=True):
         """
-        Uses a shapefile to determine whether the entered coordinates fall within the borders of the country entered.
+        Uses a dictionary to determine whether the entered coordinates fall within the borders of the country entered.
 
-        :param loc_dict:
+        :param loc_dict: A dictionary representation of a given row/entry
         :return: a tuple containing 2 values:
         the type of entry and the (altered) location dictionary.
         """
+
+        print("Check validity of coordinates")
         lat = loc_dict['Latitude']
         lng = loc_dict['Longitude']
 
@@ -162,27 +183,34 @@ class GeoDataCorrector:
                 else:
                     mLoc = self.map.loc[filter, 'ISO2']
                 found_country = mLoc.iloc[0]
-
                 if iso == found_country:
                     loc_dict['Recorded_Lat'] = possible_coords[i][0]
                     loc_dict['Recorded_Lng'] = possible_coords[i][1]
+                    if i != 0:
+                        print('Found flipped lat/lng. Flipping and marking.')
+                    else:
+                        print('Correct coordinates. Returning.')
                     return i, loc_dict
 
             except IndexError:
                 continue
 
+        print('Unable to validate coordinates. Marking as incorrect.')
         return -1, loc_dict
 
     def geocode_coords(self, loc_dict):
         """
-        Finds the coordinates of a location based on the entered location and country.
+        Finds the coordinates of a location based on the entered location and country. Directly
+        modifies the passed dictionary.
 
-        :param loc_dict:
+        :param loc_dict: A dictionary representation of a given row/entry
         :return: a tuple containing 2 values:
         the type of entry and the (altered) location dictionary.
         """
         location = loc_dict['Location']
         country = loc_dict['Country']
+
+        print("Attempting to geocode coordinates for " + str(location) + ", " + country)
 
         try:
             matches = self.pht.geocode(location + " " + country, exactly_one=False)
@@ -193,6 +221,7 @@ class GeoDataCorrector:
                         loc_dict['Recorded_Lat'] = match.latitude
                         loc_dict['Recorded_Lng'] = match.longitude
                         loc_dict['Address'] = match.address
+                        print('Successfully geocoded.')
                         return 8, loc_dict
 
             matches = self.pht.geocode(location, exactly_one=False)
@@ -203,25 +232,45 @@ class GeoDataCorrector:
                         loc_dict['Recorded_Lat'] = match.latitude
                         loc_dict['Recorded_Lng'] = match.longitude
                         loc_dict['Address'] = match.address
+                        print('Successfully geocoded.')
                         return 8, loc_dict
 
+            print("Unable to find coordinates for location.")
             return -1, loc_dict
 
-        except:
+        except Exception as e:
+            print("An error occurred. Unable to geocode coordinates. Error message:")
+            print(str(e))
             return -1, loc_dict
 
 class NameHandler:
+    """
+    Handles standardization of country names
+    """
     def __init__(self):
         self.convertor = coco.CountryConverter()
 
     def find_name(self, check_country):
+        """
+        Standardizes a country's name.
+
+        :param check_country: The input country name
+        :return: The standardized country name
+        """
         return self.convertor.convert(names=[check_country], to='name_short')
 
     def find_iso(self, check_country, use_iso3=True):
+        """
+        Returns the ISO2 or ISO3 country code for the country
+
+        :param check_country: The input country name
+        :param use_iso3: Determines whether to return ISO2 or ISO3
+        :return: ISO2 or ISO3 country code as string
+        """
         if use_iso3:
-            return self.convertor.convert(names=[check_country], to='ISO3').capitalize()
+            return self.convertor.convert(names=[check_country], to='ISO3').upper()
         else:
-            return self.convertor.convert(names=[check_country], to='ISO2').capitalize()
+            return self.convertor.convert(names=[check_country], to='ISO2').upper()
 #
 # validator = GeoDataCorrector()
 #
