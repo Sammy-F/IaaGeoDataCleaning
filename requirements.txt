@@ -5,8 +5,9 @@ folium==0.5.0
 geopandas==0.3.0
 geopy==1.14.0
 psycopg2==2.7.5
-pycountry==18.5.26
 pytest==3.6.3
 Shapely==1.6.4.post1
 atlas==0.27.0
 xlrd==1.1.0
+country_converter==1.11.0
+sridentify==0.4.0

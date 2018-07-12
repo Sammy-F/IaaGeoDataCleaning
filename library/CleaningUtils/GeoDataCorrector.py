@@ -2,7 +2,6 @@ import geopy as gp
 import geopandas as gpd
 from os import path
 import pandas as pd
-import pycountry as pc
 import numpy as np
 from shapely.geometry import Point
 import re
@@ -11,7 +10,6 @@ import country_converter as coco
 
 class GeoDataCorrector:
     def __init__(self, map_file=None, map=None):
-
         # Offer opportunity to input an already existing shapefile GeoDataFrame
         if not map:
             if not map_file:
