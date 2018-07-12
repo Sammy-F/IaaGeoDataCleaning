@@ -24,3 +24,6 @@ env.bak/
 venv.bak/
 /env
 env
+
+# Checkpoints
+.ipynb_checkpoints
