@@ -21,12 +21,6 @@ Marks indices of potentially corrupt entries and allows the user to determine wh
 
 ### Installation
 
-Easy install dependencies:
-```
-cd path/to/IaaGeoDataCleaning
-pip install requirements.txt
-```
-
 Using pip:
 ```
 pip install IaaGeoDataCleaning

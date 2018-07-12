@@ -40,7 +40,7 @@ class MapTool:
 
         :param df: pandas dataframe.
         :param cols: a tuple, list, or set of column names.
-        :return:
+        :return: boolean
         """
         if not isinstance(cols, set):
             cols = set(cols)
@@ -101,7 +101,6 @@ class MapTool:
         :param lng:
         :param desc:
         :param clr:
-        :return:
         """
         if not desc:
             desc = str((lat, lng))
@@ -276,8 +275,8 @@ class MapTool:
         :param lng0_col:
         :param lat1_col:
         :param lng1_col:
-        :param clr0:
-        :param clr1:
+        :param clr0: color string
+        :param clr1: color string
         :return: the data points as a tuple of Marker objects.
         """
         df = self.clean_dataframe(infile, {lat0_col, lng0_col, lat1_col, lng1_col})
@@ -296,8 +295,8 @@ class MapTool:
 
         :param coords0:
         :param coords1:
-        :param clr0:
-        :param clr1:
+        :param clr0: color string
+        :param clr1: color string
         :return: the data points as a tuple of two Marker objects.
         """
         marker0 = self.plot_point(lat=coords0[0], lng=coords0[1], desc=str(coords0), clr=clr0)
@@ -372,5 +371,4 @@ class MapTool:
             location = self.format_popup(df.loc[idc, loc_col], df.loc[idc, ctry_col])
             markers.append(self.plot_point(df.loc[idc, lat_col], df.loc[idc, lng_col],
                                            desc='%s, %s' % (location[0], location[1]), clr=clr))
-
         return markers

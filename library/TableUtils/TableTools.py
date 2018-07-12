@@ -2,7 +2,6 @@ import math
 import pandas as pd
 import re
 import os
-import sys
 from library.CleaningUtils.GeoDataCorrector import GeoDataCorrector
 """
 GeocodeValidator allows the user to perform reverse geocoding
@@ -211,9 +210,7 @@ class TableTool:
             lat = self.df.iloc[index][self.lat_col]
             lng = self.df.iloc[index][self.lng_col]
 
-            print('verify info start')
             row_info = self.validator.verify_info(loc, ctry, reg, lat, lng)
-            print('verify info end')
             row_info[1]['Index'] = index
             return row_info
         except IndexError:
@@ -298,5 +295,6 @@ class TableTool:
                 self.export_file(self.df, self.file_path, self.directory)
             return row
 
-tool = TableTool()
-tool.clean_table()
+# For testing purposes
+# tool = TableTool()
+# tool.clean_table()

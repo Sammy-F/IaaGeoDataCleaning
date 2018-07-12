@@ -271,7 +271,3 @@ class NameHandler:
             return self.convertor.convert(names=[check_country], to='ISO3').upper()
         else:
             return self.convertor.convert(names=[check_country], to='ISO2').upper()
-#
-# validator = GeoDataCorrector()
-#
-# print(type(validator.map))
