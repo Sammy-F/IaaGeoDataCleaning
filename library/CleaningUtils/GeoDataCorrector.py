@@ -223,8 +223,8 @@ class NameHandler:
         if use_iso3:
             return self.convertor.convert(names=[check_country], to='ISO3').capitalize()
         else:
-            return self.convertor.convert(names=[check_country], to='ISO2')
-
-validator = GeoDataCorrector()
-
-print(type(validator.map))
+            return self.convertor.convert(names=[check_country], to='ISO2').capitalize()
+#
+# validator = GeoDataCorrector()
+#
+# print(type(validator.map))
