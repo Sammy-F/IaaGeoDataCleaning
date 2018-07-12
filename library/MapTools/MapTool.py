@@ -6,7 +6,7 @@ import numpy as np
 import geopandas as gpd
 from shapely.geometry import Point
 import math
-from ..TableUtils.TableTools import TableTool
+from library.TableUtils.TableTools import TableTool
 
 # TODO: plot all of the stations and their counterpart
 class MapTool:

@@ -3,8 +3,7 @@ import pandas as pd
 import re
 import os
 import sys
-from ..CleaningUtils.GeocodeValidator import GeocodeValidator
-
+from library.CleaningUtils.GeoDataCorrector import GeoDataCorrector
 """
 GeocodeValidator allows the user to perform reverse geocoding
 on a .xlsx or .csv to ensure that input locations correspond to
@@ -48,7 +47,7 @@ class TableTool:
                                                         'TM_WORLD_BORDERS-0.3.shp')))
         self.file_path = file_path
         self.df = self.read_file(self.file_path)
-        self.validator = GeocodeValidator(map_file)
+        self.validator = GeoDataCorrector(map_file)
 
         # Checking to see whether the columns actually exist in the data frame
         if {loc_col, ctry_col, reg_col, lat_col, lng_col}.issubset(self.df.columns):
@@ -212,7 +211,9 @@ class TableTool:
             lat = self.df.iloc[index][self.lat_col]
             lng = self.df.iloc[index][self.lng_col]
 
+            print('verify info start')
             row_info = self.validator.verify_info(loc, ctry, reg, lat, lng)
+            print('verify info end')
             row_info[1]['Index'] = index
             return row_info
         except IndexError:
@@ -296,3 +297,6 @@ class TableTool:
                     self.df.loc[index, k] = v
                 self.export_file(self.df, self.file_path, self.directory)
             return row
+
+tool = TableTool()
+tool.clean_table()
