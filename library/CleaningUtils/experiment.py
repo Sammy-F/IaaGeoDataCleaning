@@ -5,15 +5,10 @@ import pandas as pd
 from shapely.geometry import Point, Polygon, MultiPolygon
 import timeit
 import country_converter as coco
+from itertools import product
 
 
 class GeocodeValidator:
-    def __init__(self, data, lat_col, lng_col, ctry_col, shapefile):
-        shapefile = self.process_shapefile(shapefile)
-        self.geo_map = self.get_shape(shapefile['shp'])
-        self.srid = self.get_projection(shapefile['prj'])
-        self.gdf = self.to_gdf(self.add_country_code(data, ctry_col), lat_col, lng_col, self.srid)
-
     def process_shapefile(self, shapefile):
         file_dict = dict()
         for directory, _, files in os.walk(shapefile):
@@ -47,18 +42,28 @@ class GeocodeValidator:
         else:
             raise KeyError('Column names not found in data frame.')
 
-    def clean_dataframe(self, data, cols):
+    def read_data(self, data, cols):
         if isinstance(data, str):
             df = self.read_file(data)
-        elif isinstance(data, pd.DataFrame):
+        elif isinstance(data, pd.DataFrame) or isinstance(data, gpd.GeoDataFrame):
             df = data
         else:
             raise TypeError('Cannot read data type.')
         if self.check_columns(df, cols):
             return df
 
+    def filter_data_without_coords(self, data, lat_col, lng_col):
+        data = self.read_data(data, {lat_col, lng_col})
+
+        with_coords = data.index[(data[lat_col] != 0) & (data[lng_col] != 0) &
+                                 pd.notnull(data[lat_col]) & pd.notnull(data[lng_col])].tolist()
+        with_coords_df = data.loc[with_coords]
+        without_coords_df = data[~data.index.isin(with_coords)]
+
+        return with_coords_df, without_coords_df
+
     def add_country_code(self, data, ctry_col):
-        df = self.clean_dataframe(data, {ctry_col})
+        df = self.read_data(data, {ctry_col})
         df['ISO2'] = None
         df['ISO3'] = None
 
@@ -70,7 +75,7 @@ class GeocodeValidator:
         return df
 
     def to_gdf(self, data, lat_col, lng_col, prj):
-        df = self.clean_dataframe(data, {lat_col, lng_col})
+        df = self.read_data(data, {lat_col, lng_col})
         df.fillna({lat_col: 0, lng_col: 0}, inplace=True)
         geometry = [Point(coords) for coords in zip(df[lng_col], df[lat_col])]
         crs = {'init': 'epsg:' + str(prj)}
@@ -87,26 +92,70 @@ class GeocodeValidator:
 
         return precise_matches
 
-    def check_country(self, geodata, shapedata):
+    def flip_coords(self, data, lat_col, lng_col, prj):
+        def create_comb(nums):
+            return list(product(*((x, -x) for x in nums)))
+
+        df = self.read_data(data, {lat_col, lng_col})
+
+        temp_lat_lng = list(df.apply(lambda row: create_comb([row[lat_col], row[lng_col]]), axis=1))
+        temp_lng_lat = list(df.apply(lambda row: create_comb([row[lng_col], row[lat_col]]), axis=1))
+        temp_coords = [temp_lat_lng[i] + temp_lng_lat[i] for i in range(len(temp_lat_lng))]
+
+        all_gdfs = list()
+        for i in range(8):
+            ndf = pd.DataFrame.copy(df)
+            ndf['temp_lat'] = [loc[i][0] for loc in temp_coords]
+            ndf['temp_lng'] = [loc[i][1] for loc in temp_coords]
+            gdf = self.to_gdf(ndf, 'temp_lat', 'temp_lng', prj)
+            all_gdfs.append(gdf)
+
+        return all_gdfs
+
+    def check_multiple(self, all_geodata, shapedata):
+        print('check')
+        for i in range(len(all_geodata)):
+            print(all_geodata[i]['temp_lat'])
+            self.check_country('flip_' + str(i), all_geodata[i], shapedata)
+
+    def check_country(self, name, geodata, shapedata):
         start = timeit.default_timer()
         spatial_indices = geodata.sindex
 
-        outdata = pd.DataFrame(columns=list(geodata.columns) + ['PolyCountry'])
-        with open('rtree_test.csv', mode='a') as output:
-            outdata.to_csv(path_or_buf=output, index=False)
+        outdata = pd.DataFrame(columns=list(geodata.columns))
+        with open(name + '.csv', mode='a') as output:
+            outdata.to_csv(path_or_buf=output, index=True, index_label='Index')
             for index, row in shapedata.iterrows():
                 stations_within = self.rtree(spatial_indices, geodata, row['geometry'])
-                stations_within['PolyCountry'] = row['NAME']
-                stations_within.to_csv(path_or_buf=output, index=False, mode='a', header=False)
+                if len(stations_within) > 0:
+                    stations_within['PolyCountry'] = row['NAME']
+                    stations_within['PolyISO2'] = row['ISO_A2']
+                    stations_within['PolyISO3'] = row['ISO_A3']
+                    outdata = outdata.append(stations_within, sort=True, ignore_index=True)
+                    stations_within.to_csv(path_or_buf=output, index=True, mode='a', header=False)
+
         stop = timeit.default_timer()
         print(stop-start)
+        return outdata
+
+    def cross_check_cc(self, geodata):
+        idx = [index for index, row in geodata.iterrows() if row['ISO2'] != row['PolyISO2']]
+        dif_cc = geodata.loc[idx]
+        dif_cc.to_csv('dif_cc1.csv', index=True)
 
 
-gv = GeocodeValidator(data='/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/resources/xlsx/tblLocation.xlsx',
-                      lat_col='Latitude', lng_col='Longitude', ctry_col='Country',
-                      shapefile='/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/resources/mapinfo')
-gv.check_country(gv.gdf, gv.geo_map)
-# res = gv.rtree(gv.gdf, gv.geo_map['geometry'].iloc[29])
-# print(type(res))
-# gv.gdf.to_csv('/Users/thytnguyen/Desktop/test.csv')
-
+gv = GeocodeValidator()
+mapfile = gv.process_shapefile('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/resources/ne_50m_admin_0_countries')
+shp = gv.get_shape(mapfile['shp'])
+prj = gv.get_projection(mapfile['prj'])
+# gdf = gv.to_gdf(data=gv.add_country_code('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/resources/xlsx/tblLocation.xlsx',
+#                                          ctry_col='Country'),
+#                 lat_col='Latitude', lng_col='Longitude', prj=prj)
+# out = gv.check_country(gdf, shp)
+# gv.cross_check_cc(out)
+all_dfs = gv.flip_coords('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/library/CleaningUtils/dif_cc1.csv',
+                         'Latitude', 'Longitude', prj)
+gv.check_multiple(all_dfs, shp)
+# filtered = gv.filter_data_without_coords('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/resources/xlsx/tblLocation.xlsx', 'Latitude', 'Longitude')
+# filtered[0].to_csv('with.csv', index=False)
+# filtered[1].to_csv('without.csv', index=False)
