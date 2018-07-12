@@ -70,8 +70,6 @@ class GeocodeValidator:
         df['ISO2'] = coco.convert(names=list(df[ctry_col]), to='ISO2')
         df['ISO3'] = coco.convert(names=list(df[ctry_col]), to='ISO3')
 
-        df.to_csv('country_code.csv')
-
         return df
 
     def to_gdf(self, data, lat_col, lng_col, prj):
@@ -112,50 +110,82 @@ class GeocodeValidator:
 
         return all_gdfs
 
-    def check_multiple(self, all_geodata, shapedata):
-        print('check')
-        for i in range(len(all_geodata)):
-            print(all_geodata[i]['temp_lat'])
-            self.check_country('flip_' + str(i), all_geodata[i], shapedata)
-
-    def check_country(self, name, geodata, shapedata):
-        start = timeit.default_timer()
+    def check_country_geom(self, geodata, shapedata):
+        # start = timeit.default_timer()
         spatial_indices = geodata.sindex
 
         outdata = pd.DataFrame(columns=list(geodata.columns))
-        with open(name + '.csv', mode='a') as output:
-            outdata.to_csv(path_or_buf=output, index=True, index_label='Index')
-            for index, row in shapedata.iterrows():
-                stations_within = self.rtree(spatial_indices, geodata, row['geometry'])
-                if len(stations_within) > 0:
-                    stations_within['PolyCountry'] = row['NAME']
-                    stations_within['PolyISO2'] = row['ISO_A2']
-                    stations_within['PolyISO3'] = row['ISO_A3']
-                    outdata = outdata.append(stations_within, sort=True, ignore_index=True)
-                    stations_within.to_csv(path_or_buf=output, index=True, mode='a', header=False)
 
-        stop = timeit.default_timer()
-        print(stop-start)
+        for index, row in shapedata.iterrows():
+            stations_within = self.rtree(spatial_indices, geodata, row['geometry'])
+            if len(stations_within) > 0:
+                stations_within['PolyCountry'] = row['NAME']
+                stations_within['PolyISO2'] = row['ISO_A2']
+                stations_within['PolyISO3'] = row['ISO_A3']
+                stations_within = self.cross_check_cc(stations_within)
+                outdata = outdata.append(stations_within, sort=True, ignore_index=True)
+
+        # stop = timeit.default_timer()
+        # print(stop-start)
         return outdata
 
-    def cross_check_cc(self, geodata):
-        idx = [index for index, row in geodata.iterrows() if row['ISO2'] != row['PolyISO2']]
-        dif_cc = geodata.loc[idx]
-        dif_cc.to_csv('dif_cc1.csv', index=True)
+    def cross_check_cc(self, data):
+        indices = [index for index, row in data.iterrows() if row['ISO2'] == row['PolyISO2']]
+        matched_df = data.loc[indices]
+        return matched_df
 
+    def check_multiple(self, all_geodata, shapedata):
+        matched_dfs = []
+        for i in range(len(all_geodata)):
+            start = timeit.default_timer()
+            df = self.check_country_geom(all_geodata[i], shapedata)
 
+            if i > 0:
+                df = df[~df['Location'].isin(matched_dfs[0]['Location'])]
+            matched_dfs.append(df)
+            df.to_csv('flip_' + str(i) + '.csv', index=False)
+
+            stop = timeit.default_timer()
+            print(stop-start)
+
+        matched_data = pd.DataFrame(columns=list(matched_dfs[0].columns))
+
+        for data in matched_dfs:
+            matched_data = matched_data.append(data, sort=True, ignore_index=True)
+
+        remaining_data = all_geodata[0][~all_geodata[0]['Location'].isin(matched_data['Location'])]
+        remaining_data.to_csv('invalid_locations.csv', index=False)
+        matched_data.to_csv('logged_locations.csv', index=False)
+
+start = timeit.default_timer()
 gv = GeocodeValidator()
 mapfile = gv.process_shapefile('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/resources/ne_50m_admin_0_countries')
 shp = gv.get_shape(mapfile['shp'])
 prj = gv.get_projection(mapfile['prj'])
+print('removing coords')
+with_coords = gv.filter_data_without_coords('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/resources/xlsx/tblLocation.xlsx',
+                                            'Latitude', 'Longitude')[0]
+
+print('adding cc')
+with_cc = gv.add_country_code(with_coords, 'Country')
+
+print('flipping')
+data_dict = gv.flip_coords(with_cc, 'Latitude', 'Longitude', prj)
+
+print('checking')
+gv.check_multiple(data_dict, shp)
+
+stop = timeit.default_timer()
+print(stop - start)
+
 # gdf = gv.to_gdf(data=gv.add_country_code('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/resources/xlsx/tblLocation.xlsx',
 #                                          ctry_col='Country'),
 #                 lat_col='Latitude', lng_col='Longitude', prj=prj)
 # out = gv.check_country(gdf, shp)
 # gv.cross_check_cc(out)
-all_dfs = gv.flip_coords('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/library/CleaningUtils/dif_cc1.csv',
-                         'Latitude', 'Longitude', prj)
-gv.check_multiple(all_dfs, shp)
+# all_dfs = gv.flip_coords('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/library/CleaningUtils/dif_cc1.csv',
+#                          'Latitude', 'Longitude', prj)
+# gv.check_multiple(all_dfs, shp)
 # filtered = gv.filter_data_without_coords('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/resources/xlsx/tblLocation.xlsx', 'Latitude', 'Longitude')
 # filtered[0].to_csv('with.csv', index=False)
 # filtered[1].to_csv('without.csv', index=False)
