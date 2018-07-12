@@ -2,7 +2,10 @@ import os
 import geopandas as gpd
 from sridentify import Sridentify
 import pandas as pd
-from shapely.geometry import Point
+from shapely.geometry import Point, Polygon, MultiPolygon
+import pycountry as pc
+import timeit
+import country_converter as coco
 
 
 class GeocodeValidator:
@@ -55,24 +58,59 @@ class GeocodeValidator:
         if self.check_columns(df, cols):
             return df
 
+    def add_country_code(self, data, ctry_col):
+        df = self.clean_dataframe(data, {ctry_col})
+        df['ISO2'] = None
+        df['ISO3'] = None
+
+        for (index, row) in df.iterrows():
+            try:
+                ctry_res = pc.countries.lookup(row[ctry_col])
+                df.loc[index, 'alpha_2'] = ctry_res.alpha_2
+                df.loc[index, 'alpha_3'] = ctry_res.alpha_3
+            except LookupError:
+                continue
+
+        return df
+
     def to_gdf(self, data, lat_col, lng_col, prj):
         df = self.clean_dataframe(data, {lat_col, lng_col})
         df.fillna({lat_col: 0, lng_col: 0}, inplace=True)
-        geometry = [Point(coords) for coords in zip(df[lat_col], df[lng_col])]
-        crs = {'init': 'espg:' + str(prj)}
+        geometry = [Point(coords) for coords in zip(df[lng_col], df[lat_col])]
+        crs = {'init': 'epsg:' + str(prj)}
 
         return gpd.GeoDataFrame(df, crs=crs, geometry=geometry)
 
-    def rtree(self, geodata, polydata):
+    def rtree(self, sindex, geodata, polygon):
+        if isinstance(polygon, Polygon):
+            polygon = MultiPolygon([polygon])
+
+        possible_matches_index = list(sindex.intersection(polygon.bounds))
+        possible_matches = geodata.iloc[possible_matches_index]
+        precise_matches = possible_matches[possible_matches.intersects(polygon)]
+
+        return precise_matches
+
+    def check_country(self, geodata, shapedata):
+        start = timeit.default_timer()
         spatial_indices = geodata.sindex
-        possible_matches_index = list(spatial_indices.intersection(polydata))
+
+        outdata = pd.DataFrame(columns=list(geodata.columns) + ['PolyCountry'])
+        with open('rtree_test.csv', mode='a') as output:
+            outdata.to_csv(path_or_buf=output, index=False)
+            for index, row in shapedata.iterrows():
+                stations_within = self.rtree(spatial_indices, geodata, row['geometry'])
+                stations_within['PolyCountry'] = row['NAME']
+                stations_within.to_csv(path_or_buf=output, index=False, mode='a', header=False)
+        stop = timeit.default_timer()
+        print(stop-start)
+
 
 
 gv = GeocodeValidator('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/resources/xlsx/tblLocation.xlsx',
                       'Latitude', 'Longitude', '/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/resources/mapinfo')
-
-print(gv.gdf.sindex)
-
-
-
+gv.check_country(gv.gdf, gv.geo_map)
+# res = gv.rtree(gv.gdf, gv.geo_map['geometry'].iloc[29])
+# print(type(res))
+# gv.gdf.to_csv('/Users/thytnguyen/Desktop/test.csv')
 
