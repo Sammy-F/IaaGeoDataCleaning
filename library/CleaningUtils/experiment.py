@@ -3,17 +3,16 @@ import geopandas as gpd
 from sridentify import Sridentify
 import pandas as pd
 from shapely.geometry import Point, Polygon, MultiPolygon
-import pycountry as pc
 import timeit
 import country_converter as coco
 
 
 class GeocodeValidator:
-    def __init__(self, data, lat_col, lng_col, shapefile):
+    def __init__(self, data, lat_col, lng_col, ctry_col, shapefile):
         shapefile = self.process_shapefile(shapefile)
         self.geo_map = self.get_shape(shapefile['shp'])
         self.srid = self.get_projection(shapefile['prj'])
-        self.gdf = self.to_gdf(data, lat_col, lng_col, self.srid)
+        self.gdf = self.to_gdf(self.add_country_code(data, ctry_col), lat_col, lng_col, self.srid)
 
     def process_shapefile(self, shapefile):
         file_dict = dict()
@@ -63,13 +62,10 @@ class GeocodeValidator:
         df['ISO2'] = None
         df['ISO3'] = None
 
-        for (index, row) in df.iterrows():
-            try:
-                ctry_res = pc.countries.lookup(row[ctry_col])
-                df.loc[index, 'alpha_2'] = ctry_res.alpha_2
-                df.loc[index, 'alpha_3'] = ctry_res.alpha_3
-            except LookupError:
-                continue
+        df['ISO2'] = coco.convert(names=list(df[ctry_col]), to='ISO2')
+        df['ISO3'] = coco.convert(names=list(df[ctry_col]), to='ISO3')
+
+        df.to_csv('country_code.csv')
 
         return df
 
@@ -86,8 +82,8 @@ class GeocodeValidator:
             polygon = MultiPolygon([polygon])
 
         possible_matches_index = list(sindex.intersection(polygon.bounds))
-        possible_matches = geodata.iloc[possible_matches_index]
-        precise_matches = possible_matches[possible_matches.intersects(polygon)]
+        possible_matches = geodata.iloc[possible_matches_index]     # geodataframe
+        precise_matches = possible_matches[possible_matches.intersects(polygon)]    # dataframe
 
         return precise_matches
 
@@ -106,9 +102,9 @@ class GeocodeValidator:
         print(stop-start)
 
 
-
-gv = GeocodeValidator('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/resources/xlsx/tblLocation.xlsx',
-                      'Latitude', 'Longitude', '/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/resources/mapinfo')
+gv = GeocodeValidator(data='/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/resources/xlsx/tblLocation.xlsx',
+                      lat_col='Latitude', lng_col='Longitude', ctry_col='Country',
+                      shapefile='/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/resources/mapinfo')
 gv.check_country(gv.gdf, gv.geo_map)
 # res = gv.rtree(gv.gdf, gv.geo_map['geometry'].iloc[29])
 # print(type(res))
