@@ -56,9 +56,9 @@ Usage samples can be found in the documentation.
 
 ### Acknowledgments:
 
-Continued development by [Samantha Fritsche ](https://github.com/Sammy-F) and [Thy Nguyen ](https://github.com/thytng).
+Continued development by [Samantha Fritsche](https://github.com/Sammy-F) and [Thy Nguyen](https://github.com/thytng).
 
-Initial development by  [Jonathan Scott ](https://github.com/lionely/).
+Initial development by  [Jonathan Scott](https://github.com/lionely/).
 
 Many thanks to [Getiria Onsongo](https://github.com/getiria-onsongo/) for his mentorship in development of this package.
 
