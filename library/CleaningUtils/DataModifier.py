@@ -44,7 +44,7 @@ class Modifier:
         desc_list.append(toss_desc)
         desc_list.append(exit_desc)
         desc_list.append(help_desc)
-        return command_list, desc_list
+        return command_list, desc_list, help_command
 
     def run(self):
         """
@@ -71,18 +71,26 @@ class Modifier:
             print('Recorded Lat: ' + row['Recorded_Lat'] + '  Recorded Lng: ' + row['Recorded_Lng'])
             user_input = input('Input command. Type "HELP" for options: ')
 
-            while user_input not in command_list or user_input == help_command:
-                if user_input == help_command:
+            # If user chooses help or inputs valid input, loop until we get different.
+            while user_input not in command_list or user_input == maker[2]:
+                if user_input == maker[2]:
                     for i in range(len(command_list)):
                         print(command_list[i] + ': ' + desc_list[i])
                 else:
                     print('Invalid command. Type "HELP" to see available commands.')
 
             if row['Type'] != 'correct location data':
-                if user_input == 'SAVE':    # Save the suggested value
+                if user_input == maker[0][0]:    # SAVE: Save the suggested value
                     row['Latitude'] = row['Recorded_Lat']
                     row['Longitude'] = row['Recorded_Lat']
+                    row['Type'] = 'correct location data'
                     confirmed_data.append(row)
+                elif user_input == maker[0][1]:     # TOSS: Don't use suggested value.
+                    row['Type'] = 'correct location data'
+                    confirmed_data.append(row)
+                elif user_input == maker[0][2]:    # EXIT: Stop editing and save new file now.
+                    break
+
             else:   # Added in case a correct item slips in somehow.
                 confirmed_data.append(row)
 
