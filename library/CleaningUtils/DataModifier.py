@@ -1,5 +1,4 @@
 import os
-import geopandas as gpd
 import pandas as pd
 
 # TODO: All of this is speculatory code atm. We need valid formatted data files to test for functionality.
@@ -11,14 +10,17 @@ class Modifier:
         self.to_check = None
         cwd = os.getcwd()
         try:
+            print('Reading in incorrect locations.')
             if incorrect_locs:
                 self.to_check = pd.read_csv(incorrect_locs)
             else:   # Point to file w/ suggested changes.
                 self.to_check = pd.read_csv(str(os.path.normpath(os.path.join(cwd, 'incorrect_locations.csv'))))
+            print('Reading in correct locations.')
             if correct_locs:
                 self.corrects = pd.read_csv(correct_locs)
             else:
                 self.to_check = pd.read_csv(str(os.path.normpath(os.path.join(cwd, 'correct_locations.csv'))))
+            print('Reading in geocoded locations.')
             if geocoded_locs:
                 self.to_check.append(pd.read_csv(geocoded_locs))    # TODO: Find more efficient way
             else:
@@ -29,6 +31,8 @@ class Modifier:
     def make_commands(self):
         """
         Create lists of commands and their descriptions
+
+        :return: Tuple containing commands, descriptions, and the help command
         """
         save_command = 'SAVE'
         save_desc = 'Use this command to save the suggested values to the data set.'
@@ -52,17 +56,22 @@ class Modifier:
         desc_list.append(help_desc)
         return command_list, desc_list, help_command
 
-    def run(self, lat_col = 'Latitude', lng_col='Longitude', rec_lat_col = 'Recorded_Lat',
-            rec_lng_col='Recorded_Lng', cc_col = 'ISO3', country_col='Country', loc_col='Location',
+    def run(self, lat_col = 'Latitude', lng_col='Longitude', rec_lat_col='Recorded_Lat',
+            rec_lng_col='Recorded_Lng', cc_col='ISO3', country_col='Country', loc_col='Location',
             reg_col='Region'):
         """
-        Iterate over cleaned data file and prompt user to confirm changes
+        Iterate over cleaned data file and prompt user to confirm changes. Changes are then stored
+        in a new file and the original data is left untouched.
+
+        :params: Optional params to define column names
         """
         maker = self.make_commands()
 
         command_list = maker[0]
         desc_list = maker[1]
 
+        print('Commands')
+        print('===========')
         for i in range(len(command_list)):
             print(command_list[i] + ': ' + desc_list[i])
 
@@ -72,8 +81,8 @@ class Modifier:
 
         confirmed_data = pd.DataFrame(columns=columns)
 
+        print('Running')
         for (index, row) in self.to_check.iterrows():
-
             print(row['Location'] + ', ' + row['Country'])
             print('Input Lat: ' + str(row['Latitude']) + '  Input Lng: ' + str(row['Longitude']))
             print('Recorded Lat: ' + str(row['Recorded_Lat']) + '  Recorded Lng: ' + str(row['Recorded_Lng']))
