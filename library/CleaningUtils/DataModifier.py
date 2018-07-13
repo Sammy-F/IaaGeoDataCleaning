@@ -115,19 +115,30 @@ class Modifier:
                 confirmed_data.append(row)
 
         print('All rows checked. Saving.')
+        self.save_file(confirmed_data)
 
+    def save_file(self, confirmed_data, file_path=None):
+        """
+        Save the passed dataframe as a new .csv file.
+
+        :param confirmed_data: A pandas DataFrame representing all data validated as correct
+        :param file_path: File path including file name with .csv extension. Dictates where output is placed.
+        """
         self.corrects.append(confirmed_data)
-        path = ''
-        unique = False
-        cwd = os.getcwd()
-        i = 0
-        while not unique:   # Ensure we write to a new file and don't overwrite an existing one.
-            path = os.path.normpath(os.path.join(cwd, 'correctlocation_' + str(i) + '.csv'))
-            if not os.path.exists(path):
-                unique = True
-                path = str(path)
-            i += 1
-        print('Creating file at ' + path)
-        self.corrects.to_csv(path_or_buf=path, sep=',', index=False)
+        if not file_path:   # If filepath for output is not passed, create one
+            file_path = ''
+            unique = False
+            cwd = os.getcwd()
+            i = 0
+            while not unique:  # Ensure we write to a new file and don't overwrite an existing one.
+                file_path = os.path.normpath(os.path.join(cwd, 'correctlocation_' + str(i) + '.csv'))
+                if not os.path.exists(file_path):
+                    unique = True
+                    file_path = str(file_path)
+                i += 1
+        print('Creating file at ' + file_path)
+        self.corrects.to_csv(path_or_buf=file_path, sep=',', index=False)
+
+        print('Complete. Closing program.')
 
 modifier = Modifier()
