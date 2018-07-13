@@ -1,11 +1,13 @@
 import os
 import geopandas as gpd
+import geopy as gp
 from sridentify import Sridentify
 import pandas as pd
 from shapely.geometry import Point, Polygon, MultiPolygon
 import timeit
 import country_converter as coco
 from itertools import product
+from geopy.exc import GeocoderTimedOut
 
 
 class GeocodeValidator:
@@ -72,24 +74,6 @@ class GeocodeValidator:
 
         return df
 
-    def to_gdf(self, data, lat_col, lng_col, prj):
-        df = self.read_data(data, {lat_col, lng_col})
-        df.fillna({lat_col: 0, lng_col: 0}, inplace=True)
-        geometry = [Point(coords) for coords in zip(df[lng_col], df[lat_col])]
-        crs = {'init': 'epsg:' + str(prj)}
-
-        return gpd.GeoDataFrame(df, crs=crs, geometry=geometry)
-
-    def rtree(self, sindex, geodata, polygon):
-        if isinstance(polygon, Polygon):
-            polygon = MultiPolygon([polygon])
-
-        possible_matches_index = list(sindex.intersection(polygon.bounds))
-        possible_matches = geodata.iloc[possible_matches_index]     # geodataframe
-        precise_matches = possible_matches[possible_matches.intersects(polygon)]    # dataframe
-
-        return precise_matches
-
     def flip_coords(self, data, lat_col, lng_col, prj):
         def create_comb(nums):
             return list(product(*((x, -x) for x in nums)))
@@ -110,8 +94,33 @@ class GeocodeValidator:
 
         return all_gdfs
 
+    def to_gdf(self, data, lat_col, lng_col, prj):
+        df = self.read_data(data, {lat_col, lng_col})
+        df.fillna({lat_col: 0, lng_col: 0}, inplace=True)
+        geometry = [Point(coords) for coords in zip(df[lng_col], df[lat_col])]
+        crs = {'init': 'epsg:' + str(prj)}
+
+        return gpd.GeoDataFrame(df, crs=crs, geometry=geometry)
+
+    def export_df(self, df, format, filename, directory):
+        format = format.lower().replace('.', '')
+        file_path = os.path.join(directory, '.'.join((filename, format)))
+        if format.endswith('csv'):
+            df.to_csv(file_path, index=False)
+        elif format.endswith('xlsx'):
+            df.to_excel(file_path, index=False)
+
+    def rtree(self, sindex, geodata, polygon):
+        if isinstance(polygon, Polygon):
+            polygon = MultiPolygon([polygon])
+
+        possible_matches_index = list(sindex.intersection(polygon.bounds))
+        possible_matches = geodata.iloc[possible_matches_index]     # geodataframe
+        precise_matches = possible_matches[possible_matches.intersects(polygon)]    # dataframe
+
+        return precise_matches
+
     def check_country_geom(self, geodata, shapedata):
-        # start = timeit.default_timer()
         spatial_indices = geodata.sindex
 
         outdata = pd.DataFrame(columns=list(geodata.columns))
@@ -125,37 +134,82 @@ class GeocodeValidator:
                 stations_within = self.cross_check_cc(stations_within)
                 outdata = outdata.append(stations_within, sort=True, ignore_index=True)
 
-        # stop = timeit.default_timer()
-        # print(stop-start)
         return outdata
+
+    def geocode_locations(self, data, loc_col, ctry_col):
+        df = self.read_data(data, {ctry_col})
+
+        gdf = pd.DataFrame()
+
+        pht = gp.Photon(timeout=3)
+
+        for index, row in df.iterrows():
+            if pd.isnull(row[loc_col]):
+                lwr = ''
+            else:
+                lwr = row[loc_col]
+            if pd.isnull(row[ctry_col]):
+                hgr = ''
+            else:
+                hgr = row[ctry_col]
+            iso2 = coco.convert(hgr, to='ISO2')
+
+            try:
+                matches = pht.geocode(lwr + ', ' + hgr, exactly_one=False)
+                if matches:
+                    for match in matches:
+                        match_country = match.address.split(',')[-1]
+                        match_iso2 = coco.convert(match_country, to='ISO2')
+
+                        if match_iso2 == iso2:
+                            row['Geocoded_Lat'] = match.latitude
+                            row['Geocoded_Lng'] = match.longitude
+                            row['Geocoded_Adr'] = match.address
+                            gdf = gdf.append(row, ignore_index=True)
+
+                            break
+            except GeocoderTimedOut:
+                continue
+
+        gdf.to_csv('geocoded_locations.csv')
+
+        idf = df[~df[loc_col].isin(gdf[loc_col])]
+
+        idf.to_csv('pending_locations.csv')
+
+        return gdf, idf
 
     def cross_check_cc(self, data):
         indices = [index for index, row in data.iterrows() if row['ISO2'] == row['PolyISO2']]
         matched_df = data.loc[indices]
         return matched_df
 
-    def check_multiple(self, all_geodata, shapedata):
+    def check_multiple(self, eval_col, all_geodata, shapedata):
         matched_dfs = []
+        orig_input_df = all_geodata[0]
         for i in range(len(all_geodata)):
             start = timeit.default_timer()
             df = self.check_country_geom(all_geodata[i], shapedata)
 
             if i > 0:
-                df = df[~df['Location'].isin(matched_dfs[0]['Location'])]
+                df = df[~df[eval_col].isin(orig_input_df[eval_col])]
             matched_dfs.append(df)
             df.to_csv('flip_' + str(i) + '.csv', index=False)
 
             stop = timeit.default_timer()
             print(stop-start)
 
-        matched_data = pd.DataFrame(columns=list(matched_dfs[0].columns))
+        matched_data = pd.DataFrame(columns=list(orig_input_df.columns))
 
         for data in matched_dfs:
             matched_data = matched_data.append(data, sort=True, ignore_index=True)
 
-        remaining_data = all_geodata[0][~all_geodata[0]['Location'].isin(matched_data['Location'])]
+        remaining_data = orig_input_df[~orig_input_df[eval_col].isin(matched_data[eval_col])]
         remaining_data.to_csv('invalid_locations.csv', index=False)
         matched_data.to_csv('logged_locations.csv', index=False)
+
+        return matched_data, remaining_data
+
 
 start = timeit.default_timer()
 gv = GeocodeValidator()
@@ -163,9 +217,9 @@ mapfile = gv.process_shapefile('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDat
 shp = gv.get_shape(mapfile['shp'])
 prj = gv.get_projection(mapfile['prj'])
 print('removing coords')
-with_coords = gv.filter_data_without_coords('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/resources/xlsx/tblLocation.xlsx',
-                                            'Latitude', 'Longitude')[0]
-
+filtered = gv.filter_data_without_coords('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/resources/xlsx/tblLocation.xlsx',
+                                         'Latitude', 'Longitude')
+with_coords = filtered[0]
 print('adding cc')
 with_cc = gv.add_country_code(with_coords, 'Country')
 
@@ -173,19 +227,18 @@ print('flipping')
 data_dict = gv.flip_coords(with_cc, 'Latitude', 'Longitude', prj)
 
 print('checking')
-gv.check_multiple(data_dict, shp)
+res = gv.check_multiple('Location', data_dict, shp)
 
 stop = timeit.default_timer()
 print(stop - start)
 
-# gdf = gv.to_gdf(data=gv.add_country_code('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/resources/xlsx/tblLocation.xlsx',
-#                                          ctry_col='Country'),
-#                 lat_col='Latitude', lng_col='Longitude', prj=prj)
-# out = gv.check_country(gdf, shp)
-# gv.cross_check_cc(out)
-# all_dfs = gv.flip_coords('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/library/CleaningUtils/dif_cc1.csv',
-#                          'Latitude', 'Longitude', prj)
-# gv.check_multiple(all_dfs, shp)
-# filtered = gv.filter_data_without_coords('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/resources/xlsx/tblLocation.xlsx', 'Latitude', 'Longitude')
-# filtered[0].to_csv('with.csv', index=False)
-# filtered[1].to_csv('without.csv', index=False)
+print('geocoding')
+start = timeit.default_timer()
+
+without_coords = filtered[1]
+remaining_df = res[1]
+to_geocode = without_coords.append(remaining_df, sort=True)
+
+geocoded_res = gv.geocode_locations(to_geocode, 'Location', 'Country')
+stop = timeit.default_timer()
+print(stop - start)
