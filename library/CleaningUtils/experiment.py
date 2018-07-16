@@ -540,9 +540,9 @@ class GeocodeValidator:
 start = timeit.default_timer()
 
 gv = GeocodeValidator()
-mapfile = gv.process_shapefile('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/resources/ne_50m_admin_0_countries')
-shp = gv.get_shape(mapfile['shp'])
-prj = gv.get_projection(mapfile['prj'])
+mf = gv.process_shapefile('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/resources/ne_50m_admin_0_countries')
+shp = gv.get_shape(mf['shp'])
+prj = gv.get_projection(mf['prj'])
 print('removing coords')
 filtered = gv.filter_data_without_coords('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/resources/xlsx/tblLocation.xlsx',
                                          'Latitude', 'Longitude')
