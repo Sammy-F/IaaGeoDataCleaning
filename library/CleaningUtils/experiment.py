@@ -404,6 +404,7 @@ class GeocodeValidator:
                             row['Geocoded_Lat'] = match.latitude
                             row['Geocoded_Lng'] = match.longitude
                             row['Geocoded_Adr'] = match.address
+                            row['Type'] = 'Geocoded'
                             gdf = gdf.append(row, ignore_index=True)
 
                             break
@@ -471,14 +472,14 @@ res = gv.check_multiple('Location', data_dict, shp)
 
 stop = timeit.default_timer()
 print(stop - start)
-#
-# print('geocoding')
-# start = timeit.default_timer()
-#
-# without_coords = filtered[1]
-# remaining_df = res[1]
-# to_geocode = without_coords.append(remaining_df, sort=True)
-#
-# geocoded_res = gv.geocode_locations(to_geocode, 'Location', 'Country')
-# stop = timeit.default_timer()
-# print(stop - start)
+
+print('geocoding')
+start = timeit.default_timer()
+
+without_coords = filtered[1]
+remaining_df = res[1]
+to_geocode = without_coords.append(remaining_df, sort=True)
+
+geocoded_res = gv.geocode_locations(to_geocode, 'Location', 'Country')
+stop = timeit.default_timer()
+print(stop - start)

@@ -37,12 +37,14 @@ class Modifier:
         save_command = 'SAVE'
         save_desc = 'Use this command to save the suggested values to the data set.'
         toss_command = 'TOSS'
-        toss_desc = 'Use this command to toss the suggested values and keep the existing.'
+        toss_desc = 'Use this command to toss the suggested values and keep the existing, but does not mark as correct.'
         exit_command = 'EXIT'
         exit_desc = '''Use this command to close the program. Changes up to this point will be saved into an 
                 updated, separate version of the correct values files.'''
         help_command = 'HELP'
         help_desc = 'Use this command to see the list of commands and their descriptions.'
+        keep_command = 'KEEP'
+        keep_desc = 'Use this command to toss the suggested values and mark the existing as correct.'
 
         command_list = []
         desc_list = []
@@ -50,10 +52,12 @@ class Modifier:
         command_list.append(toss_command)
         command_list.append(exit_command)
         command_list.append(help_command)
+        command_list.append(keep_command)
         desc_list.append(save_desc)
         desc_list.append(toss_desc)
         desc_list.append(exit_desc)
         desc_list.append(help_desc)
+        desc_list.append(keep_desc)
         return command_list, desc_list, help_command
 
     def run(self, lat_col='Latitude', lng_col='Longitude', rec_lat_col='temp_lat',
@@ -81,8 +85,12 @@ class Modifier:
         print('===========')
         for i in range(len(command_list)):
             print(command_list[i] + ': ' + desc_list[i])
-        confirmed_data = confirmed_data.append(self.__run_loop(columns, self.to_check, maker, command_list, desc_list, lat_col, lng_col, rec_lat_col, rec_lng_col, country_col, loc_col), sort=True)
-        confirmed_data = confirmed_data.append(self.__run_loop(columns, self.to_check_geocoded, maker, command_list, desc_list, lat_col, lng_col, geoc_rec_lat_col, geoc_rec_lng_col, country_col, loc_col), sort=True)
+        confirmed_data = confirmed_data.append(self.__run_loop(columns, self.to_check, maker, command_list, desc_list,
+                                                               lat_col, lng_col, rec_lat_col, rec_lng_col, country_col,
+                                                               loc_col), sort=True)
+        confirmed_data = confirmed_data.append(self.__run_loop(columns, self.to_check_geocoded, maker, command_list,
+                                                               desc_list, lat_col, lng_col, geoc_rec_lat_col,
+                                                               geoc_rec_lng_col, country_col, loc_col), sort=True)
 
         print('All rows checked. Saving.')
         self.save_file(confirmed_data)
@@ -94,7 +102,7 @@ class Modifier:
         """
         temp_confirmed = pd.DataFrame(columns=cols)
         for (index, row) in this_check.iterrows():
-            if row['Type'] == 'Flipped':    # Only run if data has been modified.
+            if row['Type'] == 'Flipped' or row['Type'] == 'Geocoded':    # Only run if data has been modified.
                 print(row[loc_col] + ', ' + row[country_col])
                 print('Input Lat: ' + str(row[lat_col]) + '  Input Lng: ' + str(row[lng_col]))
                 print('Recorded Lat: ' + str(row[rec_lat_col]) + '  Recorded Lng: ' + str(row[rec_lng_col]))
@@ -114,9 +122,14 @@ class Modifier:
                     print('Saving')
                     row[lat_col] = row[rec_lat_col]
                     row[lng_col] = row[rec_lng_col]
+                    row['Type'] = 'Verified'
                     temp_confirmed = temp_confirmed.append(row)
-                elif user_input == maker[0][1]:     # TOSS: Don't use suggested value.
+                elif user_input == maker[0][1]:     # TOSS: Don't use suggested value, but don't mark as correct.
                     print('Tossing')
+                    temp_confirmed = temp_confirmed.append(row)
+                elif user_input == maker[0][3]:
+                    print('Keeping')
+                    row['Type'] = 'Verified'
                     temp_confirmed = temp_confirmed.append(row)
                 elif user_input == maker[0][2]:    # EXIT: Stop editing and save new file now.
                     print('Stopping')
@@ -131,7 +144,7 @@ class Modifier:
         :param confirmed_data: A pandas DataFrame representing all data validated as correct
         :param file_path: File path including file name with .csv extension. Dictates where output is placed.
         """
-        self.corrects = self.corrects.append(confirmed_data, sort=True)    # Append our validated data to the correct data
+        self.corrects = self.corrects.append(confirmed_data, sort=True)    # Append our validated data to the data
         if not file_path:   # If filepath for output is not passed, create one
             file_path = ''
             unique = False
