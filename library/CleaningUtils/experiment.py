@@ -273,6 +273,10 @@ class GeocodeValidator:
             ndf = pd.DataFrame.copy(df)
             ndf['temp_lat'] = [loc[i][0] for loc in temp_coords]
             ndf['temp_lng'] = [loc[i][1] for loc in temp_coords]
+            if i != 0:
+                ndf['Type'] = 'Flipped'
+            else:
+                ndf['Type'] = 'Original'
             gdf = self.to_gdf(ndf, 'temp_lat', 'temp_lng', prj)
             all_gdfs.append(gdf)
 
@@ -293,7 +297,7 @@ class GeocodeValidator:
         :return:
         :rtype: geopandas.GeoDataFrame
         """
-        df = self.read_data(data, {lat_col, lng_col})
+        df = self.read_data(data, {lat_col, lng_col, 'Type'})
         df.fillna({lat_col: 0, lng_col: 0}, inplace=True)
         geometry = [Point(coords) for coords in zip(df[lng_col], df[lat_col])]
         crs = {'init': 'epsg:' + str(prj)}
@@ -364,8 +368,8 @@ class GeocodeValidator:
             stations_within = self.rtree(geodata, row['geometry'])
             if len(stations_within) > 0:
                 stations_within['PolyCountry'] = row['NAME']
-                stations_within['PolyISO2'] = row['ISO_A2']
-                stations_within['PolyISO3'] = row['ISO_A3']
+                stations_within['PolyISO2'] = row['ISO2']
+                stations_within['PolyISO3'] = row['ISO3']
                 stations_within = self.cross_check_cc(stations_within)
                 outdata = outdata.append(stations_within, sort=True, ignore_index=True)
 
@@ -448,11 +452,12 @@ class GeocodeValidator:
 
 start = timeit.default_timer()
 gv = GeocodeValidator()
-mapfile = gv.process_shapefile('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/resources/ne_50m_admin_0_countries')
+
+mapfile = gv.process_shapefile('D:\\PyCharm Projects\\IaaGeoDataCleaning\\resources\\mapinfo')
 shp = gv.get_shape(mapfile['shp'])
 prj = gv.get_projection(mapfile['prj'])
 print('removing coords')
-filtered = gv.filter_data_without_coords('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/resources/xlsx/tblLocation.xlsx',
+filtered = gv.filter_data_without_coords('D:\\PyCharm Projects\\IaaGeoDataCleaning\\resources\\xlsx\\tblLocation.xlsx',
                                          'Latitude', 'Longitude')
 with_coords = filtered[0]
 print('adding cc')
