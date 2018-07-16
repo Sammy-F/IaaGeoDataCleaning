@@ -5,6 +5,10 @@ class Modifier:
     """
     Class acts as a command line tool for accepting/rejecting proposed data modifications and
     stores the validated data and any data already marked as correct as a new file.
+
+    :param incorrect_locs: String filepath to flipped locations.
+    :param correct_locs: String filepath to locations that have been verified.
+    :param geocoded_locs: String filepath to geocoded locations
     """
     def __init__(self, incorrect_locs=None, correct_locs=None, geocoded_locs=None):
         self.to_check = None
@@ -98,7 +102,11 @@ class Modifier:
     def __run_loop(self, cols, this_check, maker, command_list, desc_list, lat_col, lng_col, rec_lat_col, rec_lng_col,
                    country_col, loc_col):
         """
-        Loop over entries that require validation.
+        Private method to construct and run the loop over entries that require validation.
+
+        :params: Uses column names defined in run()
+
+        :return: The pandas DataFrame of confirmed locations up to this point.
         """
         temp_confirmed = pd.DataFrame(columns=cols)
         for (index, row) in this_check.iterrows():
@@ -161,5 +169,25 @@ class Modifier:
 
         print('Complete. Closing program.')
 
-mod = Modifier()
-mod.run()
+
+if __name__ == '__main__':
+    user_input = input('Define custom column names? (y/n)')
+    if user_input == 'y':
+        lat_col = input('Latitude column: ')
+        lng_col = input('Longitude column: ')
+        rec_lat_col = input('Recommended latitude column: ')
+        rec_lng_col = input('Recommended longitude column: ')
+        cc_col = input('Country code column: ')
+        country_col = input('Country name column: ')
+        loc_col = input('Location column name: ')
+        reg_col = input('Region column name: ')
+        geoc_rec_lng_col = input('Geocoded longitudes column: ')
+        geoc_rec_lat_col = input('Geocoded latitudes column: ')
+
+        mod = Modifier
+        mod.run(lat_col=lat_col, lng_col=lng_col, rec_lat_col=rec_lat_col, rec_lng_col=rec_lng_col, cc_col=cc_col,
+                country_col=country_col, loc_col=loc_col, reg_col=reg_col, geoc_rec_lng_col=geoc_rec_lng_col,
+                geoc_rec_lat_col=geoc_rec_lat_col)
+    else:
+        mod = Modifier()
+        mod.run()
