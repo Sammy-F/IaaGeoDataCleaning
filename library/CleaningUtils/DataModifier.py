@@ -1,10 +1,10 @@
 import os
 import pandas as pd
 
-# TODO: All of this is speculatory code atm. We need valid formatted data files to test for functionality.
 class Modifier:
     """
-    Class acts as a command line tool for accepting/rejecting proposed data modifications.
+    Class acts as a command line tool for accepting/rejecting proposed data modifications and
+    stores the validated data and any data already marked as correct as a new file.
     """
     def __init__(self, incorrect_locs=None, correct_locs=None, geocoded_locs=None):
         self.to_check = None
@@ -14,17 +14,17 @@ class Modifier:
             if incorrect_locs:
                 self.to_check = pd.read_csv(incorrect_locs)
             else:   # Point to file w/ suggested changes.
-                self.to_check = pd.read_csv(str(os.path.normpath(os.path.join(cwd, 'incorrect_locations.csv'))))
+                self.to_check = pd.read_csv(str(os.path.normpath(os.path.join(cwd, 'logged_locations.csv'))))
             print('Reading in correct locations.')
             if correct_locs:
                 self.corrects = pd.read_csv(correct_locs)
             else:
-                self.to_check = pd.read_csv(str(os.path.normpath(os.path.join(cwd, 'correct_locations.csv'))))
+                self.corrects = pd.read_csv(str(os.path.normpath(os.path.join(cwd, 'correct_locations.csv'))))
             print('Reading in geocoded locations.')
             if geocoded_locs:
-                self.to_check.append(pd.read_csv(geocoded_locs))    # TODO: Find more efficient way
+                self.to_check_geocoded = pd.read_csv(geocoded_locs)
             else:
-                self.to_check.append(pd.read_csv(str(os.path.normpath(os.path.join(cwd, 'geocoded_locations.csv')))))
+                self.to_check_geocoded = pd.read_csv(str(os.path.normpath(os.path.join(cwd, 'geocoded_locations.csv'))))
         except OSError:
             print('Unable to find flipped coordinates files. Have you cleaned the data yet with a Geocode Validator?')
 
@@ -65,24 +65,33 @@ class Modifier:
 
         :params: Optional params to define column names
         """
+
         maker = self.make_commands()
 
         command_list = maker[0]
         desc_list = maker[1]
 
-        print('Commands')
-        print('===========')
-        for i in range(len(command_list)):
-            print(command_list[i] + ': ' + desc_list[i])
-
-        # columns = list(self.to_check.columns.values)
         columns = [lat_col, lng_col, country_col, loc_col, cc_col, rec_lat_col, rec_lng_col,
                    reg_col, 'Address']
 
         confirmed_data = pd.DataFrame(columns=columns)
 
         print('Running')
-        for (index, row) in self.to_check.iterrows():
+        print('Commands')
+        print('===========')
+        for i in range(len(command_list)):
+            print(command_list[i] + ': ' + desc_list[i])
+        self.run_loop(self.to_check, confirmed_data, maker, command_list, desc_list)
+        self.run_loop(self.to_check_geocoded, confirmed_data, maker, command_list, desc_list)
+
+        print('All rows checked. Saving.')
+        self.save_file(confirmed_data)
+
+    def run_loop(self, this_check, confirmed_data, maker, command_list, desc_list):
+        """
+        Loop over entries that require validation.
+        """
+        for (index, row) in this_check.iterrows():
             print(row['Location'] + ', ' + row['Country'])
             print('Input Lat: ' + str(row['Latitude']) + '  Input Lng: ' + str(row['Longitude']))
             print('Recorded Lat: ' + str(row['Recorded_Lat']) + '  Recorded Lng: ' + str(row['Recorded_Lng']))
@@ -96,26 +105,20 @@ class Modifier:
                 else:
                     print('Invalid command. Type "HELP" to see available commands.')
 
-            if row['Type'] != 'correct location data':
-                if user_input == maker[0][0]:    # SAVE: Save the suggested value
-                    print('Saving')
-                    row['Latitude'] = row['Recorded_Lat']
-                    row['Longitude'] = row['Recorded_Lat']
-                    row['Type'] = 'correct location data'
-                    confirmed_data.append(row)
-                elif user_input == maker[0][1]:     # TOSS: Don't use suggested value.
-                    print('Tossing')
-                    row['Type'] = 'correct location data'
-                    confirmed_data.append(row)
-                elif user_input == maker[0][2]:    # EXIT: Stop editing and save new file now.
-                    print('Stopping')
-                    break
-
-            else:   # Added in case a correct item slips in somehow.
+            # At this point, a valid command has been input
+            if user_input == maker[0][0]:    # SAVE: Save the suggested value
+                print('Saving')
+                row['Latitude'] = row['Recorded_Lat']
+                row['Longitude'] = row['Recorded_Lat']
+                row['Type'] = 'correct location data'
                 confirmed_data.append(row)
-
-        print('All rows checked. Saving.')
-        self.save_file(confirmed_data)
+            elif user_input == maker[0][1]:     # TOSS: Don't use suggested value.
+                print('Tossing')
+                row['Type'] = 'correct location data'
+                confirmed_data.append(row)
+            elif user_input == maker[0][2]:    # EXIT: Stop editing and save new file now.
+                print('Stopping')
+                break
 
     def save_file(self, confirmed_data, file_path=None):
         """
@@ -124,7 +127,7 @@ class Modifier:
         :param confirmed_data: A pandas DataFrame representing all data validated as correct
         :param file_path: File path including file name with .csv extension. Dictates where output is placed.
         """
-        self.corrects.append(confirmed_data)
+        self.corrects.append(confirmed_data)    # Append our validated data to the correct data
         if not file_path:   # If filepath for output is not passed, create one
             file_path = ''
             unique = False
@@ -140,5 +143,3 @@ class Modifier:
         self.corrects.to_csv(path_or_buf=file_path, sep=',', index=False)
 
         print('Complete. Closing program.')
-
-modifier = Modifier()
