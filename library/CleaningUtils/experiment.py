@@ -278,6 +278,36 @@ class GeocodeValidator:
 
         return all_gdfs
 
+    def cross_check(self, data, first_col, second_col):
+        """
+        Filter all of the entries in `data` whose values for `first_col` and `second_col` are equal.
+
+        :param data: filepath (.csv or .xlsx extension) or dataframe.
+        :type data: str or DataFrame
+        :param first_col: column name.
+        :type first_col: str
+        :param second_col: column name.
+        :type second_col: str
+        :return: all qualified entries.
+        :rtype: DataFrame
+        :raises TypeError: if a different type is passed for `data` or the file extension is not .csv or .xlsx.
+        :raises KeyError: if any of the column names cannot be found in `data`.
+
+        >>> import pandas as pd
+        >>> d = {'Country': ['Australia', 'Indonesia', 'Denmark'], 'Entered_ISO2': ['AUS', 'ID', 'DK'],
+        ...      'Matched_ISO2': ['AU', 'ID', 'DK']}
+        >>> df = pd.DataFrame(d)
+        >>> validator = GeocodeValidator()
+        >>> validator.cross_check(data=df, first_col='Entered_ISO2', second_col='Matched_ISO2')
+             Country Entered_ISO2 Matched_ISO2
+        1  Indonesia           ID           ID
+        2    Denmark           DK           DK
+        """
+        df = self.read_data(data, {first_col, second_col})
+        indices = [index for index, row in df.iterrows() if row[first_col] == row[second_col]]
+        matched_df = df.loc[indices]
+        return matched_df
+
     def to_gdf(self, data, lat_col, lng_col, prj):
         """
         Generate a geopandas.GeoDataFrame.
@@ -350,6 +380,8 @@ class GeocodeValidator:
 
     def check_country_geom(self, geodata, shapedata):
         """
+        Filter all of the entries in `geodata` whose coordinates are within their indicated country by
+        iterating through a shapefile of country polygons and finding locations that are in each polygon.
 
         :param geodata: dataframe of locations with spatial geometries.
         :type geodata: geopandas.GeoDataFrame
@@ -366,12 +398,45 @@ class GeocodeValidator:
                 stations_within['PolyCountry'] = row['NAME']
                 stations_within['PolyISO2'] = row['ISO_A2']
                 stations_within['PolyISO3'] = row['ISO_A3']
-                stations_within = self.cross_check_cc(stations_within)
+                stations_within = self.cross_check(stations_within, 'ISO2', 'PolyISO2')
                 outdata = outdata.append(stations_within, sort=True, ignore_index=True)
 
         return outdata
 
     def geocode_locations(self, data, loc_col, ctry_col):
+        """
+        Use Photon API to geocode entries based on their location and country to find their coordinates.
+
+        Perform a quick validation of the query result by comparing the returned country to the preset country.
+
+        Three new fields representing the returned address, latitude, and longitude are appended to geocoded entries.
+
+        :param data: filepath (.csv or .xlsx extension) or dataframe.
+        :type data: str or DataFrame
+        :param loc_col: name of the location (lower level) column.
+        :type loc_col: str
+        :param ctry_col: name of the location (higher level) column.
+        :type ctry_col: str
+        :return: two dataframes, one with all of the locations that Photon was able to find, and one with locations that
+                 could not be queried.
+        :rtype: tuple of (DataFrame, DataFrame)
+        :raises TypeError: if a different type is passed for `data` or the file extension is not .csv or .xlsx.
+        :raises KeyError: if any of the column names cannot be found in `data`.
+
+        .. note::
+            Returned locations might not be 100% accurate.
+
+        >>> import pandas as pd
+        >>> validator = GeocodeValidator()
+        >>> d = {'City': ['Toronto', 'Dhaka', 'San Andres'], 'Country': ['Canada', 'Bangladesh', 'El Salvador']}
+        >>> df = pd.DataFrame(d)
+        >>> validator.geocode_locations(data=df, loc_col='City', ctry_col='City')
+        (     City        Country                             Geocoded_Adr  Geocoded_Lat  Geocoded_Lng
+        0  Toronto     Canada       Toronto, Ontario, Canada                   43.653963    -79.387207
+        1  Dhaka       Bangladesh   Dhaka, 12, Dhaka Division, Bangladesh      23.759357     90.378814,
+                 City      Country
+        3  San Andres  El Salvador)
+        """
         df = self.read_data(data, {ctry_col})
 
         gdf = pd.DataFrame()
@@ -414,20 +479,46 @@ class GeocodeValidator:
 
         return gdf, idf
 
-    def cross_check_cc(self, data):
-        indices = [index for index, row in data.iterrows() if row['ISO2'] == row['PolyISO2']]
-        matched_df = data.loc[indices]
-        return matched_df
-
     def check_multiple(self, eval_col, all_geodata, shapedata):
+        """
+        Take in a collection of spatial dataframes that are variations of a single dataframe and check to see
+        which geometry actually fall within the borders of its preset country. If an entry is verified as correct
+        with its original inputs, the other variations will not be appended
+
+        Generate two dataframes, one that combines all of the entries in the collection that are marked as verified,
+        and one for entries whose respective geometry does not correspond to the preset country for any variation.
+
+        ..note::
+            The function assumes that the first dataframe in the collection is the original dataframe.
+
+            The verified dataframe might contain multiple entries for the same initial entry if two or more of its
+            variations match its preset country.
+
+            :func:`~experiment.GeocodeValidator.flip_coords` should be called first to generate the dataframe collection
+            to optimize this function.
+
+        :param eval_col: name of the column to distinguish between entries (should be a column in all of the dataframes).
+        :type eval_col: str
+        :param all_geodata: collection of spatial dataframes.
+        :type all_geodata: list or set of geopandas.GeoDataFrames
+        :param shapedata: shapefile dataframe.
+        :type shapedata: geopandas.GeoDataFrame
+        :return: two dataframes, one with verified entries, and one with invalid entries.
+        :rtype: tuple of (geopandas.GeoDataFrame, geopandas.GeoDataFrame)
+        :raises KeyError: if `eval_col` cannot be found in `data`.
+        """
         matched_dfs = []
         orig_input_df = all_geodata[0]
         for i in range(len(all_geodata)):
             start = timeit.default_timer()
-            df = self.check_country_geom(all_geodata[i], shapedata)
+            df = self.read_data(all_geodata[i], {eval_col})
+            if i == 0:
+                df = self.check_country_geom(df, shapedata)
 
-            if i > 0:
+            else:
                 df = df[~df[eval_col].isin(matched_dfs[0][eval_col])]
+                df = self.check_country_geom(df, shapedata)
+
             matched_dfs.append(df)
             df.to_csv('flip_' + str(i) + '.csv', index=False)
 
@@ -447,6 +538,7 @@ class GeocodeValidator:
 
 
 start = timeit.default_timer()
+
 gv = GeocodeValidator()
 mapfile = gv.process_shapefile('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/resources/ne_50m_admin_0_countries')
 shp = gv.get_shape(mapfile['shp'])
@@ -462,18 +554,17 @@ print('flipping')
 data_dict = gv.flip_coords(with_cc, 'Latitude', 'Longitude', prj)
 
 print('checking')
-res = gv.check_multiple('Location', data_dict, shp)
+
+# 14 seconds version
+# gv.check_multiple('Location', data_dict, shp)
+
+# 10 seconds version
+# file = pd.DataFrame()
+# for i in range(len(data_dict)):
+#     if i > 0:
+#         file = file.append(data_dict[i])
+#
+# res = gv.check_multiple('Location', [data_dict[0], file], shp)
 
 stop = timeit.default_timer()
 print(stop - start)
-#
-# print('geocoding')
-# start = timeit.default_timer()
-#
-# without_coords = filtered[1]
-# remaining_df = res[1]
-# to_geocode = without_coords.append(remaining_df, sort=True)
-#
-# geocoded_res = gv.geocode_locations(to_geocode, 'Location', 'Country')
-# stop = timeit.default_timer()
-# print(stop - start)
