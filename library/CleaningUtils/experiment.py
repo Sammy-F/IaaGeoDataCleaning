@@ -9,7 +9,7 @@ import country_converter as coco
 from itertools import product
 from geopy.exc import GeocoderTimedOut
 import re
-import math
+
 
 class GeocodeValidator:
     def process_shapefile(self, shapefile):
@@ -274,7 +274,7 @@ class GeocodeValidator:
 
     def cross_check(self, data, first_col, second_col):
         """
-        Filter all of the entries in `data` whose values for `first_col` and `second_col` are equal.
+        Filter all of the entries in `data` whose values for ``first_col`` and ``second_col`` are equal.
 
         :param data: filepath (.csv or .xlsx extension) or dataframe.
         :type data: str or DataFrame
@@ -370,7 +370,7 @@ class GeocodeValidator:
 
         return precise_matches
 
-    def check_country_geom(self, geodata, shapedata):
+    def check_country_geom(self, geodata, shapedata, shape_geom_col, shape_ctry_col, shape_iso2_col, shape_iso3_col):
         """
         Filter all of the entries in `geodata` whose coordinates are within their indicated country by
         iterating through a shapefile of country polygons and finding locations that are in each polygon.
@@ -383,19 +383,21 @@ class GeocodeValidator:
         :rtype: geopandas.GeoDataFrame
         """
         outdata = pd.DataFrame(columns=list(geodata.columns))
+        shapedata = self.read_data(shapedata, {shape_geom_col, shape_ctry_col, shape_iso2_col, shape_iso3_col})
 
         for index, row in shapedata.iterrows():
-            stations_within = self.rtree(geodata, row['geometry'])
+            stations_within = self.rtree(geodata, row[shape_geom_col])
             if len(stations_within) > 0:
-                stations_within['PolyCountry'] = row['NAME']
-                stations_within['PolyISO2'] = row['ISO2']
-                stations_within['PolyISO3'] = row['ISO3']
-                stations_within = self.cross_check(stations_within, 'ISO2', 'PolyISO2')
+                stations_within['Poly_Ctry'] = row[shape_ctry_col]
+                stations_within['Poly_ISO2'] = row[shape_iso2_col]
+                stations_within['Poly_ISO3'] = row[shape_iso3_col]
+                stations_within = self.cross_check(stations_within, 'ISO2', 'Poly_ISO2')
                 outdata = outdata.append(stations_within, sort=True, ignore_index=True)
 
         return outdata
 
-    def check_multiple(self, eval_col, all_geodata, shapedata):
+    def check_multiple(self, eval_col, all_geodata, shapedata, shape_geom_col, shape_ctry_col,
+                       shape_iso2_col, shape_iso3_col):
         """
         Take in a collection of spatial dataframes that are variations of a single dataframe and check to see
         which geometry actually fall within the borders of its preset country. If an entry is verified as correct
@@ -435,7 +437,7 @@ class GeocodeValidator:
             if i > 0:
                 df = df[~df[eval_col].isin(matched_dfs[0][eval_col])]
 
-            df = self.check_country_geom(df, shapedata)
+            df = self.check_country_geom(df, shapedata, shape_geom_col, shape_ctry_col, shape_iso2_col, shape_iso3_col)
             matched_dfs.append(df)
             df.to_csv('flip_' + str(i) + '.csv', index=False)
 
@@ -522,50 +524,142 @@ class GeocodeValidator:
 
         return gdf, idf
 
-    def cell_in_table(self, data, val, col):
+    def cell_in_data(self, data, val, col, abs_tol=0.1):
+        """
+        Find the entries whose values in the passed column match the queried value.
+
+        If querying a numeric value, the function will return all entries whose corresponding cells approximate
+        the passed value with the specified absolute tolerance.
+
+        If querying a string, the function will return all entries whose corresponding cells contain the passed value,
+        case insensitive.
+
+        :param data: filepath (.csv or .xlsx extension) or dataframe.
+        :type data: str or DataFrame
+        :param val: queried value.
+        :type val: str, int, or float
+        :param col: name of queried column.
+        :type col: str
+        :param abs_tol:
+        :type abs_tol: float
+        :return: all entries meeting the condition.
+        :rtype: DataFrame
+
+        >>> import pandas as pd
+        >>> d = {'City': ['Birmingham', 'Brussels', 'Berlin'], 'Country': ['England', 'Belgium', 'Germany'],
+        ...      'Latitude': [52.48, 50.85, 52.52], 'Longitude': [-1.89, 4.35, 13.40]}
+        >>> df = pd.DataFrame(d)
+        >>> validator = GeocodeValidator()
+        >>> validator.cell_in_data(data=df, val='brussels', col='City')
+               City  Country  Latitude  Longitude
+        1  Brussels  Belgium     50.85       4.35
+        >>> validator.cell_in_data(data=df, val=52.5, col='Latitude')
+                 City  Country  Latitude  Longitude
+        0  Birmingham  England     52.48      -1.89
+        2      Berlin  Germany     52.52      13.40
+        """
         df = self.read_data(data, {col})
 
-        regex = re.compile(' \(\d\)')
-
-        indices = []
+        res_df = pd.DataFrame()
 
         if pd.notnull(val):
-            if isinstance(val, float):
+            if isinstance(val, float) or isinstance(val, int):
+                val = float(val)
+                res_df = df[(df[col] - val).abs() < abs_tol]
+
+            elif isinstance(val, str):
+                res_df = df[df[col].str.contains(val, flags=re.IGNORECASE, regex=True)]
+
+        return res_df
+
+    def query_data(self, data, query_dict, excl=False):
+        """
+        Find all entries that meet the conditions specified in the query dictionary.
+
+        If ``excl=True``, the function only returns entries meeting every single criteria. Else, it returns any entry
+        that meets at least one of the conditions.
+
+        :param data: filepath (.csv or .xlsx extension) or dataframe.
+        :type data: str or DataFrame
+        :param query_dict: dictionary whose keys are column names mapping to the queried value(s).
+        :type query_dict: dict of {str: list, str: set, or str: str}
+        :param excl: exclusive or inclusive search.
+        :type excl: bool
+        :return: all entries meeting the condition(s).
+        :rtype: DataFrame
+
+        >>> import pandas as pd
+        >>> d = {'City': ['Birmingham', 'Brussels', 'Berlin'], 'Country': ['England', 'Belgium', 'Germany'],
+        ...      'Latitude': [52.48, 50.85, 52.52], 'Longitude': [-1.89, 4.35, 13.40]}
+        >>> df = pd.DataFrame(d)
+        >>> validator = GeocodeValidator()
+        >>> validator.query_data(data=df, query_dict={'Latitude': [52.5, 40], 'City': 'Berlin'}, excl=False)
+                 City  Country  Latitude  Longitude
+        0  Birmingham  England     52.48      -1.89
+        2      Berlin  Germany     52.52      13.40
+        >>> validator.query_data(data=df, query_dict={'Latitude': 52.5, 'City': 'berlin'}, excl=True)
+             City  Country  Latitude  Longitude
+        2  Berlin  Germany     52.52       13.4
+        """
+        df = self.read_data(data, query_dict.keys())
+        res_df = pd.DataFrame()
+
+        for col, val in query_dict.items():
+            if isinstance(val, list) or isinstance(val, set):
+                for item in val:
+                    res_df = res_df.append(self.cell_in_data(df, item, col), sort=False)
+            else:
+                res_df = res_df.append(self.cell_in_data(df, val, col), sort=False)
+
+        if len(res_df) > 0:
+            if excl:
+                return res_df[res_df.duplicated()]
+            else:
+                return res_df.drop_duplicates()
+        return res_df
 
 
-begin = timeit.default_timer()
-start = timeit.default_timer()
+# begin = timeit.default_timer()
+# start = timeit.default_timer()
+#
+# gv = GeocodeValidator()
+# mf = gv.process_shapefile('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/resources/mapinfo')
+# shp = gv.get_shape(mf['shp'])
+# prj = gv.get_projection(mf['prj'])
+# print('removing coords')
+# filtered = gv.filter_data_without_coords('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/resources/xlsx/tblLocation.xlsx',
+#                                          'Latitude', 'Longitude')
+# with_coords = filtered[0]
+# print('adding cc')
+# with_cc = gv.add_country_code(with_coords, 'Country')
+#
+# print('flipping')
+# data_dict = gv.flip_coords(with_cc, 'Latitude', 'Longitude', prj)
+#
+# print('checking')
+#
+# # 10-13 seconds version
+#
+# stop = timeit.default_timer()
+# print(stop - start)
+#
+# print('geocoding')
+# start = timeit.default_timer()
+#
+# res = gv.check_multiple('Location', data_dict, shp)
+# pending = res[1].append(filtered[1])
+#
+# gv.geocode_locations(pending, 'Location', 'Country')
+#
+# stop = timeit.default_timer()
+# print(stop - start)
+# end = timeit.default_timer()
+# print(end-begin)
 
 gv = GeocodeValidator()
-mf = gv.process_shapefile('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/resources/mapinfo')
-shp = gv.get_shape(mf['shp'])
-prj = gv.get_projection(mf['prj'])
-print('removing coords')
-filtered = gv.filter_data_without_coords('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/resources/xlsx/tblLocation.xlsx',
-                                         'Latitude', 'Longitude')
-with_coords = filtered[0]
-print('adding cc')
-with_cc = gv.add_country_code(with_coords, 'Country')
+df = gv.read_file('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/library/CleaningUtils/flip_0.csv')
 
-print('flipping')
-data_dict = gv.flip_coords(with_cc, 'Latitude', 'Longitude', prj)
-
-print('checking')
-
-# 10-13 seconds version
-
-stop = timeit.default_timer()
-print(stop - start)
-
-print('geocoding')
-start = timeit.default_timer()
-
-res = gv.check_multiple('Location', data_dict, shp)
-pending = res[1].append(filtered[1])
-
-gv.geocode_locations(pending, 'Location', 'Country')
-
-stop = timeit.default_timer()
-print(stop - start)
-end = timeit.default_timer()
-print(end-begin)
+res = gv.query_data(data=df, query_dict={'Country': 'angola', 'Latitude': [-15]}, excl=True)
+for i, r in res.iterrows():
+    print(r)
+    print('-----------------------------')
