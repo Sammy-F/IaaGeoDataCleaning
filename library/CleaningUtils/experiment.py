@@ -305,7 +305,7 @@ class GeocodeValidator:
         matched_df = df.loc[indices]
         return matched_df
 
-    def to_gdf(self, data, lat_col, lng_col, prj):
+    def to_gdf(self, data, lat_col, lng_col, prj=4326):
         """
         Generate a geopandas.GeoDataFrame.
 
@@ -327,7 +327,15 @@ class GeocodeValidator:
 
         return gpd.GeoDataFrame(df, crs=crs, geometry=geometry)
 
-    def convert_crs(self, gdf, ):
+    def convert_crs(self, gdf, out_crs=4326):
+        """
+        Credit!!
+
+        :param gdf:
+        :param out_crs:
+        :return:
+        """
+        return convert_df_crs(gdf, out_crs)
 
     def export_df(self, df, extension, filename, directory):
         """
@@ -376,7 +384,7 @@ class GeocodeValidator:
 
         return precise_matches
 
-    def check_country_geom(self, geodata, shapedata, shape_geom_col, shape_ctry_col, shape_iso2_col, shape_iso3_col):
+    def check_country_geom(self, geodata, geo_iso2_col, shapedata, shape_geom_col, shape_ctry_col, shape_iso2_col, shape_iso3_col):
         """
         Filter all of the entries in `geodata` whose coordinates are within their indicated country by
         iterating through a shapefile of country polygons and finding locations that are in each polygon.
@@ -398,6 +406,7 @@ class GeocodeValidator:
         """
         outdata = pd.DataFrame(columns=list(geodata.columns))
         shapedata = self.read_data(shapedata, {shape_geom_col, shape_ctry_col, shape_iso2_col, shape_iso3_col})
+        geodata = self.read_data(geodata, {geo_iso2_col})
 
         for index, row in shapedata.iterrows():
             stations_within = self.rtree(geodata, row[shape_geom_col])
@@ -405,7 +414,7 @@ class GeocodeValidator:
                 stations_within['Poly_Ctry'] = row[shape_ctry_col]
                 stations_within['Poly_ISO2'] = row[shape_iso2_col]
                 stations_within['Poly_ISO3'] = row[shape_iso3_col]
-                stations_within = self.cross_check(stations_within, 'ISO2', 'Poly_ISO2')
+                stations_within = self.cross_check(stations_within, geo_iso2_col, 'Poly_ISO2')
                 outdata = outdata.append(stations_within, sort=True, ignore_index=True)
 
         return outdata
@@ -499,9 +508,9 @@ class GeocodeValidator:
         >>> d = {'City': ['Toronto', 'Dhaka', 'San Andres'], 'Country': ['Canada', 'Bangladesh', 'El Salvador']}
         >>> df = pd.DataFrame(d)
         >>> validator.geocode_locations(data=df, loc_col='City', ctry_col='City')
-        (     City        Country                             Geocoded_Adr  Geocoded_Lat  Geocoded_Lng
-        0  Toronto     Canada       Toronto, Ontario, Canada                   43.653963    -79.387207
-        1  Dhaka       Bangladesh   Dhaka, 12, Dhaka Division, Bangladesh      23.759357     90.378814,
+        (     City        Country                            Geocoded_Adr  Geocoded_Lat  Geocoded_Lng
+        0  Toronto     Canada       Toronto, Ontario, Canada                  43.653963    -79.387207
+        1  Dhaka       Bangladesh   Dhaka, 12, Dhaka Division, Bangladesh     23.759357     90.378814,
                  City      Country
         3  San Andres  El Salvador)
         """
