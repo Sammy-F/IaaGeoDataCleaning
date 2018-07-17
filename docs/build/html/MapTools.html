@@ -1,0 +1,471 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>MapTools package &#8212; IaaGeoDataCleaning  documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">IaaGeoDataCleaning  documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="maptools-package">
+<h1>MapTools package<a class="headerlink" href="#maptools-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-MapTools.MapTool">
+<span id="maptools-maptool-module"></span><h2>MapTools.MapTool module<a class="headerlink" href="#module-MapTools.MapTool" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="MapTools.MapTool.MapTool">
+<em class="property">class </em><code class="descclassname">MapTools.MapTool.</code><code class="descname">MapTool</code><span class="sig-paren">(</span><em>map_file=None</em><span class="sig-paren">)</span><a class="headerlink" href="#MapTools.MapTool.MapTool" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="MapTools.MapTool.MapTool.check_columns">
+<code class="descname">check_columns</code><span class="sig-paren">(</span><em>df</em>, <em>cols</em><span class="sig-paren">)</span><a class="headerlink" href="#MapTools.MapTool.MapTool.check_columns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks to see whether the columns exist in the dataframe.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>df</strong> – pandas dataframe.</li>
+<li><strong>cols</strong> – a tuple, list, or set of column names.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="MapTools.MapTool.MapTool.clean_dataframe">
+<code class="descname">clean_dataframe</code><span class="sig-paren">(</span><em>infile</em>, <em>cols</em><span class="sig-paren">)</span><a class="headerlink" href="#MapTools.MapTool.MapTool.clean_dataframe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Confirms that a file can be used as a dataframe.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>infile</strong> – filepath to the data.</li>
+<li><strong>cols</strong> – a tuple, list, or set of column names.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">a pandas dataframe of the file.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="MapTools.MapTool.MapTool.create_map">
+<code class="descname">create_map</code><span class="sig-paren">(</span><em>center=(0</em>, <em>0)</em>, <em>zoom=2</em><span class="sig-paren">)</span><a class="headerlink" href="#MapTools.MapTool.MapTool.create_map" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="MapTools.MapTool.MapTool.format_popup">
+<code class="descname">format_popup</code><span class="sig-paren">(</span><em>loc</em>, <em>ctry</em><span class="sig-paren">)</span><a class="headerlink" href="#MapTools.MapTool.MapTool.format_popup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="MapTools.MapTool.MapTool.haversine">
+<code class="descname">haversine</code><span class="sig-paren">(</span><em>lat0</em>, <em>lng0</em>, <em>lat1</em>, <em>lng1</em><span class="sig-paren">)</span><a class="headerlink" href="#MapTools.MapTool.MapTool.haversine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the distance between two coordinates using the haversine formula.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>lat0</strong> – </li>
+<li><strong>lng0</strong> – </li>
+<li><strong>lat1</strong> – </li>
+<li><strong>lng1</strong> – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">the distance in km.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="MapTools.MapTool.MapTool.plot_all_stations">
+<code class="descname">plot_all_stations</code><span class="sig-paren">(</span><em>infile</em>, <em>loc_col</em>, <em>ctry_col</em>, <em>lat_col</em>, <em>lng_col</em>, <em>clr='blue'</em>, <em>as_cluster=True</em><span class="sig-paren">)</span><a class="headerlink" href="#MapTools.MapTool.MapTool.plot_all_stations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots all data points in the file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>infile</strong> – filepath to the data/a pandas dataframe</li>
+<li><strong>loc_col</strong> – name of the location column.</li>
+<li><strong>ctry_col</strong> – name of the country column.</li>
+<li><strong>lat_col</strong> – name of the latitude column.</li>
+<li><strong>lng_col</strong> – name of the longitude column.</li>
+<li><strong>clr</strong> – color of the markers.</li>
+<li><strong>as_cluster</strong> – boolean value - create the markers as a cluster or not.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">a list of markers if as_cluster is False and a MarkerCluster otherwise.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="MapTools.MapTool.MapTool.plot_condition">
+<code class="descname">plot_condition</code><span class="sig-paren">(</span><em>infile</em>, <em>condition</em>, <em>cnd_col</em>, <em>loc_col</em>, <em>ctry_col</em>, <em>lat_col</em>, <em>lng_col</em>, <em>clr='blue'</em>, <em>as_cluster=False</em><span class="sig-paren">)</span><a class="headerlink" href="#MapTools.MapTool.MapTool.plot_condition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots all of the data points that meet the specified condition.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>infile</strong> – </li>
+<li><strong>condition</strong> – condition of the entries (currently works best with strings).</li>
+<li><strong>cnd_col</strong> – name of the column to be evaluated.</li>
+<li><strong>loc_col</strong> – </li>
+<li><strong>ctry_col</strong> – </li>
+<li><strong>lat_col</strong> – </li>
+<li><strong>lng_col</strong> – </li>
+<li><strong>clr</strong> – color of the markers.</li>
+<li><strong>as_cluster</strong> – boolean value - create the markers as a cluster or not.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">a list of markers if as_cluster is False and a MarkerCluster otherwise.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="MapTools.MapTool.MapTool.plot_no_country">
+<code class="descname">plot_no_country</code><span class="sig-paren">(</span><em>infile</em>, <em>loc_col</em>, <em>ctry_col</em>, <em>lat_col</em>, <em>lng_col</em>, <em>clr='lightred'</em>, <em>as_cluster=False</em><span class="sig-paren">)</span><a class="headerlink" href="#MapTools.MapTool.MapTool.plot_no_country" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots all data points whose coordinates do not fall within any country.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>infile</strong> – </li>
+<li><strong>loc_col</strong> – </li>
+<li><strong>ctry_col</strong> – </li>
+<li><strong>lat_col</strong> – </li>
+<li><strong>lng_col</strong> – </li>
+<li><strong>clr</strong> – </li>
+<li><strong>as_cluster</strong> – boolean value - create the markers as a cluster or not.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">a list of markers if as_cluster is False and a MarkerCluster otherwise.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="MapTools.MapTool.MapTool.plot_pair">
+<code class="descname">plot_pair</code><span class="sig-paren">(</span><em>coords0</em>, <em>coords1</em>, <em>clr0='lightblue'</em>, <em>clr1='darkblue'</em><span class="sig-paren">)</span><a class="headerlink" href="#MapTools.MapTool.MapTool.plot_pair" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots two coordinates for comparison.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>coords0</strong> – </li>
+<li><strong>coords1</strong> – </li>
+<li><strong>clr0</strong> – </li>
+<li><strong>clr1</strong> – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">the data points as a tuple of two Marker objects.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="MapTools.MapTool.MapTool.plot_pair_in_df">
+<code class="descname">plot_pair_in_df</code><span class="sig-paren">(</span><em>infile</em>, <em>index</em>, <em>lat0_col</em>, <em>lng0_col</em>, <em>lat1_col</em>, <em>lng1_col</em>, <em>clr0='lightblue'</em>, <em>clr1='darkblue'</em><span class="sig-paren">)</span><a class="headerlink" href="#MapTools.MapTool.MapTool.plot_pair_in_df" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots a data point if it contains two different coordinates for comparison.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>infile</strong> – </li>
+<li><strong>index</strong> – </li>
+<li><strong>lat0_col</strong> – </li>
+<li><strong>lng0_col</strong> – </li>
+<li><strong>lat1_col</strong> – </li>
+<li><strong>lng1_col</strong> – </li>
+<li><strong>clr0</strong> – </li>
+<li><strong>clr1</strong> – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">the data points as a tuple of Marker objects.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="MapTools.MapTool.MapTool.plot_point">
+<code class="descname">plot_point</code><span class="sig-paren">(</span><em>lat</em>, <em>lng</em>, <em>desc=None</em>, <em>clr='blue'</em><span class="sig-paren">)</span><a class="headerlink" href="#MapTools.MapTool.MapTool.plot_point" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a single marker.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>lat</strong> – </li>
+<li><strong>lng</strong> – </li>
+<li><strong>desc</strong> – </li>
+<li><strong>clr</strong> – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="MapTools.MapTool.MapTool.plot_potential_errors">
+<code class="descname">plot_potential_errors</code><span class="sig-paren">(</span><em>infile</em>, <em>loc_col</em>, <em>ctry_col</em>, <em>lat_col</em>, <em>lng_col</em>, <em>clr0='lightred'</em>, <em>clr1='orange'</em><span class="sig-paren">)</span><a class="headerlink" href="#MapTools.MapTool.MapTool.plot_potential_errors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots all of the potentially incorrect location data points.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>infile</strong> – </li>
+<li><strong>loc_col</strong> – </li>
+<li><strong>ctry_col</strong> – </li>
+<li><strong>lat_col</strong> – </li>
+<li><strong>lng_col</strong> – </li>
+<li><strong>clr0</strong> – color of the markers for entries that do not fall within any country border.</li>
+<li><strong>clr1</strong> – color of the markers for entries whose country does not match
+the country indicated by the shapefile and coordinates.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">a list of Marker objects.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="MapTools.MapTool.MapTool.plot_query">
+<code class="descname">plot_query</code><span class="sig-paren">(</span><em>infile</em>, <em>loc_col</em>, <em>ctry_col</em>, <em>lat_col</em>, <em>lng_col</em>, <em>loc=None</em>, <em>ctry=None</em>, <em>lat=None</em>, <em>lng=None</em>, <em>clr='blue'</em><span class="sig-paren">)</span><a class="headerlink" href="#MapTools.MapTool.MapTool.plot_query" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="MapTools.MapTool.MapTool.plot_within_range">
+<code class="descname">plot_within_range</code><span class="sig-paren">(</span><em>infile</em>, <em>center</em>, <em>radius</em>, <em>loc_col</em>, <em>ctry_col</em>, <em>lat_col</em>, <em>lng_col</em>, <em>desc0=None</em>, <em>clr0='blue'</em>, <em>clr1='lightblue'</em><span class="sig-paren">)</span><a class="headerlink" href="#MapTools.MapTool.MapTool.plot_within_range" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots all data points within the range of the given center and radius.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>infile</strong> – </li>
+<li><strong>center</strong> – </li>
+<li><strong>radius</strong> – in km.</li>
+<li><strong>loc_col</strong> – </li>
+<li><strong>ctry_col</strong> – </li>
+<li><strong>lat_col</strong> – </li>
+<li><strong>lng_col</strong> – </li>
+<li><strong>desc0</strong> – </li>
+<li><strong>clr0</strong> – </li>
+<li><strong>clr1</strong> – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">all of the data points as a list of Marker objects.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="MapTools.MapTool.MapTool.plot_within_station">
+<code class="descname">plot_within_station</code><span class="sig-paren">(</span><em>infile</em>, <em>index</em>, <em>radius</em>, <em>loc_col</em>, <em>ctry_col</em>, <em>lat_col</em>, <em>lng_col</em>, <em>clr0='blue'</em>, <em>clr1='lightblue'</em><span class="sig-paren">)</span><a class="headerlink" href="#MapTools.MapTool.MapTool.plot_within_station" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots all of the data points within the radius of the specified data point.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>infile</strong> – </li>
+<li><strong>index</strong> – index of the entry.</li>
+<li><strong>radius</strong> – </li>
+<li><strong>loc_col</strong> – </li>
+<li><strong>ctry_col</strong> – </li>
+<li><strong>lat_col</strong> – </li>
+<li><strong>lng_col</strong> – </li>
+<li><strong>clr0</strong> – color of the given data point.</li>
+<li><strong>clr1</strong> – color of the other points.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">all of the data points as Marker objects.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="MapTools.MapTool.MapTool.plot_wrong_country">
+<code class="descname">plot_wrong_country</code><span class="sig-paren">(</span><em>infile</em>, <em>loc_col</em>, <em>ctry_col</em>, <em>lat_col</em>, <em>lng_col</em>, <em>clr='lightred'</em><span class="sig-paren">)</span><a class="headerlink" href="#MapTools.MapTool.MapTool.plot_wrong_country" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots all data points whose country does not match the country indicated by the coordinates and shapefile.
+Note: Given the differences in spelling, correct data points might still be plotted.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>infile</strong> – </li>
+<li><strong>loc_col</strong> – </li>
+<li><strong>ctry_col</strong> – </li>
+<li><strong>lat_col</strong> – </li>
+<li><strong>lng_col</strong> – </li>
+<li><strong>clr</strong> – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">the data points as Marker objects.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="MapTools.MapTool.MapTool.read_file">
+<code class="descname">read_file</code><span class="sig-paren">(</span><em>file_path</em><span class="sig-paren">)</span><a class="headerlink" href="#MapTools.MapTool.MapTool.read_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads in csv or excel file. Raises an error if a different file type was entered.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file_path</strong> – .csv or .xlsx</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">a pandas data frame.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-MapTools">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-MapTools" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">MapTools package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-MapTools.MapTool">MapTools.MapTool module</a></li>
+<li><a class="reference internal" href="#module-MapTools">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/MapTools.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">IaaGeoDataCleaning  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Samantha Fritsche, Thy Nguyen.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.5.
+    </div>
+  </body>
+</html>
