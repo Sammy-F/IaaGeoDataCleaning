@@ -267,6 +267,10 @@ class GeocodeValidator:
             ndf = pd.DataFrame.copy(df)
             ndf['Flipped_Lat'] = [loc[i][0] for loc in temp_coords]
             ndf['Flipped_Lng'] = [loc[i][1] for loc in temp_coords]
+            if i > 0:
+                ndf['Type'] = 'Flipped'
+            else:
+                ndf['Type'] = 'Original'
             gdf = self.to_gdf(ndf, 'Flipped_Lat', 'Flipped_Lng', prj)
             all_gdfs.append(gdf)
 
@@ -315,7 +319,7 @@ class GeocodeValidator:
         :return:
         :rtype: geopandas.GeoDataFrame
         """
-        df = self.read_data(data, {lat_col, lng_col})
+        df = self.read_data(data, {lat_col, lng_col, 'Type'})
         df.fillna({lat_col: 0, lng_col: 0}, inplace=True)
         geometry = [Point(coords) for coords in zip(df[lng_col], df[lat_col])]
         crs = {'init': 'epsg:' + str(prj)}
@@ -508,7 +512,8 @@ class GeocodeValidator:
                             row['Geocoded_Lat'] = match.latitude
                             row['Geocoded_Lng'] = match.longitude
                             row['Geocoded_Adr'] = match.address
-                            gdf = gdf.append(row, ignore_index=True)
+                            row['Type'] = 'Geocoded'
+                            gdf = gdf.append(row, ignore_index=True, sort=True)
 
                             break
             except GeocoderTimedOut:
@@ -522,26 +527,65 @@ class GeocodeValidator:
 
         return gdf, idf
 
-    def cell_in_table(self, data, val, col):
-        df = self.read_data(data, {col})
+    # def cell_in_table(self, data, val, col):
+    #     df = self.read_data(data, {col})
+    #
+    #     regex = re.compile(' \(\d\)')
+    #
+    #     indices = []
+    #
+    #     if pd.notnull(val):
+    #         if isinstance(val, float):
 
-        regex = re.compile(' \(\d\)')
 
-        indices = []
+# begin = timeit.default_timer()
+# start = timeit.default_timer()
+#
+# gv = GeocodeValidator()
+# mf = gv.process_shapefile('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/resources/mapinfo')
+# shp = gv.get_shape(mf['shp'])
+# prj = gv.get_projection(mf['prj'])
+# print('removing coords')
+# filtered = gv.filter_data_without_coords('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/resources/xlsx/tblLocation.xlsx',
+#                                          'Latitude', 'Longitude')
+# with_coords = filtered[0]
+# print('adding cc')
+# with_cc = gv.add_country_code(with_coords, 'Country')
+#
+# print('flipping')
+# data_dict = gv.flip_coords(with_cc, 'Latitude', 'Longitude', prj)
+#
+# print('checking')
+#
+# # 10-13 seconds version
+#
+# stop = timeit.default_timer()
+# print(stop - start)
+#
+# print('geocoding')
+# start = timeit.default_timer()
+#
+# res = gv.check_multiple('Location', data_dict, shp)
+# pending = res[1].append(filtered[1])
+#
+# gv.geocode_locations(pending, 'Location', 'Country')
+#
+# stop = timeit.default_timer()
+# print(stop - start)
+# end = timeit.default_timer()
+# print(end-begin)
 
-        if pd.notnull(val):
-            if isinstance(val, float):
 
-
-begin = timeit.default_timer()
-start = timeit.default_timer()
+cwd = os.getcwd()
 
 gv = GeocodeValidator()
-mf = gv.process_shapefile('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/resources/mapinfo')
+mf = gv.process_shapefile(str(os.path.normpath(os.path.join(cwd, '..', '..', 'resources', 'mapinfo'))))
+print(str(os.path.normpath(os.path.join(cwd, '..', '..', 'resources', 'mapinfo'))))
+print(mf)
 shp = gv.get_shape(mf['shp'])
 prj = gv.get_projection(mf['prj'])
 print('removing coords')
-filtered = gv.filter_data_without_coords('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/resources/xlsx/tblLocation.xlsx',
+filtered = gv.filter_data_without_coords(str(os.path.normpath(os.path.join(cwd, '..', '..', 'resources', 'xlsx', 'tblLocation.xlsx'))),
                                          'Latitude', 'Longitude')
 with_coords = filtered[0]
 print('adding cc')
@@ -553,19 +597,9 @@ data_dict = gv.flip_coords(with_cc, 'Latitude', 'Longitude', prj)
 print('checking')
 
 # 10-13 seconds version
-
-stop = timeit.default_timer()
-print(stop - start)
-
 print('geocoding')
-start = timeit.default_timer()
 
 res = gv.check_multiple('Location', data_dict, shp)
 pending = res[1].append(filtered[1])
 
 gv.geocode_locations(pending, 'Location', 'Country')
-
-stop = timeit.default_timer()
-print(stop - start)
-end = timeit.default_timer()
-print(end-begin)
