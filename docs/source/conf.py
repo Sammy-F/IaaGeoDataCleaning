@@ -14,13 +14,13 @@
 
 import os
 import sys
-sys.path.append('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/library')
+sys.path.append('/Users/gonsongo/Desktop/research/iaa/Projects/python/IaaGeoDataCleaning/library')
 
 
 # -- Project information -----------------------------------------------------
 
 project = 'IaaGeoDataCleaning'
-copyright = '2018, Samantha Fritsche, Thy Nguyen'
+copyright = '2018, IAA'
 author = 'Samantha Fritsche, Thy Nguyen'
 
 # The short X.Y version

@@ -2,7 +2,8 @@ import math
 import pandas as pd
 import re
 import os
-from library.CleaningUtils.GeoDataCorrector import GeoDataCorrector
+from library.CleaningUtils.old import GeoDataCorrector
+import timeit
 """
 GeocodeValidator allows the user to perform reverse geocoding
 on a .xlsx or .csv to ensure that input locations correspond to
@@ -296,5 +297,13 @@ class TableTool:
             return row
 
 # For testing purposes
-# tool = TableTool()
-# tool.clean_table()
+start = timeit.default_timer()
+tool = TableTool(map_file='D:\\PyCharm Projects\\IaaGeoDataCleaning\\resources\\mapinfo\\TM_WORLD_BORDERS-0.3.shp',
+                 file_path='D:\\PyCharm Projects\\IaaGeoDataCleaning\\resources\\xlsx\\tblLocation.xlsx')
+tool.clean_table()
+stop = timeit.default_timer()
+print(stop - start)
+
+# BENCHMARKING
+
+# Run 1: 540.686

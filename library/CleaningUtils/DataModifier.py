@@ -1,6 +1,15 @@
 import os
 import pandas as pd
 
+"""
+Created by Sammy Fritsche, Thy Nguyen 7/12/18.
+Modified by Sammy Fritsche 7/16/18.
+
+Facilitates modification of data after cleaning. Can be run as main or imported to instantiate
+a Modifier class.
+"""
+
+
 class Modifier:
     """
     Class acts as a command line tool for accepting/rejecting proposed data modifications and
@@ -170,8 +179,19 @@ class Modifier:
         print('Complete. Closing program.')
 
 
-if __name__ == '__main__':
-    user_input = input('Define custom column names? (y/n)')
+if __name__ == "__main__":
+
+    user_input = input('Define custom filepaths to data? (y/n) ')
+    if user_input == 'y':
+        correct = input('Path to existing correct data: ')
+        incorrect = input('Path to flipped data: ')
+        geocoded = input('Path to geocoded data: ')
+
+        mod = Modifier(incorrect_locs=incorrect, geocoded_locs=geocoded, correct_locs=correct)
+    else:
+        mod = Modifier()
+
+    user_input = input('Define custom column names? (y/n) ')
     if user_input == 'y':
         lat_col = input('Latitude column: ')
         lng_col = input('Longitude column: ')
@@ -183,11 +203,8 @@ if __name__ == '__main__':
         reg_col = input('Region column name: ')
         geoc_rec_lng_col = input('Geocoded longitudes column: ')
         geoc_rec_lat_col = input('Geocoded latitudes column: ')
-
-        mod = Modifier
         mod.run(lat_col=lat_col, lng_col=lng_col, rec_lat_col=rec_lat_col, rec_lng_col=rec_lng_col, cc_col=cc_col,
                 country_col=country_col, loc_col=loc_col, reg_col=reg_col, geoc_rec_lng_col=geoc_rec_lng_col,
                 geoc_rec_lat_col=geoc_rec_lat_col)
     else:
-        mod = Modifier()
         mod.run()
