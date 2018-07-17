@@ -9,6 +9,7 @@ import country_converter as coco
 from itertools import product
 from geopy.exc import GeocoderTimedOut
 import re
+from Misc.convert_df_crs import *
 
 
 class GeocodeValidator:
@@ -322,6 +323,8 @@ class GeocodeValidator:
 
         return gpd.GeoDataFrame(df, crs=crs, geometry=geometry)
 
+    def convert_crs(self, gdf, ):
+
     def export_df(self, df, extension, filename, directory):
         """
         Export the dataframe to a file.
@@ -338,7 +341,6 @@ class GeocodeValidator:
         :rtype: str
         :raise TypeError: if file extension is not csv or  xlsx.
         """
-
         extension = extension.lower().replace('.', '')
         file_path = os.path.join(directory, '.'.join((filename, extension)))
         if extension.endswith('csv'):
@@ -379,6 +381,14 @@ class GeocodeValidator:
         :type geodata: geopandas.GeoDataFrame
         :param shapedata: shapefile dataframe.
         :type shapedata: geopandas.GeoDataFrame
+        :param shape_geom_col: name of the geometry column in the shapefile dataframe.
+        :type shape_geom_col: str
+        :param shape_ctry_col: name of the country column in the shapefile dataframe.
+        :type shape_ctry_col: str
+        :param shape_iso2_col: name of the two-letter country code column in the shapefile dataframe.
+        :type shape_iso2_col: str
+        :param shape_iso3_col: name of the three-letter country code column in the shapefile dataframe.
+        :type shape_iso3_col: str
         :return: all of the entries that were verified as having their location in the respective indicated country.
         :rtype: geopandas.GeoDataFrame
         """
@@ -421,8 +431,17 @@ class GeocodeValidator:
         :type all_geodata: list or set of geopandas.GeoDataFrames
         :param shapedata: shapefile dataframe.
         :type shapedata: geopandas.GeoDataFrame
+        :param shape_geom_col: name of the geometry column in the shapefile dataframe.
+        :type shape_geom_col: str
+        :param shape_ctry_col: name of the country column in the shapefile dataframe.
+        :type shape_ctry_col: str
+        :param shape_iso2_col: name of the two-letter country code column in the shapefile dataframe.
+        :type shape_iso2_col: str
+        :param shape_iso3_col: name of the three-letter country code column in the shapefile dataframe.
+        :type shape_iso3_col: str
         :return: two dataframes, one with verified entries, and one with invalid entries.
         :rtype: tuple of (geopandas.GeoDataFrame, geopandas.GeoDataFrame)
+        :return:
         """
         matched_dfs = []
 
