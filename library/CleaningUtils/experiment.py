@@ -8,7 +8,8 @@ import timeit
 import country_converter as coco
 from itertools import product
 from geopy.exc import GeocoderTimedOut
-
+import re
+import math
 
 class GeocodeValidator:
     def process_shapefile(self, shapefile):
@@ -126,7 +127,6 @@ class GeocodeValidator:
         :return:
         :rtype: DataFrame if the type of `data` is DataFrame or str, or geopandas.GeoDataFrame if it is geopandas.GeoDataFrame
         :raises TypeError: if a different type is passed for `data` or the file extension is not .csv or .xlsx.
-        :raises KeyError: if any of the column names cannot be found in `data`.
 
         >>> import pandas as pd
         >>> validator = GeocodeValidator()
@@ -160,8 +160,6 @@ class GeocodeValidator:
         :return: two dataframes, one with all of the entries with coordinates and one of those without.
         :rtype: tuple of (DataFrame, DataFrame) if the type of `data` is DataFrame or str,
                 tuple of (geopandas.GeoDataFrame, geopandas.GeoDataFrame) if it is geopandas.GeoDataFrame
-        :raises TypeError: if a different type is passed for `data` or the file extension is not .csv or .xlsx.
-        :raises KeyError: if any of the column names cannot be found in `data`.
 
         .. note::
             Entries whose latitude and longitude are both 0 are considered as having no inputs.
@@ -198,8 +196,6 @@ class GeocodeValidator:
         :return: the modified dataframe with the new columns 'ISO2' and 'ISO3' for two-letter and three-letter country
                  codes respectively.
         :rtype: DataFrame if the type of `data` is DataFrame or str, or geopandas.GeoDataFrame if it is geopandas.GeoDataFrame
-        :raises TypeError: if a different type is passed for `data` or the file extension is not .csv or .xlsx.
-        :raises KeyError: if the country column's name cannot be found in `data`.
 
         >>> import pandas as pd
         >>> validator = GeocodeValidator()
@@ -236,8 +232,6 @@ class GeocodeValidator:
         :type prj: int
         :return:
         :rtype: list of geopandas.GeoDataFrame
-        :raises TypeError: if a different type is passed for `data` or the file extension is not .csv or .xlsx.
-        :raises KeyError: if the country column's name cannot be found in `data`.
 
         >>> import pandas as pd
         >>> validator = GeocodeValidator()
@@ -247,12 +241,12 @@ class GeocodeValidator:
         >>> df = pd.DataFrame(d)
         >>> dfs = validator.flip_coords(data=df, lat_col='Latitude', lng_col='Latitude', prj=4326)
         >>> dfs[1]
-                  City      Country  Latitude  Longitude  temp_lat  temp_lng             geometry
-        0  Addis Ababa  Ethiopia     8.98      38.76      8.98     -38.76     POINT (-38.76 8.98)
-        1  Manila       Philippines  14.35     21.00      14.35    -21.00     POINT (-21 14.35)
-        2  Vienna       Austria      0.00      0.00       0.00     -0.00      POINT (-0 0)
-        3  Mexico City  Mexico       19.25    -99.10      19.25     99.10     POINT (99.10 19.25)
-        4  Puebla       Mexico      NaN       NaN         0.00      0.00      POINT (0 0)
+                  City      Country  Latitude  Longitude  Flipped_Lat  Flipped_Lng             geometry
+        0  Addis Ababa  Ethiopia         8.98      38.76         8.98       -38.76  POINT (-38.76 8.98)
+        1  Manila       Philippines     14.35      21.00        14.35       -21.00    POINT (-21 14.35)
+        2  Vienna       Austria         0.00        0.00         0.00        -0.00         POINT (-0 0)
+        3  Mexico City  Mexico          19.25     -99.10        19.25        99.10  POINT (99.10 19.25)
+        4  Puebla       Mexico            NaN        NaN         0.00         0.00          POINT (0 0)
 
         .. note::
             Point geometry is formatted as (lng, lat).
@@ -271,9 +265,9 @@ class GeocodeValidator:
         all_gdfs = list()
         for i in range(8):
             ndf = pd.DataFrame.copy(df)
-            ndf['temp_lat'] = [loc[i][0] for loc in temp_coords]
-            ndf['temp_lng'] = [loc[i][1] for loc in temp_coords]
-            gdf = self.to_gdf(ndf, 'temp_lat', 'temp_lng', prj)
+            ndf['Flipped_Lat'] = [loc[i][0] for loc in temp_coords]
+            ndf['Flipped_Lng'] = [loc[i][1] for loc in temp_coords]
+            gdf = self.to_gdf(ndf, 'Flipped_Lat', 'Flipped_Lng', prj)
             all_gdfs.append(gdf)
 
         return all_gdfs
@@ -290,8 +284,6 @@ class GeocodeValidator:
         :type second_col: str
         :return: all qualified entries.
         :rtype: DataFrame
-        :raises TypeError: if a different type is passed for `data` or the file extension is not .csv or .xlsx.
-        :raises KeyError: if any of the column names cannot be found in `data`.
 
         >>> import pandas as pd
         >>> d = {'Country': ['Australia', 'Indonesia', 'Denmark'], 'Entered_ISO2': ['AUS', 'ID', 'DK'],
@@ -396,12 +388,65 @@ class GeocodeValidator:
             stations_within = self.rtree(geodata, row['geometry'])
             if len(stations_within) > 0:
                 stations_within['PolyCountry'] = row['NAME']
-                stations_within['PolyISO2'] = row['ISO_A2']
-                stations_within['PolyISO3'] = row['ISO_A3']
+                stations_within['PolyISO2'] = row['ISO2']
+                stations_within['PolyISO3'] = row['ISO3']
                 stations_within = self.cross_check(stations_within, 'ISO2', 'PolyISO2')
                 outdata = outdata.append(stations_within, sort=True, ignore_index=True)
 
         return outdata
+
+    def check_multiple(self, eval_col, all_geodata, shapedata):
+        """
+        Take in a collection of spatial dataframes that are variations of a single dataframe and check to see
+        which geometry actually fall within the borders of its preset country. If an entry is verified as correct
+        with its original inputs, the other variations will not be appended
+
+        Generate two dataframes, one that combines all of the entries in the collection that are marked as verified,
+        and one for entries whose respective geometry does not correspond to the preset country for any variation.
+
+        ..note::
+            The function assumes that the first dataframe in the collection is the original dataframe.
+
+            The verified dataframe might contain multiple entries for the same initial entry if two or more of its
+            variations match its preset country.
+
+            :func:`~experiment.GeocodeValidator.flip_coords` should be called first to generate the dataframe collection
+            to optimize this function.
+
+        :param eval_col: name of the column to distinguish between entries (should be a column in all of the dataframes).
+        :type eval_col: str
+        :param all_geodata: collection of spatial dataframes.
+        :type all_geodata: list or set of geopandas.GeoDataFrames
+        :param shapedata: shapefile dataframe.
+        :type shapedata: geopandas.GeoDataFrame
+        :return: two dataframes, one with verified entries, and one with invalid entries.
+        :rtype: tuple of (geopandas.GeoDataFrame, geopandas.GeoDataFrame)
+        """
+        matched_dfs = []
+
+        orig_input_df = all_geodata[0]
+        alt_input_df = pd.DataFrame()
+        alt_input_df = alt_input_df.append(all_geodata[1:], sort=False)
+        eval_dfs = [orig_input_df, alt_input_df]
+
+        for i in range(len(eval_dfs)):
+            df = self.read_data(eval_dfs[i], {eval_col})
+
+            if i > 0:
+                df = df[~df[eval_col].isin(matched_dfs[0][eval_col])]
+
+            df = self.check_country_geom(df, shapedata)
+            matched_dfs.append(df)
+            df.to_csv('flip_' + str(i) + '.csv', index=False)
+
+        matched_data = pd.DataFrame()
+        matched_data = matched_data.append(matched_dfs, sort=False)
+
+        remaining_data = orig_input_df[~orig_input_df[eval_col].isin(matched_data[eval_col])]
+        remaining_data.to_csv('invalid_locations.csv', index=False)
+        matched_data.to_csv('logged_locations.csv', index=False)
+
+        return matched_data, remaining_data
 
     def geocode_locations(self, data, loc_col, ctry_col):
         """
@@ -420,8 +465,6 @@ class GeocodeValidator:
         :return: two dataframes, one with all of the locations that Photon was able to find, and one with locations that
                  could not be queried.
         :rtype: tuple of (DataFrame, DataFrame)
-        :raises TypeError: if a different type is passed for `data` or the file extension is not .csv or .xlsx.
-        :raises KeyError: if any of the column names cannot be found in `data`.
 
         .. note::
             Returned locations might not be 100% accurate.
@@ -479,68 +522,22 @@ class GeocodeValidator:
 
         return gdf, idf
 
-    def check_multiple(self, eval_col, all_geodata, shapedata):
-        """
-        Take in a collection of spatial dataframes that are variations of a single dataframe and check to see
-        which geometry actually fall within the borders of its preset country. If an entry is verified as correct
-        with its original inputs, the other variations will not be appended
+    def cell_in_table(self, data, val, col):
+        df = self.read_data(data, {col})
 
-        Generate two dataframes, one that combines all of the entries in the collection that are marked as verified,
-        and one for entries whose respective geometry does not correspond to the preset country for any variation.
+        regex = re.compile(' \(\d\)')
 
-        ..note::
-            The function assumes that the first dataframe in the collection is the original dataframe.
+        indices = []
 
-            The verified dataframe might contain multiple entries for the same initial entry if two or more of its
-            variations match its preset country.
-
-            :func:`~experiment.GeocodeValidator.flip_coords` should be called first to generate the dataframe collection
-            to optimize this function.
-
-        :param eval_col: name of the column to distinguish between entries (should be a column in all of the dataframes).
-        :type eval_col: str
-        :param all_geodata: collection of spatial dataframes.
-        :type all_geodata: list or set of geopandas.GeoDataFrames
-        :param shapedata: shapefile dataframe.
-        :type shapedata: geopandas.GeoDataFrame
-        :return: two dataframes, one with verified entries, and one with invalid entries.
-        :rtype: tuple of (geopandas.GeoDataFrame, geopandas.GeoDataFrame)
-        :raises KeyError: if `eval_col` cannot be found in `data`.
-        """
-        matched_dfs = []
-        orig_input_df = all_geodata[0]
-        for i in range(len(all_geodata)):
-            start = timeit.default_timer()
-            df = self.read_data(all_geodata[i], {eval_col})
-            if i == 0:
-                df = self.check_country_geom(df, shapedata)
-
-            else:
-                df = df[~df[eval_col].isin(matched_dfs[0][eval_col])]
-                df = self.check_country_geom(df, shapedata)
-
-            matched_dfs.append(df)
-            df.to_csv('flip_' + str(i) + '.csv', index=False)
-
-            stop = timeit.default_timer()
-            print(stop-start)
-
-        matched_data = pd.DataFrame(columns=list(orig_input_df.columns))
-
-        for data in matched_dfs:
-            matched_data = matched_data.append(data, sort=True, ignore_index=True)
-
-        remaining_data = orig_input_df[~orig_input_df[eval_col].isin(matched_data[eval_col])]
-        remaining_data.to_csv('invalid_locations.csv', index=False)
-        matched_data.to_csv('logged_locations.csv', index=False)
-
-        return matched_data, remaining_data
+        if pd.notnull(val):
+            if isinstance(val, float):
 
 
+begin = timeit.default_timer()
 start = timeit.default_timer()
 
 gv = GeocodeValidator()
-mf = gv.process_shapefile('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/resources/ne_50m_admin_0_countries')
+mf = gv.process_shapefile('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/resources/mapinfo')
 shp = gv.get_shape(mf['shp'])
 prj = gv.get_projection(mf['prj'])
 print('removing coords')
@@ -555,16 +552,20 @@ data_dict = gv.flip_coords(with_cc, 'Latitude', 'Longitude', prj)
 
 print('checking')
 
-# 14 seconds version
-# gv.check_multiple('Location', data_dict, shp)
-
-# 10 seconds version
-# file = pd.DataFrame()
-# for i in range(len(data_dict)):
-#     if i > 0:
-#         file = file.append(data_dict[i])
-#
-# res = gv.check_multiple('Location', [data_dict[0], file], shp)
+# 10-13 seconds version
 
 stop = timeit.default_timer()
 print(stop - start)
+
+print('geocoding')
+start = timeit.default_timer()
+
+res = gv.check_multiple('Location', data_dict, shp)
+pending = res[1].append(filtered[1])
+
+gv.geocode_locations(pending, 'Location', 'Country')
+
+stop = timeit.default_timer()
+print(stop - start)
+end = timeit.default_timer()
+print(end-begin)
