@@ -22,6 +22,7 @@ class Modifier:
     def __init__(self, incorrect_locs=None, correct_locs=None, geocoded_locs=None):
         self.to_check = None
         cwd = os.getcwd()
+        self.modded_path = cwd
         try:
             print('Reading in incorrect locations.')
             if incorrect_locs:
@@ -73,8 +74,8 @@ class Modifier:
         desc_list.append(keep_desc)
         return command_list, desc_list, help_command
 
-    def run(self, lat_col='Latitude', lng_col='Longitude', rec_lat_col='temp_lat',
-            rec_lng_col='temp_lng', cc_col='ISO3', country_col='Country', loc_col='Location',
+    def run(self, lat_col='Latitude', lng_col='Longitude', rec_lat_col='Flipped_Lat',
+            rec_lng_col='Flipped_Lng', cc_col='ISO3', country_col='Country', loc_col='Location',
             reg_col='Region', geoc_rec_lng_col='Geocoded_Lat', geoc_rec_lat_col='Geocoded_Lng'):
         """
         Iterate over cleaned data file and prompt user to confirm changes. Changes are then stored
@@ -91,24 +92,40 @@ class Modifier:
         columns = [lat_col, lng_col, country_col, loc_col, cc_col, rec_lat_col, rec_lng_col,
                    reg_col, 'Address']
 
-        confirmed_data = pd.DataFrame(columns=columns)
+        geoc_columns = [lat_col, lng_col, country_col, loc_col, cc_col, geoc_rec_lat_col, geoc_rec_lng_col,
+                   reg_col, 'Address']
+
+        # confirmed_data = pd.DataFrame(columns=columns)
 
         print('Running')
         print('Commands')
         print('===========')
         for i in range(len(command_list)):
             print(command_list[i] + ': ' + desc_list[i])
-        confirmed_data = confirmed_data.append(self.__run_loop(columns, self.to_check, maker, command_list, desc_list,
+        flipped_data = self.__run_loop(self.to_check, maker, command_list, desc_list,
                                                                lat_col, lng_col, rec_lat_col, rec_lng_col, country_col,
-                                                               loc_col), sort=True)
-        confirmed_data = confirmed_data.append(self.__run_loop(columns, self.to_check_geocoded, maker, command_list,
+                                                               loc_col)
+
+        geocoded_data = self.__run_loop(self.to_check_geocoded, maker, command_list,
                                                                desc_list, lat_col, lng_col, geoc_rec_lat_col,
-                                                               geoc_rec_lng_col, country_col, loc_col), sort=True)
+                                                               geoc_rec_lng_col, country_col, loc_col)
+        flipped_data[1].to_csv(path_or_buf=str(os.path.normpath(os.path.join(self.modded_path, 'flipped_updated.csv'))),
+                               sep=',', index=False)
+        geocoded_data[1].to_csv(path_or_buf=str(os.path.normpath(os.path.join(self.modded_path, 'geocoded_updated.csv'))),
+                               sep=',', index=False)
+        flipped_data = pd.DataFrame(flipped_data[0], columns=columns)
+        geocoded_data = pd.DataFrame(geocoded_data[0], columns=geoc_columns)
+        confirmed_data = flipped_data.append(geocoded_data, sort=True)
+        # print(modified_data)
+        # confirmed_data = confirmed_data.append(data=data, columns=columns, sort=True)
+        # confirmed_data = confirmed_data.append(self.__run_loop(columns, self.to_check_geocoded, maker, command_list,
+        #                                                        desc_list, lat_col, lng_col, geoc_rec_lat_col,
+        #                                                        geoc_rec_lng_col, country_col, loc_col), sort=True)
 
         print('All rows checked. Saving.')
         self.save_file(confirmed_data)
 
-    def __run_loop(self, cols, this_check, maker, command_list, desc_list, lat_col, lng_col, rec_lat_col, rec_lng_col,
+    def __run_loop(self, this_check, maker, command_list, desc_list, lat_col, lng_col, rec_lat_col, rec_lng_col,
                    country_col, loc_col):
         """
         Private method to construct and run the loop over entries that require validation.
@@ -117,7 +134,7 @@ class Modifier:
 
         :return: The pandas DataFrame of confirmed locations up to this point.
         """
-        temp_confirmed = pd.DataFrame(columns=cols)
+        temp_confirmed = []
         for (index, row) in this_check.iterrows():
             if row['Type'] == 'Flipped' or row['Type'] == 'Geocoded':    # Only run if data has been modified.
                 print(row[loc_col] + ', ' + row[country_col])
@@ -140,19 +157,23 @@ class Modifier:
                     row[lat_col] = row[rec_lat_col]
                     row[lng_col] = row[rec_lng_col]
                     row['Type'] = 'Verified'
-                    temp_confirmed = temp_confirmed.append(row)
-                elif user_input == maker[0][1]:     # TOSS: Don't use suggested value, but don't mark as correct.
+                    temp_confirmed.append(row)
+                    this_check.drop(index, inplace=True)
+                elif user_input == maker[0][1]:     # TOSS: Don't use suggested value, but don't mark as correct. Keep it in the incorrects.
                     print('Tossing')
-                    temp_confirmed = temp_confirmed.append(row)
-                elif user_input == maker[0][3]:
+                    temp_confirmed.append(row)
+                elif user_input == maker[0][3]:     # KEEP: Don't use the suggested value, mark it as correct. Remove from incorrects.
                     print('Keeping')
                     row['Type'] = 'Verified'
-                    temp_confirmed = temp_confirmed.append(row)
+                    temp_confirmed.append(row)
+                    this_check.drop(index, inplace=True)
                 elif user_input == maker[0][2]:    # EXIT: Stop editing and save new file now.
                     print('Stopping')
                     break
 
-        return temp_confirmed
+        # temp_confirmed = pd.DataFrame(data=temp_confirmed, columns=cols)
+
+        return temp_confirmed, this_check
 
     def save_file(self, confirmed_data, file_path=None):
         """
