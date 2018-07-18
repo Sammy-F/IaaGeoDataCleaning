@@ -53,6 +53,21 @@ pending = res[1].append(filtered[1])
 gv.geocode_locations(pending, 'Location', 'Country')
 ```
 
+A courtesy class, Modifier, has been included to allow the user to update data based on file output suggestions from GeocodeValidator in the command line.
+The run() method can take optional arguments to define custom column names if needed. The method outputs a file with
+the updated corrects locations csv file, as well as updated geocoded and incorrect location files with the validated
+locations removed. 
+
+```
+from IaaGeoDataCleaning.library.CleaningUtils.DataModifier import Modifier
+
+modifier = Modifier(incorrect_locs='path/to/incorrects.csv', 
+                    correct_locs='path/to/corrects.csv',
+                    geocoded_locs='path/to/geocodeds.csv')
+modifier.run()
+```
+
+
 To interact with the database, ```import IaaGeoDataCleaning.ConnectionUtils.DatabaseConnector.DatabaseConnector as DatabaseConnector``` and ```import IaaGeoDataCleaning.ConnectionUtils.Table.Table as Table```. Instantiate a DatabaseConnector and a Table. If loading data from an existing table, the Table's
 name should be passed as the name of the existing table. Otherwise, choose an appropriate unique name. A Connection must also be instantiated using one of 
 DatabaseConnector's getConnect methods.
