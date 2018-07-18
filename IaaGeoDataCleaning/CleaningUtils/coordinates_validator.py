@@ -8,10 +8,11 @@ from shapely.geometry import Point, Polygon, MultiPolygon
 import country_converter as coco
 from itertools import product
 import re
-from Misc.convert_df_crs import *
 
-
-def process_shapefile(shapefile):
+cwd = os.getcwd()
+dirpath = os.path.abspath(os.path.dirname(__file__))
+shapefile = str(os.path.abspath(os.path.join(dirpath, '..', '..', 'resources', 'mapinfo')))
+def process_shapefile(shapefile=shapefile):
     """
     Take in a shapefile directory and parse the filepath to each file in the directory.
 
@@ -653,51 +654,46 @@ def query_data(data, query_dict, excl=False):
             return res_df.drop_duplicates(subset=eval_cols)
     return res_df
 
+def convert_df_crs(df, out_crs=4326):
+    """Change projection from input projection to provided crs (defaults to 4326)"""
+    import pyproj
+    from functools import partial
+    from shapely.ops import transform
+    import geopandas as gp
 
-# begin = timeit.default_timer()
-# start = timeit.default_timer()
-#
-# gv = GeocodeValidator()
-# mf = gv.process_shapefile('D:\\PyCharm Projects\\IaaGeoDataCleaning\\resources\\mapinfo')
-# shp = gv.get_shape(mf['shp'])
-# prj = gv.get_projection(mf['prj'])
-# print('removing coords')
-# filtered = gv.filter_data_without_coords('D:\\PyCharm Projects\\IaaGeoDataCleaning\\tblLocation\\verified_entriesm.csv',
-#                                          'Latitude', 'Longitude')
-# with_coords = filtered[0]
-# print('adding cc')
-# with_cc = gv.add_country_code(with_coords, 'Country')
-#
-# print('flipping')
-# data_dict = gv.flip_coords(with_cc, 'Latitude', 'Longitude', prj)
-#
-# print('checking')
-#
-# # 10-13 seconds version
-#
-# stop = timeit.default_timer()
-# print(stop - start)
-#
-# print('geocoding')
-# start = timeit.default_timer()
-#
-# res = gv.check_multiple('Location', data_dict, shp, shape_geom_col='geometry', shape_ctry_col='NAME', shape_iso2_col='ISO2', shape_iso3_col='ISO3')
-# pending = res[1].append(filtered[1])
-#
-# gv.geocode_locations(pending, 'Location', 'Country')
-#
-# stop = timeit.default_timer()
-# print(stop - start)
-# end = timeit.default_timer()
-# print(end-begin)
+    def get_formatted_crs(crs):
+        """Determine correct crs string based on provided [out_crs] value"""
+        try:
+           new_crs = pyproj.Proj(crs)
+           dcs = new_crs
+           ncrs_str = crs
+        except AttributeError:
+           try:
+               float(crs)
+               new_crs = 'epsg:{}'.format(crs)
+               dcs = pyproj.Proj(init=new_crs)
+               ncrs_str = {'init': '{}'.format(new_crs)}
+           except TypeError:
+               new_crs = crs
+               dcs = pyproj.Proj(init=new_crs)
+               ncrs_str = {'init': new_crs}
+        except RuntimeError:
+           new_crs = out_crs
+           dcs = pyproj.Proj(new_crs)
+           ncrs_str = new_crs
 
-# cwd = os.getcwd()
-# flip_path = str(os.path.normpath(os.path.join(cwd, 'flip_0.csv')))
-# gv = GeocodeValidator()
-# df = gv.read_file(flip_path)
-#
-# res = gv.query_data(data=df, query_dict={'Country': 'angola', 'Latitude': [-15]}, excl=True)
-# for i, r in res.iterrows():
-#     print(r)
-#     print('-----------------------------')
+        return dcs, new_crs, ncrs_str
 
+    scs, _,_ = get_formatted_crs(df.crs)
+    # get destination coordinate system, new coordinate system and new crs string
+    dcs, new_crs, ncrs_str = get_formatted_crs(out_crs)
+    project = partial(
+       pyproj.transform,
+       scs,  # source coordinate system
+       dcs)  # destination coordinate system
+    new_df = df[[x for x in df.columns if x != 'geometry']]
+    new_geom = [transform(project, x) for x in df.geometry.values]
+    new_df['geometry'] = new_geom
+    new_spat_df = gp.GeoDataFrame(new_df, crs=ncrs_str, geometry='geometry')
+    # return dataframe with converted geometry
+    return new_spat_df

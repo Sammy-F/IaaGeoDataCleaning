@@ -14,16 +14,10 @@ to_do.txt
 # Python egg metadata, regenerated from source files by setuptools.
 /*.egg-info
 
-# Virtualnev
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-/env
-env
-
 # Checkpoints
 .ipynb_checkpoints
+
+# Data
+/tblLocation
+/resources/txt
+/resources/xlsx
