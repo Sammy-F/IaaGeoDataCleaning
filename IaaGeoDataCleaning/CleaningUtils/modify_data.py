@@ -1,3 +1,5 @@
+#! python
+
 import os
 import pandas as pd
 
@@ -191,9 +193,7 @@ class Modifier:
 
         print('Complete. Closing program.')
 
-
-if __name__ == "__main__":
-
+def run_mod():
     print('Define data filepaths')
 
     correct = input('Path to existing correct data: ')

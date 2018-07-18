@@ -27,6 +27,11 @@ setup(name='IaaGeoDataCleaning',
       author_email='gonsongo@macalester.edu',
       license='BSD',
       packages=find_packages(),
+      entry_points={
+          'console_scripts': [
+              'iaa_modify = IaaGeoDataCleaning.CleaningUtils.modify_data:run_mod',
+          ],
+      },
       package_data={'IaaGeoDataCleaning': data_dirs,
                     'IaaGeoDataCleaniing.CleaningUtils': data_dirs,
                     'IaaGeoDataCleaning.ConnectionUtils': data_dirs},
