@@ -1,10 +1,10 @@
-.. IaaGeoDataCleaning documentation master file, created by
-   sphinx-quickstart on Wed Jul 11 10:49:57 2018.
+.. IaaGeoData documentation master file, created by
+   sphinx-quickstart on Wed Jul 18 13:51:40 2018.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to IaaGeoDataCleaning's documentation!
-==============================================
+Welcome to IaaGeoData's documentation!
+======================================
 
 .. toctree::
    :maxdepth: 2

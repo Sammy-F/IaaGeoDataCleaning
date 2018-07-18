@@ -8,6 +8,7 @@ import re
 import string
 import country_converter as coco
 
+
 class GeoDataCorrector:
     """
     Handles cleaning of data whose lat/lng values due not match its input country.

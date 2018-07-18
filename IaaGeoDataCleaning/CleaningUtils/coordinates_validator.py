@@ -46,7 +46,7 @@ def get_shape(shp_file):
     Generate a GeoDataFrame from .shp file.
 
     :param shp_file: filepath to the .shp file.
-    :type shp_file: str
+    :type shp_file: str.
     :return:
     :rtype: geopandas.GeoDataFrame
     """
@@ -58,9 +58,9 @@ def get_projection(prj_file):
     Determine the EPSG code from .prj file.
 
     :param prj_file: filepath to the .prj file.
-    :type prj_file: str
+    :type prj_file: str.
     :return:
-    :rtype: int
+    :rtype: int.
 
     >>> get_projection('/home/example_user/example_shapefile_directory/example_shapefile.prj')
     4326
@@ -75,9 +75,9 @@ def read_file(file_path):
     Generate a dataframe from .xlsx or .csv file.
 
     :param file_path:
-    :type file_path: str
+    :type file_path: str.
     :return:
-    :rtype: DataFrame
+    :rtype: DataFrame.
     :raise TypeError: if the file extension is not .csv or .xlsx.
     """
     if file_path.endswith('.xlsx'):
@@ -94,11 +94,11 @@ def check_columns(df, cols):
     Check to see whether the column names are present in the dataframe.
 
     :param df:
-    :type df: DataFrame or geopandas.GeoDataFrame
+    :type df: DataFrame or geopandas.GeoDataFrame.
     :param cols:
-    :type cols: list of str or set of str
+    :type cols: list of str or set of str.
     :return:
-    :rtype: bool
+    :rtype: bool.
     :raise KeyError: if any of the column names cannot be found in the dataframe.
 
     >>> import pandas as pd
@@ -130,9 +130,8 @@ def read_data(data, cols):
     :param data: filepath (.csv or .xlsx extension) or dataframe.
     :type data: str, DataFrame, geopandas.GeoDataFrame
     :param cols:
-    :type cols: list of str or set of str
-    :return:
-    :rtype: DataFrame if the type of `data` is DataFrame or str, or geopandas.GeoDataFrame if it is geopandas.GeoDataFrame
+    :type cols: list of str or set of str.
+    :rtype: DataFrame if the type of `data` is DataFrame or str, or geopandas.GeoDataFrame if it is geopandas.GeoDataFrame.
     :raises TypeError: if a different type is passed for `data` or the file extension is not .csv or .xlsx.
 
     >>> import pandas as pd
@@ -158,14 +157,14 @@ def filter_data_without_coords(data, lat_col, lng_col):
     Generate two dataframes to filter out entries where no latitudinal and longitudinal data was entered.
 
     :param data: filepath (.csv or .xlsx extension) or dataframe.
-    :type data: str, DataFrame, geopandas.GeoDataFrame
+    :type data: str, DataFrame, geopandas.GeoDataFrame.
     :param lat_col: name of the latitude column.
-    :type lat_col: str
+    :type lat_col: str.
     :param lng_col: name of the longitude column.
-    :type lng_col: str
+    :type lng_col: str.
     :return: two dataframes, one with all of the entries with coordinates and one of those without.
     :rtype: tuple of (DataFrame, DataFrame) if the type of `data` is DataFrame or str,
-            tuple of (geopandas.GeoDataFrame, geopandas.GeoDataFrame) if it is geopandas.GeoDataFrame
+            tuple of (geopandas.GeoDataFrame, geopandas.GeoDataFrame) if it is geopandas.GeoDataFrame.
 
     .. note::
         Entries whose latitude and longitude are both 0 are considered as having no inputs.
@@ -196,12 +195,12 @@ def add_country_code(data, ctry_col):
     Append two new columns to the data containing each entry's country's country codes.
 
     :param data: filepath (.csv or .xlsx extension) or dataframe.
-    :type data: str, DataFrame, geopandas.GeoDataFrame
+    :type data: str, DataFrame, geopandas.GeoDataFrame.
     :param ctry_col: name of the country column.
-    :type ctry_col: str
+    :type ctry_col: str.
     :return: the modified dataframe with the new columns 'ISO2' and 'ISO3' for two-letter and three-letter country
              codes respectively.
-    :rtype: DataFrame if the type of `data` is DataFrame or str, or geopandas.GeoDataFrame if it is geopandas.GeoDataFrame
+    :rtype: DataFrame if the type of `data` is DataFrame or str, or geopandas.GeoDataFrame if it is geopandas.GeoDataFrame.
 
     >>> import pandas as pd
     >>> df = pd.DataFrame({'City': ['Rabat', 'Lyon', 'Cleveland'],
@@ -229,15 +228,15 @@ def flip_coords(data, lat_col, lng_col, prj=4326):
      (lng, lat), (lng, -lat), (-lng, lat), (-lng, -lat)].
 
     :param data: filepath (.csv or .xlsx extension) or dataframe.
-    :type data: str, DataFrame, geopandas.GeoDataFrame
+    :type data: str, DataFrame, geopandas.GeoDataFrame.
     :param lat_col: name of the latitude column.
-    :type lat_col: str
+    :type lat_col: str.
     :param lng_col: name of the longitude column.
-    :type lng_col: str
+    :type lng_col: str.
     :param prj: EPSG code for spatial projection.
-    :type prj: int
+    :type prj: int.
     :return:
-    :rtype: list of geopandas.GeoDataFrame
+    :rtype: list of geopandas.GeoDataFrame.
 
     >>> import pandas as pd
     >>> df = pd.DataFrame({'City': ['Addis Ababa', 'Manila', 'Vienna', 'Mexico City', 'Puebla'],
@@ -286,11 +285,11 @@ def cross_check(data, first_col, second_col):
     Filter all of the entries in `data` whose values for ``first_col`` and ``second_col`` are equal.
 
     :param data: filepath (.csv or .xlsx extension) or dataframe.
-    :type data: str or DataFrame
+    :type data: str or DataFrame.
     :param first_col: column name.
-    :type first_col: str
+    :type first_col: str.
     :param second_col: column name.
-    :type second_col: str
+    :type second_col: str.
     :return: all qualified entries.
     :rtype: DataFrame
 
@@ -313,15 +312,15 @@ def to_gdf(data, lat_col, lng_col, prj=4326):
     Generate a geopandas.GeoDataFrame.
 
     :param data: filepath (.csv or .xlsx extension) or dataframe.
-    :type data: str or DataFrame
+    :type data: str or DataFrame.
     :param lat_col: name of the latitude column.
-    :type lat_col: str
+    :type lat_col: str.
     :param lng_col: name of the longitude column.
-    :type lng_col: str
+    :type lng_col: str.
     :param prj: EPSG code for spatial projection.
-    :type prj: int
+    :type prj: int.
     :return:
-    :rtype: geopandas.GeoDataFrame
+    :rtype: geopandas.GeoDataFrame.
     """
     df = read_data(data, {lat_col, lng_col})
     df.fillna({lat_col: 0, lng_col: 0}, inplace=True)
@@ -336,15 +335,15 @@ def export_df(df, extension, filename, directory):
     Export the dataframe to a file.
 
     :param df:
-    :type df: DataFrame or geopandas.GeoDataFrame
+    :type df: DataFrame or geopandas.GeoDataFrame.
     :param extension: outfile extension (.csv or .xlsx).
-    :type extension: str
+    :type extension: str.
     :param filename: outfile name (without extension).
-    :type filename: str
+    :type filename: str.
     :param directory: outfile directory.
-    :type directory: str
+    :type directory: str.
     :return: absolute filepath to outfile.
-    :rtype: str
+    :rtype: str.
     :raise TypeError: if file extension is not csv or  xlsx.
     """
     extension = extension.lower().replace('.', '')
@@ -363,11 +362,11 @@ def rtree(geodata, polygon):
     Use geopandas's R-tree implementation to find all of the locations in `geodata` in the spatial polygon.
 
     :param geodata: dataframe of locations with spatial geometries.
-    :type geodata: geopandas.GeoDataFrame
+    :type geodata: geopandas.GeoDataFrame.
     :param polygon:
-    :type polygon: shapely.geometry.Polygon
+    :type polygon: shapely.geometry.Polygon.
     :return: all of the entries with locations in the polygon.
-    :rtype: geopandas.GeoDataFrame
+    :rtype: geopandas.GeoDataFrame.
     """
     if not isinstance(geodata, gpd.GeoDataFrame):
         raise TypeError('Data must be a geopandas GeoDataFrame.')
@@ -389,17 +388,17 @@ def check_country_geom(geodata, geo_iso2_col, shapedata, shape_geom_col, shape_i
     iterating through a shapefile of country polygons and finding locations that are in each polygon.
 
     :param geodata: dataframe of locations with spatial geometries.
-    :type geodata: geopandas.GeoDataFrame
+    :type geodata: geopandas.GeoDataFrame.
     :param geo_iso2_col: name of the two-letter country code column in dataframe.
-    :type geo_iso2_col: str
+    :type geo_iso2_col: str.
     :param shapedata: shapefile dataframe.
-    :type shapedata: geopandas.GeoDataFrame
+    :type shapedata: geopandas.GeoDataFrame.
     :param shape_geom_col: name of the geometry column in the shapefile dataframe.
-    :type shape_geom_col: str
+    :type shape_geom_col: str.
     :param shape_iso2_col: name of the two-letter country code column in the shapefile dataframe.
-    :type shape_iso2_col: str
+    :type shape_iso2_col: str.
     :return: all of the entries that were verified as having their location in the respective indicated country.
-    :rtype: geopandas.GeoDataFrame
+    :rtype: geopandas.GeoDataFrame.
     """
     outdata = pd.DataFrame(columns=list(geodata.columns))
     shapedata = read_data(shapedata, {shape_geom_col, shape_iso2_col})
@@ -425,6 +424,21 @@ def check_data_geom(eval_col, iso2_col, all_geodata, shapedata, shape_geom_col, 
     Generate two dataframes, one that combines all of the entries in the collection that are marked as verified,
     and one for entries whose respective geometry does not correspond to the preset country for any variation.
 
+    :param eval_col: name of the column to distinguish between entries (should be a column in all of the dataframes).
+    :type eval_col: str.
+    :param iso2_col: name of the two-letter country code column.
+    :type iso2_col: str.
+    :param all_geodata: collection of spatial dataframes.
+    :type all_geodata: geopandas.GeoDataFrame or list or set of geopandas.GeoDataFrame
+    :param shapedata: shapefile dataframe.
+    :type shapedata: geopandas.GeoDataFrame.
+    :param shape_geom_col: name of the geometry column in the shapefile dataframe.
+    :type shape_geom_col: str.
+    :param shape_iso2_col: name of the two-letter country code column in the shapefile dataframe.
+    :type shape_iso2_col: str.
+    :return: two dataframes, one with verified entries, and one with invalid entries.
+    :rtype: tuple of (geopandas.GeoDataFrame, geopandas.GeoDataFrame).
+
     ..note::
         The function assumes that the first dataframe in the collection is the original dataframe.
 
@@ -434,21 +448,6 @@ def check_data_geom(eval_col, iso2_col, all_geodata, shapedata, shape_geom_col, 
         :func:`~experiment.GeocodeValidator.flip_coords` should be called first to generate the dataframe collection
         to optimize this function.
 
-    :param eval_col: name of the column to distinguish between entries (should be a column in all of the dataframes).
-    :type eval_col: str
-    :param iso2_col: name of the two-letter country code column.
-    :type iso2_col: str
-    :param all_geodata: collection of spatial dataframes.
-    :type all_geodata: geopandas.GeoDataFrame or list or set of geopandas.GeoDataFrame
-    :param shapedata: shapefile dataframe.
-    :type shapedata: geopandas.GeoDataFrame
-    :param shape_geom_col: name of the geometry column in the shapefile dataframe.
-    :type shape_geom_col: str
-    :param shape_iso2_col: name of the two-letter country code column in the shapefile dataframe.
-    :type shape_iso2_col: str
-    :return: two dataframes, one with verified entries, and one with invalid entries.
-    :rtype: tuple of (geopandas.GeoDataFrame, geopandas.GeoDataFrame)
-    :return:
     """
 
     if not isinstance(all_geodata, list):
@@ -492,14 +491,14 @@ def geocode_coordinates(data, loc_col, ctry_col):
     Three new fields representing the returned address, latitude, and longitude are appended to geocoded entries.
 
     :param data: filepath (.csv or .xlsx extension) or dataframe.
-    :type data: str or DataFrame
+    :type data: str or DataFrame.
     :param loc_col: name of the location (lower level) column.
-    :type loc_col: str
+    :type loc_col: str.
     :param ctry_col: name of the location (higher level) column.
-    :type ctry_col: str
+    :type ctry_col: str.
     :return: two dataframes, one with all of the locations that Photon was able to find, and one with locations that
              could not be queried.
-    :rtype: tuple of (DataFrame, DataFrame)
+    :rtype: tuple of (DataFrame, DataFrame).
 
     .. note::
         Returned locations might not be 100% accurate.
@@ -564,15 +563,14 @@ def cell_in_data(data, val, col, abs_tol=0.1):
     case insensitive.
 
     :param data: filepath (.csv or .xlsx extension) or dataframe.
-    :type data: str or DataFrame
+    :type data: str or DataFrame.
     :param val: queried value.
-    :type val: str, int, or float
+    :type val: str, int, or float.
     :param col: name of queried column.
-    :type col: str
+    :type col: str.
     :param abs_tol:
-    :type abs_tol: float
+    :type abs_tol: float.
     :return: all entries meeting the condition.
-    :rtype: DataFrame
 
     >>> import pandas as pd
     >>> df = pd.DataFrame({'City': ['Birmingham', 'Brussels', 'Berlin'], 'Country': ['England', 'Belgium', 'Germany'],
@@ -608,13 +606,12 @@ def query_data(data, query_dict, excl=False):
     that meets at least one of the conditions.
 
     :param data: filepath (.csv or .xlsx extension) or dataframe.
-    :type data: str or DataFrame
+    :type data: str or DataFrame.
     :param query_dict: dictionary whose keys are column names mapping to the queried value(s).
-    :type query_dict: dict of {str: list, str: set, or str: str}
+    :type query_dict: dict of {str: list, str: set, or str: str}.
     :param excl: exclusive or inclusive search.
-    :type excl: bool
+    :type excl: bool.
     :return: all entries meeting the condition(s).
-    :rtype: DataFrame
 
     >>> import pandas as pd
     >>> df = pd.DataFrame({'City': ['Birmingham', 'Brussels', 'Berlin'], 'Country': ['England', 'Belgium', 'Germany'],

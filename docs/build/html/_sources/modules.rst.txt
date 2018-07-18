@@ -1,10 +1,7 @@
-library
-=======
+IaaGeoDataCleaning
+==================
 
 .. toctree::
    :maxdepth: 4
 
-   CleaningUtils
-   ConnectionUtils
-   MapTools
-   TableUtils
+   IaaGeoDataCleaning

@@ -10,11 +10,11 @@ class MapTool:
         Initialize a MapTool object to plot locational data points.
 
         :param shapedir: filepath to shapefile directory.
-        :type shapedir: str
+        :type shapedir: str.
         :param shape_geom: name of the geometry column.
-        :type shape_geom: str
+        :type shape_geom: str.
         :param shape_iso2: name of the two-letter country code column.
-        :type shape_iso2: str
+        :type shape_iso2: str.
         """
 
         shape_dict = process_shapefile(shapedir)
@@ -30,7 +30,7 @@ class MapTool:
         :param center:
         :param zoom:
         :return:
-        :rtype: folium.Map
+        :rtype: folium.Map.
         """
         return Map(location=center, zoom_start=zoom)
 
@@ -39,11 +39,11 @@ class MapTool:
         Format the locational description for popup icon.
 
         :param loc: location or lower level locational information.
-        :type loc: str
+        :type loc: str.
         :param ctry: country or higher level locational information.
-        :type ctry: str
+        :type ctry: str.
         :return:
-        :rtype: tuple of (str, str)
+        :rtype: tuple of (str, str).
         """
         if not loc:
             loc = ''
@@ -75,15 +75,15 @@ class MapTool:
         Create a single popup located at the passed coordinates.
 
         :param lat:
-        :type lat: int or float
+        :type lat: int or float.
         :param lng:
-        :type lng: int or float
+        :type lng: int or float.
         :param desc: description of the popup.
-        :type desc: str
+        :type desc: str.
         :param clr:
-        :type clr: str
+        :type clr: str.
         :return:
-        :rtype: folium.Marker
+        :rtype: folium.Marker.
         """
         if not desc:
             desc = str((lat, lng))
@@ -95,21 +95,21 @@ class MapTool:
         Create markers for all of the locational data points.
 
         :param data: filepath (.csv or .xlsx extension) or dataframe.
-        :type data: str or DataFrame
+        :type data: str or DataFrame.
         :param loc_col: name of location column.
-        :type loc_col: str
+        :type loc_col: str.
         :param ctry_col: name of country column.
-        :type ctry_col: str
+        :type ctry_col: str.
         :param lat_col: name of latitude column.
-        :type lat_col: str
+        :type lat_col: str.
         :param lng_col: name of longitude column.
-        :type lng_col: str
+        :type lng_col: str.
         :param clr: color of the markers.
-        :type clr: str
+        :type clr: str.
         :param as_cluster: indicate whether the markers will be saved in a cluster or not.
-        :type as_cluster: bool
+        :type as_cluster: bool.
         :return: all of the created markers.
-        :rtype: list of folium.Marker if ``as_cluster=False`` or a folium.MarkerCluster if ``as_cluster=True``
+        :rtype: list of folium.Marker if ``as_cluster=False`` or a folium.MarkerCluster if ``as_cluster=True``.
         """
         df = read_data(data, {loc_col, ctry_col, lat_col, lng_col})
 
@@ -166,7 +166,7 @@ class MapTool:
         :param lng_col:
         :param clr:
         :param plot_alt: indicate whether to geocode and create markers for alternative coordinates.
-        :type plot_alt: bool
+        :type plot_alt: bool.
         :return:
         """
         df = read_data(data, {loc_col, ctry_col, lat_col, lng_col})
@@ -194,14 +194,15 @@ class MapTool:
         markers for any point that meets at least one of the conditions.
 
         :param data:
-        :param query_dict:
+        :param query_dict: dictionary whose keys are column names mapping to the queried value(s).
+        :type query_dict: dict of {str: list, str: set, or str: str}.
         :param loc_col:
         :param ctry_col:
         :param lat_col:
         :param lng_col:
         :param excl:
         :param excl: exclusive or inclusive plotting.
-        :type excl: bool
+        :type excl: bool.
         :param clr:
         :return:
         """
@@ -222,7 +223,7 @@ class MapTool:
         :param clr0:
         :param clr1:
         :return: two markers for the coordinates.
-        :rtype: tuple of (folium.Marker, folium.Marker)
+        :rtype: tuple of (folium.Marker, folium.Marker).
         """
         df = read_data(data, {lat0_col, lng0_col, lat1_col, lng1_col})
 
@@ -239,9 +240,9 @@ class MapTool:
         Create markers for two sets of coordinates.
 
         :param coords0:
-        :type coords0: tuple or list of int or float
+        :type coords0: tuple or list of int or float.
         :param coords1:
-        :type coords1: tuple or list of int or float
+        :type coords1: tuple or list of int or float.
         :param clr0:
         :param clr1:
         :return:
@@ -268,11 +269,11 @@ class MapTool:
         :param lng_col:
         :param desc0: description of the marker for the center.
         :param clr0: color of the center.
-        :type clr0: str
+        :type clr0: str.
         :param clr1: color of the other markers.
-        :type clr1: str
+        :type clr1: str.
         :return:
-        :rtype: list of folium.Marker
+        :rtype: list of folium.Marker.
         """
         df = read_data(data, {loc_col, ctry_col, lat_col, lng_col})
         if not desc0:
