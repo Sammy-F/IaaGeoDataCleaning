@@ -24,21 +24,37 @@ From source:
 ```
 python setup.py install
 ```
+
+If you encounter gdal installation error on a Mac when using setup.py, a workaround is to set python path: 
+
+``` 
+PYTHONPATH=/usr/local/Cellar/gdal/2.3.0/lib/python3.6/site-packages
+```
+ 
 ### Usage
 To perform data cleaning on a .csv or .xlsx file, ```from IaaGeoDataCleaning.CleaningUtils.coordinates_validator import *```.
 Data cleaning on a file can be performed by instantiating a GeocodeValidator Object and running the following series of methods.
 For a full walkthrough of various methods, go to [examples.ipynb](IaaGeoDataCleaning/CleaningUtils/examples.ipynb). 
 
 ```
+# First, we read in and process the shapefile. 
+# In order to clean, we need to standardize the projection, so we project it to SRID4326.
 shape_dir = '/path/to/map/dir'
 shape_dict = process_shapefile(shape_dir)
 shape_gdf = get_shape(shape_dict['shp'])
 crs = get_projection(shape_dict['prj'])
 
+# We read in the data file.
+# We require a country code, so if there isn't a country code row in the original data,
+# we pass it to add_country_code() to add the code, determined from the recorded country.
 df = read_file('/path/to/data.xlsx')
 cc_df = add_country_code(data=df, ctry_col='Country')
+
+# We can filter out some data by removing all those entries that have no lat/lng
 filtered_df = filter_data_without_coords(data=cc_df, lat_col='Latitude', lng_col='Longitude')
 
+# We want to check common errors caused by lat/lng being flipped, so we generate a
+# list of possible coordinates.
 coords_gdf_list = flip_coords(data=cc_df, lat_col='Latitude', lng_col='Longitude', prj=crs)
 
 res = check_data_geom(eval_col='Location', iso2_col='ISO2', all_geodata=coords_gdf_list[0], 

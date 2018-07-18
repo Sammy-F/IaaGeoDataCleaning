@@ -62,10 +62,9 @@ class Modifier:
         desc_list.append(keep_desc)
         return command_list, desc_list, help_command
 
-    def run(self, lat_col='Latitude', lng_col='Longitude', rec_lat_col='Flipped_Lat',
+    def run(self, output_directory, lat_col='Latitude', lng_col='Longitude', rec_lat_col='Flipped_Lat',
             rec_lng_col='Flipped_Lng', country_col='Country', loc_col='Location',
-            geoc_rec_lng_col='Geocoded_Lat', geoc_rec_lat_col='Geocoded_Lng',
-            output_directory=None):
+            geoc_rec_lng_col='Geocoded_Lat', geoc_rec_lat_col='Geocoded_Lng'):
         """
         Iterate over cleaned data file and prompt user to confirm changes. Changes are then stored
         in a new file and the original data is left untouched.
@@ -109,8 +108,8 @@ class Modifier:
             geocoded_data[1].to_csv(path_or_buf=str(os.path.normpath(os.path.join(self.modded_path, 'geocoded_updated.csv'))),
                                    sep=',', index=False)
         else:
-            flipped_data[1].to_csv(output_directory, sep=',', index=False)
-            geocoded_data[1].to_csv(path_or_buf=output_directory, sep=',', index=False)
+            flipped_data[1].to_csv(str(os.path.join(output_directory, 'flipped_updated.csv')), sep=',', index=False)
+            geocoded_data[1].to_csv(path_or_buf=str(os.path.join(output_directory, 'geocoded_updated.csv')), sep=',', index=False)
         flipped_data = pd.DataFrame(flipped_data[0], columns=columns)
         geocoded_data = pd.DataFrame(geocoded_data[0], columns=geoc_columns)
         confirmed_data = flipped_data.append(geocoded_data, sort=True)
@@ -169,7 +168,7 @@ class Modifier:
 
         return temp_confirmed, this_check
 
-    def __save_file(self, confirmed_data, file_path=None):
+    def __save_file(self, confirmed_data, file_path):
         """
         Save the passed dataframe as a new .csv file.
 
@@ -177,29 +176,18 @@ class Modifier:
         :param file_path: File path including file name with .csv extension. Dictates where output is placed.
         """
         self.corrects = self.corrects.append(confirmed_data, sort=True)    # Append our validated data to the data
-        if not file_path:   # If filepath for output is not passed, create one
-            file_path = ''
-            unique = False
-            cwd = os.getcwd()
-            i = 0
-            while not unique:  # Ensure we write to a new file and don't overwrite an existing one.
-                file_path = os.path.normpath(os.path.join(cwd, 'correctlocation_' + str(i) + '.csv'))
-                if not os.path.exists(file_path):
-                    unique = True
-                    file_path = str(file_path)
-                i += 1
-        else:
-            unique = False
-            cwd = os.getcwd()
-            i = 0
-            while not unique:  # Ensure we write to a new file and don't overwrite an existing one.
-                file_path = os.path.join(file_path, 'correctlocation_' + str(i) + '.csv')
-                if not os.path.exists(file_path):
-                    unique = True
-                    file_path = str(file_path)
-                i += 1
-        print('Creating file at ' + file_path)
-        self.corrects.to_csv(path_or_buf=file_path, sep=',', index=False)
+        print(file_path)
+        unique = False
+        i = 0
+        test_file_path=''
+        while not unique:  # Ensure we write to a new file and don't overwrite an existing one.
+            test_file_path = os.path.join(file_path, 'correctlocation_' + str(i) + '.csv')
+            if not os.path.exists(file_path):
+                unique = True
+                test_file_path = str(test_file_path)
+            i += 1
+        print('Creating file at ' + test_file_path)
+        self.corrects.to_csv(path_or_buf=test_file_path, sep=',', index=False)
 
         print('Complete. Closing program.')
 
@@ -230,4 +218,4 @@ if __name__ == "__main__":
                 country_col=country_col, loc_col=loc_col, geoc_rec_lng_col=geoc_rec_lng_col,
                 geoc_rec_lat_col=geoc_rec_lat_col)
     else:
-        mod.run()
+        mod.run('D:\PyCharm Projects\IaaGeoDataCleaning')

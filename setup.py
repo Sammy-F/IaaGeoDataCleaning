@@ -30,7 +30,7 @@ setup(name='IaaGeoDataCleaning',
       package_data={'IaaGeoDataCleaning': data_dirs,
                     'IaaGeoDataCleaniing.CleaningUtils': data_dirs,
                     'IaaGeoDataCleaning.ConnectionUtils': data_dirs},
-      install_requires=['numpy', 'pandas', 'geopandas', 'fiona', 'gdal', 'shapely', 'psycopg2',
-                        'geopy', 'xlrd', 'folium', 'country_converter', 'sridentify', 'pyproj'],
+      install_requires=['numpy', 'pandas', 'geocoder', 'geopandas', 'fiona', 'gdal', 'psycopg2', 'geopy', 'xlrd',
+                        'folium', 'country_converter', 'sridentify', 'rtree', 'shapely'],
       zip_safe=False)
 
