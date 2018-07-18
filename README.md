@@ -26,7 +26,8 @@ python setup.py install
 ```
 ### Usage
 To perform data cleaning on a .csv or .xlsx file, ```from IaaGeoDataCleaning.CleaningUtils.coordinates_validator import *```.
-Data cleaning on a file can be performed by instantiating a GeocodeValidator Object and running the following series of methods. 
+Data cleaning on a file can be performed by instantiating a GeocodeValidator Object and running the following series of methods.
+For a full walkthrough of various methods, go to [examples.ipynb](IaaGeoDataCleaning/CleaningUtils/examples.ipynb). 
 
 ```
 shape_dir = '/path/to/map/dir'
@@ -44,19 +45,7 @@ res = check_data_geom(eval_col='City', iso2_col='ISO2', all_geodata=orig_gdf, sh
                       shape_geom_col='geometry', shape_iso2_col='ISO2')
 corrects = res[0]
 
-res = check_data_geom(eval_col='City', iso2_col='ISO2', all_geodata=coords_gdf_list, shapedata=shape_gdf,
-                     shape_geom_col='geometry', shape_iso2_col='ISO2')]
-flipped = res[0]
-
-geocoded_res = geocode_coordinates(data=res[1], loc_col='City', ctry_col='Country')
-geocoded = geocoded_res[0]
-
-complete = res[0].append(geocoded_res[0], sort=False, ignore_index=True)
-
 export_df(corrects, '.csv', 'corrects.csv', 'path/to/dir')
-export_df(flipped, '.csv', 'fips.csv', 'path/to/dir')
-export_df(geocoded, '.csv', 'geocodeds.csv', 'path/to/dir')
-export_df(complete, '.csv', 'complete.csv', 'path/to/dir')
 ```
 
 A courtesy class, Modifier, has been included to allow the user to update data based on file output suggestions from GeocodeValidator in the command line.
