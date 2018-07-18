@@ -1,17 +1,23 @@
 import os
+import re
+import pyproj
 import geopandas as gpd
 import pandas as pd
 import geopy as gp
 from geopy.exc import GeocoderTimedOut
 from sridentify import Sridentify
 from shapely.geometry import Point, Polygon, MultiPolygon
+from shapely.ops import transform
 import country_converter as coco
 from itertools import product
-import re
+from functools import partial
+
 
 cwd = os.getcwd()
 dirpath = os.path.abspath(os.path.dirname(__file__))
 shapefile = str(os.path.abspath(os.path.join(dirpath, '..', '..', 'resources', 'mapinfo')))
+
+
 def process_shapefile(shapefile=shapefile):
     """
     Take in a shapefile directory and parse the filepath to each file in the directory.
@@ -325,17 +331,6 @@ def to_gdf(data, lat_col, lng_col, prj=4326):
     return gpd.GeoDataFrame(df, crs=crs, geometry=geometry)
 
 
-def convert_crs(gdf, out_crs=4326):
-    """
-    Credit!!
-
-    :param gdf:
-    :param out_crs:
-    :return:
-    """
-    return convert_df_crs(gdf, out_crs)
-
-
 def export_df(df, extension, filename, directory):
     """
     Export the dataframe to a file.
@@ -644,6 +639,7 @@ def query_data(data, query_dict, excl=False):
         else:
             res_df = res_df.append(cell_in_data(df, val, col), sort=False)
 
+    # TODO: fix handling of non-hashable types.
     if len(res_df) > 0:
         eval_cols = list(res_df.columns)
         if "geometry" in eval_cols:
@@ -654,13 +650,9 @@ def query_data(data, query_dict, excl=False):
             return res_df.drop_duplicates(subset=eval_cols)
     return res_df
 
+
 def convert_df_crs(df, out_crs=4326):
     """Change projection from input projection to provided crs (defaults to 4326)"""
-    import pyproj
-    from functools import partial
-    from shapely.ops import transform
-    import geopandas as gp
-
     def get_formatted_crs(crs):
         """Determine correct crs string based on provided [out_crs] value"""
         try:
@@ -694,6 +686,6 @@ def convert_df_crs(df, out_crs=4326):
     new_df = df[[x for x in df.columns if x != 'geometry']]
     new_geom = [transform(project, x) for x in df.geometry.values]
     new_df['geometry'] = new_geom
-    new_spat_df = gp.GeoDataFrame(new_df, crs=ncrs_str, geometry='geometry')
+    new_spat_df = gpd.GeoDataFrame(new_df, crs=ncrs_str, geometry='geometry')
     # return dataframe with converted geometry
     return new_spat_df
