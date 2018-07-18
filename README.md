@@ -84,8 +84,10 @@ Initial development by  [Jonathan Scott](https://github.com/lionely/).
 
 Many thanks to [Getiria Onsongo](https://github.com/getiria-onsongo/) for his mentorship in development of this package.
 
+This package comes with world border data from [thematicmapping.org](http://thematicmapping.org/downloads/world_borders.php).
+
 ### Contributing
 
 Feel free to submit a pull request if you have any features/improvements to add to the package. \
-You can also open an issue if you ecountered a problem while using the current core functionalities of the package.
+You can also open an issue if you encountered a problem while using the current core functionalities of the package.
 
