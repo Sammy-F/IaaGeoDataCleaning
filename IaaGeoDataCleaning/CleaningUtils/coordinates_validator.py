@@ -361,7 +361,6 @@ def export_df(df, extension, filename, directory):
         raise TypeError('Unsupported file type.')
     return file_path
 
-
 def rtree(geodata, polygon):
     """
     Use geopandas's R-tree implementation to find all of the locations in `geodata` in the spatial polygon.

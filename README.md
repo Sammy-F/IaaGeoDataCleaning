@@ -41,11 +41,11 @@ filtered_df = filter_data_without_coords(data=cc_df, lat_col='Latitude', lng_col
 
 coords_gdf_list = flip_coords(data=cc_df, lat_col='Latitude', lng_col='Longitude', prj=crs)
 
-res = check_data_geom(eval_col='City', iso2_col='ISO2', all_geodata=orig_gdf, shapedata=shape_gdf, 
-                      shape_geom_col='geometry', shape_iso2_col='ISO2')
+res = check_data_geom(eval_col='Location', iso2_col='ISO2', all_geodata=coords_gdf_list[0], 
+                     shapedata=shape_gdf, shape_geom_col='geometry', shape_iso2_col='ISO2')
 corrects = res[0]
 
-export_df(corrects, '.csv', 'corrects.csv', 'path/to/dir')
+export_df(corrects, '.csv', 'corrects', 'path/to/dir')
 ```
 
 A courtesy class, Modifier, has been included to allow the user to update data based on file output suggestions from GeocodeValidator in the command line.
