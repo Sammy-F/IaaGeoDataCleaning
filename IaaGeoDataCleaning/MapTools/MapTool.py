@@ -2,7 +2,7 @@ from folium import Map, Marker, Icon, Popup
 from folium.plugins import MarkerCluster
 import pandas as pd
 import math
-from library.CleaningUtils.experiment import GeocodeValidator
+from IaaGeoDataCleaning.CleaningUtils.experiment import GeocodeValidator
 import country_converter as coco
 
 

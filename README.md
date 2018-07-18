@@ -32,7 +32,7 @@ python setup.py install
 ```
 ### Usage
 To perform data cleaning on a .csv or .xlsx file, ```from IaaGeoDataCleaning.library.CleaningUtils.experiment import GeocodeValidator```.
-Data cleaning on a file can be performed by instantiating a GeocodeValidator Object and running the following series of methods. \
+Data cleaning on a file can be performed by instantiating a GeocodeValidator Object and running the following series of methods. 
 
 ```
 gv = GeocodeValidator()
@@ -40,7 +40,7 @@ mf = gv.process_shapefile('path/to/shapefile/directory')
 shp = gv.get_shape(mf['shp'])
 prj = gv.get_projection(mf['prj'])
 
-filtered = gv.filter_data_without_coords('D:\\PyCharm Projects\\IaaGeoDataCleaning\\tblLocation\\verified_entriesm.csv',
+filtered = gv.filter_data_without_coords('path/to/data.xlsx',
                                          'Latitude', 'Longitude')
 with_coords = filtered[0]
 with_cc = gv.add_country_code(with_coords, 'Country')

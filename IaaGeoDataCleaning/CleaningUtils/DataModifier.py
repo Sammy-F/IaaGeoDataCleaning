@@ -9,7 +9,7 @@ Facilitates modification of data after cleaning. Can be run as main or imported 
 a Modifier class.
 """
 
-
+tmod = mod(incorrect_locs='D:\\PyCharm Projects\\IaaGeoDataCleaning\\IaaGeoDataCleaning\\CleaningUtils\\flip_1.csv', correct_locs='D:\\PyCharm Projects\\IaaGeoDataCleaning\\IaaGeoDataCleaning\\CleaningUtils\\flip_0.csv', geocoded_locs='D:\\PyCharm Projects\\IaaGeoDataCleaning\\IaaGeoDataCleaning\\CleaningUtils\\geocoded_locations.csv')
 class Modifier:
     """
     Class acts as a command line tool for accepting/rejecting proposed data modifications and
@@ -132,7 +132,8 @@ class Modifier:
 
         :params: Uses column names defined in run()
 
-        :return: The pandas DataFrame of confirmed locations up to this point.
+        :return: The pandas DataFrame of confirmed locations up to this point as well as the modified
+        DataFrame for the incorrects/geocoded entries.
         """
         temp_confirmed = []
         for (index, row) in this_check.iterrows():
