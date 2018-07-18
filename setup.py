@@ -25,6 +25,7 @@ for xls in xlsx:
 
 print(find_packages())
 
+#TODO: Add package_data for other packages
 long_description = 'Detects potentially corrupt lat/lng data.'
 setup(name='IaaGeoDataCleaning',
       version='0.1.4',
