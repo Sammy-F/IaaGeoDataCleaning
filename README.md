@@ -20,12 +20,6 @@ Marks indices of potentially corrupt entries and allows the user to determine wh
 * folium
 
 ### Installation
-
-Using pip:
-```
-pip install IaaGeoDataCleaning
-```
-
 From source:
 ```
 python setup.py install
