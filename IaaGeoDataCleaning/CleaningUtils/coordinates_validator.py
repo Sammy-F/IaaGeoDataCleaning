@@ -644,10 +644,13 @@ def query_data(data, query_dict, excl=False):
             res_df = res_df.append(cell_in_data(df, val, col), sort=False)
 
     if len(res_df) > 0:
+        eval_cols = list(res_df.columns)
+        if "geometry" in eval_cols:
+            eval_cols.remove("geometry")
         if excl:
-            return res_df[res_df.duplicated(subset=list(query_dict.keys()))]
+            return res_df[res_df.duplicated(subset=eval_cols)]
         else:
-            return res_df.drop_duplicates(subset=list(query_dict.keys()))
+            return res_df.drop_duplicates(subset=eval_cols)
     return res_df
 
 
@@ -697,3 +700,4 @@ def query_data(data, query_dict, excl=False):
 # for i, r in res.iterrows():
 #     print(r)
 #     print('-----------------------------')
+

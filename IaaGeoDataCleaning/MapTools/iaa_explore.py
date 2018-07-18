@@ -124,7 +124,7 @@ class MapTool:
                 lng = row[lng_col]
                 location = self.format_popup(row[loc_col], row[ctry_col])
 
-                marker = self.plot_point(lat=lat, lng=lng, desc='%s, %s' % (location[0], location[1]), clr=clr)
+                marker = self.plot_point(lat=lat, lng=lng, desc='%s, %s - (%.2f, %.2f)' % (location[0], location[1], lat, lng), clr=clr)
                 if as_cluster:
                     marker.add_to(markers)
                 else:
@@ -145,9 +145,10 @@ class MapTool:
         :param as_cluster:
         :return:
         """
-        gdf = to_gdf(data, lat_col, lng_col, self.prj)
-        gdf['ISO2'] = coco.convert(gdf[ctry_col])
-        correct_df = check_country_geom(gdf, 'ISO2', self.shape_gdf, self.shape_geom, self.shape_iso2)
+        df = read_data(data, {loc_col, ctry_col, lat_col, lng_col})
+        gdf = to_gdf(df, lat_col, lng_col, self.prj)
+        gdf['ISO2'] = coco.convert(list(gdf[ctry_col]), to='ISO2')
+        correct_df = check_data_geom(loc_col, 'ISO2', gdf, self.shape_gdf, self.shape_geom, self.shape_iso2)[0]
         return self.plot_all_data(correct_df, loc_col, ctry_col, lat_col, lng_col, clr, as_cluster)
 
     def plot_potential_errors(self, data, loc_col, ctry_col, lat_col, lng_col, clr='lightred', plot_alt=False):
@@ -168,24 +169,19 @@ class MapTool:
         :type plot_alt: bool
         :return:
         """
-        gdf = to_gdf(data, lat_col, lng_col, self.prj)
-        gdf['ISO2'] = coco.convert(gdf[ctry_col])
-        with_country = check_country_geom(gdf, 'ISO2', self.shape_gdf, self.shape_geom, self.shape_iso2)
+        df = read_data(data, {loc_col, ctry_col, lat_col, lng_col})
+        gdf = to_gdf(df, lat_col, lng_col, self.prj)
+        gdf['ISO2'] = coco.convert(list(gdf[ctry_col]), to='ISO2')
+        checked_df = check_data_geom(loc_col, 'ISO2', gdf, self.shape_gdf, self.shape_geom, self.shape_iso2)
 
-        potential_errors = gdf[~gdf[loc_col].isin(with_country[loc_col])]
+        potential_errors = checked_df[1]
 
-        markers = []
-
-        for index, row in potential_errors.iterrows():
-            location = self.format_popup(row[loc_col], row[ctry_col])
-            marker = self.plot_point(lat=row[lat_col], lng=row[lng_col], desc='%s, %s' % (location[0], location[1]),
-                                     clr=clr)
-
-            markers.append(marker)
+        markers = self.plot_all_data(checked_df[1], loc_col, ctry_col, lat_col, lng_col, clr=clr, as_cluster=False)
 
         if plot_alt:
-            alt_df = geocode_coordinates(potential_errors, loc_col, ctry_col)
-            alt_markers = self.plot_all_data(alt_df, loc_col, ctry_col, 'Geocoded_Lat', 'Geocoded_Lng', as_cluster=False)
+            alt_df = geocode_coordinates(potential_errors, loc_col, ctry_col)[0]
+            alt_markers = self.plot_all_data(alt_df, loc_col, ctry_col, 'Geocoded_Lat', 'Geocoded_Lng',
+                                             as_cluster=False, clr='lightgreen')
             markers = markers + alt_markers
 
         return markers
@@ -198,6 +194,7 @@ class MapTool:
         markers for any point that meets at least one of the conditions.
 
         :param data:
+        :param query_dict:
         :param loc_col:
         :param ctry_col:
         :param lat_col:
@@ -209,7 +206,7 @@ class MapTool:
         :return:
         """
         res_df = query_data(data, query_dict, excl)
-        return self.plot_all_data(res_df, ctry_col, lat_col, lng_col, loc_col, clr, False)
+        return self.plot_all_data(res_df, loc_col, ctry_col, lat_col, lng_col, clr, False)
 
     def plot_pair_in_df(self, data, index, lat0_col, lng0_col, lat1_col, lng1_col, clr0='lightblue', clr1='darkblue'):
         """
@@ -319,3 +316,5 @@ class MapTool:
             return self.plot_within_range(df, coords, radius, loc_col, ctry_col, lat_col, lng_col, location, clr0, clr1)
         else:
             raise KeyError('Index out of range.')
+
+
