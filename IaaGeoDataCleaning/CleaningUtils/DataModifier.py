@@ -9,7 +9,6 @@ Facilitates modification of data after cleaning. Can be run as main or imported 
 a Modifier class.
 """
 
-tmod = mod(incorrect_locs='D:\\PyCharm Projects\\IaaGeoDataCleaning\\IaaGeoDataCleaning\\CleaningUtils\\flip_1.csv', correct_locs='D:\\PyCharm Projects\\IaaGeoDataCleaning\\IaaGeoDataCleaning\\CleaningUtils\\flip_0.csv', geocoded_locs='D:\\PyCharm Projects\\IaaGeoDataCleaning\\IaaGeoDataCleaning\\CleaningUtils\\geocoded_locations.csv')
 class Modifier:
     """
     Class acts as a command line tool for accepting/rejecting proposed data modifications and
@@ -19,26 +18,15 @@ class Modifier:
     :param correct_locs: String filepath to locations that have been verified.
     :param geocoded_locs: String filepath to geocoded locations
     """
-    def __init__(self, incorrect_locs=None, correct_locs=None, geocoded_locs=None):
+    def __init__(self, incorrect_locs, correct_locs, geocoded_locs):
         self.to_check = None
         cwd = os.getcwd()
         self.modded_path = cwd
         try:
-            print('Reading in incorrect locations.')
-            if incorrect_locs:
-                self.to_check = pd.read_csv(incorrect_locs)
-            else:   # Point to file w/ suggested changes.
-                self.to_check = pd.read_csv(str(os.path.normpath(os.path.join(cwd, 'logged_locations.csv'))))
-            print('Reading in correct locations.')
-            if correct_locs:
-                self.corrects = pd.read_csv(correct_locs)
-            else:
-                self.corrects = pd.read_csv(str(os.path.normpath(os.path.join(cwd, 'flip_0.csv'))))
-            print('Reading in geocoded locations.')
-            if geocoded_locs:
-                self.to_check_geocoded = pd.read_csv(geocoded_locs)
-            else:
-                self.to_check_geocoded = pd.read_csv(str(os.path.normpath(os.path.join(cwd, 'geocoded_locations.csv'))))
+            print('Reading in data files.')
+            self.corrects = pd.read_csv(correct_locs)
+            self.to_check = pd.read_csv(incorrect_locs)
+            self.to_check_geocoded = pd.read_csv(geocoded_locs)
         except OSError:
             print('Unable to find flipped coordinates files. Have you cleaned the data yet with a Geocode Validator?')
 
@@ -76,7 +64,8 @@ class Modifier:
 
     def run(self, lat_col='Latitude', lng_col='Longitude', rec_lat_col='Flipped_Lat',
             rec_lng_col='Flipped_Lng', cc_col='ISO3', country_col='Country', loc_col='Location',
-            reg_col='Region', geoc_rec_lng_col='Geocoded_Lat', geoc_rec_lat_col='Geocoded_Lng'):
+            reg_col='Region', geoc_rec_lng_col='Geocoded_Lat', geoc_rec_lat_col='Geocoded_Lng',
+            output_directory=None):
         """
         Iterate over cleaned data file and prompt user to confirm changes. Changes are then stored
         in a new file and the original data is left untouched.
@@ -109,21 +98,20 @@ class Modifier:
         geocoded_data = self.__run_loop(self.to_check_geocoded, maker, command_list,
                                                                desc_list, lat_col, lng_col, geoc_rec_lat_col,
                                                                geoc_rec_lng_col, country_col, loc_col)
-        flipped_data[1].to_csv(path_or_buf=str(os.path.normpath(os.path.join(self.modded_path, 'flipped_updated.csv'))),
-                               sep=',', index=False)
-        geocoded_data[1].to_csv(path_or_buf=str(os.path.normpath(os.path.join(self.modded_path, 'geocoded_updated.csv'))),
-                               sep=',', index=False)
+        if not output_directory:
+            flipped_data[1].to_csv(path_or_buf=str(os.path.normpath(os.path.join(self.modded_path, 'flipped_updated.csv'))),
+                                   sep=',', index=False)
+            geocoded_data[1].to_csv(path_or_buf=str(os.path.normpath(os.path.join(self.modded_path, 'geocoded_updated.csv'))),
+                                   sep=',', index=False)
+        else:
+            flipped_data[1].to_csv(output_directory, sep=',', index=False)
+            geocoded_data[1].to_csv(path_or_buf=output_directory, sep=',', index=False)
         flipped_data = pd.DataFrame(flipped_data[0], columns=columns)
         geocoded_data = pd.DataFrame(geocoded_data[0], columns=geoc_columns)
         confirmed_data = flipped_data.append(geocoded_data, sort=True)
-        # print(modified_data)
-        # confirmed_data = confirmed_data.append(data=data, columns=columns, sort=True)
-        # confirmed_data = confirmed_data.append(self.__run_loop(columns, self.to_check_geocoded, maker, command_list,
-        #                                                        desc_list, lat_col, lng_col, geoc_rec_lat_col,
-        #                                                        geoc_rec_lng_col, country_col, loc_col), sort=True)
 
         print('All rows checked. Saving.')
-        self.save_file(confirmed_data)
+        self.__save_file(confirmed_data, output_directory)
 
     def __run_loop(self, this_check, maker, command_list, desc_list, lat_col, lng_col, rec_lat_col, rec_lng_col,
                    country_col, loc_col):
@@ -176,7 +164,7 @@ class Modifier:
 
         return temp_confirmed, this_check
 
-    def save_file(self, confirmed_data, file_path=None):
+    def __save_file(self, confirmed_data, file_path=None):
         """
         Save the passed dataframe as a new .csv file.
 
@@ -191,6 +179,16 @@ class Modifier:
             i = 0
             while not unique:  # Ensure we write to a new file and don't overwrite an existing one.
                 file_path = os.path.normpath(os.path.join(cwd, 'correctlocation_' + str(i) + '.csv'))
+                if not os.path.exists(file_path):
+                    unique = True
+                    file_path = str(file_path)
+                i += 1
+        else:
+            unique = False
+            cwd = os.getcwd()
+            i = 0
+            while not unique:  # Ensure we write to a new file and don't overwrite an existing one.
+                file_path = os.path.join(file_path, 'correctlocation_' + str(i) + '.csv')
                 if not os.path.exists(file_path):
                     unique = True
                     file_path = str(file_path)
