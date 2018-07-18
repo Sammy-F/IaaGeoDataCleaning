@@ -63,8 +63,8 @@ class Modifier:
         return command_list, desc_list, help_command
 
     def run(self, lat_col='Latitude', lng_col='Longitude', rec_lat_col='Flipped_Lat',
-            rec_lng_col='Flipped_Lng', cc_col='ISO3', country_col='Country', loc_col='Location',
-            reg_col='Region', geoc_rec_lng_col='Geocoded_Lat', geoc_rec_lat_col='Geocoded_Lng',
+            rec_lng_col='Flipped_Lng', country_col='Country', loc_col='Location',
+            geoc_rec_lng_col='Geocoded_Lat', geoc_rec_lat_col='Geocoded_Lng',
             output_directory=None):
         """
         Iterate over cleaned data file and prompt user to confirm changes. Changes are then stored
@@ -78,12 +78,17 @@ class Modifier:
         command_list = maker[0]
         desc_list = maker[1]
 
-        columns = [lat_col, lng_col, country_col, loc_col, cc_col, rec_lat_col, rec_lng_col,
-                   reg_col, 'Address']
+        # columns = [lat_col, lng_col, country_col, loc_col, cc_col, rec_lat_col, rec_lng_col,
+        #            reg_col, 'Address']
+        #
+        # geoc_columns = [lat_col, lng_col, country_col, loc_col, cc_col, geoc_rec_lat_col, geoc_rec_lng_col,
+        #            reg_col, 'Address']
 
-        geoc_columns = [lat_col, lng_col, country_col, loc_col, cc_col, geoc_rec_lat_col, geoc_rec_lng_col,
-                   reg_col, 'Address']
+        columns = list(self.to_check_geocoded.columns.values)
+        geoc_columns = list(self.to_check.columns.values)
 
+        print(columns)
+        print(geoc_columns)
         # confirmed_data = pd.DataFrame(columns=columns)
 
         print('Running')
@@ -201,15 +206,13 @@ class Modifier:
 
 if __name__ == "__main__":
 
-    user_input = input('Define custom filepaths to data? (y/n) ')
-    if user_input == 'y':
-        correct = input('Path to existing correct data: ')
-        incorrect = input('Path to flipped data: ')
-        geocoded = input('Path to geocoded data: ')
+    print('Define data filepaths')
 
-        mod = Modifier(incorrect_locs=incorrect, geocoded_locs=geocoded, correct_locs=correct)
-    else:
-        mod = Modifier()
+    correct = input('Path to existing correct data: ')
+    incorrect = input('Path to flipped data: ')
+    geocoded = input('Path to geocoded data: ')
+
+    mod = Modifier(incorrect_locs=incorrect, geocoded_locs=geocoded, correct_locs=correct)
 
     user_input = input('Define custom column names? (y/n) ')
     if user_input == 'y':
@@ -223,8 +226,8 @@ if __name__ == "__main__":
         reg_col = input('Region column name: ')
         geoc_rec_lng_col = input('Geocoded longitudes column: ')
         geoc_rec_lat_col = input('Geocoded latitudes column: ')
-        mod.run(lat_col=lat_col, lng_col=lng_col, rec_lat_col=rec_lat_col, rec_lng_col=rec_lng_col, cc_col=cc_col,
-                country_col=country_col, loc_col=loc_col, reg_col=reg_col, geoc_rec_lng_col=geoc_rec_lng_col,
+        mod.run(lat_col=lat_col, lng_col=lng_col, rec_lat_col=rec_lat_col, rec_lng_col=rec_lng_col,
+                country_col=country_col, loc_col=loc_col, geoc_rec_lng_col=geoc_rec_lng_col,
                 geoc_rec_lat_col=geoc_rec_lat_col)
     else:
         mod.run()

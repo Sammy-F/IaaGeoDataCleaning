@@ -25,26 +25,38 @@ From source:
 python setup.py install
 ```
 ### Usage
-To perform data cleaning on a .csv or .xlsx file, ```from IaaGeoDataCleaning.library.CleaningUtils.experiment import GeocodeValidator```.
+To perform data cleaning on a .csv or .xlsx file, ```from IaaGeoDataCleaning.CleaningUtils.coordinates_validator import *```.
 Data cleaning on a file can be performed by instantiating a GeocodeValidator Object and running the following series of methods. 
 
 ```
-gv = GeocodeValidator()
-mf = gv.process_shapefile('path/to/shapefile/directory')
-shp = gv.get_shape(mf['shp'])
-prj = gv.get_projection(mf['prj'])
+shape_dir = '/path/to/map/dir'
+shape_dict = process_shapefile(shape_dir)
+shape_gdf = get_shape(shape_dict['shp'])
+crs = get_projection(shape_dict['prj'])
 
-filtered = gv.filter_data_without_coords('path/to/data.xlsx',
-                                         'Latitude', 'Longitude')
-with_coords = filtered[0]
-with_cc = gv.add_country_code(with_coords, 'Country')
+df = read_file('/path/to/data.xlsx')
+cc_df = add_country_code(data=df, ctry_col='Country')
+filtered_df = filter_data_without_coords(data=cc_df, lat_col='Latitude', lng_col='Longitude')
 
-data_dict = gv.flip_coords(with_cc, 'Latitude', 'Longitude', prj)
+coords_gdf_list = flip_coords(data=cc_df, lat_col='Latitude', lng_col='Longitude', prj=crs)
 
-res = gv.check_multiple('Location', data_dict, shp, shape_geom_col='geometry', shape_ctry_col='NAME', shape_iso2_col='ISO2', shape_iso3_col='ISO3')
-pending = res[1].append(filtered[1])
+res = check_data_geom(eval_col='City', iso2_col='ISO2', all_geodata=orig_gdf, shapedata=shape_gdf, 
+                      shape_geom_col='geometry', shape_iso2_col='ISO2')
+corrects = res[0]
 
-gv.geocode_locations(pending, 'Location', 'Country')
+res = check_data_geom(eval_col='City', iso2_col='ISO2', all_geodata=coords_gdf_list, shapedata=shape_gdf,
+                     shape_geom_col='geometry', shape_iso2_col='ISO2')]
+flipped = res[0]
+
+geocoded_res = geocode_coordinates(data=res[1], loc_col='City', ctry_col='Country')
+geocoded = geocoded_res[0]
+
+complete = res[0].append(geocoded_res[0], sort=False, ignore_index=True)
+
+export_df(corrects, '.csv', 'corrects.csv', 'path/to/dir')
+export_df(flipped, '.csv', 'fips.csv', 'path/to/dir')
+export_df(geocoded, '.csv', 'geocodeds.csv', 'path/to/dir')
+export_df(complete, '.csv', 'complete.csv', 'path/to/dir')
 ```
 
 A courtesy class, Modifier, has been included to allow the user to update data based on file output suggestions from GeocodeValidator in the command line.
