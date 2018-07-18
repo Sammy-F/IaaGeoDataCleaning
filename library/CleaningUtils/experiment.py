@@ -319,7 +319,7 @@ class GeocodeValidator:
         :return:
         :rtype: geopandas.GeoDataFrame
         """
-        df = self.read_data(data, {lat_col, lng_col, 'Type'})
+        df = self.read_data(data, {lat_col, lng_col})
         df.fillna({lat_col: 0, lng_col: 0}, inplace=True)
         geometry = [Point(coords) for coords in zip(df[lng_col], df[lat_col])]
         crs = {'init': 'epsg:' + str(prj)}
@@ -624,47 +624,49 @@ class GeocodeValidator:
         return res_df
 
 
-# begin = timeit.default_timer()
-# start = timeit.default_timer()
-#
-# gv = GeocodeValidator()
-# mf = gv.process_shapefile('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/resources/mapinfo')
-# shp = gv.get_shape(mf['shp'])
-# prj = gv.get_projection(mf['prj'])
-# print('removing coords')
-# filtered = gv.filter_data_without_coords('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/resources/xlsx/tblLocation.xlsx',
-#                                          'Latitude', 'Longitude')
-# with_coords = filtered[0]
-# print('adding cc')
-# with_cc = gv.add_country_code(with_coords, 'Country')
-#
-# print('flipping')
-# data_dict = gv.flip_coords(with_cc, 'Latitude', 'Longitude', prj)
-#
-# print('checking')
-#
-# # 10-13 seconds version
-#
-# stop = timeit.default_timer()
-# print(stop - start)
-#
-# print('geocoding')
-# start = timeit.default_timer()
-#
-# res = gv.check_multiple('Location', data_dict, shp)
-# pending = res[1].append(filtered[1])
-#
-# gv.geocode_locations(pending, 'Location', 'Country')
-#
-# stop = timeit.default_timer()
-# print(stop - start)
-# end = timeit.default_timer()
-# print(end-begin)
+begin = timeit.default_timer()
+start = timeit.default_timer()
 
 gv = GeocodeValidator()
-df = gv.read_file('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning/library/CleaningUtils/flip_0.csv')
+mf = gv.process_shapefile('D:\\PyCharm Projects\\IaaGeoDataCleaning\\resources\\mapinfo')
+shp = gv.get_shape(mf['shp'])
+prj = gv.get_projection(mf['prj'])
+print('removing coords')
+filtered = gv.filter_data_without_coords('D:\\PyCharm Projects\\IaaGeoDataCleaning\\tblLocation\\verified_entriesm.csv',
+                                         'Latitude', 'Longitude')
+with_coords = filtered[0]
+print('adding cc')
+with_cc = gv.add_country_code(with_coords, 'Country')
 
-res = gv.query_data(data=df, query_dict={'Country': 'angola', 'Latitude': [-15]}, excl=True)
-for i, r in res.iterrows():
-    print(r)
-    print('-----------------------------')
+print('flipping')
+data_dict = gv.flip_coords(with_cc, 'Latitude', 'Longitude', prj)
+
+print('checking')
+
+# 10-13 seconds version
+
+stop = timeit.default_timer()
+print(stop - start)
+
+print('geocoding')
+start = timeit.default_timer()
+
+res = gv.check_multiple('Location', data_dict, shp, shape_geom_col='geometry', shape_ctry_col='NAME', shape_iso2_col='ISO2', shape_iso3_col='ISO3')
+pending = res[1].append(filtered[1])
+
+gv.geocode_locations(pending, 'Location', 'Country')
+
+stop = timeit.default_timer()
+print(stop - start)
+end = timeit.default_timer()
+print(end-begin)
+
+# cwd = os.getcwd()
+# flip_path = str(os.path.normpath(os.path.join(cwd, 'flip_0.csv')))
+# gv = GeocodeValidator()
+# df = gv.read_file(flip_path)
+#
+# res = gv.query_data(data=df, query_dict={'Country': 'angola', 'Latitude': [-15]}, excl=True)
+# for i, r in res.iterrows():
+#     print(r)
+#     print('-----------------------------')
