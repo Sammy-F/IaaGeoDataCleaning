@@ -5,7 +5,7 @@ from IaaGeoDataCleaning.CleaningUtils.coordinates_validator import *
 
 
 class MapTool:
-    def __init__(self, shapedir, shape_geom, shape_ctry, shape_iso2, shape_iso3):
+    def __init__(self, shapedir, shape_geom, shape_iso2):
         """
         Initialize a MapTool object to plot locational data points.
 
@@ -13,21 +13,15 @@ class MapTool:
         :type shapedir: str
         :param shape_geom: name of the geometry column.
         :type shape_geom: str
-        :param shape_ctry: name of the country column.
-        :type shape_ctry: str
         :param shape_iso2: name of the two-letter country code column.
         :type shape_iso2: str
-        :param shape_iso3: name of the three-letter country code column.
-        :type shape_iso3: str
         """
 
         shape_dict = process_shapefile(shapedir)
         self.shape_gdf = get_shape(shape_dict['shp'])
         self.prj = get_projection(shape_dict['prj'])
         self.shape_geom = shape_geom
-        self.shape_ctry = shape_ctry
         self.shape_iso2 = shape_iso2
-        self.shape_iso3 = shape_iso3
 
     def create_map(self, center=(0, 0), zoom=2):
         """
@@ -153,8 +147,7 @@ class MapTool:
         """
         gdf = to_gdf(data, lat_col, lng_col, self.prj)
         gdf['ISO2'] = coco.convert(gdf[ctry_col])
-        correct_df = check_country_geom(gdf, 'ISO2', self.shape_gdf, self.shape_geom, self.shape_ctry,
-                                        self.shape_iso2, self.shape_iso3)
+        correct_df = check_country_geom(gdf, 'ISO2', self.shape_gdf, self.shape_geom, self.shape_iso2)
         return self.plot_all_data(correct_df, loc_col, ctry_col, lat_col, lng_col, clr, as_cluster)
 
     def plot_potential_errors(self, data, loc_col, ctry_col, lat_col, lng_col, clr='lightred', plot_alt=False):
@@ -177,8 +170,7 @@ class MapTool:
         """
         gdf = to_gdf(data, lat_col, lng_col, self.prj)
         gdf['ISO2'] = coco.convert(gdf[ctry_col])
-        with_country = check_country_geom(gdf, 'ISO2', self.shape_gdf, self.shape_geom, self.shape_ctry,
-                                          self.shape_iso2, self.shape_iso3)
+        with_country = check_country_geom(gdf, 'ISO2', self.shape_gdf, self.shape_geom, self.shape_iso2)
 
         potential_errors = gdf[~gdf[loc_col].isin(with_country[loc_col])]
 

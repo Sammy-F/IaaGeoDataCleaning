@@ -645,9 +645,9 @@ def query_data(data, query_dict, excl=False):
 
     if len(res_df) > 0:
         if excl:
-            return res_df[res_df.duplicated()]
+            return res_df[res_df.duplicated(subset=list(query_dict.keys()))]
         else:
-            return res_df.drop_duplicates()
+            return res_df.drop_duplicates(subset=list(query_dict.keys()))
     return res_df
 
 
