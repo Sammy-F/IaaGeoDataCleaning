@@ -390,16 +390,14 @@ def check_country_geom(geodata, geo_iso2_col, shapedata, shape_geom_col, shape_i
 
     :param geodata: dataframe of locations with spatial geometries.
     :type geodata: geopandas.GeoDataFrame
+    :param geo_iso2_col: name of the two-letter country code column in dataframe.
+    :type geo_iso2_col: str
     :param shapedata: shapefile dataframe.
     :type shapedata: geopandas.GeoDataFrame
     :param shape_geom_col: name of the geometry column in the shapefile dataframe.
     :type shape_geom_col: str
-    :param shape_ctry_col: name of the country column in the shapefile dataframe.
-    :type shape_ctry_col: str
     :param shape_iso2_col: name of the two-letter country code column in the shapefile dataframe.
     :type shape_iso2_col: str
-    :param shape_iso3_col: name of the three-letter country code column in the shapefile dataframe.
-    :type shape_iso3_col: str
     :return: all of the entries that were verified as having their location in the respective indicated country.
     :rtype: geopandas.GeoDataFrame
     """
