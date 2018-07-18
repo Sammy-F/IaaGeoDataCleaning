@@ -10,6 +10,7 @@ Updated Wed July 18 2018
 from setuptools import setup, find_packages
 import os
 
+
 cur_directory_path = os.path.abspath(os.path.dirname(__file__))
 mapinfo = os.listdir(os.path.join(cur_directory_path, 'resources', 'mapinfo'))
 data_dirs = []
