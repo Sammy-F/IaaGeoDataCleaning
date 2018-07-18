@@ -1,3 +1,0 @@
-Address,Country,Flipped_Lat,Flipped_Lng,ISO2,ISO3,Index,Latitude,Location,Longitude,Poly_Ctry,Poly_ISO2,Poly_ISO3,Recorded_Lat,Recorded_Lng,Region,Type,geometry,ver_Index
-"Tamale, Ghana",Ghana,9.3972,-0.8329,GH,GHA,309,9.3972,Tamale,0.8329,Ghana,GH,GHA,9.3972,-0.8329,Western Africa,Flipped,POINT (-0.8329 9.3972),
-"Alupe, Kenya",Kenya,-0.5,34.11,KE,KEN,459,0.5,Alupe,34.11,Kenya,KE,KEN,-0.5,34.11,Eastern and Southern Africa,Flipped,POINT (34.11 -0.5),

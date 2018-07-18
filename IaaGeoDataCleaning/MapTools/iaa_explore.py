@@ -1,9 +1,7 @@
 from folium import Map, Marker, Icon, Popup
 from folium.plugins import MarkerCluster
-import pandas as pd
 import math
-from IaaGeoDataCleaning.CleaningUtils.experiment import GeocodeValidator
-import country_converter as coco
+from IaaGeoDataCleaning.CleaningUtils.coordinates_validator import *
 
 
 class MapTool:
@@ -22,11 +20,10 @@ class MapTool:
         :param shape_iso3: name of the three-letter country code column.
         :type shape_iso3: str
         """
-        self.validator = GeocodeValidator()
 
-        shape_dict = self.validator.process_shapefile(shapedir)
-        self.shape_gdf = self.validator.get_shape(shape_dict['shp'])
-        self.prj = self.validator.get_projection(shape_dict['prj'])
+        shape_dict = process_shapefile(shapedir)
+        self.shape_gdf = get_shape(shape_dict['shp'])
+        self.prj = get_projection(shape_dict['prj'])
         self.shape_geom = shape_geom
         self.shape_ctry = shape_ctry
         self.shape_iso2 = shape_iso2
@@ -120,7 +117,7 @@ class MapTool:
         :return: all of the created markers.
         :rtype: list of folium.Marker if ``as_cluster=False`` or a folium.MarkerCluster if ``as_cluster=True``
         """
-        df = self.validator.read_data(data, {loc_col, ctry_col, lat_col, lng_col})
+        df = read_data(data, {loc_col, ctry_col, lat_col, lng_col})
 
         if as_cluster:
             markers = MarkerCluster()
@@ -154,10 +151,10 @@ class MapTool:
         :param as_cluster:
         :return:
         """
-        gdf = self.validator.to_gdf(data, lat_col, lng_col, self.prj)
+        gdf = to_gdf(data, lat_col, lng_col, self.prj)
         gdf['ISO2'] = coco.convert(gdf[ctry_col])
-        correct_df = self.validator.check_country_geom(gdf, 'ISO2', self.shape_gdf, self.shape_geom, self.shape_ctry,
-                                                       self.shape_iso2, self.shape_iso3)
+        correct_df = check_country_geom(gdf, 'ISO2', self.shape_gdf, self.shape_geom, self.shape_ctry,
+                                        self.shape_iso2, self.shape_iso3)
         return self.plot_all_data(correct_df, loc_col, ctry_col, lat_col, lng_col, clr, as_cluster)
 
     def plot_potential_errors(self, data, loc_col, ctry_col, lat_col, lng_col, clr='lightred', plot_alt=False):
@@ -178,10 +175,10 @@ class MapTool:
         :type plot_alt: bool
         :return:
         """
-        gdf = self.validator.to_gdf(data, lat_col, lng_col, self.prj)
+        gdf = to_gdf(data, lat_col, lng_col, self.prj)
         gdf['ISO2'] = coco.convert(gdf[ctry_col])
-        with_country = self.validator.check_country_geom(gdf, 'ISO2', self.shape_gdf, self.shape_geom, self.shape_ctry,
-                                                         self.shape_iso2, self.shape_iso3)
+        with_country = check_country_geom(gdf, 'ISO2', self.shape_gdf, self.shape_geom, self.shape_ctry,
+                                          self.shape_iso2, self.shape_iso3)
 
         potential_errors = gdf[~gdf[loc_col].isin(with_country[loc_col])]
 
@@ -195,7 +192,7 @@ class MapTool:
             markers.append(marker)
 
         if plot_alt:
-            alt_df = self.validator.geocode_locations(potential_errors, loc_col, ctry_col)
+            alt_df = geocode_coordinates(potential_errors, loc_col, ctry_col)
             alt_markers = self.plot_all_data(alt_df, loc_col, ctry_col, 'Geocoded_Lat', 'Geocoded_Lng', as_cluster=False)
             markers = markers + alt_markers
 
@@ -219,7 +216,7 @@ class MapTool:
         :param clr:
         :return:
         """
-        res_df = self.validator.query_data(data, query_dict, excl)
+        res_df = query_data(data, query_dict, excl)
         return self.plot_all_data(res_df, ctry_col, lat_col, lng_col, loc_col, clr, False)
 
     def plot_pair_in_df(self, data, index, lat0_col, lng0_col, lat1_col, lng1_col, clr0='lightblue', clr1='darkblue'):
@@ -238,7 +235,7 @@ class MapTool:
         :return: two markers for the coordinates.
         :rtype: tuple of (folium.Marker, folium.Marker)
         """
-        df = self.validator.read_data(data, {lat0_col, lng0_col, lat1_col, lng1_col})
+        df = read_data(data, {lat0_col, lng0_col, lat1_col, lng1_col})
 
         if index < len(df):
             coords0 = (df.loc[index, lat0_col], df.loc[index, lng0_col])
@@ -288,7 +285,7 @@ class MapTool:
         :return:
         :rtype: list of folium.Marker
         """
-        df = self.validator.read_data(data, {loc_col, ctry_col, lat_col, lng_col})
+        df = read_data(data, {loc_col, ctry_col, lat_col, lng_col})
         if not desc0:
             desc0 = str(tuple(center))
         markers = []
@@ -323,7 +320,7 @@ class MapTool:
         :param clr1:
         :return:
         """
-        df = self.validator.read_data(data, {loc_col, ctry_col, lat_col, lng_col})
+        df = read_data(data, {loc_col, ctry_col, lat_col, lng_col})
         if index < len(df):
             coords = (df.loc[index, lat_col], df.loc[index, lng_col])
             location = '%s, %s' % (df.loc[index, loc_col], df.loc[index, ctry_col])
