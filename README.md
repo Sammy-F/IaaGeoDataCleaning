@@ -24,6 +24,13 @@ From source:
 ```
 python setup.py install
 ```
+
+If you encounter gdal installation error on a Mac when using setup.py, a workaround is to set python path: 
+
+``` 
+PYTHONPATH=/usr/local/Cellar/gdal/2.3.0/lib/python3.6/site-packages
+```
+ 
 ### Usage
 To perform data cleaning on a .csv or .xlsx file, ```from IaaGeoDataCleaning.CleaningUtils.coordinates_validator import *```.
 Data cleaning on a file can be performed by instantiating a GeocodeValidator Object and running the following series of methods.

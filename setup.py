@@ -31,6 +31,6 @@ setup(name='IaaGeoDataCleaning',
                     'IaaGeoDataCleaniing.CleaningUtils': data_dirs,
                     'IaaGeoDataCleaning.ConnectionUtils': data_dirs},
       install_requires=['numpy', 'pandas', 'geocoder', 'geopandas', 'fiona', 'gdal', 'psycopg2', 'geopy', 'xlrd',
-                        'folium', 'country_converter', 'sridentify', 'rtree'],
+                        'folium', 'country_converter', 'sridentify', 'rtree', 'shapely'],
       zip_safe=False)
 
