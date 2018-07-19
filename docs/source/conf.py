@@ -15,7 +15,9 @@
 import os
 import sys
 import sphinx_bootstrap_theme
-sys.path.append('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning')
+import os
+sys.path.append(str(os.path.join(__file__, '..', '..', '..')))
+# sys.path.append('/Users/thytnguyen/Desktop/geodata-2018/IaaGeoDataCleaning')
 
 
 
