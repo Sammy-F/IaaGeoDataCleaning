@@ -13,12 +13,7 @@ from itertools import product
 from functools import partial
 
 
-cwd = os.getcwd()
-dirpath = os.path.abspath(os.path.dirname(__file__))
-shapefile = str(os.path.abspath(os.path.join(dirpath, '..', '..', 'resources', 'mapinfo')))
-
-
-def process_shapefile(shapefile=shapefile):
+def process_shapefile(shapefile=None):
     """
     Take in a shapefile directory and parse the filepath to each file in the directory.
 
@@ -33,6 +28,9 @@ def process_shapefile(shapefile=shapefile):
      'shp': '/home/example_user/example_shapefile_directory/example_shapefile.shp',
      'shx': '/home/example_user/example_shapefile_directory/example_shapefile.shx'}
     """
+    dirpath = os.path.abspath(os.path.dirname(__file__))
+    if not shapefile:
+        shapefile = str(os.path.abspath(os.path.join(dirpath, '..', '..', 'resources', 'mapinfo')))
     file_dict = dict()
     for directory, _, files in os.walk(shapefile):
         for file in files:
