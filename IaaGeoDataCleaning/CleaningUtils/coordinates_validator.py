@@ -697,3 +697,19 @@ def convert_df_crs(df, out_crs=4326):
     new_spat_df = gp.GeoDataFrame(new_df, crs=ncrs_str, geometry='geometry')
     # return dataframe with converted geometry
     return new_spat_df
+
+
+shape_dict = process_shapefile()
+shape_gdf = get_shape(shape_dict['shp'])
+crs = get_projection(shape_dict['prj'])
+df = read_file('D:\\PyCharm Projects\\IaaGeoDataCleaning\\resources\\xlsx\\tblLocation.xlsx')
+cc_df = add_country_code(data=df, ctry_col='Country')
+filtered_df = filter_data_without_coords(data=cc_df, lat_col='Latitude', lng_col='Longitude')
+coords_gdf_list = flip_coords(data=cc_df, lat_col='Latitude', lng_col='Longitude', prj=crs)
+corrects = check_data_geom(eval_col='Location', iso2_col='ISO2', all_geodata=coords_gdf_list[0], shapedata=shape_gdf, shape_geom_col='geometry', shape_iso2_col='ISO2')
+flips = check_data_geom(eval_col='Location', iso2_col='ISO2', all_geodata=coords_gdf_list, shapedata=shape_gdf, shape_geom_col='geometry', shape_iso2_col='ISO2')
+geocoded = geocode_coordinates(data=flips[1], loc_col='Location', ctry_col='Country')
+flipped = flips[0]
+export_df(corrects, '.csv', 'corrects', 'D:\\PyCharm Projects\\IaaGeoDataCleaning')
+export_df(flipped, '.csv', 'flipped', 'D:\\PyCharm Projects\\IaaGeoDataCleaning')
+export_df(geocoded[0], '.csv', 'geocoded', 'D:\\PyCharm Projects\\IaaGeoDataCleaning')
