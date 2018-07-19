@@ -1,0 +1,436 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>IaaGeoDataCleaning.MapTools package &#8212; IaaGeoData  documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">IaaGeoData  documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="iaageodatacleaning-maptools-package">
+<h1>IaaGeoDataCleaning.MapTools package<a class="headerlink" href="#iaageodatacleaning-maptools-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-IaaGeoDataCleaning.MapTools.iaa_explore">
+<span id="iaageodatacleaning-maptools-iaa-explore-module"></span><h2>IaaGeoDataCleaning.MapTools.iaa_explore module<a class="headerlink" href="#module-IaaGeoDataCleaning.MapTools.iaa_explore" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="IaaGeoDataCleaning.MapTools.iaa_explore.MapTool">
+<em class="property">class </em><code class="descname">MapTool</code><span class="sig-paren">(</span><em>shapedir</em>, <em>shape_geom</em>, <em>shape_iso2</em><span class="sig-paren">)</span><a class="headerlink" href="#IaaGeoDataCleaning.MapTools.iaa_explore.MapTool" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="IaaGeoDataCleaning.MapTools.iaa_explore.MapTool.create_map">
+<code class="descname">create_map</code><span class="sig-paren">(</span><em>center=(0</em>, <em>0)</em>, <em>zoom=2</em><span class="sig-paren">)</span><a class="headerlink" href="#IaaGeoDataCleaning.MapTools.iaa_explore.MapTool.create_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a basic map.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>center</strong> – </li>
+<li><strong>zoom</strong> – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">folium.Map.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="IaaGeoDataCleaning.MapTools.iaa_explore.MapTool.format_popup">
+<code class="descname">format_popup</code><span class="sig-paren">(</span><em>loc</em>, <em>ctry</em><span class="sig-paren">)</span><a class="headerlink" href="#IaaGeoDataCleaning.MapTools.iaa_explore.MapTool.format_popup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Format the locational description for popup icon.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>loc</strong> (<em>str.</em>) – location or lower level locational information.</li>
+<li><strong>ctry</strong> (<em>str.</em>) – country or higher level locational information.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">tuple of (str, str)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="IaaGeoDataCleaning.MapTools.iaa_explore.MapTool.haversine">
+<code class="descname">haversine</code><span class="sig-paren">(</span><em>lat0</em>, <em>lng0</em>, <em>lat1</em>, <em>lng1</em><span class="sig-paren">)</span><a class="headerlink" href="#IaaGeoDataCleaning.MapTools.iaa_explore.MapTool.haversine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the distance between two geographical points using the haversin formula (in kilometers).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>lat0</strong> – </li>
+<li><strong>lng0</strong> – </li>
+<li><strong>lat1</strong> – </li>
+<li><strong>lng1</strong> – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">the distance in km.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="IaaGeoDataCleaning.MapTools.iaa_explore.MapTool.plot_all_data">
+<code class="descname">plot_all_data</code><span class="sig-paren">(</span><em>data</em>, <em>loc_col</em>, <em>ctry_col</em>, <em>lat_col</em>, <em>lng_col</em>, <em>clr='blue'</em>, <em>as_cluster=True</em><span class="sig-paren">)</span><a class="headerlink" href="#IaaGeoDataCleaning.MapTools.iaa_explore.MapTool.plot_all_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create markers for all of the locational data points.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<em>str</em><em> or </em><em>DataFrame.</em>) – filepath (.csv or .xlsx extension) or dataframe.</li>
+<li><strong>loc_col</strong> (<em>str.</em>) – name of location column.</li>
+<li><strong>ctry_col</strong> (<em>str.</em>) – name of country column.</li>
+<li><strong>lat_col</strong> (<em>str.</em>) – name of latitude column.</li>
+<li><strong>lng_col</strong> (<em>str.</em>) – name of longitude column.</li>
+<li><strong>clr</strong> (<em>str.</em>) – color of the markers.</li>
+<li><strong>as_cluster</strong> (<em>bool.</em>) – indicate whether the markers will be saved in a cluster or not.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">all of the created markers.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list of folium.Marker if <code class="docutils literal notranslate"><span class="pre">as_cluster=False</span></code> or a folium.MarkerCluster if <code class="docutils literal notranslate"><span class="pre">as_cluster=True</span></code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="IaaGeoDataCleaning.MapTools.iaa_explore.MapTool.plot_condition">
+<code class="descname">plot_condition</code><span class="sig-paren">(</span><em>data</em>, <em>query_dict</em>, <em>loc_col</em>, <em>ctry_col</em>, <em>lat_col</em>, <em>lng_col</em>, <em>excl=False</em>, <em>clr='blue'</em><span class="sig-paren">)</span><a class="headerlink" href="#IaaGeoDataCleaning.MapTools.iaa_explore.MapTool.plot_condition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create markers for all data points that meet the conditions as specified in the query dictionary.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">excl=True</span></code>, the function only creates markers for points meeting every single criteria. Else, it creates
+markers for any point that meets at least one of the conditions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> – </li>
+<li><strong>query_dict</strong> (<em>dict of {str: list</em><em>, </em><em>str: set</em><em>, or </em><em>str: str}.</em>) – dictionary whose keys are column names mapping to the queried value(s).</li>
+<li><strong>loc_col</strong> – </li>
+<li><strong>ctry_col</strong> – </li>
+<li><strong>lat_col</strong> – </li>
+<li><strong>lng_col</strong> – </li>
+<li><strong>excl</strong> (<em>bool.</em>) – </li>
+<li><strong>excl</strong> – exclusive or inclusive plotting.</li>
+<li><strong>clr</strong> – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="IaaGeoDataCleaning.MapTools.iaa_explore.MapTool.plot_correct_data">
+<code class="descname">plot_correct_data</code><span class="sig-paren">(</span><em>data</em>, <em>loc_col</em>, <em>ctry_col</em>, <em>lat_col</em>, <em>lng_col</em>, <em>clr='green'</em>, <em>as_cluster=False</em><span class="sig-paren">)</span><a class="headerlink" href="#IaaGeoDataCleaning.MapTools.iaa_explore.MapTool.plot_correct_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create markers for all of the data points whose locational information correspond to their respective country.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> – </li>
+<li><strong>loc_col</strong> – </li>
+<li><strong>ctry_col</strong> – </li>
+<li><strong>lat_col</strong> – </li>
+<li><strong>lng_col</strong> – </li>
+<li><strong>clr</strong> – </li>
+<li><strong>as_cluster</strong> – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="IaaGeoDataCleaning.MapTools.iaa_explore.MapTool.plot_pair">
+<code class="descname">plot_pair</code><span class="sig-paren">(</span><em>coords0</em>, <em>coords1</em>, <em>clr0='lightblue'</em>, <em>clr1='darkblue'</em><span class="sig-paren">)</span><a class="headerlink" href="#IaaGeoDataCleaning.MapTools.iaa_explore.MapTool.plot_pair" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create markers for two sets of coordinates.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>coords0</strong> (<em>tuple</em><em> or </em><em>list of int</em><em> or </em><em>float.</em>) – </li>
+<li><strong>coords1</strong> (<em>tuple</em><em> or </em><em>list of int</em><em> or </em><em>float.</em>) – </li>
+<li><strong>clr0</strong> – </li>
+<li><strong>clr1</strong> – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="IaaGeoDataCleaning.MapTools.iaa_explore.MapTool.plot_pair_in_df">
+<code class="descname">plot_pair_in_df</code><span class="sig-paren">(</span><em>data</em>, <em>index</em>, <em>lat0_col</em>, <em>lng0_col</em>, <em>lat1_col</em>, <em>lng1_col</em>, <em>clr0='lightblue'</em>, <em>clr1='darkblue'</em><span class="sig-paren">)</span><a class="headerlink" href="#IaaGeoDataCleaning.MapTools.iaa_explore.MapTool.plot_pair_in_df" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create two markers for a data point if it has two locational information.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> – </li>
+<li><strong>index</strong> (<em>int</em>) – index of the data point in the data.</li>
+<li><strong>lat0_col</strong> – </li>
+<li><strong>lng0_col</strong> – </li>
+<li><strong>lat1_col</strong> – </li>
+<li><strong>lng1_col</strong> – </li>
+<li><strong>clr0</strong> – </li>
+<li><strong>clr1</strong> – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">two markers for the coordinates.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">tuple of (folium.Marker, folium.Marker)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="IaaGeoDataCleaning.MapTools.iaa_explore.MapTool.plot_point">
+<code class="descname">plot_point</code><span class="sig-paren">(</span><em>lat</em>, <em>lng</em>, <em>desc=None</em>, <em>clr='blue'</em><span class="sig-paren">)</span><a class="headerlink" href="#IaaGeoDataCleaning.MapTools.iaa_explore.MapTool.plot_point" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a single popup located at the passed coordinates.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>lat</strong> (<em>int</em><em> or </em><em>float.</em>) – </li>
+<li><strong>lng</strong> (<em>int</em><em> or </em><em>float.</em>) – </li>
+<li><strong>desc</strong> (<em>str.</em>) – description of the popup.</li>
+<li><strong>clr</strong> (<em>str.</em>) – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">folium.Marker.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="IaaGeoDataCleaning.MapTools.iaa_explore.MapTool.plot_potential_errors">
+<code class="descname">plot_potential_errors</code><span class="sig-paren">(</span><em>data</em>, <em>loc_col</em>, <em>ctry_col</em>, <em>lat_col</em>, <em>lng_col</em>, <em>clr='lightred'</em>, <em>plot_alt=False</em><span class="sig-paren">)</span><a class="headerlink" href="#IaaGeoDataCleaning.MapTools.iaa_explore.MapTool.plot_potential_errors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create markers for all of the data points whose coordinates either fall in the ocean or do not correspond to
+their respective country.</p>
+<p>These entries can be geocoded and the returned coordinates can be created as separate markers if
+<code class="docutils literal notranslate"><span class="pre">plot_alt=True</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> – </li>
+<li><strong>loc_col</strong> – </li>
+<li><strong>ctry_col</strong> – </li>
+<li><strong>lat_col</strong> – </li>
+<li><strong>lng_col</strong> – </li>
+<li><strong>clr</strong> – </li>
+<li><strong>plot_alt</strong> (<em>bool.</em>) – indicate whether to geocode and create markers for alternative coordinates.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="IaaGeoDataCleaning.MapTools.iaa_explore.MapTool.plot_within_point">
+<code class="descname">plot_within_point</code><span class="sig-paren">(</span><em>data</em>, <em>index</em>, <em>radius</em>, <em>loc_col</em>, <em>ctry_col</em>, <em>lat_col</em>, <em>lng_col</em>, <em>clr0='blue'</em>, <em>clr1='lightblue'</em><span class="sig-paren">)</span><a class="headerlink" href="#IaaGeoDataCleaning.MapTools.iaa_explore.MapTool.plot_within_point" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create markers for all data points within the passed radius of the specified data point.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> – </li>
+<li><strong>index</strong> (<em>int</em>) – index of the focal data point.</li>
+<li><strong>radius</strong> – radius of the search circle (in kilometers).</li>
+<li><strong>loc_col</strong> – </li>
+<li><strong>ctry_col</strong> – </li>
+<li><strong>lat_col</strong> – </li>
+<li><strong>lng_col</strong> – </li>
+<li><strong>clr0</strong> – </li>
+<li><strong>clr1</strong> – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="IaaGeoDataCleaning.MapTools.iaa_explore.MapTool.plot_within_range">
+<code class="descname">plot_within_range</code><span class="sig-paren">(</span><em>data</em>, <em>center</em>, <em>radius</em>, <em>loc_col</em>, <em>ctry_col</em>, <em>lat_col</em>, <em>lng_col</em>, <em>desc0=None</em>, <em>clr0='blue'</em>, <em>clr1='lightblue'</em><span class="sig-paren">)</span><a class="headerlink" href="#IaaGeoDataCleaning.MapTools.iaa_explore.MapTool.plot_within_range" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create markers for all data points within the range of the passed center.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<em>str</em><em> or </em><em>DataFrame</em>) – filepath (.csv or .xlsx extension) or dataframe.</li>
+<li><strong>center</strong> (<em>tuple</em><em> or </em><em>list of int</em><em> or </em><em>float.</em>) – center of the search circle.</li>
+<li><strong>radius</strong> (<em>int</em><em> or </em><em>float.</em>) – radius of the search circle (in kilometers).</li>
+<li><strong>loc_col</strong> – </li>
+<li><strong>ctry_col</strong> – </li>
+<li><strong>lat_col</strong> – </li>
+<li><strong>lng_col</strong> – </li>
+<li><strong>desc0</strong> – description of the marker for the center.</li>
+<li><strong>clr0</strong> (<em>str.</em>) – color of the center.</li>
+<li><strong>clr1</strong> (<em>str.</em>) – color of the other markers.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list of folium.Marker.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-IaaGeoDataCleaning.MapTools">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-IaaGeoDataCleaning.MapTools" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">IaaGeoDataCleaning.MapTools package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-IaaGeoDataCleaning.MapTools.iaa_explore">IaaGeoDataCleaning.MapTools.iaa_explore module</a></li>
+<li><a class="reference internal" href="#module-IaaGeoDataCleaning.MapTools">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/IaaGeoDataCleaning.MapTools.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">IaaGeoData  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Samantha Fritsche, Thy Nguyen.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.5.
+    </div>
+  </body>
+</html>

@@ -1,10 +1,10 @@
-.. Iaa documentation master file, created by
-   sphinx-quickstart on Thu Jul 19 16:55:51 2018.
+.. IaaGeoData documentation master file, created by
+   sphinx-quickstart on Wed Jul 18 13:51:40 2018.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Iaa's documentation!
-===============================
+Welcome to IaaGeoData's documentation!
+======================================
 
 .. toctree::
    :maxdepth: 2
