@@ -90,7 +90,7 @@ table = Table(tablename='helloworld', databaseConnector=connector)
 connector.getConnectFromConfig()
 ```
 
-Usage samples can be found in the documentation.
+Usage samples can be found in the [documentation](https://sammy-f.github.io/IaaGeoDataCleaning/).
 
 ### Acknowledgments:
 
